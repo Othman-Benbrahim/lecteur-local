@@ -38,6 +38,7 @@ LISTES = Path("listes")
 CANDIDATS = LISTES / "candidats.txt"
 VALIDES = LISTES / "valides.txt"
 SPARQL = "https://query.wikidata.org/sparql"
+PAUSE_WIKIDATA = 5          # secondes entre deux requêtes (exception datée du 2026-11-22, 0 h 24)
 ENTETE = """# Termes proposés au lecteur sans modèle (fichier écrit par le workflow « proposer » ; ne pas éditer dans le dépôt).
 # Marquer chaque ligne : « + » validé, « - » refusé, à la place du « ? ». Le rattachement peut être corrigé
 # (fiche:compartiment:élément ou acteur, comme dans listes/inventaire-fiches.csv ; « ? » si inconnu).
@@ -78,11 +79,12 @@ REQUETE = """SELECT ?item ?n ?desc WHERE {
 
 
 def wikidata(c, politesse, acteurs: list[dict]) -> list[tuple[str, str, str, str]]:
-    """Passage 1 (2026-11-22) : l'API www.wikidata.org/w/api.php est refusée par robots.txt ; on passe par le service
-    de requêtes public (query.wikidata.org), déjà employé par le bot (collecte_elections.py), recherche comprise."""
-    if not politesse.autorise(c, SPARQL):
-        print("Wikidata (service de requêtes) : robots.txt refuse, rien proposé", flush=True)
-        return []
+    """Service de requêtes public de Wikidata (query.wikidata.org). Son robots.txt refuse les robots ; EXCEPTION datée,
+    décision de l'auteur du 2026-11-22, 0 h 24 : « je valide, mais avec un intervalle raisonnable, il faut respecter
+    Wikidata ». D'où : requêtes une par une, jamais en parallèle, PAUSE_WIKIDATA secondes entre deux, identité claire
+    (User-Agent avec l'adresse du dépôt), et respect de l'en-tête Retry-After en cas de refus (429) ; au troisième refus,
+    on s'arrête pour ce passage. Cette exception ne vaut que pour ce service."""
+    refus = 0
     out, vus = [], {}
     for a in acteurs:
         nom = nettoyer_nom(a["texte"])
@@ -90,10 +92,20 @@ def wikidata(c, politesse, acteurs: list[dict]) -> list[tuple[str, str, str, str
             continue
         place = f'{a["fiche"]}:{a["compartiment"]}:{a["texte"]}'
         if nom.lower() not in vus:
-            time.sleep(1)
+            time.sleep(PAUSE_WIKIDATA)
             try:
                 r = c.get(SPARQL, params={"query": REQUETE % nom.replace("\\", " ").replace('"', " "), "format": "json"},
                           headers={"Accept": "application/sparql-results+json"})
+                if r.status_code == 429:
+                    refus += 1
+                    attente = int(r.headers.get("Retry-After", "60") or 60)
+                    print(f"Wikidata : refus 429, attente de {attente} s", flush=True)
+                    if refus >= 3:
+                        print("Wikidata : trois refus, arrêt pour ce passage", flush=True)
+                        break
+                    time.sleep(attente)
+                    r = c.get(SPARQL, params={"query": REQUETE % nom.replace("\\", " ").replace('"', " "), "format": "json"},
+                              headers={"Accept": "application/sparql-results+json"})
                 r.raise_for_status()
                 vus[nom.lower()] = r.json()["results"]["bindings"]
             except Exception as e:
