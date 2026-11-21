@@ -9,6 +9,12 @@ on:
         default: "gemma-4-12b"
         type: choice
         options: ["gemma-4-12b", "gemma-4-e4b", "qwen2.5-7b"]
+      jeu:
+        description: "Jeu de textes : cert-fr (avis du CERT-FR) ou presse (articles, vérité extérieure KEV)"
+        required: true
+        default: "cert-fr"
+        type: choice
+        options: ["cert-fr", "presse"]
 
 concurrency:
   group: lecteur-local
@@ -105,7 +111,10 @@ jobs:
           tail -5 serveur.log
           curl -sf http://127.0.0.1:8080/health || { cat serveur.log | tail -40; exit 1; }
       - name: Lire
-        run: python -u lire.py "$MODELE_CHOISI"
+        env:
+          JEU: ${{ github.event.inputs.jeu || 'cert-fr' }}
+        run: |
+          if [ "$JEU" = "presse" ]; then python -u lire_presse.py "$MODELE_CHOISI"; else python -u lire.py "$MODELE_CHOISI"; fi
       - name: Journal du serveur (vitesse)
         if: always()
         run: grep -E "eval time|prompt eval" serveur.log | tail -6 || true
