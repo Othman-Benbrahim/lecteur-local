@@ -100,8 +100,13 @@ def texte_page(c: httpx.Client, url: str) -> str | None:
     if r.status_code != 200:
         return None
     h = re.sub(r"(?is)<(script|style|nav|header|footer)[^>]*>.*?</\1>", " ", r.text)
-    m = re.search(r"(?is)<(main|article)[^>]*>(.*?)</\1>", h)
-    t = re.sub(r"<[^>]+>", " ", m.group(2) if m else h)
+    # le corps de l'article d'abord (<article>), puis <main> : les barres latérales (« articles liés ») avaient fait
+    # lire « Russian APT » ou « Chinese APT » dans des articles qui n'en parlaient pas (passage 44951299117)
+    m = re.search(r"(?is)<article[^>]*>(.*?)</article>", h) or re.search(r"(?is)<main[^>]*>(.*?)</main>", h)
+    corps = m.group(1) if m else h
+    corps = re.sub(r"(?is)<(aside|figure)[^>]*>.*?</\1>", " ", corps)
+    corps = re.sub(r'(?is)<div[^>]+class="[^"]*(related|sidebar|newsletter|share|comments?|recommend)[^"]*"[^>]*>.*?</div>', " ", corps)
+    t = re.sub(r"<[^>]+>", " ", corps)
     import html as _h
     return re.sub(r"\s+", " ", _h.unescape(t)).strip()
 

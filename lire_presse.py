@@ -112,8 +112,20 @@ POSSIBLE = re.compile(r"\b(could|can|may|might|would|if|when|once) (be |have bee
                       r"\bno (evidence|indication|signs?) of (active )?exploitation\b|\bnot (been )?exploited\b", re.I)
 
 
+FORT = re.compile(r"\b(actively exploited|exploited in the wild|in the wild|exploited as (a )?zero-?day|under active "
+                  r"exploitation|(has|have) been exploited|(hackers|attackers|threat actors|group|apt|gang)\b[^.]{0,60}"
+                  r"\bexploit(ed|ing)\b)", re.I)
+
+
 def constat_d_exploitation(citation: str) -> bool:
-    return bool(CONSTAT.search(citation or "")) and not POSSIBLE.search(citation or "")
+    """Passage 44951299117 : la règle écartait aussi des constats nets dont la phrase contenait par ailleurs « could
+    allow » (« the flaw, which could allow code execution, has been exploited as a zero-day »). Un constat FORT passe
+    toujours ; un « exploited » isolé passe seulement sans tournure de possibilité."""
+    c = citation or ""
+    if FORT.search(c):
+        return not re.search(r"\bno (evidence|indication|signs?|reports?)\b|\b(not|never)\b[^.]{0,30}\bexploited\b|"
+                             r"\bunaware of\b", c, re.I)
+    return bool(CONSTAT.search(c)) and not POSSIBLE.search(c)
 
 
 def appeler(c: httpx.Client, texte: str) -> tuple[dict | None, float]:
@@ -170,7 +182,7 @@ def principal() -> int:
             ctl["exploitations_ecartees_conditionnel"] = ctl.get("exploitations_ecartees_conditionnel", 0) + len(expl0) - len(expl)
             act = [a for a in f["acteurs"] if ok(a["citation"]) and lire.normal(a["nom"]) in nt]
             ctl["affirmations"] += len(f["failles_exploitees"]) + len(f["acteurs"])
-            ctl["citations_rejetees"] += len(f["failles_exploitees"]) - len(expl) + len(f["acteurs"]) - len(act)
+            ctl["citations_rejetees"] += len(f["failles_exploitees"]) - len(expl0) + len(f["acteurs"]) - len(act)
             dites = {x["cve"] for x in expl}
             ctl["exploitees_dites"] += len(dites)
             ctl["exploitees_dans_kev"] += len(dites & kev)
