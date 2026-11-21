@@ -38,7 +38,7 @@ LISTES = Path("listes")
 CANDIDATS = LISTES / "candidats.txt"
 VALIDES = LISTES / "valides.txt"
 SPARQL = "https://query.wikidata.org/sparql"
-PAUSE_WIKIDATA = 5          # secondes entre deux requêtes (exception datée du 2026-11-22, 0 h 24)
+PAUSE_WIKIDATA = 10         # secondes entre deux requêtes (exception datée du 2026-11-22, 0 h 24 ; 10 s demandées à 0 h 34)
 ENTETE = """# Termes proposés au lecteur sans modèle (fichier écrit par le workflow « proposer » ; ne pas éditer dans le dépôt).
 # Marquer chaque ligne : « + » validé, « - » refusé, à la place du « ? ». Le rattachement peut être corrigé
 # (fiche:compartiment:élément ou acteur, comme dans listes/inventaire-fiches.csv ; « ? » si inconnu).
