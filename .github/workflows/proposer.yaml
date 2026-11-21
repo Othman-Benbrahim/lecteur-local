@@ -1,0 +1,44 @@
+# Propositions de termes (décisions de l'auteur du 2026-11-22, 0 h 01) : le workflow propose, l'auteur télécharge
+# listes/candidats.txt, marque chaque ligne (+ validé, - refusé) et le renvoie ; il devient listes/valides.txt.
+name: proposer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  proposer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fiches et flux du bot (dépôt public, lecture seule)
+        uses: actions/checkout@v4
+        with:
+          repository: Othman-Benbrahim/metac-bot-template
+          path: bot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install httpx==0.28.1 pyyaml
+      - name: Inventaire des fiches
+        run: python inventaire_fiches.py bot/ecosystemes
+      - name: Propositions
+        run: python proposer.py bot
+      - name: Fichier à télécharger
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidats
+          path: listes/candidats.txt
+      - name: Enregistrer
+        run: |
+          git config user.name "lecteur-local"
+          git config user.email "lecteur-local@users.noreply.github.com"
+          git add listes/
+          if ! git diff --cached --quiet; then
+            git commit -m "propositions du $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase || true
+            git push
+          fi
