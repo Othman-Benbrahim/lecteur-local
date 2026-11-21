@@ -100,7 +100,7 @@ jobs:
           SRV=$(find llama -name llama-server -type f | head -1)
           chmod +x "$SRV"
           export LD_LIBRARY_PATH="$(dirname "$SRV"):$LD_LIBRARY_PATH"   # bibliothèques livrées à côté du binaire
-          nohup "$SRV" -m "modeles/$MODELE" --port 8080 -c 8192 -t 4 > serveur.log 2>&1 &
+          nohup "$SRV" -m "modeles/$MODELE" --port 8080 -c 8192 -t 4 --reasoning-budget 0 > serveur.log 2>&1 &
           for i in $(seq 1 120); do curl -sf http://127.0.0.1:8080/health && break; sleep 5; done
           tail -5 serveur.log
           curl -sf http://127.0.0.1:8080/health || { cat serveur.log | tail -40; exit 1; }

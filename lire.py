@@ -135,8 +135,16 @@ def extraire(c: httpx.Client, texte: str) -> tuple[dict | None, float]:
                timeout=900)
     duree = time.time() - t0
     try:
-        return json.loads(r.json()["choices"][0]["message"]["content"]), duree
-    except Exception:
+        ch = r.json()["choices"][0]
+        return json.loads(ch["message"]["content"]), duree
+    except Exception as e:                                     # on montre POURQUOI rien n'est lu (passage Gemma 4 E4B)
+        try:
+            ch = r.json().get("choices", [{}])[0]
+            print(f"  réponse illisible ({type(e).__name__}) : HTTP {r.status_code}, fin {ch.get('finish_reason')}, "
+                  f"contenu {str(ch.get('message', {}).get('content'))[:150]!r}, "
+                  f"raisonnement {len(str(ch.get('message', {}).get('reasoning_content') or ''))} car.", flush=True)
+        except Exception:
+            print(f"  réponse illisible : HTTP {r.status_code}, {r.text[:200]!r}", flush=True)
         return None, duree
 
 
@@ -176,6 +184,7 @@ def principal() -> int:
             durees.append(d)
             if f is None:
                 controle["illisibles"] += 1
+                print(f"{d:5.1f} s  ILLISIBLE  {e['lien']}", flush=True)
                 continue
             garde, rej = verifier(f, t)
             controle["editeurs_proposes"] += len(f.get("editeurs", []))
