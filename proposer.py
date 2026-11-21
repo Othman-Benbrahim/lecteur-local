@@ -5,9 +5,16 @@ listes/candidats.txt ; l'auteur le télécharge, marque chaque ligne, et le renv
 seule liste que le collecteur comptera. Un terme déjà décidé (validé ou refusé) n'est jamais reproposé.
 
 Format d'une ligne (texte, séparateur « | ») :
-    ? | terme | langue | rattachement | source | vu dans N passages | depuis AAAA-MM-JJ
-« ? » = à décider ; l'auteur le remplace par « + » (validé) ou « - » (refusé), et peut corriger le rattachement
-(fiche:compartiment:élément ou acteur, tel qu'écrit dans listes/inventaire-fiches.csv).
+    ? | terme | langue | rattachement | source | vu dans N passages | depuis AAAA-MM-JJ | émetteurs
+« ? » = à décider. Décision de l'auteur (0 h 05) : le tri (rattachement, refus motivés) est fait par Claude, l'auteur
+valide et en discute.
+
+Décision de l'auteur (0 h 16) : chaque terme est daté et sourcé, et les émetteurs d'information sont repérés et
+identifiés (cadre écosystémique). D'où deux fichiers de plus :
+  - listes/references.txt : chaque apparition d'un terme (terme | émetteur | rubrique | lien de l'article | date de
+    l'article | date du relevé), cumulée de passage en passage, sans doublon (terme, lien) ; jamais le texte ;
+  - listes/emetteurs-a-identifier.txt : les émetteurs vus qui ne figurent pas encore dans listes/emetteurs.txt
+    (registre des émetteurs identifiés, tenu par Claude avec ses sources, validé par l'auteur).
 
 Sources de ce premier passage :
   1. Wikidata (CC0), par son service de requêtes public : noms et alias, en anglais et en français, des acteurs DÉJÀ NOMMÉS dans les fiches (premier
@@ -34,7 +41,8 @@ SPARQL = "https://query.wikidata.org/sparql"
 ENTETE = """# Termes proposés au lecteur sans modèle (fichier écrit par le workflow « proposer » ; ne pas éditer dans le dépôt).
 # Marquer chaque ligne : « + » validé, « - » refusé, à la place du « ? ». Le rattachement peut être corrigé
 # (fiche:compartiment:élément ou acteur, comme dans listes/inventaire-fiches.csv ; « ? » si inconnu).
-# Format : décision | terme | langue | rattachement | source | vu dans N passages | depuis AAAA-MM-JJ
+# Format : décision | terme | langue | rattachement | source | vu dans N passages | depuis AAAA-MM-JJ | émetteurs
+# Chaque apparition (émetteur, lien de l'article, date) : listes/references.txt
 """
 
 
@@ -47,7 +55,7 @@ def lire_lignes(chemin: Path) -> list[list[str]]:
             continue
         champs = [x.strip() for x in l.split("|")]
         if len(champs) >= 3:
-            out.append(champs + [""] * (7 - len(champs)))
+            out.append(champs + [""] * (8 - len(champs)))
     return out
 
 
@@ -101,23 +109,46 @@ def wikidata(c, politesse, acteurs: list[dict]) -> list[tuple[str, str, str, str
         for b in res:
             n, lg = b["n"]["value"], b["n"].get("xml:lang", "")
             if n and "|" not in n and lg in ("en", "fr"):
-                out.append((n, lg, place, source))
+                out.append((n, lg, place, source, "wikidata.org", "wikidata", f"https://www.wikidata.org/wiki/{qid}",
+                            date.today().isoformat()))
     return out
 
 
 # ------------------------------------------------------------------------------------------- 2. Étiquettes RSS
-def etiquettes(xml: bytes) -> list[str]:
+def _date_iso(txt: str) -> str:
+    from email.utils import parsedate_to_datetime
+    txt = (txt or "").strip()
+    if not txt:
+        return ""
+    try:
+        return parsedate_to_datetime(txt).date().isoformat()
+    except Exception:
+        m = re.match(r"\d{4}-\d{2}-\d{2}", txt)
+        return m.group(0) if m else ""
+
+
+def etiquettes(xml: bytes) -> list[tuple[str, str, str]]:
+    """Étiquettes par article : (étiquette, lien de l'article, date de l'article)."""
     try:
         racine = ET.fromstring(xml)
     except ET.ParseError:
         return []
     out = []
-    for el in racine.iter():
-        if el.tag.split("}")[-1] != "category":
+    for item in racine.iter():
+        if item.tag.split("}")[-1] not in ("item", "entry"):
             continue
-        t = (el.get("term") or el.text or "").strip()
-        if t and len(t) <= 80 and "|" not in t and not t.startswith("http"):
-            out.append(t)
+        lien, quand, cats = "", "", []
+        for el in item:
+            nom = el.tag.split("}")[-1]
+            if nom == "link":
+                lien = lien or (el.get("href") or el.text or "").strip()
+            elif nom in ("pubDate", "published", "updated", "date"):
+                quand = quand or _date_iso(el.text or "")
+            elif nom == "category":
+                t = (el.get("term") or el.text or "").strip()
+                if t and len(t) <= 80 and "|" not in t and not t.startswith("http"):
+                    cats.append(t)
+        out += [(t, lien.replace("|", "%7C"), quand) for t in dict.fromkeys(cats)]
     return out
 
 
@@ -134,8 +165,10 @@ def flux_rss(c, politesse, flux: dict, connus: dict[str, str]) -> list[tuple[str
             except Exception:
                 continue
             dom = re.sub(r"^www\.", "", u.split("/")[2])
-            for t in etiquettes(r.content):
-                out.append((t, "?", connus.get(t.lower(), "?"), f"étiquette:{rubrique}:{dom}"))
+            for t, lien, quand in etiquettes(r.content):
+                # l'émetteur est le site de l'article (un relais comme FeedBurner n'est pas un émetteur)
+                em = re.sub(r"^www\.", "", lien.split("/")[2]) if lien.startswith("http") and lien.count("/") >= 2 else dom
+                out.append((t, "?", connus.get(t.lower(), "?"), f"étiquette:{rubrique}:{em}", em, rubrique, lien, quand))
             time.sleep(0.5)
     return out
 
@@ -157,7 +190,30 @@ def principal() -> int:
                       timeout=30, follow_redirects=True) as c:
         nommes = [l for l in inv if l["sorte"] == "acteur" and l["generique"] == "non"]
         props = wikidata(c, politesse, nommes) + flux_rss(c, politesse, FLUX, connus)
-    for terme, lg, place, source in props:
+    REFS = LISTES / "references.txt"
+    refs = {}
+    if REFS.exists():
+        for l in REFS.read_text(encoding="utf-8").splitlines():
+            ch = [x.strip() for x in l.split("|")]
+            if len(ch) >= 6 and not l.startswith("#"):
+                refs[(ch[0].lower(), ch[3])] = ch[:6]
+    emetteurs_par_terme: dict[str, set] = {}
+    for terme, lg, place, source, emetteur, rubrique, lien, quand in props:
+        if (terme.lower(), lien) not in refs:
+            refs[(terme.lower(), lien)] = [terme, emetteur, rubrique, lien, quand, aujourdhui]
+    for ch in refs.values():
+        emetteurs_par_terme.setdefault(ch[0].lower(), set()).add(ch[1])
+    LISTES.mkdir(exist_ok=True)
+    REFS.write_text("# terme | émetteur | rubrique | lien de l'article | date de l'article | date du relevé\n" + "\n".join(
+        " | ".join(ch) for ch in sorted(refs.values(), key=lambda c: (c[0].lower(), c[4], c[3]))) + "\n", encoding="utf-8")
+    connus_em = set()
+    if (LISTES / "emetteurs.txt").exists():
+        connus_em = {l.split("|")[0].strip() for l in (LISTES / "emetteurs.txt").read_text(encoding="utf-8").splitlines()
+                     if l.strip() and not l.startswith("#")}
+    a_identifier = sorted({ch[1] for ch in refs.values()} - connus_em)
+    (LISTES / "emetteurs-a-identifier.txt").write_text(
+        "# émetteurs vus, absents de listes/emetteurs.txt\n" + "\n".join(a_identifier) + "\n", encoding="utf-8")
+    for terme, lg, place, source, *_ in props:
         k = cle(terme, lg)
         if k in decides:
             continue
@@ -178,7 +234,8 @@ def principal() -> int:
     LISTES.mkdir(exist_ok=True)
     ordre = sorted(lignes.values(), key=lambda l: (l[4].split(":")[0], l[3] == "?", -l[5], l[1].lower()))
     CANDIDATS.write_text(ENTETE + "\n".join(
-        f"? | {l[1]} | {l[2]} | {l[3]} | {l[4]} | vu dans {l[5]} passages | depuis {l[6]}" for l in ordre) + "\n", encoding="utf-8")
+        f"? | {l[1]} | {l[2]} | {l[3]} | {l[4]} | vu dans {l[5]} passages | depuis {l[6]} | "
+        f"{', '.join(sorted(emetteurs_par_terme.get(l[1].lower(), [])))}" for l in ordre) + "\n", encoding="utf-8")
     wd = sum(1 for l in ordre if l[4].startswith("wikidata"))
     print(f"candidats : {len(ordre)} à décider ({wd} venus de Wikidata, {len(ordre) - wd} d'étiquettes RSS) ; "
           f"{len(decides)} termes déjà décidés écartés", flush=True)
