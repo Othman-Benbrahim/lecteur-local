@@ -1,0 +1,65 @@
+name: "Lecture locale (llama.cpp, modèle ouvert, sans clé)"
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: lecteur-local
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  MODELE_URL: "https://huggingface.co/bartowski/Qwen2.5-7B-Instruct-GGUF/resolve/main/Qwen2.5-7B-Instruct-Q4_K_M.gguf"
+  MODELE: "Qwen2.5-7B-Instruct-Q4_K_M.gguf"
+
+jobs:
+  lire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install httpx==0.28.1
+      - name: Modèle (cache)
+        uses: actions/cache@v4
+        with:
+          path: modeles
+          key: modele-${{ env.MODELE }}
+      - name: Télécharger le modèle si absent
+        run: |
+          mkdir -p modeles
+          [ -f "modeles/$MODELE" ] || curl -sSL -o "modeles/$MODELE" "$MODELE_URL"
+          ls -lh modeles
+      - name: llama.cpp (binaire officiel)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download --repo ggml-org/llama.cpp --pattern "*bin-ubuntu-x64.zip" -D llama
+          cd llama && unzip -q *.zip && ls
+      - name: Démarrer le serveur
+        run: |
+          SRV=$(find llama -name llama-server -type f | head -1)
+          chmod +x "$SRV"
+          nohup "$SRV" -m "modeles/$MODELE" --port 8080 -c 8192 -t 4 > serveur.log 2>&1 &
+          for i in $(seq 1 120); do curl -sf http://127.0.0.1:8080/health && break; sleep 5; done
+          tail -5 serveur.log
+      - name: Lire
+        run: python -u lire.py
+      - name: Journal du serveur (vitesse)
+        if: always()
+        run: grep -E "eval time|prompt eval" serveur.log | tail -6 || true
+      - name: Enregistrer
+        if: always()
+        run: |
+          git config user.name "lecteur-local"
+          git config user.email "lecteur-local@users.noreply.github.com"
+          git add resultats/*.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "résultats du $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase || true
+            git push
+          fi
