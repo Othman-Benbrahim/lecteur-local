@@ -1,0 +1,12 @@
+{
+ "date": "2026-11-21T19:28:17+00:00",
+ "elements": 40,
+ "vrais": 3,
+ "trouves": 3,
+ "inventes": 58,
+ "manques": 0,
+ "illisibles": 0,
+ "rappel_cve": 1.0,
+ "precision_cve": 0.049,
+ "secondes_par_element": 19.8
+}

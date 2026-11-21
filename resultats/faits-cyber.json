@@ -1,0 +1,613 @@
+{
+ "source": "https://cert.cyber.gouv.fr/feed/",
+ "faits": [
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1344/",
+   "date": "Tue, 20 Oct 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1458/",
+   "date": "Wed, 04 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "Mattermost"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1567/",
+   "date": "Wed, 18 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1565/",
+   "date": "Wed, 18 Nov 2026 00:00:00 +0000",
+   "type": "alerte",
+   "editeurs": [
+    "Oracle"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1563/",
+   "date": "Wed, 18 Nov 2026 00:00:00 +0000",
+   "type": "alerte",
+   "editeurs": [
+    "Oracle"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1564/",
+   "date": "Wed, 18 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "Oracle"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1566/",
+   "date": "Wed, 18 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-017/",
+   "date": "Wed, 18 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "F5"
+   ],
+   "cve": [
+    "CVE-2026-123633",
+    "CVE-2026-123007"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-016/",
+   "date": "Wed, 18 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "Oracle"
+   ],
+   "cve": [
+    "CVE-2026-114938"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1569/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1575/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1568/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1570/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1573/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "Cisco"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1580/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1579/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1574/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1576/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "alerte",
+   "editeurs": [
+    "Splunk"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "critique",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1572/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1578/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1571/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1577/",
+   "date": "Thu, 19 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1598/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "Google",
+    "Mandiant"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1590/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1597/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1592/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "alerte",
+   "editeurs": [
+    "Red Hat"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "critique",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1593/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1588/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1587/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1591/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1594/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1596/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-5678"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1585/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1581/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1583/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1586/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1584/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1595/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": false,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1589/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235",
+    "CVE-2026-1236"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  },
+  {
+   "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1582/",
+   "date": "Fri, 20 Nov 2026 00:00:00 +0000",
+   "type": "bulletin",
+   "editeurs": [
+    "CERT-FR"
+   ],
+   "cve": [
+    "CVE-2026-1234",
+    "CVE-2026-1235"
+   ],
+   "gravite": "non_precisee",
+   "exploitation_active": true,
+   "attaquant_nomme": null,
+   "pays_nomme": null
+  }
+ ]
+}
