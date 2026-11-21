@@ -1,0 +1,18 @@
+{
+ "date": "2026-11-21T20:53:51+00:00",
+ "elements": 25,
+ "pages_lues": 25,
+ "illisibles": 0,
+ "editeurs_proposes": 25,
+ "editeurs_rejetes": 0,
+ "exploitations_proposees": 2,
+ "exploitations_rejetees": 0,
+ "attaquants_pays_proposes": 0,
+ "attaquants_pays_rejetes": 0,
+ "affirmations_du_modele": 27,
+ "rejetees_faute_de_preuve": 0,
+ "fidelite": 1.0,
+ "secondes_par_element": 32.2,
+ "note": "identifiants CVE, type et risques lus par le code ; le modèle ne rend que les éditeurs, l'exploitation active et l'attaquant ou le pays, chacun vérifié mot pour mot dans le texte",
+ "modele": "gemma-4-e4b"
+}
