@@ -599,5 +599,6 @@
    "attaquant_nomme": null,
    "pays_nomme": null
   }
- ]
+ ],
+ "modele": "qwen2.5-7b"
 }

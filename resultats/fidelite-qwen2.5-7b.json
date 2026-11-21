@@ -13,5 +13,6 @@
  "rejetees_faute_de_preuve": 0,
  "fidelite": 1.0,
  "secondes_par_element": 31.5,
- "note": "identifiants CVE, type et risques lus par le code ; le modèle ne rend que les éditeurs, l'exploitation active et l'attaquant ou le pays, chacun vérifié mot pour mot dans le texte"
+ "note": "identifiants CVE, type et risques lus par le code ; le modèle ne rend que les éditeurs, l'exploitation active et l'attaquant ou le pays, chacun vérifié mot pour mot dans le texte",
+ "modele": "qwen2.5-7b"
 }
