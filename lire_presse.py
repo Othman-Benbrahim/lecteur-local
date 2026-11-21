@@ -60,6 +60,47 @@ CONSIGNE = ("You read a cybersecurity news article. Answer ONLY with the request
             "company that reports an attack is NOT the attacker.")
 
 
+# Second lecteur, NON GÉNÉRATIF (décision de l'auteur, 22 h 12) : ReDefiNER (Jungroo AI Labs, 0,8 milliard de
+# paramètres, Apache 2.0) ne fait que marquer des passages du texte selon un livret de règles ; il ne peut pas écrire
+# un nom absent du texte. Limites annoncées par ses auteurs : anglais seulement, types qui dépendent du contexte peu
+# fiables, abstention faible. Il lit les mêmes articles que le modèle génératif, pour comparer.
+LIVRET = """[RULES]
+Extract every entity of the supplied types. Return exact spans from the text.
+R1 A company or team that discovers, reports, analyses or tracks an attack is RESEARCHER, never ATTACKER.
+R2 EXPLOITED_CVE only when the text states that this CVE is exploited by attackers or in the wild.
+
+[TYPE] ATTACKER
+[DESCRIPTION] A threat actor, hacking group, ransomware gang or state named as carrying out the attack.
+
+[TYPE] VICTIM
+[DESCRIPTION] An organisation, company, government body or sector that was targeted or breached.
+
+[TYPE] RESEARCHER
+[DESCRIPTION] A security company, threat intelligence team or researcher that discovered or reported the attack.
+
+[TYPE] VENDOR
+[DESCRIPTION] The company that makes the vulnerable product.
+
+[TYPE] EXPLOITED_CVE
+[DESCRIPTION] A CVE identifier that the text says is actively exploited.
+"""
+_TAGGER = None
+
+
+def redefiner(texte: str) -> tuple[list[dict] | None, float]:
+    global _TAGGER
+    t0 = time.time()
+    try:
+        if _TAGGER is None:
+            from redefiner import Tagger
+            _TAGGER = Tagger.from_pretrained("jungroo-ai/redefiner-0.8b", device="cpu")
+        spans = [x for x in _TAGGER.extract(texte, LIVRET) if x.get("confidence", 0) >= 0.5]
+        return spans, time.time() - t0
+    except Exception as e:
+        print(f"  ReDefiNER indisponible : {type(e).__name__}: {e}"[:300], flush=True)
+        return None, time.time() - t0
+
+
 def appeler(c: httpx.Client, texte: str) -> tuple[dict | None, float]:
     t0 = time.time()
     r = c.post(lire.SERVEUR, json={"messages": [{"role": "system", "content": CONSIGNE},
@@ -91,6 +132,7 @@ def principal() -> int:
                 liens += [e["lien"] for e in lire.elements(r.text) if e["lien"]]
             except Exception as e:
                 print(f"{f} : {type(e).__name__}")
+        rd = {"exploitees_dites": 0, "exploitees_dans_kev": 0, "cve_kev_dites_exploitees": 0, "secondes": []}
         res, ctl, durees = [], {"articles_lus": 0, "citations_rejetees": 0, "affirmations": 0,
                                 "exploitees_dites": 0, "exploitees_dans_kev": 0, "cve_kev_dans_texte": 0,
                                 "cve_kev_dites_exploitees": 0}, []
@@ -118,9 +160,21 @@ def principal() -> int:
             kev_texte = set(lire.CVE_RE.findall(t)) & kev
             ctl["cve_kev_dans_texte"] += len(kev_texte)
             ctl["cve_kev_dites_exploitees"] += len(kev_texte & dites)
+            sp, dr = redefiner(t)
+            red = None
+            if sp is not None:
+                rd["secondes"].append(dr)
+                cves_r = {x["text"] for x in sp if x["label"] == "EXPLOITED_CVE" and lire.CVE_RE.fullmatch(x["text"])}
+                rd["exploitees_dites"] += len(cves_r)
+                rd["exploitees_dans_kev"] += len(cves_r & kev)
+                rd["cve_kev_dites_exploitees"] += len(kev_texte & cves_r)
+                red = {"exploitees": sorted(cves_r), "hors_catalogue_kev": sorted(cves_r - kev),
+                       "acteurs": sorted({(x["text"], x["label"]) for x in sp if x["label"] != "EXPLOITED_CVE"})}
             res.append({"lien": u, "exploitees": sorted(dites), "hors_catalogue_kev": sorted(dites - kev),
                         "kev_non_signalees": sorted(kev_texte - dites),
-                        "acteurs": [{k: a[k] for k in ("nom", "role", "pays")} for a in act]})
+                        "acteurs": [{k: a[k] for k in ("nom", "role", "pays")} for a in act], "redefiner": red})
+            if red:
+                print(f"        ReDefiNER {dr:5.1f} s : exploitées {red['exploitees']}  acteurs {red['acteurs'][:8]}", flush=True)
             print(f"{d:6.1f} s  exploitées {sorted(dites)} (hors KEV {sorted(dites - kev)})  "
                   f"acteurs {[(a['nom'], a['role']) for a in act]}  {u}", flush=True)
     fid = {"date": datetime.now(timezone.utc).isoformat(timespec="seconds"), "modele": nom, **ctl,
@@ -128,6 +182,12 @@ def principal() -> int:
            "precision_exploitation_kev": round(ctl["exploitees_dans_kev"] / ctl["exploitees_dites"], 3) if ctl["exploitees_dites"] else None,
            "rappel_exploitation_kev": round(ctl["cve_kev_dites_exploitees"] / ctl["cve_kev_dans_texte"], 3) if ctl["cve_kev_dans_texte"] else None,
            "secondes_par_article": round(sum(durees) / len(durees), 1) if durees else None,
+           "redefiner": {"exploitees_dites": rd["exploitees_dites"], "exploitees_dans_kev": rd["exploitees_dans_kev"],
+                         "precision_exploitation_kev": round(rd["exploitees_dans_kev"] / rd["exploitees_dites"], 3)
+                         if rd["exploitees_dites"] else None,
+                         "rappel_exploitation_kev": round(rd["cve_kev_dites_exploitees"] / ctl["cve_kev_dans_texte"], 3)
+                         if ctl["cve_kev_dans_texte"] else None,
+                         "secondes_par_article": round(sum(rd["secondes"]) / len(rd["secondes"]), 1) if rd["secondes"] else None},
            "note": "précision : part des failles dites exploitées présentes au catalogue KEV ; rappel : part des failles "
                    "du texte présentes au catalogue que le modèle a dites exploitées (une faille du catalogue n'est pas "
                    "forcément dite exploitée dans l'article : le rappel est une borne basse)"}

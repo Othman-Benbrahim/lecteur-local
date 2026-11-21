@@ -36,6 +36,9 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install httpx==0.28.1
+      - name: ReDefiNER (jeu presse seulement ; PyTorch pour processeur)
+        if: ${{ github.event.inputs.jeu == 'presse' }}
+        run: pip install redefiner --extra-index-url https://download.pytorch.org/whl/cpu
       - name: Trouver le fichier du modèle
         run: |
           python - <<'PY'
