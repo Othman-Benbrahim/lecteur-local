@@ -1,0 +1,982 @@
+# Tri proposé par Claude des termes relevés au passage 44960082275 du 2026-11-22 (975 termes, étiquettes RSS).
+# Décisions de l'auteur (0 h 05 - 0 h 14) : Claude trie, l'auteur valide et en discute. Sigles, entreprises et
+# personnalités publiques sont des acteurs possibles ; rubriques maison tranchées au cas par cas ; allemand ajouté ;
+# les pays relèvent de la variable espace (espace:pays / espace:région / espace:lieu).
+# + = proposé à valider ; ? = à discuter (aucune fiche ne le situe, ou identification incertaine) ; - = proposé au refus.
+# Rattachement : fiche:compartiment (plusieurs séparés par « ; »). Émetteur : site où l'étiquette a été vue.
+# Format : décision | terme | langue | rattachement | note | émetteur
+? | AfD | de | ? | acteur : parti politique allemand (Alternative für Deutschland) ; aucune fiche sur la politique allemande ; aucune fiche ne le situe | correctiv.org
+? | AfD Sachsen-Anhalt | de | ? | acteur : fédération régionale de l'AfD ; aucune fiche ne le situe | correctiv.org
+? | AfD-Leak | de | ? | acteur : affaire liée à l'AfD ; aucune fiche ne le situe | correctiv.org
+? | AfD-Spendenskandal | de | ? | acteur : affaire de dons de l'AfD ; aucune fiche ne le situe | correctiv.org
+? | AfD-Verbot | de | ? | acteur : procédure d'interdiction de l'AfD ; aucune fiche ne le situe | correctiv.org
+? | Aigner | de | ? | personnalité publique : Ilse Aigner ? présidente du Landtag de Bavière — à confirmer ; aucune fiche ne la situe | correctiv.org
+? | Alice Weidel | de | ? | personnalité publique : coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
+? | Alijew | de | ? | personnalité publique : Ilham Aliev, président de l'Azerbaïdjan ; aucune fiche ne la situe | correctiv.org
+? | Alternative für Deutschland | de | ? | acteur : parti politique allemand (Alternative für Deutschland) ; aucune fiche sur la politique allemande ; aucune fiche ne le situe | correctiv.org
+? | Andreas Perr | de | ? | personne non identifiée : à identifier | correctiv.org
+? | Animal Rights | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Annalena Baerbock | de | ? | personnalité publique : ancienne ministre allemande des Affaires étrangères ; aucune fiche ne la situe | correctiv.org
+? | Arts & Culture | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Asante | en | ? | acteur : Asante Gold ? (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
+? | Audi | de | ? | acteur : constructeur automobile (groupe VW) ; aucune fiche ne le situe | correctiv.org
+? | Audi-Werk | de | ? | acteur : usine Audi ; aucune fiche ne le situe | correctiv.org
+? | Beatrix von Storch | de | ? | personnalité publique : députée AfD ; aucune fiche ne la situe | correctiv.org
+? | Behörden | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Bildung | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Bildung- und Teilhabe | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Bildungs- und Teilhabepaket | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | BME | en | ? | acteur : sigle ambigu (Bulk Mining Explosives ?) ; aucune fiche ne le situe | im-mining.com
+? | BNTGold | en | ? | acteur : société minière (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
+? | Brosius-Gersdorf | de | ? | personnalité publique : juriste, candidate à la Cour constitutionnelle fédérale ; aucune fiche ne la situe | correctiv.org
+? | Bundesinnenministerium | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Bundeskanzler | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Bundesregierung | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Bundeswirtschaftministerium | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | BUSINESS | en | ? | thème réel, mais aucune fiche ne le couvre | miningweekly.com
+? | Bücher | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | CDU | de | ? | acteur : parti politique allemand ; aucune fiche ne le situe | correctiv.org
+? | Circular economy | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Claudio Fayad | en | ? | personne non identifiée : dirigeant minier ? — à identifier | im-mining.com
+? | Cohesion | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Colonel Mamadi Doumbouya | fr | ? | personnalité publique : chef de l'État guinéen ; aucune fiche ne la situe | burkina24.com
+? | Consumer protection | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Critical One | en | ? | acteur : société minière (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
+? | csd | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Culture | fr | ? | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
+? | DDR | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Debatte um AfD-Verbot | de | ? | acteur : procédure d'interdiction de l'AfD ; aucune fiche ne le situe | correctiv.org
+? | Demokratie | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | DKP | de | ? | acteur : parti communiste allemand ; aucune fiche ne le situe | correctiv.org
+? | Dominique de Villepin | fr | ? | personnalité publique : ancien Premier ministre français ; aucune fiche ne la situe | feeds.feedburner.com
+? | Droits de l'homme | fr | ? | thème réel, mais aucune fiche ne le couvre | feeds.feedburner.com
+? | döllner | de | ? | personnalité publique : président du directoire d'Audi ; aucune fiche ne la situe | correctiv.org
+? | Economics & Business | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | ECONOMY | en | ? | thème réel, mais aucune fiche ne le couvre | miningweekly.com
+? | Education | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Education & training | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Elargissement | fr | ? | thème réel, mais aucune fiche ne le couvre | feeds.feedburner.com
+? | Electra | en | ? | acteur : société (à identifier : Electra Battery Materials ?) ; aucune fiche ne le situe | canadianminingjournal.com
+? | Elton | en | ? | acteur : nom ambigu ; aucune fiche ne le situe | canadianminingjournal.com
+? | Emerson | en | ? | acteur : industriel américain (automatismes) ; aucune fiche ne le situe | im-mining.com
+? | Entsorgung | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Envirionment | en | ? | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
+? | Environment | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Environmental | en | ? | thème réel, mais aucune fiche ne le couvre | im-mining.com
+? | Environnement | fr | ? | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
+? | EU enlargement | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Film | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Financial Matters, M&A | en | ? | thème réel, mais aucune fiche ne le couvre | northernminer.com
+? | Finanzen | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | funding | en | ? | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
+? | Föderalismus | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Geheimplan gegen Deutschland | de | ? | acteur : enquête de Correctiv (2024) sur une réunion « remigration » ; aucune fiche ne le situe | correctiv.org
+? | Geheimplan-Recherche | de | ? | acteur : enquête de Correctiv (2024) sur une réunion « remigration » ; aucune fiche ne le situe | correctiv.org
+? | gernot döllner | de | ? | personnalité publique : président du directoire d'Audi ; aucune fiche ne la situe | correctiv.org
+? | Geschäfte der AfD | de | ? | acteur : affaires de l'AfD ; aucune fiche ne le situe | correctiv.org
+? | GMD | en | ? | acteur : sigle ambigu ; aucune fiche ne le situe | canadianminingjournal.com
+? | Goal AG | de | ? | acteur : entreprise (à identifier) ; aucune fiche ne le situe | correctiv.org
+? | Governance | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Grüne | de | ? | acteur : parti politique allemand (Verts) ; aucune fiche ne le situe | correctiv.org
+? | Hexane | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | History | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Human Rights | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Höcke | de | ? | personnalité publique : dirigeant AfD de Thuringe ; aucune fiche ne la situe | correctiv.org
+? | ikea | de | ? | acteur : distributeur ; aucune fiche ne le situe | correctiv.org
+? | Immobilien | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Indigenous | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Industrie | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Industry | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Institutional affairs | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Institutions | fr | ? | thème réel, mais aucune fiche ne le couvre | feeds.feedburner.com
+? | International Relations | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Investment | en | ? | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
+? | Kay Gottschalk | de | ? | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
+? | Krah | de | ? | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
+? | Krankenkassen | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Krebs | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | le pen | fr | ? | personnalité publique : dirigeante du Rassemblement national ; aucune fiche ne la situe | tsa-algerie.com
+? | LGBTIQ | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | LGBTQ+ | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Linke in Berlin | de | ? | acteur : Die Linke, Berlin ; aucune fiche ne le situe | correctiv.org
+? | literatur | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Literature | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Livre | fr | ? | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
+? | Losberg | en | ? | acteur : à identifier ; aucune fiche ne le situe | im-mining.com
+? | Lukreta | de | ? | acteur : à identifier ; aucune fiche ne le situe | correctiv.org
+? | M&A | en | ? | thème réel, mais aucune fiche ne le couvre | northernminer.com
+? | Maaßen | de | ? | personnalité publique : ancien président du Verfassungsschutz ; aucune fiche ne la situe | correctiv.org
+? | Mammografie | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Marine Le Pen | fr | ? | personnalité publique : dirigeante du Rassemblement national ; aucune fiche ne la situe | tsa-algerie.com
+? | Markus Lanz | de | ? | personnalité publique : animateur de télévision ; aucune fiche ne la situe | correctiv.org
+? | Maximilian Krah | de | ? | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
+? | Merkel | de | ? | personnalité publique : ancienne chancelière allemande ; aucune fiche ne la situe | correctiv.org
+? | Meuthen | de | ? | personnalité publique : ancien coprésident de l'AfD ; aucune fiche ne la situe | correctiv.org
+? | Michael Finnegan | en | ? | personne non identifiée : à identifier | im-mining.com
+? | mining M&A | en | ? | thème réel, mais aucune fiche ne le couvre | northernminer.com
+? | Mining mergers and acquisitions | en | ? | thème réel, mais aucune fiche ne le couvre | im-mining.com
+? | Music | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Müll | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Nature and biodiversity | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Neo-Gulag | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | NPD | de | ? | acteur : parti d'extrême droite allemand ; aucune fiche ne le situe | correctiv.org
+? | Oliver Blume | de | ? | personnalité publique : président du directoire de Volkswagen ; aucune fiche ne la situe | correctiv.org
+? | Onlineshops | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Pamoja | fr | ? | acteur : à identifier ; aucune fiche ne le situe | burkina24.com
+? | Parteiausschluss | de | ? | acteur : exclusion d'un parti ; aucune fiche ne le situe | correctiv.org
+? | Parteien | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Parteienerbot | de | ? | acteur : interdiction de parti (orthographe de la source) ; aucune fiche ne le situe | correctiv.org
+? | Petr Bystron | de | ? | personnalité publique : député européen AfD ; aucune fiche ne la situe | correctiv.org
+? | Petry | de | ? | personnalité publique : ancienne coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
+? | Photography | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Politics | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Politik | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Pretzell | de | ? | personnalité publique : ancien député européen AfD ; aucune fiche ne la situe | correctiv.org
+? | pride | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | pötsch | de | ? | personnalité publique : Hans Dieter Pötsch ? (président du conseil de surveillance de VW) — à confirmer ; aucune fiche ne la situe | correctiv.org
+? | Rakhi Pathak | en | ? | personne non identifiée : à identifier | im-mining.com
+? | Ralf Hennecke | en | ? | personne non identifiée : à identifier | im-mining.com
+? | Ratzunger | de | ? | personne non identifiée : à identifier | correctiv.org
+? | regulatory | en | ? | rubrique du métier minier ; pourrait servir aux règles et normes minières | canadianminingjournal.com
+? | Regulatory Issues | en | ? | rubrique du métier minier ; pourrait servir aux règles et normes minières | northernminer.com
+? | Reil | de | ? | personnalité publique : Guido Reil ? (élu AfD) — à confirmer ; aucune fiche ne la situe | correctiv.org
+? | Relations extérieures | fr | ? | thème réel, mais aucune fiche ne le couvre | feeds.feedburner.com
+? | Relations with the UK | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Schwangerschaft | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | SDAJ | de | ? | acteur : organisation de jeunesse communiste allemande ; aucune fiche ne le situe | correctiv.org
+? | Seelan Gobalsamy | en | ? | personne non identifiée : à identifier | im-mining.com
+? | Shiv Trisal | en | ? | personne non identifiée : à identifier | im-mining.com
+? | Siegmund | de | ? | personnalité publique : chef du groupe AfD au parlement de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
+? | Single market | en | ? | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
+? | Spenden | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Sven Schulze | de | ? | personnalité publique : dirigeant de la CDU de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
+? | System Putin | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | tino chrupalla | de | ? | personnalité publique : coprésident de l'AfD ; aucune fiche ne la situe | correctiv.org
+? | Tobias Rausch | de | ? | personnalité publique : élu AfD (Saxe-Anhalt) ; aucune fiche ne la situe | correctiv.org
+? | Tourisme | fr | ? | thème réel, mais aucune fiche ne le couvre | tsa-algerie.com
+? | Travel | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Trinity | en | ? | acteur : nom ambigu ; aucune fiche ne le situe | canadianminingjournal.com
+? | Tudor | en | ? | acteur : nom ambigu (Tudor Gold ?) ; aucune fiche ne le situe | canadianminingjournal.com
+? | UKEF | en | ? | acteur : UK Export Finance, agence britannique de crédit à l'exportation ; aucune fiche ne le situe | canadianminingjournal.com
+? | Ulrich Siegmund | de | ? | personnalité publique : chef du groupe AfD au parlement de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
+? | Umwelt | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Volkswagen | de | ? | acteur : constructeur automobile ; aucune fiche industrie automobile ; aucune fiche ne le situe | correctiv.org
+? | VW | de | ? | acteur : constructeur automobile ; aucune fiche industrie automobile ; aucune fiche ne le situe | correctiv.org
+? | War & Conflict | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
+? | Waste diversion | en | ? | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
+? | Weidel | de | ? | personnalité publique : coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
+? | Wirtschaft | de | ? | thème réel, mais aucune fiche ne le couvre | correctiv.org
+? | Women & Gender | en | ? | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Food and farming | en | alimentation-mondiale:cultures |  | consilium.europa.eu
++ | Grippe aviaire | fr | alimentation-mondiale:pathogenes;epidemies:agent |  | feeds.feedburner.com
++ | Food | en | alimentation-mondiale:prix |  | globalvoices.org
++ | Lebensmittel | de | alimentation-mondiale:prix |  | correctiv.org
++ | briefwahl | de | calendriers-echeances:elections |  | correctiv.org
++ | Elections | en | calendriers-echeances:elections |  | globalvoices.org
++ | Kandidierenden-Check | de | calendriers-echeances:elections |  | correctiv.org
++ | Kommunalwahl | de | calendriers-echeances:elections |  | correctiv.org
++ | Landtagswahl | de | calendriers-echeances:elections |  | correctiv.org
++ | Landtagswahl 2026 | de | calendriers-echeances:elections |  | correctiv.org
++ | Landtagswahl Sachsen-Anhalt | de | calendriers-echeances:elections |  | correctiv.org
++ | Landtagswahlen | de | calendriers-echeances:elections |  | correctiv.org
++ | présidentielle | fr | calendriers-echeances:elections |  | feeds.feedburner.com
++ | présidentielle 2027 | fr | calendriers-echeances:elections |  | tsa-algerie.com
++ | wahl | de | calendriers-echeances:elections |  | correctiv.org
++ | AFCO | fr | calendriers-echeances:parlements | Parlement européen, commission des affaires constitutionnelles (acteur institutionnel) | feeds.feedburner.com
++ | AFET | fr | calendriers-echeances:parlements | Parlement européen, commission des affaires étrangères (acteur institutionnel) | feeds.feedburner.com
++ | AGRI | fr | calendriers-echeances:parlements | Parlement européen, commission de l'agriculture (acteur institutionnel) | feeds.feedburner.com
++ | Auditions | fr | calendriers-echeances:parlements |  | feeds.feedburner.com
++ | BUDG | fr | calendriers-echeances:parlements | Parlement européen, commission des budgets (acteur institutionnel) | feeds.feedburner.com
++ | CONT | fr | calendriers-echeances:parlements | Parlement européen, commission du contrôle budgétaire (acteur institutionnel) | feeds.feedburner.com
++ | CULT | fr | calendriers-echeances:parlements | Parlement européen, commission de la culture (acteur institutionnel) | feeds.feedburner.com
++ | DEVE | fr | calendriers-echeances:parlements | Parlement européen, commission du développement (acteur institutionnel) | feeds.feedburner.com
++ | DROI | fr | calendriers-echeances:parlements | Parlement européen, sous-commission des droits de l'homme (acteur institutionnel) | feeds.feedburner.com
++ | ECON | fr | calendriers-echeances:parlements | Parlement européen, commission des affaires économiques et monétaires (acteur institutionnel) | feeds.feedburner.com
++ | EMPL | fr | calendriers-echeances:parlements | Parlement européen, commission de l'emploi (acteur institutionnel) | feeds.feedburner.com
++ | ENVI | fr | calendriers-echeances:parlements | Parlement européen, commission de l'environnement (acteur institutionnel) | feeds.feedburner.com
++ | FEMM | fr | calendriers-echeances:parlements | Parlement européen, commission des droits des femmes (acteur institutionnel) | feeds.feedburner.com
++ | FISC | fr | calendriers-echeances:parlements | Parlement européen, sous-commission des questions fiscales (acteur institutionnel) | feeds.feedburner.com
++ | HOUS | fr | calendriers-echeances:parlements | Parlement européen, commission spéciale sur le logement (acteur institutionnel) | feeds.feedburner.com
++ | IMCO | fr | calendriers-echeances:parlements | Parlement européen, commission du marché intérieur (acteur institutionnel) | feeds.feedburner.com
++ | INTA | fr | calendriers-echeances:parlements | Parlement européen, commission du commerce international (acteur institutionnel) | feeds.feedburner.com
++ | ITRE | fr | calendriers-echeances:parlements | Parlement européen, commission de l'industrie (acteur institutionnel) | feeds.feedburner.com
++ | JURI | fr | calendriers-echeances:parlements | Parlement européen, commission des affaires juridiques (acteur institutionnel) | feeds.feedburner.com
++ | LIBE | fr | calendriers-echeances:parlements | Parlement européen, commission des libertés civiles (acteur institutionnel) | feeds.feedburner.com
++ | PECH | fr | calendriers-echeances:parlements | Parlement européen, commission de la pêche (acteur institutionnel) | feeds.feedburner.com
++ | PETI | fr | calendriers-echeances:parlements | Parlement européen, commission des pétitions (acteur institutionnel) | feeds.feedburner.com
++ | REGI | fr | calendriers-echeances:parlements | Parlement européen, commission du développement régional (acteur institutionnel) | feeds.feedburner.com
++ | SANT | fr | calendriers-echeances:parlements | Parlement européen, sous-commission de la santé publique (acteur institutionnel) | feeds.feedburner.com
++ | SEDE | fr | calendriers-echeances:parlements | Parlement européen, sous-commission sécurité et défense (acteur institutionnel) | feeds.feedburner.com
++ | TRAN | fr | calendriers-echeances:parlements | Parlement européen, commission des transports (acteur institutionnel) | feeds.feedburner.com
++ | Disaster | en | climat-extremes:exposes |  | globalvoices.org
++ | Waldbrand | de | climat-extremes:feux |  | correctiv.org
++ | Dürre | de | climat-extremes:secheresses |  | correctiv.org
++ | Hochwasser | de | climat-extremes:tempetes;oceans-et-fleuves:fleuves |  | correctiv.org
++ | Climat | fr | climat-extremes:tendance |  | feeds.feedburner.com
++ | Climate | en | climat-extremes:tendance |  | consilium.europa.eu
++ | COP | fr | climat-extremes:tendance |  | feeds.feedburner.com
++ | Klima | de | climat-extremes:tendance |  | correctiv.org
++ | Klimakrise | de | climat-extremes:tendance |  | correctiv.org
++ | Klimaschutz | de | climat-extremes:tendance |  | correctiv.org
++ | klimawandel | de | climat-extremes:tendance |  | correctiv.org
++ | Bundesliga | de | competitions-culture:calendrier |  | correctiv.org
++ | CAN | fr | competitions-culture:calendrier |  | burkina24.com
++ | CAN 2027 | fr | competitions-culture:calendrier |  | burkina24.com
++ | Fußball | de | competitions-culture:calendrier |  | correctiv.org
++ | Hansa Rostock | de | competitions-culture:calendrier | acteur : club de football | correctiv.org
++ | Rudern | de | competitions-culture:calendrier |  | correctiv.org
++ | Sport | en | competitions-culture:calendrier |  | globalvoices.org
++ | Stuttgarter Kickers | de | competitions-culture:calendrier | acteur : club de football | correctiv.org
++ | WM | de | competitions-culture:calendrier |  | correctiv.org
++ | Klopp | de | competitions-culture:forme | personnalité publique : Jürgen Klopp, entraîneur de football | correctiv.org
++ | Nachwuchsleistungszentrum | de | competitions-culture:forme |  | correctiv.org
++ | DFB | de | competitions-culture:regles | acteur : Fédération allemande de football | correctiv.org
++ | hans-sauer-preis | de | competitions-culture:regles |  | correctiv.org
++ | Jugendbuchpreis | de | competitions-culture:regles |  | correctiv.org
++ | Cryptocurrency | en | crises-bancaires:cryptomonnaies |  | investinglive.com
++ | Kryptowährung | de | crises-bancaires:cryptomonnaies |  | correctiv.org
++ | Capital markets | en | crises-bancaires:marches |  | consilium.europa.eu
++ | Hedge | en | crises-bancaires:marches |  | canadianminingjournal.com
++ | Stock Markets/Investing | en | crises-bancaires:marches |  | northernminer.com
++ | Stocks | en | crises-bancaires:marches |  | investinglive.com
++ | Wall Street | fr | crises-bancaires:marches |  | burkina24.com
++ | Chemicals | de | cycles-biogeochimiques:combustion |  | correctiv.org
++ | chemische Industrie | de | cycles-biogeochimiques:combustion |  | correctiv.org
++ | Solvay | en | cycles-biogeochimiques:combustion | acteur : groupe chimique belge | im-mining.com
++ | Syensqo | en | cycles-biogeochimiques:combustion | acteur : groupe chimique belge (issu de Solvay) | im-mining.com
++ | Cyanide | en | cycles-biogeochimiques:engrais |  | canadianminingjournal.com
++ | Omnia Group | en | cycles-biogeochimiques:engrais | acteur : groupe sud-africain (engrais, explosifs) | im-mining.com
++ | First Phosphate | en | cycles-biogeochimiques:phosphore | acteur : société minière (phosphate) | canadianminingjournal.com
++ | Coris Bank International | fr | dette-emergents:banques | acteur : banque ouest-africaine | burkina24.com
++ | Coris Bank International Côte d’Ivoire | fr | dette-emergents:banques | acteur : filiale ivoirienne | burkina24.com
++ | Idrissa Nassa | fr | dette-emergents:banques | personnalité publique : homme d'affaires burkinabè (Coris Bank) | burkina24.com
++ | 60 ans BAD | fr | dette-emergents:fmi | acteur : Banque africaine de développement | burkina24.com
++ | Development | en | dette-emergents:fmi |  | globalvoices.org
++ | Entwicklungspolitik | de | dette-emergents:fmi |  | correctiv.org
++ | Base metals | en | dette-emergents:gisements |  | im-mining.com
++ | BASE METALS & GOLD | en | dette-emergents:gisements |  | miningweekly.com
++ | Chile mining | en | dette-emergents:gisements |  | northernminer.com
++ | COPPER | en | dette-emergents:gisements |  | miningweekly.com
++ | COPPER & ENVIRONMENT | en | dette-emergents:gisements |  | miningweekly.com
++ | COPPER AND ZINC | en | dette-emergents:gisements |  | miningweekly.com
++ | copper exploration | en | dette-emergents:gisements |  | northernminer.com
++ | copper production | en | dette-emergents:gisements |  | northernminer.com
++ | DIAMONDS | en | dette-emergents:gisements |  | miningweekly.com
++ | GOLD | en | dette-emergents:gisements |  | miningweekly.com
++ | GOLD & COPPER | en | dette-emergents:gisements |  | miningweekly.com
++ | gold exploration | en | dette-emergents:gisements |  | northernminer.com
++ | gold mines | en | dette-emergents:gisements |  | northernminer.com
++ | gold mining | en | dette-emergents:gisements |  | northernminer.com
++ | gold production | en | dette-emergents:gisements |  | northernminer.com
++ | gold projects | en | dette-emergents:gisements |  | northernminer.com
++ | ICMM | en | dette-emergents:gisements | acteur : Conseil international des mines et métaux | canadianminingjournal.com
++ | Industrial minerals | en | dette-emergents:gisements |  | im-mining.com
++ | IRON-ORE & LITHIUM | en | dette-emergents:gisements |  | miningweekly.com
++ | IRON-ORE & STEEL | en | dette-emergents:gisements |  | miningweekly.com
++ | Kucing Liar | en | dette-emergents:gisements | acteur : projet minier (Grasberg, Indonésie) | im-mining.com
++ | Macmahon | en | dette-emergents:gisements | acteur : sous-traitant minier australien | im-mining.com
++ | Mexico mining | en | dette-emergents:gisements |  | northernminer.com
++ | MINERALS COUNCIL SOUTH AFRICA | en | dette-emergents:gisements | acteur : organisation patronale minière sud-africaine | miningweekly.com
++ | Mining | en | dette-emergents:gisements |  | canadianminingjournal.com
++ | NICKEL | en | dette-emergents:gisements |  | miningweekly.com
++ | Orica | en | dette-emergents:gisements | acteur : fabricant d'explosifs pour mines | im-mining.com
++ | Panuco | en | dette-emergents:gisements | acteur : projet minier Pánuco (Mexique) | canadianminingjournal.com
++ | PLATINUM GROUP METALS | en | dette-emergents:gisements |  | miningweekly.com
++ | Precious Metals | en | dette-emergents:gisements |  | northernminer.com
++ | PT-Freeport Indonesia | en | dette-emergents:gisements | acteur : exploitant de la mine de Grasberg | im-mining.com
++ | Quebec exploration | en | dette-emergents:gisements |  | northernminer.com
++ | Silver | en | dette-emergents:gisements |  | northernminer.com
++ | silver production | en | dette-emergents:gisements |  | northernminer.com
++ | Simandou 2040 | fr | dette-emergents:gisements |  | burkina24.com
++ | Steel and iron ore | en | dette-emergents:gisements |  | im-mining.com
++ | Vizsla | en | dette-emergents:gisements | acteur : Vizsla Silver, société minière | canadianminingjournal.com
++ | deep sea mining | en | dette-emergents:gisements;oceans-et-fleuves:oceans |  | northernminer.com
++ | LITHIUM | en | dette-emergents:gisements;rivalite-sino-americaine:terres_rares |  | miningweekly.com
++ | Commodities | en | dette-emergents:matieres_premieres |  | investinglive.com
++ | Commodities Markets | en | dette-emergents:matieres_premieres |  | northernminer.com
++ | MINING ECONOMY | en | dette-emergents:matieres_premieres |  | miningweekly.com
++ | ROYALTIES | en | dette-emergents:matieres_premieres |  | miningweekly.com
++ | kampf um wasser | de | eau-moyen-orient:rarete |  | correctiv.org
++ | Claudia Sheinbaum | fr | elections-amerique-latine:executif | personnalité publique : présidente du Mexique | burkina24.com
++ | fonds souverain saoudien | fr | energie-mondiale:decisions |  | feeds.feedburner.com
++ | Wärmewende | de | energie-mondiale:demande |  | correctiv.org
++ | Braunkohle | de | energie-mondiale:production |  | correctiv.org
++ | COAL | en | energie-mondiale:production |  | miningweekly.com
++ | Coal technology | en | energie-mondiale:production |  | im-mining.com
++ | ENERGY | en | energie-mondiale:production |  | miningweekly.com
++ | Garzweiler | de | energie-mondiale:production |  | correctiv.org
++ | Gas | de | energie-mondiale:production |  | correctiv.org
++ | Leag | de | energie-mondiale:production | acteur : exploitant de lignite et centrales (Lusace) | correctiv.org
++ | Offshore | de | energie-mondiale:production |  | correctiv.org
++ | RWE | de | energie-mondiale:production | acteur : énergéticien allemand | correctiv.org
++ | Windenergie | de | energie-mondiale:production |  | correctiv.org
++ | Coronavirus | de | epidemies:agent |  | correctiv.org
++ | Covid-19 | de | epidemies:agent |  | correctiv.org
++ | Grippe | de | epidemies:agent |  | correctiv.org
++ | Hantavirus | de | epidemies:agent |  | correctiv.org
++ | Gesundheit | de | epidemies:autorites |  | correctiv.org
++ | Health | en | epidemies:autorites |  | globalvoices.org
++ | Medizin und Gesundheit | de | epidemies:autorites |  | correctiv.org
++ | Corona-Impfung | de | epidemies:technique |  | correctiv.org
++ | Impfung | de | epidemies:technique |  | correctiv.org
++ | Pfizer | de | epidemies:technique | acteur : laboratoire pharmaceutique | correctiv.org
++ | Pharma | de | epidemies:technique |  | correctiv.org
++ | Berlin | de | espace:lieu:Berlin (Allemagne) |  | correctiv.org
++ | Bielefeld | de | espace:lieu:Bielefeld (Allemagne) |  | correctiv.org
++ | Bilbao | en | espace:lieu:Bilbao (Espagne) |  | canadianminingjournal.com
++ | Bottrop | de | espace:lieu:Bottrop (Allemagne) |  | correctiv.org
++ | Brüssel | de | espace:lieu:Bruxelles (Belgique) |  | correctiv.org
++ | Basel | de | espace:lieu:Bâle (Suisse) |  | correctiv.org
++ | ceuta | de | espace:lieu:Ceuta (Espagne) |  | correctiv.org
++ | Cottbus | de | espace:lieu:Cottbus (Allemagne) |  | correctiv.org
++ | Dresden | de | espace:lieu:Dresde (Allemagne) |  | correctiv.org
++ | emden | de | espace:lieu:Emden (Allemagne) |  | correctiv.org
++ | Gaza | de | espace:lieu:Gaza |  | correctiv.org
++ | Hannover | de | espace:lieu:Hanovre (Allemagne) |  | correctiv.org
++ | Kalgoorlie | en | espace:lieu:Kalgoorlie (Australie) |  | im-mining.com
++ | Kyiv | de | espace:lieu:Kyiv (Ukraine) |  | correctiv.org
++ | Leipzig | de | espace:lieu:Leipzig (Allemagne) |  | correctiv.org
++ | Magdeburg | de | espace:lieu:Magdebourg (Allemagne) |  | correctiv.org
++ | Ontario | en | espace:lieu:Ontario (Canada) |  | canadianminingjournal.com
++ | Quebec | en | espace:lieu:Québec (Canada) |  | canadianminingjournal.com
++ | nrw | de | espace:lieu:Rhénanie-du-Nord-Westphalie (Allemagne) |  | correctiv.org
++ | Sahara occidental | fr | espace:lieu:Sahara occidental (territoire disputé) |  | tsa-algerie.com
++ | Sachsen-Anhalt | de | espace:lieu:Saxe-Anhalt (Allemagne) |  | correctiv.org
++ | Thüringen | de | espace:lieu:Thuringe (Allemagne) |  | correctiv.org
++ | zwickau | de | espace:lieu:Zwickau (Allemagne) |  | correctiv.org
++ | Afghanistan | en | espace:pays:Afghanistan |  | globalvoices.org
++ | Albania | en | espace:pays:Albanie |  | globalvoices.org
++ | Albanien | de | espace:pays:Albanie |  | correctiv.org
++ | Deutschland | de | espace:pays:Allemagne |  | correctiv.org
++ | Germany | en | espace:pays:Allemagne |  | globalvoices.org
++ | Arabie Saoudite | fr | espace:pays:Arabie saoudite |  | feeds.feedburner.com
++ | Saudi Arabia | en | espace:pays:Arabie saoudite |  | globalvoices.org
++ | Argentina | en | espace:pays:Argentine |  | globalvoices.org
++ | Armenia | en | espace:pays:Arménie |  | globalvoices.org
++ | Australia | en | espace:pays:Australie |  | globalvoices.org
++ | Aserbaidschan | de | espace:pays:Azerbaïdjan |  | correctiv.org
++ | Azerbaijan | en | espace:pays:Azerbaïdjan |  | globalvoices.org
++ | Bangladesh | en | espace:pays:Bangladesh |  | globalvoices.org
++ | Bhutan | en | espace:pays:Bhoutan |  | globalvoices.org
++ | Myanmar (Burma) | en | espace:pays:Birmanie |  | globalvoices.org
++ | Belarus | en | espace:pays:Biélorussie |  | globalvoices.org
++ | Bolivia | en | espace:pays:Bolivie |  | globalvoices.org
++ | Bosnia and Herzegovina | en | espace:pays:Bosnie-Herzégovine |  | globalvoices.org
++ | Botswana | en | espace:pays:Botswana |  | globalvoices.org
++ | Brazil | en | espace:pays:Brésil |  | globalvoices.org
++ | Bulgaria | en | espace:pays:Bulgarie |  | globalvoices.org
++ | Burkina Faso | en | espace:pays:Burkina Faso |  | globalvoices.org
++ | Burundi | en | espace:pays:Burundi |  | globalvoices.org
++ | Benin | en | espace:pays:Bénin |  | globalvoices.org
++ | Cambodia | en | espace:pays:Cambodge |  | globalvoices.org
++ | Cameroon | en | espace:pays:Cameroun |  | globalvoices.org
++ | Canada | en | espace:pays:Canada |  | globalvoices.org
++ | China | en | espace:pays:Chine |  | globalvoices.org
++ | Chine | fr | espace:pays:Chine |  | feeds.feedburner.com
++ | Cyprus | en | espace:pays:Chypre |  | globalvoices.org
++ | Colombia | en | espace:pays:Colombie |  | globalvoices.org
++ | Comoros | en | espace:pays:Comores |  | globalvoices.org
++ | North Korea | en | espace:pays:Corée du Nord |  | globalvoices.org
++ | South Korea | en | espace:pays:Corée du Sud |  | globalvoices.org
++ | Croatia | en | espace:pays:Croatie |  | globalvoices.org
++ | Cote d'Ivoire | en | espace:pays:Côte d'Ivoire |  | globalvoices.org
++ | Côte D'Ivoire | fr | espace:pays:Côte d'Ivoire |  | burkina24.com
++ | Espagne | fr | espace:pays:Espagne |  | tsa-algerie.com
++ | Spain | en | espace:pays:Espagne |  | globalvoices.org
++ | Spanien | de | espace:pays:Espagne |  | correctiv.org
++ | Fiji | en | espace:pays:Fidji |  | globalvoices.org
++ | France | en | espace:pays:France |  | globalvoices.org
++ | Gabon | en | espace:pays:Gabon |  | globalvoices.org
++ | Gambia | en | espace:pays:Gambie |  | globalvoices.org
++ | Ghana | en | espace:pays:Ghana |  | globalvoices.org
++ | Grenada | en | espace:pays:Grenade |  | globalvoices.org
++ | Greece | en | espace:pays:Grèce |  | globalvoices.org
++ | Guatemala | en | espace:pays:Guatemala |  | globalvoices.org
++ | Guinea | en | espace:pays:Guinée |  | globalvoices.org
++ | Georgia | en | espace:pays:Géorgie |  | globalvoices.org
++ | Haiti | en | espace:pays:Haïti |  | globalvoices.org
++ | Hong Kong (China) | en | espace:pays:Hong Kong |  | globalvoices.org
++ | Hungary | en | espace:pays:Hongrie |  | globalvoices.org
++ | India | en | espace:pays:Inde |  | globalvoices.org
++ | Indien | de | espace:pays:Inde |  | correctiv.org
++ | Indonesia | en | espace:pays:Indonésie |  | globalvoices.org
++ | Iran | en | espace:pays:Iran |  | globalvoices.org
++ | Israel | en | espace:pays:Israël |  | globalvoices.org
++ | Italy | en | espace:pays:Italie |  | globalvoices.org
++ | Jamaica | en | espace:pays:Jamaïque |  | globalvoices.org
++ | Japan | en | espace:pays:Japon |  | globalvoices.org
++ | Jordan | en | espace:pays:Jordanie |  | globalvoices.org
++ | Kazakhstan | en | espace:pays:Kazakhstan |  | globalvoices.org
++ | Kenya | en | espace:pays:Kenya |  | globalvoices.org
++ | Kyrgyzstan | en | espace:pays:Kirghizistan |  | globalvoices.org
++ | Kiribati | en | espace:pays:Kiribati |  | globalvoices.org
++ | Kosovo | en | espace:pays:Kosovo |  | globalvoices.org
++ | Lebanon | en | espace:pays:Liban |  | globalvoices.org
++ | Macau (China) | en | espace:pays:Macao |  | globalvoices.org
++ | North Macedonia | en | espace:pays:Macédoine du Nord |  | globalvoices.org
++ | Madagascar | en | espace:pays:Madagascar |  | globalvoices.org
++ | Malaisie | fr | espace:pays:Malaisie |  | feeds.feedburner.com
++ | Malaysia | en | espace:pays:Malaisie |  | globalvoices.org
++ | Mali | en | espace:pays:Mali |  | globalvoices.org
++ | Maroc | fr | espace:pays:Maroc |  | tsa-algerie.com
++ | Morocco | en | espace:pays:Maroc |  | globalvoices.org
++ | Mexico | en | espace:pays:Mexique |  | globalvoices.org
++ | Moldova | en | espace:pays:Moldavie |  | globalvoices.org
++ | Mongolia | en | espace:pays:Mongolie |  | globalvoices.org
++ | Montenegro | en | espace:pays:Monténégro |  | globalvoices.org
++ | Mozambique | en | espace:pays:Mozambique |  | globalvoices.org
++ | Niger | en | espace:pays:Niger |  | globalvoices.org
++ | Nigeria | en | espace:pays:Nigeria |  | globalvoices.org
++ | Norway | en | espace:pays:Norvège |  | globalvoices.org
++ | New Zealand | en | espace:pays:Nouvelle-Zélande |  | globalvoices.org
++ | Nepal | en | espace:pays:Népal |  | globalvoices.org
++ | OMAN | fr | espace:pays:Oman |  | feeds.feedburner.com
++ | Uganda | en | espace:pays:Ouganda |  | globalvoices.org
++ | Uzbekistan | en | espace:pays:Ouzbékistan |  | globalvoices.org
++ | Pakistan | en | espace:pays:Pakistan |  | globalvoices.org
++ | Palau | en | espace:pays:Palaos |  | globalvoices.org
++ | Palestine | en | espace:pays:Palestine |  | globalvoices.org
++ | Papua New Guinea | en | espace:pays:Papouasie-Nouvelle-Guinée |  | globalvoices.org
++ | Netherlands | en | espace:pays:Pays-Bas |  | globalvoices.org
++ | Philippines | en | espace:pays:Philippines |  | globalvoices.org
++ | Poland | en | espace:pays:Pologne |  | globalvoices.org
++ | Portugal | en | espace:pays:Portugal |  | globalvoices.org
++ | Peru | en | espace:pays:Pérou |  | globalvoices.org
++ | UK | en | espace:pays:Royaume-Uni |  | canadianminingjournal.com
++ | United Kingdom | en | espace:pays:Royaume-Uni |  | globalvoices.org
++ | Russia | en | espace:pays:Russie |  | globalvoices.org
++ | Russie | fr | espace:pays:Russie |  | feeds.feedburner.com
++ | Russland | de | espace:pays:Russie |  | correctiv.org
++ | Rwanda | en | espace:pays:Rwanda |  | globalvoices.org
++ | Dominican Republic | en | espace:pays:République dominicaine |  | globalvoices.org
++ | D.R. of Congo | en | espace:pays:République démocratique du Congo |  | globalvoices.org
++ | El Salvador | en | espace:pays:Salvador |  | globalvoices.org
++ | Samoa | en | espace:pays:Samoa |  | globalvoices.org
++ | Serbia | en | espace:pays:Serbie |  | globalvoices.org
++ | Slovenia | en | espace:pays:Slovénie |  | globalvoices.org
++ | Soudan | fr | espace:pays:Soudan |  | tsa-algerie.com
++ | Sudan | en | espace:pays:Soudan |  | globalvoices.org
++ | Sri Lanka | en | espace:pays:Sri Lanka |  | globalvoices.org
++ | Schweiz | de | espace:pays:Suisse |  | correctiv.org
++ | Syria | en | espace:pays:Syrie |  | globalvoices.org
++ | Senegal | en | espace:pays:Sénégal |  | globalvoices.org
++ | Tajikistan | en | espace:pays:Tadjikistan |  | globalvoices.org
++ | Tanzania | en | espace:pays:Tanzanie |  | globalvoices.org
++ | Taiwan (ROC) | en | espace:pays:Taïwan |  | globalvoices.org
++ | Tschechien | de | espace:pays:Tchéquie |  | correctiv.org
++ | Thailand | en | espace:pays:Thaïlande |  | globalvoices.org
++ | Tibet | en | espace:pays:Tibet |  | globalvoices.org
++ | Togo | en | espace:pays:Togo |  | globalvoices.org
++ | Trinidad & Tobago | en | espace:pays:Trinité-et-Tobago |  | globalvoices.org
++ | Tunisia | en | espace:pays:Tunisie |  | globalvoices.org
++ | Tunisie | fr | espace:pays:Tunisie |  | tsa-algerie.com
++ | Turkmenistan | en | espace:pays:Turkménistan |  | globalvoices.org
++ | Turkey | en | espace:pays:Turquie |  | globalvoices.org
++ | turquie | fr | espace:pays:Turquie |  | feeds.feedburner.com
++ | Tuvalu | en | espace:pays:Tuvalu |  | globalvoices.org
++ | Ukraine | en | espace:pays:Ukraine |  | globalvoices.org
++ | Uruguay | en | espace:pays:Uruguay |  | globalvoices.org
++ | Vanuatu | en | espace:pays:Vanuatu |  | globalvoices.org
++ | Venezuela | en | espace:pays:Venezuela |  | globalvoices.org
++ | Yemen | en | espace:pays:Yémen |  | globalvoices.org
++ | Egypt | en | espace:pays:Égypte |  | globalvoices.org
++ | Emirats | fr | espace:pays:Émirats arabes unis |  | tsa-algerie.com
++ | United Arab Emirates | en | espace:pays:Émirats arabes unis |  | globalvoices.org
++ | Ecuador | en | espace:pays:Équateur |  | globalvoices.org
++ | Etats-Unis | fr | espace:pays:États-Unis |  | tsa-algerie.com
++ | U.S.A. | en | espace:pays:États-Unis |  | globalvoices.org
++ | USA | de | espace:pays:États-Unis |  | correctiv.org
++ | États-Unis | fr | espace:pays:États-Unis |  | courrierinternational.com
++ | Ethiopia | en | espace:pays:Éthiopie |  | globalvoices.org
++ | Africa | en | espace:région:Afrique |  | northernminer.com
++ | Afrique | fr | espace:région:Afrique |  | burkina24.com
++ | Sub-Saharan Africa | en | espace:région:Afrique subsaharienne |  | globalvoices.org
++ | Ostdeutschland | de | espace:région:Allemagne de l'Est (Länder de l'Est) |  | correctiv.org
++ | North America | en | espace:région:Amérique du Nord |  | globalvoices.org
++ | Latin America | en | espace:région:Amérique latine |  | globalvoices.org
++ | Americas | en | espace:région:Amériques |  | consilium.europa.eu
++ | Amériques | fr | espace:région:Amériques |  | ledevoir.com
++ | Asie | fr | espace:région:Asie |  | ledevoir.com
++ | Central Asia & Caucasus | en | espace:région:Asie centrale et Caucase |  | globalvoices.org
++ | East Asia | en | espace:région:Asie de l'Est |  | globalvoices.org
++ | West Asia & North Africa | en | espace:région:Asie de l'Ouest et Afrique du Nord |  | globalvoices.org
++ | South Asia | en | espace:région:Asie du Sud |  | globalvoices.org
++ | Western Balkans | en | espace:région:Balkans occidentaux |  | consilium.europa.eu
++ | Caribbean | en | espace:région:Caraïbes |  | globalvoices.org
++ | Europa | de | espace:région:Europe |  | correctiv.org
++ | Europe | fr | espace:région:Europe |  | ledevoir.com
++ | Eastern & Central Europe | en | espace:région:Europe centrale et orientale |  | globalvoices.org
++ | Eastern Europe | en | espace:région:Europe de l'Est |  | consilium.europa.eu
++ | Western Europe | en | espace:région:Europe de l'Ouest |  | globalvoices.org
++ | Non-EU Western Europe | en | espace:région:Europe de l'Ouest hors UE |  | consilium.europa.eu
++ | Moyen-Orient | fr | espace:région:Moyen-Orient |  | ledevoir.com
++ | Oceania | en | espace:région:Océanie |  | globalvoices.org
++ | Humanitarian Response | en | guerre-levant:humanitaire;soudan:humanitaire |  | globalvoices.org
++ | Nahostkonflikt | de | guerre-levant:israel;guerre-levant:gaza |  | correctiv.org
++ | Houthis | fr | guerre-levant:yemen |  | feeds.feedburner.com
++ | Benedikt XVI. | de | humain:croyances | personnalité publique : pape (2005-2013) | correctiv.org
++ | Bischof | de | humain:croyances |  | correctiv.org
++ | Bischof Georg Bätzing | de | humain:croyances | personnalité publique : évêque de Limbourg, ancien président de la conférence épiscopale | correctiv.org
++ | Bischöfe | de | humain:croyances |  | correctiv.org
++ | Bätzing | de | humain:croyances | personnalité publique : évêque de Limbourg, ancien président de la conférence épiscopale | correctiv.org
++ | Erzbistum München und Freising | de | humain:croyances |  | correctiv.org
++ | Gottesdienst | de | humain:croyances |  | correctiv.org
++ | Grande mosquée de Paris | fr | humain:croyances |  | tsa-algerie.com
++ | islam | fr | humain:croyances |  | feeds.feedburner.com
++ | Katholische Kirche | de | humain:croyances |  | correctiv.org
++ | Moschee | de | humain:croyances |  | correctiv.org
++ | Papst | de | humain:croyances |  | correctiv.org
++ | Papst Leo XIV. | de | humain:croyances | personnalité publique : pape | correctiv.org
++ | Religion | en | humain:croyances |  | globalvoices.org
++ | Vatikan | de | humain:croyances |  | correctiv.org
++ | Kinder | de | humain:enfance |  | correctiv.org
++ | Minderjährige | de | humain:enfance |  | correctiv.org
++ | Youth | en | humain:jeunesse |  | globalvoices.org
++ | Ethnicity & Race | en | humain:nous_eux |  | globalvoices.org
++ | Racisme France | fr | humain:nous_eux |  | tsa-algerie.com
++ | Rassismus | de | humain:nous_eux |  | correctiv.org
++ | Demonstation | de | humain:passage_acte |  | correctiv.org
++ | Demonstration | de | humain:passage_acte |  | correctiv.org
++ | Protest | en | humain:passage_acte |  | globalvoices.org
++ | Schulstreik | de | humain:passage_acte |  | correctiv.org
++ | bauernproteste | de | humain:passage_acte;alimentation-mondiale:cultures |  | correctiv.org
++ | Identitäre Bewegung | de | humain:polarisation | acteur : mouvement identitaire | correctiv.org
++ | Neue Rechte | de | humain:polarisation |  | correctiv.org
++ | Rechtspopulismus | de | humain:polarisation |  | correctiv.org
++ | Rechtsruck | de | humain:polarisation |  | correctiv.org
++ | Lobby | de | humain:reseaux_discrets |  | correctiv.org
++ | Lobbyismus | de | humain:reseaux_discrets |  | correctiv.org
++ | politische Einflussnahme | de | humain:reseaux_discrets |  | correctiv.org
++ | Gaslobby | de | humain:reseaux_discrets;energie-mondiale:decisions |  | correctiv.org
++ | rechte Netzwerke | de | humain:reseaux_discrets;humain:polarisation |  | correctiv.org
++ | Altersarmut | de | humain:stress_chronique |  | correctiv.org
++ | Armut | de | humain:stress_chronique |  | correctiv.org
++ | Grundsicherung | de | humain:stress_chronique |  | correctiv.org
++ | Deutschlandflagge | de | humain:symboles |  | correctiv.org
++ | Supply Chain | en | inflation-mondiale:approvisionnement |  | canadianminingjournal.com
++ | Central Banks | en | inflation-mondiale:banques_centrales |  | investinglive.com
++ | Budget | en | inflation-mondiale:budget |  | consilium.europa.eu
++ | Haushalt | de | inflation-mondiale:budget |  | correctiv.org
++ | sparpaket | de | inflation-mondiale:budget |  | correctiv.org
++ | Steuer | de | inflation-mondiale:budget |  | correctiv.org
++ | Taxation | en | inflation-mondiale:budget |  | consilium.europa.eu
++ | The euro | en | inflation-mondiale:monnaies |  | consilium.europa.eu
++ | Lebenshaltungskosten | de | inflation-mondiale:prix_conso |  | correctiv.org
++ | supermarkt | de | inflation-mondiale:prix_conso |  | correctiv.org
++ | Labor | en | inflation-mondiale:salaires |  | globalvoices.org
++ | Labour rights | en | inflation-mondiale:salaires |  | consilium.europa.eu
++ | Mindestlohn | de | inflation-mondiale:salaires |  | correctiv.org
++ | Stroer | de | information-cyber:attention | acteur : Ströer, groupe allemand d'affichage et de médias en ligne | correctiv.org
++ | Censorship | en | information-cyber:censure |  | globalvoices.org
++ | Freedom of Speech | en | information-cyber:censure |  | globalvoices.org
++ | Pressefreiheit | de | information-cyber:censure |  | correctiv.org
++ | Cyberangriff | de | information-cyber:cyber |  | correctiv.org
++ | Datenleak | de | information-cyber:cyber |  | correctiv.org
++ | Hackerangriff | de | information-cyber:cyber |  | correctiv.org
++ | Leak | de | information-cyber:cyber |  | correctiv.org
++ | Sicherheitslücken | de | information-cyber:cyber |  | correctiv.org
++ | Datenschutz | de | information-cyber:etats |  | correctiv.org
++ | 5G | de | information-cyber:infrastructure |  | correctiv.org
++ | Digital infrastructure | en | information-cyber:infrastructure |  | consilium.europa.eu
++ | Internet | de | information-cyber:infrastructure |  | correctiv.org
++ | Journalismus | de | information-cyber:langues_biais |  | correctiv.org
++ | Lokaljournalismus | de | information-cyber:langues_biais |  | correctiv.org
++ | Media & Journalism | en | information-cyber:langues_biais |  | globalvoices.org
++ | Media and culture | en | information-cyber:langues_biais |  | consilium.europa.eu
++ | Presse | de | information-cyber:langues_biais |  | correctiv.org
++ | Spiegel | de | information-cyber:langues_biais | acteur : Der Spiegel, hebdomadaire allemand | correctiv.org
++ | Big Tech | de | information-cyber:plateformes |  | correctiv.org
++ | Online safety | en | information-cyber:plateformes |  | consilium.europa.eu
++ | Social Media | de | information-cyber:plateformes |  | correctiv.org
++ | Tiktok | de | information-cyber:plateformes |  | correctiv.org
++ | Whatsapp | de | information-cyber:plateformes |  | correctiv.org
++ | Youtube | de | information-cyber:plateformes |  | correctiv.org
++ | Citizen Media | en | information-cyber:recits |  | globalvoices.org
++ | CORRECTIV | de | information-cyber:recits | acteur : émetteur lui-même (rédaction d'enquête) | correctiv.org
++ | Deepfake | de | information-cyber:recits |  | correctiv.org
++ | Desinformation | de | information-cyber:recits |  | correctiv.org
++ | Digital Activism | en | information-cyber:recits |  | globalvoices.org
++ | exile media | de | information-cyber:recits |  | correctiv.org
++ | Exiljournalismus | de | information-cyber:recits |  | correctiv.org
++ | Fakencheck | de | information-cyber:recits |  | correctiv.org
++ | Faktencheck | de | information-cyber:recits |  | correctiv.org
++ | geruechtekiller | de | information-cyber:recits |  | correctiv.org
++ | Gerüchtekiller | de | information-cyber:recits |  | correctiv.org
++ | Julian Reichelt | de | information-cyber:recits | personnalité publique : dirigeant du média Nius | correctiv.org
++ | Les dessous de l'infox | fr | information-cyber:recits |  | rfi.fr
++ | medienbildung | de | information-cyber:recits |  | correctiv.org
++ | Medienkompetenz | de | information-cyber:recits |  | correctiv.org
++ | Nius | de | information-cyber:recits | acteur : média en ligne allemand | correctiv.org
++ | propaganda | de | information-cyber:recits |  | correctiv.org
++ | Russische Desinformation | de | information-cyber:recits |  | correctiv.org
++ | Klima-Faktenchecks | de | information-cyber:recits;climat-extremes:tendance |  | correctiv.org
++ | Hybride Kriegsführung | de | information-cyber:recits;securite-europeenne:menace |  | correctiv.org
++ | Hybrider Krieg | de | information-cyber:recits;securite-europeenne:menace |  | correctiv.org
++ | Sabotage | de | infrastructures-critiques:attaques |  | correctiv.org
++ | Nord Stream | de | infrastructures-critiques:attaques;energie-mondiale:transport |  | correctiv.org
++ | Blackout | de | infrastructures-critiques:cascades |  | correctiv.org
++ | Stromausfall | de | infrastructures-critiques:cascades |  | correctiv.org
++ | ABB | en | infrastructures-critiques:reseaux | acteur : groupe d'électrotechnique | canadianminingjournal.com
++ | Infrastruktur | de | infrastructures-critiques:reseaux |  | correctiv.org
++ | Power supply for mines | en | infrastructures-critiques:reseaux |  | im-mining.com
++ | RAIL INFRASTRUCTURE | en | infrastructures-critiques:reseaux |  | miningweekly.com
++ | Stromnetz | de | infrastructures-critiques:reseaux |  | correctiv.org
++ | ONU | fr | iran-nucleaire:conseil_securite |  | feeds.feedburner.com
++ | Vereinte Nationen | de | iran-nucleaire:conseil_securite |  | correctiv.org
++ | Völkerrecht | de | iran-nucleaire:conseil_securite |  | correctiv.org
++ | binationaux | fr | migrations-demographie:diasporas |  | tsa-algerie.com
++ | Exil | de | migrations-demographie:diasporas |  | correctiv.org
++ | exile | de | migrations-demographie:diasporas |  | correctiv.org
++ | Flucht | de | migrations-demographie:migrations |  | correctiv.org
++ | Geflüchtete | de | migrations-demographie:migrations |  | correctiv.org
++ | Immigration | fr | migrations-demographie:migrations |  | tsa-algerie.com
++ | Migration | de | migrations-demographie:migrations |  | correctiv.org
++ | Migration & Immigration | en | migrations-demographie:migrations |  | globalvoices.org
++ | Refugees | en | migrations-demographie:migrations |  | globalvoices.org
++ | Rohingyas | fr | migrations-demographie:migrations |  | feeds.feedburner.com
++ | Rente | de | migrations-demographie:natalite_vieillissement |  | correctiv.org
++ | Abschiebung | de | migrations-demographie:politiques_migratoires |  | correctiv.org
++ | asyl | de | migrations-demographie:politiques_migratoires |  | correctiv.org
++ | Martin Sellner | de | migrations-demographie:politiques_migratoires | personnalité publique : militant identitaire autrichien | correctiv.org
++ | Migrationspolitik | de | migrations-demographie:politiques_migratoires |  | correctiv.org
++ | Rückführungsgesetz | de | migrations-demographie:politiques_migratoires |  | correctiv.org
++ | Sellner | de | migrations-demographie:politiques_migratoires | personnalité publique : militant identitaire autrichien | correctiv.org
++ | Remigration | de | migrations-demographie:politiques_migratoires;humain:nous_eux |  | correctiv.org
++ | Remigration-Institut | de | migrations-demographie:politiques_migratoires;humain:nous_eux |  | correctiv.org
++ | Remigrations-Konzept | de | migrations-demographie:politiques_migratoires;humain:nous_eux |  | correctiv.org
++ | URANIUM | en | nucleaire-radiologique:electricite;energie-mondiale:nucleaire_civil |  | miningweekly.com
++ | Wasser | de | oceans-et-fleuves:cycle |  | correctiv.org
++ | niedrigwasser | de | oceans-et-fleuves:fleuves |  | correctiv.org
++ | Meeresspiegel | de | oceans-et-fleuves:niveau_mer |  | correctiv.org
++ | steigende meeresspiegel | de | oceans-et-fleuves:niveau_mer |  | correctiv.org
++ | Fisheries | en | oceans-et-fleuves:vivant_aquatique |  | consilium.europa.eu
++ | wal | de | oceans-et-fleuves:vivant_aquatique |  | correctiv.org
++ | détroit d'Ormuz | fr | ormuz:milieu;transport-maritime:detroits |  | feeds.feedburner.com
++ | Ormuz | fr | ormuz:milieu;transport-maritime:detroits |  | feeds.feedburner.com
++ | US-Zölle | de | politique-americaine:commerce |  | correctiv.org
++ | Zölle | de | politique-americaine:commerce |  | correctiv.org
++ | Donald Trump | de | politique-americaine:executif | personnalité publique : président des États-Unis | correctiv.org
++ | Commerce extérieur/international | fr | rivalite-sino-americaine:commerce |  | feeds.feedburner.com
++ | Trade | en | rivalite-sino-americaine:commerce |  | consilium.europa.eu
++ | Sommet | fr | rivalite-sino-americaine:diplomatie |  | feeds.feedburner.com
++ | xi | fr | rivalite-sino-americaine:diplomatie | personnalité publique : Xi Jinping ? — à confirmer (étiquette d'une lettre) | feeds.feedburner.com
++ | Trump et Poutine | fr | rivalite-sino-americaine:diplomatie;russie-ukraine:negociations |  | feeds.feedburner.com
++ | antimony | en | rivalite-sino-americaine:terres_rares |  | canadianminingjournal.com
++ | Battery Metal | en | rivalite-sino-americaine:terres_rares |  | canadianminingjournal.com
++ | CRITICAL MINERALS | en | rivalite-sino-americaine:terres_rares |  | miningweekly.com
++ | RARE EARTHS | en | rivalite-sino-americaine:terres_rares |  | miningweekly.com
++ | Russia's war against Ukraine | en | russie-ukraine:front |  | consilium.europa.eu
++ | Russland/Ukraine | de | russie-ukraine:front |  | correctiv.org
++ | Ukrainekrieg | de | russie-ukraine:front |  | correctiv.org
++ | kriegsverbrechen | de | russie-ukraine:front;guerre-levant:humanitaire |  | correctiv.org
++ | Krieg | de | russie-ukraine:front;guerre-levant:israel |  | correctiv.org
++ | Déclaration en faveur de la paix | fr | russie-ukraine:negociations |  | feeds.feedburner.com
++ | Putin | de | russie-ukraine:negociations | personnalité publique : président de la Russie | correctiv.org
++ | Selenskyj | de | russie-ukraine:negociations | personnalité publique : président de l'Ukraine | correctiv.org
++ | Alischer Usmanow | de | russie-ukraine:sanctions | personnalité publique : homme d'affaires russe (sanctions UE) | correctiv.org
++ | EU-Sanktionen | de | russie-ukraine:sanctions |  | correctiv.org
++ | Fridman | de | russie-ukraine:sanctions | personnalité publique : Mikhaïl Fridman, homme d'affaires russe (sanctions UE) | correctiv.org
++ | Sanktionen | de | russie-ukraine:sanctions;iran-nucleaire:sanctions |  | correctiv.org
++ | Automation | en | sciences-techniques:adoption |  | im-mining.com
++ | IoT | en | sciences-techniques:adoption |  | im-mining.com
++ | roboter | de | sciences-techniques:adoption |  | correctiv.org
++ | Technology | en | sciences-techniques:adoption |  | globalvoices.org
++ | Financing | en | sciences-techniques:capitaux |  | northernminer.com
++ | Actualité Intelligence artificielle | fr | sciences-techniques:ia |  | burkina24.com
++ | AI | en | sciences-techniques:ia |  | im-mining.com
++ | Anthropic | fr | sciences-techniques:ia | acteur : laboratoire d'IA | burkina24.com
++ | Artificial intelligence | en | sciences-techniques:ia |  | consilium.europa.eu
++ | Databricks | en | sciences-techniques:ia | acteur : entreprise de données et d'IA | im-mining.com
++ | IA | fr | sciences-techniques:ia |  | feeds.feedburner.com
++ | KI | de | sciences-techniques:ia |  | correctiv.org
++ | künstliche intelligenz | de | sciences-techniques:ia |  | correctiv.org
++ | Archéologie | fr | sciences-techniques:recherche |  | courrierinternational.com
++ | Research | en | sciences-techniques:recherche |  | consilium.europa.eu
++ | Science | en | sciences-techniques:recherche |  | globalvoices.org
++ | Sciences | fr | sciences-techniques:recherche |  | courrierinternational.com
++ | armes autonomes | fr | sciences-techniques:regulation;securite-europeenne:defense |  | feeds.feedburner.com
++ | robots tueurs | fr | sciences-techniques:regulation;securite-europeenne:defense |  | feeds.feedburner.com
++ | Sondervermögen | de | securite-europeenne:budgets_dette |  | correctiv.org
++ | Bundeswehr | de | securite-europeenne:defense |  | correctiv.org
++ | Security & defence | en | securite-europeenne:defense |  | consilium.europa.eu
++ | Sicherheit und Verteidigung | de | securite-europeenne:defense |  | correctiv.org
++ | Sécurité et défense | fr | securite-europeenne:defense |  | feeds.feedburner.com
++ | Wehrpflicht | de | securite-europeenne:defense |  | correctiv.org
++ | bnd | de | securite-europeenne:menace |  | correctiv.org
++ | Geheimdienst | de | securite-europeenne:menace |  | correctiv.org
++ | Spionage | de | securite-europeenne:menace |  | correctiv.org
++ | EU | de | securite-europeenne:otan_ue | acteur : Union européenne | correctiv.org
++ | Friedrich Merz | de | securite-europeenne:otan_ue | personnalité publique : chancelier fédéral allemand | correctiv.org
++ | Merz | de | securite-europeenne:otan_ue | personnalité publique : chancelier fédéral allemand | correctiv.org
++ | Bevölkerungsschutz | de | securite-publique:alertes |  | correctiv.org
++ | Crisis response | en | securite-publique:alertes |  | consilium.europa.eu
++ | Frauenhäuser | de | securite-publique:alertes |  | correctiv.org
++ | Katastrophenschutz | de | securite-publique:alertes |  | correctiv.org
++ | Krisenvorsorge | de | securite-publique:alertes |  | correctiv.org
++ | Zivilschutz | de | securite-publique:alertes |  | correctiv.org
++ | Betrug | de | securite-publique:corruption |  | correctiv.org
++ | Korruption | de | securite-publique:corruption |  | correctiv.org
++ | Machtmissbrauch | de | securite-publique:corruption |  | correctiv.org
++ | Scam | de | securite-publique:corruption |  | correctiv.org
++ | Spendenaffäre | de | securite-publique:corruption |  | correctiv.org
++ | Wahlbetrug | de | securite-publique:corruption |  | correctiv.org
++ | Anlagebetrug | de | securite-publique:corruption;crises-bancaires:faillites |  | correctiv.org
++ | Akten des Missbrauchs | de | securite-publique:justice |  | correctiv.org
++ | Gericht | de | securite-publique:justice |  | correctiv.org
++ | Gerichtsverfahren | de | securite-publique:justice |  | correctiv.org
++ | Justice | en | securite-publique:justice |  | consilium.europa.eu
++ | Justiz | de | securite-publique:justice |  | correctiv.org
++ | Klage | de | securite-publique:justice |  | correctiv.org
++ | Landgericht Berlin | de | securite-publique:justice |  | correctiv.org
++ | Landgericht Köln | de | securite-publique:justice |  | correctiv.org
++ | Law | en | securite-publique:justice |  | globalvoices.org
++ | Missbrauch | de | securite-publique:justice |  | correctiv.org
++ | Sexualisiertes Fehlverhalten | de | securite-publique:justice |  | correctiv.org
++ | Sexuelle Belästigung | de | securite-publique:justice |  | correctiv.org
++ | Sexueller Missbrauch | de | securite-publique:justice |  | correctiv.org
++ | Staatsanwaltschaft Dortmund | de | securite-publique:justice |  | correctiv.org
++ | Urteil | de | securite-publique:justice |  | correctiv.org
++ | Missbrauch im Jugendfußball | de | securite-publique:justice;competitions-culture:forme |  | correctiv.org
++ | Angriff | de | securite-publique:peur |  | correctiv.org
++ | Anschlag | de | securite-publique:peur |  | correctiv.org
++ | Attaque | fr | securite-publique:peur |  | feeds.feedburner.com
++ | Gewalt | de | securite-publique:peur |  | correctiv.org
++ | Gewalt im Jugendfußball | de | securite-publique:peur;competitions-culture:forme |  | correctiv.org
++ | Gewalt im Sport | de | securite-publique:peur;competitions-culture:forme |  | correctiv.org
++ | Polizei | de | securite-publique:polices |  | correctiv.org
++ | Verfassungsschutz | de | securite-publique:polices |  | correctiv.org
++ | Justiz & Polizei | de | securite-publique:polices;securite-publique:justice |  | correctiv.org
++ | Alexander Dobrindt | de | securite-publique:politique | personnalité publique : ministre fédéral allemand de l'Intérieur | correctiv.org
++ | Dobrindt | de | securite-publique:politique | personnalité publique : ministre fédéral allemand de l'Intérieur | correctiv.org
++ | Extremismus | de | securite-publique:politique |  | correctiv.org
++ | Rechtsextremismus | de | securite-publique:politique |  | correctiv.org
++ | Sicherheit | de | securite-publique:politique |  | correctiv.org
++ | Sécurité | fr | securite-publique:politique |  | courrierinternational.com
++ | Verdachtsmeldungen | de | securite-publique:sanctions |  | correctiv.org
++ | Benzodiazepine | de | securite-publique:trafics |  | correctiv.org
++ | Benzos | de | securite-publique:trafics |  | correctiv.org
++ | Drogen | de | securite-publique:trafics |  | correctiv.org
++ | Drogenkonsum | de | securite-publique:trafics |  | correctiv.org
++ | Drogentote | de | securite-publique:trafics |  | correctiv.org
++ | Narcotrafic | fr | securite-publique:trafics |  | courrierinternational.com
++ | NpS | de | securite-publique:trafics | acteur : nouvelles substances psychoactives | correctiv.org
++ | Opioide | de | securite-publique:trafics |  | correctiv.org
++ | Research Chemicals | de | securite-publique:trafics |  | correctiv.org
++ | Schmerzmittel | de | securite-publique:trafics |  | correctiv.org
++ | Sucht | de | securite-publique:trafics |  | correctiv.org
++ | synthetische Drogen | de | securite-publique:trafics |  | correctiv.org
++ | Tilidin | de | securite-publique:trafics |  | correctiv.org
++ | Umweltkriminalität | de | securite-publique:trafics |  | correctiv.org
++ | Umweltverbrechen in NRW | de | securite-publique:trafics |  | correctiv.org
++ | Espace | fr | soleil-espace:satellites |  | courrierinternational.com
++ | Space | en | soleil-espace:satellites |  | consilium.europa.eu
++ | pétroliers | fr | transport-maritime:flottes |  | feeds.feedburner.com
++ | LOGISTICS | en | transport-maritime:fret |  | miningweekly.com
++ | Transport | en | transport-maritime:fret |  | consilium.europa.eu
++ | Transports | fr | transport-maritime:fret |  | feeds.feedburner.com
++ | Bulk handling | en | transport-maritime:ports |  | im-mining.com
+- | 8 milliards de voisins | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | ACORGA | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Actualité | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | actualité Afrique | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Actualité au BF | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | actualité Chine | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | actualité Guinée | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Actualité Kenya | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Actualité Mexique | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Actualité Tanzanie | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | actualité USA | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Agenda | fr |  | rubrique maison (sans contenu) | feeds.feedburner.com
+- | agreement | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Aktuelles | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Alerte Burkina 24 | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Alerte sms | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Alertes 24h/24 | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Amendements - Commissions | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | Analysis | en |  | rubrique maison (sans contenu) | northernminer.com
+- | Announcements | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | Archives | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Aspect Engineering Solutions | en |  | acteur : prestataire | im-mining.com
+- | AspenTech Inmation | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Assay | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Ateliers | fr |  | rubrique maison (sans contenu) | feeds.feedburner.com
+- | Aus der Community | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Avis sous forme de lettre | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | AXXIS | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | AXXIS TITANIUM | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Bangla | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Berichterstattung | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Betroffene | de |  | rubrique maison (sans contenu) | correctiv.org
+- | BLASTMAP | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Breaking News | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | Briefing | fr |  | rubrique maison (sans contenu) | feeds.feedburner.com
+- | Carrefour du Maghreb | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Cartoon-Arena | de |  | nom de l'émetteur lui-même | correctiv.org
+- | Catalan | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | CEO | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Chinese | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | ci | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Comminution of minerals | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Communications in mining | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Communiqué de presse | fr |  | rubrique maison (sans contenu) | feeds.feedburner.com
+- | conference | en |  | rubrique maison (sans contenu) | canadianminingjournal.com
+- | CORRECTIV.Europe | de |  | nom de l'émetteur lui-même | correctiv.org
+- | CORRECTIV.Schweiz | de |  | nom de l'émetteur lui-même | correctiv.org
+- | Curation: LensEU Newsletter | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Curation: LensEU newsletter (DE) | de |  | rubrique maison (sans contenu) | correctiv.org
+- | CYANEX | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Dataset | en |  | rubrique maison (sans contenu) | canadianminingjournal.com
+- | Dernières nouvelles | fr |  | rubrique maison (sans contenu) | feeds.feedburner.com
+- | DIVERSIFIED MINERS | en |  | rubrique technique du métier minier, sans acteur ni événement | miningweekly.com
+- | Débat du jour | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Economic/Feasibility Studies | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | English | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Equipment & Suppliers | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Equipment Gallery | en |  | rubrique maison (sans contenu) | e-mj.com
+- | Equipment maintenance | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Evaluation | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Exploration | en |  | rubrique technique du métier minier, sans acteur ni événement | northernminer.com
+- | Explosives and blasting | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Extrablatt | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Factory | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | faktencheck-korrektur | de |  | rubrique maison (sans contenu) | correctiv.org
+- | faktencheck-update | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Fast News | en |  | rubrique maison (sans contenu) | northernminer.com
+- | Feature | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | Featured-auf-Startseite | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Für die Gesellschaft | de |  | rubrique maison (sans contenu) | correctiv.org
+- | GEOVIA | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Gesellschaft | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Good News | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | Grand reportage | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Géopolitique | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Hape | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Hindi | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Hintergrund | de |  | rubrique maison (sans contenu) | correctiv.org
+- | hope | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Humor | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | Ideas | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | In eigener Sache | de |  | rubrique maison (sans contenu) | correctiv.org
+- | International | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Interview | en |  | rubrique maison (sans contenu) | canadianminingjournal.com
+- | Invité international | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Japanese | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Kaminrunde | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Kazakh | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Klima-Blog | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Korean | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | L'art de raconter le monde | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | La fabrique du monde | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | LANGUAGES | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | Latest Videos | en |  | rubrique maison (sans contenu) | northernminer.com
+- | Le goût du monde | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Le Grand entretien du soir | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Le grand invité international | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Le regard de Newton Ahmed Barry | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Lokal | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Lokalkonferenz | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Love, etc. | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | Macedonian | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Magnitude 3 | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Magnitude 4 | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Magnitude 5 | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Magnitude 6 | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Malagasy | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Manufacturers | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Mathematik | de |  | rubrique maison (sans contenu) | correctiv.org
+- | menschliches Problem | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Mine Development | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Mine operation news | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Mine ventilation | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Mineral processing | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Mining consumables | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Mining equipment | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Mining industry recognition | en |  | rubrique maison (sans contenu) | im-mining.com
+- | Mining maintenance | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Mining People | en |  | rubrique maison (sans contenu) | canadianminingjournal.com
+- | MINING SERVICES | en |  | rubrique technique du métier minier, sans acteur ni événement | miningweekly.com
+- | Mining software | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Monde | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | MOU | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Nachhilfe | de |  | rubrique maison (sans contenu) | correctiv.org
+- | nachricht | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Nachrichten | de |  | rubrique maison (sans contenu) | correctiv.org
+- | nc | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Nepali | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | News | en |  | rubrique maison (sans contenu) | investinglive.com
+- | Northern Miner | en |  | nom de l'émetteur lui-même | canadianminingjournal.com
+- | Obituary | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | Operating Mine | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Partner Content | en |  | rubrique maison (sans contenu) | mining-technology.com
+- | Past Day | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Past Month | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Past Week | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Pendant que vous dormiez | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | playbook | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Portfolio | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | Portuguese | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Pourquoi RFI dit ça ? | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Press release | fr |  | rubrique maison (sans contenu) | feeds.feedburner.com
+- | Presseausweis | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Processing | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Processing Solutions | en |  | rubrique technique du métier minier, sans acteur ni événement | e-mj.com
+- | Procès-verbal - Commissions | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | Projet d'ordre du jour - Commissions | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | Projet de rapport | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | Promoted Content | en |  | rubrique maison (sans contenu) | northernminer.com
+- | Proposition de résolution | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | Proposition de résolution commune | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | Rapport | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | Recherchen | de |  | rubrique maison (sans contenu) | correctiv.org
+- | redaktion-schweiz | de |  | nom de l'émetteur lui-même | correctiv.org
+- | refinery | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Related Articles am Ende | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Reportage | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | Resources/Reserves | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | retombées économiques du boom mondial | fr |  | rubrique maison (sans contenu) | burkina24.com
+- | Revue de presse internationale | fr |  | rubrique maison (sans contenu) | rfi.fr
+- | Rezept | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Ruderclub | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Russian | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Salon5 | de |  | nom de l'émetteur lui-même | correctiv.org
+- | Schauspiel Köln | de |  | nom de l'émetteur lui-même | correctiv.org
+- | Schmerzensgeld | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Selbsthilfe | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Société | fr |  | rubrique maison (sans contenu) | lefigaro.fr
+- | Spanish | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | Sponsored | en |  | rubrique maison (sans contenu) | canadianminingjournal.com
+- | Sponsored Post | en |  | rubrique maison (sans contenu) | canadianminingjournal.com
+- | Spotlight | de |  | rubrique maison (sans contenu) | correctiv.org
+- | SPOTLIGHT Gelsenkirchen | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Spotlight Schweiz | de |  | rubrique maison (sans contenu) | correctiv.org
+- | stream | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Study | en |  | rubrique maison (sans contenu) | canadianminingjournal.com
+- | Suppliers Report | en |  | rubrique maison (sans contenu) | e-mj.com
+- | Surpac | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Surpac 2027 | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Sustainability | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Sustainable Development | en |  | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
+- | Sustainable mining | en |  | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
+- | Technical Analysis | en |  | rubrique maison (sans contenu) | investinglive.com
+- | Tendance | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | Texte adopté | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | Theater und Journalismus | de |  | nom de l'émetteur lui-même | correctiv.org
+- | timmy | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Tribune | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | Témoignages | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | Ukrainian | en |  | langue de l'article (Global Voices), pas un sujet | globalvoices.org
+- | us | en |  | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
+- | Video | en |  | rubrique maison (sans contenu) | northernminer.com
+- | Vidéo d'une réunion d'une commission | fr |  | type de document parlementaire (format, pas un sujet) | feeds.feedburner.com
+- | vimeo | de |  | rubrique maison (sans contenu) | correctiv.org
+- | Vox | fr |  | rubrique maison (sans contenu) | lefigaro.fr
+- | Vu de Tunisie | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | Vu du Royaume-Uni | fr |  | rubrique maison (sans contenu) | courrierinternational.com
+- | Weblog | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | Wirtschaft und Umwelt | de |  | rubrique maison | correctiv.org
+- | WORLD | en |  | rubrique maison (sans contenu) | globalvoices.org
+- | XPLOLOG | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | XPLOSMART | en |  | marque ou logiciel (produit, pas un acteur) | im-mining.com
+- | Zwischen Rezept und Rausch | de |  | rubrique maison (sans contenu) | correctiv.org
+- | À ne pas manquer | fr |  | rubrique maison (sans contenu) | feeds.feedburner.com
+- | Étude | fr |  | rubrique maison (sans contenu) | feeds.feedburner.com
