@@ -37,7 +37,7 @@ jobs:
           cherche = {"gemma-4-12b": "gemma-4-12B-it-GGUF", "gemma-4-e4b": "gemma-4-E4B-it-GGUF",
                      "qwen2.5-7b": "Qwen2.5-7B-Instruct-GGUF"}[os.environ["MODELE_CHOISI"]]
           trouve = None
-          for auteur in ("bartowski", "unsloth", "ggml-org", "lmstudio-community"):
+          for auteur in ("ggml-org", "bartowski", "unsloth", "lmstudio-community"):
               url = f"https://huggingface.co/api/models?author={auteur}&search={cherche}&limit=10"
               for m in json.load(urllib.request.urlopen(url)):
                   info = json.load(urllib.request.urlopen(f"https://huggingface.co/api/models/{m['id']}"))
@@ -61,7 +61,15 @@ jobs:
       - name: Télécharger le modèle si absent
         run: |
           mkdir -p modeles
-          [ -f "modeles/$MODELE" ] || curl -sSL -o "modeles/$MODELE" "$MODELE_URL"
+          echo "fichier : $MODELE_URL"
+          # passage 44943239410 : téléchargement bloqué plus de 13 minutes sans aucun signe ; désormais : abandon si
+          # le débit tombe sous 1 Mo/s pendant 60 s, trois reprises, et la taille affichée toutes les 30 s
+          if [ ! -f "modeles/$MODELE" ]; then
+            ( while sleep 30; do ls -lh modeles 2>/dev/null | tail -1; done ) & SUIVI=$!
+            curl -sSL --retry 3 --retry-delay 10 -C - --speed-time 60 --speed-limit 1000000 \
+                 -o "modeles/$MODELE" "$MODELE_URL" || { kill $SUIVI; echo "téléchargement en échec"; exit 1; }
+            kill $SUIVI
+          fi
           ls -lh modeles
       - name: llama.cpp (binaire officiel, sinon compilation)
         env:
