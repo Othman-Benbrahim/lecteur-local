@@ -1,18 +1,15 @@
 # lecteur-local
 
-Lecteur de textes par un modèle de langue OUVERT tournant en local sur les machines de GitHub Actions (llama.cpp, sans
-carte graphique, sans clé ni coût), pour le bot de prévision
-[metac-bot-template](https://github.com/Othman-Benbrahim/metac-bot-template). Décision de l'auteur du 2026-11-21
-(19 h 48) : un dépôt séparé pour ne pas charger le dépôt du bot ; le bot lit les résultats publiés ici.
+Collecteur de textes pour le bot de prévision
+[metac-bot-template](https://github.com/Othman-Benbrahim/metac-bot-template), dans un dépôt séparé pour ne pas
+charger celui du bot (décision de l'auteur du 2026-11-21, 19 h 48).
 
-Principes :
-- le modèle LIT, il ne juge pas : il extrait des faits structurés (date, acteur, événement, chiffre, lien vers la
-  source) ; les probabilités restent calculées par le code du bot ;
-- les textes lus ne sont jamais gardés : seuls les champs extraits et le lien vers la source sont écrits ;
-- chaque extraction est contrôlée là où une vérité est connue (par exemple les identifiants de failles, relus par une
-  expression régulière) : le taux de fidélité est publié avec les résultats ;
-- robots.txt respecté pour toute page lue.
+Décision de l'auteur du 2026-11-21 (23 h 27 - 23 h 42) : abandon des lecteurs par modèle de langue (Gemma 4 E4B,
+ReDefiNER, assemblage hybride). Leurs erreurs, imprévisibles, finiraient dans la documentation et la rendraient
+inexploitable. Le dépôt passe à un lecteur sans modèle : des listes de mots téléchargées (noms, termes), un comptage
+automatique et sériel, des comptes par jour, par source et par terme ; jamais le texte des articles. Les noms nouveaux
+repérés dans les flux attendent dans un fichier de candidats et n'entrent dans les listes qu'après validation par
+l'auteur.
 
-Premier passage : flux public du CERT-FR (ANSSI) ; modèle Qwen2.5-7B-Instruct (licence Apache 2.0), quantifié Q4_K_M.
-
-Résultats : `resultats/faits-cyber-<modèle>.json`, `resultats/fidelite-<modèle>.json` (un fichier par modèle, pour comparer). Le premier passage (sur le seul résumé du flux, invalide : 58 CVE inventées sur 61) reste dans l historique (commit ea0a9cb).
+Le code des anciens lecteurs reste dans l'historique (dernier état : commit abe038c) ; leurs mesures restent dans
+`resultats/`.
