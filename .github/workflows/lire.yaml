@@ -38,8 +38,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download --repo ggml-org/llama.cpp --pattern "*bin-ubuntu-x64.zip" -D llama
-          cd llama && unzip -q *.zip && ls
+          # le nom des fichiers publiés change d'une version à l'autre : on choisit dans la liste réelle le binaire
+          # Linux x64 pour processeur (ni Vulkan, ni CUDA, ni ROCm, ni SYCL, ni ARM)
+          gh release view --repo ggml-org/llama.cpp --json assets --jq '.assets[].name' > assets.txt
+          cat assets.txt
+          A=$(grep -i "ubuntu" assets.txt | grep -i "x64" | grep -viE "vulkan|cuda|rocm|hip|sycl|arm|s390|openvino|kleidi" | head -1)
+          echo "choisi : $A"
+          [ -n "$A" ] || exit 1
+          mkdir -p llama && gh release download --repo ggml-org/llama.cpp --pattern "$A" -D llama
+          cd llama && (unzip -q "$A" 2>/dev/null || tar xzf "$A") && find . -name "llama-server*" -type f
       - name: Démarrer le serveur
         run: |
           SRV=$(find llama -name llama-server -type f | head -1)
