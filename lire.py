@@ -44,10 +44,12 @@ SCHEMA = {
         "exploitation_active": {"type": "boolean"},
         "citation_exploitation": {"type": ["string", "null"], "maxLength": 200},
         "attaquant_nomme": {"type": ["string", "null"], "maxLength": 60},
+        "role_du_nom": {"type": ["string", "null"], "enum": ["auteur de l'attaque", "chercheur ou rapporteur", "victime",
+                                                              "éditeur", None]},
         "pays_nomme": {"type": ["string", "null"], "maxLength": 40},
         "citation_attaquant_ou_pays": {"type": ["string", "null"], "maxLength": 200},
     },
-    "required": ["editeurs", "exploitation_active", "citation_exploitation", "attaquant_nomme", "pays_nomme",
+    "required": ["editeurs", "exploitation_active", "citation_exploitation", "attaquant_nomme", "role_du_nom", "pays_nomme",
                  "citation_attaquant_ou_pays"],
     "additionalProperties": False,
 }
@@ -57,7 +59,9 @@ CONSIGNE = ("Tu lis une publication de l'agence française de cybersécurité (C
             "texte (jamais « CERT-FR » ni « ANSSI »). exploitation_active = vrai seulement si le texte dit que la "
             "vulnérabilité est exploitée ; alors citation_exploitation = la phrase exacte du texte qui le dit, copiée "
             "mot pour mot. attaquant_nomme, pays_nomme = un groupe d'attaquants ou un pays nommé comme auteur d'une "
-            "attaque, sinon null ; alors citation_attaquant_ou_pays = la phrase exacte, copiée mot pour mot.")
+            "attaque, sinon null ; alors citation_attaquant_ou_pays = la phrase exacte, copiée mot pour mot, et "
+            "role_du_nom = le rôle que la phrase donne à ce nom. Attention : une entreprise qui DÉCOUVRE ou SIGNALE une "
+            "attaque (par exemple Google, Mandiant, Microsoft) n'est pas l'attaquant.")
 RISQUES = ["exécution de code arbitraire à distance", "exécution de code arbitraire", "déni de service à distance",
            "déni de service", "élévation de privilèges", "atteinte à la confidentialité des données",
            "atteinte à l'intégrité des données", "contournement de la politique de sécurité", "injection de code indirecte",
@@ -115,6 +119,8 @@ def verifier(f: dict, texte: str) -> tuple[dict, dict]:
     if expl and not (f.get("citation_exploitation") and normal(f["citation_exploitation"]) in nt):
         expl, rej["exploitation"] = False, 1
     att, pays = f.get("attaquant_nomme"), f.get("pays_nomme")
+    if att and f.get("role_du_nom") != "auteur de l'attaque":    # passage 44941605565 : « Google et Mandiant » (qui ont
+        att = None                                              # signalé l'attaque) rendus comme attaquants
     if (att or pays) and not (f.get("citation_attaquant_ou_pays") and normal(f["citation_attaquant_ou_pays"]) in nt
                               and all(normal(x) in nt for x in (att, pays) if x)):
         att, pays, rej["attaquant_pays"] = None, None, 1
@@ -182,7 +188,8 @@ def principal() -> int:
             nt = normal(t)
             faits.append({"lien": e["lien"], "date": e["date"], "type": m.group(1) if m else "autre",
                           "cve": sorted(set(CVE_RE.findall(t))),
-                          "risques": [r_ for r_ in RISQUES if r_ in nt], **garde})
+                          "risques": [r_ for r_ in RISQUES if r_ in nt and not any(r_ != q and r_ in q and q in nt
+                                                                                    for q in RISQUES)], **garde})
             print(f"{d:5.1f} s  {faits[-1]['type']:8s} {len(faits[-1]['cve']):2d} CVE  éditeurs {garde['editeurs']}  "
                   f"exploitée {garde['exploitation_active']}  rejets {rej}  {e['lien']}", flush=True)
     propose = controle["editeurs_proposes"] + controle["exploitations_proposees"] + controle["attaquants_pays_proposes"]
