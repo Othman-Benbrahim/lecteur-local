@@ -3,6 +3,38 @@
  "articles": [
   {
    "lien": "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/",
+   "hybride": {
+    "exploitees": [
+     "CVE-2026-94127"
+    ],
+    "acteurs": [
+     [
+      "AM",
+      "VICTIM"
+     ],
+     [
+      "Adaptive Security",
+      "RESEARCHER"
+     ],
+     [
+      "Attackers",
+      "ATTACKER"
+     ],
+     [
+      "BIG-IP",
+      "VENDOR"
+     ],
+     [
+      "CISA",
+      "VICTIM"
+     ],
+     [
+      "F5",
+      "VENDOR"
+     ]
+    ],
+    "hors_catalogue_kev": []
+   },
    "exploitees": [
     "CVE-2026-94127"
    ],
@@ -22,6 +54,11 @@
     {
      "nom": "US Cybersecurity and Infrastructure Security Agency (CISA)",
      "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "state-backed hackers",
+     "role": "auteur de l'attaque",
      "pays": null
     }
    ],
@@ -47,19 +84,7 @@
       "VENDOR"
      ],
      [
-      "Cisco",
-      "VENDOR"
-     ],
-     [
-      "Citrix",
-      "VENDOR"
-     ],
-     [
       "F5",
-      "VENDOR"
-     ],
-     [
-      "Microsoft 365",
       "VENDOR"
      ]
     ]
@@ -67,6 +92,39 @@
   },
   {
    "lien": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
+   "hybride": {
+    "exploitees": [
+     "CVE-2026-102764",
+     "CVE-2026-123890"
+    ],
+    "acteurs": [
+     [
+      "Armory Castle",
+      "ATTACKER"
+     ],
+     [
+      "Broadcom",
+      "VENDOR"
+     ],
+     [
+      "Mandiant",
+      "RESEARCHER"
+     ],
+     [
+      "PM",
+      "VICTIM"
+     ],
+     [
+      "UNC5221",
+      "ATTACKER"
+     ],
+     [
+      "VMware",
+      "VENDOR"
+     ]
+    ],
+    "hors_catalogue_kev": []
+   },
    "exploitees": [
     "CVE-2026-102764",
     "CVE-2026-123890"
@@ -75,14 +133,14 @@
    "kev_non_signalees": [],
    "acteurs": [
     {
-     "nom": "Broadcom",
-     "role": "éditeur",
-     "pays": null
-    },
-    {
      "nom": "Chinese-linked hackers",
      "role": "auteur de l'attaque",
      "pays": "China"
+    },
+    {
+     "nom": "Armory Castle (formerly UNC5221)",
+     "role": "auteur de l'attaque",
+     "pays": null
     },
     {
      "nom": "Mandiant",
@@ -95,9 +153,14 @@
      "pays": null
     },
     {
-     "nom": "Armory Castle (formerly UNC5221)",
-     "role": "auteur de l'attaque",
-     "pays": "China"
+     "nom": "Broadcom",
+     "role": "éditeur",
+     "pays": null
+    },
+    {
+     "nom": "VMware",
+     "role": "éditeur",
+     "pays": null
     }
    ],
    "redefiner": {
@@ -132,6 +195,24 @@
   },
   {
    "lien": "https://www.bleepingcomputer.com/news/security/asus-warns-of-critical-hard-coded-key-flaw-in-control-center-express/",
+   "hybride": {
+    "exploitees": [],
+    "acteurs": [
+     [
+      "ASUS",
+      "VENDOR"
+     ],
+     [
+      "Adaptive Security",
+      "RESEARCHER"
+     ],
+     [
+      "PM",
+      "VICTIM"
+     ]
+    ],
+    "hors_catalogue_kev": []
+   },
    "exploitees": [],
    "hors_catalogue_kev": [],
    "kev_non_signalees": [],
@@ -139,6 +220,11 @@
     {
      "nom": "ASUS",
      "role": "éditeur",
+     "pays": null
+    },
+    {
+     "nom": "Adaptive Security",
+     "role": "chercheur ou rapporteur",
      "pays": null
     }
    ],
@@ -165,16 +251,78 @@
      [
       "Adaptive Security",
       "RESEARCHER"
-     ],
-     [
-      "VMware",
-      "VENDOR"
      ]
     ]
    }
   },
   {
    "lien": "https://www.securityweek.com/whatsapp-fixes-flaw-uncovered-while-disrupting-scam-campaign/",
+   "hybride": {
+    "exploitees": [
+     "CVE-2026-23871"
+    ],
+    "acteurs": [
+     [
+      "Agent Framework Releases Poisoned With",
+      "ATTACKER"
+     ],
+     [
+      "Attacks Java4Shell Exploitation Attempts Begin",
+      "ATTACKER"
+     ],
+     [
+      "Bolster Phone Number Privacy Written",
+      "ATTACKER"
+     ],
+     [
+      "By Eduard Kovacs Eduard Kovacs",
+      "VICTIM"
+     ],
+     [
+      "China-Linked Hackers",
+      "ATTACKER"
+     ],
+     [
+      "Data Breach Impacts Over",
+      "ATTACKER"
+     ],
+     [
+      "Debate",
+      "VICTIM"
+     ],
+     [
+      "Feature",
+      "VICTIM"
+     ],
+     [
+      "Five Defendants Sentenced",
+      "ATTACKER"
+     ],
+     [
+      "Major Outages and AI Patching",
+      "VICTIM"
+     ],
+     [
+      "Meta",
+      "RESEARCHER"
+     ],
+     [
+      "Platform Out of Preview Microsoft",
+      "VENDOR"
+     ],
+     [
+      "Vendors Rush Out Advisories Last",
+      "VICTIM"
+     ],
+     [
+      "WhatsApp",
+      "VICTIM"
+     ]
+    ],
+    "hors_catalogue_kev": [
+     "CVE-2026-23871"
+    ]
+   },
    "exploitees": [],
    "hors_catalogue_kev": [],
    "kev_non_signalees": [],
@@ -190,12 +338,17 @@
      "pays": null
     },
     {
+     "nom": "SecurityWeek",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
      "nom": "Meta",
      "role": "éditeur",
      "pays": null
     },
     {
-     "nom": "Meta’s own researchers",
+     "nom": "External researcher",
      "role": "chercheur ou rapporteur",
      "pays": null
     }
@@ -245,6 +398,56 @@
   },
   {
    "lien": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
+   "hybride": {
+    "exploitees": [],
+    "acteurs": [
+     [
+      "Chatwoot",
+      "VENDOR"
+     ],
+     [
+      "China-Linked Hackers",
+      "ATTACKER"
+     ],
+     [
+      "Employee of Hacked Firm",
+      "ATTACKER"
+     ],
+     [
+      "GitHub Enterprise Server",
+      "VENDOR"
+     ],
+     [
+      "GitLab",
+      "VENDOR"
+     ],
+     [
+      "Mastodon",
+      "VENDOR"
+     ],
+     [
+      "PoC Exploits Go Public Written",
+      "ATTACKER"
+     ],
+     [
+      "Readies Critical Security Updates",
+      "ATTACKER"
+     ],
+     [
+      "Veria Labs",
+      "RESEARCHER"
+     ],
+     [
+      "Vulnerabilities Critical Perforce Puppet RCE",
+      "ATTACKER"
+     ],
+     [
+      "WatchTowr",
+      "RESEARCHER"
+     ]
+    ],
+    "hors_catalogue_kev": []
+   },
    "exploitees": [],
    "hors_catalogue_kev": [],
    "kev_non_signalees": [],
@@ -268,11 +471,6 @@
      "nom": "WatchTowr",
      "role": "chercheur ou rapporteur",
      "pays": null
-    },
-    {
-     "nom": "SecurityWeek",
-     "role": "chercheur ou rapporteur",
-     "pays": null
     }
    ],
    "redefiner": {
@@ -292,6 +490,10 @@
       "VENDOR"
      ],
      [
+      "Norwegian Energy Firm",
+      "VENDOR"
+     ],
+     [
       "Russian APT",
       "ATTACKER"
      ],
@@ -308,6 +510,56 @@
   },
   {
    "lien": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/",
+   "hybride": {
+    "exploitees": [],
+    "acteurs": [
+     [
+      "Agent Framework Releases Poisoned With",
+      "ATTACKER"
+     ],
+     [
+      "Armory Castle",
+      "ATTACKER"
+     ],
+     [
+      "Broadcom",
+      "VENDOR"
+     ],
+     [
+      "China-Linked Hackers",
+      "ATTACKER"
+     ],
+     [
+      "Five Defendants Sentenced",
+      "ATTACKER"
+     ],
+     [
+      "Mandiant",
+      "RESEARCHER"
+     ],
+     [
+      "UNC5221",
+      "ATTACKER"
+     ],
+     [
+      "VMware",
+      "VENDOR"
+     ],
+     [
+      "Vendors Rush Out Advisories Last",
+      "VICTIM"
+     ],
+     [
+      "Visa",
+      "VENDOR"
+     ],
+     [
+      "Warp Panda",
+      "ATTACKER"
+     ]
+    ],
+    "hors_catalogue_kev": []
+   },
    "exploitees": [],
    "hors_catalogue_kev": [],
    "kev_non_signalees": [
@@ -316,23 +568,13 @@
    ],
    "acteurs": [
     {
-     "nom": "China-linked espionage group",
-     "role": "auteur de l'attaque",
-     "pays": "China"
-    },
-    {
      "nom": "Armory Castle",
      "role": "auteur de l'attaque",
      "pays": "China"
     },
     {
-     "nom": "UNC5221",
-     "role": "auteur de l'attaque",
-     "pays": null
-    },
-    {
-     "nom": "Warp Panda",
-     "role": "auteur de l'attaque",
+     "nom": "VMware",
+     "role": "éditeur",
      "pays": null
     },
     {
@@ -347,11 +589,6 @@
     },
     {
      "nom": "Broadcom",
-     "role": "éditeur",
-     "pays": null
-    },
-    {
-     "nom": "VMware",
      "role": "éditeur",
      "pays": null
     }
@@ -379,11 +616,11 @@
       "VENDOR"
      ],
      [
-      "Google",
-      "VENDOR"
+      "European Commission",
+      "VICTIM"
      ],
      [
-      "JPMorgan",
+      "Google",
       "VENDOR"
      ],
      [

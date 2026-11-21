@@ -1,24 +1,31 @@
 {
- "date": "2026-11-21T21:33:48+00:00",
+ "date": "2026-11-21T22:15:27+00:00",
  "modele": "gemma-4-e4b",
  "articles_lus": 6,
- "citations_rejetees": 9,
- "affirmations": 38,
+ "citations_rejetees": 0,
+ "affirmations": 37,
  "exploitees_dites": 3,
  "exploitees_dans_kev": 3,
  "cve_kev_dans_texte": 5,
  "cve_kev_dites_exploitees": 3,
- "exploitations_ecartees_conditionnel": 9,
- "fidelite_citations": 0.763,
+ "exploitations_ecartees_conditionnel": 8,
+ "fidelite_citations": 1.0,
  "precision_exploitation_kev": 1.0,
  "rappel_exploitation_kev": 0.6,
- "secondes_par_article": 53.5,
+ "secondes_par_article": 68.1,
+ "hybride": {
+  "exploitees_dites": 4,
+  "exploitees_dans_kev": 3,
+  "precision_exploitation_kev": 0.75,
+  "rappel_exploitation_kev": 0.6,
+  "secondes_par_article": 21.3
+ },
  "redefiner": {
   "exploitees_dites": 18,
   "exploitees_dans_kev": 5,
   "precision_exploitation_kev": 0.278,
   "rappel_exploitation_kev": 1.0,
-  "secondes_par_article": 31.4
+  "secondes_par_article": 19.6
  },
  "note": "précision : part des failles dites exploitées présentes au catalogue KEV ; rappel : part des failles du texte présentes au catalogue que le modèle a dites exploitées (une faille du catalogue n'est pas forcément dite exploitée dans l'article : le rappel est une borne basse)"
 }
