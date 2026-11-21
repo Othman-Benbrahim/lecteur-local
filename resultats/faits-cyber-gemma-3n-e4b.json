@@ -1,6 +1,6 @@
 {
  "source": "https://cert.cyber.gouv.fr/feed/",
- "modele": "gemma-4-e4b",
+ "modele": "gemma-3n-e4b (cherché : gemma-4-e4b, recherche Hugging Face trop large)",
  "faits": [
   {
    "lien": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1344/",

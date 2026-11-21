@@ -40,6 +40,9 @@ jobs:
           for auteur in ("ggml-org", "bartowski", "unsloth", "lmstudio-community"):
               url = f"https://huggingface.co/api/models?author={auteur}&search={cherche}&limit=10"
               for m in json.load(urllib.request.urlopen(url)):
+                  # la recherche est approximative : « gemma-4-E4B » avait rendu « gemma-3n-E4B » (passage 44944619414)
+                  if cherche.lower().replace("-gguf", "") not in m["id"].lower():
+                      continue
                   info = json.load(urllib.request.urlopen(f"https://huggingface.co/api/models/{m['id']}"))
                   if info.get("gated"):
                       continue
