@@ -10,7 +10,7 @@ Format d'une ligne (texte, séparateur « | ») :
 (fiche:compartiment:élément ou acteur, tel qu'écrit dans listes/inventaire-fiches.csv).
 
 Sources de ce premier passage :
-  1. Wikidata (CC0) : noms et alias, en anglais et en français, des acteurs DÉJÀ NOMMÉS dans les fiches (premier
+  1. Wikidata (CC0), par son service de requêtes public : noms et alias, en anglais et en français, des acteurs DÉJÀ NOMMÉS dans les fiches (premier
      résultat de la recherche Wikidata, identifiant et description donnés pour que l'auteur vérifie que c'est le bon).
   2. Étiquettes (<category>) posées par les rédactions dans les flux RSS du bot (collecte_rss.FLUX).
 Les types génériques, les forces non humaines et les éléments (thésaurus) viendront dans des passages suivants.
@@ -30,7 +30,7 @@ from pathlib import Path
 LISTES = Path("listes")
 CANDIDATS = LISTES / "candidats.txt"
 VALIDES = LISTES / "valides.txt"
-WD_API = "https://www.wikidata.org/w/api.php"
+SPARQL = "https://query.wikidata.org/sparql"
 ENTETE = """# Termes proposés au lecteur sans modèle (fichier écrit par le workflow « proposer » ; ne pas éditer dans le dépôt).
 # Marquer chaque ligne : « + » validé, « - » refusé, à la place du « ? ». Le rattachement peut être corrigé
 # (fiche:compartiment:élément ou acteur, comme dans listes/inventaire-fiches.csv ; « ? » si inconnu).
@@ -60,9 +60,20 @@ def nettoyer_nom(nom: str) -> str:
 
 
 # ------------------------------------------------------------------------------------------------- 1. Wikidata
+REQUETE = """SELECT ?item ?n ?desc WHERE {
+  SERVICE wikibase:mwapi { bd:serviceParam wikibase:api "EntitySearch" ; wikibase:endpoint "www.wikidata.org" ;
+    mwapi:search "%s" ; mwapi:language "fr" . ?item wikibase:apiOutputItem mwapi:item . ?ord wikibase:apiOrdinal true . }
+  FILTER(?ord = 0)
+  ?item rdfs:label|skos:altLabel ?n . FILTER(LANG(?n) = "en" || LANG(?n) = "fr")
+  OPTIONAL { ?item schema:description ?desc . FILTER(LANG(?desc) = "fr") }
+}"""
+
+
 def wikidata(c, politesse, acteurs: list[dict]) -> list[tuple[str, str, str, str]]:
-    if not politesse.autorise(c, WD_API + "?action=wbsearchentities"):
-        print("Wikidata : robots.txt refuse l'API, rien proposé", flush=True)
+    """Passage 1 (2026-11-22) : l'API www.wikidata.org/w/api.php est refusée par robots.txt ; on passe par le service
+    de requêtes public (query.wikidata.org), déjà employé par le bot (collecte_elections.py), recherche comprise."""
+    if not politesse.autorise(c, SPARQL):
+        print("Wikidata (service de requêtes) : robots.txt refuse, rien proposé", flush=True)
         return []
     out, vus = [], {}
     for a in acteurs:
@@ -73,32 +84,24 @@ def wikidata(c, politesse, acteurs: list[dict]) -> list[tuple[str, str, str, str
         if nom.lower() not in vus:
             time.sleep(1)
             try:
-                r = c.get(WD_API, params={"action": "wbsearchentities", "search": nom, "language": "fr",
-                                          "uselang": "fr", "type": "item", "limit": 1, "format": "json"})
-                res = r.json().get("search", [])
+                r = c.get(SPARQL, params={"query": REQUETE % nom.replace("\\", " ").replace('"', " "), "format": "json"},
+                          headers={"Accept": "application/sparql-results+json"})
+                r.raise_for_status()
+                vus[nom.lower()] = r.json()["results"]["bindings"]
             except Exception as e:
-                print(f"Wikidata « {nom} » : {type(e).__name__}"[:200], flush=True)
-                res = []
-            vus[nom.lower()] = res[0] if res else None
-        ent = vus[nom.lower()]
-        if not ent:
+                print(f"Wikidata « {nom} » : {type(e).__name__}: {e}"[:200], flush=True)
+                vus[nom.lower()] = []
+        res = vus[nom.lower()]
+        if not res:
             print(f"Wikidata « {nom} » : aucun résultat", flush=True)
             continue
-        qid = ent["id"]
-        try:
-            time.sleep(1)
-            d = c.get(WD_API, params={"action": "wbgetentities", "ids": qid, "props": "labels|aliases|descriptions",
-                                      "languages": "en|fr", "format": "json"}).json()["entities"][qid]
-        except Exception as e:
-            print(f"Wikidata {qid} : {type(e).__name__}"[:200], flush=True)
-            continue
-        desc = (d.get("descriptions", {}).get("fr") or d.get("descriptions", {}).get("en") or {}).get("value", "")
+        qid = res[0]["item"]["value"].rsplit("/", 1)[-1]
+        desc = next((b["desc"]["value"] for b in res if "desc" in b), "")
         source = f"wikidata:{qid} ({desc[:60]})" if desc else f"wikidata:{qid}"
-        for lg in ("en", "fr"):
-            noms = [d.get("labels", {}).get(lg, {}).get("value")] + [x["value"] for x in d.get("aliases", {}).get(lg, [])]
-            for n in noms:
-                if n and "|" not in n:
-                    out.append((n, lg, place, source))
+        for b in res:
+            n, lg = b["n"]["value"], b["n"].get("xml:lang", "")
+            if n and "|" not in n and lg in ("en", "fr"):
+                out.append((n, lg, place, source))
     return out
 
 
