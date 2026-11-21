@@ -1,0 +1,236 @@
+{
+ "modele": "gemma-4-e4b",
+ "articles": [
+  {
+   "lien": "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/",
+   "exploitees": [
+    "CVE-2026-94127"
+   ],
+   "hors_catalogue_kev": [],
+   "kev_non_signalees": [],
+   "acteurs": [
+    {
+     "nom": "F5",
+     "role": "éditeur",
+     "pays": "US"
+    },
+    {
+     "nom": "Shadowserver",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "US Cybersecurity and Infrastructure Security Agency (CISA)",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    }
+   ]
+  },
+  {
+   "lien": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
+   "exploitees": [
+    "CVE-2026-102764",
+    "CVE-2026-123890"
+   ],
+   "hors_catalogue_kev": [],
+   "kev_non_signalees": [],
+   "acteurs": [
+    {
+     "nom": "Broadcom",
+     "role": "éditeur",
+     "pays": null
+    },
+    {
+     "nom": "Chinese-linked hackers",
+     "role": "auteur de l'attaque",
+     "pays": "China"
+    },
+    {
+     "nom": "Mandiant",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "Google Threat Intelligence Group (GTIG)",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "Armory Castle (formerly UNC5221)",
+     "role": "auteur de l'attaque",
+     "pays": "China"
+    }
+   ]
+  },
+  {
+   "lien": "https://www.bleepingcomputer.com/news/security/asus-warns-of-critical-hard-coded-key-flaw-in-control-center-express/",
+   "exploitees": [
+    "CVE-2026-112115",
+    "CVE-2026-114202",
+    "CVE-2026-114204",
+    "CVE-2026-114205",
+    "CVE-2026-126574"
+   ],
+   "hors_catalogue_kev": [
+    "CVE-2026-112115",
+    "CVE-2026-114202",
+    "CVE-2026-114204",
+    "CVE-2026-114205",
+    "CVE-2026-126574"
+   ],
+   "kev_non_signalees": [],
+   "acteurs": [
+    {
+     "nom": "ASUS",
+     "role": "éditeur",
+     "pays": null
+    }
+   ]
+  },
+  {
+   "lien": "https://www.securityweek.com/whatsapp-fixes-flaw-uncovered-while-disrupting-scam-campaign/",
+   "exploitees": [
+    "CVE-2026-23871"
+   ],
+   "hors_catalogue_kev": [
+    "CVE-2026-23871"
+   ],
+   "kev_non_signalees": [],
+   "acteurs": [
+    {
+     "nom": "WhatsApp",
+     "role": "éditeur",
+     "pays": null
+    },
+    {
+     "nom": "scammer",
+     "role": "auteur de l'attaque",
+     "pays": null
+    },
+    {
+     "nom": "SecurityWeek",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "Meta",
+     "role": "éditeur",
+     "pays": null
+    },
+    {
+     "nom": "external researcher",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "Meta’s own researchers",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    }
+   ]
+  },
+  {
+   "lien": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
+   "exploitees": [
+    "CVE-2026-132825"
+   ],
+   "hors_catalogue_kev": [
+    "CVE-2026-132825"
+   ],
+   "kev_non_signalees": [],
+   "acteurs": [
+    {
+     "nom": "Previdian",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "Veria Labs",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "WatchTowr",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "GitHub Enterprise Server",
+     "role": "victime",
+     "pays": null
+    },
+    {
+     "nom": "Chatwoot",
+     "role": "victime",
+     "pays": null
+    },
+    {
+     "nom": "GitLab",
+     "role": "victime",
+     "pays": null
+    },
+    {
+     "nom": "Mastodon",
+     "role": "victime",
+     "pays": null
+    },
+    {
+     "nom": "OpenProject",
+     "role": "victime",
+     "pays": null
+    }
+   ]
+  },
+  {
+   "lien": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/",
+   "exploitees": [
+    "CVE-2026-102764",
+    "CVE-2026-123890"
+   ],
+   "hors_catalogue_kev": [],
+   "kev_non_signalees": [],
+   "acteurs": [
+    {
+     "nom": "China-linked espionage group",
+     "role": "auteur de l'attaque",
+     "pays": "China"
+    },
+    {
+     "nom": "Armory Castle",
+     "role": "auteur de l'attaque",
+     "pays": "China"
+    },
+    {
+     "nom": "UNC5221",
+     "role": "auteur de l'attaque",
+     "pays": null
+    },
+    {
+     "nom": "Warp Panda",
+     "role": "auteur de l'attaque",
+     "pays": null
+    },
+    {
+     "nom": "Google",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "Mandiant",
+     "role": "chercheur ou rapporteur",
+     "pays": null
+    },
+    {
+     "nom": "Broadcom",
+     "role": "éditeur",
+     "pays": null
+    },
+    {
+     "nom": "VMware",
+     "role": "éditeur",
+     "pays": null
+    }
+   ]
+  }
+ ]
+}
