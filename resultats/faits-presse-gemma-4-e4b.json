@@ -24,7 +24,46 @@
      "role": "chercheur ou rapporteur",
      "pays": null
     }
-   ]
+   ],
+   "redefiner": {
+    "exploitees": [
+     "CVE-2026-121805",
+     "CVE-2026-123637",
+     "CVE-2026-126822",
+     "CVE-2026-94127"
+    ],
+    "hors_catalogue_kev": [
+     "CVE-2026-121805",
+     "CVE-2026-123637",
+     "CVE-2026-126822"
+    ],
+    "acteurs": [
+     [
+      "Adaptive Security",
+      "RESEARCHER"
+     ],
+     [
+      "BIG-IP",
+      "VENDOR"
+     ],
+     [
+      "Cisco",
+      "VENDOR"
+     ],
+     [
+      "Citrix",
+      "VENDOR"
+     ],
+     [
+      "F5",
+      "VENDOR"
+     ],
+     [
+      "Microsoft 365",
+      "VENDOR"
+     ]
+    ]
+   }
   },
   {
    "lien": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
@@ -60,24 +99,41 @@
      "role": "auteur de l'attaque",
      "pays": "China"
     }
-   ]
+   ],
+   "redefiner": {
+    "exploitees": [
+     "CVE-2026-102764",
+     "CVE-2026-123890"
+    ],
+    "hors_catalogue_kev": [],
+    "acteurs": [
+     [
+      "Armory Castle",
+      "ATTACKER"
+     ],
+     [
+      "Broadcom",
+      "VENDOR"
+     ],
+     [
+      "Chinese-linked hackers",
+      "ATTACKER"
+     ],
+     [
+      "Mandiant",
+      "RESEARCHER"
+     ],
+     [
+      "VMware",
+      "VENDOR"
+     ]
+    ]
+   }
   },
   {
    "lien": "https://www.bleepingcomputer.com/news/security/asus-warns-of-critical-hard-coded-key-flaw-in-control-center-express/",
-   "exploitees": [
-    "CVE-2026-112115",
-    "CVE-2026-114202",
-    "CVE-2026-114204",
-    "CVE-2026-114205",
-    "CVE-2026-126574"
-   ],
-   "hors_catalogue_kev": [
-    "CVE-2026-112115",
-    "CVE-2026-114202",
-    "CVE-2026-114204",
-    "CVE-2026-114205",
-    "CVE-2026-126574"
-   ],
+   "exploitees": [],
+   "hors_catalogue_kev": [],
    "kev_non_signalees": [],
    "acteurs": [
     {
@@ -85,16 +141,42 @@
      "role": "éditeur",
      "pays": null
     }
-   ]
+   ],
+   "redefiner": {
+    "exploitees": [
+     "CVE-2026-112115",
+     "CVE-2026-114202",
+     "CVE-2026-114204",
+     "CVE-2026-114205",
+     "CVE-2026-126574"
+    ],
+    "hors_catalogue_kev": [
+     "CVE-2026-112115",
+     "CVE-2026-114202",
+     "CVE-2026-114204",
+     "CVE-2026-114205",
+     "CVE-2026-126574"
+    ],
+    "acteurs": [
+     [
+      "ASUS",
+      "VENDOR"
+     ],
+     [
+      "Adaptive Security",
+      "RESEARCHER"
+     ],
+     [
+      "VMware",
+      "VENDOR"
+     ]
+    ]
+   }
   },
   {
    "lien": "https://www.securityweek.com/whatsapp-fixes-flaw-uncovered-while-disrupting-scam-campaign/",
-   "exploitees": [
-    "CVE-2026-23871"
-   ],
-   "hors_catalogue_kev": [
-    "CVE-2026-23871"
-   ],
+   "exploitees": [],
+   "hors_catalogue_kev": [],
    "kev_non_signalees": [],
    "acteurs": [
     {
@@ -103,13 +185,8 @@
      "pays": null
     },
     {
-     "nom": "scammer",
-     "role": "auteur de l'attaque",
-     "pays": null
-    },
-    {
-     "nom": "SecurityWeek",
-     "role": "chercheur ou rapporteur",
+     "nom": "WhatsApp Business",
+     "role": "éditeur",
      "pays": null
     },
     {
@@ -118,25 +195,58 @@
      "pays": null
     },
     {
-     "nom": "external researcher",
-     "role": "chercheur ou rapporteur",
-     "pays": null
-    },
-    {
      "nom": "Meta’s own researchers",
      "role": "chercheur ou rapporteur",
      "pays": null
     }
-   ]
+   ],
+   "redefiner": {
+    "exploitees": [
+     "CVE-2026-102769",
+     "CVE-2026-23871",
+     "CVE-2026-44908"
+    ],
+    "hors_catalogue_kev": [
+     "CVE-2026-102769",
+     "CVE-2026-23871",
+     "CVE-2026-44908"
+    ],
+    "acteurs": [
+     [
+      "Amazon",
+      "VENDOR"
+     ],
+     [
+      "Chinese APT",
+      "ATTACKER"
+     ],
+     [
+      "Meta",
+      "RESEARCHER"
+     ],
+     [
+      "Meta",
+      "VENDOR"
+     ],
+     [
+      "Microsoft",
+      "VENDOR"
+     ],
+     [
+      "Nvidia",
+      "VENDOR"
+     ],
+     [
+      "VMware",
+      "VENDOR"
+     ]
+    ]
+   }
   },
   {
    "lien": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
-   "exploitees": [
-    "CVE-2026-132825"
-   ],
-   "hors_catalogue_kev": [
-    "CVE-2026-132825"
-   ],
+   "exploitees": [],
+   "hors_catalogue_kev": [],
    "kev_non_signalees": [],
    "acteurs": [
     {
@@ -155,40 +265,55 @@
      "pays": null
     },
     {
-     "nom": "GitHub Enterprise Server",
-     "role": "victime",
+     "nom": "WatchTowr",
+     "role": "chercheur ou rapporteur",
      "pays": null
     },
     {
-     "nom": "Chatwoot",
-     "role": "victime",
-     "pays": null
-    },
-    {
-     "nom": "GitLab",
-     "role": "victime",
-     "pays": null
-    },
-    {
-     "nom": "Mastodon",
-     "role": "victime",
-     "pays": null
-    },
-    {
-     "nom": "OpenProject",
-     "role": "victime",
+     "nom": "SecurityWeek",
+     "role": "chercheur ou rapporteur",
      "pays": null
     }
-   ]
+   ],
+   "redefiner": {
+    "exploitees": [
+     "CVE-2026-132825"
+    ],
+    "hors_catalogue_kev": [
+     "CVE-2026-132825"
+    ],
+    "acteurs": [
+     [
+      "Amazon",
+      "VENDOR"
+     ],
+     [
+      "GitHub Enterprise Server",
+      "VENDOR"
+     ],
+     [
+      "Russian APT",
+      "ATTACKER"
+     ],
+     [
+      "Veria Labs",
+      "RESEARCHER"
+     ],
+     [
+      "WatchTowr",
+      "RESEARCHER"
+     ]
+    ]
+   }
   },
   {
    "lien": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/",
-   "exploitees": [
+   "exploitees": [],
+   "hors_catalogue_kev": [],
+   "kev_non_signalees": [
     "CVE-2026-102764",
     "CVE-2026-123890"
    ],
-   "hors_catalogue_kev": [],
-   "kev_non_signalees": [],
    "acteurs": [
     {
      "nom": "China-linked espionage group",
@@ -230,7 +355,71 @@
      "role": "éditeur",
      "pays": null
     }
-   ]
+   ],
+   "redefiner": {
+    "exploitees": [
+     "CVE-2026-102764",
+     "CVE-2026-123890",
+     "CVE-2026-59309"
+    ],
+    "hors_catalogue_kev": [
+     "CVE-2026-59309"
+    ],
+    "acteurs": [
+     [
+      "Amazon",
+      "VENDOR"
+     ],
+     [
+      "Armory Castle",
+      "ATTACKER"
+     ],
+     [
+      "Broadcom",
+      "VENDOR"
+     ],
+     [
+      "Google",
+      "VENDOR"
+     ],
+     [
+      "JPMorgan",
+      "VENDOR"
+     ],
+     [
+      "Mandiant",
+      "RESEARCHER"
+     ],
+     [
+      "Mastercard",
+      "VENDOR"
+     ],
+     [
+      "Microsoft",
+      "VENDOR"
+     ],
+     [
+      "Nvidia",
+      "VENDOR"
+     ],
+     [
+      "UNC5221",
+      "ATTACKER"
+     ],
+     [
+      "VMware",
+      "VENDOR"
+     ],
+     [
+      "Visa",
+      "VENDOR"
+     ],
+     [
+      "Warp Panda",
+      "ATTACKER"
+     ]
+    ]
+   }
   }
  ]
 }
