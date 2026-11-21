@@ -2,48 +2,48 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 36 fiches, 429 compartiments (180 sans aucune trace collectée)
-- 1563 éléments (1456 textes distincts)
-- 401 acteurs (380 distincts) : 317 types génériques (« un média d'État »…), à peupler de noms ; 84 désignés autrement (déjà nommés, ou à relire)
+- 42 fiches, 455 compartiments (206 sans aucune trace collectée)
+- 1640 éléments (1532 textes distincts)
+- 407 acteurs (385 distincts) : 323 types génériques (« un média d'État »…), à peupler de noms ; 84 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 227 |
+| collectif | 231 |
 | non_humain | 115 |
 | ideologie | 17 |
 | personne | 17 |
-| statut | 15 |
+| statut | 17 |
 | psyche | 10 |
 
 ## Acteurs par taille
 
 | | nombre |
 |---|---|
-| macro | 172 |
-| méso | 146 |
-| micro | 82 |
+| macro | 174 |
+| méso | 148 |
+| micro | 84 |
 | micro à méso | 1 |
 
 ## Éléments et acteurs par niveau d'organisation
 
 | | nombre |
 |---|---|
-| economie | 288 |
-| statut | 255 |
-| geopolitique | 227 |
-| technique | 161 |
-| societe | 142 |
-| convention | 117 |
+| economie | 302 |
+| statut | 273 |
+| geopolitique | 230 |
+| technique | 165 |
+| societe | 146 |
+| convention | 136 |
 | psychologique | 116 |
-| ideologie | 78 |
+| ideologie | 94 |
 | eau | 74 |
 | relief | 56 |
 | meteo | 51 |
-| chimique | 48 |
+| chimique | 49 |
 | climat | 46 |
-| animal | 44 |
+| animal | 45 |
 | mineral | 36 |
 | microbiologique | 36 |
 | vegetal | 32 |
@@ -52,7 +52,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | ocean | 26 |
 | personne | 26 |
 | atomique | 25 |
-| corps | 18 |
+| corps | 21 |
 | sol_vivant | 4 |
 
 ## Par fiche
@@ -64,12 +64,15 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | climat-extremes | 13 | 42 | 17 | 6 |
 | competitions-culture | 9 | 35 | 8 | 7 |
 | crises-bancaires | 10 | 35 | 9 | 1 |
+| culture-memoire | 3 | 9 | 0 | 3 |
 | cycles-biogeochimiques | 11 | 37 | 9 | 6 |
 | dette-emergents | 12 | 47 | 17 | 6 |
 | eau-moyen-orient | 14 | 48 | 19 | 10 |
 | economie-chinoise | 14 | 55 | 25 | 6 |
+| economie-entreprises | 6 | 13 | 2 | 6 |
 | elections-amerique-latine | 9 | 31 | 6 | 5 |
 | energie-mondiale | 13 | 56 | 8 | 2 |
+| environnement-dechets | 4 | 8 | 0 | 4 |
 | epidemies | 10 | 39 | 8 | 6 |
 | foret-et-sols-vivants | 13 | 34 | 8 | 13 |
 | guerre-levant | 14 | 60 | 24 | 4 |
@@ -86,12 +89,15 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | oceans-et-fleuves | 11 | 38 | 7 | 6 |
 | ormuz | 13 | 60 | 15 | 2 |
 | politique-americaine | 14 | 56 | 25 | 1 |
+| politique-interieure | 5 | 26 | 3 | 5 |
 | relief-et-montagnes | 11 | 34 | 6 | 7 |
 | rivalite-sino-americaine | 12 | 46 | 20 | 1 |
 | russie-ukraine | 13 | 51 | 25 | 3 |
 | sciences-techniques | 10 | 33 | 5 | 1 |
 | securite-europeenne | 9 | 28 | 3 | 4 |
 | securite-publique | 10 | 31 | 4 | 5 |
+| societe-droits | 4 | 10 | 0 | 4 |
 | soleil-espace | 10 | 33 | 5 | 7 |
 | soudan | 5 | 16 | 4 | 1 |
 | transport-maritime | 13 | 51 | 15 | 6 |
+| union-europeenne | 4 | 11 | 1 | 4 |

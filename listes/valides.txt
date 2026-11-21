@@ -1,6 +1,6 @@
 # Termes validés par l'auteur (2026-11-22, 0 h 28 : « je conserve tout, sauf les rubriques maison »). Seule liste que le
 # collecteur comptera. « + » validé, « - » refusé (jamais reproposé). « à classer » : conservé, en attente d'une
-# catégorie nouvelle (proposée par Claude, validée par l'auteur).
+# catégorie nouvelle (proposée par Claude, validée par l'auteur). Catégories nouvelles validées à 0 h 32 (six fiches, bot 0.10.412).
 # Format : décision | terme | langue | rattachement | note | émetteurs
 + | Food and farming | en | alimentation-mondiale:cultures |  | consilium.europa.eu
 + | Grippe aviaire | fr | alimentation-mondiale:pathogenes;epidemies:agent |  | fr.hespress.com
@@ -696,168 +696,168 @@
 + | Salon5 | de | émetteur:correctiv.org | nom de l'émetteur lui-même | correctiv.org
 + | Schauspiel Köln | de | émetteur:correctiv.org | nom de l'émetteur lui-même | correctiv.org
 + | Theater und Journalismus | de | émetteur:correctiv.org | nom de l'émetteur lui-même | correctiv.org
-+ | AfD | de | à classer | acteur : parti politique allemand (Alternative für Deutschland) ; aucune fiche sur la politique allemande ; aucune fiche ne le situe | correctiv.org
-+ | AfD Sachsen-Anhalt | de | à classer | acteur : fédération régionale de l'AfD ; aucune fiche ne le situe | correctiv.org
-+ | AfD-Leak | de | à classer | acteur : affaire liée à l'AfD ; aucune fiche ne le situe | correctiv.org
-+ | AfD-Spendenskandal | de | à classer | acteur : affaire de dons de l'AfD ; aucune fiche ne le situe | correctiv.org
-+ | AfD-Verbot | de | à classer | acteur : procédure d'interdiction de l'AfD ; aucune fiche ne le situe | correctiv.org
-+ | Aigner | de | à classer | personnalité publique : Ilse Aigner ? présidente du Landtag de Bavière — à confirmer ; aucune fiche ne la situe | correctiv.org
-+ | Alice Weidel | de | à classer | personnalité publique : coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
-+ | Alijew | de | à classer | personnalité publique : Ilham Aliev, président de l'Azerbaïdjan ; aucune fiche ne la situe | correctiv.org
-+ | Alternative für Deutschland | de | à classer | acteur : parti politique allemand (Alternative für Deutschland) ; aucune fiche sur la politique allemande ; aucune fiche ne le situe | correctiv.org
-+ | Andreas Perr | de | à classer | personne non identifiée : à identifier | correctiv.org
-+ | Animal Rights | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Annalena Baerbock | de | à classer | personnalité publique : ancienne ministre allemande des Affaires étrangères ; aucune fiche ne la situe | correctiv.org
-+ | Arts & Culture | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Asante | en | à classer | acteur : Asante Gold ? (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
-+ | Audi | de | à classer | acteur : constructeur automobile (groupe VW) ; aucune fiche ne le situe | correctiv.org
-+ | Audi-Werk | de | à classer | acteur : usine Audi ; aucune fiche ne le situe | correctiv.org
-+ | Beatrix von Storch | de | à classer | personnalité publique : députée AfD ; aucune fiche ne la situe | correctiv.org
-+ | Behörden | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Bildung | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Bildung- und Teilhabe | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Bildungs- und Teilhabepaket | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | BME | en | à classer | acteur : sigle ambigu (Bulk Mining Explosives ?) ; aucune fiche ne le situe | im-mining.com
-+ | BNTGold | en | à classer | acteur : société minière (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
-+ | Brosius-Gersdorf | de | à classer | personnalité publique : juriste, candidate à la Cour constitutionnelle fédérale ; aucune fiche ne la situe | correctiv.org
-+ | Bundesinnenministerium | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Bundeskanzler | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Bundesregierung | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Bundeswirtschaftministerium | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | BUSINESS | en | à classer | thème réel, mais aucune fiche ne le couvre | miningweekly.com
-+ | Bücher | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | CDU | de | à classer | acteur : parti politique allemand ; aucune fiche ne le situe | correctiv.org
-+ | Circular economy | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Claudio Fayad | en | à classer | personne non identifiée : dirigeant minier ? — à identifier | im-mining.com
-+ | Cohesion | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Colonel Mamadi Doumbouya | fr | à classer | personnalité publique : chef de l'État guinéen ; aucune fiche ne la situe | 
-+ | Consumer protection | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Critical One | en | à classer | acteur : société minière (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
-+ | csd | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Culture | fr | à classer | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
-+ | DDR | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Debatte um AfD-Verbot | de | à classer | acteur : procédure d'interdiction de l'AfD ; aucune fiche ne le situe | correctiv.org
-+ | Demokratie | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | DKP | de | à classer | acteur : parti communiste allemand ; aucune fiche ne le situe | correctiv.org
-+ | Dominique de Villepin | fr | à classer | personnalité publique : ancien Premier ministre français ; aucune fiche ne la situe | fr.hespress.com
-+ | Droits de l'homme | fr | à classer | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
-+ | döllner | de | à classer | personnalité publique : président du directoire d'Audi ; aucune fiche ne la situe | correctiv.org
-+ | Economics & Business | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | ECONOMY | en | à classer | thème réel, mais aucune fiche ne le couvre | miningweekly.com
-+ | Education | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org, investinglive.com
-+ | Education & training | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Elargissement | fr | à classer | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
-+ | Electra | en | à classer | acteur : société (à identifier : Electra Battery Materials ?) ; aucune fiche ne le situe | canadianminingjournal.com
-+ | Elton | en | à classer | acteur : nom ambigu ; aucune fiche ne le situe | canadianminingjournal.com
-+ | Emerson | en | à classer | acteur : industriel américain (automatismes) ; aucune fiche ne le situe | im-mining.com
-+ | Entsorgung | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Envirionment | en | à classer | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
-+ | Environment | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org, northernminer.com
-+ | Environmental | en | à classer | thème réel, mais aucune fiche ne le couvre | im-mining.com
-+ | Environnement | fr | à classer | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
-+ | EU enlargement | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Film | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Financial Matters, M&A | en | à classer | thème réel, mais aucune fiche ne le couvre | northernminer.com
-+ | Finanzen | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | funding | en | à classer | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
-+ | Föderalismus | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Geheimplan gegen Deutschland | de | à classer | acteur : enquête de Correctiv (2024) sur une réunion « remigration » ; aucune fiche ne le situe | correctiv.org
-+ | Geheimplan-Recherche | de | à classer | acteur : enquête de Correctiv (2024) sur une réunion « remigration » ; aucune fiche ne le situe | correctiv.org
-+ | gernot döllner | de | à classer | personnalité publique : président du directoire d'Audi ; aucune fiche ne la situe | correctiv.org
-+ | Geschäfte der AfD | de | à classer | acteur : affaires de l'AfD ; aucune fiche ne le situe | correctiv.org
-+ | GMD | en | à classer | acteur : sigle ambigu ; aucune fiche ne le situe | canadianminingjournal.com
-+ | Goal AG | de | à classer | acteur : entreprise (à identifier) ; aucune fiche ne le situe | correctiv.org
-+ | Governance | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Grüne | de | à classer | acteur : parti politique allemand (Verts) ; aucune fiche ne le situe | correctiv.org
-+ | Hexane | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | History | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Human Rights | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Höcke | de | à classer | personnalité publique : dirigeant AfD de Thuringe ; aucune fiche ne la situe | correctiv.org
-+ | ikea | de | à classer | acteur : distributeur ; aucune fiche ne le situe | correctiv.org
-+ | Immobilien | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Indigenous | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Industrie | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Industry | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Institutional affairs | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Institutions | fr | à classer | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
-+ | International Relations | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Investment | en | à classer | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
-+ | Kay Gottschalk | de | à classer | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
-+ | Krah | de | à classer | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
-+ | Krankenkassen | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Krebs | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | le pen | fr | à classer | personnalité publique : dirigeante du Rassemblement national ; aucune fiche ne la situe | tsa-algerie.com
-+ | LGBTIQ | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | LGBTQ+ | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Linke in Berlin | de | à classer | acteur : Die Linke, Berlin ; aucune fiche ne le situe | correctiv.org
-+ | literatur | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Literature | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Livre | fr | à classer | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
-+ | Losberg | en | à classer | acteur : à identifier ; aucune fiche ne le situe | im-mining.com
-+ | Lukreta | de | à classer | acteur : à identifier ; aucune fiche ne le situe | correctiv.org
-+ | M&A | en | à classer | thème réel, mais aucune fiche ne le couvre | northernminer.com
-+ | Maaßen | de | à classer | personnalité publique : ancien président du Verfassungsschutz ; aucune fiche ne la situe | correctiv.org
-+ | Mammografie | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Marine Le Pen | fr | à classer | personnalité publique : dirigeante du Rassemblement national ; aucune fiche ne la situe | tsa-algerie.com
-+ | Markus Lanz | de | à classer | personnalité publique : animateur de télévision ; aucune fiche ne la situe | correctiv.org
-+ | Maximilian Krah | de | à classer | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
-+ | Merkel | de | à classer | personnalité publique : ancienne chancelière allemande ; aucune fiche ne la situe | correctiv.org
-+ | Meuthen | de | à classer | personnalité publique : ancien coprésident de l'AfD ; aucune fiche ne la situe | correctiv.org
-+ | Michael Finnegan | en | à classer | personne non identifiée : à identifier | im-mining.com
-+ | mining M&A | en | à classer | thème réel, mais aucune fiche ne le couvre | northernminer.com
-+ | Mining mergers and acquisitions | en | à classer | thème réel, mais aucune fiche ne le couvre | im-mining.com
-+ | Music | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Müll | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Nature and biodiversity | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Neo-Gulag | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | NPD | de | à classer | acteur : parti d'extrême droite allemand ; aucune fiche ne le situe | correctiv.org
-+ | Oliver Blume | de | à classer | personnalité publique : président du directoire de Volkswagen ; aucune fiche ne la situe | correctiv.org
-+ | Onlineshops | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Pamoja | fr | à classer | acteur : à identifier ; aucune fiche ne le situe | 
-+ | Parteiausschluss | de | à classer | acteur : exclusion d'un parti ; aucune fiche ne le situe | correctiv.org
-+ | Parteien | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Parteienerbot | de | à classer | acteur : interdiction de parti (orthographe de la source) ; aucune fiche ne le situe | correctiv.org
-+ | Petr Bystron | de | à classer | personnalité publique : député européen AfD ; aucune fiche ne la situe | correctiv.org
-+ | Petry | de | à classer | personnalité publique : ancienne coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
-+ | Photography | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Politics | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Politik | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Pretzell | de | à classer | personnalité publique : ancien député européen AfD ; aucune fiche ne la situe | correctiv.org
-+ | pride | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | pötsch | de | à classer | personnalité publique : Hans Dieter Pötsch ? (président du conseil de surveillance de VW) — à confirmer ; aucune fiche ne la situe | correctiv.org
-+ | Rakhi Pathak | en | à classer | personne non identifiée : à identifier | im-mining.com
-+ | Ralf Hennecke | en | à classer | personne non identifiée : à identifier | im-mining.com
-+ | Ratzunger | de | à classer | personne non identifiée : à identifier | correctiv.org
-+ | regulatory | en | à classer | rubrique du métier minier ; pourrait servir aux règles et normes minières | canadianminingjournal.com
-+ | Regulatory Issues | en | à classer | rubrique du métier minier ; pourrait servir aux règles et normes minières | northernminer.com
-+ | Reil | de | à classer | personnalité publique : Guido Reil ? (élu AfD) — à confirmer ; aucune fiche ne la situe | correctiv.org
-+ | Relations extérieures | fr | à classer | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
-+ | Relations with the UK | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Schwangerschaft | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | SDAJ | de | à classer | acteur : organisation de jeunesse communiste allemande ; aucune fiche ne le situe | correctiv.org
-+ | Seelan Gobalsamy | en | à classer | personne non identifiée : à identifier | im-mining.com
-+ | Shiv Trisal | en | à classer | personne non identifiée : à identifier | im-mining.com
-+ | Siegmund | de | à classer | personnalité publique : chef du groupe AfD au parlement de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
-+ | Single market | en | à classer | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Spenden | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Sven Schulze | de | à classer | personnalité publique : dirigeant de la CDU de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
-+ | System Putin | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | tino chrupalla | de | à classer | personnalité publique : coprésident de l'AfD ; aucune fiche ne la situe | correctiv.org
-+ | Tobias Rausch | de | à classer | personnalité publique : élu AfD (Saxe-Anhalt) ; aucune fiche ne la situe | correctiv.org
-+ | Tourisme | fr | à classer | thème réel, mais aucune fiche ne le couvre | tsa-algerie.com
-+ | Travel | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Trinity | en | à classer | acteur : nom ambigu ; aucune fiche ne le situe | canadianminingjournal.com
-+ | Tudor | en | à classer | acteur : nom ambigu (Tudor Gold ?) ; aucune fiche ne le situe | canadianminingjournal.com
-+ | UKEF | en | à classer | acteur : UK Export Finance, agence britannique de crédit à l'exportation ; aucune fiche ne le situe | canadianminingjournal.com
-+ | Ulrich Siegmund | de | à classer | personnalité publique : chef du groupe AfD au parlement de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
-+ | Umwelt | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Volkswagen | de | à classer | acteur : constructeur automobile ; aucune fiche industrie automobile ; aucune fiche ne le situe | correctiv.org
-+ | VW | de | à classer | acteur : constructeur automobile ; aucune fiche industrie automobile ; aucune fiche ne le situe | correctiv.org
-+ | War & Conflict | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Waste diversion | en | à classer | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
-+ | Weidel | de | à classer | personnalité publique : coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
-+ | Wirtschaft | de | à classer | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Women & Gender | en | à classer | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | AfD | de | politique-interieure:partis | acteur : parti politique allemand (Alternative für Deutschland) ; aucune fiche sur la politique allemande ; aucune fiche ne le situe | correctiv.org
++ | AfD Sachsen-Anhalt | de | politique-interieure:partis | acteur : fédération régionale de l'AfD ; aucune fiche ne le situe | correctiv.org
++ | AfD-Leak | de | politique-interieure:procedures | acteur : affaire liée à l'AfD ; aucune fiche ne le situe | correctiv.org
++ | AfD-Spendenskandal | de | politique-interieure:procedures | acteur : affaire de dons de l'AfD ; aucune fiche ne le situe | correctiv.org
++ | AfD-Verbot | de | politique-interieure:procedures | acteur : procédure d'interdiction de l'AfD ; aucune fiche ne le situe | correctiv.org
++ | Aigner | de | politique-interieure:dirigeants | personnalité publique : Ilse Aigner ? présidente du Landtag de Bavière — à confirmer ; aucune fiche ne la situe | correctiv.org
++ | Alice Weidel | de | politique-interieure:dirigeants | personnalité publique : coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
++ | Alijew | de | politique-interieure:dirigeants | personnalité publique : Ilham Aliev, président de l'Azerbaïdjan ; aucune fiche ne la situe | correctiv.org
++ | Alternative für Deutschland | de | politique-interieure:partis | acteur : parti politique allemand (Alternative für Deutschland) ; aucune fiche sur la politique allemande ; aucune fiche ne le situe | correctiv.org
++ | Andreas Perr | de | à identifier | personne non identifiée : à identifier | correctiv.org
++ | Animal Rights | en | societe-droits:droits_humains | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Annalena Baerbock | de | politique-interieure:dirigeants | personnalité publique : ancienne ministre allemande des Affaires étrangères ; aucune fiche ne la situe | correctiv.org
++ | Arts & Culture | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Asante | en | economie-entreprises:entreprises | acteur : Asante Gold ? (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
++ | Audi | de | economie-entreprises:entreprises | acteur : constructeur automobile (groupe VW) ; aucune fiche ne le situe | correctiv.org
++ | Audi-Werk | de | economie-entreprises:entreprises | acteur : usine Audi ; aucune fiche ne le situe | correctiv.org
++ | Beatrix von Storch | de | politique-interieure:dirigeants | personnalité publique : députée AfD ; aucune fiche ne la situe | correctiv.org
++ | Behörden | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Bildung | de | societe-droits:education | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Bildung- und Teilhabe | de | societe-droits:education | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Bildungs- und Teilhabepaket | de | societe-droits:education | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | BME | en | economie-entreprises:entreprises | acteur : sigle ambigu (Bulk Mining Explosives ?) ; aucune fiche ne le situe | im-mining.com
++ | BNTGold | en | economie-entreprises:entreprises | acteur : société minière (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
++ | Brosius-Gersdorf | de | politique-interieure:gouvernement | personnalité publique : juriste, candidate à la Cour constitutionnelle fédérale ; aucune fiche ne la situe | correctiv.org
++ | Bundesinnenministerium | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Bundeskanzler | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Bundesregierung | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Bundeswirtschaftministerium | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | BUSINESS | en | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | miningweekly.com
++ | Bücher | de | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | CDU | de | politique-interieure:partis | acteur : parti politique allemand ; aucune fiche ne le situe | correctiv.org
++ | Circular economy | en | environnement-dechets:dechets | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Claudio Fayad | en | à identifier | personne non identifiée : dirigeant minier ? — à identifier | im-mining.com
++ | Cohesion | en | union-europeenne:politiques_communes | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Colonel Mamadi Doumbouya | fr | politique-interieure:dirigeants | personnalité publique : chef de l'État guinéen ; aucune fiche ne la situe | 
++ | Consumer protection | en | union-europeenne:politiques_communes | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Critical One | en | economie-entreprises:entreprises | acteur : société minière (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
++ | csd | de | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Culture | fr | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
++ | DDR | de | culture-memoire:histoire_memoire | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Debatte um AfD-Verbot | de | politique-interieure:procedures | acteur : procédure d'interdiction de l'AfD ; aucune fiche ne le situe | correctiv.org
++ | Demokratie | de | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | DKP | de | politique-interieure:partis | acteur : parti communiste allemand ; aucune fiche ne le situe | correctiv.org
++ | Dominique de Villepin | fr | politique-interieure:dirigeants | personnalité publique : ancien Premier ministre français ; aucune fiche ne la situe | fr.hespress.com
++ | Droits de l'homme | fr | societe-droits:droits_humains | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
++ | döllner | de | economie-entreprises:dirigeants_entreprise | personnalité publique : président du directoire d'Audi ; aucune fiche ne la situe | correctiv.org
++ | Economics & Business | en | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | ECONOMY | en | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | miningweekly.com
++ | Education | en | societe-droits:education | thème réel, mais aucune fiche ne le couvre | globalvoices.org, investinglive.com
++ | Education & training | en | societe-droits:education | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Elargissement | fr | union-europeenne:elargissement | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
++ | Electra | en | economie-entreprises:entreprises | acteur : société (à identifier : Electra Battery Materials ?) ; aucune fiche ne le situe | canadianminingjournal.com
++ | Elton | en | economie-entreprises:entreprises | acteur : nom ambigu ; aucune fiche ne le situe | canadianminingjournal.com
++ | Emerson | en | economie-entreprises:entreprises | acteur : industriel américain (automatismes) ; aucune fiche ne le situe | im-mining.com
++ | Entsorgung | de | environnement-dechets:dechets | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Envirionment | en | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
++ | Environment | en | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | globalvoices.org, northernminer.com
++ | Environmental | en | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | im-mining.com
++ | Environnement | fr | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
++ | EU enlargement | en | union-europeenne:elargissement | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Film | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Financial Matters, M&A | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | northernminer.com
++ | Finanzen | de | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | funding | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
++ | Föderalismus | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Geheimplan gegen Deutschland | de | politique-interieure:procedures | acteur : enquête de Correctiv (2024) sur une réunion « remigration » ; aucune fiche ne le situe | correctiv.org
++ | Geheimplan-Recherche | de | politique-interieure:procedures | acteur : enquête de Correctiv (2024) sur une réunion « remigration » ; aucune fiche ne le situe | correctiv.org
++ | gernot döllner | de | economie-entreprises:dirigeants_entreprise | personnalité publique : président du directoire d'Audi ; aucune fiche ne la situe | correctiv.org
++ | Geschäfte der AfD | de | politique-interieure:procedures | acteur : affaires de l'AfD ; aucune fiche ne le situe | correctiv.org
++ | GMD | en | economie-entreprises:entreprises | acteur : sigle ambigu ; aucune fiche ne le situe | canadianminingjournal.com
++ | Goal AG | de | economie-entreprises:entreprises | acteur : entreprise (à identifier) ; aucune fiche ne le situe | correctiv.org
++ | Governance | en | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Grüne | de | politique-interieure:partis | acteur : parti politique allemand (Verts) ; aucune fiche ne le situe | correctiv.org
++ | Hexane | de | environnement-dechets:pollution_chimique | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | History | en | culture-memoire:histoire_memoire | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Human Rights | en | societe-droits:droits_humains | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Höcke | de | politique-interieure:dirigeants | personnalité publique : dirigeant AfD de Thuringe ; aucune fiche ne la situe | correctiv.org
++ | ikea | de | economie-entreprises:entreprises | acteur : distributeur ; aucune fiche ne le situe | correctiv.org
++ | Immobilien | de | economie-entreprises:immobilier_consommation | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Indigenous | en | societe-droits:droits_humains | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Industrie | de | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Industry | en | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Institutional affairs | en | union-europeenne:institutions | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Institutions | fr | union-europeenne:institutions | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
++ | International Relations | en | union-europeenne:relations_exterieures | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Investment | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
++ | Kay Gottschalk | de | politique-interieure:dirigeants | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
++ | Krah | de | politique-interieure:dirigeants | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
++ | Krankenkassen | de | societe-droits:sante_publique | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Krebs | de | societe-droits:sante_publique | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | le pen | fr | politique-interieure:dirigeants | personnalité publique : dirigeante du Rassemblement national ; aucune fiche ne la situe | tsa-algerie.com
++ | LGBTIQ | de | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | LGBTQ+ | en | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Linke in Berlin | de | politique-interieure:partis | acteur : Die Linke, Berlin ; aucune fiche ne le situe | correctiv.org
++ | literatur | de | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Literature | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Livre | fr | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
++ | Losberg | en | economie-entreprises:entreprises | acteur : à identifier ; aucune fiche ne le situe | im-mining.com
++ | Lukreta | de | economie-entreprises:entreprises | acteur : à identifier ; aucune fiche ne le situe | correctiv.org
++ | M&A | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | northernminer.com
++ | Maaßen | de | politique-interieure:dirigeants | personnalité publique : ancien président du Verfassungsschutz ; aucune fiche ne la situe | correctiv.org
++ | Mammografie | de | societe-droits:sante_publique | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Marine Le Pen | fr | politique-interieure:dirigeants | personnalité publique : dirigeante du Rassemblement national ; aucune fiche ne la situe | tsa-algerie.com
++ | Markus Lanz | de | information-cyber:attention | personnalité publique : animateur de télévision ; aucune fiche ne la situe | correctiv.org
++ | Maximilian Krah | de | politique-interieure:dirigeants | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
++ | Merkel | de | politique-interieure:dirigeants | personnalité publique : ancienne chancelière allemande ; aucune fiche ne la situe | correctiv.org
++ | Meuthen | de | politique-interieure:dirigeants | personnalité publique : ancien coprésident de l'AfD ; aucune fiche ne la situe | correctiv.org
++ | Michael Finnegan | en | à identifier | personne non identifiée : à identifier | im-mining.com
++ | mining M&A | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | northernminer.com
++ | Mining mergers and acquisitions | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | im-mining.com
++ | Music | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Müll | de | environnement-dechets:dechets | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Nature and biodiversity | en | environnement-dechets:biodiversite | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Neo-Gulag | de | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | NPD | de | politique-interieure:partis | acteur : parti d'extrême droite allemand ; aucune fiche ne le situe | correctiv.org
++ | Oliver Blume | de | economie-entreprises:dirigeants_entreprise | personnalité publique : président du directoire de Volkswagen ; aucune fiche ne la situe | correctiv.org
++ | Onlineshops | de | economie-entreprises:immobilier_consommation | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Pamoja | fr | economie-entreprises:entreprises | acteur : à identifier ; aucune fiche ne le situe | 
++ | Parteiausschluss | de | politique-interieure:procedures | acteur : exclusion d'un parti ; aucune fiche ne le situe | correctiv.org
++ | Parteien | de | politique-interieure:partis | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Parteienerbot | de | politique-interieure:procedures | acteur : interdiction de parti (orthographe de la source) ; aucune fiche ne le situe | correctiv.org
++ | Petr Bystron | de | politique-interieure:dirigeants | personnalité publique : député européen AfD ; aucune fiche ne la situe | correctiv.org
++ | Petry | de | politique-interieure:dirigeants | personnalité publique : ancienne coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
++ | Photography | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Politics | en | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Politik | de | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Pretzell | de | politique-interieure:dirigeants | personnalité publique : ancien député européen AfD ; aucune fiche ne la situe | correctiv.org
++ | pride | de | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | pötsch | de | economie-entreprises:dirigeants_entreprise | personnalité publique : Hans Dieter Pötsch ? (président du conseil de surveillance de VW) — à confirmer ; aucune fiche ne la situe | correctiv.org
++ | Rakhi Pathak | en | à identifier | personne non identifiée : à identifier | im-mining.com
++ | Ralf Hennecke | en | à identifier | personne non identifiée : à identifier | im-mining.com
++ | Ratzunger | de | à identifier | personne non identifiée : à identifier | correctiv.org
++ | regulatory | en | economie-entreprises:regles_sectorielles | rubrique du métier minier ; pourrait servir aux règles et normes minières | canadianminingjournal.com
++ | Regulatory Issues | en | economie-entreprises:regles_sectorielles | rubrique du métier minier ; pourrait servir aux règles et normes minières | northernminer.com
++ | Reil | de | politique-interieure:dirigeants | personnalité publique : Guido Reil ? (élu AfD) — à confirmer ; aucune fiche ne la situe | correctiv.org
++ | Relations extérieures | fr | union-europeenne:relations_exterieures | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
++ | Relations with the UK | en | union-europeenne:relations_exterieures | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Schwangerschaft | de | societe-droits:sante_publique | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | SDAJ | de | politique-interieure:partis | acteur : organisation de jeunesse communiste allemande ; aucune fiche ne le situe | correctiv.org
++ | Seelan Gobalsamy | en | à identifier | personne non identifiée : à identifier | im-mining.com
++ | Shiv Trisal | en | à identifier | personne non identifiée : à identifier | im-mining.com
++ | Siegmund | de | politique-interieure:dirigeants | personnalité publique : chef du groupe AfD au parlement de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
++ | Single market | en | union-europeenne:politiques_communes | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Spenden | de | politique-interieure:procedures | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Sven Schulze | de | politique-interieure:dirigeants | personnalité publique : dirigeant de la CDU de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
++ | System Putin | de | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | tino chrupalla | de | politique-interieure:dirigeants | personnalité publique : coprésident de l'AfD ; aucune fiche ne la situe | correctiv.org
++ | Tobias Rausch | de | politique-interieure:dirigeants | personnalité publique : élu AfD (Saxe-Anhalt) ; aucune fiche ne la situe | correctiv.org
++ | Tourisme | fr | culture-memoire:tourisme | thème réel, mais aucune fiche ne le couvre | tsa-algerie.com
++ | Travel | en | culture-memoire:tourisme | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Trinity | en | economie-entreprises:entreprises | acteur : nom ambigu ; aucune fiche ne le situe | canadianminingjournal.com
++ | Tudor | en | economie-entreprises:entreprises | acteur : nom ambigu (Tudor Gold ?) ; aucune fiche ne le situe | canadianminingjournal.com
++ | UKEF | en | economie-entreprises:finance_entreprise | acteur : UK Export Finance, agence britannique de crédit à l'exportation ; aucune fiche ne le situe | canadianminingjournal.com
++ | Ulrich Siegmund | de | politique-interieure:dirigeants | personnalité publique : chef du groupe AfD au parlement de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
++ | Umwelt | de | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Volkswagen | de | economie-entreprises:entreprises | acteur : constructeur automobile ; aucune fiche industrie automobile ; aucune fiche ne le situe | correctiv.org
++ | VW | de | economie-entreprises:entreprises | acteur : constructeur automobile ; aucune fiche industrie automobile ; aucune fiche ne le situe | correctiv.org
++ | War & Conflict | en | observateur-mesure:couverture | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Waste diversion | en | environnement-dechets:dechets | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
++ | Weidel | de | politique-interieure:dirigeants | personnalité publique : coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
++ | Wirtschaft | de | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Women & Gender | en | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | globalvoices.org
 - | 8 milliards de voisins | fr |  | rubrique maison (sans contenu) | rfi.fr
 - | Actualité | fr |  | rubrique maison (sans contenu) | 
 - | actualité Afrique | fr |  | rubrique maison (sans contenu) | 
