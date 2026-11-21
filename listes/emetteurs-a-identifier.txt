@@ -1,21 +1,3 @@
 # émetteurs vus, absents de listes/emetteurs.txt
-canadianminingjournal.com
-consilium.europa.eu
-correctiv.org
-courrierinternational.com
-e-mj.com
-earthquake.usgs.gov
-europarl.europa.eu
-fr.hespress.com
-globalvoices.org
-im-mining.com
-investinglive.com
-ledevoir.com
-lefigaro.fr
-mining-technology.com
-miningweekly.com
-multimedia.europarl.europa.eu
-northernminer.com
-rfi.fr
-rts.ch
-tsa-algerie.com
+burkina24.com
+wikidata.org
