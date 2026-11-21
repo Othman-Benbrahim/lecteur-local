@@ -101,6 +101,21 @@ def redefiner(texte: str) -> tuple[list[dict] | None, float]:
         return None, time.time() - t0
 
 
+# Passage 44949976936 : 7 des 12 failles « exploitées » de Gemma 4 E4B étaient hors du catalogue KEV ; les articles
+# disaient « pourrait être exploitée » (ASUS, Ruby), pas « est exploitée ». Règle de code sur la citation : un verbe au
+# conditionnel ou une possibilité ne vaut pas exploitation.
+CONSTAT = re.compile(r"\b(exploited|actively exploited|exploited in the wild|in the wild|exploited as (a )?zero-day|under active "
+                     r"exploitation|(was|were|is|are|been|being|has been|have been) (actively )?exploited|exploitation "
+                     r"(attempts|activity) (have|has) been|attackers (have )?(exploited|are exploiting)|exploiting the "
+                     r"(flaw|vulnerability|bug))\b", re.I)
+POSSIBLE = re.compile(r"\b(could|can|may|might|would|if|when|once) (be |have been |potentially be )?(exploited|exploit)|\bexploitable\b|\bcould allow\b|"
+                      r"\bno (evidence|indication|signs?) of (active )?exploitation\b|\bnot (been )?exploited\b", re.I)
+
+
+def constat_d_exploitation(citation: str) -> bool:
+    return bool(CONSTAT.search(citation or "")) and not POSSIBLE.search(citation or "")
+
+
 def appeler(c: httpx.Client, texte: str) -> tuple[dict | None, float]:
     t0 = time.time()
     r = c.post(lire.SERVEUR, json={"messages": [{"role": "system", "content": CONSIGNE},
@@ -150,7 +165,9 @@ def principal() -> int:
                 continue
             nt = lire.normal(t)
             ok = lambda cit: bool(cit) and lire.normal(cit) in nt
-            expl = [x for x in f["failles_exploitees"] if ok(x["citation"]) and x["cve"] in t]
+            expl0 = [x for x in f["failles_exploitees"] if ok(x["citation"]) and x["cve"] in t]
+            expl = [x for x in expl0 if constat_d_exploitation(x["citation"])]
+            ctl["exploitations_ecartees_conditionnel"] = ctl.get("exploitations_ecartees_conditionnel", 0) + len(expl0) - len(expl)
             act = [a for a in f["acteurs"] if ok(a["citation"]) and lire.normal(a["nom"]) in nt]
             ctl["affirmations"] += len(f["failles_exploitees"]) + len(f["acteurs"])
             ctl["citations_rejetees"] += len(f["failles_exploitees"]) - len(expl) + len(f["acteurs"]) - len(act)
