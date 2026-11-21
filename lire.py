@@ -28,27 +28,40 @@ UA = "lecteur-local/0.1 (recherche non commerciale ; https://github.com/Othman-B
 FLUX_CANDIDATS = ["https://www.cert.ssi.gouv.fr/feed/", "https://cert.cyber.gouv.fr/feed/"]
 SERVEUR = "http://127.0.0.1:8080/v1/chat/completions"
 SORTIE = Path("resultats")
-MAX_ELEMENTS = 40
+MAX_ELEMENTS = 25
+MAX_CARACTERES = 2500                                         # borne le temps de lecture (environ 14 jetons/s à l'entrée)
 
+# Passage 44939689290 : sur le seul résumé du flux (une ligne), le modèle a INVENTÉ 58 identifiants CVE sur 61
+# (« CVE-2026-1234 », « CVE-2026-5678 »), mis « CERT-FR » comme éditeur et classé presque tout en « bulletin ».
+# Correctifs : (1) le modèle lit la page de l'avis (robots.txt vérifié), pas le résumé ; (2) tout ce qu'une règle peut
+# lire est lu par le code (identifiants CVE, type d'après l'adresse, risques au vocabulaire fixe du CERT-FR) ; (3) le
+# modèle ne rend que ce que le code ne sait pas lire, et chaque affirmation doit venir avec une CITATION EXACTE du texte,
+# que le code vérifie mot pour mot : une affirmation sans citation retrouvée est rejetée et comptée.
 SCHEMA = {
     "type": "object",
     "properties": {
-        "type": {"type": "string", "enum": ["avis", "alerte", "incident", "menace", "bulletin", "autre"]},
-        "editeurs": {"type": "array", "items": {"type": "string"}, "maxItems": 8},
-        "cve": {"type": "array", "items": {"type": "string", "pattern": "^CVE-[0-9]{4}-[0-9]{4,7}$"}, "maxItems": 40},
-        "gravite": {"type": "string", "enum": ["critique", "elevee", "moyenne", "faible", "non_precisee"]},
+        "editeurs": {"type": "array", "maxItems": 6, "items": {"type": "string", "maxLength": 60}},
         "exploitation_active": {"type": "boolean"},
-        "attaquant_nomme": {"type": ["string", "null"]},
-        "pays_nomme": {"type": ["string", "null"]},
+        "citation_exploitation": {"type": ["string", "null"], "maxLength": 200},
+        "attaquant_nomme": {"type": ["string", "null"], "maxLength": 60},
+        "pays_nomme": {"type": ["string", "null"], "maxLength": 40},
+        "citation_attaquant_ou_pays": {"type": ["string", "null"], "maxLength": 200},
     },
-    "required": ["type", "editeurs", "cve", "gravite", "exploitation_active", "attaquant_nomme", "pays_nomme"],
+    "required": ["editeurs", "exploitation_active", "citation_exploitation", "attaquant_nomme", "pays_nomme",
+                 "citation_attaquant_ou_pays"],
     "additionalProperties": False,
 }
 CONSIGNE = ("Tu lis une publication de l'agence française de cybersécurité (CERT-FR). Réponds UNIQUEMENT par le JSON "
-            "demandé. Règles strictes : ne recopie que ce qui est écrit dans le texte, n'invente rien ; cve = les "
-            "identifiants CVE écrits dans le texte, aucun autre ; exploitation_active = vrai seulement si le texte dit "
-            "que la faille est exploitée ; attaquant_nomme et pays_nomme = null si le texte n'en nomme aucun ; "
-            "gravite = non_precisee si le texte ne la dit pas.")
+            "demandé. Règles strictes : n'invente rien ; si l'information n'est pas écrite, mets une liste vide, faux "
+            "ou null. editeurs = les éditeurs ou fabricants des produits concernés, écrits exactement comme dans le "
+            "texte (jamais « CERT-FR » ni « ANSSI »). exploitation_active = vrai seulement si le texte dit que la "
+            "vulnérabilité est exploitée ; alors citation_exploitation = la phrase exacte du texte qui le dit, copiée "
+            "mot pour mot. attaquant_nomme, pays_nomme = un groupe d'attaquants ou un pays nommé comme auteur d'une "
+            "attaque, sinon null ; alors citation_attaquant_ou_pays = la phrase exacte, copiée mot pour mot.")
+RISQUES = ["exécution de code arbitraire à distance", "exécution de code arbitraire", "déni de service à distance",
+           "déni de service", "élévation de privilèges", "atteinte à la confidentialité des données",
+           "atteinte à l'intégrité des données", "contournement de la politique de sécurité", "injection de code indirecte",
+           "usurpation d'identité", "falsification de requêtes côté serveur"]
 CVE_RE = re.compile(r"CVE-\d{4}-\d{4,7}")
 
 
@@ -73,6 +86,39 @@ def elements(xml: str) -> list[dict]:
         texte = re.sub(r"<[^>]+>", " ", f"{g('title')}. {g('description')}")
         out.append({"lien": g("link"), "date": g("pubDate"), "texte": re.sub(r"\s+", " ", texte).strip()})
     return out
+
+
+def texte_page(c: httpx.Client, url: str) -> str | None:
+    """Texte de la page de l'avis, lu le temps du passage (jamais gardé)."""
+    if not autorise(c, url):
+        return None
+    r = c.get(url)
+    if r.status_code != 200:
+        return None
+    h = re.sub(r"(?is)<(script|style|nav|header|footer)[^>]*>.*?</\1>", " ", r.text)
+    m = re.search(r"(?is)<(main|article)[^>]*>(.*?)</\1>", h)
+    t = re.sub(r"<[^>]+>", " ", m.group(2) if m else h)
+    import html as _h
+    return re.sub(r"\s+", " ", _h.unescape(t)).strip()
+
+
+def normal(t: str) -> str:
+    return re.sub(r"\s+", " ", (t or "").lower().replace("’", "'")).strip()
+
+
+def verifier(f: dict, texte: str) -> tuple[dict, dict]:
+    """Ne garde que les affirmations dont la preuve est dans le texte ; compte les rejets."""
+    nt, rej = normal(texte), {"editeurs": 0, "exploitation": 0, "attaquant_pays": 0}
+    eds = [e for e in f.get("editeurs", []) if normal(e) and normal(e) in nt and normal(e) not in ("cert-fr", "anssi")]
+    rej["editeurs"] = len(f.get("editeurs", [])) - len(eds)
+    expl = bool(f.get("exploitation_active"))
+    if expl and not (f.get("citation_exploitation") and normal(f["citation_exploitation"]) in nt):
+        expl, rej["exploitation"] = False, 1
+    att, pays = f.get("attaquant_nomme"), f.get("pays_nomme")
+    if (att or pays) and not (f.get("citation_attaquant_ou_pays") and normal(f["citation_attaquant_ou_pays"]) in nt
+                              and all(normal(x) in nt for x in (att, pays) if x)):
+        att, pays, rej["attaquant_pays"] = None, None, 1
+    return {"editeurs": eds, "exploitation_active": expl, "attaquant_nomme": att, "pays_nomme": pays}, rej
 
 
 def extraire(c: httpx.Client, texte: str) -> tuple[dict | None, float]:
@@ -109,25 +155,44 @@ def principal() -> int:
             print("aucun flux lisible ; rien lu")
             return 1
         print(f"flux : {FLUX}, {len(els)} éléments")
-        faits, controle, durees = [], {"vrais": 0, "trouves": 0, "inventes": 0, "manques": 0, "illisibles": 0}, []
+        faits, durees = [], []
+        controle = {"pages_lues": 0, "illisibles": 0, "editeurs_proposes": 0, "editeurs_rejetes": 0,
+                    "exploitations_proposees": 0, "exploitations_rejetees": 0, "attaquants_pays_proposes": 0,
+                    "attaquants_pays_rejetes": 0}
         for e in els:
-            f, d = extraire(c, e["texte"])
+            t = texte_page(c, e["lien"]) if e["lien"] else None
+            if not t:
+                controle["illisibles"] += 1
+                continue
+            controle["pages_lues"] += 1
+            t = t[:MAX_CARACTERES]
+            f, d = extraire(c, t)
             durees.append(d)
             if f is None:
                 controle["illisibles"] += 1
                 continue
-            vrais, rendus = set(CVE_RE.findall(e["texte"])), set(f.get("cve", []))
-            controle["vrais"] += len(vrais)
-            controle["trouves"] += len(vrais & rendus)
-            controle["inventes"] += len(rendus - vrais)
-            controle["manques"] += len(vrais - rendus)
-            faits.append({"lien": e["lien"], "date": e["date"], **f})
-            print(f"{d:5.1f} s  {f['type']:9s} {len(rendus)} CVE  {e['lien']}", flush=True)
+            garde, rej = verifier(f, t)
+            controle["editeurs_proposes"] += len(f.get("editeurs", []))
+            controle["editeurs_rejetes"] += rej["editeurs"]
+            controle["exploitations_proposees"] += int(bool(f.get("exploitation_active")))
+            controle["exploitations_rejetees"] += rej["exploitation"]
+            controle["attaquants_pays_proposes"] += int(bool(f.get("attaquant_nomme") or f.get("pays_nomme")))
+            controle["attaquants_pays_rejetes"] += rej["attaquant_pays"]
+            m = re.search(r"/(avis|alerte|cti|ioc|actualite|dur)/", e["lien"])
+            nt = normal(t)
+            faits.append({"lien": e["lien"], "date": e["date"], "type": m.group(1) if m else "autre",
+                          "cve": sorted(set(CVE_RE.findall(t))),
+                          "risques": [r_ for r_ in RISQUES if r_ in nt], **garde})
+            print(f"{d:5.1f} s  {faits[-1]['type']:8s} {len(faits[-1]['cve']):2d} CVE  éditeurs {garde['editeurs']}  "
+                  f"exploitée {garde['exploitation_active']}  rejets {rej}  {e['lien']}", flush=True)
+    propose = controle["editeurs_proposes"] + controle["exploitations_proposees"] + controle["attaquants_pays_proposes"]
+    rejete = controle["editeurs_rejetes"] + controle["exploitations_rejetees"] + controle["attaquants_pays_rejetes"]
     fid = {"date": datetime.now(timezone.utc).isoformat(timespec="seconds"), "elements": len(els), **controle,
-           "rappel_cve": round(controle["trouves"] / controle["vrais"], 3) if controle["vrais"] else None,
-           "precision_cve": round(controle["trouves"] / (controle["trouves"] + controle["inventes"]), 3)
-           if controle["trouves"] + controle["inventes"] else None,
-           "secondes_par_element": round(sum(durees) / len(durees), 1) if durees else None}
+           "affirmations_du_modele": propose, "rejetees_faute_de_preuve": rejete,
+           "fidelite": round(1 - rejete / propose, 3) if propose else None,
+           "secondes_par_element": round(sum(durees) / len(durees), 1) if durees else None,
+           "note": "identifiants CVE, type et risques lus par le code ; le modèle ne rend que les éditeurs, "
+                   "l'exploitation active et l'attaquant ou le pays, chacun vérifié mot pour mot dans le texte"}
     (SORTIE / "faits-cyber.json").write_text(json.dumps({"source": FLUX, "faits": faits}, ensure_ascii=False, indent=1),
                                             encoding="utf-8")
     (SORTIE / "fidelite.json").write_text(json.dumps(fid, ensure_ascii=False, indent=1), encoding="utf-8")
