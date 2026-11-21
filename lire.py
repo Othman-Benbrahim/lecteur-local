@@ -24,7 +24,8 @@ from pathlib import Path
 import httpx
 
 UA = "lecteur-local/0.1 (recherche non commerciale ; https://github.com/Othman-Benbrahim/lecteur-local)"
-FLUX = "https://cert.cyber.gouv.fr/flux-rss/"
+# « https://cert.cyber.gouv.fr/flux-rss/ » est une page HTML (passage 44939079964) : flux réels, essayés dans l'ordre
+FLUX_CANDIDATS = ["https://www.cert.ssi.gouv.fr/feed/", "https://cert.cyber.gouv.fr/feed/"]
 SERVEUR = "http://127.0.0.1:8080/v1/chat/completions"
 SORTIE = Path("resultats")
 MAX_ELEMENTS = 40
@@ -90,10 +91,24 @@ def extraire(c: httpx.Client, texte: str) -> tuple[dict | None, float]:
 def principal() -> int:
     SORTIE.mkdir(exist_ok=True)
     with httpx.Client(headers={"User-Agent": UA}, timeout=60, follow_redirects=True) as c:
-        if not autorise(c, FLUX):
-            print("robots.txt refuse le flux ; rien lu")
-            return 0
-        els = elements(c.get(FLUX).text)[:MAX_ELEMENTS]
+        els, FLUX = [], None
+        for u in FLUX_CANDIDATS:
+            if not autorise(c, u):
+                print(f"robots.txt refuse {u}")
+                continue
+            r = c.get(u)
+            if r.status_code == 200 and r.text.lstrip()[:200].lower().find("<rss") >= 0 or "<feed" in r.text[:500].lower():
+                try:
+                    els, FLUX = elements(r.text)[:MAX_ELEMENTS], str(r.url)
+                    break
+                except ET.ParseError as e:
+                    print(f"{u} : XML illisible ({e})")
+            else:
+                print(f"{u} : pas un flux (HTTP {r.status_code}, début : {r.text[:60]!r})")
+        if not els:
+            print("aucun flux lisible ; rien lu")
+            return 1
+        print(f"flux : {FLUX}, {len(els)} éléments")
         faits, controle, durees = [], {"vrais": 0, "trouves": 0, "inventes": 0, "manques": 0, "illisibles": 0}, []
         for e in els:
             f, d = extraire(c, e["texte"])
