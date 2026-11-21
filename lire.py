@@ -193,9 +193,11 @@ def principal() -> int:
            "secondes_par_element": round(sum(durees) / len(durees), 1) if durees else None,
            "note": "identifiants CVE, type et risques lus par le code ; le modèle ne rend que les éditeurs, "
                    "l'exploitation active et l'attaquant ou le pays, chacun vérifié mot pour mot dans le texte"}
-    (SORTIE / "faits-cyber.json").write_text(json.dumps({"source": FLUX, "faits": faits}, ensure_ascii=False, indent=1),
-                                            encoding="utf-8")
-    (SORTIE / "fidelite.json").write_text(json.dumps(fid, ensure_ascii=False, indent=1), encoding="utf-8")
+    nom = sys.argv[1] if len(sys.argv) > 1 else "modele"
+    fid["modele"] = nom
+    (SORTIE / f"faits-cyber-{nom}.json").write_text(json.dumps({"source": FLUX, "modele": nom, "faits": faits},
+                                                              ensure_ascii=False, indent=1), encoding="utf-8")
+    (SORTIE / f"fidelite-{nom}.json").write_text(json.dumps(fid, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(fid, ensure_ascii=False, indent=1))
     return 0
 

@@ -2,6 +2,13 @@ name: "Lecture locale (llama.cpp, modèle ouvert, sans clé)"
 
 on:
   workflow_dispatch:
+    inputs:
+      modele:
+        description: "Modèle ouvert (fichier GGUF Q4_K_M cherché sur Hugging Face)"
+        required: true
+        default: "gemma-4-12b"
+        type: choice
+        options: ["gemma-4-12b", "gemma-4-e4b", "qwen2.5-7b"]
 
 concurrency:
   group: lecteur-local
@@ -11,8 +18,7 @@ permissions:
   contents: write
 
 env:
-  MODELE_URL: "https://huggingface.co/bartowski/Qwen2.5-7B-Instruct-GGUF/resolve/main/Qwen2.5-7B-Instruct-Q4_K_M.gguf"
-  MODELE: "Qwen2.5-7B-Instruct-Q4_K_M.gguf"
+  MODELE_CHOISI: ${{ github.event.inputs.modele || 'gemma-4-12b' }}
 
 jobs:
   lire:
@@ -24,11 +30,34 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install httpx==0.28.1
+      - name: Trouver le fichier du modèle
+        run: |
+          python - <<'PY'
+          import json, os, re, urllib.request
+          cherche = {"gemma-4-12b": "gemma-4-12B-it-GGUF", "gemma-4-e4b": "gemma-4-E4B-it-GGUF",
+                     "qwen2.5-7b": "Qwen2.5-7B-Instruct-GGUF"}[os.environ["MODELE_CHOISI"]]
+          trouve = None
+          for auteur in ("bartowski", "unsloth", "ggml-org", "lmstudio-community"):
+              url = f"https://huggingface.co/api/models?author={auteur}&search={cherche}&limit=10"
+              for m in json.load(urllib.request.urlopen(url)):
+                  info = json.load(urllib.request.urlopen(f"https://huggingface.co/api/models/{m['id']}"))
+                  if info.get("gated"):
+                      continue
+                  f = [x["rfilename"] for x in info.get("siblings", []) if re.search(r"Q4_K_M\.gguf$", x["rfilename"], re.I)]
+                  if f:
+                      trouve = (m["id"], sorted(f, key=len)[0]); break
+              if trouve:
+                  break
+          print("modèle :", trouve)
+          rep, fic = trouve
+          with open(os.environ["GITHUB_ENV"], "a") as g:
+              g.write(f"MODELE_URL=https://huggingface.co/{rep}/resolve/main/{fic}\nMODELE={fic.split('/')[-1]}\n")
+          PY
       - name: Modèle (cache)
         uses: actions/cache@v4
         with:
           path: modeles
-          key: modele-${{ env.MODELE }}
+          key: modele-${{ env.MODELE_CHOISI }}
       - name: Télécharger le modèle si absent
         run: |
           mkdir -p modeles
@@ -65,7 +94,7 @@ jobs:
           tail -5 serveur.log
           curl -sf http://127.0.0.1:8080/health || { cat serveur.log | tail -40; exit 1; }
       - name: Lire
-        run: python -u lire.py
+        run: python -u lire.py "$MODELE_CHOISI"
       - name: Journal du serveur (vitesse)
         if: always()
         run: grep -E "eval time|prompt eval" serveur.log | tail -6 || true

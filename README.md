@@ -15,4 +15,4 @@ Principes :
 
 Premier passage : flux public du CERT-FR (ANSSI) ; modèle Qwen2.5-7B-Instruct (licence Apache 2.0), quantifié Q4_K_M.
 
-Résultats : `resultats/faits-cyber.json`, `resultats/fidelite.json`.
+Résultats : `resultats/faits-cyber-<modèle>.json`, `resultats/fidelite-<modèle>.json` (un fichier par modèle, pour comparer). `-v1` : premier passage, sur le seul résumé du flux (invalide : 58 CVE inventées sur 61).
