@@ -128,6 +128,91 @@ def constat_d_exploitation(citation: str) -> bool:
     return bool(CONSTAT.search(c)) and not POSSIBLE.search(c)
 
 
+# ---------------------------------------------------------------- troisième lecteur : HYBRIDE (Python + ReDefiNER)
+# Décision de l'auteur (22 h 58) : le texte sera traité en masse, la vitesse compte. Le Python repère les candidats de
+# façon certaine (identifiants CVE, noms propres) ; ReDefiNER, en mode étiquetage, ne fait que classer ces noms dans
+# une liste fermée (ou « aucun ») ; le Python décide l'exploitation par la règle du constat, phrase par phrase.
+LIVRET_ROLES = """[RULES]
+Label each supplied span with its role in the attack described by the text.
+R1 A company or team that discovers, reports, analyses or tracks an attack is RESEARCHER, never ATTACKER.
+
+[TYPE] ATTACKER
+[DESCRIPTION] A threat actor, hacking group, ransomware gang or state named as carrying out the attack.
+
+[TYPE] VICTIM
+[DESCRIPTION] An organisation, company, government body or sector that was targeted or breached.
+
+[TYPE] RESEARCHER
+[DESCRIPTION] A security company, threat intelligence team or researcher that discovered or reported the attack.
+
+[TYPE] VENDOR
+[DESCRIPTION] The company that makes the vulnerable product.
+"""
+MOTS_VIDES_NOMS = {"The", "A", "An", "This", "That", "These", "Those", "In", "On", "At", "For", "But", "And", "If", "It",
+                   "Its", "We", "They", "He", "She", "However", "According", "Also", "As", "When", "While", "After",
+                   "Before", "Since", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
+                   "January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+                   "November", "December", "CVE", "Update", "Read", "Related", "Share"}
+NOM_RE = re.compile(r"\b[A-Z][A-Za-z0-9&.\-]*(?:\s+(?:of|de|the|and|[A-Z][A-Za-z0-9&.\-]*)){0,4}")
+
+
+def candidats_noms(texte: str) -> list[tuple[int, int]]:
+    out, vus = [], set()
+    for m in NOM_RE.finditer(texte):
+        mots = [w.rstrip(".,;:-") for w in m.group(0).split()]
+        mots = [w for w in mots if w]
+        while mots and (mots[-1] in ("of", "de", "the", "and") or mots[-1] in MOTS_VIDES_NOMS):
+            mots.pop()
+        while mots and mots[0] in MOTS_VIDES_NOMS:
+            mots.pop(0)
+        if not mots or lire.CVE_RE.match(mots[0]):
+            continue
+        nom = " ".join(mots)
+        d = texte.find(nom, m.start())
+        if nom in vus or len(nom) < 2 or d < 0:
+            continue
+        vus.add(nom)
+        out.append((d, d + len(nom)))
+    return out[:60]
+
+
+def phrases(texte: str) -> list[str]:
+    return [p for p in re.split(r"(?<=[.!?])\s+", texte) if p]
+
+
+def exploitation_par_regle(texte: str) -> set[str]:
+    """Une faille est dite exploitée si une phrase qui la cite (ou la phrase suivante, quand celle-ci parle de « the
+    flaw / vulnerability / bug / zero-day » et que l'article ne cite qu'une faille jusque-là) porte un constat."""
+    out, ps = set(), phrases(texte)
+    deja = []
+    for i, p in enumerate(ps):
+        cves = lire.CVE_RE.findall(p)
+        deja += [c for c in cves if c not in deja]
+        if cves and constat_d_exploitation(p):
+            out |= set(cves)
+        elif not cves and len(deja) == 1 and re.search(r"\b(the|this) (flaw|vulnerability|bug|zero-?day|issue)\b", p, re.I) \
+                and constat_d_exploitation(p):
+            out.add(deja[0])
+    return out
+
+
+def hybride(texte: str) -> tuple[dict | None, float]:
+    global _TAGGER
+    t0 = time.time()
+    try:
+        if _TAGGER is None:
+            from redefiner import Tagger
+            _TAGGER = Tagger.from_pretrained("jungroo-ai/redefiner-0.8b", device="cpu")
+        spans = candidats_noms(texte)
+        roles = _TAGGER.label(texte, spans, LIVRET_ROLES, allow_none=True, snap=True) if spans else []
+        acteurs = sorted({(r["text"], r["label"]) for r in roles
+                          if r.get("label") not in (None, "NONE") and not r.get("unsupported") and r.get("confidence", 0) >= 0.5})
+        return {"exploitees": sorted(exploitation_par_regle(texte)), "acteurs": acteurs}, time.time() - t0
+    except Exception as e:
+        print(f"  hybride indisponible : {type(e).__name__}: {e}"[:300], flush=True)
+        return None, time.time() - t0
+
+
 def appeler(c: httpx.Client, texte: str) -> tuple[dict | None, float]:
     t0 = time.time()
     r = c.post(lire.SERVEUR, json={"messages": [{"role": "system", "content": CONSIGNE},
@@ -159,6 +244,7 @@ def principal() -> int:
                 liens += [e["lien"] for e in lire.elements(r.text) if e["lien"]]
             except Exception as e:
                 print(f"{f} : {type(e).__name__}")
+        hy = {"exploitees_dites": 0, "exploitees_dans_kev": 0, "cve_kev_dites_exploitees": 0, "secondes": []}
         rd = {"exploitees_dites": 0, "exploitees_dans_kev": 0, "cve_kev_dites_exploitees": 0, "secondes": []}
         res, ctl, durees = [], {"articles_lus": 0, "citations_rejetees": 0, "affirmations": 0,
                                 "exploitees_dites": 0, "exploitees_dans_kev": 0, "cve_kev_dans_texte": 0,
@@ -199,7 +285,16 @@ def principal() -> int:
                 rd["cve_kev_dites_exploitees"] += len(kev_texte & cves_r)
                 red = {"exploitees": sorted(cves_r), "hors_catalogue_kev": sorted(cves_r - kev),
                        "acteurs": sorted({(x["text"], x["label"]) for x in sp if x["label"] != "EXPLOITED_CVE"})}
-            res.append({"lien": u, "exploitees": sorted(dites), "hors_catalogue_kev": sorted(dites - kev),
+            h, dh = hybride(t)
+            if h is not None:
+                hy["secondes"].append(dh)
+                e_h = set(h["exploitees"])
+                hy["exploitees_dites"] += len(e_h)
+                hy["exploitees_dans_kev"] += len(e_h & kev)
+                hy["cve_kev_dites_exploitees"] += len(kev_texte & e_h)
+                h["hors_catalogue_kev"] = sorted(e_h - kev)
+                print(f"        hybride {dh:5.1f} s : exploitées {h['exploitees']}  acteurs {h['acteurs'][:8]}", flush=True)
+            res.append({"lien": u, "hybride": h, "exploitees": sorted(dites), "hors_catalogue_kev": sorted(dites - kev),
                         "kev_non_signalees": sorted(kev_texte - dites),
                         "acteurs": [{k: a[k] for k in ("nom", "role", "pays")} for a in act], "redefiner": red})
             if red:
@@ -211,6 +306,12 @@ def principal() -> int:
            "precision_exploitation_kev": round(ctl["exploitees_dans_kev"] / ctl["exploitees_dites"], 3) if ctl["exploitees_dites"] else None,
            "rappel_exploitation_kev": round(ctl["cve_kev_dites_exploitees"] / ctl["cve_kev_dans_texte"], 3) if ctl["cve_kev_dans_texte"] else None,
            "secondes_par_article": round(sum(durees) / len(durees), 1) if durees else None,
+           "hybride": {"exploitees_dites": hy["exploitees_dites"], "exploitees_dans_kev": hy["exploitees_dans_kev"],
+                       "precision_exploitation_kev": round(hy["exploitees_dans_kev"] / hy["exploitees_dites"], 3)
+                       if hy["exploitees_dites"] else None,
+                       "rappel_exploitation_kev": round(hy["cve_kev_dites_exploitees"] / ctl["cve_kev_dans_texte"], 3)
+                       if ctl["cve_kev_dans_texte"] else None,
+                       "secondes_par_article": round(sum(hy["secondes"]) / len(hy["secondes"]), 1) if hy["secondes"] else None},
            "redefiner": {"exploitees_dites": rd["exploitees_dites"], "exploitees_dans_kev": rd["exploitees_dans_kev"],
                          "precision_exploitation_kev": round(rd["exploitees_dans_kev"] / rd["exploitees_dites"], 3)
                          if rd["exploitees_dites"] else None,
