@@ -1,0 +1,487 @@
+# Termes validés qui désignent un ACTEUR (décision de l'auteur du 2026-11-22, 1 h 16 : chaque terme rapporté aux acteurs,
+# à l'émetteur et aux quatre variables). Généré depuis valides.txt ; taille, facette et niveau d'organisation repris des
+# fiches quand l'acteur y figure (noms Wikidata), sinon déduits du tri (personnalité publique : micro, personne ;
+# organisation : méso, collectif).
+# Format : terme | langue | acteur | taille | facette | organisation | compartiment | origine
+60 ans BAD | fr | 60 ans BAD | méso | collectif | economie | dette-emergents:fmi | tri (acteur)
+ABB | en | ABB | méso | collectif | economie | infrastructures-critiques:reseaux | tri (acteur)
+AfD | de | AfD | méso | collectif | statut | politique-interieure:partis | tri (acteur)
+AfD Sachsen-Anhalt | de | AfD Sachsen-Anhalt | méso | collectif | statut | politique-interieure:partis | tri (acteur)
+A.I.E.A | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+AEIA | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+Agence internationale de l'energie atomique | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+Agence internationale de l'énergie atomique | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+Agence internationale pour l'Énergie atomique | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+Agence internationale à l'énergie atomique | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+AIEA | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+IAEA | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+IAEA | en | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+iaea.org | en | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+International Atomic Energy Agency | en | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+International Atomic Energy Agency | fr | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+International Atomic Energy Agency，IAEA | en | Agence internationale de l'énergie atomique | macro | collectif | statut | iran-nucleaire:verification | fiche
+Aigner | de | Aigner | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Alexander Dobrindt | de | Alexander Dobrindt | micro | personne | personne | securite-publique:politique | tri (personnalité publique)
+Alice Weidel | de | Alice Weidel | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Alijew | de | Alijew | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Alischer Usmanow | de | Alischer Usmanow | micro | personne | personne | russie-ukraine:sanctions | tri (personnalité publique)
+Alternative für Deutschland | de | AfD | méso | collectif | statut | politique-interieure:partis | tri (acteur)
+Annalena Baerbock | de | Annalena Baerbock | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Anthropic | fr | Anthropic | méso | collectif | economie | sciences-techniques:ia | tri (acteur)
+Arabie Séoudite | fr | Arabie saoudite | macro | collectif | geopolitique | energie-mondiale:production | fiche
+Kingdom of Saudi Arabia | en | Arabie saoudite | macro | collectif | geopolitique | energie-mondiale:production | fiche
+Royaume d’Arabie saoudite | fr | Arabie saoudite | macro | collectif | geopolitique | energie-mondiale:production | fiche
+Royaume d’Arabie séoudite | fr | Arabie saoudite | macro | collectif | geopolitique | energie-mondiale:production | fiche
+Saudi | en | Arabie saoudite | macro | collectif | geopolitique | energie-mondiale:production | fiche
+Armee populaire de liberation | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Armée chinoise populaire de libération | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Armée de la république populaire de Chine | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Armée de libération du peuple | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Armée populaire de libération | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Armée rouge chinoise | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Chinese Communist Forces | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Chinese People’s Liberation Army | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Chinese PLA | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Forces armées chinoises | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Forces armées de la Chine | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Forces armées de la république populaire de Chine | fr | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+mil China | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+military of PR China | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+P.L.A. | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+People’s Liberation Army | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+PLA | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+PLA China | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+PLA PRC | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+PRC PLA | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Zhongguo ren min jie fang jun | en | Armée populaire de libération | macro | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Aspect Engineering Solutions | en | Aspect Engineering Solutions | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+Audi | de | Audi | méso | collectif | economie | economie-entreprises:entreprises | tri (acteur)
+Autorite du Canal de Panama | fr | Autorité du canal de Panama | méso | collectif | statut | transport-maritime:detroits | fiche
+Autorité du canal de Panama | fr | Autorité du canal de Panama | méso | collectif | statut | transport-maritime:detroits | fiche
+Autorité Du Canal De Panamá | fr | Autorité du canal de Panama | méso | collectif | statut | transport-maritime:detroits | fiche
+Panama Canal Authority | en | Autorité du canal de Panama | méso | collectif | statut | transport-maritime:detroits | fiche
+Autorité nationale palestinienne | fr | Autorité palestinienne | méso | collectif | statut | guerre-levant:gaza | fiche
+Autorité palestinienne | fr | Autorité palestinienne | méso | collectif | statut | guerre-levant:gaza | fiche
+Palestine | fr | Autorité palestinienne | méso | collectif | statut | guerre-levant:gaza | fiche
+State of Palestine | en | Autorité palestinienne | méso | collectif | statut | guerre-levant:gaza | fiche
+État de Palestine | fr | Autorité palestinienne | méso | collectif | statut | guerre-levant:gaza | fiche
+État palestinien | fr | Autorité palestinienne | méso | collectif | statut | guerre-levant:gaza | fiche
+Bank of Russia | en | Banque centrale de Russie | macro | collectif | statut | russie-ukraine:economie_russe | fiche
+Banque Centrale de la Fédération de Russie | fr | Banque centrale de Russie | macro | collectif | statut | russie-ukraine:economie_russe | fiche
+Banque Centrale De Russie | fr | Banque centrale de Russie | macro | collectif | statut | russie-ukraine:economie_russe | fiche
+Banque de Russie | fr | Banque centrale de Russie | macro | collectif | statut | russie-ukraine:economie_russe | fiche
+Central Bank of Russia | en | Banque centrale de Russie | macro | collectif | statut | russie-ukraine:economie_russe | fiche
+Central Bank of the Russian Federation | en | Banque centrale de Russie | macro | collectif | statut | russie-ukraine:economie_russe | fiche
+Banque centrale européenne | fr | Banque centrale européenne | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+BCE | fr | Banque centrale européenne | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+European Central Bank | en | Banque centrale européenne | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+Banque populaire de Chine | fr | Banque populaire de Chine | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+People's Bank of China | en | Banque populaire de Chine | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+People's Bank of China | fr | Banque populaire de Chine | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+Peoples Bank of China | en | Banque populaire de Chine | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+Beatrix von Storch | de | Beatrix von Storch | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Benedikt XVI. | de | Benedikt XVI. | micro | personne | personne | humain:croyances | tri (personnalité publique)
+Bischof Georg Bätzing | de | Bischof Georg Bätzing | micro | personne | personne | humain:croyances | tri (personnalité publique)
+Brosius-Gersdorf | de | Brosius-Gersdorf | micro | personne | personne | politique-interieure:gouvernement | tri (personnalité publique)
+Bätzing | de | Bischof Georg Bätzing | micro | personne | personne | humain:croyances | tri (personnalité publique)
+CDU | de | CDU | méso | collectif | statut | politique-interieure:partis | tri (acteur)
+China PR | en | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+Chine communiste | fr | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+Chine continentale | fr | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+Chine populaire | fr | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+Communist China | en | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+P.R.C. | en | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+People's Republic of China | en | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+PR China | en | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+Red China | en | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+République populaire de Chine | fr | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+the People's Republic of China | en | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+The PRC | en | Chine (prêteur bilatéral) | macro | collectif | geopolitique | dette-emergents:creanciers | fiche
+Claudia Sheinbaum | fr | Claudia Sheinbaum | micro | personne | personne | elections-amerique-latine:executif | tri (personnalité publique)
+Colonel Mamadi Doumbouya | fr | Colonel Mamadi Doumbouya | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Commission européenne | fr | Commission européenne | macro | collectif | statut | russie-ukraine:sanctions | fiche
+ec.europa.eu | en | Commission européenne | macro | collectif | statut | russie-ukraine:sanctions | fiche
+EU commission | en | Commission européenne | macro | collectif | statut | russie-ukraine:sanctions | fiche
+European Commission | en | Commission européenne | macro | collectif | statut | russie-ukraine:sanctions | fiche
+American Congress | en | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+American legislature | en | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+Congress of the United States | en | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+Congrès américain | fr | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+Congrès des États-Unis | fr | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+Legislature of the United States | en | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+U.S. Congress | en | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+United States Congress | fr | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+United States Congress | en | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+United states legislative branch | en | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+US Congress | en | Congrès américain | méso | collectif | statut | iran-nucleaire:etats_unis | fiche
+Central People's Government | en | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Central People's Government of the People's Republic of China | en | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Conseil des affaires d'État | fr | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Conseil des affaires de l'État | fr | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Conseil des affaires de l'État de la république populaire de Chine | fr | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+gouvernement central populaire | fr | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+gouvernement chinois | fr | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+gouvernement de la Chine | fr | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+gouvernement de la République populaire de Chine | fr | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Government of China | en | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Government of the People's Republic of China | en | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+guowuyuan | fr | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+State Council of China | en | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+State Council of the People's Republic of China | en | Conseil des affaires de l'État | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Coris Bank International | fr | Coris Bank International | méso | collectif | economie | dette-emergents:banques | tri (acteur)
+Coris Bank International Côte d’Ivoire | fr | Coris Bank International Côte d’Ivoire | méso | collectif | economie | dette-emergents:banques | tri (acteur)
+Corée du Nord | fr | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+Democratic People's Republic of Korea | en | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+DPR Korea | en | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+DPRK | en | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+la République populaire démocratique de Corée | fr | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+N. Korea | en | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+RPDC | fr | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+République populaire de Corée | fr | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+République populaire démocratique de Corée | fr | Corée du Nord | méso | collectif | geopolitique | russie-ukraine:soutiens | fiche
+Databricks | en | Databricks | méso | collectif | economie | sciences-techniques:ia | tri (acteur)
+DFB | de | DFB | méso | collectif | economie | competitions-culture:regles | tri (acteur)
+DKP | de | DKP | méso | collectif | statut | politique-interieure:partis | tri (acteur)
+Dobrindt | de | Alexander Dobrindt | micro | personne | personne | securite-publique:politique | tri (personnalité publique)
+Dominique de Villepin | fr | Dominique de Villepin | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Donald Trump | de | Donald Trump | micro | personne | personne | politique-americaine:executif | tri (personnalité publique)
+Departement de l'Energie des Etats-Unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Department of Energy | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Department of Energy | en | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+DOE | en | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département Américain de l'énergie | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département de l'Energie des Etats-Unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département de l'énergie des Etats-Unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département de l'Énergie des États-unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département de l’Energie des Etats-Unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département de l’énergie des Etats-Unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département de l’énergie des États-Unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département à l'Energie américain | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département à l'énergie des Etats-Unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+Département à l'énergie des États-Unis | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+energy.gov | en | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+U.S. Department of Energy | en | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+United States Department of Energy | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+United States Department of Energy | en | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+US Department of Energy | en | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+US-DOE | fr | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+USDOE | en | département de l'Énergie | méso | collectif | statut | politique-americaine:energie | fiche
+döllner | de | gernot döllner | micro | personne | personne | economie-entreprises:dirigeants_entreprise | tri (personnalité publique)
+Emerson | en | Emerson | méso | collectif | economie | economie-entreprises:entreprises | tri (acteur)
+EU | de | EU | méso | collectif | economie | securite-europeenne:otan_ue | tri (acteur)
+First Phosphate | en | First Phosphate | méso | collectif | economie | cycles-biogeochimiques:phosphore | tri (acteur)
+FMI | fr | Fonds monétaire international | macro | collectif | statut | dette-emergents:fmi | fiche
+Fonds monétaire international | fr | Fonds monétaire international | macro | collectif | statut | dette-emergents:fmi | fiche
+IMF | en | Fonds monétaire international | macro | collectif | statut | dette-emergents:fmi | fiche
+International Monetary Fund | en | Fonds monétaire international | macro | collectif | statut | dette-emergents:fmi | fiche
+International Monetary Fund, IMF | en | Fonds monétaire international | macro | collectif | statut | dette-emergents:fmi | fiche
+Forces armées soudanaises | fr | Forces armées soudanaises (en agrégat) | macro | collectif | geopolitique | soudan:armee | fiche
+mil Sudan | en | Forces armées soudanaises (en agrégat) | macro | collectif | geopolitique | soudan:armee | fiche
+military of Sudan | en | Forces armées soudanaises (en agrégat) | macro | collectif | geopolitique | soudan:armee | fiche
+Sudanese Armed Forces | en | Forces armées soudanaises (en agrégat) | macro | collectif | geopolitique | soudan:armee | fiche
+Forces de soutien rapide | fr | Forces de soutien rapide (en agrégat) | macro | collectif | geopolitique | soudan:fsr | fiche
+FSR | fr | Forces de soutien rapide (en agrégat) | macro | collectif | geopolitique | soudan:fsr | fiche
+Quwwāt ad-daʿm as-sarīʿ | en | Forces de soutien rapide (en agrégat) | macro | collectif | geopolitique | soudan:fsr | fiche
+Rapid Support Forces | en | Forces de soutien rapide (en agrégat) | macro | collectif | geopolitique | soudan:fsr | fiche
+RSF | en | Forces de soutien rapide (en agrégat) | macro | collectif | geopolitique | soudan:fsr | fiche
+Fridman | de | Fridman | micro | personne | personne | russie-ukraine:sanctions | tri (personnalité publique)
+Friedrich Merz | de | Friedrich Merz | micro | personne | personne | securite-europeenne:otan_ue | tri (personnalité publique)
+Army of the Guardians of the Islamic Revolution | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Corps des gardiens de la révolution islamique | fr | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Gardes de la Révolution | fr | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Gardiens de la Révolution | fr | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Gardiens de la Révolution islamique | fr | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Iran's Revolutionary Guard Corps | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Iranian Revolutionary Guard Corps | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Iranian Revolutionary Guards | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+IRGC | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Islamic Revolution Guard Corps | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Islamic Revolution Guards Corps | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Islamic Revolutionary Guard Corps | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Pasdaran | fr | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Pasdaran | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Pasdaran e Enqelab | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Pasdarans | fr | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Revolutionary Guards of Iran | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+Sepah e Pasdaran | en | Gardiens de la révolution (en agrégat) | méso | collectif | geopolitique | guerre-levant:iran | fiche
+GDELT Project | en | GDELT | macro | collectif | technique | observateur-mesure:biais | fiche
+Global Database of Events, Language, and Tone | en | GDELT | macro | collectif | technique | observateur-mesure:biais | fiche
+The GDELT Project | en | GDELT | macro | collectif | technique | observateur-mesure:biais | fiche
+gernot döllner | de | gernot döllner | micro | personne | personne | economie-entreprises:dirigeants_entreprise | tri (personnalité publique)
+Grüne | de | Grüne | méso | collectif | statut | politique-interieure:partis | tri (acteur)
+Hamas | en | Hamas (en agrégat) | méso | collectif | geopolitique | guerre-levant:gaza | fiche
+Harakat al-Muqawama al-Islamiya | en | Hamas (en agrégat) | méso | collectif | geopolitique | guerre-levant:gaza | fiche
+Islamic Resistance Movement | en | Hamas (en agrégat) | méso | collectif | geopolitique | guerre-levant:gaza | fiche
+Mouvement de résistance islamique | fr | Hamas (en agrégat) | méso | collectif | geopolitique | guerre-levant:gaza | fiche
+Hansa Rostock | de | Hansa Rostock | méso | collectif | economie | competitions-culture:calendrier | tri (acteur)
+Hesbollah | fr | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Hezbollah | fr | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Hezbollah | en | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Hizballah | en | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Hizbollah | fr | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Hizbollah | en | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Hizbullah | en | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Lebanese Hezbollah | en | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Lebanese Hizbullah | en | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Parti de Dieu | fr | Hezbollah (en agrégat) | méso | collectif | geopolitique | guerre-levant:liban | fiche
+Ansar Allah | fr | Houthis (en agrégat) | méso | collectif | geopolitique | guerre-levant:yemen | fiche
+Ansar Allah | en | Houthis (en agrégat) | méso | collectif | geopolitique | guerre-levant:yemen | fiche
+Ansarallah | fr | Houthis (en agrégat) | méso | collectif | geopolitique | guerre-levant:yemen | fiche
+Ansarullah | en | Houthis (en agrégat) | méso | collectif | geopolitique | guerre-levant:yemen | fiche
+Houthi movement | en | Houthis (en agrégat) | méso | collectif | geopolitique | guerre-levant:yemen | fiche
+Houthi rebels | en | Houthis (en agrégat) | méso | collectif | geopolitique | guerre-levant:yemen | fiche
+Houthis | en | Houthis (en agrégat) | méso | collectif | geopolitique | guerre-levant:yemen | fiche
+Höcke | de | Höcke | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+ICMM | en | ICMM | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+Identitäre Bewegung | de | Identitäre Bewegung | méso | collectif | economie | humain:polarisation | tri (acteur)
+Idrissa Nassa | fr | Idrissa Nassa | micro | personne | personne | dette-emergents:banques | tri (personnalité publique)
+ikea | de | ikea | méso | collectif | economie | economie-entreprises:entreprises | tri (acteur)
+al-‘Irāq | fr | Irak | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Irak | fr | Irak | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Iraq | en | Irak | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Republic of Iraq | en | Irak | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+République d’Irak | fr | Irak | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Iran | fr | Iran (État) | macro | collectif | geopolitique | guerre-levant:iran | fiche
+Islamic Rep. Iran | en | Iran (État) | macro | collectif | geopolitique | guerre-levant:iran | fiche
+Islamic Republic of Iran | en | Iran (État) | macro | collectif | geopolitique | guerre-levant:iran | fiche
+La République Islamique d’Iran | fr | Iran (État) | macro | collectif | geopolitique | guerre-levant:iran | fiche
+République islamique d'Iran | fr | Iran (État) | macro | collectif | geopolitique | guerre-levant:iran | fiche
+République islamique iranienne | fr | Iran (État) | macro | collectif | geopolitique | guerre-levant:iran | fiche
+ISR | fr | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+ISR | en | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+Isr. | fr | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+Israel | fr | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+Israël | fr | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+l’État d’Israël | fr | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+State of Israel | en | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+Yisrael | en | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+État d'Israël | fr | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+État hébreu | fr | Israël (État) | macro | collectif | geopolitique | guerre-levant:israel | fiche
+Julian Reichelt | de | Julian Reichelt | micro | personne | personne | information-cyber:recits | tri (personnalité publique)
+Kay Gottschalk | de | Kay Gottschalk | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Klopp | de | Klopp | micro | personne | personne | competitions-culture:forme | tri (personnalité publique)
+Krah | de | Maximilian Krah | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Kucing Liar | en | Kucing Liar | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+le pen | fr | Marine Le Pen | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Leag | de | Leag | méso | collectif | economie | energie-mondiale:production | tri (acteur)
+Linke in Berlin | de | Linke in Berlin | méso | collectif | economie | politique-interieure:partis | tri (acteur)
+Maaßen | de | Maaßen | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Macmahon | en | Macmahon | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+Marine Le Pen | fr | Marine Le Pen | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Markus Lanz | de | Markus Lanz | micro | personne | personne | information-cyber:attention | tri (personnalité publique)
+Martin Sellner | de | Martin Sellner | micro | personne | personne | migrations-demographie:politiques_migratoires | tri (personnalité publique)
+Maximilian Krah | de | Maximilian Krah | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Merkel | de | Merkel | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Merz | de | Friedrich Merz | micro | personne | personne | securite-europeenne:otan_ue | tri (personnalité publique)
+Meuthen | de | Meuthen | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+MINERALS COUNCIL SOUTH AFRICA | en | MINERALS COUNCIL SOUTH AFRICA | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+department of finance | en | ministère des Finances | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+finance department | en | ministère des Finances | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+finance ministry | en | ministère des Finances | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+ministry of finance | en | ministère des Finances | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+ministère des Finances | fr | ministère des Finances | macro | collectif | statut | economie-chinoise:politique_monetaire | fiche
+Nius | de | Nius | méso | collectif | economie | information-cyber:recits | tri (acteur)
+NPD | de | NPD | méso | collectif | statut | politique-interieure:partis | tri (acteur)
+NpS | de | NpS | méso | collectif | economie | securite-publique:trafics | tri (acteur)
+Oliver Blume | de | Oliver Blume | micro | personne | personne | economie-entreprises:dirigeants_entreprise | tri (personnalité publique)
+le Sultanat d’Oman | fr | Oman | méso | collectif | geopolitique | ormuz:riverains | fiche
+OMA | fr | Oman | méso | collectif | geopolitique | ormuz:riverains | fiche
+Oman | en | Oman | méso | collectif | geopolitique | ormuz:riverains | fiche
+omn | en | Oman | méso | collectif | geopolitique | ormuz:riverains | fiche
+Sultanat d’Oman | fr | Oman | méso | collectif | geopolitique | ormuz:riverains | fiche
+Sultanate of Oman | en | Oman | méso | collectif | geopolitique | ormuz:riverains | fiche
+Omnia Group | en | Omnia Group | méso | collectif | economie | cycles-biogeochimiques:engrais | tri (acteur)
+OPEC Plus | en | OPEP+ | macro | collectif | geopolitique | calendriers-echeances:banques_centrales | fiche
+OPEC+ | en | OPEP+ | macro | collectif | geopolitique | calendriers-echeances:banques_centrales | fiche
+OPEP+ | fr | OPEP+ | macro | collectif | geopolitique | calendriers-echeances:banques_centrales | fiche
+OMS | fr | Organisation mondiale de la santé | macro | collectif | statut | epidemies:autorites | fiche
+Organisation mondiale de la Santé | fr | Organisation mondiale de la santé | macro | collectif | statut | epidemies:autorites | fiche
+World Health Organisation | en | Organisation mondiale de la santé | macro | collectif | statut | epidemies:autorites | fiche
+World Health Organization | en | Organisation mondiale de la santé | macro | collectif | statut | epidemies:autorites | fiche
+World Health Organization (WHO) | en | Organisation mondiale de la santé | macro | collectif | statut | epidemies:autorites | fiche
+Orica | en | Orica | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+Panuco | en | Panuco | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+Papst Leo XIV. | de | Papst Leo XIV. | micro | personne | personne | humain:croyances | tri (personnalité publique)
+AGRI | fr | Parlement européen, commission de l'agriculture | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+EMPL | fr | Parlement européen, commission de l'emploi | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+ENVI | fr | Parlement européen, commission de l'environnement | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+ITRE | fr | Parlement européen, commission de l'industrie | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+CULT | fr | Parlement européen, commission de la culture | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+PECH | fr | Parlement européen, commission de la pêche | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+AFCO | fr | Parlement européen, commission des affaires constitutionnelles | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+JURI | fr | Parlement européen, commission des affaires juridiques | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+ECON | fr | Parlement européen, commission des affaires économiques et monétaires | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+AFET | fr | Parlement européen, commission des affaires étrangères | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+BUDG | fr | Parlement européen, commission des budgets | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+FEMM | fr | Parlement européen, commission des droits des femmes | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+LIBE | fr | Parlement européen, commission des libertés civiles | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+PETI | fr | Parlement européen, commission des pétitions | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+TRAN | fr | Parlement européen, commission des transports | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+INTA | fr | Parlement européen, commission du commerce international | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+CONT | fr | Parlement européen, commission du contrôle budgétaire | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+DEVE | fr | Parlement européen, commission du développement | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+REGI | fr | Parlement européen, commission du développement régional | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+IMCO | fr | Parlement européen, commission du marché intérieur | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+HOUS | fr | Parlement européen, commission spéciale sur le logement | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+SANT | fr | Parlement européen, sous-commission de la santé publique | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+DROI | fr | Parlement européen, sous-commission des droits de l'homme | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+FISC | fr | Parlement européen, sous-commission des questions fiscales | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+SEDE | fr | Parlement européen, sous-commission sécurité et défense | méso | collectif | statut | calendriers-echeances:parlements | tri (commission)
+CCP | en | Parti communiste chinois (direction centrale, en agrégat) | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Chinese Communist Party | en | Parti communiste chinois (direction centrale, en agrégat) | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Communist Party of China | en | Parti communiste chinois (direction centrale, en agrégat) | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+CPC | fr | Parti communiste chinois (direction centrale, en agrégat) | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+CPC | en | Parti communiste chinois (direction centrale, en agrégat) | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+parti communiste | fr | Parti communiste chinois (direction centrale, en agrégat) | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Parti communiste chinois | fr | Parti communiste chinois (direction centrale, en agrégat) | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+PCC | fr | Parti communiste chinois (direction centrale, en agrégat) | macro | collectif | statut | economie-chinoise:pouvoir | fiche
+Petr Bystron | de | Petr Bystron | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Petry | de | Petry | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Pfizer | de | Pfizer | méso | collectif | economie | epidemies:technique | tri (acteur)
+Pretzell | de | Pretzell | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+PT-Freeport Indonesia | en | PT-Freeport Indonesia | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+Putin | de | Putin | micro | personne | personne | russie-ukraine:negociations | tri (personnalité publique)
+pötsch | de | pötsch | micro | personne | personne | economie-entreprises:dirigeants_entreprise | tri (personnalité publique)
+Katar | fr | Qatar | méso | collectif | geopolitique | guerre-levant:mediateurs | fiche
+l’État du Qatar | fr | Qatar | méso | collectif | geopolitique | guerre-levant:mediateurs | fiche
+Qa. | fr | Qatar | méso | collectif | geopolitique | guerre-levant:mediateurs | fiche
+qat | en | Qatar | méso | collectif | geopolitique | guerre-levant:mediateurs | fiche
+Qatar | fr | Qatar | méso | collectif | geopolitique | guerre-levant:mediateurs | fiche
+Qatar | en | Qatar | méso | collectif | geopolitique | guerre-levant:mediateurs | fiche
+State of Qatar | en | Qatar | méso | collectif | geopolitique | guerre-levant:mediateurs | fiche
+Reil | de | Reil | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Office of the Special Trade Representative | en | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+Office of the U.S. Trade Representative | en | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+Office of the United States Trade Representative | en | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+Representant americain au commerce | fr | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+Représentant américain au commerce | fr | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+United States Trade Representative | en | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+US Trade Representative Office | en | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+USTR | en | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+ustr.gov | en | Représentant américain au commerce | macro | collectif | statut | rivalite-sino-americaine:commerce | fiche
+Fédération de Russie | fr | Russie | macro | collectif | geopolitique | iran-nucleaire:russie_chine | fiche
+Fédération russe | fr | Russie | macro | collectif | geopolitique | iran-nucleaire:russie_chine | fiche
+RUS | fr | Russie | macro | collectif | geopolitique | iran-nucleaire:russie_chine | fiche
+Russian Federation | en | Russie | macro | collectif | geopolitique | iran-nucleaire:russie_chine | fiche
+RWE | de | RWE | méso | collectif | economie | energie-mondiale:production | tri (acteur)
+Fed | en | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+Federal Reserve | fr | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+Federal Reserve | en | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+Federal Reserve System | en | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+Federal Reserve System | fr | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+Réserve fédérale | fr | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+Réserve fédérale des États-Unis | fr | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+the Fed | fr | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+The Fed | en | Réserve fédérale | macro | collectif | statut | inflation-mondiale:banques_centrales | fiche
+SDAJ | de | SDAJ | méso | collectif | economie | politique-interieure:partis | tri (acteur)
+Selenskyj | de | Selenskyj | micro | personne | personne | russie-ukraine:negociations | tri (personnalité publique)
+Sellner | de | Martin Sellner | micro | personne | personne | migrations-demographie:politiques_migratoires | tri (personnalité publique)
+Siegmund | de | Ulrich Siegmund | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Solvay | en | Solvay | méso | collectif | economie | cycles-biogeochimiques:combustion | tri (acteur)
+Spiegel | de | Spiegel | méso | collectif | economie | information-cyber:langues_biais | tri (acteur)
+Stroer | de | Stroer | méso | collectif | economie | information-cyber:attention | tri (acteur)
+Stuttgarter Kickers | de | Stuttgarter Kickers | méso | collectif | economie | competitions-culture:calendrier | tri (acteur)
+Sven Schulze | de | Sven Schulze | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Syensqo | en | Syensqo | méso | collectif | economie | cycles-biogeochimiques:combustion | tri (acteur)
+China, Republic of | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Chine nationaliste | fr | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Chinese Republic | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Chinese Taipei | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Chunghwa Minkuo | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Chunghwa Minkwo | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Formose | fr | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Free China | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Nationalist China | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Republic of China | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Republic of China (Taiwan) | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+ROC | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+république de Chine | fr | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+république nationaliste de Chine | fr | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Taiwan | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Taiwan ROC | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+Taïwan | fr | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+The ROC | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+TWN | en | Taïwan (autorités) | méso | collectif | statut | rivalite-sino-americaine:taiwan | fiche
+tino chrupalla | de | tino chrupalla | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Tobias Rausch | de | Tobias Rausch | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+Departement du Tresor des Etats-Unis | fr | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+Department of the Treasury | en | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+Département américain du Trésor | fr | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+Département du Trésor | fr | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+Département du Trésor des Etats-Unis | fr | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+département du Trésor des États-Unis | fr | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+Treasury Department | en | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+Trésor Américain | fr | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+U.S. Department of the Treasury | en | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+U.S. Treasury Department | en | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+United States Department of the Treasury | en | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+United States Department of the Treasury | fr | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+United States Treasury Department | en | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+US Treasury Department | en | Trésor américain | macro | collectif | statut | politique-americaine:budget | fiche
+la République de Turquie | fr | Turquie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Republic of Turkey | en | Turquie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Republic of Türkiye | en | Turquie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+République de Turquie | fr | Turquie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+République turque | fr | Turquie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Turq | fr | Turquie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+UKEF | en | UKEF | méso | collectif | economie | economie-entreprises:finance_entreprise | tri (acteur)
+Ukr. | fr | Ukraine (gouvernement) | macro | collectif | statut | russie-ukraine:negociations | fiche
+Ukr. | en | Ukraine (gouvernement) | macro | collectif | statut | russie-ukraine:negociations | fiche
+Ukraine | fr | Ukraine (gouvernement) | macro | collectif | statut | russie-ukraine:negociations | fiche
+Ukrainia | en | Ukraine (gouvernement) | macro | collectif | statut | russie-ukraine:negociations | fiche
+Ukraïna | en | Ukraine (gouvernement) | macro | collectif | statut | russie-ukraine:negociations | fiche
+Ulrich Siegmund | de | Ulrich Siegmund | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+European Union | en | Union européenne | macro | collectif | geopolitique | guerre-levant:puissances | fiche
+U.E. | fr | Union européenne | macro | collectif | geopolitique | guerre-levant:puissances | fiche
+Union européenne | fr | Union européenne | macro | collectif | geopolitique | guerre-levant:puissances | fiche
+Vizsla | en | Vizsla | méso | collectif | economie | dette-emergents:gisements | tri (acteur)
+Volkswagen | de | Volkswagen | méso | collectif | economie | economie-entreprises:entreprises | tri (acteur)
+VW | de | Volkswagen | méso | collectif | economie | economie-entreprises:entreprises | tri (acteur)
+Weidel | de | Alice Weidel | micro | personne | personne | politique-interieure:dirigeants | tri (personnalité publique)
+xi | fr | xi | micro | personne | personne | rivalite-sino-americaine:diplomatie | tri (personnalité publique)
+Arab Rep. Egypt | en | Égypte | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Arab Republic of Egypt | en | Égypte | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Misr | en | Égypte | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Rep. Egypt | en | Égypte | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Republic of Egypt | en | Égypte | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+République arabe d'Égypte | fr | Égypte | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Ég. | fr | Égypte | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Égypte | fr | Égypte | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+'Murica | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+E.-U. | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+les États-Unis d’Amérique | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+Merica | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+Murica | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+Oncle Sam | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+Pays de l'Oncle Sam | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+pays de l’Oncle Sam | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the U.S. | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the U.S. of A | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the U.S. of America | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the U.S.A. | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the United States | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the United States of America | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the US | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the US of A | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the US of America | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+the USA | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+U. S. | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+U. S. A. | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+U.S. of America | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+United States | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+United States of America | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+US of A | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+US of America | en | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+É-U | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+É-U. | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+É.-U. | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+É.-U. A. | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+É.U. | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+États-Unis d'Amérique | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+États-Unis d’Amérique | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+ÉU | fr | États-Unis (État) | macro | collectif | geopolitique | economie-chinoise:exterieur | fiche
+Ethiopie | fr | Éthiopie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Federal Democratic Republic of Ethiopia | en | Éthiopie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+la République démocratique fédérale d’Éthiopie | fr | Éthiopie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+République fédérale démocratique d'Éthiopie | fr | Éthiopie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche
+Éthiopie | fr | Éthiopie | macro | collectif | geopolitique | eau-moyen-orient:etats_riverains | fiche

@@ -1,4 +1,4 @@
-# Collecteur sans modèle (décisions de l'auteur du 2026-11-22, 1 h 03) : chaque nuit, compte les termes validés dans les
+# Collecteur sans modèle (décisions de l'auteur du 2026-11-22, 1 h 03 et 1 h 16) : chaque nuit, une situation datée par article (temps, espace, acteurs, compartiments, émetteur) à partir des termes validés des
 # flux RSS du bot ; un flux ne garde que ses derniers articles, un passage manqué est perdu.
 name: compter
 
