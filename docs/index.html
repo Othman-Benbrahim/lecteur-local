@@ -166,7 +166,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
         <svg id="histo"></svg>
       </div>
       <div class="bloc">
-        <h2>Hypothèses : événements que nos règles relient aux types de situation réalisés</h2>
+        <h2>Signaux : événements que nos règles relient aux types de situation réalisés</h2>
         <div id="futur" class="vide">aucune situation observée pour l'instant</div>
       </div>
     </div>
@@ -682,7 +682,7 @@ function blocCauses(n){
   const nom=id=>{const m=D.parId.get(id);if(!m) return esc(id);
     const t=m.fiche!==n.fiche?"↗ "+esc(m.fiche_nom)+" : "+esc(m.nom):esc(m.nom);
     return `<a href="#" onclick="basculer('${esc(id).replace(/'/g,"\\'")}');return false;">${t}</a>`;};
-  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.statut==="a_verifier"?" · hypothèse":""}</span>`:
+  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.statut==="a_verifier"?" · non encore mesuré":""}</span>`:
     `<span class="etiq">pont${a.canal?" · "+esc(a.canal):""}</span>`;
   const liste=(m,titre,vide)=>{let h=`<h2>${titre} (${m.size})</h2>`;if(!m.size) return h+`<p class="vide">${vide}</p>`;
     for(const k of [1,2,3]){const xs=[...m.entries()].filter(([,v])=>v.k===k);if(!xs.length) continue;
@@ -695,7 +695,7 @@ function blocCauses(n){
   const racines=[...am.keys()].filter(id=>!(ent.get(id)||[]).length);
   if(racines.length) h+=`<h2>Causes racines (dans notre carte) (${racines.length})</h2><p style="font-size:12px">Aucune cause en amont dans la carte : premières seulement à l'intérieur de notre carte, pas dans le monde.</p><ul>${racines.map(id=>`<li>${nom(id)}</li>`).join("")}</ul>`;
   const tous=[...am.values(),...av.values()].map(v=>v.via).filter(a=>a.sorte==="relation");
-  if(tous.length) h+=`<p style="font-size:12px;color:var(--doux)">${tous.filter(a=>a.statut==="a_verifier").length} des ${tous.length} relations de cette chaîne sont des hypothèses à vérifier sur sources.</p>`;
+  if(tous.length) h+=`<p style="font-size:12px;color:var(--doux)">${tous.filter(a=>a.statut==="a_verifier").length} des ${tous.length} relations de cette chaîne sont des cas documentés pas encore mesurés par nos instruments.</p>`;
   return h;
 }
 window.choisirTerme=t=>{document.getElementById("terme").value=t;etat.terme=t;dessiner();};
@@ -721,17 +721,17 @@ function frise(sits){
   document.getElementById("jourT").textContent=etat.lecture==="conjoncturel"&&etat.jour?"T = "+etat.jour+" (7 jours)":"toute la période";
   // futur : types de situation réalisés → événements atteignables (règles coutumières)
   // 2026-11-22 (audit) : une règle n'apparaît que si son type de départ est RÉALISÉ (comptes/types-actifs.csv) sur les
-  // jours affichés ; la condition et les articles qui la remplissent sont montrés. Ce sont des hypothèses, pas des prévisions.
+  // jours affichés ; la condition et les articles qui la remplissent sont montrés. Ce sont des signaux, pas des prévisions.
   const joursSit=new Set(sits.map(x=>x.jour));
   const realise=new Map();for(const t of D.types_actifs||[]) if(joursSit.has(t.jour)){
     const v=realise.get(t.regle)||{articles:0,liens:[]};v.articles+=+t.articles||0;v.liens.push(...String(t.liens||"").split(" ").filter(Boolean));realise.set(t.regle,v);}
   const actifs=new Map();
   for(const r of D.types.regles) if(realise.has(r.regle)){const k=r.vers;actifs.set(k,(actifs.get(k)||[]).concat([r]));}
   const f=document.getElementById("futur");
-  if(!actifs.size){f.className="vide";f.textContent=sits.length?"aucun type de situation réalisé sur ces jours : aucune hypothèse":"aucun article pour ces filtres";return;}
+  if(!actifs.size){f.className="vide";f.textContent=sits.length?"aucun type de situation réalisé sur ces jours : aucun signal":"aucun article pour ces filtres";return;}
   f.className="";
   f.innerHTML=[...actifs.entries()].map(([ev,rs])=>{const v=realise.get(rs[0].regle);
-    return `<div>→ <b>${esc(D.nomType.get(ev))}</b> <span class="etiq">hypothèse · ${esc(rs[0].structure)}</span><br>`+
+    return `<div>→ <b>${esc(D.nomType.get(ev))}</b> <span class="etiq">signal · ${esc(rs[0].structure)}</span><br>`+
     `<span style="color:var(--doux)">condition : ${esc(D.nomType.get(rs[0].de))} — remplie par ${v.articles} article(s)`+
     `${v.liens.slice(0,3).map((l,i)=>` <a href="${esc(l)}" target="_blank" rel="noopener">[${i+1}]</a>`).join("")} · règle ${esc(rs.map(r=>r.regle).join(", "))}</span></div>`;}).join("");
 }
