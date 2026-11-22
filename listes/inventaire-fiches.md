@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 53 fiches, 569 compartiments (312 sans aucune trace collectée)
-- 1935 éléments (1819 textes distincts)
-- 483 acteurs (459 distincts) : 356 types génériques (« un média d'État »…), à peupler de noms ; 127 désignés autrement (déjà nommés, ou à relire)
+- 53 fiches, 575 compartiments (318 sans aucune trace collectée)
+- 1946 éléments (1830 textes distincts)
+- 486 acteurs (462 distincts) : 357 types génériques (« un média d'État »…), à peupler de noms ; 129 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 286 |
+| collectif | 289 |
 | non_humain | 126 |
 | statut | 28 |
 | ideologie | 17 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 228 |
-| méso | 163 |
+| macro | 230 |
+| méso | 164 |
 | micro | 91 |
 | micro à méso | 1 |
 
@@ -31,14 +31,14 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | | nombre |
 |---|---|
 | economie | 338 |
-| statut | 302 |
+| statut | 303 |
 | geopolitique | 280 |
-| convention | 227 |
-| technique | 192 |
+| convention | 233 |
+| technique | 196 |
 | societe | 171 |
 | psychologique | 115 |
 | ideologie | 98 |
-| eau | 85 |
+| eau | 87 |
 | chimique | 71 |
 | animal | 65 |
 | relief | 56 |
@@ -53,7 +53,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | ocean | 26 |
 | personne | 26 |
 | atomique | 25 |
-| sol_vivant | 10 |
+| sol_vivant | 11 |
 
 ## Par fiche
 
@@ -79,7 +79,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | economie-entreprises | 13 | 27 | 2 | 13 |
 | elections-amerique-latine | 9 | 31 | 6 | 5 |
 | energie-mondiale | 13 | 56 | 8 | 2 |
-| environnement-dechets | 7 | 22 | 4 | 7 |
+| environnement-dechets | 13 | 33 | 7 | 13 |
 | epidemies | 10 | 39 | 8 | 6 |
 | foret-et-sols-vivants | 13 | 34 | 8 | 13 |
 | guerre-levant | 14 | 60 | 24 | 4 |
