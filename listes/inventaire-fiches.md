@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 60 fiches, 646 compartiments (389 sans aucune trace collectée)
-- 2067 éléments (1951 textes distincts)
-- 497 acteurs (473 distincts) : 363 types génériques (« un média d'État »…), à peupler de noms ; 134 désignés autrement (déjà nommés, ou à relire)
+- 61 fiches, 657 compartiments (400 sans aucune trace collectée)
+- 2087 éléments (1971 textes distincts)
+- 499 acteurs (475 distincts) : 365 types génériques (« un média d'État »…), à peupler de noms ; 134 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 297 |
+| collectif | 299 |
 | non_humain | 126 |
 | statut | 29 |
 | ideologie | 18 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 237 |
-| méso | 165 |
+| macro | 238 |
+| méso | 166 |
 | micro | 94 |
 | micro à méso | 1 |
 
@@ -30,14 +30,14 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 348 |
-| statut | 316 |
-| geopolitique | 292 |
-| convention | 252 |
-| technique | 216 |
-| societe | 190 |
+| economie | 350 |
+| statut | 317 |
+| geopolitique | 294 |
+| convention | 256 |
+| technique | 219 |
+| societe | 197 |
 | psychologique | 115 |
-| ideologie | 107 |
+| ideologie | 110 |
 | eau | 87 |
 | animal | 72 |
 | chimique | 71 |
@@ -107,6 +107,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | politique-interieure | 8 | 34 | 3 | 8 |
 | relief-et-montagnes | 11 | 34 | 6 | 7 |
 | reseaux-humains | 9 | 12 | 0 | 9 |
+| reseaux-sociaux | 11 | 20 | 2 | 11 |
 | reseaux-transport | 6 | 8 | 0 | 6 |
 | rivalite-sino-americaine | 12 | 46 | 20 | 1 |
 | russie-ukraine | 13 | 51 | 25 | 3 |
