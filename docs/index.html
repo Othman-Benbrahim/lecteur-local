@@ -340,7 +340,7 @@ function chaine(id,sens,max=3){ // « amont » (causes) ou « aval » (conséque
 // vers la population (gouverne, élu par, informe, influence documentée).
 const REL_NOMME={nomme:["nomme","hierarchie"],commande:["commande","hierarchie"],allie:["allié de","accord"],
   negocie_avec:["négocie avec","accord"],associe:["associé à","accord"],finance:["finance","argent"],fournit:["fournit","argent"],
-  rival:["rival de","conflit"],desaccord_public:["désaccord public avec","conflit"],gouverne:["gouverne","population"],
+  rival:["rival de","conflit"],proche:["proche de","accord"],desaccord_public:["désaccord public avec","conflit"],gouverne:["gouverne","population"],
   elu_par:["élu ou jugé par","population"],informe:["informe par ses médias","population"],influence_documentee:["influence documentée","population"]};
 const COUL_REL={hierarchie:"var(--texte)",accord:"var(--plus)",argent:"var(--surbrillance)",conflit:"var(--moins)",population:"var(--aval)"};
 const NIV_NOM={1:"proche",2:"voisin",3:"éloigné"};
@@ -400,7 +400,7 @@ function dessinerActeurs(){
 function legendeNommes(){
   document.getElementById("detail").innerHTML=`<h3>Réseau des acteurs nommés</h3><div class="sous">${D.nommes.acteurs.length} acteurs · ${D.nommes.liens.length} liens · premier lot (dirigeants et patrons)</div>`+
   `<p style="font-size:13px">Des personnes publiques, dans leur rôle public, à un moment de leur cycle (mandat, direction d'entreprise) : elles passent, les mécanismes des écosystèmes restent. Cliquez sur un acteur : ses <b>proches</b> (niveau 1, lien direct), <b>voisins</b> (niveau 2, un intermédiaire) et <b>éloignés</b> (niveau 3, deux intermédiaires) s'allument.</p>`+
-  `<div class="legende"><span><i style="border-color:var(--texte)"></i>hiérarchie (nomme, commande)</span><span><i style="border-color:var(--plus)"></i>accord (allié, négocie, associé)</span>`+
+  `<div class="legende"><span><i style="border-color:var(--texte)"></i>hiérarchie (nomme, commande)</span><span><i style="border-color:var(--plus)"></i>accord (allié, négocie, associé, proche)</span>`+
   `<span><i style="border-color:var(--surbrillance)"></i>argent (finance, fournit)</span><span><i style="border-color:var(--moins)"></i>conflit (rival, désaccord public)</span>`+
   `<span><i style="border-color:var(--aval);border-top-style:dashed"></i>vers la population (gouverne, élu par, informe)</span>`+
   `<span>cercle rouge brique : dirigeant · vert : patron · carré : compartiment (population, institution)</span><span>trait plein : structurel · tirets : conjoncturel</span></div>`;
