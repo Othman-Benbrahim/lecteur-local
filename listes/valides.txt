@@ -2589,3 +2589,16 @@
 + | Microsoft | nom | medias-diffusion:geants_mango | proposé par Claude d'après la fiche, validé par l'auteur le 2026-11-22 à 11 h 16 | 
 + | Meta Platforms | nom | medias-diffusion:geants_mango | proposé par Claude d'après la fiche, validé par l'auteur le 2026-11-22 à 11 h 16 | 
 + | Google | nom | medias-diffusion:geants_mango | proposé par Claude d'après la fiche, validé par l'auteur le 2026-11-22 à 11 h 16 | 
+# 2026-11-22, 12 h 16 : indices ajoutés pour la correction des règles après le test 1 (décision de l'auteur : « on corrige et on avance »)
++ | regime change | en | politique-interieure:regime | indice de règle (regimes_fermes_contestation) | 
++ | chute du régime | fr | politique-interieure:regime | indice de règle (regimes_fermes_contestation) | 
++ | Regimegegner | de | politique-interieure:regime | indice de règle (regimes_fermes_contestation) | 
++ | anti-government protests | en | politique-interieure:regime;humain:passage_acte | indice de règle (regimes_fermes_contestation) | 
++ | manifestations antigouvernementales | fr | politique-interieure:regime;humain:passage_acte | indice de règle (regimes_fermes_contestation) | 
++ | mollahs | fr | politique-interieure:regime | indice de règle (regimes_fermes_contestation) | 
++ | dictature | fr | politique-interieure:regime | indice de règle (regimes_fermes_contestation) | 
++ | referendum campaign | en | calendriers-echeances:elections | indice de règle (referendums_retour_statu_quo) | 
++ | campagne référendaire | fr | calendriers-echeances:elections | indice de règle (referendums_retour_statu_quo) | 
++ | Abstimmungskampf | de | calendriers-echeances:elections | indice de règle (referendums_retour_statu_quo) | 
++ | prix de l'or | fr | dette-emergents:matieres_premieres;monnaie-pouvoir:or | indice de règle (afrique_mines_conflits) | 
++ | copper price | en | dette-emergents:matieres_premieres;minerais-critiques:cuivre | indice de règle (afrique_mines_conflits) | 

@@ -4,6 +4,8 @@ coutumières du bot, ontologie.py) les situations observées réalisent-elles, j
 Règle de réalisation (révisée le 2026-11-22, 2 h 45, après l'exploration GDELT : le seul compartiment était trop
 grossier, toute mention de Trump activait trois règles) : une situation observée réalise le type de situation d'une
 règle si
+  0. (2026-11-22, 12 h 16) indices combinables : « a + b » exige a ET b, « a | b » a OU b ; champ « exclure » ;
+     champs « periodes » [[début, fin]] et « mois » [1-12] pour une situation datée ;
   1. elle touche AU MOINS DEUX compartiments de la règle, OU un compartiment de la règle et un de ses indices (champ
      « indices » de la règle : termes propres à la situation, validés par l'auteur) ; une règle à un seul compartiment
      et sans indices n'est donc jamais réalisée (elle attend ses indices) ;
@@ -81,10 +83,25 @@ def realise(s: dict, regle: dict, continent_de: dict[str, str]) -> bool:
     # 2026-11-22, 6 h 38 (décision de l'auteur, après la première collecte) : un indice de la règle est désormais EXIGÉ ;
     # deux compartiments communs ne suffisent plus (96 réalisations sur 172 n'avaient aucun indice, dont une vérification
     # sur une manifestation allemande comptée comme « contestation contre un régime »)
-    indices = {i.lower() for i in regle.get("indices") or []}
-    if not (indices & {t.lower() for t in s.get("termes", [])}):
+    termes = {t.lower() for t in s.get("termes", [])}
+    if not any(indice_rempli(i, termes) for i in regle.get("indices") or []):
+        return False
+    # 2026-11-22, 12 h 16 (correction après le test 1 : 46,6 % de détections justes) : un terme d'exclusion annule la
+    # réalisation ; une situation datée (périodes, mois) n'est réalisée que dans sa fenêtre
+    if any(indice_rempli(x, termes) for x in regle.get("exclure") or []):
+        return False
+    jour = str(s.get("jour", ""))
+    if regle.get("periodes") and not any(str(a) <= jour <= str(b) for a, b in regle["periodes"]):
+        return False
+    if regle.get("mois") and jour[5:7].isdigit() and int(jour[5:7]) not in regle["mois"]:
         return False
     return compatible(s.get("espace", []), regle["perimetre"], continent_de)
+
+
+def indice_rempli(indice: str, termes: set[str]) -> bool:
+    """« a + b » : a ET b ; « a | b » : a OU b ; les deux se combinent (« a | b + c »). Comparaison sans casse, sur les
+    termes validés relevés dans l'article (un mot isolé ne suffit plus quand la règle demande une combinaison)."""
+    return all(any(alt.strip().lower() in termes for alt in part.split("|")) for part in indice.split(" + "))
 
 
 def principal() -> int:
