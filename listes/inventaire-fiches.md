@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 64 fiches, 700 compartiments (443 sans aucune trace collectée)
-- 2146 éléments (2030 textes distincts)
-- 519 acteurs (495 distincts) : 366 types génériques (« un média d'État »…), à peupler de noms ; 153 désignés autrement (déjà nommés, ou à relire)
+- 68 fiches, 731 compartiments (474 sans aucune trace collectée)
+- 2181 éléments (2065 textes distincts)
+- 521 acteurs (497 distincts) : 367 types génériques (« un média d'État »…), à peupler de noms ; 154 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 319 |
+| collectif | 321 |
 | non_humain | 126 |
 | statut | 29 |
 | ideologie | 18 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 243 |
-| méso | 174 |
+| macro | 244 |
+| méso | 175 |
 | micro | 101 |
 | micro à méso | 1 |
 
@@ -30,12 +30,12 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 356 |
-| statut | 326 |
-| geopolitique | 300 |
-| convention | 262 |
-| technique | 219 |
-| societe | 207 |
+| economie | 362 |
+| statut | 329 |
+| geopolitique | 307 |
+| convention | 273 |
+| technique | 222 |
+| societe | 210 |
 | ideologie | 151 |
 | psychologique | 115 |
 | eau | 87 |
@@ -44,12 +44,12 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | relief | 56 |
 | meteo | 51 |
 | corps | 50 |
+| mineral | 47 |
 | microbiologique | 46 |
 | climat | 46 |
-| mineral | 45 |
 | vegetal | 45 |
 | physique | 37 |
-| entourage | 30 |
+| entourage | 32 |
 | personne | 29 |
 | atomique | 27 |
 | ocean | 26 |
@@ -71,6 +71,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | competitions-culture | 9 | 35 | 8 | 7 |
 | corps-humain | 10 | 30 | 4 | 10 |
 | corruption | 8 | 17 | 4 | 8 |
+| crime-organise | 8 | 9 | 1 | 8 |
 | crises-bancaires | 10 | 35 | 9 | 1 |
 | croyances-religions | 18 | 27 | 19 | 18 |
 | culture-memoire | 7 | 18 | 2 | 7 |
@@ -85,6 +86,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | energie-mondiale | 13 | 56 | 8 | 2 |
 | environnement-dechets | 13 | 33 | 7 | 13 |
 | epidemies | 10 | 39 | 8 | 6 |
+| famille-genre | 7 | 7 | 0 | 7 |
 | foret-et-sols-vivants | 13 | 34 | 8 | 13 |
 | frontieres | 8 | 13 | 0 | 8 |
 | guerre-levant | 14 | 60 | 24 | 4 |
@@ -98,11 +100,13 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | migrations-demographie | 10 | 38 | 10 | 5 |
 | militaire | 9 | 13 | 3 | 9 |
 | minerais-critiques | 7 | 13 | 2 | 7 |
+| monnaie-pouvoir | 7 | 8 | 0 | 7 |
 | niveaux-de-base | 3 | 3 | 0 | 3 |
 | non-proliferation | 9 | 26 | 2 | 5 |
 | nucleaire-radiologique | 10 | 34 | 8 | 7 |
 | observateur-mesure | 15 | 47 | 3 | 1 |
 | oceans-et-fleuves | 16 | 47 | 11 | 11 |
+| organisations-internationales | 9 | 11 | 1 | 9 |
 | ormuz | 13 | 60 | 15 | 2 |
 | partis-politiques | 14 | 17 | 1 | 14 |
 | plancher-social | 6 | 14 | 9 | 6 |
