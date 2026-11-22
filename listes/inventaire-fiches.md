@@ -2,28 +2,28 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 54 fiches, 585 compartiments (328 sans aucune trace collectée)
-- 1964 éléments (1848 textes distincts)
-- 489 acteurs (465 distincts) : 359 types génériques (« un média d'État »…), à peupler de noms ; 130 désignés autrement (déjà nommés, ou à relire)
+- 55 fiches, 596 compartiments (339 sans aucune trace collectée)
+- 1980 éléments (1864 textes distincts)
+- 493 acteurs (469 distincts) : 362 types génériques (« un média d'État »…), à peupler de noms ; 131 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 292 |
+| collectif | 293 |
 | non_humain | 126 |
-| statut | 28 |
-| ideologie | 17 |
-| personne | 17 |
+| statut | 29 |
+| ideologie | 18 |
+| personne | 18 |
 | psyche | 9 |
 
 ## Acteurs par taille
 
 | | nombre |
 |---|---|
-| macro | 232 |
+| macro | 233 |
 | méso | 165 |
-| micro | 91 |
+| micro | 94 |
 | micro à méso | 1 |
 
 ## Éléments et acteurs par niveau d'organisation
@@ -31,13 +31,13 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | | nombre |
 |---|---|
 | economie | 342 |
-| statut | 306 |
-| geopolitique | 281 |
-| convention | 237 |
+| statut | 313 |
+| geopolitique | 282 |
+| convention | 243 |
 | technique | 198 |
-| societe | 171 |
+| societe | 172 |
 | psychologique | 115 |
-| ideologie | 98 |
+| ideologie | 100 |
 | eau | 87 |
 | chimique | 71 |
 | animal | 65 |
@@ -49,10 +49,10 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | microbiologique | 45 |
 | vegetal | 37 |
 | physique | 35 |
-| entourage | 27 |
+| personne | 28 |
+| entourage | 28 |
 | atomique | 27 |
 | ocean | 26 |
-| personne | 26 |
 | sol_vivant | 11 |
 
 ## Par fiche
@@ -73,6 +73,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | culture-memoire | 7 | 18 | 2 | 7 |
 | cycles-biogeochimiques | 11 | 37 | 9 | 6 |
 | dette-emergents | 12 | 47 | 17 | 6 |
+| dirigeants-elus | 11 | 16 | 4 | 11 |
 | eau-douce-potable | 11 | 36 | 4 | 10 |
 | eau-moyen-orient | 14 | 48 | 19 | 10 |
 | economie-chinoise | 14 | 55 | 25 | 6 |
