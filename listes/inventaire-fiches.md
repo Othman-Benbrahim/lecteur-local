@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 69 fiches, 743 compartiments (445 sans aucune trace collectée)
-- 2195 éléments (2079 textes distincts)
-- 521 acteurs (497 distincts) : 367 types génériques (« un média d'État »…), à peupler de noms ; 154 désignés autrement (déjà nommés, ou à relire)
+- 69 fiches, 744 compartiments (446 sans aucune trace collectée)
+- 2199 éléments (2083 textes distincts)
+- 522 acteurs (498 distincts) : 368 types génériques (« un média d'État »…), à peupler de noms ; 154 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 321 |
+| collectif | 322 |
 | non_humain | 126 |
 | statut | 29 |
 | ideologie | 18 |
@@ -21,7 +21,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 244 |
+| macro | 245 |
 | méso | 175 |
 | micro | 101 |
 | micro à méso | 1 |
@@ -33,7 +33,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | economie | 362 |
 | statut | 329 |
 | geopolitique | 307 |
-| convention | 273 |
+| convention | 278 |
 | technique | 222 |
 | societe | 210 |
 | ideologie | 152 |
@@ -115,7 +115,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | psyche | 12 | 14 | 0 | 10 |
 | relief-et-montagnes | 11 | 34 | 6 | 7 |
 | reseaux-humains | 9 | 12 | 0 | 9 |
-| reseaux-sociaux | 11 | 20 | 2 | 9 |
+| reseaux-sociaux | 12 | 24 | 3 | 10 |
 | reseaux-transport | 6 | 8 | 0 | 4 |
 | rivalite-sino-americaine | 12 | 46 | 20 | 1 |
 | russie-ukraine | 13 | 51 | 25 | 3 |
