@@ -1,0 +1,1282 @@
+# Termes proposés pour les fiches créées depuis le 2026-11-21 au soir (demande de l'auteur, 2026-11-22, 11 h 03).
+# Rien n'entre dans listes/valides.txt avant validation de l'auteur. « + » validé, « - » refusé.
+#
+# PARTIE A — termes DÉJÀ validés, rattachés EN PLUS à un compartiment des nouvelles fiches (le rattachement existant
+# est gardé). Règles écrites dans le script de tri ; classements repris des fiches elles-mêmes (exemples cités).
+# Format : décision | terme | langue | rattachement actuel | + compartiments ajoutés | raison
++ | présidentielle | fr | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | Jugendbuchpreis | de | competitions-culture:regles | + medias-diffusion:edition | édition
++ | Cryptocurrency | en | crises-bancaires:cryptomonnaies | + monnaie-pouvoir:monnaies_numeriques | cryptomonnaies
++ | Kryptowährung | de | crises-bancaires:cryptomonnaies | + monnaie-pouvoir:monnaies_numeriques | cryptomonnaies
++ | COPPER | en | dette-emergents:gisements | + minerais-critiques:demande | minerais critiques
++ | COPPER & ENVIRONMENT | en | dette-emergents:gisements | + minerais-critiques:demande | minerais critiques
++ | COPPER AND ZINC | en | dette-emergents:gisements | + minerais-critiques:demande | minerais critiques
++ | copper exploration | en | dette-emergents:gisements | + minerais-critiques:demande | minerais critiques
++ | copper production | en | dette-emergents:gisements | + minerais-critiques:demande | minerais critiques
++ | GOLD & COPPER | en | dette-emergents:gisements | + minerais-critiques:demande | minerais critiques
++ | IRON-ORE & LITHIUM | en | dette-emergents:gisements | + minerais-critiques:demande | minerais critiques
++ | NICKEL | en | dette-emergents:gisements | + minerais-critiques:demande | minerais critiques
++ | LITHIUM | en | dette-emergents:gisements;rivalite-sino-americaine:terres_rares | + minerais-critiques:demande | minerais critiques
++ | kampf um wasser | de | eau-moyen-orient:rarete | + eau-douce-potable:ressources | eau douce
++ | Claudia Sheinbaum | fr | elections-amerique-latine:executif | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | Benedikt XVI. | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Bischof | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Bischof Georg Bätzing | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Bischöfe | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Bätzing | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Erzbistum München und Freising | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Gottesdienst | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Grande mosquée de Paris | fr | humain:croyances | + croyances-religions:islam | islam
++ | islam | fr | humain:croyances | + croyances-religions:islam | islam
++ | Katholische Kirche | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Moschee | de | humain:croyances | + croyances-religions:islam | islam
++ | Papst | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Papst Leo XIV. | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Religion | en | humain:croyances | + croyances-religions:rapports_de_force | religion
++ | Vatikan | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Kinder | de | humain:enfance | + famille-genre:roles_soin | enfance
++ | Minderjährige | de | humain:enfance | + famille-genre:roles_soin | enfance
++ | Youth | en | humain:jeunesse | + psyche:developpement | jeunesse
++ | Ethnicity & Race | en | humain:nous_eux | + psyche:identite_estime | identité, nous contre eux
++ | Racisme France | fr | humain:nous_eux | + psyche:identite_estime | identité, nous contre eux
++ | Rassismus | de | humain:nous_eux | + psyche:identite_estime | identité, nous contre eux
++ | Identitäre Bewegung | de | humain:polarisation | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | Neue Rechte | de | humain:polarisation | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | Rechtspopulismus | de | humain:polarisation | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | Rechtsruck | de | humain:polarisation | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | Lobby | de | humain:reseaux_discrets | + reseaux-humains:reseaux_elites | réseaux d'influence
++ | Lobbyismus | de | humain:reseaux_discrets | + reseaux-humains:reseaux_elites | réseaux d'influence
++ | politische Einflussnahme | de | humain:reseaux_discrets | + reseaux-humains:reseaux_elites | réseaux d'influence
++ | Gaslobby | de | humain:reseaux_discrets;energie-mondiale:decisions | + reseaux-humains:reseaux_elites | réseaux d'influence
++ | rechte Netzwerke | de | humain:reseaux_discrets;humain:polarisation | + reseaux-humains:reseaux_elites | réseaux d'influence
++ | Altersarmut | de | humain:stress_chronique | + plancher-social:pauvrete;classes-sociales:classes_populaires | pauvreté
++ | Armut | de | humain:stress_chronique | + plancher-social:pauvrete;classes-sociales:classes_populaires | pauvreté
++ | Grundsicherung | de | humain:stress_chronique | + plancher-social:pauvrete;classes-sociales:classes_populaires | pauvreté
++ | Central Banks | en | inflation-mondiale:banques_centrales | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | The euro | en | inflation-mondiale:monnaies | + monnaie-pouvoir:paiements | monnaie unique
++ | Labor | en | inflation-mondiale:salaires | + plancher-social:travail | travail
++ | Labour rights | en | inflation-mondiale:salaires | + plancher-social:travail | travail
++ | Mindestlohn | de | inflation-mondiale:salaires | + plancher-social:travail | travail
++ | Stroer | de | information-cyber:attention | + medias-diffusion:television | audiovisuel
++ | Pressefreiheit | de | information-cyber:censure | + medias-diffusion:presse | presse et journalisme
++ | Journalismus | de | information-cyber:langues_biais | + medias-diffusion:presse | presse et journalisme
++ | Lokaljournalismus | de | information-cyber:langues_biais | + medias-diffusion:presse | presse et journalisme
++ | Media & Journalism | en | information-cyber:langues_biais | + medias-diffusion:presse | presse et journalisme
++ | Media and culture | en | information-cyber:langues_biais | + medias-diffusion:presse | presse et journalisme
++ | Presse | de | information-cyber:langues_biais | + medias-diffusion:presse | presse et journalisme
++ | Spiegel | de | information-cyber:langues_biais | + medias-diffusion:presse | presse et journalisme
++ | Big Tech | de | information-cyber:plateformes | + reseaux-sociaux:plateformes;medias-diffusion:plateformes_sociales | plateformes
++ | Online safety | en | information-cyber:plateformes | + reseaux-sociaux:plateformes;medias-diffusion:plateformes_sociales | plateformes
++ | Social Media | de | information-cyber:plateformes | + reseaux-sociaux:plateformes;medias-diffusion:plateformes_sociales | plateformes
++ | Tiktok | de | information-cyber:plateformes | + reseaux-sociaux:plateformes;medias-diffusion:plateformes_sociales | plateformes
++ | Whatsapp | de | information-cyber:plateformes | + reseaux-sociaux:plateformes;medias-diffusion:plateformes_sociales | plateformes
++ | Youtube | de | information-cyber:plateformes | + reseaux-sociaux:plateformes;medias-diffusion:plateformes_sociales | plateformes
++ | Citizen Media | en | information-cyber:recits | + medias-diffusion:presse | presse et journalisme
++ | Deepfake | de | information-cyber:recits | + reseaux-sociaux:desinformation | désinformation
++ | Desinformation | de | information-cyber:recits | + reseaux-sociaux:desinformation | désinformation
++ | exile media | de | information-cyber:recits | + medias-diffusion:presse | presse et journalisme
++ | Exiljournalismus | de | information-cyber:recits | + medias-diffusion:presse | presse et journalisme
++ | Fakencheck | de | information-cyber:recits | + reseaux-sociaux:moderation_regulation | vérification des faits
++ | Faktencheck | de | information-cyber:recits | + reseaux-sociaux:moderation_regulation | vérification des faits
++ | geruechtekiller | de | information-cyber:recits | + reseaux-sociaux:moderation_regulation | vérification des faits
++ | Gerüchtekiller | de | information-cyber:recits | + reseaux-sociaux:moderation_regulation | vérification des faits
++ | Julian Reichelt | de | information-cyber:recits | + medias-diffusion:independants | média en ligne hors grands groupes
++ | Les dessous de l'infox | fr | information-cyber:recits | + reseaux-sociaux:moderation_regulation | vérification des faits
++ | Nius | de | information-cyber:recits | + medias-diffusion:independants | média en ligne hors grands groupes
++ | propaganda | de | information-cyber:recits | + reseaux-sociaux:desinformation | désinformation
++ | Russische Desinformation | de | information-cyber:recits | + reseaux-sociaux:desinformation | désinformation
++ | Klima-Faktenchecks | de | information-cyber:recits;climat-extremes:tendance | + reseaux-sociaux:moderation_regulation | vérification des faits
++ | RAIL INFRASTRUCTURE | en | infrastructures-critiques:reseaux | + reseaux-transport:rail | rail
++ | ONU | fr | iran-nucleaire:conseil_securite | + organisations-internationales:onu | ONU
++ | Vereinte Nationen | de | iran-nucleaire:conseil_securite | + organisations-internationales:onu | ONU
++ | Völkerrecht | de | iran-nucleaire:conseil_securite | + organisations-internationales:droit_international | droit international
++ | binationaux | fr | migrations-demographie:diasporas | + frontieres:passages | exil, double nationalité
++ | Exil | de | migrations-demographie:diasporas | + frontieres:passages | exil, double nationalité
++ | exile | de | migrations-demographie:diasporas | + frontieres:passages | exil, double nationalité
++ | Rente | de | migrations-demographie:natalite_vieillissement | + plancher-social:protection_sociale | retraites
++ | URANIUM | en | nucleaire-radiologique:electricite;energie-mondiale:nucleaire_civil | + minerais-critiques:demande | minerais critiques
++ | Wasser | de | oceans-et-fleuves:cycle | + eau-douce-potable:ressources | eau douce
++ | niedrigwasser | de | oceans-et-fleuves:fleuves | + eau-douce-potable:ressources | eau douce
++ | Fisheries | en | oceans-et-fleuves:vivant_aquatique | + biodiversite-sols:surexploitation | pêche, vivant marin
++ | wal | de | oceans-et-fleuves:vivant_aquatique | + biodiversite-sols:surexploitation | pêche, vivant marin
++ | détroit d'Ormuz | fr | ormuz:milieu;transport-maritime:detroits | + reseaux-transport:noeuds | point de passage
++ | Ormuz | fr | ormuz:milieu;transport-maritime:detroits | + reseaux-transport:noeuds | point de passage
++ | Donald Trump | de | politique-americaine:executif | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | Commerce extérieur/international | fr | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | Trade | en | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | xi | fr | rivalite-sino-americaine:diplomatie | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | antimony | en | rivalite-sino-americaine:terres_rares | + minerais-critiques:demande | minerais critiques
++ | Battery Metal | en | rivalite-sino-americaine:terres_rares | + minerais-critiques:demande | minerais critiques
++ | CRITICAL MINERALS | en | rivalite-sino-americaine:terres_rares | + minerais-critiques:demande | minerais critiques
++ | RARE EARTHS | en | rivalite-sino-americaine:terres_rares | + minerais-critiques:demande | minerais critiques
++ | Putin | de | russie-ukraine:negociations | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | Selenskyj | de | russie-ukraine:negociations | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | Alischer Usmanow | de | russie-ukraine:sanctions | + reseaux-humains:reseaux_elites | oligarques (réseaux d'élites)
++ | EU-Sanktionen | de | russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | Fridman | de | russie-ukraine:sanctions | + reseaux-humains:reseaux_elites | oligarques (réseaux d'élites)
++ | Sanktionen | de | russie-ukraine:sanctions;iran-nucleaire:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | armes autonomes | fr | sciences-techniques:regulation;securite-europeenne:defense | + militaire:technologies | armes autonomes
++ | robots tueurs | fr | sciences-techniques:regulation;securite-europeenne:defense | + militaire:technologies | armes autonomes
++ | Sondervermögen | de | securite-europeenne:budgets_dette | + militaire:depenses | dépenses de défense
++ | Bundeswehr | de | securite-europeenne:defense | + militaire:forces | forces armées
++ | Security & defence | en | securite-europeenne:defense | + militaire:forces | forces armées
++ | Sicherheit und Verteidigung | de | securite-europeenne:defense | + militaire:forces | forces armées
++ | Sécurité et défense | fr | securite-europeenne:defense | + militaire:forces | forces armées
++ | Wehrpflicht | de | securite-europeenne:defense | + militaire:forces | forces armées
++ | Friedrich Merz | de | securite-europeenne:otan_ue | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | Merz | de | securite-europeenne:otan_ue | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | Frauenhäuser | de | securite-publique:alertes | + famille-genre:violences_genre | genre ; maisons pour femmes battues
++ | Betrug | de | securite-publique:corruption | + corruption:grande_corruption | corruption
++ | Korruption | de | securite-publique:corruption | + corruption:grande_corruption | corruption
++ | Machtmissbrauch | de | securite-publique:corruption | + corruption:grande_corruption | corruption
++ | Scam | de | securite-publique:corruption | + crime-organise:escroqueries_cyber | escroqueries
++ | Spendenaffäre | de | securite-publique:corruption | + corruption:grande_corruption | corruption
++ | Wahlbetrug | de | securite-publique:corruption | + corruption:grande_corruption | corruption
++ | Anlagebetrug | de | securite-publique:corruption;crises-bancaires:faillites | + crime-organise:escroqueries_cyber | escroqueries
++ | Sexualisiertes Fehlverhalten | de | securite-publique:justice | + famille-genre:violences_genre | violences sexistes
++ | Sexuelle Belästigung | de | securite-publique:justice | + famille-genre:violences_genre | violences sexistes
++ | Verdachtsmeldungen | de | securite-publique:sanctions | + corruption:blanchiment;crime-organise:blanchiment | déclarations de soupçon (blanchiment)
++ | Benzodiazepine | de | securite-publique:trafics | + crime-organise:drogues | drogues
++ | Benzos | de | securite-publique:trafics | + crime-organise:drogues | drogues
++ | Drogen | de | securite-publique:trafics | + crime-organise:drogues | drogues
++ | Drogenkonsum | de | securite-publique:trafics | + crime-organise:drogues;corps-humain:sante_mentale | drogues ; addictions
++ | Drogentote | de | securite-publique:trafics | + crime-organise:drogues;corps-humain:sante_mentale | drogues ; addictions
++ | Narcotrafic | fr | securite-publique:trafics | + crime-organise:drogues | drogues
++ | NpS | de | securite-publique:trafics | + crime-organise:drogues | drogues
++ | Opioide | de | securite-publique:trafics | + crime-organise:drogues | drogues
++ | Research Chemicals | de | securite-publique:trafics | + crime-organise:drogues | drogues
++ | Schmerzmittel | de | securite-publique:trafics | + corps-humain:sante_mentale | addictions
++ | Sucht | de | securite-publique:trafics | + corps-humain:sante_mentale | addictions
++ | synthetische Drogen | de | securite-publique:trafics | + crime-organise:drogues | drogues
++ | Tilidin | de | securite-publique:trafics | + crime-organise:drogues | drogues
++ | Umweltkriminalität | de | securite-publique:trafics | + crime-organise:trafics_armes_especes | crime environnemental
++ | Umweltverbrechen in NRW | de | securite-publique:trafics | + crime-organise:trafics_armes_especes | crime environnemental
++ | LOGISTICS | en | transport-maritime:fret | + reseaux-transport:interconnexion | transport
++ | Transport | en | transport-maritime:fret | + reseaux-transport:interconnexion | transport
++ | Transports | fr | transport-maritime:fret | + reseaux-transport:interconnexion | transport
++ | AfD | de | politique-interieure:partis | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | AfD Sachsen-Anhalt | de | politique-interieure:partis | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | AfD-Leak | de | politique-interieure:procedures | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | AfD-Spendenskandal | de | politique-interieure:procedures | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | AfD-Verbot | de | politique-interieure:procedures | + partis-politiques:droite_radicale_populiste;partis-politiques:systemes_partisans | droite radicale (classement de la fiche) ; interdiction d'un parti
++ | Alice Weidel | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Alijew | de | politique-interieure:dirigeants | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | Alternative für Deutschland | de | politique-interieure:partis | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | Animal Rights | en | societe-droits:droits_humains | + biocenose:espece_humaine | rapport humain-animal
++ | Beatrix von Storch | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Bücher | de | culture-memoire:creation | + medias-diffusion:edition | édition
++ | CDU | de | politique-interieure:partis | + partis-politiques:conservateurs | CDU, exemple cité par la fiche
++ | Colonel Mamadi Doumbouya | fr | politique-interieure:dirigeants | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | Debatte um AfD-Verbot | de | politique-interieure:procedures | + partis-politiques:systemes_partisans | interdiction d'un parti
++ | DKP | de | politique-interieure:partis | + partis-politiques:gauche_radicale | gauche radicale et communistes
++ | Film | en | culture-memoire:creation | + medias-diffusion:cinema_series | cinéma
++ | Föderalismus | de | politique-interieure:gouvernement | + frontieres:administratives | fédéralisme
++ | Grüne | de | politique-interieure:partis | + partis-politiques:ecologistes | Verts allemands
++ | Höcke | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Immobilien | de | economie-entreprises:immobilier_consommation | + plancher-social:logement | logement
++ | Indigenous | en | societe-droits:droits_humains | + croyances-religions:traditions_autochtones | peuples autochtones
++ | Kay Gottschalk | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Krah | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Krankenkassen | de | societe-droits:sante_publique | + corps-humain:soins | assurance maladie
++ | Krebs | de | societe-droits:sante_publique | + corps-humain:maladies_chroniques | cancer
++ | le pen | fr | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Linke in Berlin | de | politique-interieure:partis | + partis-politiques:gauche_radicale | gauche radicale et communistes
++ | literatur | de | culture-memoire:creation | + medias-diffusion:edition | édition
++ | Literature | en | culture-memoire:creation | + medias-diffusion:edition | édition
++ | Livre | fr | culture-memoire:creation | + medias-diffusion:edition | édition
++ | Mammografie | de | societe-droits:sante_publique | + corps-humain:maladies_chroniques | cancer
++ | Marine Le Pen | fr | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Markus Lanz | de | information-cyber:attention | + medias-diffusion:television | audiovisuel
++ | Maximilian Krah | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Nature and biodiversity | en | environnement-dechets:biodiversite | + biodiversite-sols:especes;biocenose:diversite_especes | biodiversité
++ | NPD | de | politique-interieure:partis | + partis-politiques:droite_radicale_populiste | droite radicale (classement de la fiche)
++ | Parteiausschluss | de | politique-interieure:procedures | + partis-politiques:adhesion_militantisme | vie des partis
++ | Parteien | de | politique-interieure:partis | + partis-politiques:adhesion_militantisme | vie des partis
++ | Parteienerbot | de | politique-interieure:procedures | + partis-politiques:adhesion_militantisme | vie des partis
++ | Petr Bystron | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Schwangerschaft | de | societe-droits:sante_publique | + famille-genre:structures_familiales;corps-humain:reproduction | grossesse
++ | SDAJ | de | politique-interieure:partis | + partis-politiques:gauche_radicale | gauche radicale et communistes
++ | Siegmund | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Spenden | de | politique-interieure:procedures | + partis-politiques:adhesion_militantisme | vie des partis
++ | tino chrupalla | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Ulrich Siegmund | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Weidel | de | politique-interieure:dirigeants | + dirigeants-elus:parlementaires | élu d'une assemblée (nationale, régionale ou européenne)
++ | Women & Gender | en | societe-droits:genre_minorites | + famille-genre:violences_genre | genre ; maisons pour femmes battues
++ | parti communiste | fr | economie-chinoise:pouvoir;politique-interieure:partis | + partis-politiques:partis_uniques | parti-État cité par la fiche
++ | FMI | fr | dette-emergents:fmi | + organisations-internationales:institutions_financieres;monnaie-pouvoir:dollar_reserve | FMI
++ | Fonds monétaire international | fr | dette-emergents:fmi | + organisations-internationales:institutions_financieres;monnaie-pouvoir:dollar_reserve | FMI
++ | IMF | en | dette-emergents:fmi | + organisations-internationales:institutions_financieres;monnaie-pouvoir:dollar_reserve | FMI
++ | International Monetary Fund | en | dette-emergents:fmi | + organisations-internationales:institutions_financieres;monnaie-pouvoir:dollar_reserve | FMI
++ | International Monetary Fund, IMF | en | dette-emergents:fmi | + organisations-internationales:institutions_financieres;monnaie-pouvoir:dollar_reserve | FMI
++ | Banque populaire de Chine | fr | economie-chinoise:politique_monetaire;inflation-mondiale:banques_centrales | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | People's Bank of China | en | economie-chinoise:politique_monetaire;inflation-mondiale:banques_centrales | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | People's Bank of China | fr | economie-chinoise:politique_monetaire;inflation-mondiale:banques_centrales | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Peoples Bank of China | en | economie-chinoise:politique_monetaire;inflation-mondiale:banques_centrales | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | CCP | en | economie-chinoise:pouvoir | + partis-politiques:partis_uniques | parti-État cité par la fiche
++ | Chinese Communist Party | en | economie-chinoise:pouvoir | + partis-politiques:partis_uniques | parti-État cité par la fiche
++ | Communist Party of China | en | economie-chinoise:pouvoir | + partis-politiques:partis_uniques | parti-État cité par la fiche
++ | CPC | fr | economie-chinoise:pouvoir | + partis-politiques:partis_uniques | parti-État cité par la fiche
++ | CPC | en | economie-chinoise:pouvoir | + partis-politiques:partis_uniques | parti-État cité par la fiche
++ | Parti communiste chinois | fr | economie-chinoise:pouvoir | + partis-politiques:partis_uniques | parti-État cité par la fiche
++ | PCC | fr | economie-chinoise:pouvoir | + partis-politiques:partis_uniques | parti-État cité par la fiche
++ | OMS | fr | epidemies:autorites | + organisations-internationales:sante_mondiale | OMS
++ | Organisation mondiale de la Santé | fr | epidemies:autorites | + organisations-internationales:sante_mondiale | OMS
++ | World Health Organisation | en | epidemies:autorites | + organisations-internationales:sante_mondiale | OMS
++ | World Health Organization | en | epidemies:autorites | + organisations-internationales:sante_mondiale | OMS
++ | World Health Organization (WHO) | en | epidemies:autorites | + organisations-internationales:sante_mondiale | OMS
++ | Islamic Rep. Iran | en | espace:pays:Iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | Islamic Republic of Iran | en | espace:pays:Iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | La République Islamique d’Iran | fr | espace:pays:Iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | République islamique d'Iran | fr | espace:pays:Iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | République islamique iranienne | fr | espace:pays:Iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | Hamas | en | guerre-levant:gaza | + croyances-religions:extremes_islam | islamisme armé (classement de la fiche)
++ | Harakat al-Muqawama al-Islamiya | en | guerre-levant:gaza | + croyances-religions:extremes_islam | islamisme armé (classement de la fiche)
++ | Islamic Resistance Movement | en | guerre-levant:gaza | + croyances-religions:extremes_islam | islamisme armé (classement de la fiche)
++ | Mouvement de résistance islamique | fr | guerre-levant:gaza | + croyances-religions:extremes_islam | islamisme armé (classement de la fiche)
++ | Army of the Guardians of the Islamic Revolution | en | guerre-levant:iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | Corps des gardiens de la révolution islamique | fr | guerre-levant:iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | Gardiens de la Révolution islamique | fr | guerre-levant:iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | Islamic Revolution Guard Corps | en | guerre-levant:iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | Islamic Revolution Guards Corps | en | guerre-levant:iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | Islamic Revolutionary Guard Corps | en | guerre-levant:iran | + croyances-religions:religion_politique | État ou force se réclamant de la révolution islamique
++ | Banque centrale européenne | fr | inflation-mondiale:banques_centrales | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | BCE | fr | inflation-mondiale:banques_centrales | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | European Central Bank | en | inflation-mondiale:banques_centrales | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Fed | en | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Federal Reserve | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Federal Reserve | en | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Federal Reserve System | en | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Federal Reserve System | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Réserve fédérale | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Réserve fédérale des États-Unis | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | the Fed | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | The Fed | en | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | A.I.E.A | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | AEIA | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | Agence internationale de l'energie atomique | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | Agence internationale de l'énergie atomique | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | Agence internationale pour l'Énergie atomique | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | Agence internationale à l'énergie atomique | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | AIEA | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | IAEA | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | IAEA | en | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | iaea.org | en | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | International Atomic Energy Agency | en | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | International Atomic Energy Agency | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | International Atomic Energy Agency，IAEA | en | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | + organisations-internationales:onu | AIEA, agence liée à l'ONU
++ | Department of the Treasury | en | politique-americaine:budget;russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | Treasury Department | en | politique-americaine:budget;russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | U.S. Department of the Treasury | en | politique-americaine:budget;russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | U.S. Treasury Department | en | politique-americaine:budget;russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | United States Department of the Treasury | en | politique-americaine:budget;russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | United States Department of the Treasury | fr | politique-americaine:budget;russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | United States Treasury Department | en | politique-americaine:budget;russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | US Treasury Department | en | politique-americaine:budget;russie-ukraine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | Office of the Special Trade Representative | en | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | Office of the U.S. Trade Representative | en | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | Office of the United States Trade Representative | en | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | Representant americain au commerce | fr | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | Représentant américain au commerce | fr | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | United States Trade Representative | en | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | US Trade Representative Office | en | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | USTR | en | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | ustr.gov | en | rivalite-sino-americaine:commerce | + organisations-internationales:commerce_mondial | commerce mondial
++ | Armée chinoise populaire de libération | fr | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Armée de la république populaire de Chine | fr | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Armée de libération du peuple | fr | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Armée populaire de libération | fr | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Armée rouge chinoise | fr | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Chinese People’s Liberation Army | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Chinese PLA | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Forces armées chinoises | fr | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Forces armées de la Chine | fr | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Forces armées de la république populaire de Chine | fr | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | mil China | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | military of PR China | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | P.L.A. | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | People’s Liberation Army | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | PLA | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | PLA China | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | PLA PRC | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | PRC PLA | en | rivalite-sino-americaine:taiwan | + militaire:forces | armée nationale
++ | Bank of Russia | en | russie-ukraine:economie_russe | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Banque Centrale de la Fédération de Russie | fr | russie-ukraine:economie_russe | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Banque Centrale De Russie | fr | russie-ukraine:economie_russe | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Banque de Russie | fr | russie-ukraine:economie_russe | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Central Bank of Russia | en | russie-ukraine:economie_russe | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Central Bank of the Russian Federation | en | russie-ukraine:economie_russe | + monnaie-pouvoir:banques_centrales_puissance | banque centrale
++ | Forces armées soudanaises | fr | soudan:armee | + militaire:forces | armée nationale
++ | mil Sudan | en | soudan:armee | + militaire:forces | armée nationale
++ | military of Sudan | en | soudan:armee | + militaire:forces | armée nationale
++ | Sudanese Armed Forces | en | soudan:armee | + militaire:forces | armée nationale
++ | Autorite du Canal de Panama | fr | transport-maritime:detroits | + reseaux-transport:noeuds | point de passage
++ | Autorité du canal de Panama | fr | transport-maritime:detroits | + reseaux-transport:noeuds | point de passage
++ | Autorité Du Canal De Panamá | fr | transport-maritime:detroits | + reseaux-transport:noeuds | point de passage
++ | Panama Canal Authority | en | transport-maritime:detroits | + reseaux-transport:noeuds | point de passage
++ | poll | en | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | + dirigeants-elus:popularite | sondages
++ | polls | en | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | + dirigeants-elus:popularite | sondages
++ | polling | en | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | + dirigeants-elus:popularite | sondages
++ | sondage | fr | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | + dirigeants-elus:popularite | sondages
++ | sondages | fr | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | + dirigeants-elus:popularite | sondages
++ | Umfrage | de | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | + dirigeants-elus:popularite | sondages
++ | Umfragen | de | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | + dirigeants-elus:popularite | sondages
++ | term limit | en | politique-interieure:dirigeants;humain:hierarchie | + dirigeants-elus:mandats_succession | limite de mandats
++ | term limits | en | politique-interieure:dirigeants;humain:hierarchie | + dirigeants-elus:mandats_succession | limite de mandats
++ | third term | en | politique-interieure:dirigeants;humain:hierarchie | + dirigeants-elus:mandats_succession | limite de mandats
++ | troisième mandat | fr | politique-interieure:dirigeants;humain:hierarchie | + dirigeants-elus:mandats_succession;afrique-subsaharienne:alternances;dirigeants-elus:mandats_succession | limite de mandats
++ | limite de mandats | en | politique-interieure:dirigeants;humain:hierarchie | + dirigeants-elus:mandats_succession | limite de mandats
++ | presidential election | en | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | élection présidentielle | fr | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | Präsidentschaftswahl | de | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | Indonesian presidential election | en | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | élection présidentielle indonésienne | fr | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | Prabowo | en | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:executifs | chef d'exécutif en fonction
++ | runoff | en | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | second round | en | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | second tour | en | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | Stichwahl | de | calendriers-echeances:elections;politique-interieure:dirigeants | + dirigeants-elus:mandats_succession | élection d'un exécutif
++ | Treasury sanctions | en | politique-americaine:sanctions | + monnaie-pouvoir:sanctions_financieres | sanctions financières
++ | Papstreise | de | humain:croyances | + croyances-religions:christianisme | christianisme, Église catholique
++ | Sahara occidental | fr | espace:lieu:Sahara occidental (territoire disputé) | + frontieres:afrique_disputee | terme déjà validé, compartiment de la nouvelle fiche
++ | législatives | fr | calendriers-echeances:elections;politique-interieure:partis | + politique-interieure:elections | terme déjà validé, compartiment de la nouvelle fiche
++ | élections législatives | fr | calendriers-echeances:elections;politique-interieure:partis | + politique-interieure:elections | terme déjà validé, compartiment de la nouvelle fiche
++ | parliamentary election | en | calendriers-echeances:elections;politique-interieure:partis | + politique-interieure:elections | terme déjà validé, compartiment de la nouvelle fiche
++ | Bundestagswahl | de | calendriers-echeances:elections;politique-interieure:partis | + politique-interieure:elections | terme déjà validé, compartiment de la nouvelle fiche
++ | sanctions package | en | russie-ukraine:sanctions;union-europeenne:relations_exterieures | + union-europeenne:sanctions_ue | terme déjà validé, compartiment de la nouvelle fiche
++ | paquet de sanctions | en | russie-ukraine:sanctions;union-europeenne:relations_exterieures | + union-europeenne:sanctions_ue | terme déjà validé, compartiment de la nouvelle fiche
++ | Sanktionspaket | de | russie-ukraine:sanctions;union-europeenne:relations_exterieures | + union-europeenne:sanctions_ue | terme déjà validé, compartiment de la nouvelle fiche
++ | veto | fr | iran-nucleaire:conseil_securite;non-proliferation:conseil_securite | + organisations-internationales:conseil_securite | terme déjà validé, compartiment de la nouvelle fiche
++ | Sicherheitsrat | de | iran-nucleaire:conseil_securite;non-proliferation:conseil_securite | + organisations-internationales:conseil_securite | terme déjà validé, compartiment de la nouvelle fiche
++ | coup d'État | fr | humain:hierarchie | + politique-interieure:coups_transitions | terme déjà validé, compartiment de la nouvelle fiche
++ | coup attempt | en | humain:hierarchie | + politique-interieure:coups_transitions | terme déjà validé, compartiment de la nouvelle fiche
++ | tentative de coup | en | humain:hierarchie | + politique-interieure:coups_transitions | terme déjà validé, compartiment de la nouvelle fiche
++ | démission | fr | humain:hierarchie | + dirigeants-elus:departs | terme déjà validé, compartiment de la nouvelle fiche
++ | chief of staff | en | politique-americaine:entourage;politique-americaine:executif | + dirigeants-elus:entourage | terme déjà validé, compartiment de la nouvelle fiche
+#
+# PARTIE B — termes NOUVEAUX, pour les compartiments des nouvelles fiches qu'aucun terme validé n'atteint (205 au départ).
+# Choisis pour être distinctifs : noms propres, expressions composées ; mots génériques ou ambigus écartés (ex. « Apple »,
+# « RT », « CPI », « colère »). Langue « nom » : nom propre, compté dans toutes les langues. Aucun n'a encore été vu dans
+# nos flux : leur premier relevé dira s'ils apparaissent.
+# Format : décision | terme | langue | rattachement | source
+? | Alliance des États du Sahel | fr | afrique-subsaharienne:juntes_sahel | proposé par Claude d'après la fiche (2026-11-22)
+? | Alliance of Sahel States | en | afrique-subsaharienne:juntes_sahel | proposé par Claude d'après la fiche (2026-11-22)
+? | Assimi Goïta | nom | afrique-subsaharienne:juntes_sahel | proposé par Claude d'après la fiche (2026-11-22)
+? | Ibrahim Traoré | nom | afrique-subsaharienne:juntes_sahel | proposé par Claude d'après la fiche (2026-11-22)
+? | Abdourahamane Tiani | nom | afrique-subsaharienne:juntes_sahel | proposé par Claude d'après la fiche (2026-11-22)
+? | junte militaire | fr | afrique-subsaharienne:juntes_sahel | proposé par Claude d'après la fiche (2026-11-22)
+? | military junta | en | afrique-subsaharienne:juntes_sahel | proposé par Claude d'après la fiche (2026-11-22)
+? | JNIM | nom | afrique-subsaharienne:groupes_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | Boko Haram | nom | afrique-subsaharienne:groupes_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | ISWAP | nom | afrique-subsaharienne:groupes_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | al-Shabaab | nom | afrique-subsaharienne:groupes_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | Shebab | fr | afrique-subsaharienne:groupes_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | État islamique au Sahel | fr | afrique-subsaharienne:groupes_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | Islamic State Sahel | en | afrique-subsaharienne:groupes_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | M23 | nom | afrique-subsaharienne:grands_lacs | proposé par Claude d'après la fiche (2026-11-22)
+? | AFC/M23 | nom | afrique-subsaharienne:grands_lacs | proposé par Claude d'après la fiche (2026-11-22)
+? | Nord-Kivu | fr | afrique-subsaharienne:grands_lacs | proposé par Claude d'après la fiche (2026-11-22)
+? | North Kivu | en | afrique-subsaharienne:grands_lacs | proposé par Claude d'après la fiche (2026-11-22)
+? | Sud-Kivu | fr | afrique-subsaharienne:grands_lacs | proposé par Claude d'après la fiche (2026-11-22)
+? | South Kivu | en | afrique-subsaharienne:grands_lacs | proposé par Claude d'après la fiche (2026-11-22)
+? | Grands Lacs | fr | afrique-subsaharienne:grands_lacs | proposé par Claude d'après la fiche (2026-11-22)
+? | Great Lakes region | en | afrique-subsaharienne:grands_lacs | proposé par Claude d'après la fiche (2026-11-22)
+? | Corne de l'Afrique | fr | afrique-subsaharienne:corne | proposé par Claude d'après la fiche (2026-11-22)
+? | Horn of Africa | en | afrique-subsaharienne:corne | proposé par Claude d'après la fiche (2026-11-22)
+? | Tigray | nom | afrique-subsaharienne:corne | proposé par Claude d'après la fiche (2026-11-22)
+? | Somaliland | nom | afrique-subsaharienne:corne | proposé par Claude d'après la fiche (2026-11-22)
+? | Puntland | nom | afrique-subsaharienne:corne | proposé par Claude d'après la fiche (2026-11-22)
+? | CEDEAO | fr | afrique-subsaharienne:institutions_regionales | proposé par Claude d'après la fiche (2026-11-22)
+? | ECOWAS | en | afrique-subsaharienne:institutions_regionales | proposé par Claude d'après la fiche (2026-11-22)
+? | Union africaine | fr | afrique-subsaharienne:institutions_regionales | proposé par Claude d'après la fiche (2026-11-22)
+? | African Union | en | afrique-subsaharienne:institutions_regionales | proposé par Claude d'après la fiche (2026-11-22)
+? | SADC | nom | afrique-subsaharienne:institutions_regionales | proposé par Claude d'après la fiche (2026-11-22)
+? | IGAD | nom | afrique-subsaharienne:institutions_regionales | proposé par Claude d'après la fiche (2026-11-22)
+? | Africa Corps | nom | afrique-subsaharienne:puissances_exterieures | proposé par Claude d'après la fiche (2026-11-22)
+? | Françafrique | fr | afrique-subsaharienne:puissances_exterieures | proposé par Claude d'après la fiche (2026-11-22)
+? | Forum sur la coopération sino-africaine | fr | afrique-subsaharienne:puissances_exterieures | proposé par Claude d'après la fiche (2026-11-22)
+? | FOCAC | nom | afrique-subsaharienne:puissances_exterieures | proposé par Claude d'après la fiche (2026-11-22)
+? | Lobito Corridor | en | afrique-subsaharienne:puissances_exterieures | proposé par Claude d'après la fiche (2026-11-22)
+? | corridor de Lobito | fr | afrique-subsaharienne:puissances_exterieures | proposé par Claude d'après la fiche (2026-11-22)
+? | déplacés internes | fr | afrique-subsaharienne:deplacements | proposé par Claude d'après la fiche (2026-11-22)
+? | internally displaced | en | afrique-subsaharienne:deplacements | proposé par Claude d'après la fiche (2026-11-22)
+? | camp de réfugiés | fr | afrique-subsaharienne:deplacements | proposé par Claude d'après la fiche (2026-11-22)
+? | refugee camp | en | afrique-subsaharienne:deplacements | proposé par Claude d'après la fiche (2026-11-22)
+? | HCR | fr | afrique-subsaharienne:deplacements | proposé par Claude d'après la fiche (2026-11-22)
+? | UNHCR | en | afrique-subsaharienne:deplacements | proposé par Claude d'après la fiche (2026-11-22)
+? | cobalt congolais | fr | afrique-subsaharienne:ressources | proposé par Claude d'après la fiche (2026-11-22)
+? | Congo cobalt | en | afrique-subsaharienne:ressources | proposé par Claude d'après la fiche (2026-11-22)
+? | cacao | fr | afrique-subsaharienne:ressources | proposé par Claude d'après la fiche (2026-11-22)
+? | cocoa | en | afrique-subsaharienne:ressources | proposé par Claude d'après la fiche (2026-11-22)
+? | or artisanal | fr | afrique-subsaharienne:ressources | proposé par Claude d'après la fiche (2026-11-22)
+? | artisanal gold | en | afrique-subsaharienne:ressources | proposé par Claude d'après la fiche (2026-11-22)
+? | coltan | nom | afrique-subsaharienne:ressources | proposé par Claude d'après la fiche (2026-11-22)
+? | jeunesse africaine | fr | afrique-subsaharienne:demographie_jeunesse | proposé par Claude d'après la fiche (2026-11-22)
+? | African youth | en | afrique-subsaharienne:demographie_jeunesse | proposé par Claude d'après la fiche (2026-11-22)
+? | youth unemployment | en | afrique-subsaharienne:demographie_jeunesse | proposé par Claude d'après la fiche (2026-11-22)
+? | chômage des jeunes | fr | afrique-subsaharienne:demographie_jeunesse | proposé par Claude d'après la fiche (2026-11-22)
+? | Jugendarbeitslosigkeit | de | afrique-subsaharienne:demographie_jeunesse | proposé par Claude d'après la fiche (2026-11-22)
+? | Banque africaine de développement | fr | afrique-subsaharienne:croissance | proposé par Claude d'après la fiche (2026-11-22)
+? | African Development Bank | en | afrique-subsaharienne:croissance | proposé par Claude d'après la fiche (2026-11-22)
+? | Afreximbank | nom | afrique-subsaharienne:croissance | proposé par Claude d'après la fiche (2026-11-22)
+? | ZLECAf | fr | afrique-subsaharienne:integration_commerciale | proposé par Claude d'après la fiche (2026-11-22)
+? | AfCFTA | en | afrique-subsaharienne:integration_commerciale | proposé par Claude d'après la fiche (2026-11-22)
+? | African Continental Free Trade Area | en | afrique-subsaharienne:integration_commerciale | proposé par Claude d'après la fiche (2026-11-22)
+? | zone de libre-échange continentale africaine | fr | afrique-subsaharienne:integration_commerciale | proposé par Claude d'après la fiche (2026-11-22)
+? | M-Pesa | nom | afrique-subsaharienne:argent_mobile | proposé par Claude d'après la fiche (2026-11-22)
+? | Orange Money | nom | afrique-subsaharienne:argent_mobile | proposé par Claude d'après la fiche (2026-11-22)
+? | mobile money | en | afrique-subsaharienne:argent_mobile | proposé par Claude d'après la fiche (2026-11-22)
+? | paiement mobile | fr | afrique-subsaharienne:argent_mobile | proposé par Claude d'après la fiche (2026-11-22)
+? | Mission 300 | nom | afrique-subsaharienne:acces_electricite | proposé par Claude d'après la fiche (2026-11-22)
+? | électrification rurale | fr | afrique-subsaharienne:acces_electricite | proposé par Claude d'après la fiche (2026-11-22)
+? | rural electrification | en | afrique-subsaharienne:acces_electricite | proposé par Claude d'après la fiche (2026-11-22)
+? | off-grid solar | en | afrique-subsaharienne:acces_electricite | proposé par Claude d'après la fiche (2026-11-22)
+? | délestages | fr | afrique-subsaharienne:acces_electricite | proposé par Claude d'après la fiche (2026-11-22)
+? | load shedding | en | afrique-subsaharienne:acces_electricite | proposé par Claude d'après la fiche (2026-11-22)
+? | alternance démocratique | fr | afrique-subsaharienne:alternances | proposé par Claude d'après la fiche (2026-11-22)
+? | transfer of power | en | afrique-subsaharienne:alternances | proposé par Claude d'après la fiche (2026-11-22)
+? | Afrobeats | nom | afrique-subsaharienne:creation_culturelle | proposé par Claude d'après la fiche (2026-11-22)
+? | Nollywood | nom | afrique-subsaharienne:creation_culturelle | proposé par Claude d'après la fiche (2026-11-22)
+? | FESPACO | nom | afrique-subsaharienne:creation_culturelle | proposé par Claude d'après la fiche (2026-11-22)
+? | Biennale de Dakar | fr | afrique-subsaharienne:creation_culturelle | proposé par Claude d'après la fiche (2026-11-22)
+? | Kim Jong Un | nom | asie-du-nord-est:coree_du_nord | proposé par Claude d'après la fiche (2026-11-22)
+? | Kim Jong-un | nom | asie-du-nord-est:coree_du_nord | proposé par Claude d'après la fiche (2026-11-22)
+? | Pyongyang | nom | asie-du-nord-est:coree_du_nord | proposé par Claude d'après la fiche (2026-11-22)
+? | Nordkorea | de | asie-du-nord-est:coree_du_nord | proposé par Claude d'après la fiche (2026-11-22)
+? | North Korean troops | en | asie-du-nord-est:russie_coree | proposé par Claude d'après la fiche (2026-11-22)
+? | soldats nord-coréens | fr | asie-du-nord-est:russie_coree | proposé par Claude d'après la fiche (2026-11-22)
+? | nordkoreanische Soldaten | de | asie-du-nord-est:russie_coree | proposé par Claude d'après la fiche (2026-11-22)
+? | Lee Jae-myung | nom | asie-du-nord-est:coree_du_sud | proposé par Claude d'après la fiche (2026-11-22)
+? | Assemblée nationale coréenne | fr | asie-du-nord-est:coree_du_sud | proposé par Claude d'après la fiche (2026-11-22)
+? | National Assembly of Korea | en | asie-du-nord-est:coree_du_sud | proposé par Claude d'après la fiche (2026-11-22)
+? | Corée du Sud | fr | asie-du-nord-est:coree_du_sud | proposé par Claude d'après la fiche (2026-11-22)
+? | Südkorea | de | asie-du-nord-est:coree_du_sud | proposé par Claude d'après la fiche (2026-11-22)
+? | Sanae Takaichi | nom | asie-du-nord-est:japon | proposé par Claude d'après la fiche (2026-11-22)
+? | Takaichi | nom | asie-du-nord-est:japon | proposé par Claude d'après la fiche (2026-11-22)
+? | Diète japonaise | fr | asie-du-nord-est:japon | proposé par Claude d'après la fiche (2026-11-22)
+? | National Diet | en | asie-du-nord-est:japon | proposé par Claude d'après la fiche (2026-11-22)
+? | Liberal Democratic Party of Japan | en | asie-du-nord-est:japon | proposé par Claude d'après la fiche (2026-11-22)
+? | Senkaku | nom | asie-du-nord-est:chine_japon | proposé par Claude d'après la fiche (2026-11-22)
+? | Diaoyu | nom | asie-du-nord-est:chine_japon | proposé par Claude d'après la fiche (2026-11-22)
+? | mer de Chine orientale | fr | asie-du-nord-est:chine_japon | proposé par Claude d'après la fiche (2026-11-22)
+? | East China Sea | en | asie-du-nord-est:chine_japon | proposé par Claude d'après la fiche (2026-11-22)
+? | AUKUS | nom | asie-du-nord-est:alliances | proposé par Claude d'après la fiche (2026-11-22)
+? | US-Japan alliance | en | asie-du-nord-est:alliances | proposé par Claude d'après la fiche (2026-11-22)
+? | alliance nippo-américaine | fr | asie-du-nord-est:alliances | proposé par Claude d'après la fiche (2026-11-22)
+? | US Forces Korea | en | asie-du-nord-est:alliances | proposé par Claude d'après la fiche (2026-11-22)
+? | Cachemire | fr | asie-du-sud:inde_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | Kashmir | nom | asie-du-sud:inde_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | Kaschmir | de | asie-du-sud:inde_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | Line of Control | en | asie-du-sud:inde_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | ligne de contrôle | fr | asie-du-sud:inde_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | Operation Sindoor | en | asie-du-sud:inde_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | traité des eaux de l'Indus | fr | asie-du-sud:indus | proposé par Claude d'après la fiche (2026-11-22)
+? | Indus Waters Treaty | en | asie-du-sud:indus | proposé par Claude d'après la fiche (2026-11-22)
+? | Talibans | fr | asie-du-sud:afghanistan_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | Taliban | nom | asie-du-sud:afghanistan_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | TTP | nom | asie-du-sud:afghanistan_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | Tehrik-i-Taliban | nom | asie-du-sud:afghanistan_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | ligne Durand | fr | asie-du-sud:afghanistan_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | Durand Line | en | asie-du-sud:afghanistan_pakistan | proposé par Claude d'après la fiche (2026-11-22)
+? | Narendra Modi | nom | asie-du-sud:inde_puissance | proposé par Claude d'après la fiche (2026-11-22)
+? | Modi | nom | asie-du-sud:inde_puissance | proposé par Claude d'après la fiche (2026-11-22)
+? | BJP | nom | asie-du-sud:inde_puissance | proposé par Claude d'après la fiche (2026-11-22)
+? | Bharatiya Janata Party | nom | asie-du-sud:inde_puissance | proposé par Claude d'après la fiche (2026-11-22)
+? | Imran Khan | nom | asie-du-sud:pakistan_interieur | proposé par Claude d'après la fiche (2026-11-22)
+? | PTI | nom | asie-du-sud:pakistan_interieur | proposé par Claude d'après la fiche (2026-11-22)
+? | Asim Munir | nom | asie-du-sud:pakistan_interieur | proposé par Claude d'après la fiche (2026-11-22)
+? | Shehbaz Sharif | nom | asie-du-sud:pakistan_interieur | proposé par Claude d'après la fiche (2026-11-22)
+? | Dhaka | nom | asie-du-sud:bangladesh | proposé par Claude d'après la fiche (2026-11-22)
+? | Muhammad Yunus | nom | asie-du-sud:bangladesh | proposé par Claude d'après la fiche (2026-11-22)
+? | Awami League | en | asie-du-sud:bangladesh | proposé par Claude d'après la fiche (2026-11-22)
+? | Ligue Awami | fr | asie-du-sud:bangladesh | proposé par Claude d'après la fiche (2026-11-22)
+? | Gwadar | nom | asie-du-sud:puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | CPEC | nom | asie-du-sud:puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | China-Pakistan Economic Corridor | en | asie-du-sud:puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | Chabahar | nom | asie-du-sud:puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | biotope | nom | biocenose:biotope | proposé par Claude d'après la fiche (2026-11-22)
+? | écosystème naturel | fr | biocenose:biotope | proposé par Claude d'après la fiche (2026-11-22)
+? | natural ecosystem | en | biocenose:biotope | proposé par Claude d'après la fiche (2026-11-22)
+? | Ökosystem | de | biocenose:biotope | proposé par Claude d'après la fiche (2026-11-22)
+? | photosynthèse | fr | biocenose:producteurs | proposé par Claude d'après la fiche (2026-11-22)
+? | photosynthesis | en | biocenose:producteurs | proposé par Claude d'après la fiche (2026-11-22)
+? | phytoplancton | fr | biocenose:producteurs | proposé par Claude d'après la fiche (2026-11-22)
+? | phytoplankton | en | biocenose:producteurs | proposé par Claude d'après la fiche (2026-11-22)
+? | forêt primaire | fr | biocenose:producteurs | proposé par Claude d'après la fiche (2026-11-22)
+? | primary forest | en | biocenose:producteurs | proposé par Claude d'après la fiche (2026-11-22)
+? | prédateur | fr | biocenose:consommateurs | proposé par Claude d'après la fiche (2026-11-22)
+? | predator | en | biocenose:consommateurs | proposé par Claude d'après la fiche (2026-11-22)
+? | herbivores | nom | biocenose:consommateurs | proposé par Claude d'après la fiche (2026-11-22)
+? | chaîne alimentaire | fr | biocenose:consommateurs | proposé par Claude d'après la fiche (2026-11-22)
+? | food chain | en | biocenose:consommateurs | proposé par Claude d'après la fiche (2026-11-22)
+? | champignons du sol | fr | biocenose:decomposeurs | proposé par Claude d'après la fiche (2026-11-22)
+? | soil fungi | en | biocenose:decomposeurs | proposé par Claude d'après la fiche (2026-11-22)
+? | migration des oiseaux | fr | biocenose:cycle_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | bird migration | en | biocenose:cycle_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | floraison | fr | biocenose:cycle_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | Vogelzug | de | biocenose:cycle_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | forêt tropicale | fr | biocenose:biomes | proposé par Claude d'après la fiche (2026-11-22)
+? | rainforest | en | biocenose:biomes | proposé par Claude d'après la fiche (2026-11-22)
+? | toundra | fr | biocenose:biomes | proposé par Claude d'après la fiche (2026-11-22)
+? | tundra | en | biocenose:biomes | proposé par Claude d'après la fiche (2026-11-22)
+? | savane | fr | biocenose:biomes | proposé par Claude d'après la fiche (2026-11-22)
+? | savanna | en | biocenose:biomes | proposé par Claude d'après la fiche (2026-11-22)
+? | mangrove | nom | biocenose:biomes | proposé par Claude d'après la fiche (2026-11-22)
+? | Regenwald | de | biocenose:biomes | proposé par Claude d'après la fiche (2026-11-22)
+? | pollinisateurs | fr | biocenose:apports_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | pollinators | en | biocenose:apports_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | services écosystémiques | fr | biocenose:apports_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | ecosystem services | en | biocenose:apports_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | Bestäuber | de | biocenose:apports_vivant | proposé par Claude d'après la fiche (2026-11-22)
+? | Indice Planète vivante | fr | biodiversite-sols:populations | proposé par Claude d'après la fiche (2026-11-22)
+? | Living Planet Index | en | biodiversite-sols:populations | proposé par Claude d'après la fiche (2026-11-22)
+? | déclin des populations | fr | biodiversite-sols:populations | proposé par Claude d'après la fiche (2026-11-22)
+? | population decline | en | biodiversite-sols:populations | proposé par Claude d'après la fiche (2026-11-22)
+? | déforestation | fr | biodiversite-sols:habitats | proposé par Claude d'après la fiche (2026-11-22)
+? | deforestation | en | biodiversite-sols:habitats | proposé par Claude d'après la fiche (2026-11-22)
+? | Entwaldung | de | biodiversite-sols:habitats | proposé par Claude d'après la fiche (2026-11-22)
+? | perte d'habitat | fr | biodiversite-sols:habitats | proposé par Claude d'après la fiche (2026-11-22)
+? | habitat loss | en | biodiversite-sols:habitats | proposé par Claude d'après la fiche (2026-11-22)
+? | santé des sols | fr | biodiversite-sols:sols_vivants | proposé par Claude d'après la fiche (2026-11-22)
+? | soil health | en | biodiversite-sols:sols_vivants | proposé par Claude d'après la fiche (2026-11-22)
+? | érosion des sols | fr | biodiversite-sols:sols_vivants | proposé par Claude d'après la fiche (2026-11-22)
+? | soil erosion | en | biodiversite-sols:sols_vivants | proposé par Claude d'après la fiche (2026-11-22)
+? | Bodenschutz | de | biodiversite-sols:sols_vivants | proposé par Claude d'après la fiche (2026-11-22)
+? | espèces envahissantes | fr | biodiversite-sols:envahissantes | proposé par Claude d'après la fiche (2026-11-22)
+? | invasive species | en | biodiversite-sols:envahissantes | proposé par Claude d'après la fiche (2026-11-22)
+? | invasive Arten | de | biodiversite-sols:envahissantes | proposé par Claude d'après la fiche (2026-11-22)
+? | aire protégée | fr | biodiversite-sols:aires_protegees | proposé par Claude d'après la fiche (2026-11-22)
+? | protected area | en | biodiversite-sols:aires_protegees | proposé par Claude d'après la fiche (2026-11-22)
+? | parc national | fr | biodiversite-sols:aires_protegees | proposé par Claude d'après la fiche (2026-11-22)
+? | national park | en | biodiversite-sols:aires_protegees | proposé par Claude d'après la fiche (2026-11-22)
+? | 30x30 | nom | biodiversite-sols:aires_protegees | proposé par Claude d'après la fiche (2026-11-22)
+? | Naturschutzgebiet | de | biodiversite-sols:aires_protegees | proposé par Claude d'après la fiche (2026-11-22)
+? | COP16 | nom | biodiversite-sols:accords | proposé par Claude d'après la fiche (2026-11-22)
+? | COP17 | nom | biodiversite-sols:accords | proposé par Claude d'après la fiche (2026-11-22)
+? | Kunming-Montréal | fr | biodiversite-sols:accords | proposé par Claude d'après la fiche (2026-11-22)
+? | Kunming-Montreal | en | biodiversite-sols:accords | proposé par Claude d'après la fiche (2026-11-22)
+? | CITES | nom | biodiversite-sols:accords | proposé par Claude d'après la fiche (2026-11-22)
+? | convention sur la diversité biologique | fr | biodiversite-sols:accords | proposé par Claude d'après la fiche (2026-11-22)
+? | Convention on Biological Diversity | en | biodiversite-sols:accords | proposé par Claude d'après la fiche (2026-11-22)
+? | milliardaires | fr | classes-sociales:tres_riches | proposé par Claude d'après la fiche (2026-11-22)
+? | billionaires | en | classes-sociales:tres_riches | proposé par Claude d'après la fiche (2026-11-22)
+? | Milliardäre | de | classes-sociales:tres_riches | proposé par Claude d'après la fiche (2026-11-22)
+? | ultra-riches | fr | classes-sociales:tres_riches | proposé par Claude d'après la fiche (2026-11-22)
+? | super-rich | en | classes-sociales:tres_riches | proposé par Claude d'après la fiche (2026-11-22)
+? | taxe Zucman | fr | classes-sociales:tres_riches | proposé par Claude d'après la fiche (2026-11-22)
+? | classe moyenne | fr | classes-sociales:classes_moyennes | proposé par Claude d'après la fiche (2026-11-22)
+? | middle class | en | classes-sociales:classes_moyennes | proposé par Claude d'après la fiche (2026-11-22)
+? | Mittelschicht | de | classes-sociales:classes_moyennes | proposé par Claude d'après la fiche (2026-11-22)
+? | déclassement | fr | classes-sociales:classes_moyennes | proposé par Claude d'après la fiche (2026-11-22)
+? | extrême pauvreté | fr | classes-sociales:pauvrete_extreme | proposé par Claude d'après la fiche (2026-11-22)
+? | extreme poverty | en | classes-sociales:pauvrete_extreme | proposé par Claude d'après la fiche (2026-11-22)
+? | extreme Armut | de | classes-sociales:pauvrete_extreme | proposé par Claude d'après la fiche (2026-11-22)
+? | économie informelle | fr | classes-sociales:travail_informel | proposé par Claude d'après la fiche (2026-11-22)
+? | informal economy | en | classes-sociales:travail_informel | proposé par Claude d'après la fiche (2026-11-22)
+? | travail informel | fr | classes-sociales:travail_informel | proposé par Claude d'après la fiche (2026-11-22)
+? | informal work | en | classes-sociales:travail_informel | proposé par Claude d'après la fiche (2026-11-22)
+? | Schwarzarbeit | de | classes-sociales:travail_informel | proposé par Claude d'après la fiche (2026-11-22)
+? | paysans | fr | classes-sociales:paysannerie | proposé par Claude d'après la fiche (2026-11-22)
+? | smallholder farmers | en | classes-sociales:paysannerie | proposé par Claude d'après la fiche (2026-11-22)
+? | Kleinbauern | de | classes-sociales:paysannerie | proposé par Claude d'après la fiche (2026-11-22)
+? | agriculteurs familiaux | fr | classes-sociales:paysannerie | proposé par Claude d'après la fiche (2026-11-22)
+? | professionals and managers | en | classes-sociales:cadres_intellectuels | proposé par Claude d'après la fiche (2026-11-22)
+? | Akademiker | de | classes-sociales:cadres_intellectuels | proposé par Claude d'après la fiche (2026-11-22)
+? | auto-entrepreneurs | fr | classes-sociales:independants | proposé par Claude d'après la fiche (2026-11-22)
+? | self-employed | en | classes-sociales:independants | proposé par Claude d'après la fiche (2026-11-22)
+? | Selbstständige | de | classes-sociales:independants | proposé par Claude d'après la fiche (2026-11-22)
+? | artisans et commerçants | fr | classes-sociales:independants | proposé par Claude d'après la fiche (2026-11-22)
+? | mobilité sociale | fr | classes-sociales:mobilite_sociale | proposé par Claude d'après la fiche (2026-11-22)
+? | social mobility | en | classes-sociales:mobilite_sociale | proposé par Claude d'après la fiche (2026-11-22)
+? | soziale Mobilität | de | classes-sociales:mobilite_sociale | proposé par Claude d'après la fiche (2026-11-22)
+? | ascenseur social | fr | classes-sociales:mobilite_sociale | proposé par Claude d'après la fiche (2026-11-22)
+? | reproduction sociale | fr | classes-sociales:capitaux_reproduction | proposé par Claude d'après la fiche (2026-11-22)
+? | inequality of opportunity | en | classes-sociales:capitaux_reproduction | proposé par Claude d'après la fiche (2026-11-22)
+? | Chancengleichheit | de | classes-sociales:capitaux_reproduction | proposé par Claude d'après la fiche (2026-11-22)
+? | grandes écoles | fr | classes-sociales:capitaux_reproduction | proposé par Claude d'après la fiche (2026-11-22)
+? | système des castes | fr | classes-sociales:hierarchies_heritees | proposé par Claude d'après la fiche (2026-11-22)
+? | caste system | en | classes-sociales:hierarchies_heritees | proposé par Claude d'après la fiche (2026-11-22)
+? | Kastenwesen | de | classes-sociales:hierarchies_heritees | proposé par Claude d'après la fiche (2026-11-22)
+? | dalits | nom | classes-sociales:hierarchies_heritees | proposé par Claude d'après la fiche (2026-11-22)
+? | noblesse | fr | classes-sociales:hierarchies_heritees | proposé par Claude d'après la fiche (2026-11-22)
+? | malnutrition | nom | corps-humain:besoins_vitaux | proposé par Claude d'après la fiche (2026-11-22)
+? | famine | nom | corps-humain:besoins_vitaux | proposé par Claude d'après la fiche (2026-11-22)
+? | Hunger | de | corps-humain:besoins_vitaux | proposé par Claude d'après la fiche (2026-11-22)
+? | faim | fr | corps-humain:besoins_vitaux | proposé par Claude d'après la fiche (2026-11-22)
+? | hunger | en | corps-humain:besoins_vitaux | proposé par Claude d'après la fiche (2026-11-22)
+? | obésité | fr | corps-humain:nutrition | proposé par Claude d'après la fiche (2026-11-22)
+? | obesity | en | corps-humain:nutrition | proposé par Claude d'après la fiche (2026-11-22)
+? | Übergewicht | de | corps-humain:nutrition | proposé par Claude d'après la fiche (2026-11-22)
+? | retard de croissance | fr | corps-humain:nutrition | proposé par Claude d'après la fiche (2026-11-22)
+? | stunting | en | corps-humain:nutrition | proposé par Claude d'après la fiche (2026-11-22)
+? | coup de chaleur | fr | corps-humain:chaleur_froid | proposé par Claude d'après la fiche (2026-11-22)
+? | heatstroke | en | corps-humain:chaleur_froid | proposé par Claude d'après la fiche (2026-11-22)
+? | Hitzetote | de | corps-humain:chaleur_froid | proposé par Claude d'après la fiche (2026-11-22)
+? | décès liés à la chaleur | fr | corps-humain:chaleur_froid | proposé par Claude d'après la fiche (2026-11-22)
+? | heat-related deaths | en | corps-humain:chaleur_froid | proposé par Claude d'après la fiche (2026-11-22)
+? | pollution de l'air | fr | corps-humain:pollution | proposé par Claude d'après la fiche (2026-11-22)
+? | air pollution | en | corps-humain:pollution | proposé par Claude d'après la fiche (2026-11-22)
+? | Luftverschmutzung | de | corps-humain:pollution | proposé par Claude d'après la fiche (2026-11-22)
+? | particules fines | fr | corps-humain:pollution | proposé par Claude d'après la fiche (2026-11-22)
+? | PM2.5 | nom | corps-humain:pollution | proposé par Claude d'après la fiche (2026-11-22)
+? | antibiorésistance | fr | corps-humain:antimicrobiens | proposé par Claude d'après la fiche (2026-11-22)
+? | antimicrobial resistance | en | corps-humain:antimicrobiens | proposé par Claude d'après la fiche (2026-11-22)
+? | Antibiotikaresistenz | de | corps-humain:antimicrobiens | proposé par Claude d'après la fiche (2026-11-22)
+? | superbactérie | fr | corps-humain:antimicrobiens | proposé par Claude d'après la fiche (2026-11-22)
+? | superbug | en | corps-humain:antimicrobiens | proposé par Claude d'après la fiche (2026-11-22)
+? | vieillissement | fr | corps-humain:vieillissement | proposé par Claude d'après la fiche (2026-11-22)
+? | ageing population | en | corps-humain:vieillissement | proposé par Claude d'après la fiche (2026-11-22)
+? | Pflegenotstand | de | corps-humain:vieillissement | proposé par Claude d'après la fiche (2026-11-22)
+? | dépendance des personnes âgées | fr | corps-humain:vieillissement | proposé par Claude d'après la fiche (2026-11-22)
+? | indice de perception de la corruption | fr | corruption:perception | proposé par Claude d'après la fiche (2026-11-22)
+? | Corruption Perceptions Index | en | corruption:perception | proposé par Claude d'après la fiche (2026-11-22)
+? | Transparency International | nom | corruption:perception | proposé par Claude d'après la fiche (2026-11-22)
+? | pots-de-vin | fr | corruption:corruption_quotidienne | proposé par Claude d'après la fiche (2026-11-22)
+? | bribery | en | corruption:corruption_quotidienne | proposé par Claude d'après la fiche (2026-11-22)
+? | Bestechung | de | corruption:corruption_quotidienne | proposé par Claude d'après la fiche (2026-11-22)
+? | bakchich | fr | corruption:corruption_quotidienne | proposé par Claude d'après la fiche (2026-11-22)
+? | marchés publics | fr | corruption:marches_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | public procurement | en | corruption:marches_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | öffentliche Aufträge | de | corruption:marches_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | favoritisme | fr | corruption:marches_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | Parquet national financier | fr | corruption:lutte | proposé par Claude d'après la fiche (2026-11-22)
+? | Parquet européen | fr | corruption:lutte | proposé par Claude d'après la fiche (2026-11-22)
+? | European Public Prosecutor's Office | en | corruption:lutte | proposé par Claude d'après la fiche (2026-11-22)
+? | anticorruption | fr | corruption:lutte | proposé par Claude d'après la fiche (2026-11-22)
+? | anti-corruption | en | corruption:lutte | proposé par Claude d'après la fiche (2026-11-22)
+? | lanceur d'alerte | fr | corruption:presse_alerte | proposé par Claude d'après la fiche (2026-11-22)
+? | whistleblower | en | corruption:presse_alerte | proposé par Claude d'après la fiche (2026-11-22)
+? | Whistleblower | de | corruption:presse_alerte | proposé par Claude d'après la fiche (2026-11-22)
+? | Pandora Papers | nom | corruption:presse_alerte | proposé par Claude d'après la fiche (2026-11-22)
+? | Panama Papers | nom | corruption:presse_alerte | proposé par Claude d'après la fiche (2026-11-22)
+? | confiance dans les institutions | fr | corruption:confiance | proposé par Claude d'après la fiche (2026-11-22)
+? | trust in institutions | en | corruption:confiance | proposé par Claude d'après la fiche (2026-11-22)
+? | Vertrauen in die Politik | de | corruption:confiance | proposé par Claude d'après la fiche (2026-11-22)
+? | cartel | nom | crime-organise:cartels_mafias | proposé par Claude d'après la fiche (2026-11-22)
+? | Sinaloa | nom | crime-organise:cartels_mafias | proposé par Claude d'après la fiche (2026-11-22)
+? | CJNG | nom | crime-organise:cartels_mafias | proposé par Claude d'après la fiche (2026-11-22)
+? | 'Ndrangheta | nom | crime-organise:cartels_mafias | proposé par Claude d'après la fiche (2026-11-22)
+? | Camorra | nom | crime-organise:cartels_mafias | proposé par Claude d'après la fiche (2026-11-22)
+? | Cosa Nostra | nom | crime-organise:cartels_mafias | proposé par Claude d'après la fiche (2026-11-22)
+? | Mafia | nom | crime-organise:cartels_mafias | proposé par Claude d'après la fiche (2026-11-22)
+? | Yakuza | nom | crime-organise:cartels_mafias | proposé par Claude d'après la fiche (2026-11-22)
+? | traite des êtres humains | fr | crime-organise:traite | proposé par Claude d'après la fiche (2026-11-22)
+? | human trafficking | en | crime-organise:traite | proposé par Claude d'après la fiche (2026-11-22)
+? | Menschenhandel | de | crime-organise:traite | proposé par Claude d'après la fiche (2026-11-22)
+? | passeurs | fr | crime-organise:traite | proposé par Claude d'après la fiche (2026-11-22)
+? | people smugglers | en | crime-organise:traite | proposé par Claude d'après la fiche (2026-11-22)
+? | Schleuser | de | crime-organise:traite | proposé par Claude d'après la fiche (2026-11-22)
+? | narco-État | fr | crime-organise:captation_etats | proposé par Claude d'après la fiche (2026-11-22)
+? | narco-state | en | crime-organise:captation_etats | proposé par Claude d'après la fiche (2026-11-22)
+? | État mafieux | fr | crime-organise:captation_etats | proposé par Claude d'après la fiche (2026-11-22)
+? | mafia state | en | crime-organise:captation_etats | proposé par Claude d'après la fiche (2026-11-22)
+? | Europol | nom | crime-organise:repression | proposé par Claude d'après la fiche (2026-11-22)
+? | Interpol | nom | crime-organise:repression | proposé par Claude d'après la fiche (2026-11-22)
+? | DEA | nom | crime-organise:repression | proposé par Claude d'après la fiche (2026-11-22)
+? | saisie de cocaïne | fr | crime-organise:repression | proposé par Claude d'après la fiche (2026-11-22)
+? | cocaine seizure | en | crime-organise:repression | proposé par Claude d'après la fiche (2026-11-22)
+? | Kokainfund | de | crime-organise:repression | proposé par Claude d'après la fiche (2026-11-22)
+? | hindouisme | fr | croyances-religions:hindouisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Hinduism | en | croyances-religions:hindouisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Hinduismus | de | croyances-religions:hindouisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Kumbh Mela | nom | croyances-religions:hindouisme | proposé par Claude d'après la fiche (2026-11-22)
+? | temple hindou | fr | croyances-religions:hindouisme | proposé par Claude d'après la fiche (2026-11-22)
+? | bouddhisme | fr | croyances-religions:bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Buddhism | en | croyances-religions:bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Buddhismus | de | croyances-religions:bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | dalaï-lama | fr | croyances-religions:bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Dalai Lama | en | croyances-religions:bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | moines bouddhistes | fr | croyances-religions:bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | judaïsme | fr | croyances-religions:judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Judaism | en | croyances-religions:judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Judentum | de | croyances-religions:judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | synagogue | fr | croyances-religions:judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Synagoge | de | croyances-religions:judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | grand rabbin | fr | croyances-religions:judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | chief rabbi | en | croyances-religions:judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | confucianisme | fr | croyances-religions:religions_chinoises | proposé par Claude d'après la fiche (2026-11-22)
+? | Confucianism | en | croyances-religions:religions_chinoises | proposé par Claude d'après la fiche (2026-11-22)
+? | taoïsme | fr | croyances-religions:religions_chinoises | proposé par Claude d'après la fiche (2026-11-22)
+? | Taoism | en | croyances-religions:religions_chinoises | proposé par Claude d'après la fiche (2026-11-22)
+? | Falun Gong | nom | croyances-religions:religions_chinoises | proposé par Claude d'après la fiche (2026-11-22)
+? | sikhs | nom | croyances-religions:autres_religions | proposé par Claude d'après la fiche (2026-11-22)
+? | Sikhism | en | croyances-religions:autres_religions | proposé par Claude d'après la fiche (2026-11-22)
+? | bahaïs | fr | croyances-religions:autres_religions | proposé par Claude d'après la fiche (2026-11-22)
+? | Baha'i | en | croyances-religions:autres_religions | proposé par Claude d'après la fiche (2026-11-22)
+? | zoroastriens | fr | croyances-religions:autres_religions | proposé par Claude d'après la fiche (2026-11-22)
+? | jaïnisme | fr | croyances-religions:autres_religions | proposé par Claude d'après la fiche (2026-11-22)
+? | athéisme | fr | croyances-religions:sans_religion | proposé par Claude d'après la fiche (2026-11-22)
+? | atheism | en | croyances-religions:sans_religion | proposé par Claude d'après la fiche (2026-11-22)
+? | Atheismus | de | croyances-religions:sans_religion | proposé par Claude d'après la fiche (2026-11-22)
+? | sans religion | fr | croyances-religions:sans_religion | proposé par Claude d'après la fiche (2026-11-22)
+? | non-religious | en | croyances-religions:sans_religion | proposé par Claude d'après la fiche (2026-11-22)
+? | Kirchenaustritte | de | croyances-religions:sans_religion | proposé par Claude d'après la fiche (2026-11-22)
+? | monde musulman | fr | croyances-religions:aires_geographiques | proposé par Claude d'après la fiche (2026-11-22)
+? | Muslim world | en | croyances-religions:aires_geographiques | proposé par Claude d'après la fiche (2026-11-22)
+? | chrétiens d'Orient | fr | croyances-religions:aires_geographiques | proposé par Claude d'après la fiche (2026-11-22)
+? | Eastern Christians | en | croyances-religions:aires_geographiques | proposé par Claude d'après la fiche (2026-11-22)
+? | nationalisme chrétien | fr | croyances-religions:extremes_christianisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Christian nationalism | en | croyances-religions:extremes_christianisme | proposé par Claude d'après la fiche (2026-11-22)
+? | christlicher Nationalismus | de | croyances-religions:extremes_christianisme | proposé par Claude d'après la fiche (2026-11-22)
+? | intégrisme catholique | fr | croyances-religions:extremes_christianisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Hindutva | nom | croyances-religions:extremes_hindouisme | proposé par Claude d'après la fiche (2026-11-22)
+? | RSS (Inde) | fr | croyances-religions:extremes_hindouisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Rashtriya Swayamsevak Sangh | nom | croyances-religions:extremes_hindouisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Ma Ba Tha | nom | croyances-religions:extremes_bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | 969 Movement | en | croyances-religions:extremes_bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Bodu Bala Sena | nom | croyances-religions:extremes_bouddhisme | proposé par Claude d'après la fiche (2026-11-22)
+? | colons extrémistes | fr | croyances-religions:extremes_judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | extremist settlers | en | croyances-religions:extremes_judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Hilltop Youth | en | croyances-religions:extremes_judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | kahanisme | fr | croyances-religions:extremes_judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | Kahanism | en | croyances-religions:extremes_judaisme | proposé par Claude d'après la fiche (2026-11-22)
+? | dérives sectaires | fr | croyances-religions:sectes | proposé par Claude d'après la fiche (2026-11-22)
+? | Sekte | de | croyances-religions:sectes | proposé par Claude d'après la fiche (2026-11-22)
+? | Miviludes | nom | croyances-religions:sectes | proposé par Claude d'après la fiche (2026-11-22)
+? | scientologie | fr | croyances-religions:sectes | proposé par Claude d'après la fiche (2026-11-22)
+? | Scientology | en | croyances-religions:sectes | proposé par Claude d'après la fiche (2026-11-22)
+? | Église de l'Unification | fr | croyances-religions:sectes | proposé par Claude d'après la fiche (2026-11-22)
+? | patrimoine mondial | fr | culture-memoire:patrimoine | proposé par Claude d'après la fiche (2026-11-22)
+? | World Heritage | en | culture-memoire:patrimoine | proposé par Claude d'après la fiche (2026-11-22)
+? | Welterbe | de | culture-memoire:patrimoine | proposé par Claude d'après la fiche (2026-11-22)
+? | UNESCO | nom | culture-memoire:patrimoine | proposé par Claude d'après la fiche (2026-11-22)
+? | destruction du patrimoine | fr | culture-memoire:patrimoine_en_guerre | proposé par Claude d'après la fiche (2026-11-22)
+? | heritage destruction | en | culture-memoire:patrimoine_en_guerre | proposé par Claude d'après la fiche (2026-11-22)
+? | pillage archéologique | fr | culture-memoire:patrimoine_en_guerre | proposé par Claude d'après la fiche (2026-11-22)
+? | looted antiquities | en | culture-memoire:patrimoine_en_guerre | proposé par Claude d'après la fiche (2026-11-22)
+? | restitution des biens culturels | fr | culture-memoire:restitutions | proposé par Claude d'après la fiche (2026-11-22)
+? | restitution | en | culture-memoire:restitutions | proposé par Claude d'après la fiche (2026-11-22)
+? | Raubkunst | de | culture-memoire:restitutions | proposé par Claude d'après la fiche (2026-11-22)
+? | bronzes du Bénin | fr | culture-memoire:restitutions | proposé par Claude d'après la fiche (2026-11-22)
+? | Benin Bronzes | en | culture-memoire:restitutions | proposé par Claude d'après la fiche (2026-11-22)
+? | devoir de mémoire | fr | culture-memoire:usages_memoire | proposé par Claude d'après la fiche (2026-11-22)
+? | commemoration | en | culture-memoire:usages_memoire | proposé par Claude d'après la fiche (2026-11-22)
+? | Erinnerungskultur | de | culture-memoire:usages_memoire | proposé par Claude d'après la fiche (2026-11-22)
+? | commémoration | fr | culture-memoire:usages_memoire | proposé par Claude d'après la fiche (2026-11-22)
+? | Gedenken | de | culture-memoire:usages_memoire | proposé par Claude d'après la fiche (2026-11-22)
+? | remaniement | fr | dirigeants-elus:ministres | proposé par Claude d'après la fiche (2026-11-22)
+? | cabinet reshuffle | en | dirigeants-elus:ministres | proposé par Claude d'après la fiche (2026-11-22)
+? | Kabinettsumbildung | de | dirigeants-elus:ministres | proposé par Claude d'après la fiche (2026-11-22)
+? | ministre de l'Intérieur | fr | dirigeants-elus:ministres | proposé par Claude d'après la fiche (2026-11-22)
+? | foreign minister | en | dirigeants-elus:ministres | proposé par Claude d'après la fiche (2026-11-22)
+? | resignation | en | dirigeants-elus:departs | proposé par Claude d'après la fiche (2026-11-22)
+? | Rücktritt | de | dirigeants-elus:departs | proposé par Claude d'après la fiche (2026-11-22)
+? | destitution | fr | dirigeants-elus:departs | proposé par Claude d'après la fiche (2026-11-22)
+? | impeachment | en | dirigeants-elus:departs | proposé par Claude d'après la fiche (2026-11-22)
+? | vote de défiance | fr | dirigeants-elus:departs | proposé par Claude d'après la fiche (2026-11-22)
+? | chef de cabinet | fr | dirigeants-elus:entourage | proposé par Claude d'après la fiche (2026-11-22)
+? | conseiller spécial | fr | dirigeants-elus:entourage | proposé par Claude d'après la fiche (2026-11-22)
+? | Kanzleramtschef | de | dirigeants-elus:entourage | proposé par Claude d'après la fiche (2026-11-22)
+? | programme électoral | fr | dirigeants-elus:programmes | proposé par Claude d'après la fiche (2026-11-22)
+? | election manifesto | en | dirigeants-elus:programmes | proposé par Claude d'après la fiche (2026-11-22)
+? | Wahlprogramm | de | dirigeants-elus:programmes | proposé par Claude d'après la fiche (2026-11-22)
+? | promesse de campagne | fr | dirigeants-elus:programmes | proposé par Claude d'après la fiche (2026-11-22)
+? | campaign promise | en | dirigeants-elus:programmes | proposé par Claude d'après la fiche (2026-11-22)
+? | immunité parlementaire | fr | dirigeants-elus:justice_immunites | proposé par Claude d'après la fiche (2026-11-22)
+? | parliamentary immunity | en | dirigeants-elus:justice_immunites | proposé par Claude d'après la fiche (2026-11-22)
+? | Immunität | de | dirigeants-elus:justice_immunites | proposé par Claude d'après la fiche (2026-11-22)
+? | inéligibilité | fr | dirigeants-elus:justice_immunites | proposé par Claude d'après la fiche (2026-11-22)
+? | visite d'État | fr | dirigeants-elus:diplomatie_personnelle | proposé par Claude d'après la fiche (2026-11-22)
+? | state visit | en | dirigeants-elus:diplomatie_personnelle | proposé par Claude d'après la fiche (2026-11-22)
+? | Staatsbesuch | de | dirigeants-elus:diplomatie_personnelle | proposé par Claude d'après la fiche (2026-11-22)
+? | sommet bilatéral | fr | dirigeants-elus:diplomatie_personnelle | proposé par Claude d'après la fiche (2026-11-22)
+? | bilateral summit | en | dirigeants-elus:diplomatie_personnelle | proposé par Claude d'après la fiche (2026-11-22)
+? | santé du président | fr | dirigeants-elus:age_sante | proposé par Claude d'après la fiche (2026-11-22)
+? | president's health | en | dirigeants-elus:age_sante | proposé par Claude d'après la fiche (2026-11-22)
+? | bulletin de santé | fr | dirigeants-elus:age_sante | proposé par Claude d'après la fiche (2026-11-22)
+? | stress hydrique | fr | eau-douce-potable:stress | proposé par Claude d'après la fiche (2026-11-22)
+? | water stress | en | eau-douce-potable:stress | proposé par Claude d'après la fiche (2026-11-22)
+? | Wasserknappheit | de | eau-douce-potable:stress | proposé par Claude d'après la fiche (2026-11-22)
+? | pénurie d'eau | fr | eau-douce-potable:stress | proposé par Claude d'après la fiche (2026-11-22)
+? | water shortage | en | eau-douce-potable:stress | proposé par Claude d'après la fiche (2026-11-22)
+? | nappe phréatique | fr | eau-douce-potable:nappes | proposé par Claude d'après la fiche (2026-11-22)
+? | groundwater | en | eau-douce-potable:nappes | proposé par Claude d'après la fiche (2026-11-22)
+? | Grundwasser | de | eau-douce-potable:nappes | proposé par Claude d'après la fiche (2026-11-22)
+? | aquifère | fr | eau-douce-potable:nappes | proposé par Claude d'après la fiche (2026-11-22)
+? | aquifer | en | eau-douce-potable:nappes | proposé par Claude d'après la fiche (2026-11-22)
+? | irrigation | nom | eau-douce-potable:prelevements | proposé par Claude d'après la fiche (2026-11-22)
+? | prélèvements d'eau | fr | eau-douce-potable:prelevements | proposé par Claude d'après la fiche (2026-11-22)
+? | water withdrawals | en | eau-douce-potable:prelevements | proposé par Claude d'après la fiche (2026-11-22)
+? | méga-bassines | fr | eau-douce-potable:prelevements | proposé par Claude d'après la fiche (2026-11-22)
+? | eau potable | fr | eau-douce-potable:acces | proposé par Claude d'après la fiche (2026-11-22)
+? | drinking water | en | eau-douce-potable:acces | proposé par Claude d'après la fiche (2026-11-22)
+? | Trinkwasser | de | eau-douce-potable:acces | proposé par Claude d'après la fiche (2026-11-22)
+? | accès à l'eau | fr | eau-douce-potable:acces | proposé par Claude d'après la fiche (2026-11-22)
+? | access to water | en | eau-douce-potable:acces | proposé par Claude d'après la fiche (2026-11-22)
+? | assainissement | fr | eau-douce-potable:assainissement | proposé par Claude d'après la fiche (2026-11-22)
+? | sanitation | en | eau-douce-potable:assainissement | proposé par Claude d'après la fiche (2026-11-22)
+? | toilettes | fr | eau-douce-potable:assainissement | proposé par Claude d'après la fiche (2026-11-22)
+? | défécation à l'air libre | fr | eau-douce-potable:assainissement | proposé par Claude d'après la fiche (2026-11-22)
+? | open defecation | en | eau-douce-potable:assainissement | proposé par Claude d'après la fiche (2026-11-22)
+? | PFAS | nom | eau-douce-potable:qualite | proposé par Claude d'après la fiche (2026-11-22)
+? | polluants éternels | fr | eau-douce-potable:qualite | proposé par Claude d'après la fiche (2026-11-22)
+? | forever chemicals | en | eau-douce-potable:qualite | proposé par Claude d'après la fiche (2026-11-22)
+? | Ewigkeitschemikalien | de | eau-douce-potable:qualite | proposé par Claude d'après la fiche (2026-11-22)
+? | nitrates | nom | eau-douce-potable:qualite | proposé par Claude d'après la fiche (2026-11-22)
+? | choléra | fr | eau-douce-potable:maladies | proposé par Claude d'après la fiche (2026-11-22)
+? | cholera | en | eau-douce-potable:maladies | proposé par Claude d'après la fiche (2026-11-22)
+? | Cholera | de | eau-douce-potable:maladies | proposé par Claude d'après la fiche (2026-11-22)
+? | maladies hydriques | fr | eau-douce-potable:maladies | proposé par Claude d'après la fiche (2026-11-22)
+? | waterborne diseases | en | eau-douce-potable:maladies | proposé par Claude d'après la fiche (2026-11-22)
+? | déshydratation | fr | eau-douce-potable:corps | proposé par Claude d'après la fiche (2026-11-22)
+? | dehydration | en | eau-douce-potable:corps | proposé par Claude d'après la fiche (2026-11-22)
+? | Dehydrierung | de | eau-douce-potable:corps | proposé par Claude d'après la fiche (2026-11-22)
+? | régie publique de l'eau | fr | eau-douce-potable:gouvernance | proposé par Claude d'après la fiche (2026-11-22)
+? | water utility | en | eau-douce-potable:gouvernance | proposé par Claude d'après la fiche (2026-11-22)
+? | Wasserversorger | de | eau-douce-potable:gouvernance | proposé par Claude d'après la fiche (2026-11-22)
+? | prix de l'eau | fr | eau-douce-potable:gouvernance | proposé par Claude d'après la fiche (2026-11-22)
+? | guerre de l'eau | fr | eau-douce-potable:tensions | proposé par Claude d'après la fiche (2026-11-22)
+? | water conflict | en | eau-douce-potable:tensions | proposé par Claude d'après la fiche (2026-11-22)
+? | Wasserkonflikt | de | eau-douce-potable:tensions | proposé par Claude d'après la fiche (2026-11-22)
+? | barrage de la Renaissance | fr | eau-douce-potable:tensions | proposé par Claude d'après la fiche (2026-11-22)
+? | Grand Ethiopian Renaissance Dam | en | eau-douce-potable:tensions | proposé par Claude d'après la fiche (2026-11-22)
+? | faillite | fr | economie-entreprises:defaillances | proposé par Claude d'après la fiche (2026-11-22)
+? | bankruptcy | en | economie-entreprises:defaillances | proposé par Claude d'après la fiche (2026-11-22)
+? | Insolvenz | de | economie-entreprises:defaillances | proposé par Claude d'après la fiche (2026-11-22)
+? | liquidation judiciaire | fr | economie-entreprises:defaillances | proposé par Claude d'après la fiche (2026-11-22)
+? | redressement judiciaire | fr | economie-entreprises:defaillances | proposé par Claude d'après la fiche (2026-11-22)
+? | centres de données | fr | economie-entreprises:investissement_ia | proposé par Claude d'après la fiche (2026-11-22)
+? | data centers | en | economie-entreprises:investissement_ia | proposé par Claude d'après la fiche (2026-11-22)
+? | Rechenzentren | de | economie-entreprises:investissement_ia | proposé par Claude d'après la fiche (2026-11-22)
+? | Stargate | nom | economie-entreprises:investissement_ia | proposé par Claude d'après la fiche (2026-11-22)
+? | bulle de l'IA | fr | economie-entreprises:investissement_ia | proposé par Claude d'après la fiche (2026-11-22)
+? | AI bubble | en | economie-entreprises:investissement_ia | proposé par Claude d'après la fiche (2026-11-22)
+? | agriculture | fr | economie-entreprises:agriculture | proposé par Claude d'après la fiche (2026-11-22)
+? | Landwirtschaft | de | economie-entreprises:agriculture | proposé par Claude d'après la fiche (2026-11-22)
+? | récoltes | fr | economie-entreprises:agriculture | proposé par Claude d'après la fiche (2026-11-22)
+? | harvest | en | economie-entreprises:agriculture | proposé par Claude d'après la fiche (2026-11-22)
+? | industrie minière | fr | economie-entreprises:extraction | proposé par Claude d'après la fiche (2026-11-22)
+? | mining industry | en | economie-entreprises:extraction | proposé par Claude d'après la fiche (2026-11-22)
+? | Bergbau | de | economie-entreprises:extraction | proposé par Claude d'après la fiche (2026-11-22)
+? | hydrocarbures | fr | economie-entreprises:extraction | proposé par Claude d'après la fiche (2026-11-22)
+? | industrie automobile | fr | economie-entreprises:industrie_manufacturiere | proposé par Claude d'après la fiche (2026-11-22)
+? | car industry | en | economie-entreprises:industrie_manufacturiere | proposé par Claude d'après la fiche (2026-11-22)
+? | Autoindustrie | de | economie-entreprises:industrie_manufacturiere | proposé par Claude d'après la fiche (2026-11-22)
+? | désindustrialisation | fr | economie-entreprises:industrie_manufacturiere | proposé par Claude d'après la fiche (2026-11-22)
+? | deindustrialisation | en | economie-entreprises:industrie_manufacturiere | proposé par Claude d'après la fiche (2026-11-22)
+? | secteur des services | fr | economie-entreprises:services | proposé par Claude d'après la fiche (2026-11-22)
+? | services sector | en | economie-entreprises:services | proposé par Claude d'après la fiche (2026-11-22)
+? | Dienstleistungssektor | de | economie-entreprises:services | proposé par Claude d'après la fiche (2026-11-22)
+? | exportations | fr | economie-entreprises:echanges | proposé par Claude d'après la fiche (2026-11-22)
+? | exports | en | economie-entreprises:echanges | proposé par Claude d'après la fiche (2026-11-22)
+? | Exporte | de | economie-entreprises:echanges | proposé par Claude d'après la fiche (2026-11-22)
+? | balance commerciale | fr | economie-entreprises:echanges | proposé par Claude d'après la fiche (2026-11-22)
+? | trade balance | en | economie-entreprises:echanges | proposé par Claude d'après la fiche (2026-11-22)
+? | couche d'ozone | fr | environnement-dechets:ozone | proposé par Claude d'après la fiche (2026-11-22)
+? | ozone layer | en | environnement-dechets:ozone | proposé par Claude d'après la fiche (2026-11-22)
+? | Ozonschicht | de | environnement-dechets:ozone | proposé par Claude d'après la fiche (2026-11-22)
+? | protocole de Montréal | fr | environnement-dechets:ozone | proposé par Claude d'après la fiche (2026-11-22)
+? | Montreal Protocol | en | environnement-dechets:ozone | proposé par Claude d'après la fiche (2026-11-22)
+? | qualité de l'air | fr | environnement-dechets:qualite_air | proposé par Claude d'après la fiche (2026-11-22)
+? | air quality | en | environnement-dechets:qualite_air | proposé par Claude d'après la fiche (2026-11-22)
+? | Luftqualität | de | environnement-dechets:qualite_air | proposé par Claude d'après la fiche (2026-11-22)
+? | smog | nom | environnement-dechets:qualite_air | proposé par Claude d'après la fiche (2026-11-22)
+? | traité sur les plastiques | fr | environnement-dechets:traites | proposé par Claude d'après la fiche (2026-11-22)
+? | plastics treaty | en | environnement-dechets:traites | proposé par Claude d'après la fiche (2026-11-22)
+? | Plastikabkommen | de | environnement-dechets:traites | proposé par Claude d'après la fiche (2026-11-22)
+? | convention de Bâle | fr | environnement-dechets:traites | proposé par Claude d'après la fiche (2026-11-22)
+? | Basel Convention | en | environnement-dechets:traites | proposé par Claude d'après la fiche (2026-11-22)
+? | déchets ménagers | fr | environnement-dechets:dechets_menagers | proposé par Claude d'après la fiche (2026-11-22)
+? | household waste | en | environnement-dechets:dechets_menagers | proposé par Claude d'après la fiche (2026-11-22)
+? | Hausmüll | de | environnement-dechets:dechets_menagers | proposé par Claude d'après la fiche (2026-11-22)
+? | recyclage | fr | environnement-dechets:dechets_menagers | proposé par Claude d'après la fiche (2026-11-22)
+? | recycling | en | environnement-dechets:dechets_menagers | proposé par Claude d'après la fiche (2026-11-22)
+? | déchets électroniques | fr | environnement-dechets:dechets_electroniques | proposé par Claude d'après la fiche (2026-11-22)
+? | e-waste | en | environnement-dechets:dechets_electroniques | proposé par Claude d'après la fiche (2026-11-22)
+? | Elektroschrott | de | environnement-dechets:dechets_electroniques | proposé par Claude d'après la fiche (2026-11-22)
+? | eaux usées | fr | environnement-dechets:eaux_usees | proposé par Claude d'après la fiche (2026-11-22)
+? | wastewater | en | environnement-dechets:eaux_usees | proposé par Claude d'après la fiche (2026-11-22)
+? | Abwasser | de | environnement-dechets:eaux_usees | proposé par Claude d'après la fiche (2026-11-22)
+? | station d'épuration | fr | environnement-dechets:eaux_usees | proposé par Claude d'après la fiche (2026-11-22)
+? | sewage | en | environnement-dechets:eaux_usees | proposé par Claude d'après la fiche (2026-11-22)
+? | sols pollués | fr | environnement-dechets:pollution_sols | proposé par Claude d'après la fiche (2026-11-22)
+? | soil contamination | en | environnement-dechets:pollution_sols | proposé par Claude d'après la fiche (2026-11-22)
+? | Altlasten | de | environnement-dechets:pollution_sols | proposé par Claude d'après la fiche (2026-11-22)
+? | pesticides | nom | environnement-dechets:pollution_sols | proposé par Claude d'après la fiche (2026-11-22)
+? | neutralité carbone | fr | environnement-dechets:climat_politique | proposé par Claude d'après la fiche (2026-11-22)
+? | net zero | en | environnement-dechets:climat_politique | proposé par Claude d'après la fiche (2026-11-22)
+? | Klimaneutralität | de | environnement-dechets:climat_politique | proposé par Claude d'après la fiche (2026-11-22)
+? | accord de Paris | fr | environnement-dechets:climat_politique | proposé par Claude d'après la fiche (2026-11-22)
+? | Paris Agreement | en | environnement-dechets:climat_politique | proposé par Claude d'après la fiche (2026-11-22)
+? | procès climatique | fr | environnement-dechets:droit_contentieux | proposé par Claude d'après la fiche (2026-11-22)
+? | climate lawsuit | en | environnement-dechets:droit_contentieux | proposé par Claude d'après la fiche (2026-11-22)
+? | Klimaklage | de | environnement-dechets:droit_contentieux | proposé par Claude d'après la fiche (2026-11-22)
+? | préjudice écologique | fr | environnement-dechets:droit_contentieux | proposé par Claude d'après la fiche (2026-11-22)
+? | mariage forcé | fr | famille-genre:mariage | proposé par Claude d'après la fiche (2026-11-22)
+? | forced marriage | en | famille-genre:mariage | proposé par Claude d'après la fiche (2026-11-22)
+? | Zwangsheirat | de | famille-genre:mariage | proposé par Claude d'après la fiche (2026-11-22)
+? | mariage des enfants | fr | famille-genre:mariage | proposé par Claude d'après la fiche (2026-11-22)
+? | child marriage | en | famille-genre:mariage | proposé par Claude d'après la fiche (2026-11-22)
+? | divorce | nom | famille-genre:mariage | proposé par Claude d'après la fiche (2026-11-22)
+? | Clankriminalität | de | famille-genre:parente_clans | proposé par Claude d'après la fiche (2026-11-22)
+? | héritage | fr | famille-genre:heritage | proposé par Claude d'après la fiche (2026-11-22)
+? | inheritance | en | famille-genre:heritage | proposé par Claude d'après la fiche (2026-11-22)
+? | Erbschaft | de | famille-genre:heritage | proposé par Claude d'après la fiche (2026-11-22)
+? | droits de succession | fr | famille-genre:heritage | proposé par Claude d'après la fiche (2026-11-22)
+? | inheritance tax | en | famille-genre:heritage | proposé par Claude d'après la fiche (2026-11-22)
+? | Erbschaftsteuer | de | famille-genre:heritage | proposé par Claude d'après la fiche (2026-11-22)
+? | parité | fr | famille-genre:femmes_pouvoir | proposé par Claude d'après la fiche (2026-11-22)
+? | gender parity | en | famille-genre:femmes_pouvoir | proposé par Claude d'après la fiche (2026-11-22)
+? | Frauenquote | de | famille-genre:femmes_pouvoir | proposé par Claude d'après la fiche (2026-11-22)
+? | femmes en politique | fr | famille-genre:femmes_pouvoir | proposé par Claude d'après la fiche (2026-11-22)
+? | women in politics | en | famille-genre:femmes_pouvoir | proposé par Claude d'après la fiche (2026-11-22)
+? | continent africain | fr | frontieres:continents | proposé par Claude d'après la fiche (2026-11-22)
+? | African continent | en | frontieres:continents | proposé par Claude d'après la fiche (2026-11-22)
+? | Eurasie | fr | frontieres:continents | proposé par Claude d'après la fiche (2026-11-22)
+? | Eurasia | en | frontieres:continents | proposé par Claude d'après la fiche (2026-11-22)
+? | reconnaissance d'un État | fr | frontieres:etats | proposé par Claude d'après la fiche (2026-11-22)
+? | statehood | en | frontieres:etats | proposé par Claude d'après la fiche (2026-11-22)
+? | souveraineté | fr | frontieres:etats | proposé par Claude d'après la fiche (2026-11-22)
+? | sovereignty | en | frontieres:etats | proposé par Claude d'après la fiche (2026-11-22)
+? | Souveränität | de | frontieres:etats | proposé par Claude d'après la fiche (2026-11-22)
+? | BRICS | nom | frontieres:blocs | proposé par Claude d'après la fiche (2026-11-22)
+? | Sud global | fr | frontieres:blocs | proposé par Claude d'après la fiche (2026-11-22)
+? | Global South | en | frontieres:blocs | proposé par Claude d'après la fiche (2026-11-22)
+? | Globaler Süden | de | frontieres:blocs | proposé par Claude d'après la fiche (2026-11-22)
+? | Western Sahara | en | frontieres:afrique_disputee | proposé par Claude d'après la fiche (2026-11-22)
+? | Westsahara | de | frontieres:afrique_disputee | proposé par Claude d'après la fiche (2026-11-22)
+? | Polisario | nom | frontieres:afrique_disputee | proposé par Claude d'après la fiche (2026-11-22)
+? | frontière contestée | fr | frontieres:frontieres_contestees | proposé par Claude d'après la fiche (2026-11-22)
+? | disputed border | en | frontieres:frontieres_contestees | proposé par Claude d'après la fiche (2026-11-22)
+? | annexion | fr | frontieres:frontieres_contestees | proposé par Claude d'après la fiche (2026-11-22)
+? | annexation | en | frontieres:frontieres_contestees | proposé par Claude d'après la fiche (2026-11-22)
+? | Annexion | de | frontieres:frontieres_contestees | proposé par Claude d'après la fiche (2026-11-22)
+? | collectivités locales | fr | frontieres:local | proposé par Claude d'après la fiche (2026-11-22)
+? | local government | en | frontieres:local | proposé par Claude d'après la fiche (2026-11-22)
+? | Kommunen | de | frontieres:local | proposé par Claude d'après la fiche (2026-11-22)
+? | municipalités | fr | frontieres:local | proposé par Claude d'après la fiche (2026-11-22)
+? | influenceur | fr | medias-diffusion:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | influencer | en | medias-diffusion:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | Influencer | de | medias-diffusion:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | youtubeur | fr | medias-diffusion:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | YouTuber | en | medias-diffusion:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | jeux vidéo | fr | medias-diffusion:jeux_video | proposé par Claude d'après la fiche (2026-11-22)
+? | video games | en | medias-diffusion:jeux_video | proposé par Claude d'après la fiche (2026-11-22)
+? | Videospiele | de | medias-diffusion:jeux_video | proposé par Claude d'après la fiche (2026-11-22)
+? | Ubisoft | nom | medias-diffusion:jeux_video | proposé par Claude d'après la fiche (2026-11-22)
+? | Nintendo | nom | medias-diffusion:jeux_video | proposé par Claude d'après la fiche (2026-11-22)
+? | PlayStation | nom | medias-diffusion:jeux_video | proposé par Claude d'après la fiche (2026-11-22)
+? | Bolloré | nom | medias-diffusion:proprietaires | proposé par Claude d'après la fiche (2026-11-22)
+? | Vivendi | nom | medias-diffusion:proprietaires | proposé par Claude d'après la fiche (2026-11-22)
+? | Canal+ | nom | medias-diffusion:proprietaires | proposé par Claude d'après la fiche (2026-11-22)
+? | CMA Media | nom | medias-diffusion:proprietaires | proposé par Claude d'après la fiche (2026-11-22)
+? | Murdoch | nom | medias-diffusion:proprietaires | proposé par Claude d'après la fiche (2026-11-22)
+? | Fox News | nom | medias-diffusion:proprietaires | proposé par Claude d'après la fiche (2026-11-22)
+? | BBC World Service | en | medias-diffusion:diffuseurs_internationaux | proposé par Claude d'après la fiche (2026-11-22)
+? | Al Jazeera | nom | medias-diffusion:diffuseurs_internationaux | proposé par Claude d'après la fiche (2026-11-22)
+? | CGTN | nom | medias-diffusion:diffuseurs_internationaux | proposé par Claude d'après la fiche (2026-11-22)
+? | Deutsche Welle | nom | medias-diffusion:diffuseurs_internationaux | proposé par Claude d'après la fiche (2026-11-22)
+? | France Médias Monde | fr | medias-diffusion:diffuseurs_internationaux | proposé par Claude d'après la fiche (2026-11-22)
+? | arsenal nucléaire | fr | militaire:arsenaux_nucleaires | proposé par Claude d'après la fiche (2026-11-22)
+? | nuclear arsenal | en | militaire:arsenaux_nucleaires | proposé par Claude d'après la fiche (2026-11-22)
+? | Atomwaffen | de | militaire:arsenaux_nucleaires | proposé par Claude d'après la fiche (2026-11-22)
+? | ogives nucléaires | fr | militaire:arsenaux_nucleaires | proposé par Claude d'après la fiche (2026-11-22)
+? | nuclear warheads | en | militaire:arsenaux_nucleaires | proposé par Claude d'après la fiche (2026-11-22)
+? | dissuasion nucléaire | fr | militaire:arsenaux_nucleaires | proposé par Claude d'après la fiche (2026-11-22)
+? | Rheinmetall | nom | militaire:industrie_armement | proposé par Claude d'après la fiche (2026-11-22)
+? | Lockheed Martin | nom | militaire:industrie_armement | proposé par Claude d'après la fiche (2026-11-22)
+? | Dassault Aviation | nom | militaire:industrie_armement | proposé par Claude d'après la fiche (2026-11-22)
+? | KNDS | nom | militaire:industrie_armement | proposé par Claude d'après la fiche (2026-11-22)
+? | Thales | nom | militaire:industrie_armement | proposé par Claude d'après la fiche (2026-11-22)
+? | BAE Systems | nom | militaire:industrie_armement | proposé par Claude d'après la fiche (2026-11-22)
+? | industrie de défense | fr | militaire:industrie_armement | proposé par Claude d'après la fiche (2026-11-22)
+? | Rüstungsindustrie | de | militaire:industrie_armement | proposé par Claude d'après la fiche (2026-11-22)
+? | ventes d'armes | fr | militaire:commerce_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | arms sales | en | militaire:commerce_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | Waffenlieferungen | de | militaire:commerce_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | exportations d'armes | fr | militaire:commerce_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | arms exports | en | militaire:commerce_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | SIPRI | nom | militaire:commerce_armes | proposé par Claude d'après la fiche (2026-11-22)
+? | OTAN | fr | militaire:alliances | proposé par Claude d'après la fiche (2026-11-22)
+? | NATO | nom | militaire:alliances | proposé par Claude d'après la fiche (2026-11-22)
+? | article 5 | fr | militaire:alliances | proposé par Claude d'après la fiche (2026-11-22)
+? | Article 5 | en | militaire:alliances | proposé par Claude d'après la fiche (2026-11-22)
+? | doctrine militaire | fr | militaire:doctrines | proposé par Claude d'après la fiche (2026-11-22)
+? | military doctrine | en | militaire:doctrines | proposé par Claude d'après la fiche (2026-11-22)
+? | Militärdoktrin | de | militaire:doctrines | proposé par Claude d'après la fiche (2026-11-22)
+? | revue stratégique | fr | militaire:doctrines | proposé par Claude d'après la fiche (2026-11-22)
+? | National Defense Strategy | en | militaire:doctrines | proposé par Claude d'après la fiche (2026-11-22)
+? | base militaire | fr | militaire:bases_projection | proposé par Claude d'après la fiche (2026-11-22)
+? | military base | en | militaire:bases_projection | proposé par Claude d'après la fiche (2026-11-22)
+? | Militärbasis | de | militaire:bases_projection | proposé par Claude d'après la fiche (2026-11-22)
+? | porte-avions | fr | militaire:bases_projection | proposé par Claude d'après la fiche (2026-11-22)
+? | aircraft carrier | en | militaire:bases_projection | proposé par Claude d'après la fiche (2026-11-22)
+? | Flugzeugträger | de | militaire:bases_projection | proposé par Claude d'après la fiche (2026-11-22)
+? | dépendance à la Chine | fr | minerais-critiques:concentration | proposé par Claude d'après la fiche (2026-11-22)
+? | dependence on China | en | minerais-critiques:concentration | proposé par Claude d'après la fiche (2026-11-22)
+? | Abhängigkeit von China | de | minerais-critiques:concentration | proposé par Claude d'après la fiche (2026-11-22)
+? | contrôles à l'exportation | fr | minerais-critiques:controles_export | proposé par Claude d'après la fiche (2026-11-22)
+? | export controls | en | minerais-critiques:controles_export | proposé par Claude d'après la fiche (2026-11-22)
+? | Exportkontrollen | de | minerais-critiques:controles_export | proposé par Claude d'après la fiche (2026-11-22)
+? | gallium | nom | minerais-critiques:controles_export | proposé par Claude d'après la fiche (2026-11-22)
+? | germanium | nom | minerais-critiques:controles_export | proposé par Claude d'après la fiche (2026-11-22)
+? | Codelco | nom | minerais-critiques:cuivre | proposé par Claude d'après la fiche (2026-11-22)
+? | Escondida | nom | minerais-critiques:cuivre | proposé par Claude d'après la fiche (2026-11-22)
+? | Kamoa-Kakula | nom | minerais-critiques:cuivre | proposé par Claude d'après la fiche (2026-11-22)
+? | Grasberg | nom | minerais-critiques:cuivre | proposé par Claude d'après la fiche (2026-11-22)
+? | batteries lithium-ion | fr | minerais-critiques:batteries | proposé par Claude d'après la fiche (2026-11-22)
+? | lithium-ion batteries | en | minerais-critiques:batteries | proposé par Claude d'après la fiche (2026-11-22)
+? | CATL | nom | minerais-critiques:batteries | proposé par Claude d'après la fiche (2026-11-22)
+? | gigafactory | nom | minerais-critiques:batteries | proposé par Claude d'après la fiche (2026-11-22)
+? | Batteriefabrik | de | minerais-critiques:batteries | proposé par Claude d'après la fiche (2026-11-22)
+? | terres rares | fr | minerais-critiques:terres_rares_uranium | proposé par Claude d'après la fiche (2026-11-22)
+? | Seltene Erden | de | minerais-critiques:terres_rares_uranium | proposé par Claude d'après la fiche (2026-11-22)
+? | Kazatomprom | nom | minerais-critiques:terres_rares_uranium | proposé par Claude d'après la fiche (2026-11-22)
+? | MP Materials | nom | minerais-critiques:terres_rares_uranium | proposé par Claude d'après la fiche (2026-11-22)
+? | Lynas | nom | minerais-critiques:terres_rares_uranium | proposé par Claude d'après la fiche (2026-11-22)
+? | Critical Raw Materials Act | en | minerais-critiques:investissement | proposé par Claude d'après la fiche (2026-11-22)
+? | règlement sur les matières premières critiques | fr | minerais-critiques:investissement | proposé par Claude d'après la fiche (2026-11-22)
+? | Minerals Security Partnership | en | minerais-critiques:investissement | proposé par Claude d'après la fiche (2026-11-22)
+? | réserves d'or | fr | monnaie-pouvoir:or | proposé par Claude d'après la fiche (2026-11-22)
+? | gold reserves | en | monnaie-pouvoir:or | proposé par Claude d'après la fiche (2026-11-22)
+? | Goldreserven | de | monnaie-pouvoir:or | proposé par Claude d'après la fiche (2026-11-22)
+? | cours de l'or | fr | monnaie-pouvoir:or | proposé par Claude d'après la fiche (2026-11-22)
+? | gold price | en | monnaie-pouvoir:or | proposé par Claude d'après la fiche (2026-11-22)
+? | dédollarisation | fr | monnaie-pouvoir:dedollarisation | proposé par Claude d'après la fiche (2026-11-22)
+? | de-dollarization | en | monnaie-pouvoir:dedollarisation | proposé par Claude d'après la fiche (2026-11-22)
+? | Entdollarisierung | de | monnaie-pouvoir:dedollarisation | proposé par Claude d'après la fiche (2026-11-22)
+? | yuan numérique | fr | monnaie-pouvoir:dedollarisation | proposé par Claude d'après la fiche (2026-11-22)
+? | BRICS Pay | nom | monnaie-pouvoir:dedollarisation | proposé par Claude d'après la fiche (2026-11-22)
+? | concentration de CO2 | fr | niveaux-de-base:composition_air | proposé par Claude d'après la fiche (2026-11-22)
+? | CO2 concentration | en | niveaux-de-base:composition_air | proposé par Claude d'après la fiche (2026-11-22)
+? | Mauna Loa | nom | niveaux-de-base:composition_air | proposé par Claude d'après la fiche (2026-11-22)
+? | bilan radiatif | fr | niveaux-de-base:bilan_energie | proposé par Claude d'après la fiche (2026-11-22)
+? | Earth's energy imbalance | en | niveaux-de-base:bilan_energie | proposé par Claude d'après la fiche (2026-11-22)
+? | Energieungleichgewicht | de | niveaux-de-base:bilan_energie | proposé par Claude d'après la fiche (2026-11-22)
+? | biomasse | fr | niveaux-de-base:biomasse | proposé par Claude d'après la fiche (2026-11-22)
+? | biomass | en | niveaux-de-base:biomasse | proposé par Claude d'après la fiche (2026-11-22)
+? | Biomasse | de | niveaux-de-base:biomasse | proposé par Claude d'après la fiche (2026-11-22)
+? | Conseil de sécurité | fr | organisations-internationales:conseil_securite | proposé par Claude d'après la fiche (2026-11-22)
+? | Security Council | en | organisations-internationales:conseil_securite | proposé par Claude d'après la fiche (2026-11-22)
+? | droit de veto | fr | organisations-internationales:conseil_securite | proposé par Claude d'après la fiche (2026-11-22)
+? | Cour pénale internationale | fr | organisations-internationales:justice_internationale | proposé par Claude d'après la fiche (2026-11-22)
+? | International Criminal Court | en | organisations-internationales:justice_internationale | proposé par Claude d'après la fiche (2026-11-22)
+? | Internationaler Strafgerichtshof | de | organisations-internationales:justice_internationale | proposé par Claude d'après la fiche (2026-11-22)
+? | Cour internationale de justice | fr | organisations-internationales:justice_internationale | proposé par Claude d'après la fiche (2026-11-22)
+? | International Court of Justice | en | organisations-internationales:justice_internationale | proposé par Claude d'après la fiche (2026-11-22)
+? | retrait de l'OMS | fr | organisations-internationales:retraits | proposé par Claude d'après la fiche (2026-11-22)
+? | withdrawal from WHO | en | organisations-internationales:retraits | proposé par Claude d'après la fiche (2026-11-22)
+? | retrait de l'UNESCO | fr | organisations-internationales:retraits | proposé par Claude d'après la fiche (2026-11-22)
+? | withdraws from | en | organisations-internationales:retraits | proposé par Claude d'après la fiche (2026-11-22)
+? | G7 | nom | organisations-internationales:clubs_puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | G20 | nom | organisations-internationales:clubs_puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | OCDE | fr | organisations-internationales:clubs_puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | OECD | en | organisations-internationales:clubs_puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | Organisation de coopération de Shanghai | fr | organisations-internationales:clubs_puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | Shanghai Cooperation Organisation | en | organisations-internationales:clubs_puissances | proposé par Claude d'après la fiche (2026-11-22)
+? | parti au pouvoir | fr | partis-politiques:partis_dominants | proposé par Claude d'après la fiche (2026-11-22)
+? | ruling party | en | partis-politiques:partis_dominants | proposé par Claude d'après la fiche (2026-11-22)
+? | Regierungspartei | de | partis-politiques:partis_dominants | proposé par Claude d'après la fiche (2026-11-22)
+? | parti dominant | fr | partis-politiques:partis_dominants | proposé par Claude d'après la fiche (2026-11-22)
+? | Renew Europe | en | partis-politiques:liberaux_centristes | proposé par Claude d'après la fiche (2026-11-22)
+? | FDP | nom | partis-politiques:liberaux_centristes | proposé par Claude d'après la fiche (2026-11-22)
+? | Liberal Democrats | en | partis-politiques:liberaux_centristes | proposé par Claude d'après la fiche (2026-11-22)
+? | centristes | fr | partis-politiques:liberaux_centristes | proposé par Claude d'après la fiche (2026-11-22)
+? | SPD | nom | partis-politiques:gauche_sociale_democrate | proposé par Claude d'après la fiche (2026-11-22)
+? | Labour Party | en | partis-politiques:gauche_sociale_democrate | proposé par Claude d'après la fiche (2026-11-22)
+? | Parti socialiste | fr | partis-politiques:gauche_sociale_democrate | proposé par Claude d'après la fiche (2026-11-22)
+? | sociaux-démocrates | fr | partis-politiques:gauche_sociale_democrate | proposé par Claude d'après la fiche (2026-11-22)
+? | social democrats | en | partis-politiques:gauche_sociale_democrate | proposé par Claude d'après la fiche (2026-11-22)
+? | AKP | nom | partis-politiques:partis_religieux | proposé par Claude d'après la fiche (2026-11-22)
+? | Shas | nom | partis-politiques:partis_religieux | proposé par Claude d'après la fiche (2026-11-22)
+? | démocratie chrétienne | fr | partis-politiques:partis_religieux | proposé par Claude d'après la fiche (2026-11-22)
+? | Christian Democrats | en | partis-politiques:partis_religieux | proposé par Claude d'après la fiche (2026-11-22)
+? | indépendantistes | fr | partis-politiques:regionalistes | proposé par Claude d'après la fiche (2026-11-22)
+? | separatists | en | partis-politiques:regionalistes | proposé par Claude d'après la fiche (2026-11-22)
+? | SNP | nom | partis-politiques:regionalistes | proposé par Claude d'après la fiche (2026-11-22)
+? | Junts | nom | partis-politiques:regionalistes | proposé par Claude d'après la fiche (2026-11-22)
+? | nationalistes corses | fr | partis-politiques:regionalistes | proposé par Claude d'après la fiche (2026-11-22)
+? | Bloc québécois | fr | partis-politiques:regionalistes | proposé par Claude d'après la fiche (2026-11-22)
+? | parti présidentiel | fr | partis-politiques:partis_personnels | proposé par Claude d'après la fiche (2026-11-22)
+? | personal party | en | partis-politiques:partis_personnels | proposé par Claude d'après la fiche (2026-11-22)
+? | PPE | fr | partis-politiques:groupes_internationales | proposé par Claude d'après la fiche (2026-11-22)
+? | European People's Party | en | partis-politiques:groupes_internationales | proposé par Claude d'après la fiche (2026-11-22)
+? | S&D | nom | partis-politiques:groupes_internationales | proposé par Claude d'après la fiche (2026-11-22)
+? | Patriotes pour l'Europe | fr | partis-politiques:groupes_internationales | proposé par Claude d'après la fiche (2026-11-22)
+? | Patriots for Europe | en | partis-politiques:groupes_internationales | proposé par Claude d'après la fiche (2026-11-22)
+? | Internationale socialiste | fr | partis-politiques:groupes_internationales | proposé par Claude d'après la fiche (2026-11-22)
+? | Socialist International | en | partis-politiques:groupes_internationales | proposé par Claude d'après la fiche (2026-11-22)
+? | inégalités | fr | plancher-social:inegalites | proposé par Claude d'après la fiche (2026-11-22)
+? | inequality | en | plancher-social:inegalites | proposé par Claude d'après la fiche (2026-11-22)
+? | Ungleichheit | de | plancher-social:inegalites | proposé par Claude d'après la fiche (2026-11-22)
+? | coefficient de Gini | fr | plancher-social:inegalites | proposé par Claude d'après la fiche (2026-11-22)
+? | Gini coefficient | en | plancher-social:inegalites | proposé par Claude d'après la fiche (2026-11-22)
+? | précarité énergétique | fr | plancher-social:acces_energie | proposé par Claude d'après la fiche (2026-11-22)
+? | energy poverty | en | plancher-social:acces_energie | proposé par Claude d'après la fiche (2026-11-22)
+? | Energiearmut | de | plancher-social:acces_energie | proposé par Claude d'après la fiche (2026-11-22)
+? | élections municipales | fr | politique-interieure:elections | proposé par Claude d'après la fiche (2026-11-22)
+? | manifestations | fr | politique-interieure:contestation | proposé par Claude d'après la fiche (2026-11-22)
+? | protests | en | politique-interieure:contestation | proposé par Claude d'après la fiche (2026-11-22)
+? | Proteste | de | politique-interieure:contestation | proposé par Claude d'après la fiche (2026-11-22)
+? | grève générale | fr | politique-interieure:contestation | proposé par Claude d'après la fiche (2026-11-22)
+? | general strike | en | politique-interieure:contestation | proposé par Claude d'après la fiche (2026-11-22)
+? | Generalstreik | de | politique-interieure:contestation | proposé par Claude d'après la fiche (2026-11-22)
+? | transition politique | fr | politique-interieure:coups_transitions | proposé par Claude d'après la fiche (2026-11-22)
+? | estime de soi | fr | psyche:soi | proposé par Claude d'après la fiche (2026-11-22)
+? | self-esteem | en | psyche:soi | proposé par Claude d'après la fiche (2026-11-22)
+? | Selbstwertgefühl | de | psyche:soi | proposé par Claude d'après la fiche (2026-11-22)
+? | peur collective | fr | psyche:emotions | proposé par Claude d'après la fiche (2026-11-22)
+? | traits de personnalité | fr | psyche:personnalite | proposé par Claude d'après la fiche (2026-11-22)
+? | personality traits | en | psyche:personnalite | proposé par Claude d'après la fiche (2026-11-22)
+? | narcissisme | fr | psyche:personnalite | proposé par Claude d'après la fiche (2026-11-22)
+? | narcissism | en | psyche:personnalite | proposé par Claude d'après la fiche (2026-11-22)
+? | biais cognitifs | fr | psyche:cognition | proposé par Claude d'après la fiche (2026-11-22)
+? | cognitive bias | en | psyche:cognition | proposé par Claude d'après la fiche (2026-11-22)
+? | kognitive Verzerrung | de | psyche:cognition | proposé par Claude d'après la fiche (2026-11-22)
+? | attachment theory | en | psyche:attachement | proposé par Claude d'après la fiche (2026-11-22)
+? | Verdrängung | de | psyche:inconscient_defenses | proposé par Claude d'après la fiche (2026-11-22)
+? | refoulement | fr | psyche:inconscient_defenses | proposé par Claude d'après la fiche (2026-11-22)
+? | quête de sens | fr | psyche:valeurs_sens | proposé par Claude d'après la fiche (2026-11-22)
+? | sense of purpose | en | psyche:valeurs_sens | proposé par Claude d'après la fiche (2026-11-22)
+? | Sinnsuche | de | psyche:valeurs_sens | proposé par Claude d'après la fiche (2026-11-22)
+? | addiction aux écrans | fr | psyche:habitudes | proposé par Claude d'après la fiche (2026-11-22)
+? | screen time | en | psyche:habitudes | proposé par Claude d'après la fiche (2026-11-22)
+? | Bildschirmzeit | de | psyche:habitudes | proposé par Claude d'après la fiche (2026-11-22)
+? | solitude | fr | psyche:solitude_lien | proposé par Claude d'après la fiche (2026-11-22)
+? | loneliness | en | psyche:solitude_lien | proposé par Claude d'après la fiche (2026-11-22)
+? | Einsamkeit | de | psyche:solitude_lien | proposé par Claude d'après la fiche (2026-11-22)
+? | isolement social | fr | psyche:solitude_lien | proposé par Claude d'après la fiche (2026-11-22)
+? | social isolation | en | psyche:solitude_lien | proposé par Claude d'après la fiche (2026-11-22)
+? | santé mentale | fr | psyche:sante_mentale | proposé par Claude d'après la fiche (2026-11-22)
+? | mental health | en | psyche:sante_mentale | proposé par Claude d'après la fiche (2026-11-22)
+? | psychische Gesundheit | de | psyche:sante_mentale | proposé par Claude d'après la fiche (2026-11-22)
+? | dépression | fr | psyche:sante_mentale | proposé par Claude d'après la fiche (2026-11-22)
+? | depression | en | psyche:sante_mentale | proposé par Claude d'après la fiche (2026-11-22)
+? | burn-out | nom | psyche:sante_mentale | proposé par Claude d'après la fiche (2026-11-22)
+? | six degrés de séparation | fr | reseaux-humains:petit_monde | proposé par Claude d'après la fiche (2026-11-22)
+? | six degrees of separation | en | reseaux-humains:petit_monde | proposé par Claude d'après la fiche (2026-11-22)
+? | petit monde | fr | reseaux-humains:petit_monde | proposé par Claude d'après la fiche (2026-11-22)
+? | small world | en | reseaux-humains:petit_monde | proposé par Claude d'après la fiche (2026-11-22)
+? | liens faibles | fr | reseaux-humains:liens_faibles | proposé par Claude d'après la fiche (2026-11-22)
+? | weak ties | en | reseaux-humains:liens_faibles | proposé par Claude d'après la fiche (2026-11-22)
+? | bouche-à-oreille | fr | reseaux-humains:liens_faibles | proposé par Claude d'après la fiche (2026-11-22)
+? | word of mouth | en | reseaux-humains:liens_faibles | proposé par Claude d'après la fiche (2026-11-22)
+? | cercle de proches | fr | reseaux-humains:cercles | proposé par Claude d'après la fiche (2026-11-22)
+? | inner circle | en | reseaux-humains:cercles | proposé par Claude d'après la fiche (2026-11-22)
+? | Freundeskreis | de | reseaux-humains:cercles | proposé par Claude d'après la fiche (2026-11-22)
+? | entre-soi | fr | reseaux-humains:cercles | proposé par Claude d'après la fiche (2026-11-22)
+? | homophilie | fr | reseaux-humains:ressemblance | proposé par Claude d'après la fiche (2026-11-22)
+? | homophily | en | reseaux-humains:ressemblance | proposé par Claude d'après la fiche (2026-11-22)
+? | chambre d'écho | fr | reseaux-humains:ressemblance | proposé par Claude d'après la fiche (2026-11-22)
+? | echo chamber | en | reseaux-humains:ressemblance | proposé par Claude d'après la fiche (2026-11-22)
+? | Echokammer | de | reseaux-humains:ressemblance | proposé par Claude d'après la fiche (2026-11-22)
+? | Davos | nom | reseaux-humains:carrefours | proposé par Claude d'après la fiche (2026-11-22)
+? | Forum économique mondial | fr | reseaux-humains:carrefours | proposé par Claude d'après la fiche (2026-11-22)
+? | World Economic Forum | en | reseaux-humains:carrefours | proposé par Claude d'après la fiche (2026-11-22)
+? | Conférence de Munich sur la sécurité | fr | reseaux-humains:carrefours | proposé par Claude d'après la fiche (2026-11-22)
+? | Munich Security Conference | en | reseaux-humains:carrefours | proposé par Claude d'après la fiche (2026-11-22)
+? | Bilderberg | nom | reseaux-humains:carrefours | proposé par Claude d'après la fiche (2026-11-22)
+? | go-between | en | reseaux-humains:passeurs | proposé par Claude d'après la fiche (2026-11-22)
+? | Vermittler | de | reseaux-humains:passeurs | proposé par Claude d'après la fiche (2026-11-22)
+? | devenu viral | fr | reseaux-humains:cascades | proposé par Claude d'après la fiche (2026-11-22)
+? | went viral | en | reseaux-humains:cascades | proposé par Claude d'après la fiche (2026-11-22)
+? | effet boule de neige | fr | reseaux-humains:cascades | proposé par Claude d'après la fiche (2026-11-22)
+? | LinkedIn | nom | reseaux-humains:reseaux_numeriques | proposé par Claude d'après la fiche (2026-11-22)
+? | réseau professionnel | fr | reseaux-humains:reseaux_numeriques | proposé par Claude d'après la fiche (2026-11-22)
+? | professional network | en | reseaux-humains:reseaux_numeriques | proposé par Claude d'après la fiche (2026-11-22)
+? | algorithme de recommandation | fr | reseaux-sociaux:graphe_algorithme | proposé par Claude d'après la fiche (2026-11-22)
+? | recommendation algorithm | en | reseaux-sociaux:graphe_algorithme | proposé par Claude d'après la fiche (2026-11-22)
+? | Algorithmus | de | reseaux-sociaux:graphe_algorithme | proposé par Claude d'après la fiche (2026-11-22)
+? | fil d'actualité | fr | reseaux-sociaux:graphe_algorithme | proposé par Claude d'après la fiche (2026-11-22)
+? | news feed | en | reseaux-sociaux:graphe_algorithme | proposé par Claude d'après la fiche (2026-11-22)
+? | créateurs de contenu | fr | reseaux-sociaux:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | content creators | en | reseaux-sociaux:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | Content Creator | de | reseaux-sociaux:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | influenceurs | fr | reseaux-sociaux:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | influencers | en | reseaux-sociaux:createurs | proposé par Claude d'après la fiche (2026-11-22)
+? | Elon Musk | nom | reseaux-sociaux:personnalites | proposé par Claude d'après la fiche (2026-11-22)
+? | Musk | nom | reseaux-sociaux:personnalites | proposé par Claude d'après la fiche (2026-11-22)
+? | Mark Zuckerberg | nom | reseaux-sociaux:personnalites | proposé par Claude d'après la fiche (2026-11-22)
+? | Zuckerberg | nom | reseaux-sociaux:personnalites | proposé par Claude d'après la fiche (2026-11-22)
+? | MrBeast | nom | reseaux-sociaux:personnalites | proposé par Claude d'après la fiche (2026-11-22)
+? | Cambridge Analytica | nom | reseaux-sociaux:donnees_ciblage | proposé par Claude d'après la fiche (2026-11-22)
+? | ciblage publicitaire | fr | reseaux-sociaux:donnees_ciblage | proposé par Claude d'après la fiche (2026-11-22)
+? | microtargeting | en | reseaux-sociaux:donnees_ciblage | proposé par Claude d'après la fiche (2026-11-22)
+? | données personnelles | fr | reseaux-sociaux:donnees_ciblage | proposé par Claude d'après la fiche (2026-11-22)
+? | personal data | en | reseaux-sociaux:donnees_ciblage | proposé par Claude d'après la fiche (2026-11-22)
+? | politique de modération | fr | reseaux-sociaux:proprietaires_ligne | proposé par Claude d'après la fiche (2026-11-22)
+? | content moderation | en | reseaux-sociaux:proprietaires_ligne | proposé par Claude d'après la fiche (2026-11-22)
+? | Community Notes | en | reseaux-sociaux:proprietaires_ligne | proposé par Claude d'après la fiche (2026-11-22)
+? | notes de la communauté | fr | reseaux-sociaux:proprietaires_ligne | proposé par Claude d'après la fiche (2026-11-22)
+? | théorie du complot | fr | reseaux-sociaux:complot | proposé par Claude d'après la fiche (2026-11-22)
+? | conspiracy theory | en | reseaux-sociaux:complot | proposé par Claude d'après la fiche (2026-11-22)
+? | Verschwörungstheorie | de | reseaux-sociaux:complot | proposé par Claude d'après la fiche (2026-11-22)
+? | complotisme | fr | reseaux-sociaux:complot | proposé par Claude d'après la fiche (2026-11-22)
+? | QAnon | nom | reseaux-sociaux:complot | proposé par Claude d'après la fiche (2026-11-22)
+? | printemps arabe | fr | reseaux-sociaux:soulevements | proposé par Claude d'après la fiche (2026-11-22)
+? | Arab Spring | en | reseaux-sociaux:soulevements | proposé par Claude d'après la fiche (2026-11-22)
+? | Arabischer Frühling | de | reseaux-sociaux:soulevements | proposé par Claude d'après la fiche (2026-11-22)
+? | gilets jaunes | fr | reseaux-sociaux:soulevements | proposé par Claude d'après la fiche (2026-11-22)
+? | yellow vests | en | reseaux-sociaux:soulevements | proposé par Claude d'après la fiche (2026-11-22)
+? | Gen Z protests | en | reseaux-sociaux:soulevements | proposé par Claude d'après la fiche (2026-11-22)
+? | ingérence étrangère | fr | reseaux-sociaux:influence_ou_desinformation | proposé par Claude d'après la fiche (2026-11-22)
+? | foreign interference | en | reseaux-sociaux:influence_ou_desinformation | proposé par Claude d'après la fiche (2026-11-22)
+? | ausländische Einflussnahme | de | reseaux-sociaux:influence_ou_desinformation | proposé par Claude d'après la fiche (2026-11-22)
+? | Doppelgänger | nom | reseaux-sociaux:influence_ou_desinformation | proposé par Claude d'après la fiche (2026-11-22)
+? | Viginum | nom | reseaux-sociaux:influence_ou_desinformation | proposé par Claude d'après la fiche (2026-11-22)
+? | Storm-1516 | nom | reseaux-sociaux:influence_ou_desinformation | proposé par Claude d'après la fiche (2026-11-22)
+? | autoroute | fr | reseaux-transport:route | proposé par Claude d'après la fiche (2026-11-22)
+? | motorway | en | reseaux-transport:route | proposé par Claude d'après la fiche (2026-11-22)
+? | Autobahn | de | reseaux-transport:route | proposé par Claude d'après la fiche (2026-11-22)
+? | réseau routier | fr | reseaux-transport:route | proposé par Claude d'après la fiche (2026-11-22)
+? | road network | en | reseaux-transport:route | proposé par Claude d'après la fiche (2026-11-22)
+? | porte-conteneurs | fr | reseaux-transport:maritime | proposé par Claude d'après la fiche (2026-11-22)
+? | container ship | en | reseaux-transport:maritime | proposé par Claude d'après la fiche (2026-11-22)
+? | Containerschiff | de | reseaux-transport:maritime | proposé par Claude d'après la fiche (2026-11-22)
+? | Maersk | nom | reseaux-transport:maritime | proposé par Claude d'après la fiche (2026-11-22)
+? | CMA CGM | nom | reseaux-transport:maritime | proposé par Claude d'après la fiche (2026-11-22)
+? | trafic aérien | fr | reseaux-transport:aerien | proposé par Claude d'après la fiche (2026-11-22)
+? | air traffic | en | reseaux-transport:aerien | proposé par Claude d'après la fiche (2026-11-22)
+? | Luftverkehr | de | reseaux-transport:aerien | proposé par Claude d'après la fiche (2026-11-22)
+? | compagnies aériennes | fr | reseaux-transport:aerien | proposé par Claude d'après la fiche (2026-11-22)
+? | airlines | en | reseaux-transport:aerien | proposé par Claude d'après la fiche (2026-11-22)
+? | libertés publiques | fr | societe-droits:libertes_civiques | proposé par Claude d'après la fiche (2026-11-22)
+? | civil liberties | en | societe-droits:libertes_civiques | proposé par Claude d'après la fiche (2026-11-22)
+? | Bürgerrechte | de | societe-droits:libertes_civiques | proposé par Claude d'après la fiche (2026-11-22)
+? | liberté de manifester | fr | societe-droits:libertes_civiques | proposé par Claude d'après la fiche (2026-11-22)
+? | freedom of assembly | en | societe-droits:libertes_civiques | proposé par Claude d'après la fiche (2026-11-22)
+? | étalement urbain | fr | transports-villes:forme_urbaine | proposé par Claude d'après la fiche (2026-11-22)
+? | urban sprawl | en | transports-villes:forme_urbaine | proposé par Claude d'après la fiche (2026-11-22)
+? | Zersiedelung | de | transports-villes:forme_urbaine | proposé par Claude d'après la fiche (2026-11-22)
+? | métropoles | fr | transports-villes:forme_urbaine | proposé par Claude d'après la fiche (2026-11-22)
+? | megacities | en | transports-villes:forme_urbaine | proposé par Claude d'après la fiche (2026-11-22)
+? | transports en commun | fr | transports-villes:transports_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | public transport | en | transports-villes:transports_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | öffentlicher Nahverkehr | de | transports-villes:transports_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | métro | fr | transports-villes:transports_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | Deutschlandticket | de | transports-villes:transports_publics | proposé par Claude d'après la fiche (2026-11-22)
+? | embouteillages | fr | transports-villes:route | proposé par Claude d'après la fiche (2026-11-22)
+? | traffic congestion | en | transports-villes:route | proposé par Claude d'après la fiche (2026-11-22)
+? | péage urbain | fr | transports-villes:route | proposé par Claude d'après la fiche (2026-11-22)
+? | congestion charge | en | transports-villes:route | proposé par Claude d'après la fiche (2026-11-22)
+? | voitures électriques | fr | transports-villes:electrification | proposé par Claude d'après la fiche (2026-11-22)
+? | electric vehicles | en | transports-villes:electrification | proposé par Claude d'après la fiche (2026-11-22)
+? | Elektroautos | de | transports-villes:electrification | proposé par Claude d'après la fiche (2026-11-22)
+? | bornes de recharge | fr | transports-villes:electrification | proposé par Claude d'après la fiche (2026-11-22)
+? | charging stations | en | transports-villes:electrification | proposé par Claude d'après la fiche (2026-11-22)
+? | sécurité routière | fr | transports-villes:securite_routiere | proposé par Claude d'après la fiche (2026-11-22)
+? | road safety | en | transports-villes:securite_routiere | proposé par Claude d'après la fiche (2026-11-22)
+? | Verkehrstote | de | transports-villes:securite_routiere | proposé par Claude d'après la fiche (2026-11-22)
+? | accidents de la route | fr | transports-villes:securite_routiere | proposé par Claude d'après la fiche (2026-11-22)
+? | road deaths | en | transports-villes:securite_routiere | proposé par Claude d'après la fiche (2026-11-22)
+? | aéroport | fr | transports-villes:aerien | proposé par Claude d'après la fiche (2026-11-22)
+? | Bürgermeister | de | transports-villes:gouvernance_urbaine | proposé par Claude d'après la fiche (2026-11-22)
+? | conseil municipal | fr | transports-villes:gouvernance_urbaine | proposé par Claude d'après la fiche (2026-11-22)
+? | city council | en | transports-villes:gouvernance_urbaine | proposé par Claude d'après la fiche (2026-11-22)
+? | budget européen | fr | union-europeenne:budget | proposé par Claude d'après la fiche (2026-11-22)
+? | EU budget | en | union-europeenne:budget | proposé par Claude d'après la fiche (2026-11-22)
+? | EU-Haushalt | de | union-europeenne:budget | proposé par Claude d'après la fiche (2026-11-22)
+? | cadre financier pluriannuel | fr | union-europeenne:budget | proposé par Claude d'après la fiche (2026-11-22)
+? | Multiannual Financial Framework | en | union-europeenne:budget | proposé par Claude d'après la fiche (2026-11-22)
+? | défense européenne | fr | union-europeenne:defense_ue | proposé par Claude d'après la fiche (2026-11-22)
+? | European defence | en | union-europeenne:defense_ue | proposé par Claude d'après la fiche (2026-11-22)
+? | europäische Verteidigung | de | union-europeenne:defense_ue | proposé par Claude d'après la fiche (2026-11-22)
+? | ReArm Europe | nom | union-europeenne:defense_ue | proposé par Claude d'après la fiche (2026-11-22)
+? | État de droit | fr | union-europeenne:etat_de_droit | proposé par Claude d'après la fiche (2026-11-22)
+? | rule of law | en | union-europeenne:etat_de_droit | proposé par Claude d'après la fiche (2026-11-22)
+? | Rechtsstaatlichkeit | de | union-europeenne:etat_de_droit | proposé par Claude d'après la fiche (2026-11-22)
+? | article 7 | fr | union-europeenne:etat_de_droit | proposé par Claude d'après la fiche (2026-11-22)
+? | Article 7 | en | union-europeenne:etat_de_droit | proposé par Claude d'après la fiche (2026-11-22)
+? | Netflix | nom | medias-diffusion:geants_mango | proposé par Claude d'après la fiche (2026-11-22)
+? | Microsoft | nom | medias-diffusion:geants_mango | proposé par Claude d'après la fiche (2026-11-22)
+? | Meta Platforms | nom | medias-diffusion:geants_mango | proposé par Claude d'après la fiche (2026-11-22)
+? | Google | nom | medias-diffusion:geants_mango | proposé par Claude d'après la fiche (2026-11-22)
