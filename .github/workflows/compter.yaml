@@ -1,0 +1,43 @@
+# Collecteur sans modèle (décisions de l'auteur du 2026-11-22, 1 h 03) : chaque nuit, compte les termes validés dans les
+# flux RSS du bot ; un flux ne garde que ses derniers articles, un passage manqué est perdu.
+name: compter
+
+on:
+  schedule:
+    - cron: "41 2 * * *"      # 2 h 41 UTC (3 h 41 à Paris), la nuit, hors des heures de travail de l'auteur
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compter
+  cancel-in-progress: false
+
+jobs:
+  compter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Flux du bot (dépôt public, lecture seule)
+        uses: actions/checkout@v4
+        with:
+          repository: Othman-Benbrahim/metac-bot-template
+          path: bot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install httpx==0.28.1 pyyaml
+      - name: Comptage
+        run: python compter.py bot
+      - name: Enregistrer
+        run: |
+          git config user.name "lecteur-local"
+          git config user.email "lecteur-local@users.noreply.github.com"
+          git add comptes/
+          if ! git diff --cached --quiet; then
+            git commit -m "comptes du $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase || true
+            git push
+          fi
