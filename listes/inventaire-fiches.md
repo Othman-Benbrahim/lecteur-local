@@ -2,7 +2,7 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 69 fiches, 743 compartiments (486 sans aucune trace collectée)
+- 69 fiches, 743 compartiments (463 sans aucune trace collectée)
 - 2195 éléments (2079 textes distincts)
 - 521 acteurs (497 distincts) : 367 types génériques (« un média d'État »…), à peupler de noms ; 154 désignés autrement (déjà nommés, ou à relire)
 
@@ -63,7 +63,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | alimentation-mondiale | 14 | 58 | 21 | 8 |
 | asie-du-nord-est | 6 | 14 | 4 | 6 |
 | asie-du-sud | 7 | 15 | 4 | 7 |
-| biocenose | 9 | 21 | 1 | 9 |
+| biocenose | 9 | 21 | 1 | 6 |
 | biodiversite-sols | 8 | 26 | 13 | 8 |
 | calendriers-echeances | 10 | 32 | 10 | 2 |
 | classes-sociales | 11 | 15 | 0 | 11 |
@@ -71,9 +71,9 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | competitions-culture | 9 | 35 | 8 | 7 |
 | corps-humain | 10 | 30 | 4 | 10 |
 | corruption | 8 | 17 | 4 | 8 |
-| crime-organise | 8 | 9 | 1 | 8 |
+| crime-organise | 8 | 9 | 1 | 4 |
 | crises-bancaires | 10 | 35 | 9 | 1 |
-| croyances-religions | 18 | 27 | 19 | 18 |
+| croyances-religions | 18 | 27 | 19 | 15 |
 | culture-memoire | 7 | 18 | 2 | 7 |
 | cycles-biogeochimiques | 11 | 37 | 9 | 6 |
 | dette-emergents | 12 | 47 | 17 | 6 |
@@ -86,7 +86,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | energie-mondiale | 13 | 56 | 8 | 2 |
 | environnement-dechets | 13 | 33 | 7 | 13 |
 | epidemies | 10 | 39 | 8 | 6 |
-| famille-genre | 7 | 7 | 0 | 7 |
+| famille-genre | 7 | 7 | 0 | 5 |
 | foret-et-sols-vivants | 13 | 34 | 8 | 13 |
 | frontieres | 8 | 13 | 0 | 8 |
 | guerre-levant | 14 | 60 | 24 | 4 |
@@ -98,15 +98,15 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | liban-institutions | 9 | 30 | 8 | 3 |
 | medias-diffusion | 11 | 23 | 1 | 11 |
 | migrations-demographie | 10 | 38 | 10 | 5 |
-| militaire | 9 | 13 | 3 | 9 |
+| militaire | 9 | 13 | 3 | 4 |
 | minerais-critiques | 7 | 13 | 2 | 7 |
-| monnaie-pouvoir | 7 | 8 | 0 | 7 |
+| monnaie-pouvoir | 7 | 8 | 0 | 2 |
 | niveaux-de-base | 3 | 3 | 0 | 3 |
 | non-proliferation | 9 | 26 | 2 | 5 |
 | nucleaire-radiologique | 10 | 34 | 8 | 7 |
 | observateur-mesure | 15 | 47 | 3 | 1 |
 | oceans-et-fleuves | 16 | 47 | 11 | 11 |
-| organisations-internationales | 9 | 11 | 1 | 9 |
+| organisations-internationales | 9 | 11 | 1 | 8 |
 | ormuz | 13 | 60 | 15 | 2 |
 | partis-politiques | 14 | 17 | 1 | 14 |
 | plancher-social | 6 | 14 | 9 | 6 |
