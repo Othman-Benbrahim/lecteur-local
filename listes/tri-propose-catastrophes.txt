@@ -1,25 +1,25 @@
-# Termes de catastrophes PROPOSÉS (2026-11-22, 6 h 45, décision de l'auteur 6 h 43 : « oui » au lot) : les 169 alertes de
+# Termes de catastrophes PROPOSÉS puis VALIDÉS par l'auteur le 2026-11-22 à 6 h 45 (2026-11-22, 6 h 45, décision de l'auteur 6 h 43 : « oui » au lot) : les 169 alertes de
 # GDACS de la première collecte n'avaient aucun compartiment, faute de ces mots parmi les termes validés. À valider par
 # l'auteur avant d'entrer dans listes/valides.txt. Même format : décision | terme | langue | rattachement | note | émetteurs
 # Déjà validés (inchangés) : Waldbrand, Dürre, Hochwasser.
-? | earthquake | en | relief-et-montagnes:seismes_volcans | titres des alertes GDACS (« earthquake alert ») | gdacs.org
-? | tsunami | en | relief-et-montagnes:seismes_volcans;oceans-et-fleuves:niveau_mer | | gdacs.org
-? | tropical cyclone | en | climat-extremes:tempetes | titres des alertes GDACS | gdacs.org
-? | flood | en | climat-extremes:tempetes;oceans-et-fleuves:fleuves | risque de sens figuré (« a flood of ») : à surveiller au test de fidélité | gdacs.org
-? | drought | en | climat-extremes:secheresses | titres des alertes GDACS | gdacs.org
-? | volcano | en | relief-et-montagnes:seismes_volcans | | gdacs.org
-? | volcanic eruption | en | relief-et-montagnes:seismes_volcans | | gdacs.org
-? | forest fire | en | climat-extremes:feux | titres des alertes GDACS | gdacs.org
-? | wildfire | en | climat-extremes:feux | | gdacs.org
-? | séisme | fr | relief-et-montagnes:seismes_volcans | | 
-? | tremblement de terre | fr | relief-et-montagnes:seismes_volcans | | 
-? | cyclone tropical | fr | climat-extremes:tempetes | | 
-? | inondation | fr | climat-extremes:tempetes;oceans-et-fleuves:fleuves | | 
-? | inondations | fr | climat-extremes:tempetes;oceans-et-fleuves:fleuves | | 
-? | sécheresse | fr | climat-extremes:secheresses | | 
-? | éruption volcanique | fr | relief-et-montagnes:seismes_volcans | | 
-? | feu de forêt | fr | climat-extremes:feux | | 
-? | incendie de forêt | fr | climat-extremes:feux | | 
-? | Erdbeben | de | relief-et-montagnes:seismes_volcans | | 
-? | Überschwemmung | de | climat-extremes:tempetes;oceans-et-fleuves:fleuves | | 
-? | Vulkanausbruch | de | relief-et-montagnes:seismes_volcans | | 
++ | earthquake | en | relief-et-montagnes:seismes_volcans | titres des alertes GDACS (« earthquake alert ») | gdacs.org
++ | tsunami | en | relief-et-montagnes:seismes_volcans;oceans-et-fleuves:niveau_mer | | gdacs.org
++ | tropical cyclone | en | climat-extremes:tempetes | titres des alertes GDACS | gdacs.org
++ | flood | en | climat-extremes:tempetes;oceans-et-fleuves:fleuves | risque de sens figuré (« a flood of ») : à surveiller au test de fidélité | gdacs.org
++ | drought | en | climat-extremes:secheresses | titres des alertes GDACS | gdacs.org
++ | volcano | en | relief-et-montagnes:seismes_volcans | | gdacs.org
++ | volcanic eruption | en | relief-et-montagnes:seismes_volcans | | gdacs.org
++ | forest fire | en | climat-extremes:feux | titres des alertes GDACS | gdacs.org
++ | wildfire | en | climat-extremes:feux | | gdacs.org
++ | séisme | fr | relief-et-montagnes:seismes_volcans | | 
++ | tremblement de terre | fr | relief-et-montagnes:seismes_volcans | | 
++ | cyclone tropical | fr | climat-extremes:tempetes | | 
++ | inondation | fr | climat-extremes:tempetes;oceans-et-fleuves:fleuves | | 
++ | inondations | fr | climat-extremes:tempetes;oceans-et-fleuves:fleuves | | 
++ | sécheresse | fr | climat-extremes:secheresses | | 
++ | éruption volcanique | fr | relief-et-montagnes:seismes_volcans | | 
++ | feu de forêt | fr | climat-extremes:feux | | 
++ | incendie de forêt | fr | climat-extremes:feux | | 
++ | Erdbeben | de | relief-et-montagnes:seismes_volcans | | 
++ | Überschwemmung | de | climat-extremes:tempetes;oceans-et-fleuves:fleuves | | 
++ | Vulkanausbruch | de | relief-et-montagnes:seismes_volcans | | 
