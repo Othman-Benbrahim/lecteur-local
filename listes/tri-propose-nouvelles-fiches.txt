@@ -1,5 +1,5 @@
 # Termes proposés pour les fiches créées depuis le 2026-11-21 au soir (demande de l'auteur, 2026-11-22, 11 h 03).
-# Rien n'entre dans listes/valides.txt avant validation de l'auteur. « + » validé, « - » refusé.
+# VALIDÉ par l'auteur le 2026-11-22 à 11 h 16 et versé dans listes/valides.txt. « + » validé, « - » refusé.
 #
 # PARTIE A — termes DÉJÀ validés, rattachés EN PLUS à un compartiment des nouvelles fiches (le rattachement existant
 # est gardé). Règles écrites dans le script de tri ; classements repris des fiches elles-mêmes (exemples cités).
