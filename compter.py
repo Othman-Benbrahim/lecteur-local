@@ -209,6 +209,29 @@ def situation(texte: str, langue_em: str, termes: list[dict], etiquettes: list[s
             "compartiments": sorted(comps.values(), key=lambda x: x["compartiment"]), "termes": sorted(set(vus_termes))}
 
 
+SEUIL_FIDELITE = 0.02   # fixé avant le premier passage (décision de l'auteur, 2026-11-22, 10 h 54)
+
+
+def ecrire_fidelite(fid: dict, releve: str, chemin: Path | None = None) -> str:
+    """Ajoute une ligne à comptes/fidelite.csv et rend le verdict. Écart = articles relus dont un terme enregistré
+    n'est plus retrouvé, ou dont l'émetteur a changé. Un terme AJOUTÉ n'est pas un écart (la liste des termes validés
+    grandit) ; il est compté à part. Le test dit si le collecteur relit de façon constante, pas si l'article dit vrai."""
+    chemin = chemin or COMPTES / "fidelite.csv"
+    n = fid["relus"]
+    ecart = (fid["termes_perdus"] + fid["emetteur_change"]) / n if n else 0.0
+    verdict = "aucun article relu" if not n else ("fidèle" if ecart < SEUIL_FIDELITE else "ÉCART : chercher la cause")
+    neuf = not chemin.exists()
+    with chemin.open("a", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        if neuf:
+            w.writerow(["releve", "relus", "termes_perdus", "emetteur_change", "termes_ajoutes", "ecart", "verdict",
+                        "exemples"])
+        w.writerow([releve, n, fid["termes_perdus"], fid["emetteur_change"], fid["termes_ajoutes"], f"{ecart:.4f}",
+                    verdict, " ; ".join(fid["exemples"])])
+    print(f"fidélité : {n} articles relus, écart {ecart:.2%} (seuil {SEUIL_FIDELITE:.0%}) : {verdict}", flush=True)
+    return verdict
+
+
 def principal() -> int:
     bot = Path(sys.argv[1] if len(sys.argv) > 1 else "../metac-bot-template").resolve()
     sys.path.insert(0, str(bot))
@@ -225,6 +248,13 @@ def principal() -> int:
     vus_f = COMPTES / "vus.txt"
     vus = set(vus_f.read_text(encoding="utf-8").split()) if vus_f.exists() else set()
     nouveaux_vus, situations = [], []
+    anciens = {}
+    if (COMPTES / "situations.jsonl").exists():
+        for l in (COMPTES / "situations.jsonl").read_text(encoding="utf-8").splitlines():
+            if l.strip():
+                x = json.loads(l)
+                anciens[x["lien"]] = x
+    fid = {"relus": 0, "termes_perdus": 0, "emetteur_change": 0, "termes_ajoutes": 0, "exemples": []}
     lus = sans_compartiment = 0
     releve = date.today().isoformat()
     with httpx.Client(headers={"User-Agent": politesse.UA.replace("metac-bot-template", "lecteur-local")},
@@ -241,6 +271,21 @@ def principal() -> int:
                     continue
                 for a in articles(r.content):
                     if a["lien"] in vus:
+                        # test de fidélité (2026-11-22, 10 h 54, préenregistré) : un article déjà compté et encore présent
+                        # est recompté avec le même code, puis comparé au relevé
+                        anc = anciens.get(a["lien"])
+                        if anc is not None:
+                            em2 = re.sub(r"^www\.", "", urlparse(urljoin(u, a["lien"])).netloc) or "?"
+                            s2 = situation(a["texte"], emetteurs.get(em2, {}).get("langue1", ""), termes, a["etiquettes"],
+                                           acteurs, niveaux, em2) or {"termes": []}
+                            perdus = set(anc.get("termes", [])) - set(s2["termes"])
+                            fid["relus"] += 1
+                            fid["termes_perdus"] += bool(perdus)
+                            fid["emetteur_change"] += em2 != anc.get("emetteur", {}).get("domaine")
+                            fid["termes_ajoutes"] += bool(set(s2["termes"]) - set(anc.get("termes", [])))
+                            if perdus and len(fid["exemples"]) < 10:
+                                fid["exemples"].append(f'{a["lien"]} : {", ".join(sorted(perdus))}')
+                            anciens.pop(a["lien"])          # une seule relecture par passage
                         continue
                     vus.add(a["lien"])
                     nouveaux_vus.append(a["lien"])
@@ -265,6 +310,7 @@ def principal() -> int:
         f.write("".join(json.dumps(x, ensure_ascii=False) + "\n" for x in situations))
     with vus_f.open("a", encoding="utf-8") as f:
         f.write("".join(x + "\n" for x in nouveaux_vus))
+    ecrire_fidelite(fid, releve)
     print(f"articles nouveaux lus : {lus} ; situations enregistrées : {len(situations)} ; "
           f"écartés faute de compartiment : {sans_compartiment} ; "
           f"avec au moins un acteur : {sum(1 for x in situations if x['acteurs'])} ; avec un espace : "
