@@ -2,16 +2,16 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 44 fiches, 490 compartiments (233 sans aucune trace collectée)
-- 1748 éléments (1632 textes distincts)
-- 422 acteurs (399 distincts) : 337 types génériques (« un média d'État »…), à peupler de noms ; 85 désignés autrement (déjà nommés, ou à relire)
+- 45 fiches, 498 compartiments (241 sans aucune trace collectée)
+- 1775 éléments (1659 textes distincts)
+- 435 acteurs (412 distincts) : 343 types génériques (« un média d'État »…), à peupler de noms ; 92 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 244 |
-| non_humain | 118 |
+| collectif | 252 |
+| non_humain | 123 |
 | ideologie | 17 |
 | personne | 17 |
 | statut | 17 |
@@ -21,9 +21,9 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 182 |
-| méso | 153 |
-| micro | 86 |
+| macro | 189 |
+| méso | 154 |
+| micro | 91 |
 | micro à méso | 1 |
 
 ## Éléments et acteurs par niveau d'organisation
@@ -32,34 +32,35 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 |---|---|
 | economie | 308 |
 | statut | 281 |
-| geopolitique | 236 |
+| geopolitique | 237 |
+| convention | 176 |
 | technique | 170 |
-| convention | 164 |
-| societe | 152 |
+| societe | 153 |
 | psychologique | 113 |
 | ideologie | 95 |
 | eau | 83 |
 | chimique | 70 |
+| animal | 65 |
 | relief | 56 |
 | meteo | 51 |
-| animal | 48 |
 | climat | 46 |
 | microbiologique | 44 |
 | corps | 43 |
 | mineral | 36 |
+| vegetal | 35 |
 | physique | 34 |
-| vegetal | 32 |
 | entourage | 27 |
 | ocean | 26 |
 | personne | 26 |
 | atomique | 25 |
-| sol_vivant | 4 |
+| sol_vivant | 10 |
 
 ## Par fiche
 
 | fiche | compartiments | éléments | acteurs | compartiments sans trace collectée |
 |---|---|---|---|---|
-| alimentation-mondiale | 14 | 57 | 21 | 8 |
+| alimentation-mondiale | 14 | 58 | 21 | 8 |
+| biodiversite-sols | 8 | 26 | 13 | 8 |
 | calendriers-echeances | 10 | 32 | 10 | 2 |
 | climat-extremes | 13 | 42 | 17 | 6 |
 | competitions-culture | 9 | 35 | 8 | 7 |
