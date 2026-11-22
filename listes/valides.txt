@@ -2602,3 +2602,14 @@
 + | Abstimmungskampf | de | calendriers-echeances:elections | indice de règle (referendums_retour_statu_quo) | 
 + | prix de l'or | fr | dette-emergents:matieres_premieres;monnaie-pouvoir:or | indice de règle (afrique_mines_conflits) | 
 + | copper price | en | dette-emergents:matieres_premieres;minerais-critiques:cuivre | indice de règle (afrique_mines_conflits) | 
+# 2026-11-22, 16 h 37 : termes de la veille « puissance de corrosion » (Dabila, Escudier, Marti, Sciences Po, 19 novembre 2026), validés par l'auteur
++ | puissance de corrosion | fr | reseaux-sociaux:corrosion | veille Sciences Po du 2026-11-19, validé par l'auteur le 2026-11-22 à 16 h 37 | 
++ | sharp power | en | reseaux-sociaux:corrosion;reseaux-sociaux:influence_ou_desinformation | idem (Walker et Ludwig, NED, 2017) | 
++ | inversion accusatoire | fr | reseaux-sociaux:corrosion;reseaux-sociaux:desinformation | idem | 
++ | whataboutism | en | reseaux-sociaux:corrosion;reseaux-sociaux:desinformation | idem | 
++ | LLM grooming | en | reseaux-sociaux:corrosion;reseaux-sociaux:desinformation;information-cyber:recits | idem | 
++ | guerre cognitive | fr | reseaux-sociaux:corrosion;information-cyber:recits | idem | 
++ | cognitive warfare | en | reseaux-sociaux:corrosion;information-cyber:recits | idem | 
++ | guerre informationnelle | fr | reseaux-sociaux:corrosion;information-cyber:recits | idem | 
++ | guerre mémétique | fr | reseaux-sociaux:corrosion;reseaux-sociaux:desinformation | idem | 
++ | Internet Research Agency | nom | reseaux-sociaux:corrosion;reseaux-sociaux:influence_ou_desinformation | idem (officine de Saint-Pétersbourg) | 
