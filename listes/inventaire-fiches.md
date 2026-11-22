@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 44 fiches, 487 compartiments (230 sans aucune trace collectée)
-- 1734 éléments (1619 textes distincts)
-- 418 acteurs (395 distincts) : 333 types génériques (« un média d'État »…), à peupler de noms ; 85 désignés autrement (déjà nommés, ou à relire)
+- 44 fiches, 490 compartiments (233 sans aucune trace collectée)
+- 1748 éléments (1632 textes distincts)
+- 422 acteurs (399 distincts) : 337 types génériques (« un média d'État »…), à peupler de noms ; 85 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 240 |
+| collectif | 244 |
 | non_humain | 118 |
 | ideologie | 17 |
 | personne | 17 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 179 |
-| méso | 152 |
+| macro | 182 |
+| méso | 153 |
 | micro | 86 |
 | micro à méso | 1 |
 
@@ -30,16 +30,16 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 307 |
-| statut | 280 |
-| geopolitique | 234 |
+| economie | 308 |
+| statut | 281 |
+| geopolitique | 236 |
 | technique | 170 |
-| convention | 160 |
+| convention | 164 |
 | societe | 152 |
 | psychologique | 113 |
 | ideologie | 95 |
 | eau | 83 |
-| chimique | 60 |
+| chimique | 70 |
 | relief | 56 |
 | meteo | 51 |
 | animal | 48 |
@@ -74,7 +74,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | economie-entreprises | 6 | 13 | 2 | 6 |
 | elections-amerique-latine | 9 | 31 | 6 | 5 |
 | energie-mondiale | 13 | 56 | 8 | 2 |
-| environnement-dechets | 4 | 8 | 0 | 4 |
+| environnement-dechets | 7 | 22 | 4 | 7 |
 | epidemies | 10 | 39 | 8 | 6 |
 | foret-et-sols-vivants | 13 | 34 | 8 | 13 |
 | guerre-levant | 14 | 60 | 24 | 4 |
