@@ -2,9 +2,9 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 44 fiches, 481 compartiments (231 sans aucune trace collectée)
-- 1715 éléments (1600 textes distincts)
-- 419 acteurs (396 distincts) : 334 types génériques (« un média d'État »…), à peupler de noms ; 85 désignés autrement (déjà nommés, ou à relire)
+- 44 fiches, 487 compartiments (230 sans aucune trace collectée)
+- 1734 éléments (1619 textes distincts)
+- 418 acteurs (395 distincts) : 333 types génériques (« un média d'État »…), à peupler de noms ; 85 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
@@ -15,7 +15,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | ideologie | 17 |
 | personne | 17 |
 | statut | 17 |
-| psyche | 10 |
+| psyche | 9 |
 
 ## Acteurs par taille
 
@@ -23,7 +23,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 |---|---|
 | macro | 179 |
 | méso | 152 |
-| micro | 87 |
+| micro | 86 |
 | micro à méso | 1 |
 
 ## Éléments et acteurs par niveau d'organisation
@@ -33,11 +33,11 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | economie | 307 |
 | statut | 280 |
 | geopolitique | 234 |
-| technique | 165 |
+| technique | 170 |
+| convention | 160 |
 | societe | 152 |
-| convention | 143 |
-| psychologique | 118 |
-| ideologie | 94 |
+| psychologique | 113 |
+| ideologie | 95 |
 | eau | 83 |
 | chimique | 60 |
 | relief | 56 |
@@ -87,7 +87,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | migrations-demographie | 10 | 38 | 10 | 5 |
 | non-proliferation | 9 | 26 | 2 | 5 |
 | nucleaire-radiologique | 10 | 34 | 8 | 7 |
-| observateur-mesure | 9 | 28 | 4 | 2 |
+| observateur-mesure | 15 | 47 | 3 | 1 |
 | oceans-et-fleuves | 16 | 47 | 11 | 11 |
 | ormuz | 13 | 60 | 15 | 2 |
 | politique-americaine | 14 | 56 | 25 | 1 |

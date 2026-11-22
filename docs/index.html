@@ -431,6 +431,11 @@ function detail(n,sits){
     h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span></li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
     const te=D.termesPar.get(n.id)||[];
     h+=`<h2>Termes validés (${te.length})</h2>`+(te.length?`<div class="puces">${te.slice(0,80).map(t=>`<span class="puce" title="${esc(t.note)}" onclick="choisirTerme('${esc(t.terme).replace(/'/g,"\\'")}')">${esc(t.terme)} <small>${t.langue}</small></span>`).join("")}</div>`:`<p class="vide">aucun</p>`);
+    if(n.fiche==="observateur-mesure"&&D.recherche&&D.recherche.semaines){
+      const R=D.recherche;
+      h+=`<h2>Évolution de notre recherche (historique Git)</h2><table><tr><td>semaine</td><td>commits · préenregistrements · fiches · termes les plus cités</td></tr>`+
+        R.semaines.map(w=>`<tr><td>${esc(w.semaine)}</td><td>${w.commits} · ${w.preenregistrements_crees.length} · ${w.fiches_creees.length}${w.versions.length?" · v"+esc(w.versions[0]):""}<br><span style="color:var(--doux)">${esc(Object.keys(w.termes).slice(0,8).join(", "))}</span></td></tr>`).join("")+`</table>`;
+      h+=`<h2>Première apparition des termes</h2><div class="puces">${Object.entries(R.premiere_apparition).map(([t,s])=>`<span class="puce" title="${esc(s)}">${esc(t)} <small>${esc(s.slice(5))}</small></span>`).join("")}</div>`;}
     const rg=D.reglesPar.get(n.id)||[];
     if(rg.length) h+=`<h2>Types de situation → événement (règles)</h2><ul>${rg.map(r=>`<li>${esc(D.nomType.get(r.de))} → <b>${esc(D.nomType.get(r.vers))}</b> <span class="etiq">${esc(r.structure)}</span></li>`).join("")}</ul>`;
     const s=sits.filter(x=>x.compartiments.includes(n.id)).sort((a,b)=>b.jour.localeCompare(a.jour));

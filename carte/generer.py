@@ -116,7 +116,16 @@ def principal() -> int:
         with f.open(encoding="utf-8") as fo:
             types_actifs = list(csv.DictReader(fo))
 
-    donnees = {"genere": date.today().isoformat(), "noeuds": noeuds, "aretes": aretes,
+    # évolution de notre recherche (fiche « L'observateur et la mesure ») : recalculée depuis l'historique du bot si possible
+    import subprocess
+    try:
+        subprocess.run([sys.executable, "recherche_evolution.py"], cwd=bot, check=True, capture_output=True, timeout=120)
+    except Exception as e:
+        print(f"évolution de la recherche non recalculée ({type(e).__name__}) ; version enregistrée utilisée")
+    f = bot / "registre/recherche-evolution.json"
+    recherche = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+
+    donnees = {"genere": date.today().isoformat(), "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
                "situations": situations, "types_actifs": types_actifs}
