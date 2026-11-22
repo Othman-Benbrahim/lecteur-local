@@ -29,8 +29,10 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install httpx==0.28.1 pyyaml
-      - name: Comptage
+      - name: Comptage (situations)
         run: python compter.py bot
+      - name: Types de situation réalisés (ontologie, étape 2)
+        run: python realiser.py bot
       - name: Enregistrer
         run: |
           git config user.name "lecteur-local"
