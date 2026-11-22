@@ -2,16 +2,16 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 42 fiches, 455 compartiments (206 sans aucune trace collectée)
-- 1640 éléments (1532 textes distincts)
-- 407 acteurs (385 distincts) : 323 types génériques (« un média d'État »…), à peupler de noms ; 84 désignés autrement (déjà nommés, ou à relire)
+- 43 fiches, 466 compartiments (216 sans aucune trace collectée)
+- 1676 éléments (1563 textes distincts)
+- 411 acteurs (389 distincts) : 327 types génériques (« un média d'État »…), à peupler de noms ; 84 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 231 |
-| non_humain | 115 |
+| collectif | 234 |
+| non_humain | 116 |
 | ideologie | 17 |
 | personne | 17 |
 | statut | 17 |
@@ -21,38 +21,38 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 174 |
-| méso | 148 |
-| micro | 84 |
+| macro | 175 |
+| méso | 150 |
+| micro | 85 |
 | micro à méso | 1 |
 
 ## Éléments et acteurs par niveau d'organisation
 
 | | nombre |
 |---|---|
-| economie | 302 |
-| statut | 273 |
-| geopolitique | 230 |
+| economie | 306 |
+| statut | 274 |
+| geopolitique | 234 |
 | technique | 165 |
-| societe | 146 |
-| convention | 136 |
+| societe | 151 |
+| convention | 140 |
 | psychologique | 116 |
 | ideologie | 94 |
-| eau | 74 |
+| eau | 83 |
 | relief | 56 |
+| chimique | 53 |
 | meteo | 51 |
-| chimique | 49 |
 | climat | 46 |
 | animal | 45 |
+| microbiologique | 41 |
 | mineral | 36 |
-| microbiologique | 36 |
 | vegetal | 32 |
 | physique | 31 |
 | entourage | 27 |
 | ocean | 26 |
 | personne | 26 |
+| corps | 25 |
 | atomique | 25 |
-| corps | 21 |
 | sol_vivant | 4 |
 
 ## Par fiche
@@ -67,6 +67,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | culture-memoire | 3 | 9 | 0 | 3 |
 | cycles-biogeochimiques | 11 | 37 | 9 | 6 |
 | dette-emergents | 12 | 47 | 17 | 6 |
+| eau-douce-potable | 11 | 36 | 4 | 10 |
 | eau-moyen-orient | 14 | 48 | 19 | 10 |
 | economie-chinoise | 14 | 55 | 25 | 6 |
 | economie-entreprises | 6 | 13 | 2 | 6 |

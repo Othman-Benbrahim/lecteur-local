@@ -43,7 +43,7 @@ alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",prix,Pri
 alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",prix,Prix alimentaires mondiaux,economie,element,contrats à terme sur les grains,,macro,mondial,séances ; indices mensuels,jours à mois,,2,
 alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",prix,Prix alimentaires mondiaux,economie,element,prix locaux,,macro,mondial,séances ; indices mensuels,jours à mois,,2,
 alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",prix,Prix alimentaires mondiaux,economie,acteur,les contrats à terme sur le blé,oui,macro,mondial,séances ; indices mensuels,minutes,collectif,2,
-alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",climat,Climat de la saison,meteo,element,sécheresses,,méso à macro,régionale à mondiale,saisons,semaines à saisons,,2,elections-amerique-latine
+alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",climat,Climat de la saison,meteo,element,sécheresses,,méso à macro,régionale à mondiale,saisons,semaines à saisons,,2,eau-douce-potable;elections-amerique-latine
 alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",climat,Climat de la saison,meteo,element,vagues de chaleur,,méso à macro,régionale à mondiale,saisons,semaines à saisons,,2,climat-extremes;eau-moyen-orient;energie-mondiale;infrastructures-critiques;politique-americaine
 alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",climat,Climat de la saison,meteo,element,excès de pluie,,méso à macro,régionale à mondiale,saisons,semaines à saisons,,2,
 alimentation-mondiale,"Alimentation mondiale (cultures, engrais, prix)",climat,Climat de la saison,meteo,element,oscillations El Niño et La Niña,,méso à macro,régionale à mondiale,saisons,semaines à saisons,,2,
@@ -384,9 +384,49 @@ dette-emergents,Dette des pays émergents et en développement,gisements,Gisemen
 dette-emergents,Dette des pays émergents et en développement,gisements,Gisements et ressources du sous-sol,mineral,element,or,,méso,pays producteurs,durée de vie des mines,décennie,,0,
 dette-emergents,Dette des pays émergents et en développement,gisements,Gisements et ressources du sous-sol,mineral,element,épuisement des gisements,,méso,pays producteurs,durée de vie des mines,décennie,,0,
 dette-emergents,Dette des pays émergents et en développement,gisements,Gisements et ressources du sous-sol,mineral,acteur,un gisement de cuivre ou de cobalt,oui,méso,site,durée de vie des mines,décennie,non_humain,0,
+eau-douce-potable,Eau douce et potable (monde),ressources,"Ressources en eau douce (fleuves, lacs, nappes renouvelables)",eau,element,"eau renouvelable disponible par habitant (en baisse de 7 % en dix ans, FAO AQUASTAT 2025)",,macro,monde et bassins,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),ressources,"Ressources en eau douce (fleuves, lacs, nappes renouvelables)",eau,element,fleuves et lacs,,macro,monde et bassins,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),ressources,"Ressources en eau douce (fleuves, lacs, nappes renouvelables)",eau,element,nappes renouvelables,,macro,monde et bassins,années,années,,0,eau-moyen-orient
+eau-douce-potable,Eau douce et potable (monde),stress,Stress hydrique (eau prélevée rapportée à l'eau disponible),eau,element,stress hydrique de base,,méso à macro,bassins,années,saisons à années,,0,
+eau-douce-potable,Eau douce et potable (monde),stress,Stress hydrique (eau prélevée rapportée à l'eau disponible),eau,element,variabilité d'une année à l'autre,,méso à macro,bassins,années,saisons à années,,0,eau-moyen-orient
+eau-douce-potable,Eau douce et potable (monde),stress,Stress hydrique (eau prélevée rapportée à l'eau disponible),eau,element,sécheresses,,méso à macro,bassins,années,saisons à années,,0,alimentation-mondiale;elections-amerique-latine
+eau-douce-potable,Eau douce et potable (monde),nappes,Nappes souterraines (épuisement),eau,element,épuisement des nappes,,méso à macro,bassins,années à décennies,années,,0,
+eau-douce-potable,Eau douce et potable (monde),nappes,Nappes souterraines (épuisement),eau,element,pompage au-delà de la recharge,,méso à macro,bassins,années à décennies,années,,0,
+eau-douce-potable,Eau douce et potable (monde),nappes,Nappes souterraines (épuisement),eau,element,affaissement des sols,,méso à macro,bassins,années à décennies,années,,0,eau-moyen-orient
+eau-douce-potable,Eau douce et potable (monde),prelevements,"Prélèvements par usage (agriculture, industrie, villes)",economie,element,"agriculture (environ 72 % des prélèvements, FAO AQUASTAT 2025)",,macro,pays,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),prelevements,"Prélèvements par usage (agriculture, industrie, villes)",economie,element,industrie et énergie (refroidissement),,macro,pays,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),prelevements,"Prélèvements par usage (agriculture, industrie, villes)",economie,element,eau des villes,,macro,pays,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),acces,Accès à l'eau potable,societe,element,"2,1 milliards de personnes sans eau potable gérée en sécurité, dont 106 millions buvant une eau de surface non traitée (OMS, UNICEF, 2025)",,macro,pays,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),acces,Accès à l'eau potable,societe,element,écarts entre villes et campagnes,,macro,pays,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),acces,Accès à l'eau potable,societe,acteur,des ménages sans accès à l'eau potable (en agrégat),oui,macro,pays,années,années,collectif,0,
+eau-douce-potable,Eau douce et potable (monde),assainissement,Assainissement et hygiène,societe,element,"3,4 milliards de personnes sans assainissement géré en sécurité, dont 354 millions en défécation à l'air libre",,macro,pays,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),assainissement,Assainissement et hygiène,societe,element,"1,7 milliard sans installation d'hygiène de base à domicile (OMS, UNICEF, 2025)",,macro,pays,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),qualite,Qualité et pollution de l'eau,chimique,element,nitrates (engrais),,micro à méso,sites à bassins,mois à années,mois,,0,
+eau-douce-potable,Eau douce et potable (monde),qualite,Qualité et pollution de l'eau,chimique,element,arsenic et fluor naturels,,micro à méso,sites à bassins,mois à années,mois,,0,
+eau-douce-potable,Eau douce et potable (monde),qualite,Qualité et pollution de l'eau,chimique,element,rejets urbains et industriels,,micro à méso,sites à bassins,mois à années,mois,,0,
+eau-douce-potable,Eau douce et potable (monde),qualite,Qualité et pollution de l'eau,chimique,element,plastiques et substances nouvelles,,micro à méso,sites à bassins,mois à années,mois,,0,
+eau-douce-potable,Eau douce et potable (monde),maladies,"Maladies hydriques (choléra, diarrhées, typhoïde)",microbiologique,element,choléra,,micro à méso,pays et villes,semaines à années,semaines,,1,eau-moyen-orient
+eau-douce-potable,Eau douce et potable (monde),maladies,"Maladies hydriques (choléra, diarrhées, typhoïde)",microbiologique,element,maladies diarrhéiques,,micro à méso,pays et villes,semaines à années,semaines,,1,
+eau-douce-potable,Eau douce et potable (monde),maladies,"Maladies hydriques (choléra, diarrhées, typhoïde)",microbiologique,element,typhoïde,,micro à méso,pays et villes,semaines à années,semaines,,1,
+eau-douce-potable,Eau douce et potable (monde),maladies,"Maladies hydriques (choléra, diarrhées, typhoïde)",microbiologique,element,parasitoses liées à l'eau,,micro à méso,pays et villes,semaines à années,semaines,,1,
+eau-douce-potable,Eau douce et potable (monde),maladies,"Maladies hydriques (choléra, diarrhées, typhoïde)",microbiologique,acteur,"un agent pathogène hydrique (Vibrio cholerae, en agrégat)",oui,micro,villes et camps,semaines à années,semaines,non_humain,1,
+eau-douce-potable,Eau douce et potable (monde),corps,"L'eau du corps (besoins vitaux, déshydratation, chaleur)",corps,element,besoins quotidiens en eau,,micro,"la personne, en agrégat",heures à jours,heures,,0,
+eau-douce-potable,Eau douce et potable (monde),corps,"L'eau du corps (besoins vitaux, déshydratation, chaleur)",corps,element,déshydratation,,micro,"la personne, en agrégat",heures à jours,heures,,0,
+eau-douce-potable,Eau douce et potable (monde),corps,"L'eau du corps (besoins vitaux, déshydratation, chaleur)",corps,element,coups de chaleur,,micro,"la personne, en agrégat",heures à jours,heures,,0,
+eau-douce-potable,Eau douce et potable (monde),corps,"L'eau du corps (besoins vitaux, déshydratation, chaleur)",corps,element,vulnérabilité des enfants et des personnes âgées,,micro,"la personne, en agrégat",heures à jours,heures,,0,
+eau-douce-potable,Eau douce et potable (monde),gouvernance,Gouvernance et prix de l'eau,convention,element,droit à l'eau et à l'assainissement (reconnu par l'Assemblée générale des Nations unies en 2010),,méso à macro,pays et bassins,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),gouvernance,Gouvernance et prix de l'eau,convention,element,régies publiques et concessions privées,,méso à macro,pays et bassins,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),gouvernance,Gouvernance et prix de l'eau,convention,element,tarifs,,méso à macro,pays et bassins,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),gouvernance,Gouvernance et prix de l'eau,convention,element,partage des eaux entre États,,méso à macro,pays et bassins,années,années,,0,
+eau-douce-potable,Eau douce et potable (monde),gouvernance,Gouvernance et prix de l'eau,statut,acteur,une autorité de bassin,oui,méso,bassin,années,années,collectif,0,
+eau-douce-potable,Eau douce et potable (monde),gouvernance,Gouvernance et prix de l'eau,economie,acteur,une compagnie des eaux (publique ou privée),oui,méso,villes,années,mois,collectif,0,
+eau-douce-potable,Eau douce et potable (monde),tensions,Tensions et conflits liés à l'eau,geopolitique,element,"l'eau comme déclencheur de violence (accès, contrôle)",,micro à macro,"bassins, pays et régions",jours à décennies,jours à années,,0,
+eau-douce-potable,Eau douce et potable (monde),tensions,Tensions et conflits liés à l'eau,geopolitique,element,"l'eau comme arme (coupures, contamination)",,micro à macro,"bassins, pays et régions",jours à décennies,jours à années,,0,
+eau-douce-potable,Eau douce et potable (monde),tensions,Tensions et conflits liés à l'eau,geopolitique,element,les installations d'eau comme victimes des guerres,,micro à macro,"bassins, pays et régions",jours à décennies,jours à années,,0,
+eau-douce-potable,Eau douce et potable (monde),tensions,Tensions et conflits liés à l'eau,geopolitique,element,"plus de 1 300 événements recensés depuis l'Antiquité (Pacific Institute, mise à jour de 2022)",,micro à macro,"bassins, pays et régions",jours à décennies,jours à années,,0,
 eau-moyen-orient,Eau au Moyen-Orient,pluies,Pluies et neige,meteo,element,pluies d'hiver,,méso,régional,saison des pluies,saisons,,0,
 eau-moyen-orient,Eau au Moyen-Orient,pluies,Pluies et neige,meteo,element,"neige des montagnes (Zagros, Taurus)",,méso,régional,saison des pluies,saisons,,0,
-eau-moyen-orient,Eau au Moyen-Orient,pluies,Pluies et neige,meteo,element,variabilité d'une année à l'autre,,méso,régional,saison des pluies,saisons,,0,
+eau-moyen-orient,Eau au Moyen-Orient,pluies,Pluies et neige,meteo,element,variabilité d'une année à l'autre,,méso,régional,saison des pluies,saisons,,0,eau-douce-potable
 eau-moyen-orient,Eau au Moyen-Orient,pluies,Pluies et neige,meteo,acteur,le manteau neigeux du Taurus,oui,méso,région,saison des pluies,saisons,non_humain,0,
 eau-moyen-orient,Eau au Moyen-Orient,chaleur,Chaleur et évaporation,meteo,element,vagues de chaleur,,méso,régional,étés,jours à saisons,,2,alimentation-mondiale;climat-extremes;energie-mondiale;infrastructures-critiques;politique-americaine
 eau-moyen-orient,Eau au Moyen-Orient,chaleur,Chaleur et évaporation,meteo,element,évaporation des retenues,,méso,régional,étés,jours à saisons,,2,
@@ -401,9 +441,9 @@ eau-moyen-orient,Eau au Moyen-Orient,barrages,Barrages et retenues,technique,ele
 eau-moyen-orient,Eau au Moyen-Orient,barrages,Barrages et retenues,technique,element,Grand barrage de la Renaissance éthiopienne,,méso,sites sur les fleuves,remplissage annuel,mois,,0,
 eau-moyen-orient,Eau au Moyen-Orient,barrages,Barrages et retenues,technique,element,retenues iraniennes,,méso,sites sur les fleuves,remplissage annuel,mois,,0,
 eau-moyen-orient,Eau au Moyen-Orient,barrages,Barrages et retenues,technique,acteur,un grand barrage d'amont,oui,méso,site,remplissage annuel,mois,non_humain,0,
-eau-moyen-orient,Eau au Moyen-Orient,nappes,Nappes souterraines,eau,element,nappes renouvelables,,micro à macro,régional,décennies,années à décennies,,0,
+eau-moyen-orient,Eau au Moyen-Orient,nappes,Nappes souterraines,eau,element,nappes renouvelables,,micro à macro,régional,décennies,années à décennies,,0,eau-douce-potable
 eau-moyen-orient,Eau au Moyen-Orient,nappes,Nappes souterraines,eau,element,nappes fossiles,,micro à macro,régional,décennies,années à décennies,,0,
-eau-moyen-orient,Eau au Moyen-Orient,nappes,Nappes souterraines,eau,element,affaissement des sols,,micro à macro,régional,décennies,années à décennies,,0,
+eau-moyen-orient,Eau au Moyen-Orient,nappes,Nappes souterraines,eau,element,affaissement des sols,,micro à macro,régional,décennies,années à décennies,,0,eau-douce-potable
 eau-moyen-orient,Eau au Moyen-Orient,nappes,Nappes souterraines,eau,element,salinisation,,micro à macro,régional,décennies,années à décennies,,0,alimentation-mondiale
 eau-moyen-orient,Eau au Moyen-Orient,nappes,Nappes souterraines,technique,acteur,un puits profond,oui,micro,site,décennies,années,non_humain,0,
 eau-moyen-orient,Eau au Moyen-Orient,nappes,Nappes souterraines,eau,acteur,une nappe fossile de la péninsule,oui,macro,région,décennies,décennies,non_humain,0,
@@ -443,7 +483,7 @@ eau-moyen-orient,Eau au Moyen-Orient,chimie_eau,"Chimie de l'eau (salinité, pol
 eau-moyen-orient,Eau au Moyen-Orient,chimie_eau,"Chimie de l'eau (salinité, pollution)",chimique,element,pollution agricole et urbaine,,micro à méso,bassin à golfe,années à décennies,années,,0,
 eau-moyen-orient,Eau au Moyen-Orient,chimie_eau,"Chimie de l'eau (salinité, pollution)",chimique,element,intrusion d'eau de mer dans les nappes côtières,,micro à méso,bassin à golfe,années à décennies,années,,0,
 eau-moyen-orient,Eau au Moyen-Orient,chimie_eau,"Chimie de l'eau (salinité, pollution)",chimique,acteur,la saumure rejetée dans le Golfe,oui,méso,golfe,années à décennies,années,non_humain,0,
-eau-moyen-orient,Eau au Moyen-Orient,maladies_hydriques,Maladies hydriques,microbiologique,element,choléra,,micro,quartier à pays,épidémies saisonnières,jours à semaines,,0,
+eau-moyen-orient,Eau au Moyen-Orient,maladies_hydriques,Maladies hydriques,microbiologique,element,choléra,,micro,quartier à pays,épidémies saisonnières,jours à semaines,,0,eau-douce-potable
 eau-moyen-orient,Eau au Moyen-Orient,maladies_hydriques,Maladies hydriques,microbiologique,element,diarrhées infectieuses,,micro,quartier à pays,épidémies saisonnières,jours à semaines,,0,
 eau-moyen-orient,Eau au Moyen-Orient,maladies_hydriques,Maladies hydriques,microbiologique,element,eau non traitée en temps de coupure ou de guerre,,micro,quartier à pays,épidémies saisonnières,jours à semaines,,0,
 eau-moyen-orient,Eau au Moyen-Orient,maladies_hydriques,Maladies hydriques,microbiologique,acteur,une bactérie du choléra,oui,micro,local,épidémies saisonnières,jours,non_humain,0,
@@ -581,7 +621,7 @@ elections-amerique-latine,Élections en Amérique latine,humeur,Humeur des élec
 elections-amerique-latine,Élections en Amérique latine,humeur,Humeur des électeurs,psychologique,element,espoir dans un outsider,,macro,pays,mois,semaines,,0,
 elections-amerique-latine,Élections en Amérique latine,humeur,Humeur des électeurs,psychologique,element,lassitude des scrutins répétés,,macro,pays,mois,semaines,,0,
 elections-amerique-latine,Élections en Amérique latine,recoltes_exports,Récoltes et exportations,vegetal,element,"soja, maïs, blé",,macro,pampa et régions agricoles,saisons,saisons,,1,
-elections-amerique-latine,Élections en Amérique latine,recoltes_exports,Récoltes et exportations,vegetal,element,sécheresses,,macro,pampa et régions agricoles,saisons,saisons,,1,alimentation-mondiale
+elections-amerique-latine,Élections en Amérique latine,recoltes_exports,Récoltes et exportations,vegetal,element,sécheresses,,macro,pampa et régions agricoles,saisons,saisons,,1,alimentation-mondiale;eau-douce-potable
 elections-amerique-latine,Élections en Amérique latine,recoltes_exports,Récoltes et exportations,vegetal,element,devises d'exportation,,macro,pampa et régions agricoles,saisons,saisons,,1,
 energie-mondiale,Énergie mondiale (pétrole et gaz),production,Production,economie,element,pays de l'OPEP+ et leurs quotas,,macro,bassins producteurs,décisions mensuelles ; forages sur des mois,mois,,1,
 energie-mondiale,Énergie mondiale (pétrole et gaz),production,Production,economie,element,pétrole de schiste américain,,macro,bassins producteurs,décisions mensuelles ; forages sur des mois,mois,,1,
