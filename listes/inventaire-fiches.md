@@ -2,8 +2,8 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 53 fiches, 558 compartiments (301 sans aucune trace collectée)
-- 1909 éléments (1793 textes distincts)
+- 53 fiches, 564 compartiments (307 sans aucune trace collectée)
+- 1924 éléments (1808 textes distincts)
 - 483 acteurs (459 distincts) : 356 types génériques (« un média d'État »…), à peupler de noms ; 127 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
@@ -30,12 +30,12 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 332 |
+| economie | 334 |
 | statut | 302 |
-| geopolitique | 278 |
-| convention | 220 |
-| technique | 188 |
-| societe | 168 |
+| geopolitique | 280 |
+| convention | 227 |
+| technique | 189 |
+| societe | 171 |
 | psychologique | 115 |
 | ideologie | 98 |
 | eau | 85 |
@@ -76,7 +76,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | eau-douce-potable | 11 | 36 | 4 | 10 |
 | eau-moyen-orient | 14 | 48 | 19 | 10 |
 | economie-chinoise | 14 | 55 | 25 | 6 |
-| economie-entreprises | 6 | 13 | 2 | 6 |
+| economie-entreprises | 8 | 16 | 2 | 8 |
 | elections-amerique-latine | 9 | 31 | 6 | 5 |
 | energie-mondiale | 13 | 56 | 8 | 2 |
 | environnement-dechets | 7 | 22 | 4 | 7 |
@@ -99,14 +99,14 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | ormuz | 13 | 60 | 15 | 2 |
 | plancher-social | 6 | 14 | 9 | 6 |
 | politique-americaine | 14 | 56 | 25 | 1 |
-| politique-interieure | 5 | 26 | 3 | 5 |
+| politique-interieure | 8 | 34 | 3 | 8 |
 | relief-et-montagnes | 11 | 34 | 6 | 7 |
 | rivalite-sino-americaine | 12 | 46 | 20 | 1 |
 | russie-ukraine | 13 | 51 | 25 | 3 |
 | sciences-techniques | 10 | 33 | 5 | 1 |
 | securite-europeenne | 9 | 28 | 3 | 4 |
 | securite-publique | 10 | 31 | 4 | 5 |
-| societe-droits | 4 | 11 | 0 | 4 |
+| societe-droits | 5 | 15 | 0 | 5 |
 | soleil-espace | 10 | 33 | 5 | 7 |
 | soudan | 5 | 16 | 4 | 1 |
 | transport-maritime | 13 | 51 | 15 | 6 |
