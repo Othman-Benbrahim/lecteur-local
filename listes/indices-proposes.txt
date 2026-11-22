@@ -1,0 +1,65 @@
+# Indices VALIDÉS par l'auteur le 2026-11-22 à 2 h 52 (proposés par Claude) pour les règles coutumières (décision de l'auteur du 2026-11-22, 2 h 45 - 2 h 49).
+# Un indice est un terme propre à la situation d'une règle. Une situation observée réalise le type de situation d'une
+# règle si elle touche un compartiment de la règle ET un de ses indices (ou deux compartiments de la règle).
+# Une fois validés, les indices entrent dans valides.txt (rattachés aux compartiments de la règle) et dans le champ
+# « indices » de la règle. Format : règle | situation de départ | indices proposés
+us_president_college | campagne présidentielle américaine avant le vote du collège électoral | Electoral College; collège électoral; electoral votes; grands électeurs
+us_primaires_second_tour | primaire américaine en cours dans un État qui prévoit un second tour | primary runoff; runoff election; second tour de la primaire
+us_primaires_systemes_speciaux | primaire non partisane ou scrutin préférentiel prévu dans un État américain | ranked-choice; ranked choice voting; top-two primary; jungle primary
+us_erreur_sondages_par_echelle | élection américaine à venir, avec des sondages publiés | poll; polls; polling; pollster
+us_erreur_selon_temps_restant | élection nationale à venir, avec des sondages publiés | poll; polls; polling; sondage; sondages; Umfrage; Umfragen
+us_avantage_sortant_congres | membre sortant du Congrès américain candidat à sa réélection | incumbent; reelection; re-election; seeks reelection
+regimes_fermes_contestation | campagne de contestation non violente en cours contre un régime | protesters; opposition protests; manifestants; Demonstranten; crackdown; répression
+afrique_limites_de_mandat | dirigeant africain au pouvoir face à une limite de mandat | term limit; term limits; third term; troisième mandat; limite de mandats; constitutional amendment
+sondages_erreur_comparee | élection nationale à venir, avec des sondages publiés | poll; polls; polling; sondage; sondages; Umfrage; Umfragen
+france_legislatives | élections législatives françaises convoquées | législatives; élections législatives; Assemblée nationale; dissolution
+seuils_parlements_nationaux_europe | élections législatives à venir dans un pays européen | parliamentary election; élections législatives; Bundestagswahl; Parlamentswahl; electoral threshold; seuil électoral
+seuils_elections_europeennes | élections européennes à venir | European elections; European Parliament elections; élections européennes; Europawahl
+ue_majorite_qualifiee | proposition soumise au vote du Conseil de l'Union européenne | qualified majority; majorité qualifiée; unanimity; unanimité; Council vote
+ue_sanctions_russie | sanctions de l'Union européenne contre la Russie en vigueur ou proposées | sanctions package; paquet de sanctions; Sanktionspaket; new sanctions
+europe_formation_gouvernement | élections législatives tenues ou prévues dans une démocratie parlementaire | coalition talks; government formation; formation du gouvernement; Koalitionsverhandlungen; coalition agreement
+voix_vers_sieges | élection législative à venir | seats; sièges; Sitze; proportional representation; proportionnelle
+presidentielles_mode_de_scrutin | élection présidentielle prévue ou en cours | presidential election; élection présidentielle; présidentielle; Präsidentschaftswahl
+indonesie_presidentielle | élection présidentielle indonésienne prévue | Indonesian presidential election; élection présidentielle indonésienne; Prabowo
+japon_chambre_basse | élection de la Chambre des représentants du Japon prévue | House of Representatives; snap election; lower house election; Chambre des représentants
+australie_vote_preferentiel | élection fédérale australienne prévue | federal election; preferential voting; House of Representatives
+inde_scrutin_uninominal | élection de la Lok Sabha prévue | Lok Sabha; general election
+afrique_frontieres_coloniales | territoire ethnique africain coupé ou non par une frontière coloniale | colonial borders; frontières coloniales; ethnic violence; violences ethniques; intercommunal violence
+afrique_mines_conflits | zone minière africaine face à une variation des prix des minerais | illegal mining; artisanal mining; orpaillage; galamsey; mining conflict
+afrique_flux_financiers_illicites | économies africaines (flux financiers mesurés sur plusieurs années) | illicit financial flows; flux financiers illicites; money laundering; blanchiment
+second_tour_retournement | présidentielle à deux tours dont le premier tour est connu | runoff; second round; second tour; Stichwahl
+parlements_mode_de_scrutin | élection législative à venir | parliamentary election; élections législatives; seats; sièges
+bresil_gouverneurs_senat | élections brésiliennes des gouverneurs ou des sénateurs prévues | governor; gouverneur; senator; sénateur; governador; senador
+us_senat_cloture | texte de loi ou nomination soumis au Sénat américain | filibuster; cloture; Senate vote; vote au Sénat
+us_congres_productivite | Congrès américain en session | legislation; passed the House; passed the Senate; signed into law; projet de loi
+onu_conseil_securite_vote | projet de résolution soumis au Conseil de sécurité de l'ONU | Security Council resolution; résolution du Conseil de sécurité; veto; Sicherheitsrat
+coups_d_etat_frequence | pays exposé à une tentative de coup d'État (taux mondial ou régional) | coup d'État; coup d'Etat; coup attempt; tentative de coup; putsch; junta; junte; Putsch; Militärputsch
+chefs_d_etat_sortie_irreguliere | chef d'État ou de gouvernement au pouvoir | ousted; overthrown; renversé; assassinated; assassiné; forced to resign; démission
+us_fed_calendrier | politique monétaire américaine entre deux réunions du FOMC | FOMC; rate decision; interest rate; interest rates; taux directeur; rate cut; rate hike; Powell
+us_cour_supreme_calendrier | affaire ou pourvoi pendant devant la Cour suprême américaine | Supreme Court; Cour suprême; certiorari; justices
+us_reconciliation_budgetaire | projet budgétaire au Congrès américain | reconciliation bill; budget reconciliation; réconciliation budgétaire
+us_lois_de_finances_provisoires | exercice budgétaire fédéral américain sans lois de crédits annuelles adoptées | continuing resolution; government shutdown; shutdown; stopgap
+us_chambre_sanctions_disciplinaires | membre de la Chambre des représentants américaine en fonction | censure; censured; reprimand; reprimanded; expelled from the House
+usmca_revision_conjointe | accord USMCA en vigueur, avant ou pendant sa révision conjointe | USMCA; CUSMA; T-MEC; ACEUM
+effet_d_echeance_negociation | négociation en cours avec une date limite connue | deadline; date limite; ultimatum; Frist
+referendums_retour_statu_quo | campagne référendaire en cours sur un changement | referendum; référendum; Referendum; Volksabstimmung; Volksentscheid
+us_confirmations_delais | nomination présidentielle américaine transmise au Sénat | confirmation hearing; Senate confirmation; confirmed by the Senate; nominee
+us_entourage_rotation | conseiller principal de la Maison-Blanche ou membre du cabinet américain en fonction | chief of staff; cabinet secretary; resigns; resigned; fired; ousted from the cabinet
+us_sanctions_frequence | programme de sanctions du Trésor américain en vigueur | OFAC; Treasury sanctions; sanctioned; designated
+us_inculpation_personnalites | élu ou responsable public américain, en fonction ou ancien, non inculpé | indicted; indictment; inculpé; inculpation; grand jury
+calendriers_annonces_glissent | projet, chantier ou lancement annoncé avec une date prévue | delayed; postponed; reporté; retardé; verschoben; launch date
+coree_du_nord_essais_nucleaires | programme nucléaire nord-coréen sans essai depuis septembre 2017 | nuclear test; essai nucléaire; Atomtest; Punggye-ri
+us_ouragans_atterrissage | saison cyclonique atlantique en cours ou à venir | hurricane; ouragan; landfall; National Hurricane Center
+bolides_frequence | surveillance satellitaire des explosions de bolides dans l'atmosphère | fireball; bolide; meteor; météore; meteorite
+records_temperature_persistance | série de températures mondiale ou régionale proche de son record | record heat; record temperature; record de chaleur; hottest; Hitzerekord; warmest
+coupe_du_monde_vainqueurs_hotes | phase finale de la Coupe du monde à venir ou en cours, avec ses équipes qualifiées | World Cup; Coupe du monde; FIFA; Weltmeisterschaft
+anciens_dirigeants_sort | ancien chef d'État ou de gouvernement sorti du pouvoir | former president; ancien président; former prime minister; ancien Premier ministre; sentenced; condamné; in exile; en exil
+dow_jones_changements | composition du Dow Jones Industrial Average en vigueur | Dow Jones; DJIA; Dow Jones Industrial Average
+royaume_uni_niveau_menace | niveau national de menace terroriste du Royaume-Uni en vigueur | threat level; niveau de menace; JTAC; terror threat
+schengen_controles_interieurs | contrôle temporaire aux frontières intérieures de Schengen en vigueur ou notifié | border controls; contrôles aux frontières; Grenzkontrollen; Schengen
+opep_departs | pays membre de l'OPEP | OPEC; OPEP; leave OPEC; quitte l'OPEP; OPEC+
+royal_mail_hausses_tarifs | tarifs de Royal Mail en vigueur | Royal Mail; stamp price; stamp prices; first class stamp
+papes_voyages | pape en fonction | papal visit; visite du pape; apostolic journey; Papstreise; Pope Leo
+sommets_etats_unis_russie | présidents américain et russe en fonction, sans sommet annoncé | summit; sommet; Gipfel; Gipfeltreffen
+seuil_chaleur_mais_soja_coton | saison de culture en cours (mars-août pour le maïs et le soja, avril-octobre pour le coton) avec des journées chaudes | heat stress; crop yields; corn; soybeans; cotton; maïs; soja
+seuil_chaleur_ble | blé en fin de cycle (floraison, remplissage du grain) exposé à des maxima élevés | wheat; blé; Weizen; heat stress; heatwave; canicule

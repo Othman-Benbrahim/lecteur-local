@@ -14,7 +14,7 @@
 + | Landtagswahl 2026 | de | calendriers-echeances:elections |  | correctiv.org
 + | Landtagswahl Sachsen-Anhalt | de | calendriers-echeances:elections |  | correctiv.org
 + | Landtagswahlen | de | calendriers-echeances:elections |  | correctiv.org
-+ | présidentielle | fr | calendriers-echeances:elections |  | fr.hespress.com
++ | présidentielle | fr | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle presidentielles_mode_de_scrutin | fr.hespress.com
 + | présidentielle 2027 | fr | calendriers-echeances:elections |  | tsa-algerie.com
 + | wahl | de | calendriers-echeances:elections |  | correctiv.org
 + | AFCO | fr | calendriers-echeances:parlements | Parlement européen, commission des affaires constitutionnelles (acteur institutionnel) | europarl.europa.eu, multimedia.europarl.europa.eu
@@ -571,7 +571,7 @@
 + | us | en | relief-et-montagnes:seismes_volcans | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
 + | Commerce extérieur/international | fr | rivalite-sino-americaine:commerce |  | europarl.europa.eu
 + | Trade | en | rivalite-sino-americaine:commerce | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu
-+ | Sommet | fr | rivalite-sino-americaine:diplomatie | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | fr.hespress.com
++ | Sommet | fr | rivalite-sino-americaine:diplomatie;russie-ukraine:negociations | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; indice de la règle sommets_etats_unis_russie | fr.hespress.com
 + | xi | fr | rivalite-sino-americaine:diplomatie | personnalité publique : Xi Jinping ? — à confirmer (étiquette d'une lettre) | fr.hespress.com
 + | Trump et Poutine | fr | rivalite-sino-americaine:diplomatie;russie-ukraine:negociations |  | fr.hespress.com
 + | antimony | en | rivalite-sino-americaine:terres_rares |  | canadianminingjournal.com
@@ -1029,7 +1029,7 @@
 - | Uman | en |  | translittération rare, et nom d'une ville d'Ukraine : compterait autre chose que l'acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
 - | USDT | en |  | désigne le stablecoin Tether : compterait autre chose que l'acteur ; wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
 + | OPEC Plus | en | calendriers-echeances:banques_centrales;energie-mondiale:production | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
-+ | OPEC+ | en | calendriers-echeances:banques_centrales;energie-mondiale:production | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
++ | OPEC+ | en | calendriers-echeances:banques_centrales;energie-mondiale:production;energie-mondiale:decisions | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) ; indice de la règle opep_departs | wikidata.org
 + | OPEP+ | fr | calendriers-echeances:banques_centrales;energie-mondiale:production | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
 + | FMI | fr | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
 + | Fonds monétaire international | fr | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
@@ -1380,3 +1380,267 @@
 + | Autorité du canal de Panama | fr | transport-maritime:detroits | wikidata:Q2048917 (agence gouvernementale responsable de la gestion et de l'exp) | wikidata.org
 + | Autorité Du Canal De Panamá | fr | transport-maritime:detroits | wikidata:Q2048917 (agence gouvernementale responsable de la gestion et de l'exp) | wikidata.org
 + | Panama Canal Authority | en | transport-maritime:detroits | wikidata:Q2048917 (agence gouvernementale responsable de la gestion et de l'exp) | wikidata.org
++ | Electoral College | en | politique-americaine:regles_electorales | indice de la règle us_president_college (décision de l'auteur, 2 h 52) | indices
++ | collège électoral | fr | politique-americaine:regles_electorales | indice de la règle us_president_college (décision de l'auteur, 2 h 52) | indices
++ | electoral votes | en | politique-americaine:regles_electorales | indice de la règle us_president_college (décision de l'auteur, 2 h 52) | indices
++ | grands électeurs | fr | politique-americaine:regles_electorales | indice de la règle us_president_college (décision de l'auteur, 2 h 52) | indices
++ | primary runoff | en | politique-americaine:regles_electorales | indice de la règle us_primaires_second_tour (décision de l'auteur, 2 h 52) | indices
++ | runoff election | en | politique-americaine:regles_electorales | indice de la règle us_primaires_second_tour (décision de l'auteur, 2 h 52) | indices
++ | second tour de la primaire | en | politique-americaine:regles_electorales | indice de la règle us_primaires_second_tour (décision de l'auteur, 2 h 52) | indices
++ | ranked-choice | en | politique-americaine:regles_electorales | indice de la règle us_primaires_systemes_speciaux (décision de l'auteur, 2 h 52) | indices
++ | ranked choice voting | en | politique-americaine:regles_electorales | indice de la règle us_primaires_systemes_speciaux (décision de l'auteur, 2 h 52) | indices
++ | top-two primary | en | politique-americaine:regles_electorales | indice de la règle us_primaires_systemes_speciaux (décision de l'auteur, 2 h 52) | indices
++ | jungle primary | en | politique-americaine:regles_electorales | indice de la règle us_primaires_systemes_speciaux (décision de l'auteur, 2 h 52) | indices
++ | poll | en | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | indice de la règle us_erreur_sondages_par_echelle (décision de l'auteur, 2 h 52) ; indice de la règle us_erreur_selon_temps_restant ; indice de la règle sondages_erreur_comparee | indices
++ | polls | en | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | indice de la règle us_erreur_sondages_par_echelle (décision de l'auteur, 2 h 52) ; indice de la règle us_erreur_selon_temps_restant ; indice de la règle sondages_erreur_comparee | indices
++ | polling | en | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | indice de la règle us_erreur_sondages_par_echelle (décision de l'auteur, 2 h 52) ; indice de la règle us_erreur_selon_temps_restant ; indice de la règle sondages_erreur_comparee | indices
++ | pollster | en | politique-americaine:elections | indice de la règle us_erreur_sondages_par_echelle (décision de l'auteur, 2 h 52) | indices
++ | sondage | fr | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | indice de la règle us_erreur_selon_temps_restant (décision de l'auteur, 2 h 52) ; indice de la règle sondages_erreur_comparee | indices
++ | sondages | fr | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | indice de la règle us_erreur_selon_temps_restant (décision de l'auteur, 2 h 52) ; indice de la règle sondages_erreur_comparee | indices
++ | Umfrage | de | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | indice de la règle us_erreur_selon_temps_restant (décision de l'auteur, 2 h 52) ; indice de la règle sondages_erreur_comparee | indices
++ | Umfragen | de | politique-americaine:elections;calendriers-echeances:elections;humain:opinion_publique | indice de la règle us_erreur_selon_temps_restant (décision de l'auteur, 2 h 52) ; indice de la règle sondages_erreur_comparee | indices
++ | incumbent | en | politique-americaine:elections | indice de la règle us_avantage_sortant_congres (décision de l'auteur, 2 h 52) | indices
++ | reelection | en | politique-americaine:elections | indice de la règle us_avantage_sortant_congres (décision de l'auteur, 2 h 52) | indices
++ | re-election | en | politique-americaine:elections | indice de la règle us_avantage_sortant_congres (décision de l'auteur, 2 h 52) | indices
++ | seeks reelection | en | politique-americaine:elections | indice de la règle us_avantage_sortant_congres (décision de l'auteur, 2 h 52) | indices
++ | protesters | en | humain:passage_acte;politique-interieure:regime | indice de la règle regimes_fermes_contestation (décision de l'auteur, 2 h 52) | indices
++ | opposition protests | en | humain:passage_acte;politique-interieure:regime | indice de la règle regimes_fermes_contestation (décision de l'auteur, 2 h 52) | indices
++ | manifestants | en | humain:passage_acte;politique-interieure:regime | indice de la règle regimes_fermes_contestation (décision de l'auteur, 2 h 52) | indices
++ | Demonstranten | de | humain:passage_acte;politique-interieure:regime | indice de la règle regimes_fermes_contestation (décision de l'auteur, 2 h 52) | indices
++ | crackdown | en | humain:passage_acte;politique-interieure:regime | indice de la règle regimes_fermes_contestation (décision de l'auteur, 2 h 52) | indices
++ | répression | fr | humain:passage_acte;politique-interieure:regime | indice de la règle regimes_fermes_contestation (décision de l'auteur, 2 h 52) | indices
++ | term limit | en | politique-interieure:dirigeants;humain:hierarchie | indice de la règle afrique_limites_de_mandat (décision de l'auteur, 2 h 52) | indices
++ | term limits | en | politique-interieure:dirigeants;humain:hierarchie | indice de la règle afrique_limites_de_mandat (décision de l'auteur, 2 h 52) | indices
++ | third term | en | politique-interieure:dirigeants;humain:hierarchie | indice de la règle afrique_limites_de_mandat (décision de l'auteur, 2 h 52) | indices
++ | troisième mandat | fr | politique-interieure:dirigeants;humain:hierarchie | indice de la règle afrique_limites_de_mandat (décision de l'auteur, 2 h 52) | indices
++ | limite de mandats | en | politique-interieure:dirigeants;humain:hierarchie | indice de la règle afrique_limites_de_mandat (décision de l'auteur, 2 h 52) | indices
++ | constitutional amendment | en | politique-interieure:dirigeants;humain:hierarchie | indice de la règle afrique_limites_de_mandat (décision de l'auteur, 2 h 52) | indices
++ | législatives | fr | calendriers-echeances:elections;politique-interieure:partis | indice de la règle france_legislatives (décision de l'auteur, 2 h 52) | indices
++ | élections législatives | fr | calendriers-echeances:elections;politique-interieure:partis | indice de la règle france_legislatives (décision de l'auteur, 2 h 52) ; indice de la règle seuils_parlements_nationaux_europe ; indice de la règle parlements_mode_de_scrutin | indices
++ | Assemblée nationale | fr | calendriers-echeances:elections;politique-interieure:partis | indice de la règle france_legislatives (décision de l'auteur, 2 h 52) | indices
++ | dissolution | fr | calendriers-echeances:elections;politique-interieure:partis | indice de la règle france_legislatives (décision de l'auteur, 2 h 52) | indices
++ | parliamentary election | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle seuils_parlements_nationaux_europe (décision de l'auteur, 2 h 52) ; indice de la règle parlements_mode_de_scrutin | indices
++ | Bundestagswahl | de | calendriers-echeances:elections;politique-interieure:partis | indice de la règle seuils_parlements_nationaux_europe (décision de l'auteur, 2 h 52) | indices
++ | Parlamentswahl | de | calendriers-echeances:elections;politique-interieure:partis | indice de la règle seuils_parlements_nationaux_europe (décision de l'auteur, 2 h 52) | indices
++ | electoral threshold | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle seuils_parlements_nationaux_europe (décision de l'auteur, 2 h 52) | indices
++ | seuil électoral | fr | calendriers-echeances:elections;politique-interieure:partis | indice de la règle seuils_parlements_nationaux_europe (décision de l'auteur, 2 h 52) | indices
++ | European elections | en | calendriers-echeances:elections;union-europeenne:institutions | indice de la règle seuils_elections_europeennes (décision de l'auteur, 2 h 52) | indices
++ | European Parliament elections | en | calendriers-echeances:elections;union-europeenne:institutions | indice de la règle seuils_elections_europeennes (décision de l'auteur, 2 h 52) | indices
++ | élections européennes | fr | calendriers-echeances:elections;union-europeenne:institutions | indice de la règle seuils_elections_europeennes (décision de l'auteur, 2 h 52) | indices
++ | Europawahl | de | calendriers-echeances:elections;union-europeenne:institutions | indice de la règle seuils_elections_europeennes (décision de l'auteur, 2 h 52) | indices
++ | qualified majority | en | union-europeenne:institutions;union-europeenne:politiques_communes | indice de la règle ue_majorite_qualifiee (décision de l'auteur, 2 h 52) | indices
++ | majorité qualifiée | fr | union-europeenne:institutions;union-europeenne:politiques_communes | indice de la règle ue_majorite_qualifiee (décision de l'auteur, 2 h 52) | indices
++ | unanimity | en | union-europeenne:institutions;union-europeenne:politiques_communes | indice de la règle ue_majorite_qualifiee (décision de l'auteur, 2 h 52) | indices
++ | unanimité | fr | union-europeenne:institutions;union-europeenne:politiques_communes | indice de la règle ue_majorite_qualifiee (décision de l'auteur, 2 h 52) | indices
++ | Council vote | en | union-europeenne:institutions;union-europeenne:politiques_communes | indice de la règle ue_majorite_qualifiee (décision de l'auteur, 2 h 52) | indices
++ | sanctions package | en | russie-ukraine:sanctions;union-europeenne:relations_exterieures | indice de la règle ue_sanctions_russie (décision de l'auteur, 2 h 52) | indices
++ | paquet de sanctions | en | russie-ukraine:sanctions;union-europeenne:relations_exterieures | indice de la règle ue_sanctions_russie (décision de l'auteur, 2 h 52) | indices
++ | Sanktionspaket | de | russie-ukraine:sanctions;union-europeenne:relations_exterieures | indice de la règle ue_sanctions_russie (décision de l'auteur, 2 h 52) | indices
++ | new sanctions | en | russie-ukraine:sanctions;union-europeenne:relations_exterieures | indice de la règle ue_sanctions_russie (décision de l'auteur, 2 h 52) | indices
++ | coalition talks | en | politique-interieure:gouvernement;politique-interieure:partis | indice de la règle europe_formation_gouvernement (décision de l'auteur, 2 h 52) | indices
++ | government formation | en | politique-interieure:gouvernement;politique-interieure:partis | indice de la règle europe_formation_gouvernement (décision de l'auteur, 2 h 52) | indices
++ | formation du gouvernement | en | politique-interieure:gouvernement;politique-interieure:partis | indice de la règle europe_formation_gouvernement (décision de l'auteur, 2 h 52) | indices
++ | Koalitionsverhandlungen | de | politique-interieure:gouvernement;politique-interieure:partis | indice de la règle europe_formation_gouvernement (décision de l'auteur, 2 h 52) | indices
++ | coalition agreement | en | politique-interieure:gouvernement;politique-interieure:partis | indice de la règle europe_formation_gouvernement (décision de l'auteur, 2 h 52) | indices
++ | seats | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle voix_vers_sieges (décision de l'auteur, 2 h 52) ; indice de la règle parlements_mode_de_scrutin | indices
++ | sièges | fr | calendriers-echeances:elections;politique-interieure:partis | indice de la règle voix_vers_sieges (décision de l'auteur, 2 h 52) ; indice de la règle parlements_mode_de_scrutin | indices
++ | Sitze | de | calendriers-echeances:elections;politique-interieure:partis | indice de la règle voix_vers_sieges (décision de l'auteur, 2 h 52) | indices
++ | proportional representation | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle voix_vers_sieges (décision de l'auteur, 2 h 52) | indices
++ | proportionnelle | fr | calendriers-echeances:elections;politique-interieure:partis | indice de la règle voix_vers_sieges (décision de l'auteur, 2 h 52) | indices
++ | presidential election | en | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle presidentielles_mode_de_scrutin (décision de l'auteur, 2 h 52) | indices
++ | élection présidentielle | fr | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle presidentielles_mode_de_scrutin (décision de l'auteur, 2 h 52) | indices
++ | Präsidentschaftswahl | de | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle presidentielles_mode_de_scrutin (décision de l'auteur, 2 h 52) | indices
++ | Indonesian presidential election | en | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle indonesie_presidentielle (décision de l'auteur, 2 h 52) | indices
++ | élection présidentielle indonésienne | fr | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle indonesie_presidentielle (décision de l'auteur, 2 h 52) | indices
++ | Prabowo | en | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle indonesie_presidentielle (décision de l'auteur, 2 h 52) | indices
++ | House of Representatives | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle japon_chambre_basse (décision de l'auteur, 2 h 52) ; indice de la règle australie_vote_preferentiel | indices
++ | snap election | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle japon_chambre_basse (décision de l'auteur, 2 h 52) | indices
++ | lower house election | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle japon_chambre_basse (décision de l'auteur, 2 h 52) | indices
++ | Chambre des représentants | fr | calendriers-echeances:elections;politique-interieure:partis | indice de la règle japon_chambre_basse (décision de l'auteur, 2 h 52) | indices
++ | federal election | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle australie_vote_preferentiel (décision de l'auteur, 2 h 52) | indices
++ | preferential voting | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle australie_vote_preferentiel (décision de l'auteur, 2 h 52) | indices
++ | Lok Sabha | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle inde_scrutin_uninominal (décision de l'auteur, 2 h 52) | indices
++ | general election | en | calendriers-echeances:elections;politique-interieure:partis | indice de la règle inde_scrutin_uninominal (décision de l'auteur, 2 h 52) | indices
++ | colonial borders | en | relief-et-montagnes:routes_frontieres;humain:nous_eux | indice de la règle afrique_frontieres_coloniales (décision de l'auteur, 2 h 52) | indices
++ | frontières coloniales | fr | relief-et-montagnes:routes_frontieres;humain:nous_eux | indice de la règle afrique_frontieres_coloniales (décision de l'auteur, 2 h 52) | indices
++ | ethnic violence | en | relief-et-montagnes:routes_frontieres;humain:nous_eux | indice de la règle afrique_frontieres_coloniales (décision de l'auteur, 2 h 52) | indices
++ | violences ethniques | en | relief-et-montagnes:routes_frontieres;humain:nous_eux | indice de la règle afrique_frontieres_coloniales (décision de l'auteur, 2 h 52) | indices
++ | intercommunal violence | en | relief-et-montagnes:routes_frontieres;humain:nous_eux | indice de la règle afrique_frontieres_coloniales (décision de l'auteur, 2 h 52) | indices
++ | illegal mining | en | dette-emergents:gisements;dette-emergents:matieres_premieres | indice de la règle afrique_mines_conflits (décision de l'auteur, 2 h 52) | indices
++ | artisanal mining | en | dette-emergents:gisements;dette-emergents:matieres_premieres | indice de la règle afrique_mines_conflits (décision de l'auteur, 2 h 52) | indices
++ | orpaillage | fr | dette-emergents:gisements;dette-emergents:matieres_premieres | indice de la règle afrique_mines_conflits (décision de l'auteur, 2 h 52) | indices
++ | galamsey | en | dette-emergents:gisements;dette-emergents:matieres_premieres | indice de la règle afrique_mines_conflits (décision de l'auteur, 2 h 52) | indices
++ | mining conflict | en | dette-emergents:gisements;dette-emergents:matieres_premieres | indice de la règle afrique_mines_conflits (décision de l'auteur, 2 h 52) | indices
++ | illicit financial flows | en | securite-publique:sanctions;securite-publique:corruption | indice de la règle afrique_flux_financiers_illicites (décision de l'auteur, 2 h 52) | indices
++ | flux financiers illicites | en | securite-publique:sanctions;securite-publique:corruption | indice de la règle afrique_flux_financiers_illicites (décision de l'auteur, 2 h 52) | indices
++ | money laundering | en | securite-publique:sanctions;securite-publique:corruption | indice de la règle afrique_flux_financiers_illicites (décision de l'auteur, 2 h 52) | indices
++ | blanchiment | fr | securite-publique:sanctions;securite-publique:corruption | indice de la règle afrique_flux_financiers_illicites (décision de l'auteur, 2 h 52) | indices
++ | runoff | en | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle second_tour_retournement (décision de l'auteur, 2 h 52) | indices
++ | second round | en | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle second_tour_retournement (décision de l'auteur, 2 h 52) | indices
++ | second tour | en | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle second_tour_retournement (décision de l'auteur, 2 h 52) | indices
++ | Stichwahl | de | calendriers-echeances:elections;politique-interieure:dirigeants | indice de la règle second_tour_retournement (décision de l'auteur, 2 h 52) | indices
++ | governor | en | elections-amerique-latine:scrutins;elections-amerique-latine:partis_gouverneurs | indice de la règle bresil_gouverneurs_senat (décision de l'auteur, 2 h 52) | indices
++ | gouverneur | fr | elections-amerique-latine:scrutins;elections-amerique-latine:partis_gouverneurs | indice de la règle bresil_gouverneurs_senat (décision de l'auteur, 2 h 52) | indices
++ | senator | en | elections-amerique-latine:scrutins;elections-amerique-latine:partis_gouverneurs | indice de la règle bresil_gouverneurs_senat (décision de l'auteur, 2 h 52) | indices
++ | sénateur | fr | elections-amerique-latine:scrutins;elections-amerique-latine:partis_gouverneurs | indice de la règle bresil_gouverneurs_senat (décision de l'auteur, 2 h 52) | indices
++ | governador | en | elections-amerique-latine:scrutins;elections-amerique-latine:partis_gouverneurs | indice de la règle bresil_gouverneurs_senat (décision de l'auteur, 2 h 52) | indices
++ | senador | en | elections-amerique-latine:scrutins;elections-amerique-latine:partis_gouverneurs | indice de la règle bresil_gouverneurs_senat (décision de l'auteur, 2 h 52) | indices
++ | filibuster | en | politique-americaine:congres | indice de la règle us_senat_cloture (décision de l'auteur, 2 h 52) | indices
++ | cloture | en | politique-americaine:congres | indice de la règle us_senat_cloture (décision de l'auteur, 2 h 52) | indices
++ | Senate vote | en | politique-americaine:congres | indice de la règle us_senat_cloture (décision de l'auteur, 2 h 52) | indices
++ | vote au Sénat | fr | politique-americaine:congres | indice de la règle us_senat_cloture (décision de l'auteur, 2 h 52) | indices
++ | legislation | en | politique-americaine:congres | indice de la règle us_congres_productivite (décision de l'auteur, 2 h 52) | indices
++ | passed the House | en | politique-americaine:congres | indice de la règle us_congres_productivite (décision de l'auteur, 2 h 52) | indices
++ | passed the Senate | en | politique-americaine:congres | indice de la règle us_congres_productivite (décision de l'auteur, 2 h 52) | indices
++ | signed into law | en | politique-americaine:congres | indice de la règle us_congres_productivite (décision de l'auteur, 2 h 52) | indices
++ | projet de loi | en | politique-americaine:congres | indice de la règle us_congres_productivite (décision de l'auteur, 2 h 52) | indices
++ | Security Council resolution | en | iran-nucleaire:conseil_securite;non-proliferation:conseil_securite | indice de la règle onu_conseil_securite_vote (décision de l'auteur, 2 h 52) | indices
++ | résolution du Conseil de sécurité | fr | iran-nucleaire:conseil_securite;non-proliferation:conseil_securite | indice de la règle onu_conseil_securite_vote (décision de l'auteur, 2 h 52) | indices
++ | veto | fr | iran-nucleaire:conseil_securite;non-proliferation:conseil_securite | indice de la règle onu_conseil_securite_vote (décision de l'auteur, 2 h 52) | indices
++ | Sicherheitsrat | de | iran-nucleaire:conseil_securite;non-proliferation:conseil_securite | indice de la règle onu_conseil_securite_vote (décision de l'auteur, 2 h 52) | indices
++ | coup d'État | fr | humain:hierarchie | indice de la règle coups_d_etat_frequence (décision de l'auteur, 2 h 52) | indices
++ | coup d'Etat | en | humain:hierarchie | indice de la règle coups_d_etat_frequence (décision de l'auteur, 2 h 52) | indices
++ | coup attempt | en | humain:hierarchie | indice de la règle coups_d_etat_frequence (décision de l'auteur, 2 h 52) | indices
++ | tentative de coup | en | humain:hierarchie | indice de la règle coups_d_etat_frequence (décision de l'auteur, 2 h 52) | indices
++ | putsch | en | humain:hierarchie | indice de la règle coups_d_etat_frequence (décision de l'auteur, 2 h 52) | indices
++ | junta | en | humain:hierarchie | indice de la règle coups_d_etat_frequence (décision de l'auteur, 2 h 52) | indices
++ | junte | fr | humain:hierarchie | indice de la règle coups_d_etat_frequence (décision de l'auteur, 2 h 52) | indices
++ | Militärputsch | de | humain:hierarchie | indice de la règle coups_d_etat_frequence (décision de l'auteur, 2 h 52) | indices
++ | ousted | en | humain:hierarchie | indice de la règle chefs_d_etat_sortie_irreguliere (décision de l'auteur, 2 h 52) | indices
++ | overthrown | en | humain:hierarchie | indice de la règle chefs_d_etat_sortie_irreguliere (décision de l'auteur, 2 h 52) | indices
++ | renversé | fr | humain:hierarchie | indice de la règle chefs_d_etat_sortie_irreguliere (décision de l'auteur, 2 h 52) | indices
++ | assassinated | en | humain:hierarchie | indice de la règle chefs_d_etat_sortie_irreguliere (décision de l'auteur, 2 h 52) | indices
++ | assassiné | fr | humain:hierarchie | indice de la règle chefs_d_etat_sortie_irreguliere (décision de l'auteur, 2 h 52) | indices
++ | forced to resign | en | humain:hierarchie | indice de la règle chefs_d_etat_sortie_irreguliere (décision de l'auteur, 2 h 52) | indices
++ | démission | fr | humain:hierarchie | indice de la règle chefs_d_etat_sortie_irreguliere (décision de l'auteur, 2 h 52) | indices
++ | FOMC | en | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales | indice de la règle us_fed_calendrier (décision de l'auteur, 2 h 52) | indices
++ | rate decision | en | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales | indice de la règle us_fed_calendrier (décision de l'auteur, 2 h 52) | indices
++ | interest rate | en | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales | indice de la règle us_fed_calendrier (décision de l'auteur, 2 h 52) | indices
++ | interest rates | en | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales | indice de la règle us_fed_calendrier (décision de l'auteur, 2 h 52) | indices
++ | taux directeur | en | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales | indice de la règle us_fed_calendrier (décision de l'auteur, 2 h 52) | indices
++ | rate cut | en | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales | indice de la règle us_fed_calendrier (décision de l'auteur, 2 h 52) | indices
++ | rate hike | en | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales | indice de la règle us_fed_calendrier (décision de l'auteur, 2 h 52) | indices
++ | Powell | en | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales | indice de la règle us_fed_calendrier (décision de l'auteur, 2 h 52) | indices
++ | Supreme Court | en | politique-americaine:tribunaux;calendriers-echeances:dates_limites | indice de la règle us_cour_supreme_calendrier (décision de l'auteur, 2 h 52) | indices
++ | Cour suprême | en | politique-americaine:tribunaux;calendriers-echeances:dates_limites | indice de la règle us_cour_supreme_calendrier (décision de l'auteur, 2 h 52) | indices
++ | certiorari | en | politique-americaine:tribunaux;calendriers-echeances:dates_limites | indice de la règle us_cour_supreme_calendrier (décision de l'auteur, 2 h 52) | indices
++ | justices | en | politique-americaine:tribunaux;calendriers-echeances:dates_limites | indice de la règle us_cour_supreme_calendrier (décision de l'auteur, 2 h 52) | indices
++ | reconciliation bill | en | politique-americaine:congres;politique-americaine:budget | indice de la règle us_reconciliation_budgetaire (décision de l'auteur, 2 h 52) | indices
++ | budget reconciliation | en | politique-americaine:congres;politique-americaine:budget | indice de la règle us_reconciliation_budgetaire (décision de l'auteur, 2 h 52) | indices
++ | réconciliation budgétaire | fr | politique-americaine:congres;politique-americaine:budget | indice de la règle us_reconciliation_budgetaire (décision de l'auteur, 2 h 52) | indices
++ | continuing resolution | en | politique-americaine:congres;politique-americaine:budget;calendriers-echeances:dates_limites | indice de la règle us_lois_de_finances_provisoires (décision de l'auteur, 2 h 52) | indices
++ | government shutdown | en | politique-americaine:congres;politique-americaine:budget;calendriers-echeances:dates_limites | indice de la règle us_lois_de_finances_provisoires (décision de l'auteur, 2 h 52) | indices
++ | shutdown | en | politique-americaine:congres;politique-americaine:budget;calendriers-echeances:dates_limites | indice de la règle us_lois_de_finances_provisoires (décision de l'auteur, 2 h 52) | indices
++ | stopgap | en | politique-americaine:congres;politique-americaine:budget;calendriers-echeances:dates_limites | indice de la règle us_lois_de_finances_provisoires (décision de l'auteur, 2 h 52) | indices
++ | censure | en | politique-americaine:congres | indice de la règle us_chambre_sanctions_disciplinaires (décision de l'auteur, 2 h 52) | indices
++ | censured | en | politique-americaine:congres | indice de la règle us_chambre_sanctions_disciplinaires (décision de l'auteur, 2 h 52) | indices
++ | reprimand | en | politique-americaine:congres | indice de la règle us_chambre_sanctions_disciplinaires (décision de l'auteur, 2 h 52) | indices
++ | reprimanded | en | politique-americaine:congres | indice de la règle us_chambre_sanctions_disciplinaires (décision de l'auteur, 2 h 52) | indices
++ | expelled from the House | en | politique-americaine:congres | indice de la règle us_chambre_sanctions_disciplinaires (décision de l'auteur, 2 h 52) | indices
++ | USMCA | en | politique-americaine:commerce;calendriers-echeances:dates_limites | indice de la règle usmca_revision_conjointe (décision de l'auteur, 2 h 52) | indices
++ | CUSMA | en | politique-americaine:commerce;calendriers-echeances:dates_limites | indice de la règle usmca_revision_conjointe (décision de l'auteur, 2 h 52) | indices
++ | T-MEC | en | politique-americaine:commerce;calendriers-echeances:dates_limites | indice de la règle usmca_revision_conjointe (décision de l'auteur, 2 h 52) | indices
++ | ACEUM | en | politique-americaine:commerce;calendriers-echeances:dates_limites | indice de la règle usmca_revision_conjointe (décision de l'auteur, 2 h 52) | indices
++ | deadline | en | calendriers-echeances:dates_limites;calendriers-echeances:anticipations | indice de la règle effet_d_echeance_negociation (décision de l'auteur, 2 h 52) | indices
++ | date limite | en | calendriers-echeances:dates_limites;calendriers-echeances:anticipations | indice de la règle effet_d_echeance_negociation (décision de l'auteur, 2 h 52) | indices
++ | ultimatum | en | calendriers-echeances:dates_limites;calendriers-echeances:anticipations | indice de la règle effet_d_echeance_negociation (décision de l'auteur, 2 h 52) | indices
++ | Frist | de | calendriers-echeances:dates_limites;calendriers-echeances:anticipations | indice de la règle effet_d_echeance_negociation (décision de l'auteur, 2 h 52) | indices
++ | referendum | en | humain:risque_percu;calendriers-echeances:elections | indice de la règle referendums_retour_statu_quo (décision de l'auteur, 2 h 52) | indices
++ | référendum | fr | humain:risque_percu;calendriers-echeances:elections | indice de la règle referendums_retour_statu_quo (décision de l'auteur, 2 h 52) | indices
++ | Volksabstimmung | de | humain:risque_percu;calendriers-echeances:elections | indice de la règle referendums_retour_statu_quo (décision de l'auteur, 2 h 52) | indices
++ | Volksentscheid | de | humain:risque_percu;calendriers-echeances:elections | indice de la règle referendums_retour_statu_quo (décision de l'auteur, 2 h 52) | indices
++ | confirmation hearing | en | politique-americaine:congres;politique-americaine:executif | indice de la règle us_confirmations_delais (décision de l'auteur, 2 h 52) | indices
++ | Senate confirmation | en | politique-americaine:congres;politique-americaine:executif | indice de la règle us_confirmations_delais (décision de l'auteur, 2 h 52) | indices
++ | confirmed by the Senate | en | politique-americaine:congres;politique-americaine:executif | indice de la règle us_confirmations_delais (décision de l'auteur, 2 h 52) | indices
++ | nominee | en | politique-americaine:congres;politique-americaine:executif | indice de la règle us_confirmations_delais (décision de l'auteur, 2 h 52) | indices
++ | chief of staff | en | politique-americaine:entourage;politique-americaine:executif | indice de la règle us_entourage_rotation (décision de l'auteur, 2 h 52) | indices
++ | cabinet secretary | en | politique-americaine:entourage;politique-americaine:executif | indice de la règle us_entourage_rotation (décision de l'auteur, 2 h 52) | indices
++ | resigns | en | politique-americaine:entourage;politique-americaine:executif | indice de la règle us_entourage_rotation (décision de l'auteur, 2 h 52) | indices
++ | resigned | en | politique-americaine:entourage;politique-americaine:executif | indice de la règle us_entourage_rotation (décision de l'auteur, 2 h 52) | indices
++ | fired | en | politique-americaine:entourage;politique-americaine:executif | indice de la règle us_entourage_rotation (décision de l'auteur, 2 h 52) | indices
++ | ousted from the cabinet | en | politique-americaine:entourage;politique-americaine:executif | indice de la règle us_entourage_rotation (décision de l'auteur, 2 h 52) | indices
++ | OFAC | en | politique-americaine:sanctions | indice de la règle us_sanctions_frequence (décision de l'auteur, 2 h 52) | indices
++ | Treasury sanctions | en | politique-americaine:sanctions | indice de la règle us_sanctions_frequence (décision de l'auteur, 2 h 52) | indices
++ | sanctioned | en | politique-americaine:sanctions | indice de la règle us_sanctions_frequence (décision de l'auteur, 2 h 52) | indices
++ | designated | en | politique-americaine:sanctions | indice de la règle us_sanctions_frequence (décision de l'auteur, 2 h 52) | indices
++ | indicted | en | politique-americaine:tribunaux;politique-americaine:executif | indice de la règle us_inculpation_personnalites (décision de l'auteur, 2 h 52) | indices
++ | indictment | en | politique-americaine:tribunaux;politique-americaine:executif | indice de la règle us_inculpation_personnalites (décision de l'auteur, 2 h 52) | indices
++ | inculpé | fr | politique-americaine:tribunaux;politique-americaine:executif | indice de la règle us_inculpation_personnalites (décision de l'auteur, 2 h 52) | indices
++ | inculpation | fr | politique-americaine:tribunaux;politique-americaine:executif | indice de la règle us_inculpation_personnalites (décision de l'auteur, 2 h 52) | indices
++ | grand jury | en | politique-americaine:tribunaux;politique-americaine:executif | indice de la règle us_inculpation_personnalites (décision de l'auteur, 2 h 52) | indices
++ | delayed | en | calendriers-echeances:anticipations;calendriers-echeances:dates_limites | indice de la règle calendriers_annonces_glissent (décision de l'auteur, 2 h 52) | indices
++ | postponed | en | calendriers-echeances:anticipations;calendriers-echeances:dates_limites | indice de la règle calendriers_annonces_glissent (décision de l'auteur, 2 h 52) | indices
++ | reporté | fr | calendriers-echeances:anticipations;calendriers-echeances:dates_limites | indice de la règle calendriers_annonces_glissent (décision de l'auteur, 2 h 52) | indices
++ | retardé | fr | calendriers-echeances:anticipations;calendriers-echeances:dates_limites | indice de la règle calendriers_annonces_glissent (décision de l'auteur, 2 h 52) | indices
++ | verschoben | de | calendriers-echeances:anticipations;calendriers-echeances:dates_limites | indice de la règle calendriers_annonces_glissent (décision de l'auteur, 2 h 52) | indices
++ | launch date | en | calendriers-echeances:anticipations;calendriers-echeances:dates_limites | indice de la règle calendriers_annonces_glissent (décision de l'auteur, 2 h 52) | indices
++ | nuclear test | en | non-proliferation:etats_du_seuil;non-proliferation:dissuasion | indice de la règle coree_du_nord_essais_nucleaires (décision de l'auteur, 2 h 52) | indices
++ | essai nucléaire | fr | non-proliferation:etats_du_seuil;non-proliferation:dissuasion | indice de la règle coree_du_nord_essais_nucleaires (décision de l'auteur, 2 h 52) | indices
++ | Atomtest | de | non-proliferation:etats_du_seuil;non-proliferation:dissuasion | indice de la règle coree_du_nord_essais_nucleaires (décision de l'auteur, 2 h 52) | indices
++ | Punggye-ri | en | non-proliferation:etats_du_seuil;non-proliferation:dissuasion | indice de la règle coree_du_nord_essais_nucleaires (décision de l'auteur, 2 h 52) | indices
++ | hurricane | en | climat-extremes:tempetes;climat-extremes:saisons | indice de la règle us_ouragans_atterrissage (décision de l'auteur, 2 h 52) | indices
++ | ouragan | fr | climat-extremes:tempetes;climat-extremes:saisons | indice de la règle us_ouragans_atterrissage (décision de l'auteur, 2 h 52) | indices
++ | landfall | en | climat-extremes:tempetes;climat-extremes:saisons | indice de la règle us_ouragans_atterrissage (décision de l'auteur, 2 h 52) | indices
++ | National Hurricane Center | en | climat-extremes:tempetes;climat-extremes:saisons | indice de la règle us_ouragans_atterrissage (décision de l'auteur, 2 h 52) | indices
++ | fireball | en | soleil-espace:meteorites | indice de la règle bolides_frequence (décision de l'auteur, 2 h 52) | indices
++ | bolide | fr | soleil-espace:meteorites | indice de la règle bolides_frequence (décision de l'auteur, 2 h 52) | indices
++ | meteor | en | soleil-espace:meteorites | indice de la règle bolides_frequence (décision de l'auteur, 2 h 52) | indices
++ | météore | fr | soleil-espace:meteorites | indice de la règle bolides_frequence (décision de l'auteur, 2 h 52) | indices
++ | meteorite | en | soleil-espace:meteorites | indice de la règle bolides_frequence (décision de l'auteur, 2 h 52) | indices
++ | record heat | en | climat-extremes:tendance;climat-extremes:oceans | indice de la règle records_temperature_persistance (décision de l'auteur, 2 h 52) | indices
++ | record temperature | en | climat-extremes:tendance;climat-extremes:oceans | indice de la règle records_temperature_persistance (décision de l'auteur, 2 h 52) | indices
++ | record de chaleur | en | climat-extremes:tendance;climat-extremes:oceans | indice de la règle records_temperature_persistance (décision de l'auteur, 2 h 52) | indices
++ | hottest | en | climat-extremes:tendance;climat-extremes:oceans | indice de la règle records_temperature_persistance (décision de l'auteur, 2 h 52) | indices
++ | Hitzerekord | de | climat-extremes:tendance;climat-extremes:oceans | indice de la règle records_temperature_persistance (décision de l'auteur, 2 h 52) | indices
++ | warmest | en | climat-extremes:tendance;climat-extremes:oceans | indice de la règle records_temperature_persistance (décision de l'auteur, 2 h 52) | indices
++ | World Cup | en | competitions-culture:forme;competitions-culture:public | indice de la règle coupe_du_monde_vainqueurs_hotes (décision de l'auteur, 2 h 52) | indices
++ | Coupe du monde | en | competitions-culture:forme;competitions-culture:public | indice de la règle coupe_du_monde_vainqueurs_hotes (décision de l'auteur, 2 h 52) | indices
++ | FIFA | en | competitions-culture:forme;competitions-culture:public | indice de la règle coupe_du_monde_vainqueurs_hotes (décision de l'auteur, 2 h 52) | indices
++ | Weltmeisterschaft | de | competitions-culture:forme;competitions-culture:public | indice de la règle coupe_du_monde_vainqueurs_hotes (décision de l'auteur, 2 h 52) | indices
++ | former president | en | humain:hierarchie;securite-publique:justice | indice de la règle anciens_dirigeants_sort (décision de l'auteur, 2 h 52) | indices
++ | ancien président | fr | humain:hierarchie;securite-publique:justice | indice de la règle anciens_dirigeants_sort (décision de l'auteur, 2 h 52) | indices
++ | former prime minister | en | humain:hierarchie;securite-publique:justice | indice de la règle anciens_dirigeants_sort (décision de l'auteur, 2 h 52) | indices
++ | ancien Premier ministre | en | humain:hierarchie;securite-publique:justice | indice de la règle anciens_dirigeants_sort (décision de l'auteur, 2 h 52) | indices
++ | sentenced | en | humain:hierarchie;securite-publique:justice | indice de la règle anciens_dirigeants_sort (décision de l'auteur, 2 h 52) | indices
++ | condamné | fr | humain:hierarchie;securite-publique:justice | indice de la règle anciens_dirigeants_sort (décision de l'auteur, 2 h 52) | indices
++ | in exile | en | humain:hierarchie;securite-publique:justice | indice de la règle anciens_dirigeants_sort (décision de l'auteur, 2 h 52) | indices
++ | en exil | en | humain:hierarchie;securite-publique:justice | indice de la règle anciens_dirigeants_sort (décision de l'auteur, 2 h 52) | indices
++ | Dow Jones | en | calendriers-echeances:marches | indice de la règle dow_jones_changements (décision de l'auteur, 2 h 52) | indices
++ | DJIA | en | calendriers-echeances:marches | indice de la règle dow_jones_changements (décision de l'auteur, 2 h 52) | indices
++ | Dow Jones Industrial Average | en | calendriers-echeances:marches | indice de la règle dow_jones_changements (décision de l'auteur, 2 h 52) | indices
++ | threat level | en | securite-publique:alertes | indice de la règle royaume_uni_niveau_menace (décision de l'auteur, 2 h 52) | indices
++ | niveau de menace | en | securite-publique:alertes | indice de la règle royaume_uni_niveau_menace (décision de l'auteur, 2 h 52) | indices
++ | JTAC | en | securite-publique:alertes | indice de la règle royaume_uni_niveau_menace (décision de l'auteur, 2 h 52) | indices
++ | terror threat | en | securite-publique:alertes | indice de la règle royaume_uni_niveau_menace (décision de l'auteur, 2 h 52) | indices
++ | border controls | en | securite-publique:frontieres | indice de la règle schengen_controles_interieurs (décision de l'auteur, 2 h 52) | indices
++ | contrôles aux frontières | fr | securite-publique:frontieres | indice de la règle schengen_controles_interieurs (décision de l'auteur, 2 h 52) | indices
++ | Grenzkontrollen | de | securite-publique:frontieres | indice de la règle schengen_controles_interieurs (décision de l'auteur, 2 h 52) | indices
++ | Schengen | en | securite-publique:frontieres | indice de la règle schengen_controles_interieurs (décision de l'auteur, 2 h 52) | indices
++ | OPEC | en | energie-mondiale:decisions | indice de la règle opep_departs (décision de l'auteur, 2 h 52) | indices
++ | OPEP | en | energie-mondiale:decisions | indice de la règle opep_departs (décision de l'auteur, 2 h 52) | indices
++ | leave OPEC | en | energie-mondiale:decisions | indice de la règle opep_departs (décision de l'auteur, 2 h 52) | indices
++ | quitte l'OPEP | en | energie-mondiale:decisions | indice de la règle opep_departs (décision de l'auteur, 2 h 52) | indices
++ | Royal Mail | en | inflation-mondiale:prix_conso | indice de la règle royal_mail_hausses_tarifs (décision de l'auteur, 2 h 52) | indices
++ | stamp price | en | inflation-mondiale:prix_conso | indice de la règle royal_mail_hausses_tarifs (décision de l'auteur, 2 h 52) | indices
++ | stamp prices | en | inflation-mondiale:prix_conso | indice de la règle royal_mail_hausses_tarifs (décision de l'auteur, 2 h 52) | indices
++ | first class stamp | en | inflation-mondiale:prix_conso | indice de la règle royal_mail_hausses_tarifs (décision de l'auteur, 2 h 52) | indices
++ | papal visit | en | humain:croyances | indice de la règle papes_voyages (décision de l'auteur, 2 h 52) | indices
++ | visite du pape | en | humain:croyances | indice de la règle papes_voyages (décision de l'auteur, 2 h 52) | indices
++ | apostolic journey | en | humain:croyances | indice de la règle papes_voyages (décision de l'auteur, 2 h 52) | indices
++ | Papstreise | de | humain:croyances | indice de la règle papes_voyages (décision de l'auteur, 2 h 52) | indices
++ | Pope Leo | en | humain:croyances | indice de la règle papes_voyages (décision de l'auteur, 2 h 52) | indices
++ | summit | en | russie-ukraine:negociations | indice de la règle sommets_etats_unis_russie (décision de l'auteur, 2 h 52) | indices
++ | Gipfel | de | russie-ukraine:negociations | indice de la règle sommets_etats_unis_russie (décision de l'auteur, 2 h 52) | indices
++ | Gipfeltreffen | de | russie-ukraine:negociations | indice de la règle sommets_etats_unis_russie (décision de l'auteur, 2 h 52) | indices
++ | heat stress | en | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_mais_soja_coton (décision de l'auteur, 2 h 52) ; indice de la règle seuil_chaleur_ble | indices
++ | crop yields | en | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_mais_soja_coton (décision de l'auteur, 2 h 52) | indices
++ | corn | en | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_mais_soja_coton (décision de l'auteur, 2 h 52) | indices
++ | soybeans | en | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_mais_soja_coton (décision de l'auteur, 2 h 52) | indices
++ | cotton | en | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_mais_soja_coton (décision de l'auteur, 2 h 52) | indices
++ | maïs | fr | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_mais_soja_coton (décision de l'auteur, 2 h 52) | indices
++ | soja | fr | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_mais_soja_coton (décision de l'auteur, 2 h 52) | indices
++ | wheat | en | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_ble (décision de l'auteur, 2 h 52) | indices
++ | blé | fr | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_ble (décision de l'auteur, 2 h 52) | indices
++ | Weizen | de | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_ble (décision de l'auteur, 2 h 52) | indices
++ | heatwave | en | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_ble (décision de l'auteur, 2 h 52) | indices
++ | canicule | fr | alimentation-mondiale:cultures;alimentation-mondiale:climat | indice de la règle seuil_chaleur_ble (décision de l'auteur, 2 h 52) | indices
