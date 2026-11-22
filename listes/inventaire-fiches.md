@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 56 fiches, 612 compartiments (355 sans aucune trace collectée)
-- 2011 éléments (1895 textes distincts)
-- 496 acteurs (472 distincts) : 362 types génériques (« un média d'État »…), à peupler de noms ; 134 désignés autrement (déjà nommés, ou à relire)
+- 57 fiches, 623 compartiments (366 sans aucune trace collectée)
+- 2034 éléments (1918 textes distincts)
+- 497 acteurs (473 distincts) : 363 types génériques (« un média d'État »…), à peupler de noms ; 134 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 296 |
+| collectif | 297 |
 | non_humain | 126 |
 | statut | 29 |
 | ideologie | 18 |
@@ -21,7 +21,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 236 |
+| macro | 237 |
 | méso | 165 |
 | micro | 94 |
 | micro à méso | 1 |
@@ -30,14 +30,14 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 343 |
+| economie | 347 |
 | statut | 315 |
-| geopolitique | 282 |
+| geopolitique | 284 |
 | convention | 247 |
-| technique | 202 |
-| societe | 176 |
+| technique | 210 |
+| societe | 182 |
 | psychologique | 115 |
-| ideologie | 101 |
+| ideologie | 105 |
 | eau | 87 |
 | animal | 72 |
 | chimique | 71 |
@@ -91,6 +91,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | infrastructures-critiques | 9 | 30 | 5 | 2 |
 | iran-nucleaire | 14 | 53 | 21 | 4 |
 | liban-institutions | 9 | 30 | 8 | 3 |
+| medias-diffusion | 11 | 23 | 1 | 11 |
 | migrations-demographie | 10 | 38 | 10 | 5 |
 | militaire | 9 | 13 | 3 | 9 |
 | minerais-critiques | 7 | 13 | 2 | 7 |
