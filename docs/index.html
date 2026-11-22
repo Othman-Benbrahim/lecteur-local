@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carte des écosystèmes</title>
+<style>
+:root{
+  --fond:#f6f5f1;--panneau:#ffffff;--trait:#d9d6cc;--texte:#1d1c19;--doux:#6b675d;--accent:#2f5d8a;
+  --plus:#2e7d4f;--moins:#b23a3a;--pont:#9a958a;--acteur:#7a5a9e;--surbrillance:#e8a317;--ombre:rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;
+  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--acteur:#b89be0;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}}
+:root[data-theme="dark"]{
+  --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;
+  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--acteur:#b89be0;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--fond);color:var(--texte);
+  font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{display:flex;align-items:baseline;gap:16px;padding:10px 16px;border-bottom:1px solid var(--trait);flex-wrap:wrap}
+header h1{font-size:17px;margin:0;font-weight:650}
+header .meta{color:var(--doux);font-size:12.5px}
+#app{display:grid;grid-template-columns:280px 1fr 340px;grid-template-rows:1fr 190px;height:calc(100vh - 46px)}
+aside,#detail{background:var(--panneau);overflow:auto;padding:12px 14px}
+aside{grid-row:1/3;border-right:1px solid var(--trait)}
+#detail{grid-row:1/3;grid-column:3;border-left:1px solid var(--trait)}
+#carte{position:relative;overflow:hidden}
+#frise{border-top:1px solid var(--trait);background:var(--panneau);padding:8px 14px;overflow:auto}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--doux);margin:14px 0 6px;font-weight:600}
+h2:first-child{margin-top:0}
+select,input[type=search]{width:100%;padding:6px 8px;border:1px solid var(--trait);border-radius:6px;background:var(--fond);color:var(--texte);font:inherit}
+.seg{display:flex;border:1px solid var(--trait);border-radius:6px;overflow:hidden}
+.seg button{flex:1;border:0;background:transparent;color:var(--texte);padding:6px 2px;font:inherit;font-size:12.5px;cursor:pointer}
+.seg button.on{background:var(--accent);color:#fff}
+.puces{display:flex;flex-wrap:wrap;gap:4px}
+.puce{border:1px solid var(--trait);border-radius:999px;padding:2px 8px;font-size:12px;cursor:pointer;user-select:none;background:var(--fond)}
+.puce.on{border-color:var(--accent);background:var(--accent);color:#fff}
+label.case{display:flex;gap:6px;align-items:center;font-size:13px;margin:3px 0;cursor:pointer}
+.legende{font-size:12px;color:var(--doux);display:grid;gap:3px}
+.legende i{display:inline-block;width:18px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
+#suggestions{border:1px solid var(--trait);border-radius:6px;margin-top:4px;max-height:180px;overflow:auto;display:none;background:var(--panneau)}
+#suggestions div{padding:4px 8px;cursor:pointer;font-size:13px}
+#suggestions div:hover{background:var(--fond)}
+svg{width:100%;height:100%;display:block}
+.lien{stroke-opacity:.55}
+.noeud circle{stroke:var(--panneau);stroke-width:1.2px;cursor:pointer}
+.noeud text{font-size:10.5px;fill:var(--texte);pointer-events:none;paint-order:stroke;stroke:var(--fond);stroke-width:3px}
+.estompe{opacity:.12}
+.vif circle{stroke:var(--surbrillance)!important;stroke-width:3px!important}
+#axe{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:space-between;padding:0 30px;
+  color:var(--doux);font-size:11.5px;pointer-events:none}
+#infobulle{position:absolute;pointer-events:none;background:var(--panneau);border:1px solid var(--trait);border-radius:6px;
+  padding:6px 8px;font-size:12px;box-shadow:0 2px 8px var(--ombre);display:none;max-width:280px}
+#detail h3{margin:0 0 2px;font-size:15px}
+#detail .sous{color:var(--doux);font-size:12.5px;margin-bottom:10px}
+#detail table{width:100%;border-collapse:collapse;font-size:12.5px}
+#detail td{padding:3px 4px;border-bottom:1px solid var(--trait);vertical-align:top}
+#detail td:first-child{color:var(--doux);width:70px}
+#detail ul{margin:4px 0 8px;padding-left:18px;font-size:12.5px}
+#detail li{margin:2px 0}
+#detail a{color:var(--accent);word-break:break-all}
+.etiq{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;border:1px solid var(--trait);color:var(--doux);margin-left:4px}
+.vide{color:var(--doux);font-style:italic;font-size:12.5px}
+#frise .ligne{display:flex;gap:18px;align-items:flex-start}
+#frise .bloc{flex:1;min-width:0}
+#frise h2{margin-top:0}
+#histo{height:90px}
+#histo rect{fill:var(--accent);opacity:.75;cursor:pointer}
+#histo rect.choisi{fill:var(--surbrillance);opacity:1}
+#futur{font-size:12.5px;max-height:130px;overflow:auto}
+#futur div{margin:2px 0}
+.bouton-theme{margin-left:auto;border:1px solid var(--trait);background:transparent;color:var(--texte);border-radius:6px;padding:3px 8px;cursor:pointer;font:inherit;font-size:12px}
+@media (max-width:900px){
+  #app{grid-template-columns:1fr;grid-template-rows:auto 60vh auto auto;height:auto}
+  aside,#detail{grid-row:auto;grid-column:auto;border:0;border-bottom:1px solid var(--trait)}
+  #detail{grid-column:auto}
+  #frise .ligne{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Carte des écosystèmes</h1>
+  <span class="meta" id="meta">chargement…</span>
+  <button class="bouton-theme" id="theme" title="Changer le thème">◐</button>
+</header>
+<div id="app">
+  <aside>
+    <h2>Écosystème</h2>
+    <select id="fiche"></select>
+
+    <h2>Variable de lecture</h2>
+    <div class="seg" id="variable">
+      <button data-v="taille" class="on">Taille</button><button data-v="espace">Espace</button>
+      <button data-v="vitesse">Vitesse</button><button data-v="temps">Temps</button>
+    </div>
+    <div style="margin-top:6px" class="puces" id="echelles"></div>
+
+    <h2>Afficher</h2>
+    <label class="case"><input type="checkbox" id="vActeurs"> acteurs des fiches</label>
+    <label class="case"><input type="checkbox" id="vRelations" checked> relations (effets)</label>
+    <label class="case"><input type="checkbox" id="vPonts" checked> ponts entre fiches</label>
+    <label class="case"><input type="checkbox" id="vLiens" checked> liens entre acteurs</label>
+
+    <h2>Lecture du temps</h2>
+    <div class="seg" id="lecture">
+      <button data-l="structurel" class="on">Structurel</button><button data-l="conjoncturel">Conjoncturel (T)</button>
+    </div>
+
+    <h2>Catégories (niveau d'organisation)</h2>
+    <div class="puces" id="categories"></div>
+
+    <h2>Terme</h2>
+    <input type="search" id="terme" placeholder="chercher un terme validé…" autocomplete="off">
+    <div id="suggestions"></div>
+
+    <h2>Émetteur</h2>
+    <select id="emetteur"><option value="">tous</option></select>
+
+    <h2>Légende</h2>
+    <div class="legende">
+      <span><i style="border-color:var(--plus)"></i>effet positif (+)</span>
+      <span><i style="border-color:var(--moins)"></i>effet négatif (−)</span>
+      <span><i style="border-color:var(--pont);border-top-style:dashed"></i>pont entre fiches</span>
+      <span><i style="border-color:var(--acteur)"></i>lien entre acteurs (pointillé : conjoncturel)</span>
+      <span>taille d'un cercle : nombre de situations observées</span>
+    </div>
+  </aside>
+
+  <main id="carte">
+    <svg id="svg"></svg>
+    <div id="axe"></div>
+    <div id="infobulle"></div>
+  </main>
+
+  <section id="detail"><p class="vide">Cliquez sur un compartiment ou un acteur pour voir ses quatre variables, ses relations, les termes qui s'y rattachent et les situations datées et sourcées qui l'ont touché.</p></section>
+
+  <section id="frise">
+    <div class="ligne">
+      <div class="bloc">
+        <h2>Passé → présent : situations observées par jour <span id="jourT" class="etiq"></span></h2>
+        <svg id="histo"></svg>
+      </div>
+      <div class="bloc">
+        <h2>Futur : événements atteignables depuis les situations actives</h2>
+        <div id="futur" class="vide">aucune situation observée pour l'instant</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+"use strict";
+// ---------------------------------------------------------------- thème
+(function(){
+  let t=null; try{t=localStorage.getItem("theme")}catch(e){}
+  if(t) document.documentElement.dataset.theme=t;
+  document.getElementById("theme").onclick=()=>{
+    const cur=document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+    const n=cur==="dark"?"light":"dark"; document.documentElement.dataset.theme=n;
+    try{localStorage.setItem("theme",n)}catch(e){}
+  };
+})();
+
+// familles de niveaux d'organisation (pour la couleur) : du non humain à l'institutionnel
+const FAMILLES={
+  "matière":["atomique","chimique","physique","mineral","relief","ocean","eau","climat","meteo"],
+  "vivant":["microbiologique","sol_vivant","vegetal","animal","corps"],
+  "humain":["personne","psychologique","entourage","societe","ideologie"],
+  "institutions":["statut","convention"],
+  "économie et technique":["economie","technique"],
+  "géopolitique":["geopolitique"]};
+const COULEUR_FAMILLE={"matière":"#4f8fba","vivant":"#5a9e5a","humain":"#c0793a","institutions":"#8a6fb0","économie et technique":"#b08a2e","géopolitique":"#b2474f"};
+const famille=o=>{for(const[f,l]of Object.entries(FAMILLES)) if(l.includes(o)) return f; return "humain";};
+
+// échelles des quatre variables
+const ECHELLES={
+  taille:{noms:["micro","méso","macro"],val:n=>n.axes&&n.axes.taille,min:1,max:3},
+  espace:{noms:["site","région","État","continent","monde"],val:n=>n.axes&&n.axes.espace,min:1,max:5},
+  vitesse:{noms:["heures","jours","semaines","mois","années","décennies+"],
+           val:n=>{const v=n.axes&&n.axes.vitesse_jours; if(!v) return null; return v.map(binV);},min:0,max:5},
+  temps:{noms:["conjoncturel","cycle court","cycle long","structurel"],val:n=>{const t=binT(n);return t==null?null:[t,t];},min:0,max:3}};
+function binV(j){return j<1?0:j<7?1:j<30?2:j<365?3:j<3650?4:5;}
+function binT(n){ // temps écrit en mots dans les fiches : rangé en conjoncturel / cycle court / cycle long / structurel
+  const t=((n.niveau&&n.niveau.temps)||"").toLowerCase(); if(!t) return null;
+  if(/millénaire|siècle|structur|décennie|génération|long terme/.test(t)) return 3;
+  if(/saison|année|annuel|cycle|législature|mandat/.test(t)) return 2;
+  if(/mois|trimestre|semaine|réunion|session|campagne/.test(t)) return 1;
+  return 0;}
+
+let D,etat={fiche:"",variable:"taille",echelles:new Set(),cats:new Set(),terme:"",emetteur:"",lecture:"structurel",jour:null,
+  acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
+let sim,svg,gZoom,largeur,hauteur;
+
+fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;preparer();construireControles();dessiner();})
+  .catch(e=>{document.getElementById("meta").textContent="données introuvables (docs/donnees.json) : "+e;});
+
+function preparer(){
+  D.parId=new Map(D.noeuds.map(n=>[n.id,n]));
+  // termes par rattachement (compartiment ou espace)
+  D.termesPar=new Map();
+  for(const t of D.termes) for(const r of t.rattachement){ if(!D.termesPar.has(r)) D.termesPar.set(r,[]); D.termesPar.get(r).push(t);}
+  // situations par compartiment, par jour
+  D.sitPar=new Map(); D.jours=new Map();
+  for(const s of D.situations){
+    D.jours.set(s.jour,(D.jours.get(s.jour)||0)+1);
+    for(const c of s.compartiments){ if(!D.sitPar.has(c)) D.sitPar.set(c,[]); D.sitPar.get(c).push(s);} }
+  D.emetteursId=new Map(D.emetteurs.map(e=>[e.domaine,e]));
+  D.reglesPar=new Map();
+  for(const r of D.types.regles) for(const c of r.compartiments){ if(!D.reglesPar.has(c)) D.reglesPar.set(c,[]); D.reglesPar.get(c).push(r);}
+  D.nomType=new Map([...D.types.situations,...D.types.evenements].map(x=>[x.id,x.texte]));
+  const nf=new Set(D.noeuds.map(n=>n.fiche));
+  document.getElementById("meta").textContent=
+    `${nf.size} écosystèmes · ${D.noeuds.filter(n=>n.sorte==="compartiment").length} compartiments · `+
+    `${D.termes.length} termes validés · ${D.situations.length} situations observées · données du ${D.genere}`;
+}
+
+function construireControles(){
+  const sel=document.getElementById("fiche");
+  const fiches=[...new Map(D.noeuds.map(n=>[n.fiche,n.fiche_nom])).entries()].sort((a,b)=>a[1].localeCompare(b[1],"fr"));
+  sel.innerHTML=`<option value="">vue d'ensemble (un cercle par écosystème)</option>`+fiches.map(([k,v])=>`<option value="${k}">${esc(v)}</option>`).join("");
+  sel.onchange=()=>{etat.fiche=sel.value;etat.choisi=null;dessiner();};
+  document.querySelectorAll("#variable button").forEach(b=>b.onclick=()=>{
+    document.querySelectorAll("#variable button").forEach(x=>x.classList.toggle("on",x===b));
+    etat.variable=b.dataset.v;etat.echelles.clear();puceEchelles();dessiner();});
+  puceEchelles();
+  document.querySelectorAll("#lecture button").forEach(b=>b.onclick=()=>{
+    document.querySelectorAll("#lecture button").forEach(x=>x.classList.toggle("on",x===b));
+    etat.lecture=b.dataset.l;dessiner();});
+  const cats=document.getElementById("categories");
+  cats.innerHTML=Object.keys(FAMILLES).map(f=>`<span class="puce" data-f="${f}" style="border-left:6px solid ${COULEUR_FAMILLE[f]}">${f}</span>`).join("");
+  cats.querySelectorAll(".puce").forEach(p=>p.onclick=()=>{p.classList.toggle("on");
+    etat.cats.has(p.dataset.f)?etat.cats.delete(p.dataset.f):etat.cats.add(p.dataset.f);dessiner();});
+  for(const[id,k]of[["vActeurs","acteurs"],["vRelations","relations"],["vPonts","ponts"],["vLiens","liens"]])
+    document.getElementById(id).onchange=e=>{etat[k]=e.target.checked;dessiner();};
+  // terme
+  const inp=document.getElementById("terme"),sug=document.getElementById("suggestions");
+  inp.oninput=()=>{const q=inp.value.trim().toLowerCase();
+    if(!q){sug.style.display="none";etat.terme="";dessiner();return;}
+    const r=D.termes.filter(t=>t.terme.toLowerCase().includes(q)).slice(0,30);
+    sug.innerHTML=r.map(t=>`<div data-t="${esc(t.terme)}">${esc(t.terme)} <span class="etiq">${t.langue}</span></div>`).join("")||`<div class="vide">aucun terme validé</div>`;
+    sug.style.display="block";
+    sug.querySelectorAll("div[data-t]").forEach(d=>d.onclick=()=>{inp.value=d.dataset.t;etat.terme=d.dataset.t;sug.style.display="none";dessiner();});};
+  inp.onsearch=()=>{if(!inp.value){etat.terme="";dessiner();}};
+  const em=document.getElementById("emetteur");
+  const doms=[...new Set(D.situations.map(s=>s.emetteur))].sort();
+  em.innerHTML=`<option value="">tous</option>`+doms.map(d=>{const e=D.emetteursId.get(d);return `<option value="${d}">${esc(e?e.nom:d)}</option>`;}).join("");
+  em.onchange=()=>{etat.emetteur=em.value;dessiner();};
+}
+function puceEchelles(){
+  const c=document.getElementById("echelles");const E=ECHELLES[etat.variable];
+  c.innerHTML=E.noms.map((n,i)=>`<span class="puce" data-i="${i}">${n}</span>`).join("");
+  c.querySelectorAll(".puce").forEach(p=>p.onclick=()=>{p.classList.toggle("on");const i=+p.dataset.i;
+    etat.echelles.has(i)?etat.echelles.delete(i):etat.echelles.add(i);dessiner();});
+}
+
+// ---------------------------------------------------------------- filtres
+function situationsFiltrees(){
+  let s=D.situations;
+  if(etat.emetteur) s=s.filter(x=>x.emetteur===etat.emetteur);
+  if(etat.terme) s=s.filter(x=>x.termes.includes(etat.terme));
+  if(etat.lecture==="conjoncturel"&&etat.jour){ // fenêtre de 7 jours finissant au jour T
+    const fin=new Date(etat.jour),deb=new Date(fin);deb.setDate(deb.getDate()-6);
+    s=s.filter(x=>{const d=new Date(x.jour);return d>=deb&&d<=fin;});}
+  return s;
+}
+function position(n){ // valeur sur l'échelle de la variable choisie (milieu de la plage), ou null
+  const E=ECHELLES[etat.variable];const v=E.val(n);if(!v) return null;
+  const idx=etat.variable==="taille"||etat.variable==="espace"?[v[0]-E.min,v[1]-E.min]:v;
+  return {a:idx[0],b:idx[1],m:(idx[0]+idx[1])/2};
+}
+function garde(n){
+  if(etat.fiche&&n.fiche!==etat.fiche) return false;
+  if(!etat.fiche&&n.sorte==="acteur") return false;
+  if(n.sorte==="acteur"&&!etat.acteurs) return false;
+  if(etat.cats.size&&!etat.cats.has(famille(n.organisation))) return false;
+  if(etat.echelles.size){const p=position(n);if(!p) return false;
+    let ok=false;for(const i of etat.echelles) if(i>=Math.floor(p.a)&&i<=Math.ceil(p.b)) ok=true; if(!ok) return false;}
+  return true;
+}
+
+// ---------------------------------------------------------------- dessin
+function vueEnsemble(sits){
+  // un noeud par fiche : position moyenne de ses compartiments sur la variable choisie ; arêtes = ponts entre fiches
+  const parFiche=new Map();
+  for(const n of D.noeuds){ if(n.sorte!=="compartiment"||!garde(Object.assign({},n,{fiche:""}))) continue;
+    if(!parFiche.has(n.fiche)) parFiche.set(n.fiche,{id:"F:"+n.fiche,fiche:n.fiche,nom:n.fiche_nom,fiche_nom:n.fiche_nom,sorte:"ecosysteme",comps:[],fam:new Map()});
+    const f=parFiche.get(n.fiche);f.comps.push(n);f.fam.set(famille(n.organisation),(f.fam.get(famille(n.organisation))||0)+1);}
+  const act=new Map();for(const x of sits) for(const c of x.compartiments){const fi=c.split(":")[0];act.set("F:"+fi,(act.get("F:"+fi)||0)+1);}
+  const noeuds=[...parFiche.values()].map(f=>{const ps=f.comps.map(position).filter(Boolean);
+    f.m=ps.length?d3.mean(ps,p=>p.m):null;f.couleur=COULEUR_FAMILLE[[...f.fam.entries()].sort((a,b)=>b[1]-a[1])[0][0]];return f;});
+  const cnt=new Map();
+  for(const a of D.aretes) if(a.sorte==="pont"){const x="F:"+a.de.split(":")[0],y="F:"+a.vers.split(":")[0];
+    if(x!==y&&parFiche.has(x.slice(2))&&parFiche.has(y.slice(2))){const k=[x,y].sort().join("|");cnt.set(k,(cnt.get(k)||0)+1);}}
+  const aretes=[...cnt.entries()].map(([k,v])=>{const[a,b]=k.split("|");return {source:a,target:b,n:v};});
+  return {noeuds,aretes,act};
+}
+
+function dessiner(){
+  const zone=document.getElementById("carte");largeur=zone.clientWidth;hauteur=zone.clientHeight;
+  const sits=situationsFiltrees();
+  if(!etat.fiche) return dessinerEnsemble(sits);
+  const activite=new Map();for(const s of sits) for(const c of s.compartiments) activite.set(c,(activite.get(c)||0)+1);
+  const noeuds=D.noeuds.filter(garde).map(n=>Object.assign({},n));
+  const ids=new Set(noeuds.map(n=>n.id));
+  const aretes=D.aretes.filter(a=>ids.has(a.de)&&ids.has(a.vers)&&(
+      (a.sorte==="relation"&&etat.relations)||(a.sorte==="pont"&&etat.ponts)||(a.sorte==="appartient")||
+      (a.sorte==="lien_acteur"&&etat.liens&&(etat.lecture==="structurel"||a.temps!=="structurel"||true))))
+    .map(a=>({...a,source:a.de,target:a.vers}));
+  // surbrillance : terme, émetteur
+  const vifs=new Set();
+  if(etat.terme){const t=D.termes.find(x=>x.terme===etat.terme);if(t) t.rattachement.forEach(r=>vifs.add(r));
+    for(const s of sits) s.compartiments.forEach(c=>vifs.add(c));}
+  if(etat.emetteur) for(const s of sits) s.compartiments.forEach(c=>vifs.add(c));
+  const filtre=vifs.size>0;
+
+  const E=ECHELLES[etat.variable];const nb=E.noms.length;
+  const xEch=i=>60+(largeur-120)*(nb===1?0.5:i/(nb-1));
+  document.getElementById("axe").innerHTML=E.noms.map(n=>`<span>${n}</span>`).join("");
+
+  svg=d3.select("#svg");svg.selectAll("*").remove();
+  gZoom=svg.append("g");
+  svg.call(d3.zoom().scaleExtent([.2,6]).on("zoom",e=>gZoom.attr("transform",e.transform)));
+  const defs=svg.append("defs");
+  for(const[k,c]of[["plus","var(--plus)"],["moins","var(--moins)"],["neutre","var(--pont)"],["acteur","var(--acteur)"]])
+    defs.append("marker").attr("id","f-"+k).attr("viewBox","0 -4 8 8").attr("refX",14).attr("refY",0)
+      .attr("markerWidth",6).attr("markerHeight",6).attr("orient","auto")
+      .append("path").attr("d","M0,-4L8,0L0,4").attr("fill",c);
+
+  const couleurArete=a=>a.sorte==="pont"?"var(--pont)":a.sorte==="lien_acteur"?"var(--acteur)":
+    a.sorte==="appartient"?"var(--trait)":a.effet==="+"?"var(--plus)":a.effet==="-"?"var(--moins)":"var(--pont)";
+  const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("class","lien")
+    .attr("stroke",couleurArete)
+    .attr("stroke-width",a=>a.sorte==="relation"?({forte:2.4,moyenne:1.6,faible:1}[a.force]||1.2):1)
+    .attr("stroke-dasharray",a=>a.sorte==="pont"?"5 4":(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
+    .attr("marker-end",a=>a.sorte==="relation"?`url(#f-${a.effet==="+"?"plus":a.effet==="-"?"moins":"neutre"})`:
+      a.sorte==="lien_acteur"?"url(#f-acteur)":null);
+
+  const rayon=n=>n.sorte==="acteur"?4.5:5+Math.sqrt(activite.get(n.id)||0)*3;
+  const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
+    .classed("estompe",n=>filtre&&!vifs.has(n.id)&&!(n.compartiment&&vifs.has(n.compartiment)))
+    .classed("vif",n=>etat.choisi===n.id)
+    .on("click",(e,n)=>{etat.choisi=n.id;detail(n,sits);noeud.classed("vif",m=>m.id===n.id);})
+    .on("mousemove",(e,n)=>bulle(e,n,activite))
+    .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
+    .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
+      .on("drag",(e,n)=>{n.fx=e.x;n.fy=e.y;}).on("end",(e,n)=>{if(!e.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}));
+  noeud.append("circle").attr("r",rayon)
+    .attr("fill",n=>n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)]);
+  noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5)
+    .text(n=>(etat.fiche||activite.get(n.id))?n.nom.slice(0,38):"");
+
+  sim=d3.forceSimulation(noeuds)
+    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(a=>a.sorte==="appartient"?22:a.sorte==="pont"?120:70).strength(a=>a.sorte==="pont"?.05:.3))
+    .force("charge",d3.forceManyBody().strength(etat.fiche?-140:-35))
+    .force("x",d3.forceX(n=>{const p=position(n);return p?xEch(p.m):largeur/2;}).strength(n=>position(n)?.35:.02))
+    .force("y",d3.forceY(hauteur/2).strength(.06))
+    .force("collision",d3.forceCollide().radius(n=>rayon(n)+2))
+    .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
+      noeud.attr("transform",n=>`translate(${n.x},${n.y})`);});
+  frise(sits);
+  if(etat.choisi&&D.parId.has(etat.choisi)) detail(D.parId.get(etat.choisi),sits);
+}
+
+function dessinerEnsemble(sits){
+  const {noeuds,aretes,act}=vueEnsemble(sits);
+  const E=ECHELLES[etat.variable];const nb=E.noms.length;
+  const xEch=i=>60+(largeur-120)*(nb===1?0.5:i/(nb-1));
+  document.getElementById("axe").innerHTML=E.noms.map(n=>`<span>${n}</span>`).join("");
+  svg=d3.select("#svg");svg.selectAll("*").remove();gZoom=svg.append("g");
+  svg.call(d3.zoom().scaleExtent([.3,5]).on("zoom",e=>gZoom.attr("transform",e.transform)));
+  const vifs=new Set();
+  if(etat.terme){const t=D.termes.find(x=>x.terme===etat.terme);if(t) t.rattachement.forEach(r=>vifs.add("F:"+r.split(":")[0]));
+    for(const s of sits) s.compartiments.forEach(c=>vifs.add("F:"+c.split(":")[0]));}
+  if(etat.emetteur) for(const s of sits) s.compartiments.forEach(c=>vifs.add("F:"+c.split(":")[0]));
+  const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("stroke","var(--pont)")
+    .attr("stroke-opacity",.45).attr("stroke-width",a=>Math.min(1+a.n*.8,7));
+  const r=f=>9+Math.sqrt(f.comps.length)*2.2+Math.sqrt(act.get(f.id)||0)*2.5;
+  const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
+    .classed("estompe",f=>vifs.size&&!vifs.has(f.id))
+    .on("click",(e,f)=>{const sel=document.getElementById("fiche");sel.value=f.fiche;etat.fiche=f.fiche;etat.choisi=null;dessiner();})
+    .on("mousemove",(e,f)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
+      b.innerHTML=`<b>${esc(f.nom)}</b><br>${f.comps.length} compartiments · ${act.get(f.id)||0} situations<br><span style="color:var(--doux)">cliquer pour ouvrir l'écosystème</span>`;
+      b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
+    .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
+    .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
+      .on("drag",(e,n)=>{n.fx=e.x;n.fy=e.y;}).on("end",(e,n)=>{if(!e.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}));
+  noeud.append("circle").attr("r",r).attr("fill",f=>f.couleur).attr("fill-opacity",.85);
+  noeud.append("text").attr("text-anchor","middle").attr("y",f=>r(f)+12).text(f=>f.nom.length>34?f.nom.slice(0,33)+"…":f.nom);
+  sim=d3.forceSimulation(noeuds)
+    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(140).strength(a=>Math.min(.05+a.n*.03,.4)))
+    .force("charge",d3.forceManyBody().strength(-260))
+    .force("x",d3.forceX(f=>f.m==null?largeur/2:xEch(f.m)).strength(.25))
+    .force("y",d3.forceY(hauteur/2).strength(.07))
+    .force("collision",d3.forceCollide().radius(f=>r(f)+22))
+    .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
+      noeud.attr("transform",n=>`translate(${n.x},${n.y})`);});
+  frise(sits);
+  document.getElementById("detail").innerHTML=`<h3>Vue d'ensemble</h3><div class="sous">un cercle par écosystème</div>`+
+    `<p style="font-size:13px">Position horizontale : moyenne de ses compartiments sur la variable choisie (${E.noms[0]} → ${E.noms[nb-1]}). `+
+    `Taille : nombre de compartiments et de situations observées. Couleur : famille de niveau d'organisation dominante. `+
+    `Traits : ponts entre écosystèmes (plus épais = plus de ponts).</p><p style="font-size:13px">Cliquez sur un écosystème pour l'ouvrir.</p>`;
+}
+
+function bulle(e,n,activite){
+  const b=document.getElementById("infobulle");const r=document.getElementById("carte").getBoundingClientRect();
+  const ax=n.niveau||{};
+  b.innerHTML=`<b>${esc(n.nom)}</b><br><span style="color:var(--doux)">${esc(n.fiche_nom)}${n.sorte==="acteur"?" · acteur":""}</span><br>`+
+    `taille : ${esc(ax.taille||"—")} · espace : ${esc(ax.espace||"—")}<br>vitesse : ${esc(ax.vitesse||"—")}`+
+    (n.sorte==="compartiment"?`<br>situations : ${activite.get(n.id)||0}`:"");
+  b.style.display="block";b.style.left=(e.clientX-r.left+12)+"px";b.style.top=(e.clientY-r.top+12)+"px";
+}
+
+// ---------------------------------------------------------------- détail
+function detail(n,sits){
+  const el=document.getElementById("detail");const ax=n.niveau||{};
+  let h=`<h3>${esc(n.nom)}</h3><div class="sous">${esc(n.fiche_nom)} · ${n.sorte}${n.organisation?" · niveau "+esc(n.organisation):""}${n.facette?" · facette "+esc(n.facette):""}</div>`;
+  h+=`<table><tr><td>espace</td><td>${esc(ax.espace||"—")}</td></tr><tr><td>temps</td><td>${esc(ax.temps||"—")}</td></tr>`+
+     `<tr><td>vitesse</td><td>${esc(ax.vitesse||"—")}</td></tr><tr><td>taille</td><td>${esc(ax.taille||"—")}</td></tr></table>`;
+  if(n.sorte==="compartiment"){
+    if(n.elements.length) h+=`<h2>Éléments</h2><ul>${n.elements.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    const ac=D.noeuds.filter(m=>m.compartiment===n.id);
+    if(ac.length) h+=`<h2>Acteurs (fiche)</h2><ul>${ac.map(m=>`<li>${esc(m.nom)} <span class="etiq">${esc(m.niveau.taille||"")}</span></li>`).join("")}</ul>`;
+    const rel=D.aretes.filter(a=>(a.de===n.id||a.vers===n.id)&&a.sorte!=="appartient");
+    if(rel.length) h+=`<h2>Relations et ponts</h2><ul>${rel.map(a=>{const autre=D.parId.get(a.de===n.id?a.vers:a.de);
+      const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}</span>`:`<span class="etiq">${a.sorte==="pont"?"pont":"lien"}</span>`;
+      return `<li>${sens} ${esc(autre?autre.nom:"?")} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
+    const tr=n.traces||[];
+    h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span></li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
+    const te=D.termesPar.get(n.id)||[];
+    h+=`<h2>Termes validés (${te.length})</h2>`+(te.length?`<div class="puces">${te.slice(0,80).map(t=>`<span class="puce" title="${esc(t.note)}" onclick="choisirTerme('${esc(t.terme).replace(/'/g,"\\'")}')">${esc(t.terme)} <small>${t.langue}</small></span>`).join("")}</div>`:`<p class="vide">aucun</p>`);
+    const rg=D.reglesPar.get(n.id)||[];
+    if(rg.length) h+=`<h2>Types de situation → événement (règles)</h2><ul>${rg.map(r=>`<li>${esc(D.nomType.get(r.de))} → <b>${esc(D.nomType.get(r.vers))}</b> <span class="etiq">${esc(r.structure)}</span></li>`).join("")}</ul>`;
+    const s=sits.filter(x=>x.compartiments.includes(n.id)).sort((a,b)=>b.jour.localeCompare(a.jour));
+    h+=`<h2>Situations observées (${s.length})</h2>`+(s.length?`<ul>${s.slice(0,40).map(x=>{const e=D.emetteursId.get(x.emetteur);
+      return `<li>${x.jour} · <b>${esc(e?e.nom:x.emetteur)}</b>${e?` <span class="etiq" title="${esc(e.proprietaire)}">${esc(e.nature.split(" ")[0])} · ${esc(e.pays.split(" ")[0])}</span>`:` <span class="etiq">non identifié</span>`}<br>`+
+        `${x.acteurs.length?"acteurs : "+esc(x.acteurs.join(", "))+"<br>":""}${x.espace.length?"espace : "+esc(x.espace.join(", "))+"<br>":""}`+
+        `termes : ${esc(x.termes.join(", "))}<br><a href="${esc(x.lien)}" target="_blank" rel="noopener">${esc(x.lien)}</a></li>`;}).join("")}</ul>`:`<p class="vide">aucune pour ces filtres</p>`);
+  }
+  el.innerHTML=h;
+}
+window.choisirTerme=t=>{document.getElementById("terme").value=t;etat.terme=t;dessiner();};
+
+// ---------------------------------------------------------------- frise : passé, présent (T), futur
+function frise(sits){
+  const jours=[...D.jours.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+  const s=d3.select("#histo");s.selectAll("*").remove();
+  const w=s.node().clientWidth||400,h=90;
+  if(!jours.length){s.append("text").attr("x",4).attr("y",20).attr("fill","var(--doux)").attr("font-size",12)
+    .text("aucune situation encore : le collecteur tourne chaque nuit");}
+  else{
+    if(!etat.jour) etat.jour=jours[jours.length-1][0];
+    const x=d3.scaleBand().domain(jours.map(j=>j[0])).range([0,w]).padding(.15);
+    const y=d3.scaleLinear().domain([0,d3.max(jours,j=>j[1])]).range([h-18,4]);
+    s.selectAll("rect").data(jours).join("rect").attr("x",j=>x(j[0])).attr("width",x.bandwidth())
+      .attr("y",j=>y(j[1])).attr("height",j=>h-18-y(j[1])).classed("choisi",j=>j[0]===etat.jour)
+      .on("click",(e,j)=>{etat.jour=j[0];dessiner();}).append("title").text(j=>`${j[0]} : ${j[1]} situations`);
+    const pas=Math.max(1,Math.ceil(jours.length/8));
+    s.selectAll("text").data(jours.filter((j,i)=>i%pas===0)).join("text").attr("x",j=>x(j[0])).attr("y",h-4)
+      .attr("font-size",10).attr("fill","var(--doux)").text(j=>j[0].slice(5));
+  }
+  document.getElementById("jourT").textContent=etat.lecture==="conjoncturel"&&etat.jour?"T = "+etat.jour+" (7 jours)":"toute la période";
+  // futur : types de situation réalisés → événements atteignables (règles coutumières)
+  const actifs=new Map();
+  const cs=new Set();for(const x of sits) x.compartiments.forEach(c=>cs.add(c));
+  for(const r of D.types.regles) if(r.compartiments.some(c=>cs.has(c))){
+    const k=r.vers;actifs.set(k,(actifs.get(k)||[]).concat([r]));}
+  const f=document.getElementById("futur");
+  if(!actifs.size){f.className="vide";f.textContent=sits.length?"aucune règle coutumière ne part des compartiments touchés par ces situations":"aucune situation pour ces filtres";return;}
+  f.className="";
+  f.innerHTML=[...actifs.entries()].map(([ev,rs])=>`<div>→ <b>${esc(D.nomType.get(ev))}</b> <span class="etiq">${esc(rs[0].structure)}</span><br>`+
+    `<span style="color:var(--doux)">depuis : ${esc(D.nomType.get(rs[0].de))} · règle ${esc(rs.map(r=>r.regle).join(", "))}</span></div>`).join("");
+}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+addEventListener("resize",()=>{if(D) dessiner();});
+</script>
+</body>
+</html>

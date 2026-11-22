@@ -1,0 +1,43 @@
+# Carte des écosystèmes (décision de l'auteur du 2026-11-22, 2 h 12 - 2 h 14) : régénérée à chaque changement des listes
+# (termes ajoutés, catégorisation) ; elle l'est aussi chaque nuit par le workflow « compter ».
+name: carte
+
+on:
+  push:
+    paths:
+      - "listes/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compter
+  cancel-in-progress: false
+
+jobs:
+  carte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fiches et règles du bot (dépôt public, lecture seule)
+        uses: actions/checkout@v4
+        with:
+          repository: Othman-Benbrahim/metac-bot-template
+          path: bot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pyyaml httpx==0.28.1
+      - run: python carte/generer.py bot
+      - name: Enregistrer
+        run: |
+          git config user.name "lecteur-local"
+          git config user.email "lecteur-local@users.noreply.github.com"
+          git add docs/donnees.json
+          if ! git diff --cached --quiet; then
+            git commit -m "carte du $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase || true
+            git push
+          fi
