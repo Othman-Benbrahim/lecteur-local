@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 53 fiches, 576 compartiments (319 sans aucune trace collectée)
-- 1951 éléments (1835 textes distincts)
-- 486 acteurs (462 distincts) : 357 types génériques (« un média d'État »…), à peupler de noms ; 129 désignés autrement (déjà nommés, ou à relire)
+- 54 fiches, 585 compartiments (328 sans aucune trace collectée)
+- 1964 éléments (1848 textes distincts)
+- 489 acteurs (465 distincts) : 359 types génériques (« un média d'État »…), à peupler de noms ; 130 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 289 |
+| collectif | 292 |
 | non_humain | 126 |
 | statut | 28 |
 | ideologie | 17 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 230 |
-| méso | 164 |
+| macro | 232 |
+| méso | 165 |
 | micro | 91 |
 | micro à méso | 1 |
 
@@ -30,11 +30,11 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 338 |
-| statut | 303 |
-| geopolitique | 280 |
-| convention | 233 |
-| technique | 196 |
+| economie | 342 |
+| statut | 306 |
+| geopolitique | 281 |
+| convention | 237 |
+| technique | 198 |
 | societe | 171 |
 | psychologique | 115 |
 | ideologie | 98 |
@@ -50,9 +50,9 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | vegetal | 37 |
 | physique | 35 |
 | entourage | 27 |
+| atomique | 27 |
 | ocean | 26 |
 | personne | 26 |
-| atomique | 25 |
 | sol_vivant | 11 |
 
 ## Par fiche
@@ -90,6 +90,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | iran-nucleaire | 14 | 53 | 21 | 4 |
 | liban-institutions | 9 | 30 | 8 | 3 |
 | migrations-demographie | 10 | 38 | 10 | 5 |
+| militaire | 9 | 13 | 3 | 9 |
 | minerais-critiques | 7 | 13 | 2 | 7 |
 | niveaux-de-base | 3 | 3 | 0 | 3 |
 | non-proliferation | 9 | 26 | 2 | 5 |
