@@ -2613,3 +2613,25 @@
 + | guerre informationnelle | fr | reseaux-sociaux:corrosion;information-cyber:recits | idem | 
 + | guerre mémétique | fr | reseaux-sociaux:corrosion;reseaux-sociaux:desinformation | idem | 
 + | Internet Research Agency | nom | reseaux-sociaux:corrosion;reseaux-sociaux:influence_ou_desinformation | idem (officine de Saint-Pétersbourg) | 
++ | état d'urgence | fr | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | state of emergency | en | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | couvre-feu | fr | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | curfew | en | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | loi martiale | fr | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | martial law | en | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | dissolution du parlement | fr | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | dissolves parliament | en | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | coupure d'internet | fr | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | internet shutdown | en | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | interdiction de manifester | fr | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | protest ban | en | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | déploiement de l'armée | fr | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | troops deployed | en | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | démission du gouvernement | fr | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | government resigns | en | politique-interieure:regime | mécanique de bascule (bot 0.10.465) : acte de haut rang ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | anniversaire | fr | culture-memoire:usages_memoire | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | anniversary | en | culture-memoire:usages_memoire | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | procès | fr | politique-interieure:procedures | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | on trial | en | politique-interieure:procedures | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | ans après | fr | culture-memoire:usages_memoire | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | years after | en | culture-memoire:usages_memoire | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 

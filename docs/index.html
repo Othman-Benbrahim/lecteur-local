@@ -759,7 +759,10 @@ function rendreMecanique(){
   const closes=J.filter(r=>I[r.id]).sort((a,b)=>b.semaine.localeCompare(a.semaine));
   const nom=r=>esc(N[r.pays]||r.iso3||r.pays);
   const pct=x=>Math.round(100*x)+" %";
-  const mods=r=>{try{const m=JSON.parse(r.modules||"{}");const k=Object.keys(m);return k.length?k.map(x=>esc(x)+" "+m[x]).join(", "):"taux de départ seul";}catch(e){return "";}};
+  // 0.10.465 : seuls les mécanismes actifs (entrée non nulle) sont affichés ; « − » = pousse vers « s'éteint »
+  const NOMS={corroboration:"corroboration",signal_faible:"signal faible",rang_emetteur:"rang de l'émetteur",acte_haut_rang:"acte de haut rang",fait_passe:"fait passé (calendrier attendu)",echeance:"échéance proche"};
+  const mods=r=>{try{const m=JSON.parse(r.modules||"{}");const k=Object.keys(m);if(!k.length)return "taux de départ seul (avant les mécanismes)";
+    const a=k.filter(x=>+m[x]!==0).map(x=>(m[x]<0?"− ":"+ ")+esc(NOMS[x]||x)+(Math.abs(m[x])!==1?" "+Math.abs(m[x]):""));return a.length?"mécanismes : "+a.join(", "):"aucun mécanisme actif (pays peu couvert par le collecteur)";}catch(e){return "";}};
   let h=`<p style="margin:2px 0 6px;color:var(--doux)">${S.inscrites||J.length} inscrite(s), ${S.ouvertes??ouvertes.length} ouverte(s), ${S.constatees||closes.length} constatée(s)`+
     (S.brier!=null?` · score de Brier ${S.brier} (taux de départ seul : ${S.brier_taux_depart}) · part qui a pris : ${pct(S.part_prend)}`:" · aucun score avant les premières issues (8 semaines)")+
     ` · taux de départ ${pct(S.taux_depart??0.315)} (2015-2021)</p>`;
