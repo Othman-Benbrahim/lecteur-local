@@ -2,17 +2,17 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 53 fiches, 550 compartiments (293 sans aucune trace collectée)
-- 1887 éléments (1771 textes distincts)
-- 478 acteurs (454 distincts) : 355 types génériques (« un média d'État »…), à peupler de noms ; 123 désignés autrement (déjà nommés, ou à relire)
+- 53 fiches, 554 compartiments (297 sans aucune trace collectée)
+- 1900 éléments (1784 textes distincts)
+- 481 acteurs (457 distincts) : 356 types génériques (« un média d'État »…), à peupler de noms ; 125 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 282 |
+| collectif | 284 |
 | non_humain | 126 |
-| statut | 27 |
+| statut | 28 |
 | ideologie | 17 |
 | personne | 17 |
 | psyche | 9 |
@@ -21,7 +21,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 223 |
+| macro | 226 |
 | méso | 163 |
 | micro | 91 |
 | micro à méso | 1 |
@@ -30,11 +30,11 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 328 |
-| statut | 300 |
-| geopolitique | 274 |
-| convention | 207 |
-| technique | 187 |
+| economie | 331 |
+| statut | 302 |
+| geopolitique | 276 |
+| convention | 215 |
+| technique | 188 |
 | societe | 168 |
 | psychologique | 115 |
 | ideologie | 95 |
@@ -111,4 +111,4 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | soudan | 5 | 16 | 4 | 1 |
 | transport-maritime | 13 | 51 | 15 | 6 |
 | transports-villes | 7 | 16 | 10 | 7 |
-| union-europeenne | 4 | 11 | 1 | 4 |
+| union-europeenne | 8 | 24 | 4 | 8 |
