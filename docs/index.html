@@ -104,6 +104,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
     <div style="margin-top:6px" class="puces" id="echelles"></div>
 
     <h2>Afficher</h2>
+    <label class="case"><input type="checkbox" id="vNommes" checked> acteurs nommés (dirigeants, patrons)</label>
     <label class="case"><input type="checkbox" id="vActeurs"> acteurs des fiches</label>
     <label class="case"><input type="checkbox" id="vRelations" checked> relations (effets)</label>
     <label class="case"><input type="checkbox" id="vPonts" checked> ponts entre fiches</label>
@@ -143,6 +144,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
       <span><i style="border-color:var(--amont)"></i>mode Causes : en amont (causes)</span>
       <span><i style="border-color:var(--aval)"></i>mode Causes : en aval (conséquences)</span>
       <span><i style="border-color:var(--acteur)"></i>lien entre acteurs (pointillé : conjoncturel)</span>
+      <span><i style="border-color:var(--dirigeant)"></i>acteur nommé : dirigeant (brique) ou patron (vert)</span>
       <span>taille d'un cercle : nombre de situations observées</span>
     </div>
   </aside>
@@ -210,7 +212,7 @@ function binT(n){ // temps écrit en mots dans les fiches : rangé en conjonctur
   return 0;}
 
 let D,etat={sorte:"tous",canal:"",fiche:"",variable:"taille",echelles:new Set(),cats:new Set(),terme:"",emetteur:"",lecture:"structurel",jour:null,
-  acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
+  nommes:true,acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
 let sim,svg,gZoom,largeur,hauteur;
 
 fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;preparer();construireControles();dessiner();})
@@ -257,7 +259,7 @@ function construireControles(){
   cats.innerHTML=Object.keys(FAMILLES).map(f=>`<span class="puce" data-f="${f}" style="border-left:6px solid ${COULEUR_FAMILLE[f]}">${f}</span>`).join("");
   cats.querySelectorAll(".puce").forEach(p=>p.onclick=()=>{p.classList.toggle("on");
     etat.cats.has(p.dataset.f)?etat.cats.delete(p.dataset.f):etat.cats.add(p.dataset.f);dessiner();});
-  for(const[id,k]of[["vActeurs","acteurs"],["vRelations","relations"],["vPonts","ponts"],["vLiens","liens"]])
+  for(const[id,k]of[["vNommes","nommes"],["vActeurs","acteurs"],["vRelations","relations"],["vPonts","ponts"],["vLiens","liens"]])
     document.getElementById(id).onchange=e=>{etat[k]=e.target.checked;dessiner();};
   // terme
   const inp=document.getElementById("terme"),sug=document.getElementById("suggestions");
@@ -457,10 +459,21 @@ function dessiner(){
     const autre=dedans===a.de?a.vers:a.de;const n=D.parId.get(autre);
     if(n&&n.fiche!==etat.fiche&&!ids.has(autre)){noeuds.push(Object.assign({},n,{externe:true}));ids.add(autre);}
   }
+  // 2026-11-22 (remarque de l'auteur, 8 h 30) : les acteurs nommés apparaissent aussi dans chaque écosystème, rattachés
+  // à leurs compartiments, avec leurs liens entre eux ; un clic ouvre le réseau des acteurs nommés
+  const extra=[];
+  if(etat.nommes&&D.nommes){
+    const ici=D.nommes.acteurs.filter(a=>a.compartiments.some(c=>ids.has(c)&&!(D.parId.get(c)||{}).externe&&(D.parId.get(c)||{}).fiche===etat.fiche));
+    const nid=new Set(ici.map(a=>"N:"+a.id));
+    for(const a of ici){noeuds.push({id:"N:"+a.id,sorte:"nomme",genre:a.sorte,nom:a.nom,fiche:etat.fiche,fiche_nom:a.role,niveau:{},axes:{}});
+      for(const c of a.compartiments) if(ids.has(c)) extra.push({de:"N:"+a.id,vers:c,sorte:"rattache",source:"N:"+a.id,target:c});}
+    for(const l of D.nommes.liens) if(nid.has("N:"+l.de)&&nid.has("N:"+l.vers)) extra.push({...l,de:"N:"+l.de,vers:"N:"+l.vers,sorte:"lien_nomme",source:"N:"+l.de,target:"N:"+l.vers});
+    nid.forEach(x=>ids.add(x));
+  }
   const aretes=D.aretes.filter(a=>ids.has(a.de)&&ids.has(a.vers)&&(
       (a.sorte==="relation"&&etat.relations)||(etat.ponts&&pontVisible(a))||(a.sorte==="appartient")||
       (a.sorte==="lien_acteur"&&etat.liens&&etat.sorte!=="causes"&&(etat.lecture==="structurel"||a.temps!=="structurel"||true))))
-    .map(a=>({...a,source:a.de,target:a.vers}));
+    .map(a=>({...a,source:a.de,target:a.vers})).concat(extra);
   // surbrillance : terme, émetteur
   const vifs=new Set();
   if(etat.terme){const t=D.termes.find(x=>x.terme===etat.terme);if(t) t.rattachement.forEach(r=>vifs.add(r));
@@ -481,21 +494,22 @@ function dessiner(){
       .attr("markerWidth",6).attr("markerHeight",6).attr("orient","auto")
       .append("path").attr("d","M0,-4L8,0L0,4").attr("fill",c);
 
-  const couleurArete=a=>a.sorte==="pont"?"var(--pont)":a.sorte==="lien_acteur"?"var(--acteur)":
+  const couleurArete=a=>a.sorte==="rattache"?"var(--trait)":a.sorte==="lien_nomme"?COUL_REL[(REL_NOMME[a.relation]||["","accord"])[1]]:a.sorte==="pont"?"var(--pont)":a.sorte==="lien_acteur"?"var(--acteur)":
     a.sorte==="appartient"?"var(--trait)":a.effet==="+"?"var(--plus)":a.effet==="-"?"var(--moins)":"var(--pont)";
   const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("class","lien")
     .attr("stroke",couleurArete)
     .attr("stroke-width",a=>a.sorte==="relation"?({forte:2.4,moyenne:1.6,faible:1}[a.force]||1.2):1)
     .attr("stroke-opacity",a=>a.sorte==="pont"&&a.type==="voisinage"?.3:null)
-    .attr("stroke-dasharray",a=>a.sorte==="pont"?(a.type==="influence"?"5 4":"1 3"):(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
+    .attr("stroke-dasharray",a=>a.sorte==="rattache"?"2 2":a.sorte==="pont"?(a.type==="influence"?"5 4":"1 3"):(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
     .attr("marker-end",a=>a.sorte==="relation"?`url(#f-${a.effet==="+"?"plus":a.effet==="-"?"moins":"neutre"})`:
       a.sorte==="lien_acteur"?"url(#f-acteur)":a.sorte==="pont"&&a.type==="influence"?"url(#f-neutre)":null);
 
-  const rayon=n=>n.sorte==="acteur"?4.5:5+Math.sqrt(activite.get(n.id)||0)*3;
+  const rayon=n=>n.sorte==="nomme"?7:n.sorte==="acteur"?4.5:5+Math.sqrt(activite.get(n.id)||0)*3;
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
     .classed("estompe",n=>filtre&&!vifs.has(n.id)&&!(n.compartiment&&vifs.has(n.compartiment)))
     .classed("vif",n=>etat.choisi===n.id)
     .on("click",(e,n)=>{e.stopPropagation();if(n.externe){basculer(n.id);return;}
+      if(n.sorte==="nomme"){etat.fiche="__acteurs__";etat.choisi=n.id.slice(2);document.getElementById("fiche").value="__acteurs__";dessiner();return;}
       etat.choisi=n.id;detail(n,sits);noeud.classed("vif",m=>m.id===n.id);voisinage(n.id);})
     .on("mousemove",(e,n)=>bulle(e,n,activite))
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
@@ -518,10 +532,10 @@ function dessiner(){
   }
   svg.on("click",e=>{if(e.target===svg.node()){etat.choisi=null;noeud.classed("vif",false);voisinage(null);}});
   noeud.append("circle").attr("r",rayon)
-    .attr("fill",n=>n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
+    .attr("fill",n=>n.sorte==="nomme"?(n.genre==="patron"?"var(--patron)":"var(--dirigeant)"):n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
     .attr("fill-opacity",n=>n.externe?.35:1).attr("stroke-dasharray",n=>n.externe?"3 2":null)
     .attr("stroke",n=>n.externe?"var(--pont)":null).style("cursor",n=>n.externe?"pointer":null);
-  noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5).style("font-style",n=>n.externe?"italic":null)
+  noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5).style("font-style",n=>n.externe?"italic":null).style("font-weight",n=>n.sorte==="nomme"?"600":null)
     .text(n=>n.externe?("↗ "+n.fiche_nom.slice(0,22)+" : "+n.nom.slice(0,24)):(etat.fiche||activite.get(n.id))?n.nom.slice(0,38):"");
 
   sim=d3.forceSimulation(noeuds)
@@ -607,6 +621,8 @@ function basculer(id){ // ouvrir l'écosystème d'un compartiment relié par un 
 function bulle(e,n,activite){
   const b=document.getElementById("infobulle");const r=document.getElementById("carte").getBoundingClientRect();
   const ax=n.niveau||{};
+  if(n.sorte==="nomme"){b.innerHTML=`<b>${esc(n.nom)}</b><br>${esc(n.fiche_nom)}<br><span style="color:var(--doux)">cliquer pour voir son réseau</span>`;
+    b.style.display="block";b.style.left=(e.clientX-r.left+12)+"px";b.style.top=(e.clientY-r.top+12)+"px";return;}
   b.innerHTML=`<b>${esc(n.nom)}</b><br><span style="color:var(--doux)">${esc(n.fiche_nom)}${n.sorte==="acteur"?" · acteur":""}</span><br>`+
     `taille : ${esc(ax.taille||"—")} · espace : ${esc(ax.espace||"—")}<br>vitesse : ${esc(ax.vitesse||"—")}`+
     (n.sorte==="compartiment"?`<br>situations : ${activite.get(n.id)||0}`:"");
