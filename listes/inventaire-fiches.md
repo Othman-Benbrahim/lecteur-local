@@ -2,16 +2,16 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 44 fiches, 476 compartiments (226 sans aucune trace collectée)
-- 1706 éléments (1591 textes distincts)
-- 415 acteurs (392 distincts) : 330 types génériques (« un média d'État »…), à peupler de noms ; 85 désignés autrement (déjà nommés, ou à relire)
+- 44 fiches, 481 compartiments (231 sans aucune trace collectée)
+- 1715 éléments (1600 textes distincts)
+- 419 acteurs (396 distincts) : 334 types génériques (« un média d'État »…), à peupler de noms ; 85 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 237 |
-| non_humain | 117 |
+| collectif | 240 |
+| non_humain | 118 |
 | ideologie | 17 |
 | personne | 17 |
 | statut | 17 |
@@ -21,29 +21,29 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 178 |
-| méso | 150 |
-| micro | 86 |
+| macro | 179 |
+| méso | 152 |
+| micro | 87 |
 | micro à méso | 1 |
 
 ## Éléments et acteurs par niveau d'organisation
 
 | | nombre |
 |---|---|
-| economie | 306 |
-| statut | 279 |
+| economie | 307 |
+| statut | 280 |
 | geopolitique | 234 |
 | technique | 165 |
-| societe | 151 |
-| convention | 140 |
+| societe | 152 |
+| convention | 143 |
 | psychologique | 118 |
 | ideologie | 94 |
 | eau | 83 |
-| chimique | 56 |
+| chimique | 60 |
 | relief | 56 |
 | meteo | 51 |
+| animal | 48 |
 | climat | 46 |
-| animal | 45 |
 | microbiologique | 44 |
 | corps | 43 |
 | mineral | 36 |
@@ -88,7 +88,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | non-proliferation | 9 | 26 | 2 | 5 |
 | nucleaire-radiologique | 10 | 34 | 8 | 7 |
 | observateur-mesure | 9 | 28 | 4 | 2 |
-| oceans-et-fleuves | 11 | 38 | 7 | 6 |
+| oceans-et-fleuves | 16 | 47 | 11 | 11 |
 | ormuz | 13 | 60 | 15 | 2 |
 | politique-americaine | 14 | 56 | 25 | 1 |
 | politique-interieure | 5 | 26 | 3 | 5 |
