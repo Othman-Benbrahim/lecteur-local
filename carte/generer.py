@@ -78,7 +78,7 @@ def principal() -> int:
                                                             "phase_vulnerable", "statut")}
                                       for y in f.get("cycles") or [] if c["id"] in (y.get("compartiments") or [])],
                            "tensions": [{k: y.get(k) for k in ("id", "nom", "forme", "entre", "stock", "module_par",
-                                                              "seuil", "statut", "texte")}
+                                                              "seuil", "statut", "texte", "tampons")}
                                         for y in f.get("tensions") or [] if c["id"] in (y.get("entre") or [])]})
             for a in c.get("acteurs") or []:
                 aid = f"{cid}::{a.get('nom')}"
