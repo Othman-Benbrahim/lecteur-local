@@ -18,7 +18,9 @@ Règles de lecture (fixées ici) :
   - un terme compte au plus une fois par article ; frontières de mots strictes ;
   - casse respectée pour les sigles (au moins deux majuscules, sans minuscule) et pour tout terme de 4 caractères ou
     moins (forme validée, ou avec sa première lettre en majuscule : « Fed » ne compte pas le verbe « fed ») ;
-  - les codes du flux de l'USGS (ci, nc, us…) ne comptent que comme étiquettes des articles de l'USGS ;
+  - les codes du flux de l'USGS (ci, nc, us…) ne comptent que comme étiquettes des articles de l'USGS, et les termes
+    génériques marqués « étiquette seule » (langues de Global Voices, Health, Development, Justice… ; décision du
+    2026-11-22, 2 h 45) seulement comme étiquettes posées par une rédaction, jamais dans le texte ;
   - un terme dont la note dit « anglais seulement » (RSF, décision de 0 h 59) ne compte que chez un émetteur dont la
     première langue au registre est l'anglais ;
   - un article sans aucun terme validé n'est pas enregistré (il est seulement noté comme lu).
@@ -55,7 +57,8 @@ def lire_valides(chemin: Path = LISTES / "valides.txt") -> list[dict]:
         note = ch[4] if len(ch) > 4 else ""
         out.append({"terme": ch[1], "langue": ch[2], "places": [p for p in ch[3].split(";") if p],
                     "anglais_seul": "anglais seulement" in note,
-                    "etiquette_seule": note.startswith("code de réseau sismique")})
+                    "etiquette_seule": note.startswith("code de réseau sismique") or "étiquette seule" in note,
+                    "usgs": note.startswith("code de réseau sismique")})
     return out
 
 
@@ -162,7 +165,7 @@ def _index(termes: list[dict]) -> dict[str, list[dict]]:
 
 
 def situation(texte: str, langue_em: str, termes: list[dict], etiquettes: list[str] | None,
-              acteurs: dict[str, dict], niveaux: dict[str, dict]) -> dict | None:
+              acteurs: dict[str, dict], niveaux: dict[str, dict], emetteur: str = "") -> dict | None:
     """Ce que l'article relie : espace, acteurs, compartiments (avec leur niveau), termes. None s'il n'y a rien."""
     espace, comps, acts, vus_termes = set(), {}, {}, []
     ix = _index(termes)
@@ -191,7 +194,7 @@ def situation(texte: str, langue_em: str, termes: list[dict], etiquettes: list[s
             if t["terme"] not in lst:
                 lst.append(t["terme"])
     for t in termes:                      # étiquettes seules (USGS)
-        if t["etiquette_seule"] and t["terme"] in (etiquettes or []):
+        if t["etiquette_seule"] and t["terme"] in (etiquettes or []) and (not t["usgs"] or emetteur == "earthquake.usgs.gov"):
             vus_termes.append(t["terme"])
             for p in t["places"]:
                 lst = comps.setdefault(p, {"compartiment": p, "niveau": niveaux.get(p, {}), "termes": []})["termes"]
@@ -241,7 +244,7 @@ def principal() -> int:
                     lus += 1
                     em = re.sub(r"^www\.", "", a["lien"].split("/")[2]) if a["lien"].count("/") >= 2 else "?"
                     ident = emetteurs.get(em, {})
-                    s_ = situation(a["texte"], ident.get("langue1", ""), termes, a["etiquettes"], acteurs, niveaux)
+                    s_ = situation(a["texte"], ident.get("langue1", ""), termes, a["etiquettes"], acteurs, niveaux, em)
                     if s_ is None:
                         continue
                     situations.append({"jour": a["date"] or releve, "date_article_connue": bool(a["date"]),

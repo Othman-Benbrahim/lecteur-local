@@ -1,13 +1,13 @@
 # Termes validés par l'auteur (2026-11-22, 0 h 28 : « je conserve tout, sauf les rubriques maison »). Seule liste que le
 # collecteur comptera. « + » validé, « - » refusé (jamais reproposé). « à classer » : conservé, en attente d'une
-# catégorie nouvelle (proposée par Claude, validée par l'auteur). Catégories nouvelles validées à 0 h 32 (six fiches, bot 0.10.412). Noms Wikidata validés à 0 h 59.
+# catégorie nouvelle (proposée par Claude, validée par l'auteur). Catégories nouvelles validées à 0 h 32 (six fiches, bot 0.10.412). Noms Wikidata validés à 0 h 59. Corrections du 2026-11-22, 2 h 45 (après l'exploration GDELT) : États rattachés à l'espace seul ; acteurs rattachés à tous leurs compartiments ; termes génériques et langues comptés comme étiquettes seulement.
 # Format : décision | terme | langue | rattachement | note | émetteurs
 + | Food and farming | en | alimentation-mondiale:cultures |  | consilium.europa.eu
 + | Grippe aviaire | fr | alimentation-mondiale:pathogenes;epidemies:agent |  | fr.hespress.com
-+ | Food | en | alimentation-mondiale:prix |  | globalvoices.org
++ | Food | en | alimentation-mondiale:prix | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
 + | Lebensmittel | de | alimentation-mondiale:prix |  | correctiv.org
 + | briefwahl | de | calendriers-echeances:elections |  | correctiv.org
-+ | Elections | en | calendriers-echeances:elections |  | globalvoices.org
++ | Elections | en | calendriers-echeances:elections | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
 + | Kandidierenden-Check | de | calendriers-echeances:elections |  | correctiv.org
 + | Kommunalwahl | de | calendriers-echeances:elections |  | correctiv.org
 + | Landtagswahl | de | calendriers-echeances:elections |  | correctiv.org
@@ -21,7 +21,7 @@
 + | AFET | fr | calendriers-echeances:parlements | Parlement européen, commission des affaires étrangères (acteur institutionnel) | europarl.europa.eu, multimedia.europarl.europa.eu
 + | AGRI | fr | calendriers-echeances:parlements | Parlement européen, commission de l'agriculture (acteur institutionnel) | europarl.europa.eu
 + | Amendements - Commissions | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
-+ | Auditions | fr | calendriers-echeances:parlements |  | europarl.europa.eu
++ | Auditions | fr | calendriers-echeances:parlements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | europarl.europa.eu
 + | Avis sous forme de lettre | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
 + | BUDG | fr | calendriers-echeances:parlements | Parlement européen, commission des budgets (acteur institutionnel) | europarl.europa.eu, multimedia.europarl.europa.eu
 + | CONT | fr | calendriers-echeances:parlements | Parlement européen, commission du contrôle budgétaire (acteur institutionnel) | europarl.europa.eu, multimedia.europarl.europa.eu
@@ -43,24 +43,24 @@
 + | PETI | fr | calendriers-echeances:parlements | Parlement européen, commission des pétitions (acteur institutionnel) | europarl.europa.eu
 + | Procès-verbal - Commissions | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
 + | Projet d'ordre du jour - Commissions | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
-+ | Projet de rapport | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
++ | Projet de rapport | fr | calendriers-echeances:parlements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; type de document parlementaire (format, pas un sujet) | europarl.europa.eu
 + | Proposition de résolution | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
 + | Proposition de résolution commune | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
-+ | Rapport | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
++ | Rapport | fr | calendriers-echeances:parlements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; type de document parlementaire (format, pas un sujet) | europarl.europa.eu
 + | REGI | fr | calendriers-echeances:parlements | Parlement européen, commission du développement régional (acteur institutionnel) | europarl.europa.eu
 + | SANT | fr | calendriers-echeances:parlements | Parlement européen, sous-commission de la santé publique (acteur institutionnel) | europarl.europa.eu
 + | SEDE | fr | calendriers-echeances:parlements | Parlement européen, sous-commission sécurité et défense (acteur institutionnel) | europarl.europa.eu, multimedia.europarl.europa.eu
-+ | Texte adopté | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | europarl.europa.eu
++ | Texte adopté | fr | calendriers-echeances:parlements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; type de document parlementaire (format, pas un sujet) | europarl.europa.eu
 + | TRAN | fr | calendriers-echeances:parlements | Parlement européen, commission des transports (acteur institutionnel) | europarl.europa.eu
 + | Vidéo d'une réunion d'une commission | fr | calendriers-echeances:parlements | type de document parlementaire (format, pas un sujet) | multimedia.europarl.europa.eu
-+ | Disaster | en | climat-extremes:exposes |  | globalvoices.org
++ | Disaster | en | climat-extremes:exposes | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
 + | Waldbrand | de | climat-extremes:feux |  | correctiv.org
 + | Dürre | de | climat-extremes:secheresses |  | correctiv.org
 + | Hochwasser | de | climat-extremes:tempetes;oceans-et-fleuves:fleuves |  | correctiv.org
-+ | Climat | fr | climat-extremes:tendance |  | fr.hespress.com
-+ | Climate | en | climat-extremes:tendance |  | consilium.europa.eu
++ | Climat | fr | climat-extremes:tendance | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | fr.hespress.com
++ | Climate | en | climat-extremes:tendance | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu
 + | COP | fr | climat-extremes:tendance |  | fr.hespress.com
-+ | Klima | de | climat-extremes:tendance |  | correctiv.org
++ | Klima | de | climat-extremes:tendance | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Klimakrise | de | climat-extremes:tendance |  | correctiv.org
 + | Klimaschutz | de | climat-extremes:tendance |  | correctiv.org
 + | klimawandel | de | climat-extremes:tendance |  | correctiv.org
@@ -70,7 +70,7 @@
 + | Fußball | de | competitions-culture:calendrier |  | correctiv.org
 + | Hansa Rostock | de | competitions-culture:calendrier | acteur : club de football | correctiv.org
 + | Rudern | de | competitions-culture:calendrier |  | correctiv.org
-+ | Sport | en | competitions-culture:calendrier |  | consilium.europa.eu, correctiv.org, globalvoices.org
++ | Sport | en | competitions-culture:calendrier | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu, correctiv.org, globalvoices.org
 + | Stuttgarter Kickers | de | competitions-culture:calendrier | acteur : club de football | correctiv.org
 + | WM | de | competitions-culture:calendrier |  | correctiv.org
 + | Klopp | de | competitions-culture:forme | personnalité publique : Jürgen Klopp, entraîneur de football | correctiv.org
@@ -81,9 +81,9 @@
 + | Cryptocurrency | en | crises-bancaires:cryptomonnaies |  | investinglive.com
 + | Kryptowährung | de | crises-bancaires:cryptomonnaies |  | correctiv.org
 + | Capital markets | en | crises-bancaires:marches |  | consilium.europa.eu
-+ | Hedge | en | crises-bancaires:marches |  | canadianminingjournal.com
++ | Hedge | en | crises-bancaires:marches | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | canadianminingjournal.com
 + | Stock Markets/Investing | en | crises-bancaires:marches |  | northernminer.com
-+ | Stocks | en | crises-bancaires:marches |  | investinglive.com
++ | Stocks | en | crises-bancaires:marches | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | investinglive.com
 + | Wall Street | fr | crises-bancaires:marches |  | 
 + | Chemicals | de | cycles-biogeochimiques:combustion |  | correctiv.org
 + | chemische Industrie | de | cycles-biogeochimiques:combustion |  | correctiv.org
@@ -96,10 +96,10 @@
 + | Coris Bank International Côte d’Ivoire | fr | dette-emergents:banques | acteur : filiale ivoirienne | 
 + | Idrissa Nassa | fr | dette-emergents:banques | personnalité publique : homme d'affaires burkinabè (Coris Bank) | 
 + | 60 ans BAD | fr | dette-emergents:fmi | acteur : Banque africaine de développement | 
-+ | Development | en | dette-emergents:fmi |  | consilium.europa.eu, globalvoices.org
++ | Development | en | dette-emergents:fmi | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu, globalvoices.org
 + | Entwicklungspolitik | de | dette-emergents:fmi |  | correctiv.org
 + | ACORGA | en | dette-emergents:gisements | marque ou logiciel (produit, pas un acteur) | im-mining.com
-+ | agreement | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
++ | agreement | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Aspect Engineering Solutions | en | dette-emergents:gisements | acteur : prestataire | im-mining.com
 + | AspenTech Inmation | en | dette-emergents:gisements | marque ou logiciel (produit, pas un acteur) | im-mining.com
 + | Assay | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
@@ -108,7 +108,7 @@
 + | Base metals | en | dette-emergents:gisements |  | im-mining.com
 + | BASE METALS & GOLD | en | dette-emergents:gisements |  | miningweekly.com
 + | BLASTMAP | en | dette-emergents:gisements | marque ou logiciel (produit, pas un acteur) | im-mining.com
-+ | CEO | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
++ | CEO | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Chile mining | en | dette-emergents:gisements |  | northernminer.com
 + | Comminution of minerals | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
 + | Communications in mining | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
@@ -123,9 +123,9 @@
 + | Economic/Feasibility Studies | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Equipment & Suppliers | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Equipment maintenance | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
-+ | Exploration | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com, northernminer.com
++ | Exploration | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com, northernminer.com
 + | Explosives and blasting | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
-+ | Factory | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
++ | Factory | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | GEOVIA | en | dette-emergents:gisements | marque ou logiciel (produit, pas un acteur) | im-mining.com
 + | GOLD | en | dette-emergents:gisements |  | canadianminingjournal.com, miningweekly.com, northernminer.com
 + | GOLD & COPPER | en | dette-emergents:gisements |  | miningweekly.com
@@ -135,32 +135,32 @@
 + | gold production | en | dette-emergents:gisements |  | northernminer.com
 + | gold projects | en | dette-emergents:gisements |  | northernminer.com
 + | ICMM | en | dette-emergents:gisements | acteur : Conseil international des mines et métaux | canadianminingjournal.com
-+ | Industrial minerals | en | dette-emergents:gisements |  | im-mining.com
++ | Industrial minerals | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | im-mining.com
 + | IRON-ORE & LITHIUM | en | dette-emergents:gisements |  | miningweekly.com
 + | IRON-ORE & STEEL | en | dette-emergents:gisements |  | miningweekly.com
 + | Kucing Liar | en | dette-emergents:gisements | acteur : projet minier (Grasberg, Indonésie) | im-mining.com
 + | Macmahon | en | dette-emergents:gisements | acteur : sous-traitant minier australien | im-mining.com
-+ | Manufacturers | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
++ | Manufacturers | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Mexico mining | en | dette-emergents:gisements |  | northernminer.com
 + | Mine Development | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Mine operation news | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
 + | Mine ventilation | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
 + | Mineral processing | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com, im-mining.com
 + | MINERALS COUNCIL SOUTH AFRICA | en | dette-emergents:gisements | acteur : organisation patronale minière sud-africaine | miningweekly.com
-+ | Mining | en | dette-emergents:gisements |  | canadianminingjournal.com
++ | Mining | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | canadianminingjournal.com
 + | Mining consumables | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
 + | Mining equipment | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
 + | Mining maintenance | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
 + | MINING SERVICES | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com, miningweekly.com
 + | Mining software | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
-+ | MOU | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
++ | MOU | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | NICKEL | en | dette-emergents:gisements |  | miningweekly.com
 + | Operating Mine | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Orica | en | dette-emergents:gisements | acteur : fabricant d'explosifs pour mines | im-mining.com
 + | Panuco | en | dette-emergents:gisements | acteur : projet minier Pánuco (Mexique) | canadianminingjournal.com
 + | PLATINUM GROUP METALS | en | dette-emergents:gisements |  | miningweekly.com
 + | Precious Metals | en | dette-emergents:gisements |  | im-mining.com, northernminer.com
-+ | Processing | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
++ | Processing | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Processing Solutions | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | e-mj.com
 + | PT-Freeport Indonesia | en | dette-emergents:gisements | acteur : exploitant de la mine de Grasberg | im-mining.com
 + | Quebec exploration | en | dette-emergents:gisements |  | northernminer.com
@@ -172,15 +172,15 @@
 + | Steel and iron ore | en | dette-emergents:gisements |  | im-mining.com
 + | Surpac | en | dette-emergents:gisements | marque ou logiciel (produit, pas un acteur) | im-mining.com
 + | Surpac 2027 | en | dette-emergents:gisements | marque ou logiciel (produit, pas un acteur) | im-mining.com
-+ | Sustainability | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
-+ | Sustainable Development | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
++ | Sustainability | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
++ | Sustainable Development | en | dette-emergents:gisements | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; rubrique technique du métier minier, sans acteur ni événement | canadianminingjournal.com
 + | Sustainable mining | en | dette-emergents:gisements | rubrique technique du métier minier, sans acteur ni événement | im-mining.com
 + | Vizsla | en | dette-emergents:gisements | acteur : Vizsla Silver, société minière | canadianminingjournal.com
 + | XPLOLOG | en | dette-emergents:gisements | marque ou logiciel (produit, pas un acteur) | im-mining.com
 + | XPLOSMART | en | dette-emergents:gisements | marque ou logiciel (produit, pas un acteur) | im-mining.com
 + | deep sea mining | en | dette-emergents:gisements;oceans-et-fleuves:oceans |  | northernminer.com
 + | LITHIUM | en | dette-emergents:gisements;rivalite-sino-americaine:terres_rares |  | miningweekly.com, northernminer.com
-+ | Commodities | en | dette-emergents:matieres_premieres |  | investinglive.com
++ | Commodities | en | dette-emergents:matieres_premieres | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | investinglive.com
 + | Commodities Markets | en | dette-emergents:matieres_premieres |  | northernminer.com
 + | MINING ECONOMY | en | dette-emergents:matieres_premieres |  | miningweekly.com
 + | ROYALTIES | en | dette-emergents:matieres_premieres |  | miningweekly.com
@@ -191,24 +191,24 @@
 + | Braunkohle | de | energie-mondiale:production |  | correctiv.org
 + | COAL | en | energie-mondiale:production |  | miningweekly.com
 + | Coal technology | en | energie-mondiale:production |  | im-mining.com
-+ | ENERGY | en | energie-mondiale:production |  | miningweekly.com
++ | ENERGY | en | energie-mondiale:production | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | miningweekly.com
 + | Garzweiler | de | energie-mondiale:production |  | correctiv.org
-+ | Gas | de | energie-mondiale:production |  | correctiv.org
++ | Gas | de | energie-mondiale:production | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Leag | de | energie-mondiale:production | acteur : exploitant de lignite et centrales (Lusace) | correctiv.org
-+ | Offshore | de | energie-mondiale:production |  | correctiv.org
++ | Offshore | de | energie-mondiale:production | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | RWE | de | energie-mondiale:production | acteur : énergéticien allemand | correctiv.org
 + | Windenergie | de | energie-mondiale:production |  | correctiv.org
 + | Coronavirus | de | epidemies:agent |  | correctiv.org
 + | Covid-19 | de | epidemies:agent |  | correctiv.org
-+ | Grippe | de | epidemies:agent |  | correctiv.org
++ | Grippe | de | epidemies:agent | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Hantavirus | de | epidemies:agent |  | correctiv.org
-+ | Gesundheit | de | epidemies:autorites |  | correctiv.org
-+ | Health | en | epidemies:autorites |  | consilium.europa.eu, globalvoices.org
++ | Gesundheit | de | epidemies:autorites | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
++ | Health | en | epidemies:autorites | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu, globalvoices.org
 + | Medizin und Gesundheit | de | epidemies:autorites |  | correctiv.org
 + | Corona-Impfung | de | epidemies:technique |  | correctiv.org
-+ | Impfung | de | epidemies:technique |  | correctiv.org
++ | Impfung | de | epidemies:technique | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Pfizer | de | epidemies:technique | acteur : laboratoire pharmaceutique | correctiv.org
-+ | Pharma | de | epidemies:technique |  | correctiv.org
++ | Pharma | de | epidemies:technique | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Berlin | de | espace:lieu:Berlin (Allemagne) |  | correctiv.org
 + | Bielefeld | de | espace:lieu:Bielefeld (Allemagne) |  | correctiv.org
 + | Bilbao | en | espace:lieu:Bilbao (Espagne) |  | canadianminingjournal.com
@@ -415,43 +415,43 @@
 + | Moschee | de | humain:croyances |  | correctiv.org
 + | Papst | de | humain:croyances |  | correctiv.org
 + | Papst Leo XIV. | de | humain:croyances | personnalité publique : pape | correctiv.org
-+ | Religion | en | humain:croyances |  | fr.hespress.com, globalvoices.org
++ | Religion | en | humain:croyances | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | fr.hespress.com, globalvoices.org
 + | Vatikan | de | humain:croyances |  | correctiv.org
-+ | Kinder | de | humain:enfance |  | correctiv.org
-+ | Minderjährige | de | humain:enfance |  | correctiv.org
-+ | Youth | en | humain:jeunesse |  | consilium.europa.eu, globalvoices.org
++ | Kinder | de | humain:enfance | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
++ | Minderjährige | de | humain:enfance | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
++ | Youth | en | humain:jeunesse | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu, globalvoices.org
 + | Ethnicity & Race | en | humain:nous_eux |  | globalvoices.org
 + | Racisme France | fr | humain:nous_eux |  | tsa-algerie.com
 + | Rassismus | de | humain:nous_eux |  | correctiv.org
 + | Demonstation | de | humain:passage_acte |  | correctiv.org
 + | Demonstration | de | humain:passage_acte |  | correctiv.org
-+ | Protest | en | humain:passage_acte |  | correctiv.org, globalvoices.org
++ | Protest | en | humain:passage_acte | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org, globalvoices.org
 + | Schulstreik | de | humain:passage_acte |  | correctiv.org
 + | bauernproteste | de | humain:passage_acte;alimentation-mondiale:cultures |  | correctiv.org
 + | Identitäre Bewegung | de | humain:polarisation | acteur : mouvement identitaire | correctiv.org
 + | Neue Rechte | de | humain:polarisation |  | correctiv.org
 + | Rechtspopulismus | de | humain:polarisation |  | correctiv.org
 + | Rechtsruck | de | humain:polarisation |  | correctiv.org
-+ | Lobby | de | humain:reseaux_discrets |  | correctiv.org
++ | Lobby | de | humain:reseaux_discrets | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Lobbyismus | de | humain:reseaux_discrets |  | correctiv.org
 + | politische Einflussnahme | de | humain:reseaux_discrets |  | correctiv.org
 + | Gaslobby | de | humain:reseaux_discrets;energie-mondiale:decisions |  | correctiv.org
 + | rechte Netzwerke | de | humain:reseaux_discrets;humain:polarisation |  | correctiv.org
 + | Altersarmut | de | humain:stress_chronique |  | correctiv.org
-+ | Armut | de | humain:stress_chronique |  | correctiv.org
++ | Armut | de | humain:stress_chronique | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Grundsicherung | de | humain:stress_chronique |  | correctiv.org
 + | Deutschlandflagge | de | humain:symboles |  | correctiv.org
 + | Supply Chain | en | inflation-mondiale:approvisionnement |  | canadianminingjournal.com
 + | Central Banks | en | inflation-mondiale:banques_centrales |  | investinglive.com
-+ | Budget | en | inflation-mondiale:budget |  | consilium.europa.eu
-+ | Haushalt | de | inflation-mondiale:budget |  | correctiv.org
++ | Budget | en | inflation-mondiale:budget | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu
++ | Haushalt | de | inflation-mondiale:budget | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | sparpaket | de | inflation-mondiale:budget |  | correctiv.org
-+ | Steuer | de | inflation-mondiale:budget |  | correctiv.org
++ | Steuer | de | inflation-mondiale:budget | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Taxation | en | inflation-mondiale:budget |  | consilium.europa.eu
 + | The euro | en | inflation-mondiale:monnaies |  | consilium.europa.eu
 + | Lebenshaltungskosten | de | inflation-mondiale:prix_conso |  | correctiv.org
 + | supermarkt | de | inflation-mondiale:prix_conso |  | correctiv.org
-+ | Labor | en | inflation-mondiale:salaires |  | globalvoices.org
++ | Labor | en | inflation-mondiale:salaires | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
 + | Labour rights | en | inflation-mondiale:salaires |  | consilium.europa.eu
 + | Mindestlohn | de | inflation-mondiale:salaires |  | correctiv.org
 + | Stroer | de | information-cyber:attention | acteur : Ströer, groupe allemand d'affichage et de médias en ligne | correctiv.org
@@ -461,33 +461,33 @@
 + | Cyberangriff | de | information-cyber:cyber |  | correctiv.org
 + | Datenleak | de | information-cyber:cyber |  | correctiv.org
 + | Hackerangriff | de | information-cyber:cyber |  | correctiv.org
-+ | Leak | de | information-cyber:cyber |  | correctiv.org
++ | Leak | de | information-cyber:cyber | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Sicherheitslücken | de | information-cyber:cyber |  | correctiv.org
 + | Datenschutz | de | information-cyber:etats |  | correctiv.org
 + | 5G | de | information-cyber:infrastructure |  | correctiv.org
 + | Digital infrastructure | en | information-cyber:infrastructure |  | consilium.europa.eu
-+ | Internet | de | information-cyber:infrastructure |  | correctiv.org
-+ | Bangla | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Catalan | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Chinese | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | English | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Hindi | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Japanese | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Internet | de | information-cyber:infrastructure | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
++ | Bangla | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Catalan | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Chinese | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | English | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Hindi | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Japanese | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
 + | Journalismus | de | information-cyber:langues_biais |  | correctiv.org
-+ | Kazakh | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Korean | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Kazakh | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Korean | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
 + | Lokaljournalismus | de | information-cyber:langues_biais |  | correctiv.org
-+ | Macedonian | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Malagasy | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Media & Journalism | en | information-cyber:langues_biais |  | globalvoices.org
++ | Macedonian | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Malagasy | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Media & Journalism | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
 + | Media and culture | en | information-cyber:langues_biais |  | consilium.europa.eu
-+ | Nepali | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Portuguese | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Presse | de | information-cyber:langues_biais |  | correctiv.org
-+ | Russian | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
-+ | Spanish | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Nepali | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Portuguese | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Presse | de | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
++ | Russian | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Spanish | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
 + | Spiegel | de | information-cyber:langues_biais | acteur : Der Spiegel, hebdomadaire allemand | correctiv.org
-+ | Ukrainian | en | information-cyber:langues_biais | langue de l'article (Global Voices), pas un sujet | globalvoices.org
++ | Ukrainian | en | information-cyber:langues_biais | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; langue de l'article (Global Voices), pas un sujet | globalvoices.org
 + | Big Tech | de | information-cyber:plateformes |  | correctiv.org
 + | Online safety | en | information-cyber:plateformes |  | consilium.europa.eu
 + | Social Media | de | information-cyber:plateformes |  | correctiv.org
@@ -520,7 +520,7 @@
 + | Blackout | de | infrastructures-critiques:cascades |  | correctiv.org
 + | Stromausfall | de | infrastructures-critiques:cascades |  | correctiv.org
 + | ABB | en | infrastructures-critiques:reseaux | acteur : groupe d'électrotechnique | canadianminingjournal.com
-+ | Infrastruktur | de | infrastructures-critiques:reseaux |  | correctiv.org
++ | Infrastruktur | de | infrastructures-critiques:reseaux | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Power supply for mines | en | infrastructures-critiques:reseaux |  | im-mining.com
 + | RAIL INFRASTRUCTURE | en | infrastructures-critiques:reseaux |  | miningweekly.com
 + | Stromnetz | de | infrastructures-critiques:reseaux |  | correctiv.org
@@ -528,16 +528,16 @@
 + | Vereinte Nationen | de | iran-nucleaire:conseil_securite |  | correctiv.org
 + | Völkerrecht | de | iran-nucleaire:conseil_securite |  | correctiv.org
 + | binationaux | fr | migrations-demographie:diasporas |  | tsa-algerie.com
-+ | Exil | de | migrations-demographie:diasporas |  | correctiv.org
-+ | exile | de | migrations-demographie:diasporas |  | correctiv.org
-+ | Flucht | de | migrations-demographie:migrations |  | correctiv.org
++ | Exil | de | migrations-demographie:diasporas | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
++ | exile | de | migrations-demographie:diasporas | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
++ | Flucht | de | migrations-demographie:migrations | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Geflüchtete | de | migrations-demographie:migrations |  | correctiv.org
-+ | Immigration | fr | migrations-demographie:migrations |  | tsa-algerie.com
-+ | Migration | de | migrations-demographie:migrations |  | correctiv.org
++ | Immigration | fr | migrations-demographie:migrations | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | tsa-algerie.com
++ | Migration | de | migrations-demographie:migrations | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Migration & Immigration | en | migrations-demographie:migrations |  | globalvoices.org
-+ | Refugees | en | migrations-demographie:migrations |  | globalvoices.org
++ | Refugees | en | migrations-demographie:migrations | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
 + | Rohingyas | fr | migrations-demographie:migrations |  | fr.hespress.com
-+ | Rente | de | migrations-demographie:natalite_vieillissement |  | correctiv.org
++ | Rente | de | migrations-demographie:natalite_vieillissement | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Abschiebung | de | migrations-demographie:politiques_migratoires |  | correctiv.org
 + | asyl | de | migrations-demographie:politiques_migratoires |  | correctiv.org
 + | Martin Sellner | de | migrations-demographie:politiques_migratoires | personnalité publique : militant identitaire autrichien | correctiv.org
@@ -548,7 +548,7 @@
 + | Remigration-Institut | de | migrations-demographie:politiques_migratoires;humain:nous_eux |  | correctiv.org
 + | Remigrations-Konzept | de | migrations-demographie:politiques_migratoires;humain:nous_eux |  | correctiv.org
 + | URANIUM | en | nucleaire-radiologique:electricite;energie-mondiale:nucleaire_civil |  | miningweekly.com
-+ | Wasser | de | oceans-et-fleuves:cycle |  | correctiv.org
++ | Wasser | de | oceans-et-fleuves:cycle | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | niedrigwasser | de | oceans-et-fleuves:fleuves |  | correctiv.org
 + | Meeresspiegel | de | oceans-et-fleuves:niveau_mer |  | correctiv.org
 + | steigende meeresspiegel | de | oceans-et-fleuves:niveau_mer |  | correctiv.org
@@ -570,8 +570,8 @@
 + | Past Week | en | relief-et-montagnes:seismes_volcans | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
 + | us | en | relief-et-montagnes:seismes_volcans | code de réseau sismique ou classe du flux USGS (déjà collecté en chiffres par le bot) | earthquake.usgs.gov
 + | Commerce extérieur/international | fr | rivalite-sino-americaine:commerce |  | europarl.europa.eu
-+ | Trade | en | rivalite-sino-americaine:commerce |  | consilium.europa.eu
-+ | Sommet | fr | rivalite-sino-americaine:diplomatie |  | fr.hespress.com
++ | Trade | en | rivalite-sino-americaine:commerce | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu
++ | Sommet | fr | rivalite-sino-americaine:diplomatie | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | fr.hespress.com
 + | xi | fr | rivalite-sino-americaine:diplomatie | personnalité publique : Xi Jinping ? — à confirmer (étiquette d'une lettre) | fr.hespress.com
 + | Trump et Poutine | fr | rivalite-sino-americaine:diplomatie;russie-ukraine:negociations |  | fr.hespress.com
 + | antimony | en | rivalite-sino-americaine:terres_rares |  | canadianminingjournal.com
@@ -582,7 +582,7 @@
 + | Russland/Ukraine | de | russie-ukraine:front |  | correctiv.org
 + | Ukrainekrieg | de | russie-ukraine:front |  | correctiv.org
 + | kriegsverbrechen | de | russie-ukraine:front;guerre-levant:humanitaire |  | correctiv.org
-+ | Krieg | de | russie-ukraine:front;guerre-levant:israel |  | correctiv.org
++ | Krieg | de | russie-ukraine:front;guerre-levant:israel | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Déclaration en faveur de la paix | fr | russie-ukraine:negociations |  | fr.hespress.com
 + | Putin | de | russie-ukraine:negociations | personnalité publique : président de la Russie | correctiv.org
 + | Selenskyj | de | russie-ukraine:negociations | personnalité publique : président de l'Ukraine | correctiv.org
@@ -590,11 +590,11 @@
 + | EU-Sanktionen | de | russie-ukraine:sanctions |  | correctiv.org
 + | Fridman | de | russie-ukraine:sanctions | personnalité publique : Mikhaïl Fridman, homme d'affaires russe (sanctions UE) | correctiv.org
 + | Sanktionen | de | russie-ukraine:sanctions;iran-nucleaire:sanctions |  | correctiv.org
-+ | Automation | en | sciences-techniques:adoption |  | im-mining.com
++ | Automation | en | sciences-techniques:adoption | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | im-mining.com
 + | IoT | en | sciences-techniques:adoption |  | im-mining.com
 + | roboter | de | sciences-techniques:adoption |  | correctiv.org
-+ | Technology | en | sciences-techniques:adoption |  | globalvoices.org
-+ | Financing | en | sciences-techniques:capitaux |  | canadianminingjournal.com, northernminer.com
++ | Technology | en | sciences-techniques:adoption | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
++ | Financing | en | sciences-techniques:capitaux | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | canadianminingjournal.com, northernminer.com
 + | Actualité Intelligence artificielle | fr | sciences-techniques:ia |  | 
 + | AI | en | sciences-techniques:ia |  | im-mining.com
 + | Anthropic | fr | sciences-techniques:ia | acteur : laboratoire d'IA | 
@@ -604,9 +604,9 @@
 + | KI | de | sciences-techniques:ia |  | correctiv.org
 + | künstliche intelligenz | de | sciences-techniques:ia |  | correctiv.org
 + | Archéologie | fr | sciences-techniques:recherche |  | courrierinternational.com
-+ | Research | en | sciences-techniques:recherche |  | consilium.europa.eu
-+ | Science | en | sciences-techniques:recherche |  | globalvoices.org
-+ | Sciences | fr | sciences-techniques:recherche |  | courrierinternational.com
++ | Research | en | sciences-techniques:recherche | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu
++ | Science | en | sciences-techniques:recherche | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
++ | Sciences | fr | sciences-techniques:recherche | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | courrierinternational.com
 + | armes autonomes | fr | sciences-techniques:regulation;securite-europeenne:defense |  | fr.hespress.com
 + | robots tueurs | fr | sciences-techniques:regulation;securite-europeenne:defense |  | fr.hespress.com
 + | Sondervermögen | de | securite-europeenne:budgets_dette |  | correctiv.org
@@ -627,33 +627,33 @@
 + | Katastrophenschutz | de | securite-publique:alertes |  | correctiv.org
 + | Krisenvorsorge | de | securite-publique:alertes |  | correctiv.org
 + | Zivilschutz | de | securite-publique:alertes |  | correctiv.org
-+ | Betrug | de | securite-publique:corruption |  | correctiv.org
++ | Betrug | de | securite-publique:corruption | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Korruption | de | securite-publique:corruption |  | correctiv.org
 + | Machtmissbrauch | de | securite-publique:corruption |  | correctiv.org
-+ | Scam | de | securite-publique:corruption |  | correctiv.org
++ | Scam | de | securite-publique:corruption | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Spendenaffäre | de | securite-publique:corruption |  | correctiv.org
 + | Wahlbetrug | de | securite-publique:corruption |  | correctiv.org
 + | Anlagebetrug | de | securite-publique:corruption;crises-bancaires:faillites |  | correctiv.org
 + | Akten des Missbrauchs | de | securite-publique:justice |  | correctiv.org
-+ | Gericht | de | securite-publique:justice |  | correctiv.org
++ | Gericht | de | securite-publique:justice | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Gerichtsverfahren | de | securite-publique:justice |  | correctiv.org
-+ | Justice | en | securite-publique:justice |  | consilium.europa.eu
++ | Justice | en | securite-publique:justice | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu
 + | Justiz | de | securite-publique:justice |  | correctiv.org
-+ | Klage | de | securite-publique:justice |  | correctiv.org
++ | Klage | de | securite-publique:justice | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Landgericht Berlin | de | securite-publique:justice |  | correctiv.org
 + | Landgericht Köln | de | securite-publique:justice |  | correctiv.org
-+ | Law | en | securite-publique:justice |  | globalvoices.org
-+ | Missbrauch | de | securite-publique:justice |  | correctiv.org
++ | Law | en | securite-publique:justice | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | globalvoices.org
++ | Missbrauch | de | securite-publique:justice | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Sexualisiertes Fehlverhalten | de | securite-publique:justice |  | correctiv.org
 + | Sexuelle Belästigung | de | securite-publique:justice |  | correctiv.org
 + | Sexueller Missbrauch | de | securite-publique:justice |  | correctiv.org
 + | Staatsanwaltschaft Dortmund | de | securite-publique:justice |  | correctiv.org
-+ | Urteil | de | securite-publique:justice |  | correctiv.org
++ | Urteil | de | securite-publique:justice | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Missbrauch im Jugendfußball | de | securite-publique:justice;competitions-culture:forme |  | correctiv.org
-+ | Angriff | de | securite-publique:peur |  | correctiv.org
++ | Angriff | de | securite-publique:peur | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Anschlag | de | securite-publique:peur |  | correctiv.org
-+ | Attaque | fr | securite-publique:peur |  | fr.hespress.com
-+ | Gewalt | de | securite-publique:peur |  | correctiv.org
++ | Attaque | fr | securite-publique:peur | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | fr.hespress.com
++ | Gewalt | de | securite-publique:peur | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | Gewalt im Jugendfußball | de | securite-publique:peur;competitions-culture:forme |  | correctiv.org
 + | Gewalt im Sport | de | securite-publique:peur;competitions-culture:forme |  | correctiv.org
 + | Polizei | de | securite-publique:polices |  | correctiv.org
@@ -663,8 +663,8 @@
 + | Dobrindt | de | securite-publique:politique | personnalité publique : ministre fédéral allemand de l'Intérieur | correctiv.org
 + | Extremismus | de | securite-publique:politique |  | correctiv.org
 + | Rechtsextremismus | de | securite-publique:politique |  | correctiv.org
-+ | Sicherheit | de | securite-publique:politique |  | correctiv.org
-+ | Sécurité | fr | securite-publique:politique |  | courrierinternational.com
++ | Sicherheit | de | securite-publique:politique | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
++ | Sécurité | fr | securite-publique:politique | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | courrierinternational.com
 + | Verdachtsmeldungen | de | securite-publique:sanctions |  | correctiv.org
 + | Benzodiazepine | de | securite-publique:trafics |  | correctiv.org
 + | Benzos | de | securite-publique:trafics |  | correctiv.org
@@ -676,17 +676,17 @@
 + | Opioide | de | securite-publique:trafics |  | correctiv.org
 + | Research Chemicals | de | securite-publique:trafics |  | correctiv.org
 + | Schmerzmittel | de | securite-publique:trafics |  | correctiv.org
-+ | Sucht | de | securite-publique:trafics |  | correctiv.org
++ | Sucht | de | securite-publique:trafics | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | correctiv.org
 + | synthetische Drogen | de | securite-publique:trafics |  | correctiv.org
 + | Tilidin | de | securite-publique:trafics |  | correctiv.org
 + | Umweltkriminalität | de | securite-publique:trafics |  | correctiv.org
 + | Umweltverbrechen in NRW | de | securite-publique:trafics |  | correctiv.org
-+ | Espace | fr | soleil-espace:satellites |  | courrierinternational.com
-+ | Space | en | soleil-espace:satellites |  | consilium.europa.eu
++ | Espace | fr | soleil-espace:satellites | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | courrierinternational.com
++ | Space | en | soleil-espace:satellites | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu
 + | pétroliers | fr | transport-maritime:flottes |  | fr.hespress.com
-+ | LOGISTICS | en | transport-maritime:fret |  | miningweekly.com
-+ | Transport | en | transport-maritime:fret |  | consilium.europa.eu
-+ | Transports | fr | transport-maritime:fret |  | europarl.europa.eu
++ | LOGISTICS | en | transport-maritime:fret | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | miningweekly.com
++ | Transport | en | transport-maritime:fret | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | consilium.europa.eu
++ | Transports | fr | transport-maritime:fret | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) | europarl.europa.eu
 + | Bulk handling | en | transport-maritime:ports |  | im-mining.com
 + | Northern Miner | en | émetteur:canadianminingjournal.com | nom de l'émetteur lui-même | canadianminingjournal.com
 + | Cartoon-Arena | de | émetteur:correctiv.org | nom de l'émetteur lui-même | correctiv.org
@@ -714,7 +714,7 @@
 + | Audi-Werk | de | economie-entreprises:entreprises | acteur : usine Audi ; aucune fiche ne le situe | correctiv.org
 + | Beatrix von Storch | de | politique-interieure:dirigeants | personnalité publique : députée AfD ; aucune fiche ne la situe | correctiv.org
 + | Behörden | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Bildung | de | societe-droits:education | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Bildung | de | societe-droits:education | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Bildung- und Teilhabe | de | societe-droits:education | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Bildungs- und Teilhabepaket | de | societe-droits:education | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | BME | en | economie-entreprises:entreprises | acteur : sigle ambigu (Bulk Mining Explosives ?) ; aucune fiche ne le situe | im-mining.com
@@ -724,8 +724,8 @@
 + | Bundeskanzler | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Bundesregierung | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Bundeswirtschaftministerium | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | BUSINESS | en | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | miningweekly.com
-+ | Bücher | de | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | BUSINESS | en | economie-entreprises:conjoncture | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | miningweekly.com
++ | Bücher | de | culture-memoire:creation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | CDU | de | politique-interieure:partis | acteur : parti politique allemand ; aucune fiche ne le situe | correctiv.org
 + | Circular economy | en | environnement-dechets:dechets | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
 + | Claudio Fayad | en | à identifier | personne non identifiée : dirigeant minier ? — à identifier | im-mining.com
@@ -734,32 +734,32 @@
 + | Consumer protection | en | union-europeenne:politiques_communes | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
 + | Critical One | en | economie-entreprises:entreprises | acteur : société minière (à identifier) ; aucune fiche ne le situe | canadianminingjournal.com
 + | csd | de | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Culture | fr | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
++ | Culture | fr | culture-memoire:creation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | courrierinternational.com
 + | DDR | de | culture-memoire:histoire_memoire | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Debatte um AfD-Verbot | de | politique-interieure:procedures | acteur : procédure d'interdiction de l'AfD ; aucune fiche ne le situe | correctiv.org
-+ | Demokratie | de | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Demokratie | de | politique-interieure:regime | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | DKP | de | politique-interieure:partis | acteur : parti communiste allemand ; aucune fiche ne le situe | correctiv.org
 + | Dominique de Villepin | fr | politique-interieure:dirigeants | personnalité publique : ancien Premier ministre français ; aucune fiche ne la situe | fr.hespress.com
 + | Droits de l'homme | fr | societe-droits:droits_humains | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
 + | döllner | de | economie-entreprises:dirigeants_entreprise | personnalité publique : président du directoire d'Audi ; aucune fiche ne la situe | correctiv.org
-+ | Economics & Business | en | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | ECONOMY | en | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | miningweekly.com
-+ | Education | en | societe-droits:education | thème réel, mais aucune fiche ne le couvre | globalvoices.org, investinglive.com
++ | Economics & Business | en | economie-entreprises:conjoncture | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | ECONOMY | en | economie-entreprises:conjoncture | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | miningweekly.com
++ | Education | en | societe-droits:education | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org, investinglive.com
 + | Education & training | en | societe-droits:education | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
 + | Elargissement | fr | union-europeenne:elargissement | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
 + | Electra | en | economie-entreprises:entreprises | acteur : société (à identifier : Electra Battery Materials ?) ; aucune fiche ne le situe | canadianminingjournal.com
 + | Elton | en | economie-entreprises:entreprises | acteur : nom ambigu ; aucune fiche ne le situe | canadianminingjournal.com
 + | Emerson | en | economie-entreprises:entreprises | acteur : industriel américain (automatismes) ; aucune fiche ne le situe | im-mining.com
 + | Entsorgung | de | environnement-dechets:dechets | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Envirionment | en | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
-+ | Environment | en | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | globalvoices.org, northernminer.com
-+ | Environmental | en | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | im-mining.com
-+ | Environnement | fr | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
++ | Envirionment | en | environnement-dechets:environnement | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
++ | Environment | en | environnement-dechets:environnement | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org, northernminer.com
++ | Environmental | en | environnement-dechets:environnement | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | im-mining.com
++ | Environnement | fr | environnement-dechets:environnement | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | courrierinternational.com
 + | EU enlargement | en | union-europeenne:elargissement | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Film | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Film | en | culture-memoire:creation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
 + | Financial Matters, M&A | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | northernminer.com
-+ | Finanzen | de | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | funding | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
++ | Finanzen | de | economie-entreprises:finance_entreprise | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | funding | en | economie-entreprises:finance_entreprise | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
 + | Föderalismus | de | politique-interieure:gouvernement | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Geheimplan gegen Deutschland | de | politique-interieure:procedures | acteur : enquête de Correctiv (2024) sur une réunion « remigration » ; aucune fiche ne le situe | correctiv.org
 + | Geheimplan-Recherche | de | politique-interieure:procedures | acteur : enquête de Correctiv (2024) sur une réunion « remigration » ; aucune fiche ne le situe | correctiv.org
@@ -767,21 +767,21 @@
 + | Geschäfte der AfD | de | politique-interieure:procedures | acteur : affaires de l'AfD ; aucune fiche ne le situe | correctiv.org
 + | GMD | en | economie-entreprises:entreprises | acteur : sigle ambigu ; aucune fiche ne le situe | canadianminingjournal.com
 + | Goal AG | de | economie-entreprises:entreprises | acteur : entreprise (à identifier) ; aucune fiche ne le situe | correctiv.org
-+ | Governance | en | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Governance | en | politique-interieure:regime | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
 + | Grüne | de | politique-interieure:partis | acteur : parti politique allemand (Verts) ; aucune fiche ne le situe | correctiv.org
 + | Hexane | de | environnement-dechets:pollution_chimique | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | History | en | culture-memoire:histoire_memoire | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | History | en | culture-memoire:histoire_memoire | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
 + | Human Rights | en | societe-droits:droits_humains | thème réel, mais aucune fiche ne le couvre | globalvoices.org
 + | Höcke | de | politique-interieure:dirigeants | personnalité publique : dirigeant AfD de Thuringe ; aucune fiche ne la situe | correctiv.org
 + | ikea | de | economie-entreprises:entreprises | acteur : distributeur ; aucune fiche ne le situe | correctiv.org
-+ | Immobilien | de | economie-entreprises:immobilier_consommation | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Immobilien | de | economie-entreprises:immobilier_consommation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Indigenous | en | societe-droits:droits_humains | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Industrie | de | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Industry | en | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
++ | Industrie | de | economie-entreprises:conjoncture | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Industry | en | economie-entreprises:conjoncture | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
 + | Institutional affairs | en | union-europeenne:institutions | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Institutions | fr | union-europeenne:institutions | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
-+ | International Relations | en | union-europeenne:relations_exterieures | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Investment | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
++ | Institutions | fr | union-europeenne:institutions | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
++ | International Relations | en | union-europeenne:relations_exterieures | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Investment | en | economie-entreprises:finance_entreprise | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
 + | Kay Gottschalk | de | politique-interieure:dirigeants | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
 + | Krah | de | politique-interieure:dirigeants | personnalité publique : député AfD ; aucune fiche ne la situe | correctiv.org
 + | Krankenkassen | de | societe-droits:sante_publique | thème réel, mais aucune fiche ne le couvre | correctiv.org
@@ -790,9 +790,9 @@
 + | LGBTIQ | de | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | LGBTQ+ | en | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | globalvoices.org
 + | Linke in Berlin | de | politique-interieure:partis | acteur : Die Linke, Berlin ; aucune fiche ne le situe | correctiv.org
-+ | literatur | de | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | correctiv.org
-+ | Literature | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Livre | fr | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | courrierinternational.com
++ | literatur | de | culture-memoire:creation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Literature | en | culture-memoire:creation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Livre | fr | culture-memoire:creation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | courrierinternational.com
 + | Losberg | en | economie-entreprises:entreprises | acteur : à identifier ; aucune fiche ne le situe | im-mining.com
 + | Lukreta | de | economie-entreprises:entreprises | acteur : à identifier ; aucune fiche ne le situe | correctiv.org
 + | M&A | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | northernminer.com
@@ -806,7 +806,7 @@
 + | Michael Finnegan | en | à identifier | personne non identifiée : à identifier | im-mining.com
 + | mining M&A | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | northernminer.com
 + | Mining mergers and acquisitions | en | economie-entreprises:finance_entreprise | thème réel, mais aucune fiche ne le couvre | im-mining.com
-+ | Music | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Music | en | culture-memoire:creation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
 + | Müll | de | environnement-dechets:dechets | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Nature and biodiversity | en | environnement-dechets:biodiversite | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
 + | Neo-Gulag | de | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | correctiv.org
@@ -819,9 +819,9 @@
 + | Parteienerbot | de | politique-interieure:procedures | acteur : interdiction de parti (orthographe de la source) ; aucune fiche ne le situe | correctiv.org
 + | Petr Bystron | de | politique-interieure:dirigeants | personnalité publique : député européen AfD ; aucune fiche ne la situe | correctiv.org
 + | Petry | de | politique-interieure:dirigeants | personnalité publique : ancienne coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
-+ | Photography | en | culture-memoire:creation | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Politics | en | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | globalvoices.org
-+ | Politik | de | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Photography | en | culture-memoire:creation | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Politics | en | politique-interieure:regime | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Politik | de | politique-interieure:regime | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Pretzell | de | politique-interieure:dirigeants | personnalité publique : ancien député européen AfD ; aucune fiche ne la situe | correctiv.org
 + | pride | de | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | pötsch | de | economie-entreprises:dirigeants_entreprise | personnalité publique : Hans Dieter Pötsch ? (président du conseil de surveillance de VW) — à confirmer ; aucune fiche ne la situe | correctiv.org
@@ -831,7 +831,7 @@
 + | regulatory | en | economie-entreprises:regles_sectorielles | rubrique du métier minier ; pourrait servir aux règles et normes minières | canadianminingjournal.com
 + | Regulatory Issues | en | economie-entreprises:regles_sectorielles | rubrique du métier minier ; pourrait servir aux règles et normes minières | northernminer.com
 + | Reil | de | politique-interieure:dirigeants | personnalité publique : Guido Reil ? (élu AfD) — à confirmer ; aucune fiche ne la situe | correctiv.org
-+ | Relations extérieures | fr | union-europeenne:relations_exterieures | thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
++ | Relations extérieures | fr | union-europeenne:relations_exterieures | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | europarl.europa.eu
 + | Relations with the UK | en | union-europeenne:relations_exterieures | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
 + | Schwangerschaft | de | societe-droits:sante_publique | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | SDAJ | de | politique-interieure:partis | acteur : organisation de jeunesse communiste allemande ; aucune fiche ne le situe | correctiv.org
@@ -839,24 +839,24 @@
 + | Shiv Trisal | en | à identifier | personne non identifiée : à identifier | im-mining.com
 + | Siegmund | de | politique-interieure:dirigeants | personnalité publique : chef du groupe AfD au parlement de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
 + | Single market | en | union-europeenne:politiques_communes | thème réel, mais aucune fiche ne le couvre | consilium.europa.eu
-+ | Spenden | de | politique-interieure:procedures | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Spenden | de | politique-interieure:procedures | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Sven Schulze | de | politique-interieure:dirigeants | personnalité publique : dirigeant de la CDU de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
 + | System Putin | de | politique-interieure:regime | thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | tino chrupalla | de | politique-interieure:dirigeants | personnalité publique : coprésident de l'AfD ; aucune fiche ne la situe | correctiv.org
 + | Tobias Rausch | de | politique-interieure:dirigeants | personnalité publique : élu AfD (Saxe-Anhalt) ; aucune fiche ne la situe | correctiv.org
-+ | Tourisme | fr | culture-memoire:tourisme | thème réel, mais aucune fiche ne le couvre | tsa-algerie.com
-+ | Travel | en | culture-memoire:tourisme | thème réel, mais aucune fiche ne le couvre | globalvoices.org
++ | Tourisme | fr | culture-memoire:tourisme | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | tsa-algerie.com
++ | Travel | en | culture-memoire:tourisme | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | globalvoices.org
 + | Trinity | en | economie-entreprises:entreprises | acteur : nom ambigu ; aucune fiche ne le situe | canadianminingjournal.com
 + | Tudor | en | economie-entreprises:entreprises | acteur : nom ambigu (Tudor Gold ?) ; aucune fiche ne le situe | canadianminingjournal.com
 + | UKEF | en | economie-entreprises:finance_entreprise | acteur : UK Export Finance, agence britannique de crédit à l'exportation ; aucune fiche ne le situe | canadianminingjournal.com
 + | Ulrich Siegmund | de | politique-interieure:dirigeants | personnalité publique : chef du groupe AfD au parlement de Saxe-Anhalt ; aucune fiche ne la situe | correctiv.org
-+ | Umwelt | de | environnement-dechets:environnement | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Umwelt | de | environnement-dechets:environnement | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Volkswagen | de | economie-entreprises:entreprises | acteur : constructeur automobile ; aucune fiche industrie automobile ; aucune fiche ne le situe | correctiv.org
 + | VW | de | economie-entreprises:entreprises | acteur : constructeur automobile ; aucune fiche industrie automobile ; aucune fiche ne le situe | correctiv.org
 + | War & Conflict | en | observateur-mesure:couverture | thème réel, mais aucune fiche ne le couvre | globalvoices.org
 + | Waste diversion | en | environnement-dechets:dechets | thème réel, mais aucune fiche ne le couvre | canadianminingjournal.com
 + | Weidel | de | politique-interieure:dirigeants | personnalité publique : coprésidente de l'AfD ; aucune fiche ne la situe | correctiv.org
-+ | Wirtschaft | de | economie-entreprises:conjoncture | thème réel, mais aucune fiche ne le couvre | correctiv.org
++ | Wirtschaft | de | economie-entreprises:conjoncture | étiquette seule (décision du 2026-11-22, 2 h 45 : terme générique, compté seulement comme étiquette posée par la rédaction) ; thème réel, mais aucune fiche ne le couvre | correctiv.org
 + | Women & Gender | en | societe-droits:genre_minorites | thème réel, mais aucune fiche ne le couvre | globalvoices.org
 - | 8 milliards de voisins | fr |  | rubrique maison (sans contenu) | rfi.fr
 - | Actualité | fr |  | rubrique maison (sans contenu) | 
@@ -987,11 +987,11 @@
 - | Commission on Safety Standards | fr |  | organe interne, pas un nom de l'AIEA : compterait autre chose que l'acteur ; wikidata:Q41984 (organisation internationale) | wikidata.org
 - | Congress | en |  | générique (tout congrès) : compterait autre chose que l'acteur ; wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
 - | CPG | en |  | sigle partagé : compterait autre chose que l'acteur ; wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
-+ | department of finance | en | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
++ | department of finance | en | economie-chinoise:politique_monetaire;politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
 - | EC | en |  | sigle partagé (Commission, Conseil européen…) : compterait autre chose que l'acteur ; wikidata:Q8880 (institution exécutive de l'Union européenne) | wikidata.org
 - | et | en |  | mot courant (« et ») : compterait autre chose que l'acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
-+ | finance department | en | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
-+ | finance ministry | en | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
++ | finance department | en | economie-chinoise:politique_monetaire;politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
++ | finance ministry | en | economie-chinoise:politique_monetaire;politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
 - | FRS | en |  | sigle partagé : compterait autre chose que l'acteur ; wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
 - | il | en |  | mot courant (« il ») : compterait autre chose que l'acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
 - | iq | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
@@ -1001,8 +1001,8 @@
 - | kp | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
 - | Les Médiateurs du Pacifique | fr |  | mauvaise entité : un film de 1997 ; wikidata:Q3234112 (film de Charles Belmont, sorti en 1997) | wikidata.org
 - | les États | fr |  | générique : compterait autre chose que l'acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | ministry of finance | en | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
-+ | ministère des Finances | fr | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
++ | ministry of finance | en | economie-chinoise:politique_monetaire;politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
++ | ministère des Finances | fr | economie-chinoise:politique_monetaire;politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
 - | Médiateurs du Pacifique | fr |  | mauvaise entité : un film de 1997 ; wikidata:Q3234112 (film de Charles Belmont, sorti en 1997) | wikidata.org
 - | National Bureau of Statistics | fr |  | mauvaise entité : institut statistique du Nigeria, alors que la fiche vise celui de la Chine ; wikidata:Q6971159 (institut statistique du Nigeria) | wikidata.org
 - | National Bureau of Statistics | en |  | mauvaise entité : institut statistique du Nigeria, alors que la fiche vise celui de la Chine ; wikidata:Q6971159 (institut statistique du Nigeria) | wikidata.org
@@ -1011,7 +1011,7 @@
 - | Nuclear Explained | en |  | intitulé d'une publication, pas un nom de l'AIEA : compterait autre chose que l'acteur ; wikidata:Q41984 (organisation internationale) | wikidata.org
 - | om | fr |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
 - | om | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
-+ | parti communiste | fr | politique-interieure:partis | générique (tout parti communiste) : rattaché aux partis en général ; wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
++ | parti communiste | fr | economie-chinoise:pouvoir;politique-interieure:partis | générique (tout parti communiste) : rattaché aux partis en général ; wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
 - | Perse | fr |  | désigne aussi l'Empire perse et la langue : compterait autre chose que l'acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
 - | PSE | en |  | sigle partagé (parti socialiste européen) : compterait autre chose que l'acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
 - | qa | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
@@ -1028,18 +1028,18 @@
 - | TW | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
 - | Uman | en |  | translittération rare, et nom d'une ville d'Ukraine : compterait autre chose que l'acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
 - | USDT | en |  | désigne le stablecoin Tether : compterait autre chose que l'acteur ; wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | OPEC Plus | en | calendriers-echeances:banques_centrales | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
-+ | OPEC+ | en | calendriers-echeances:banques_centrales | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
-+ | OPEP+ | fr | calendriers-echeances:banques_centrales | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
++ | OPEC Plus | en | calendriers-echeances:banques_centrales;energie-mondiale:production | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
++ | OPEC+ | en | calendriers-echeances:banques_centrales;energie-mondiale:production | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
++ | OPEP+ | fr | calendriers-echeances:banques_centrales;energie-mondiale:production | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
 + | FMI | fr | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
 + | Fonds monétaire international | fr | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
 + | IMF | en | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
 + | International Monetary Fund | en | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
 + | International Monetary Fund, IMF | en | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
-+ | Banque populaire de Chine | fr | economie-chinoise:politique_monetaire | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
-+ | People's Bank of China | en | economie-chinoise:politique_monetaire | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
-+ | People's Bank of China | fr | economie-chinoise:politique_monetaire | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
-+ | Peoples Bank of China | en | economie-chinoise:politique_monetaire | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
++ | Banque populaire de Chine | fr | economie-chinoise:politique_monetaire;inflation-mondiale:banques_centrales | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
++ | People's Bank of China | en | economie-chinoise:politique_monetaire;inflation-mondiale:banques_centrales | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
++ | People's Bank of China | fr | economie-chinoise:politique_monetaire;inflation-mondiale:banques_centrales | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
++ | Peoples Bank of China | en | economie-chinoise:politique_monetaire;inflation-mondiale:banques_centrales | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
 + | CCP | en | economie-chinoise:pouvoir | wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
 + | Central People's Government | en | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
 + | Central People's Government of the People's Republic of China | en | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
@@ -1067,111 +1067,111 @@
 + | World Health Organization | en | epidemies:autorites | wikidata:Q7817 (agence de l'ONU chargée de la santé publique) | wikidata.org
 + | World Health Organization (WHO) | en | epidemies:autorites | wikidata:Q7817 (agence de l'ONU chargée de la santé publique) | wikidata.org
 + | Saudi | en | espace:pays:Arabie saoudite | forme rare ou abréviation, sans ambiguïté ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
-+ | Arabie Séoudite | fr | espace:pays:Arabie saoudite;energie-mondiale:production | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
-+ | Kingdom of Saudi Arabia | en | espace:pays:Arabie saoudite;energie-mondiale:production | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
-+ | Royaume d’Arabie saoudite | fr | espace:pays:Arabie saoudite;energie-mondiale:production | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
-+ | Royaume d’Arabie séoudite | fr | espace:pays:Arabie saoudite;energie-mondiale:production | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
-+ | China PR | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | Chine communiste | fr | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | Chine continentale | fr | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | Chine populaire | fr | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | Communist China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | P.R.C. | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | People's Republic of China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | PR China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | Red China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | République populaire de Chine | fr | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | the People's Republic of China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | The PRC | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
-+ | Corée du Nord | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | Democratic People's Republic of Korea | en | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | DPR Korea | en | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | DPRK | en | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | la République populaire démocratique de Corée | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | N. Korea | en | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | RPDC | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | République populaire de Corée | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | République populaire démocratique de Corée | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
-+ | al-‘Irāq | fr | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
-+ | Irak | fr | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
-+ | Iraq | en | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
-+ | Republic of Iraq | en | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
-+ | République d’Irak | fr | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
-+ | Iran | fr | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
-+ | Islamic Rep. Iran | en | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
-+ | Islamic Republic of Iran | en | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
-+ | La République Islamique d’Iran | fr | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
-+ | République islamique d'Iran | fr | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
-+ | République islamique iranienne | fr | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | Arabie Séoudite | fr | espace:pays:Arabie saoudite | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | Kingdom of Saudi Arabia | en | espace:pays:Arabie saoudite | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | Royaume d’Arabie saoudite | fr | espace:pays:Arabie saoudite | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | Royaume d’Arabie séoudite | fr | espace:pays:Arabie saoudite | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | China PR | en | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Chine communiste | fr | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Chine continentale | fr | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Chine populaire | fr | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Communist China | en | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | P.R.C. | en | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | People's Republic of China | en | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | PR China | en | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Red China | en | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | République populaire de Chine | fr | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | the People's Republic of China | en | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | The PRC | en | espace:pays:Chine | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Corée du Nord | fr | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | Democratic People's Republic of Korea | en | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | DPR Korea | en | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | DPRK | en | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | la République populaire démocratique de Corée | fr | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | N. Korea | en | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | RPDC | fr | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | République populaire de Corée | fr | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | République populaire démocratique de Corée | fr | espace:pays:Corée du Nord | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | al-‘Irāq | fr | espace:pays:Irak | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | Irak | fr | espace:pays:Irak | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | Iraq | en | espace:pays:Irak | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | Republic of Iraq | en | espace:pays:Irak | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | République d’Irak | fr | espace:pays:Irak | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | Iran | fr | espace:pays:Iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | Islamic Rep. Iran | en | espace:pays:Iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | Islamic Republic of Iran | en | espace:pays:Iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | La République Islamique d’Iran | fr | espace:pays:Iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | République islamique d'Iran | fr | espace:pays:Iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | République islamique iranienne | fr | espace:pays:Iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
 + | ISR | fr | espace:pays:Israël | forme rare ou abréviation, sans ambiguïté ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
 + | ISR | en | espace:pays:Israël | forme rare ou abréviation, sans ambiguïté ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
 + | Isr. | fr | espace:pays:Israël | forme rare ou abréviation, sans ambiguïté ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
-+ | Israel | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
-+ | Israël | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
-+ | l’État d’Israël | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
-+ | State of Israel | en | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
-+ | Yisrael | en | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
-+ | État d'Israël | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
-+ | État hébreu | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | Israel | fr | espace:pays:Israël | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | Israël | fr | espace:pays:Israël | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | l’État d’Israël | fr | espace:pays:Israël | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | State of Israel | en | espace:pays:Israël | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | Yisrael | en | espace:pays:Israël | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | État d'Israël | fr | espace:pays:Israël | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | État hébreu | fr | espace:pays:Israël | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
 + | OMA | fr | espace:pays:Oman | forme rare ou abréviation, sans ambiguïté ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
 + | omn | en | espace:pays:Oman | forme rare ou abréviation, sans ambiguïté ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
-+ | le Sultanat d’Oman | fr | espace:pays:Oman;ormuz:riverains | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
-+ | Oman | en | espace:pays:Oman;ormuz:riverains | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
-+ | Sultanat d’Oman | fr | espace:pays:Oman;ormuz:riverains | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
-+ | Sultanate of Oman | en | espace:pays:Oman;ormuz:riverains | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
-+ | Palestine | fr | espace:pays:Palestine;guerre-levant:gaza | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
-+ | State of Palestine | en | espace:pays:Palestine;guerre-levant:gaza | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
-+ | État de Palestine | fr | espace:pays:Palestine;guerre-levant:gaza | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
-+ | État palestinien | fr | espace:pays:Palestine;guerre-levant:gaza | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | le Sultanat d’Oman | fr | espace:pays:Oman | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | Oman | en | espace:pays:Oman | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | Sultanat d’Oman | fr | espace:pays:Oman | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | Sultanate of Oman | en | espace:pays:Oman | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | Palestine | fr | espace:pays:Palestine | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | State of Palestine | en | espace:pays:Palestine | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | État de Palestine | fr | espace:pays:Palestine | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | État palestinien | fr | espace:pays:Palestine | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
 + | Qa. | fr | espace:pays:Qatar | forme rare ou abréviation, sans ambiguïté ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
 + | qat | en | espace:pays:Qatar | forme rare ou abréviation, sans ambiguïté ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
-+ | Katar | fr | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
-+ | l’État du Qatar | fr | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
-+ | Qatar | fr | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
-+ | Qatar | en | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
-+ | State of Qatar | en | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | Katar | fr | espace:pays:Qatar | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | l’État du Qatar | fr | espace:pays:Qatar | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | Qatar | fr | espace:pays:Qatar | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | Qatar | en | espace:pays:Qatar | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | State of Qatar | en | espace:pays:Qatar | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
 + | RUS | fr | espace:pays:Russie | forme rare ou abréviation, sans ambiguïté ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
-+ | Fédération de Russie | fr | espace:pays:Russie;iran-nucleaire:russie_chine | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
-+ | Fédération russe | fr | espace:pays:Russie;iran-nucleaire:russie_chine | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
-+ | Russian Federation | en | espace:pays:Russie;iran-nucleaire:russie_chine | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
++ | Fédération de Russie | fr | espace:pays:Russie | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
++ | Fédération russe | fr | espace:pays:Russie | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
++ | Russian Federation | en | espace:pays:Russie | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
 + | TWN | en | espace:pays:Taïwan | forme rare ou abréviation, sans ambiguïté ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | China, Republic of | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Chine nationaliste | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Chinese Republic | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Chinese Taipei | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Chunghwa Minkuo | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Chunghwa Minkwo | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Formose | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Free China | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Nationalist China | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Republic of China | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Republic of China (Taiwan) | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | ROC | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | république de Chine | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | république nationaliste de Chine | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Taiwan | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Taiwan ROC | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | Taïwan | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
-+ | The ROC | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | China, Republic of | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chine nationaliste | fr | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chinese Republic | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chinese Taipei | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chunghwa Minkuo | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chunghwa Minkwo | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Formose | fr | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Free China | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Nationalist China | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Republic of China | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Republic of China (Taiwan) | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | ROC | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | république de Chine | fr | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | république nationaliste de Chine | fr | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Taiwan | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Taiwan ROC | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Taïwan | fr | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | The ROC | en | espace:pays:Taïwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
 + | Turq | fr | espace:pays:Turquie | forme rare ou abréviation, sans ambiguïté ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
-+ | la République de Turquie | fr | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
-+ | Republic of Turkey | en | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
-+ | Republic of Türkiye | en | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
-+ | République de Turquie | fr | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
-+ | République turque | fr | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | la République de Turquie | fr | espace:pays:Turquie | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | Republic of Turkey | en | espace:pays:Turquie | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | Republic of Türkiye | en | espace:pays:Turquie | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | République de Turquie | fr | espace:pays:Turquie | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | République turque | fr | espace:pays:Turquie | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
 + | Ukr. | fr | espace:pays:Ukraine | forme rare ou abréviation, sans ambiguïté ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
 + | Ukr. | en | espace:pays:Ukraine | forme rare ou abréviation, sans ambiguïté ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
 + | Ukrainia | en | espace:pays:Ukraine | forme rare ou abréviation, sans ambiguïté ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
 + | Ukraïna | en | espace:pays:Ukraine | forme rare ou abréviation, sans ambiguïté ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
-+ | Ukraine | fr | espace:pays:Ukraine;russie-ukraine:negociations | État : espace et acteur ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
++ | Ukraine | fr | espace:pays:Ukraine | État : espace et acteur ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
 + | Misr | en | espace:pays:Égypte | forme rare ou abréviation, sans ambiguïté ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
 + | Ég. | fr | espace:pays:Égypte | forme rare ou abréviation, sans ambiguïté ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
-+ | Arab Rep. Egypt | en | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
-+ | Arab Republic of Egypt | en | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
-+ | Rep. Egypt | en | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
-+ | Republic of Egypt | en | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
-+ | République arabe d'Égypte | fr | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
-+ | Égypte | fr | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Arab Rep. Egypt | en | espace:pays:Égypte | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Arab Republic of Egypt | en | espace:pays:Égypte | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Rep. Egypt | en | espace:pays:Égypte | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Republic of Egypt | en | espace:pays:Égypte | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | République arabe d'Égypte | fr | espace:pays:Égypte | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Égypte | fr | espace:pays:Égypte | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
 + | 'Murica | en | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
 + | E.-U. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
 + | Merica | en | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
@@ -1183,33 +1183,33 @@
 + | É.-U. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
 + | É.-U. A. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
 + | É.U. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | les États-Unis d’Amérique | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | Oncle Sam | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | Pays de l'Oncle Sam | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | pays de l’Oncle Sam | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the U.S. | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the U.S. of A | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the U.S. of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the U.S.A. | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the United States | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the United States of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the US | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the US of A | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the US of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | the USA | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | U.S. of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | United States | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | United States of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | US of A | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | US of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | États-Unis d'Amérique | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | États-Unis d’Amérique | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | ÉU | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
-+ | Ethiopie | fr | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
-+ | Federal Democratic Republic of Ethiopia | en | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
-+ | la République démocratique fédérale d’Éthiopie | fr | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
-+ | République fédérale démocratique d'Éthiopie | fr | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
-+ | Éthiopie | fr | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | les États-Unis d’Amérique | fr | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | Oncle Sam | fr | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | Pays de l'Oncle Sam | fr | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | pays de l’Oncle Sam | fr | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the U.S. | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the U.S. of A | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the U.S. of America | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the U.S.A. | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the United States | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the United States of America | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the US | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the US of A | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the US of America | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the USA | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | U.S. of America | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | United States | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | United States of America | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | US of A | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | US of America | en | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | États-Unis d'Amérique | fr | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | États-Unis d’Amérique | fr | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | ÉU | fr | espace:pays:États-Unis | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | Ethiopie | fr | espace:pays:Éthiopie | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | Federal Democratic Republic of Ethiopia | en | espace:pays:Éthiopie | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | la République démocratique fédérale d’Éthiopie | fr | espace:pays:Éthiopie | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | République fédérale démocratique d'Éthiopie | fr | espace:pays:Éthiopie | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | Éthiopie | fr | espace:pays:Éthiopie | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
 + | Autorité nationale palestinienne | fr | guerre-levant:gaza | Autorité palestinienne ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
 + | Autorité palestinienne | fr | guerre-levant:gaza | Autorité palestinienne ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
 + | Hamas | en | guerre-levant:gaza | wikidata:Q38799 (organisation armée islamiste palestinienne) | wikidata.org
@@ -1244,9 +1244,9 @@
 + | Lebanese Hezbollah | en | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
 + | Lebanese Hizbullah | en | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
 + | Parti de Dieu | fr | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
-+ | European Union | en | guerre-levant:puissances | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
-+ | U.E. | fr | guerre-levant:puissances | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
-+ | Union européenne | fr | guerre-levant:puissances | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
++ | European Union | en | guerre-levant:puissances;russie-ukraine:soutiens | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
++ | U.E. | fr | guerre-levant:puissances;russie-ukraine:soutiens | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
++ | Union européenne | fr | guerre-levant:puissances;russie-ukraine:soutiens | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
 + | Ansar Allah | fr | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
 + | Ansar Allah | en | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
 + | Ansarallah | fr | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
@@ -1257,15 +1257,15 @@
 + | Banque centrale européenne | fr | inflation-mondiale:banques_centrales | wikidata:Q8901 (banque centrale de l'Union européenne (BCE)) | wikidata.org
 + | BCE | fr | inflation-mondiale:banques_centrales | wikidata:Q8901 (banque centrale de l'Union européenne (BCE)) | wikidata.org
 + | European Central Bank | en | inflation-mondiale:banques_centrales | wikidata:Q8901 (banque centrale de l'Union européenne (BCE)) | wikidata.org
-+ | Fed | en | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
-+ | Federal Reserve | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
-+ | Federal Reserve | en | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
-+ | Federal Reserve System | en | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
-+ | Federal Reserve System | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
-+ | Réserve fédérale | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
-+ | Réserve fédérale des États-Unis | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
-+ | the Fed | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
-+ | The Fed | en | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Fed | en | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Federal Reserve | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Federal Reserve | en | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Federal Reserve System | en | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Federal Reserve System | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Réserve fédérale | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Réserve fédérale des États-Unis | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | the Fed | fr | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | The Fed | en | inflation-mondiale:banques_centrales;politique-americaine:reserve_federale | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
 + | American Congress | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
 + | American legislature | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
 + | Congress of the United States | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
@@ -1277,36 +1277,36 @@
 + | United States Congress | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
 + | United states legislative branch | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
 + | US Congress | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
-+ | A.I.E.A | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | AEIA | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | Agence internationale de l'energie atomique | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | Agence internationale de l'énergie atomique | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | Agence internationale pour l'Énergie atomique | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | Agence internationale à l'énergie atomique | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | AIEA | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | IAEA | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | IAEA | en | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | iaea.org | en | iran-nucleaire:verification | forme rare ou abréviation, sans ambiguïté ; wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | International Atomic Energy Agency | en | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | International Atomic Energy Agency | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
-+ | International Atomic Energy Agency，IAEA | en | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | A.I.E.A | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | AEIA | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | Agence internationale de l'energie atomique | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | Agence internationale de l'énergie atomique | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | Agence internationale pour l'Énergie atomique | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | Agence internationale à l'énergie atomique | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | AIEA | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | IAEA | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | IAEA | en | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | iaea.org | en | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | forme rare ou abréviation, sans ambiguïté ; wikidata:Q41984 (organisation internationale) | wikidata.org
++ | International Atomic Energy Agency | en | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | International Atomic Energy Agency | fr | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | International Atomic Energy Agency，IAEA | en | iran-nucleaire:verification;nucleaire-radiologique:surete;russie-ukraine:atomique | wikidata:Q41984 (organisation internationale) | wikidata.org
 + | GDELT Project | en | observateur-mesure:biais | wikidata:Q18357239 | wikidata.org
 + | Global Database of Events, Language, and Tone | en | observateur-mesure:biais | wikidata:Q18357239 | wikidata.org
 + | The GDELT Project | en | observateur-mesure:biais | wikidata:Q18357239 | wikidata.org
-+ | Departement du Tresor des Etats-Unis | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | Department of the Treasury | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | Département américain du Trésor | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | Département du Trésor | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | Département du Trésor des Etats-Unis | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | département du Trésor des États-Unis | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | Treasury Department | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | Trésor Américain | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | U.S. Department of the Treasury | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | U.S. Treasury Department | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | United States Department of the Treasury | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | United States Department of the Treasury | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | United States Treasury Department | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
-+ | US Treasury Department | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Departement du Tresor des Etats-Unis | fr | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Department of the Treasury | en | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département américain du Trésor | fr | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département du Trésor | fr | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département du Trésor des Etats-Unis | fr | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | département du Trésor des États-Unis | fr | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Treasury Department | en | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Trésor Américain | fr | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | U.S. Department of the Treasury | en | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | U.S. Treasury Department | en | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | United States Department of the Treasury | en | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | United States Department of the Treasury | fr | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | United States Treasury Department | en | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | US Treasury Department | en | politique-americaine:budget;russie-ukraine:sanctions | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
 + | Departement de l'Energie des Etats-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
 + | Department of Energy | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
 + | Department of Energy | en | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org

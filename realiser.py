@@ -1,10 +1,13 @@
 """Ontologie, étape 2 (décision de l'auteur du 2026-11-22, 1 h 35) : quels TYPES DE SITUATION (graphe tiré des règles
 coutumières du bot, ontologie.py) les situations observées réalisent-elles, jour par jour, chez quels émetteurs ?
 
-Règle de réalisation (fixée ici) : une situation observée (un article, comptes/situations.jsonl) réalise le type de
-situation d'une règle si
-  1. elle touche au moins un compartiment de la règle, et
-  2. son espace est compatible avec le périmètre de la règle : « monde » accepte tout ; un pays exige ce pays dans
+Règle de réalisation (révisée le 2026-11-22, 2 h 45, après l'exploration GDELT : le seul compartiment était trop
+grossier, toute mention de Trump activait trois règles) : une situation observée réalise le type de situation d'une
+règle si
+  1. elle touche AU MOINS DEUX compartiments de la règle, OU un compartiment de la règle et un de ses indices (champ
+     « indices » de la règle : termes propres à la situation, validés par l'auteur) ; une règle à un seul compartiment
+     et sans indices n'est donc jamais réalisée (elle attend ses indices) ;
+  2. et son espace est compatible avec le périmètre de la règle : « monde » accepte tout ; un pays exige ce pays dans
      l'espace de l'article ; un continent (europe, afrique…) exige un pays de ce continent ou la région nommée.
 Une règle sans compartiment ne peut être réalisée (elle est listée comme manque par ontologie.py).
 Ce qui est mesuré : qu'un type de situation est PRÉSENT dans ce que disent les émetteurs, pas qu'il est vrai.
@@ -70,6 +73,17 @@ def compatible(espace: list[str], perimetre: list[str], continent_de: dict[str, 
     return False
 
 
+def realise(s: dict, regle: dict, continent_de: dict[str, str]) -> bool:
+    comps = {c["compartiment"] if isinstance(c, dict) else c for c in s.get("compartiments", [])}
+    communs = comps & set(regle["compartiments"])
+    if not communs:
+        return False
+    indices = {i.lower() for i in regle.get("indices") or []}
+    if len(communs) < 2 and not (indices & {t.lower() for t in s.get("termes", [])}):
+        return False
+    return compatible(s.get("espace", []), regle["perimetre"], continent_de)
+
+
 def principal() -> int:
     bot = Path(sys.argv[1] if len(sys.argv) > 1 else "../metac-bot-template").resolve()
     sys.path.insert(0, str(bot))
@@ -84,9 +98,8 @@ def principal() -> int:
     agr: dict[tuple[str, str, str], dict] = defaultdict(lambda: {"articles": 0, "emetteurs": Counter(),
                                                                   "acteurs": Counter(), "liens": []})
     for s in situations:
-        comps = {c["compartiment"] for c in s.get("compartiments", [])}
         for a in regles:
-            if comps & set(a["compartiments"]) and compatible(s.get("espace", []), a["perimetre"], continent_de):
+            if realise(s, a, continent_de):
                 x = agr[(s["jour"], noms[a["de"]], a["regle"])]
                 x["articles"] += 1
                 x["emetteurs"][s["emetteur"]["domaine"]] += 1
