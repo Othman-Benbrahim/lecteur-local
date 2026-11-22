@@ -152,6 +152,24 @@ def principal() -> int:
     if fv.exists():
         with fv.open(encoding="utf-8") as fo:
             suivi = {r["jour"] + "|" + r["regle"]: r["statut"] for r in csv.DictReader(fo)}
+    # mécanique de bascule en ombre (bot 0.10.464, décision de l'auteur du 2026-11-22, 20 h 51 - 20 h 57) : étincelles
+    # de la semaine, prédiction « prend dans les 8 semaines », issues constatées et score
+    mecanique = {"journal": [], "issues": {}, "score": {}, "noms": {}}
+    fj, fi, fsc = bot / "registre/mecanique-journal.csv", bot / "registre/mecanique-issues.csv", bot / "registre/mecanique-score.json"
+    if fj.exists():
+        with fj.open(encoding="utf-8") as fo:
+            mecanique["journal"] = [{k: r[k] for k in ("id", "inscrit_le", "pays", "iso3", "semaine", "rapport", "p_prend",
+                                                       "version", "modules")} for r in csv.DictReader(fo)]
+    if fi.exists():
+        with fi.open(encoding="utf-8") as fo:
+            mecanique["issues"] = {r["id"]: {"prend": int(r["prend"]), "semaines_elevees": int(r["semaines_elevees"]),
+                                             "constate_le": r["constate_le"]} for r in csv.DictReader(fo)}
+    if fsc.exists():
+        mecanique["score"] = json.loads(fsc.read_text(encoding="utf-8"))
+    fc = bot / "ecosystemes/codes-pays-fips.csv"
+    if fc.exists():
+        lc = [l for l in fc.read_text(encoding="utf-8").splitlines() if l and not l.startswith("#")]
+        mecanique["noms"] = {r["fips"]: r["nom"] for r in csv.DictReader(lc)}
     types_actifs = []
     f = ICI / "comptes/types-actifs.csv"
     if f.exists():
@@ -188,7 +206,7 @@ def principal() -> int:
     donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
-               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes,
+               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes, "mecanique": mecanique,
                "jours30": [jours30[0], jours30[-1]]}
     out = ICI / "docs/donnees.json"
     out.parent.mkdir(exist_ok=True)

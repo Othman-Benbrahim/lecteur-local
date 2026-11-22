@@ -170,6 +170,10 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
         <div id="futur" class="vide">aucune situation observée pour l'instant</div>
       </div>
     </div>
+    <div class="bloc" style="margin-top:10px">
+      <h2>Mécanique de bascule (ombre) : étincelles de la semaine et probabilité qu'elles prennent dans les 8 semaines</h2>
+      <div id="mecanique" class="vide">aucune étincelle inscrite pour l'instant (la mécanique tourne chaque lundi)</div>
+    </div>
   </section>
 </div>
 
@@ -217,7 +221,7 @@ let D,etat={sorte:"tous",canal:"",fiche:"",variable:"taille",echelles:new Set(),
   nommes:true,acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
 let sim,svg,gZoom,largeur,hauteur;
 
-fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;preparer();construireControles();dessiner();})
+fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;rendreMecanique();preparer();construireControles();dessiner();})
   .catch(e=>{document.getElementById("meta").textContent="données introuvables (docs/donnees.json) : "+e;});
 
 function preparer(){
@@ -742,6 +746,30 @@ function frise(sits){
       `<span style="color:var(--doux)">condition : ${esc(g.type_de_situation)} — ${esc(g.jour)} · ${g.articles_7j} article(s), ${g.emetteurs_7j} émetteur(s) sur 7 j`+
       `${cl==="faible"?` · critères : ${esc(g.criteres.replace(/_/g," "))}${st?` · suivi : ${esc(st)}`:""}`:""}${liens} · règle ${esc(g.regle)}</span></div>`;}).join("");};
   f.innerHTML=bloc("fort","Signaux forts : accumulation")+bloc("faible","Signaux faibles : isolés, rares, spécifiques, à fort enjeu");
+}
+// 2026-11-22, 20 h 57 (décision de l'auteur : inscrire la mécanique sur la carte, appui visuel) : journal à ajout seul du bot
+// (registre/mecanique-journal.csv) ; étincelle = part des manifestations (GDELT) ≥ 2 × son niveau habituel après un mois
+// calme ; « prend » = part ≥ 1,5 × le niveau habituel au moins 4 semaines sur 8. Ombre : rien n'entre dans Metaculus.
+function rendreMecanique(){
+  const M=D.mecanique||{}, J=M.journal||[], I=M.issues||{}, S=M.score||{}, N=M.noms||{};
+  const el=document.getElementById("mecanique");
+  if(!J.length) return;
+  el.className="";
+  const ouvertes=J.filter(r=>!I[r.id]).sort((a,b)=>b.semaine.localeCompare(a.semaine)||b.p_prend-a.p_prend);
+  const closes=J.filter(r=>I[r.id]).sort((a,b)=>b.semaine.localeCompare(a.semaine));
+  const nom=r=>esc(N[r.pays]||r.iso3||r.pays);
+  const pct=x=>Math.round(100*x)+" %";
+  const mods=r=>{try{const m=JSON.parse(r.modules||"{}");const k=Object.keys(m);return k.length?k.map(x=>esc(x)+" "+m[x]).join(", "):"taux de départ seul";}catch(e){return "";}};
+  let h=`<p style="margin:2px 0 6px;color:var(--doux)">${S.inscrites||J.length} inscrite(s), ${S.ouvertes??ouvertes.length} ouverte(s), ${S.constatees||closes.length} constatée(s)`+
+    (S.brier!=null?` · score de Brier ${S.brier} (taux de départ seul : ${S.brier_taux_depart}) · part qui a pris : ${pct(S.part_prend)}`:" · aucun score avant les premières issues (8 semaines)")+
+    ` · taux de départ ${pct(S.taux_depart??0.315)} (2015-2021)</p>`;
+  if(ouvertes.length) h+=`<p style="margin:4px 0 2px"><b>En cours (${ouvertes.length})</b></p>`+ouvertes.map(r=>
+    `<div>• <b>${nom(r)}</b> — semaine du ${esc(r.semaine)} · part des manifestations × ${esc(r.rapport)} · <b>${pct(+r.p_prend)}</b> de prendre `+
+    `<span style="color:var(--doux)">· issue attendue vers le ${esc(new Date(Date.parse(r.semaine)+9*7*864e5).toISOString().slice(0,10))} · ${mods(r)}</span></div>`).join("");
+  if(closes.length) h+=`<p style="margin:8px 0 2px"><b>Constatées (${closes.length})</b></p>`+closes.slice(0,40).map(r=>{const i=I[r.id];
+    return `<div>• <b>${nom(r)}</b> — semaine du ${esc(r.semaine)} · prédit ${pct(+r.p_prend)} · <b>${i.prend?"a pris":"s'est éteinte"}</b> `+
+    `<span style="color:var(--doux)">(${i.semaines_elevees} semaine(s) élevée(s) sur 8)</span></div>`;}).join("");
+  el.innerHTML=h;
 }
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 addEventListener("resize",()=>{if(D) dessiner();});
