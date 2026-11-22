@@ -2,8 +2,8 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 51 fiches, 539 compartiments (282 sans aucune trace collectée)
-- 1867 éléments (1751 textes distincts)
+- 52 fiches, 542 compartiments (285 sans aucune trace collectée)
+- 1870 éléments (1754 textes distincts)
 - 474 acteurs (450 distincts) : 355 types génériques (« un média d'État »…), à peupler de noms ; 119 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
@@ -39,16 +39,16 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | psychologique | 113 |
 | ideologie | 95 |
 | eau | 85 |
-| chimique | 70 |
+| chimique | 71 |
 | animal | 65 |
 | relief | 56 |
 | meteo | 51 |
 | climat | 46 |
+| microbiologique | 45 |
 | corps | 45 |
-| microbiologique | 44 |
 | mineral | 43 |
 | vegetal | 35 |
-| physique | 34 |
+| physique | 35 |
 | entourage | 27 |
 | ocean | 26 |
 | personne | 26 |
@@ -90,6 +90,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | liban-institutions | 9 | 30 | 8 | 3 |
 | migrations-demographie | 10 | 38 | 10 | 5 |
 | minerais-critiques | 7 | 13 | 2 | 7 |
+| niveaux-de-base | 3 | 3 | 0 | 3 |
 | non-proliferation | 9 | 26 | 2 | 5 |
 | nucleaire-radiologique | 10 | 34 | 8 | 7 |
 | observateur-mesure | 15 | 47 | 3 | 1 |
