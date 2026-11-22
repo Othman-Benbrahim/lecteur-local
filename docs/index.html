@@ -145,7 +145,9 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
       <span><i style="border-color:var(--aval)"></i>mode Causes : en aval (conséquences)</span>
       <span><i style="border-color:var(--acteur)"></i>lien entre acteurs (pointillé : conjoncturel)</span>
       <span><i style="border-color:var(--dirigeant)"></i>acteur nommé : dirigeant (brique), patron (vert), religieux (violet)</span>
-      <span>taille d'un cercle : nombre de situations observées</span>
+      <span>taille d'un cercle : nombre d'articles rattachés (un article compte une fois par écosystème)</span>
+      <span>compartiment d'une autre fiche (pointillé) : nom au survol</span>
+      <span style="margin-top:4px">Ce que la carte mesure : la couverture de nos sources (articles qui contiennent un terme validé), pas l'ampleur réelle d'un phénomène ; un même événement peut faire plusieurs articles, un terme peut être nié ou hypothétique.</span>
     </div>
   </aside>
 
@@ -160,11 +162,11 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
   <section id="frise">
     <div class="ligne">
       <div class="bloc">
-        <h2>Passé → présent : situations observées par jour <span id="jourT" class="etiq"></span></h2>
+        <h2>Passé → présent : articles rattachés par jour <span id="jourT" class="etiq"></span></h2>
         <svg id="histo"></svg>
       </div>
       <div class="bloc">
-        <h2>Futur : événements atteignables depuis les situations actives</h2>
+        <h2>Hypothèses : événements que nos règles relient aux types de situation réalisés</h2>
         <div id="futur" class="vide">aucune situation observée pour l'instant</div>
       </div>
     </div>
@@ -235,7 +237,7 @@ function preparer(){
   const nf=new Set(D.noeuds.map(n=>n.fiche));
   document.getElementById("meta").textContent=
     `${nf.size} écosystèmes · ${D.noeuds.filter(n=>n.sorte==="compartiment").length} compartiments · `+
-    `${D.termes.length} termes validés · ${D.situations.length} situations observées · données du ${D.genere}`;
+    `${D.termes.length} termes validés · ${D.situations.length} articles rattachés · données du ${D.genere}`;
   // santé du collecteur : distinguer « aucune situation » d'une panne ou d'un collecteur jamais lancé
   const col=D.collecte||{};const m=document.getElementById("meta");
   m.innerHTML=esc(m.textContent)+(col.derniere?` · dernière collecte : ${esc(col.derniere)}`:
@@ -430,7 +432,7 @@ function vueEnsemble(sits){
   for(const n of D.noeuds){ if(n.sorte!=="compartiment"||!garde(Object.assign({},n,{fiche:""}))) continue;
     if(!parFiche.has(n.fiche)) parFiche.set(n.fiche,{id:"F:"+n.fiche,fiche:n.fiche,nom:n.fiche_nom,fiche_nom:n.fiche_nom,sorte:"ecosysteme",comps:[],fam:new Map()});
     const f=parFiche.get(n.fiche);f.comps.push(n);f.fam.set(famille(n.organisation),(f.fam.get(famille(n.organisation))||0)+1);}
-  const act=new Map();for(const x of sits) for(const c of x.compartiments){const fi=c.split(":")[0];act.set("F:"+fi,(act.get("F:"+fi)||0)+1);}
+  const act=new Map();for(const x of sits) for(const fi of new Set(x.compartiments.map(c=>c.split(":")[0]))) act.set("F:"+fi,(act.get("F:"+fi)||0)+1);   // un article compte une fois par fiche
   const noeuds=[...parFiche.values()].map(f=>{const ps=f.comps.map(position).filter(Boolean);
     f.m=ps.length?d3.mean(ps,p=>p.m):null;f.couleur=COULEUR_FAMILLE[[...f.fam.entries()].sort((a,b)=>b[1]-a[1])[0][0]];return f;});
   const cnt=new Map(),can=new Map(),voisins=new Map();
@@ -536,7 +538,8 @@ function dessiner(){
     .attr("fill-opacity",n=>n.externe?.35:1).attr("stroke-dasharray",n=>n.externe?"3 2":null)
     .attr("stroke",n=>n.externe?"var(--pont)":null).style("cursor",n=>n.externe?"pointer":null);
   noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5).style("font-style",n=>n.externe?"italic":null).style("font-weight",n=>n.sorte==="nomme"?"600":null)
-    .text(n=>n.externe?("↗ "+n.fiche_nom.slice(0,22)+" : "+n.nom.slice(0,24)):(etat.fiche||activite.get(n.id))?n.nom.slice(0,38):"");
+    .text(n=>n.externe?"":(etat.fiche||activite.get(n.id))?n.nom.slice(0,38):"");
+  noeud.filter(n=>n.externe).append("title").text(n=>"↗ "+n.fiche_nom+" : "+n.nom+" (cliquer pour ouvrir cette fiche)");
 
   sim=d3.forceSimulation(noeuds)
     .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(a=>a.sorte==="appartient"?22:a.sorte==="pont"?120:70).strength(a=>a.sorte==="pont"?.05:.3))
@@ -576,7 +579,7 @@ function dessinerEnsemble(sits){
     .on("click",(e,f)=>{const sel=document.getElementById("fiche");sel.value=f.fiche;etat.fiche=f.fiche;etat.choisi=null;dessiner();})
     .on("mousemove",(e,f)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
       const vs=(voisins.get(f.id)||[]).sort((x,y)=>y[1]-x[1]);
-      b.innerHTML=`<b>${esc(f.nom)}</b><br>${f.comps.length} compartiments · ${act.get(f.id)||0} situations`+
+      b.innerHTML=`<b>${esc(f.nom)}</b><br>${f.comps.length} compartiments · ${act.get(f.id)||0} articles rattachés`+
         `<br>reliée à ${vs.length} écosystème(s)${vs.length?" : "+vs.slice(0,5).map(([w,n])=>esc(nomF.get(w))+" ("+n+")").join(", ")+(vs.length>5?"…":""):""}`+
         `<br><span style="color:var(--doux)">cliquer pour ouvrir l'écosystème</span>`;
       b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
@@ -598,7 +601,7 @@ function dessinerEnsemble(sits){
   frise(sits);
   document.getElementById("detail").innerHTML=`<h3>Vue d'ensemble</h3><div class="sous">un cercle par écosystème</div>`+
     `<p style="font-size:13px">Position horizontale : moyenne de ses compartiments sur la variable choisie (${E.noms[0]} → ${E.noms[nb-1]}). `+
-    `Taille : nombre de compartiments et de situations observées. Couleur : famille de niveau d'organisation dominante. `+
+    `Taille : nombre de compartiments et d'articles rattachés. Place au centre de la psyché humaine : choix de représentation (l'humain au centre), pas un résultat des données. Couleur : famille de niveau d'organisation dominante. `+
     `Traits : ponts entre écosystèmes (plus épais = plus de ponts).</p><p style="font-size:13px">Cliquez sur un écosystème pour l'ouvrir.</p>`;
 }
 
@@ -667,7 +670,7 @@ function detail(n,sits){
     const rg=D.reglesPar.get(n.id)||[];
     if(rg.length) h+=`<h2>Types de situation → événement (règles)</h2><ul>${rg.map(r=>`<li>${esc(D.nomType.get(r.de))} → <b>${esc(D.nomType.get(r.vers))}</b> <span class="etiq">${esc(r.structure)}</span></li>`).join("")}</ul>`;
     const s=sits.filter(x=>x.compartiments.includes(n.id)).sort((a,b)=>b.jour.localeCompare(a.jour));
-    h+=`<h2>Situations observées (${s.length})</h2>`+(s.length?`<ul>${s.slice(0,40).map(x=>{const e=D.emetteursId.get(x.emetteur);
+    h+=`<h2>Articles rattachés (${s.length})</h2>`+(s.length?`<ul>${s.slice(0,40).map(x=>{const e=D.emetteursId.get(x.emetteur);
       return `<li>${x.jour} · <b>${esc(e?e.nom:x.emetteur)}</b>${e?` <span class="etiq" title="${esc(e.proprietaire)}">${esc(e.nature.split(" ")[0])} · ${esc(e.pays.split(" ")[0])}</span>`:` <span class="etiq">non identifié</span>`}<br>`+
         `${x.acteurs.length?"acteurs : "+esc(x.acteurs.join(", "))+"<br>":""}${x.espace.length?"espace : "+esc(x.espace.join(", "))+"<br>":""}`+
         `termes : ${esc(x.termes.join(", "))}<br><a href="${esc(x.lien)}" target="_blank" rel="noopener">${esc(x.lien)}</a></li>`;}).join("")}</ul>`:`<p class="vide">aucune pour ces filtres</p>`);
@@ -717,15 +720,20 @@ function frise(sits){
   }
   document.getElementById("jourT").textContent=etat.lecture==="conjoncturel"&&etat.jour?"T = "+etat.jour+" (7 jours)":"toute la période";
   // futur : types de situation réalisés → événements atteignables (règles coutumières)
+  // 2026-11-22 (audit) : une règle n'apparaît que si son type de départ est RÉALISÉ (comptes/types-actifs.csv) sur les
+  // jours affichés ; la condition et les articles qui la remplissent sont montrés. Ce sont des hypothèses, pas des prévisions.
+  const joursSit=new Set(sits.map(x=>x.jour));
+  const realise=new Map();for(const t of D.types_actifs||[]) if(joursSit.has(t.jour)){
+    const v=realise.get(t.regle)||{articles:0,liens:[]};v.articles+=+t.articles||0;v.liens.push(...String(t.liens||"").split(" ").filter(Boolean));realise.set(t.regle,v);}
   const actifs=new Map();
-  const cs=new Set();for(const x of sits) x.compartiments.forEach(c=>cs.add(c));
-  for(const r of D.types.regles) if(r.compartiments.some(c=>cs.has(c))){
-    const k=r.vers;actifs.set(k,(actifs.get(k)||[]).concat([r]));}
+  for(const r of D.types.regles) if(realise.has(r.regle)){const k=r.vers;actifs.set(k,(actifs.get(k)||[]).concat([r]));}
   const f=document.getElementById("futur");
-  if(!actifs.size){f.className="vide";f.textContent=sits.length?"aucune règle coutumière ne part des compartiments touchés par ces situations":"aucune situation pour ces filtres";return;}
+  if(!actifs.size){f.className="vide";f.textContent=sits.length?"aucun type de situation réalisé sur ces jours : aucune hypothèse":"aucun article pour ces filtres";return;}
   f.className="";
-  f.innerHTML=[...actifs.entries()].map(([ev,rs])=>`<div>→ <b>${esc(D.nomType.get(ev))}</b> <span class="etiq">${esc(rs[0].structure)}</span><br>`+
-    `<span style="color:var(--doux)">depuis : ${esc(D.nomType.get(rs[0].de))} · règle ${esc(rs.map(r=>r.regle).join(", "))}</span></div>`).join("");
+  f.innerHTML=[...actifs.entries()].map(([ev,rs])=>{const v=realise.get(rs[0].regle);
+    return `<div>→ <b>${esc(D.nomType.get(ev))}</b> <span class="etiq">hypothèse · ${esc(rs[0].structure)}</span><br>`+
+    `<span style="color:var(--doux)">condition : ${esc(D.nomType.get(rs[0].de))} — remplie par ${v.articles} article(s)`+
+    `${v.liens.slice(0,3).map((l,i)=>` <a href="${esc(l)}" target="_blank" rel="noopener">[${i+1}]</a>`).join("")} · règle ${esc(rs.map(r=>r.regle).join(", "))}</span></div>`;}).join("");
 }
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 addEventListener("resize",()=>{if(D) dessiner();});
