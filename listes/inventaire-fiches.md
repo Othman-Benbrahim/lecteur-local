@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 45 fiches, 498 compartiments (241 sans aucune trace collectée)
-- 1775 éléments (1659 textes distincts)
-- 435 acteurs (412 distincts) : 343 types génériques (« un média d'État »…), à peupler de noms ; 92 désignés autrement (déjà nommés, ou à relire)
+- 46 fiches, 504 compartiments (247 sans aucune trace collectée)
+- 1790 éléments (1674 textes distincts)
+- 444 acteurs (421 distincts) : 348 types génériques (« un média d'État »…), à peupler de noms ; 96 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 252 |
+| collectif | 261 |
 | non_humain | 123 |
 | ideologie | 17 |
 | personne | 17 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 189 |
-| méso | 154 |
+| macro | 197 |
+| méso | 155 |
 | micro | 91 |
 | micro à méso | 1 |
 
@@ -30,12 +30,12 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 308 |
+| economie | 318 |
 | statut | 281 |
-| geopolitique | 237 |
-| convention | 176 |
-| technique | 170 |
-| societe | 153 |
+| geopolitique | 238 |
+| convention | 181 |
+| technique | 172 |
+| societe | 159 |
 | psychologique | 113 |
 | ideologie | 95 |
 | eau | 83 |
@@ -91,6 +91,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | observateur-mesure | 15 | 47 | 3 | 1 |
 | oceans-et-fleuves | 16 | 47 | 11 | 11 |
 | ormuz | 13 | 60 | 15 | 2 |
+| plancher-social | 6 | 14 | 9 | 6 |
 | politique-americaine | 14 | 56 | 25 | 1 |
 | politique-interieure | 5 | 26 | 3 | 5 |
 | relief-et-montagnes | 11 | 34 | 6 | 7 |
@@ -99,7 +100,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | sciences-techniques | 10 | 33 | 5 | 1 |
 | securite-europeenne | 9 | 28 | 3 | 4 |
 | securite-publique | 10 | 31 | 4 | 5 |
-| societe-droits | 4 | 10 | 0 | 4 |
+| societe-droits | 4 | 11 | 0 | 4 |
 | soleil-espace | 10 | 33 | 5 | 7 |
 | soudan | 5 | 16 | 4 | 1 |
 | transport-maritime | 13 | 51 | 15 | 6 |
