@@ -320,6 +320,14 @@ function dessiner(){
   const activite=new Map();for(const s of sits) for(const c of s.compartiments) activite.set(c,(activite.get(c)||0)+1);
   const noeuds=D.noeuds.filter(garde).map(n=>Object.assign({},n));
   const ids=new Set(noeuds.map(n=>n.id));
+  // 2026-11-22 (remarque de l'auteur, 6 h 54) : les ponts vers les autres écosystèmes sont dessinés, avec le compartiment
+  // d'arrivée en nœud « externe » ; un clic dessus bascule dans cet écosystème
+  if(etat.ponts) for(const a of D.aretes){
+    if(a.sorte!=="pont"||(etat.canal&&a.canal!==etat.canal)) continue;
+    const dedans=ids.has(a.de)?a.de:ids.has(a.vers)?a.vers:null;if(!dedans) continue;
+    const autre=dedans===a.de?a.vers:a.de;const n=D.parId.get(autre);
+    if(n&&n.fiche!==etat.fiche&&!ids.has(autre)){noeuds.push(Object.assign({},n,{externe:true}));ids.add(autre);}
+  }
   const aretes=D.aretes.filter(a=>ids.has(a.de)&&ids.has(a.vers)&&(
       (a.sorte==="relation"&&etat.relations)||(a.sorte==="pont"&&etat.ponts&&(!etat.canal||a.canal===etat.canal))||(a.sorte==="appartient")||
       (a.sorte==="lien_acteur"&&etat.liens&&(etat.lecture==="structurel"||a.temps!=="structurel"||true))))
@@ -357,7 +365,8 @@ function dessiner(){
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
     .classed("estompe",n=>filtre&&!vifs.has(n.id)&&!(n.compartiment&&vifs.has(n.compartiment)))
     .classed("vif",n=>etat.choisi===n.id)
-    .on("click",(e,n)=>{e.stopPropagation();etat.choisi=n.id;detail(n,sits);noeud.classed("vif",m=>m.id===n.id);voisinage(n.id);})
+    .on("click",(e,n)=>{e.stopPropagation();if(n.externe){basculer(n.id);return;}
+      etat.choisi=n.id;detail(n,sits);noeud.classed("vif",m=>m.id===n.id);voisinage(n.id);})
     .on("mousemove",(e,n)=>bulle(e,n,activite))
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
     .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
@@ -374,9 +383,11 @@ function dessiner(){
   }
   svg.on("click",e=>{if(e.target===svg.node()){etat.choisi=null;noeud.classed("vif",false);voisinage(null);}});
   noeud.append("circle").attr("r",rayon)
-    .attr("fill",n=>n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)]);
-  noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5)
-    .text(n=>(etat.fiche||activite.get(n.id))?n.nom.slice(0,38):"");
+    .attr("fill",n=>n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
+    .attr("fill-opacity",n=>n.externe?.35:1).attr("stroke-dasharray",n=>n.externe?"3 2":null)
+    .attr("stroke",n=>n.externe?"var(--pont)":null).style("cursor",n=>n.externe?"pointer":null);
+  noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5).style("font-style",n=>n.externe?"italic":null)
+    .text(n=>n.externe?("↗ "+n.fiche_nom.slice(0,22)+" : "+n.nom.slice(0,24)):(etat.fiche||activite.get(n.id))?n.nom.slice(0,38):"");
 
   sim=d3.forceSimulation(noeuds)
     .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(a=>a.sorte==="appartient"?22:a.sorte==="pont"?120:70).strength(a=>a.sorte==="pont"?.05:.3))
@@ -440,6 +451,10 @@ function dessinerEnsemble(sits){
     `Traits : ponts entre écosystèmes (plus épais = plus de ponts).</p><p style="font-size:13px">Cliquez sur un écosystème pour l'ouvrir.</p>`;
 }
 
+function basculer(id){ // ouvrir l'écosystème d'un compartiment relié par un pont, ce compartiment choisi
+  const n=D.parId.get(id);if(!n) return;
+  etat.fiche=n.fiche;etat.choisi=id;document.getElementById("fiche").value=n.fiche;dessiner();
+}
 function bulle(e,n,activite){
   const b=document.getElementById("infobulle");const r=document.getElementById("carte").getBoundingClientRect();
   const ax=n.niveau||{};
@@ -462,7 +477,9 @@ function detail(n,sits){
     const rel=D.aretes.filter(a=>(a.de===n.id||a.vers===n.id)&&a.sorte!=="appartient");
     if(rel.length) h+=`<h2>Relations et ponts</h2><ul>${rel.map(a=>{const autre=D.parId.get(a.de===n.id?a.vers:a.de);
       const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}</span>`:`<span class="etiq">${a.sorte==="pont"?("pont"+(a.canal?" · "+esc(a.canal):"")):"lien"}</span>`;
-      return `<li>${sens} ${esc(autre?autre.nom:"?")} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
+      const nom=esc(autre?autre.nom:"?");
+      const cible=autre&&autre.fiche!==n.fiche?`<a href="#" onclick="basculer('${esc(autre.id).replace(/'/g,"\\'")}');return false;">↗ ${esc(autre.fiche_nom)} : ${nom}</a>`:nom;
+      return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
     const tr=n.traces||[];
     h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span>${(t.odd||[]).map(o=>` <span class="etiq" title="${esc(o.libelle)}">ODD ${esc(o.code)}</span>`).join("")}</li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
     const te=D.termesPar.get(n.id)||[];
