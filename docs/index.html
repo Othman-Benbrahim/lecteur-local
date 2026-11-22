@@ -47,6 +47,7 @@ svg{width:100%;height:100%;display:block}
 .noeud circle{stroke:var(--panneau);stroke-width:1.2px;cursor:pointer}
 .noeud text{font-size:10.5px;fill:var(--texte);pointer-events:none;paint-order:stroke;stroke:var(--fond);stroke-width:3px}
 .estompe{opacity:.12}
+.pale{opacity:.07}
 .vif circle{stroke:var(--surbrillance)!important;stroke-width:3px!important}
 #axe{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:space-between;padding:0 30px;
   color:var(--doux);font-size:11.5px;pointer-events:none}
@@ -342,11 +343,22 @@ function dessiner(){
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
     .classed("estompe",n=>filtre&&!vifs.has(n.id)&&!(n.compartiment&&vifs.has(n.compartiment)))
     .classed("vif",n=>etat.choisi===n.id)
-    .on("click",(e,n)=>{etat.choisi=n.id;detail(n,sits);noeud.classed("vif",m=>m.id===n.id);})
+    .on("click",(e,n)=>{e.stopPropagation();etat.choisi=n.id;detail(n,sits);noeud.classed("vif",m=>m.id===n.id);voisinage(n.id);})
     .on("mousemove",(e,n)=>bulle(e,n,activite))
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
     .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
       .on("drag",(e,n)=>{n.fx=e.x;n.fy=e.y;}).on("end",(e,n)=>{if(!e.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}));
+  // voisinage (décision de l'auteur du 2026-11-22, 4 h 31) : un clic sur un nœud ne laisse en pleine couleur que lui,
+  // ses voisins directs et leurs liens ; un clic sur le fond rétablit tout
+  const idDe=x=>typeof x==="object"?x.id:x;
+  function voisinage(id){
+    if(!id){noeud.classed("pale",false);lien.classed("pale",false);return;}
+    const v=new Set([id]);
+    for(const a of aretes){const s=idDe(a.source),t=idDe(a.target);if(s===id)v.add(t);if(t===id)v.add(s);}
+    noeud.classed("pale",m=>!v.has(m.id));
+    lien.classed("pale",a=>idDe(a.source)!==id&&idDe(a.target)!==id);
+  }
+  svg.on("click",e=>{if(e.target===svg.node()){etat.choisi=null;noeud.classed("vif",false);voisinage(null);}});
   noeud.append("circle").attr("r",rayon)
     .attr("fill",n=>n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)]);
   noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5)
@@ -361,7 +373,7 @@ function dessiner(){
     .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
       noeud.attr("transform",n=>`translate(${n.x},${n.y})`);});
   frise(sits);
-  if(etat.choisi&&D.parId.has(etat.choisi)) detail(D.parId.get(etat.choisi),sits);
+  if(etat.choisi&&D.parId.has(etat.choisi)){detail(D.parId.get(etat.choisi),sits);voisinage(etat.choisi);}
 }
 
 function dessinerEnsemble(sits){
