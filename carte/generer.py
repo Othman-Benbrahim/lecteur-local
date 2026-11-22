@@ -39,6 +39,7 @@ def principal() -> int:
     from ontologie import graphe
 
     fiches = eco.charger(bot / "ecosystemes")
+    odd = eco.odd(bot / "ecosystemes/odd.yaml") if hasattr(eco, "odd") else {}   # codes officiels des indicateurs ODD
     noeuds, aretes = [], []
     for theme, f in fiches.items():
         for c in f.get("compartiments") or []:
@@ -47,7 +48,8 @@ def principal() -> int:
             noeuds.append({"id": cid, "sorte": "compartiment", "fiche": theme, "fiche_nom": f.get("nom", theme),
                            "nom": c.get("nom", c["id"]), "organisation": c.get("organisation", ""),
                            "niveau": c.get("niveau") or {}, "axes": ax, "elements": c.get("elements") or [],
-                           "traces": [{"source": t.get("source", ""), "statut": t.get("statut", "")}
+                           "traces": [{"source": t.get("source", ""), "statut": t.get("statut", ""),
+                                       "odd": [{"code": str(k), "libelle": odd.get(str(k), "")} for k in t.get("odd") or []]}
                                       for t in c.get("traces") or [] if isinstance(t, dict)]})
             for a in c.get("acteurs") or []:
                 aid = f"{cid}::{a.get('nom')}"

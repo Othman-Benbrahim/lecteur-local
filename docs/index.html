@@ -428,7 +428,7 @@ function detail(n,sits){
       const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}</span>`:`<span class="etiq">${a.sorte==="pont"?"pont":"lien"}</span>`;
       return `<li>${sens} ${esc(autre?autre.nom:"?")} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
     const tr=n.traces||[];
-    h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span></li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
+    h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span>${(t.odd||[]).map(o=>` <span class="etiq" title="${esc(o.libelle)}">ODD ${esc(o.code)}</span>`).join("")}</li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
     const te=D.termesPar.get(n.id)||[];
     h+=`<h2>Termes validés (${te.length})</h2>`+(te.length?`<div class="puces">${te.slice(0,80).map(t=>`<span class="puce" title="${esc(t.note)}" onclick="choisirTerme('${esc(t.terme).replace(/'/g,"\\'")}')">${esc(t.terme)} <small>${t.langue}</small></span>`).join("")}</div>`:`<p class="vide">aucun</p>`);
     if(n.fiche==="observateur-mesure"&&D.recherche&&D.recherche.semaines){
