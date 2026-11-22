@@ -2,16 +2,16 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 46 fiches, 504 compartiments (247 sans aucune trace collectée)
-- 1790 éléments (1674 textes distincts)
-- 444 acteurs (421 distincts) : 348 types génériques (« un média d'État »…), à peupler de noms ; 96 désignés autrement (déjà nommés, ou à relire)
+- 47 fiches, 511 compartiments (254 sans aucune trace collectée)
+- 1806 éléments (1690 textes distincts)
+- 454 acteurs (430 distincts) : 354 types génériques (« un média d'État »…), à peupler de noms ; 100 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 261 |
-| non_humain | 123 |
+| collectif | 268 |
+| non_humain | 126 |
 | ideologie | 17 |
 | personne | 17 |
 | statut | 17 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 197 |
-| méso | 155 |
+| macro | 204 |
+| méso | 158 |
 | micro | 91 |
 | micro à méso | 1 |
 
@@ -33,9 +33,9 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | economie | 318 |
 | statut | 281 |
 | geopolitique | 238 |
-| convention | 181 |
-| technique | 172 |
-| societe | 159 |
+| convention | 189 |
+| technique | 186 |
+| societe | 161 |
 | psychologique | 113 |
 | ideologie | 95 |
 | eau | 83 |
@@ -44,8 +44,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | relief | 56 |
 | meteo | 51 |
 | climat | 46 |
+| corps | 45 |
 | microbiologique | 44 |
-| corps | 43 |
 | mineral | 36 |
 | vegetal | 35 |
 | physique | 34 |
@@ -104,4 +104,5 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | soleil-espace | 10 | 33 | 5 | 7 |
 | soudan | 5 | 16 | 4 | 1 |
 | transport-maritime | 13 | 51 | 15 | 6 |
+| transports-villes | 7 | 16 | 10 | 7 |
 | union-europeenne | 4 | 11 | 1 | 4 |
