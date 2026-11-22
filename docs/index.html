@@ -7,14 +7,14 @@
 <style>
 :root{
   --fond:#f6f5f1;--panneau:#ffffff;--trait:#d9d6cc;--texte:#1d1c19;--doux:#6b675d;--accent:#2f5d8a;--lien:#5e7a86;
-  --plus:#2e7d4f;--moins:#b23a3a;--pont:#9a958a;--amont:#b5651d;--aval:#2f6f9f;--acteur:#7a5a9e;--surbrillance:#e8a317;--ombre:rgba(0,0,0,.06);
+  --plus:#2e7d4f;--moins:#b23a3a;--pont:#9a958a;--amont:#b5651d;--aval:#2f6f9f;--acteur:#7a5a9e;--dirigeant:#8a3b2e;--patron:#2e6b5e;--surbrillance:#e8a317;--ombre:rgba(0,0,0,.06);
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;--lien:#9db3bd;
-  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}}
+  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--dirigeant:#e08a7a;--patron:#6fc2ad;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}}
 :root[data-theme="dark"]{
   --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;--lien:#9db3bd;
-  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}
+  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--dirigeant:#e08a7a;--patron:#6fc2ad;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--fond);color:var(--texte);
   font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -49,6 +49,7 @@ svg{width:100%;height:100%;display:block}
 .estompe{opacity:.12}
 .pale{opacity:.07}
 .amont circle{stroke:var(--amont);stroke-width:3px}.aval circle{stroke:var(--aval);stroke-width:3px}
+.n1 circle,.n1 rect{stroke:var(--surbrillance);stroke-width:4px}.n2 circle,.n2 rect{stroke:var(--surbrillance);stroke-width:2px}.n3 circle,.n3 rect{stroke:var(--surbrillance);stroke-width:1px;stroke-dasharray:2 2}
 .niv{font-size:11px;color:var(--doux);margin:6px 0 2px}
 .vif circle{stroke:var(--surbrillance)!important;stroke-width:3px!important}
 #axe{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:space-between;padding:0 30px;
@@ -242,7 +243,8 @@ function preparer(){
 function construireControles(){
   const sel=document.getElementById("fiche");
   const fiches=[...new Map(D.noeuds.map(n=>[n.fiche,n.fiche_nom])).entries()].sort((a,b)=>a[1].localeCompare(b[1],"fr"));
-  sel.innerHTML=`<option value="">vue d'ensemble (un cercle par écosystème)</option>`+fiches.map(([k,v])=>`<option value="${k}">${esc(v)}</option>`).join("");
+  sel.innerHTML=`<option value="">vue d'ensemble (un cercle par écosystème)</option>`+
+    (D.nommes&&D.nommes.acteurs.length?`<option value="__acteurs__">★ Réseau des acteurs nommés (dirigeants, patrons)</option>`:"")+fiches.map(([k,v])=>`<option value="${k}">${esc(v)}</option>`).join("");
   sel.onchange=()=>{etat.fiche=sel.value;etat.choisi=null;dessiner();};
   document.querySelectorAll("#variable button").forEach(b=>b.onclick=()=>{
     document.querySelectorAll("#variable button").forEach(x=>x.classList.toggle("on",x===b));
@@ -333,6 +335,93 @@ function chaine(id,sens,max=3){ // « amont » (causes) ou « aval » (conséque
     front=suiv;}
   return niv;
 }
+// 2026-11-22 (décision de l'auteur, 7 h 41 - 7 h 49) : réseau des acteurs nommés (dirigeants, patrons), conjoncturels,
+// à côté des mécanismes durables ; niveau d'un lien = distance dans le graphe (1 proche, 2 voisin, 3 éloigné) ; liens
+// vers la population (gouverne, élu par, informe, influence documentée).
+const REL_NOMME={nomme:["nomme","hierarchie"],commande:["commande","hierarchie"],allie:["allié de","accord"],
+  negocie_avec:["négocie avec","accord"],associe:["associé à","accord"],finance:["finance","argent"],fournit:["fournit","argent"],
+  rival:["rival de","conflit"],desaccord_public:["désaccord public avec","conflit"],gouverne:["gouverne","population"],
+  elu_par:["élu ou jugé par","population"],informe:["informe par ses médias","population"],influence_documentee:["influence documentée","population"]};
+const COUL_REL={hierarchie:"var(--texte)",accord:"var(--plus)",argent:"var(--surbrillance)",conflit:"var(--moins)",population:"var(--aval)"};
+const NIV_NOM={1:"proche",2:"voisin",3:"éloigné"};
+function niveauxNommes(id){ // distance dans le graphe des liens entre acteurs (deux sens), jusqu'à 3
+  const v=new Map();for(const l of D.nommes.liens) if(REL_NOMME[l.relation]&&REL_NOMME[l.relation][1]!=="population"){
+    if(!v.has(l.de))v.set(l.de,[]);if(!v.has(l.vers))v.set(l.vers,[]);v.get(l.de).push(l.vers);v.get(l.vers).push(l.de);}
+  const d=new Map([[id,0]]);let f=[id];
+  for(let k=1;k<=3;k++){const s=[];for(const x of f) for(const y of v.get(x)||[]) if(!d.has(y)){d.set(y,k);s.push(y);} f=s;}
+  d.delete(id);return d;
+}
+function dessinerActeurs(){
+  const A=D.nommes.acteurs,L=D.nommes.liens;const par=new Map(A.map(a=>[a.id,a]));
+  const noeuds=A.map(a=>({...a,genre:"nomme"}));
+  for(const l of L) if(!par.has(l.vers)&&!noeuds.some(n=>n.id===l.vers)){const c=D.parId.get(l.vers);
+    noeuds.push({id:l.vers,genre:"population",nom:c?c.nom:l.vers,fiche_nom:c?c.fiche_nom:""});}
+  const aretes=L.map(l=>({...l,source:l.de,target:l.vers}));
+  document.getElementById("axe").innerHTML="";
+  svg=d3.select("#svg");svg.selectAll("*").remove();gZoom=svg.append("g");
+  svg.call(d3.zoom().scaleExtent([.2,6]).on("zoom",e=>gZoom.attr("transform",e.transform)));
+  const defs=svg.append("defs");
+  for(const[k,c]of Object.entries(COUL_REL)) defs.append("marker").attr("id","fn-"+k).attr("viewBox","0 -4 8 8").attr("refX",16).attr("refY",0)
+    .attr("markerWidth",6).attr("markerHeight",6).attr("orient","auto").append("path").attr("d","M0,-4L8,0L0,4").attr("fill",c);
+  const cat=l=>(REL_NOMME[l.relation]||["","accord"])[1];
+  const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("class","lien")
+    .attr("stroke",l=>COUL_REL[cat(l)]).attr("stroke-width",1.6).attr("stroke-dasharray",l=>cat(l)==="population"?"4 3":l.temps==="structurel"?null:"6 2")
+    .attr("marker-end",l=>`url(#fn-${cat(l)})`).style("cursor","help")
+    .on("mousemove",(e,l)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
+      const n=x=>(par.get(x)||{}).nom||(D.parId.get(x)||{}).nom||x;
+      b.innerHTML=`<b>${esc(n(l.de))}</b> ${esc(REL_NOMME[l.relation][0])} <b>${esc(n(l.vers))}</b><br>${esc(l.domaine)}${l.via?" · par "+esc(l.via):""}<br><span style="color:var(--doux)">${esc(l.texte)}</span>`;
+      b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
+    .on("mouseleave",()=>document.getElementById("infobulle").style.display="none");
+  const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
+    .on("click",(e,n)=>{e.stopPropagation();if(n.genre==="population"){basculer(n.id);return;}etat.choisi=n.id;marquer(n.id);detailNomme(n);})
+    .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
+      .on("drag",(e,n)=>{n.fx=e.x;n.fy=e.y;}).on("end",(e,n)=>{if(!e.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}));
+  noeud.filter(n=>n.genre==="nomme").append("circle").attr("r",9).attr("fill",n=>n.sorte==="patron"?"var(--patron)":"var(--dirigeant)");
+  noeud.filter(n=>n.genre==="population").append("rect").attr("x",-7).attr("y",-7).attr("width",14).attr("height",14).attr("rx",3)
+    .attr("fill","var(--fond)").attr("stroke","var(--aval)").attr("stroke-width",1.5).style("cursor","pointer");
+  noeud.append("text").attr("x",12).attr("y",4).text(n=>n.genre==="population"?"↗ "+n.fiche_nom.slice(0,20)+" : "+n.nom.slice(0,26):n.nom);
+  function marquer(id){
+    noeud.classed("n1",false).classed("n2",false).classed("n3",false).classed("pale",false).classed("vif",false);lien.classed("pale",false);
+    if(!id) return;const nv=niveauxNommes(id);const pop=new Set(L.filter(l=>l.de===id&&cat(l)==="population").map(l=>l.vers));
+    noeud.classed("vif",n=>n.id===id).classed("n1",n=>nv.get(n.id)===1).classed("n2",n=>nv.get(n.id)===2).classed("n3",n=>nv.get(n.id)===3)
+      .classed("pale",n=>n.id!==id&&!nv.has(n.id)&&!pop.has(n.id));
+    lien.classed("pale",l=>!((l.de===id||nv.has(l.de))&&(l.vers===id||nv.has(l.vers)||pop.has(l.vers))));
+  }
+  svg.on("click",e=>{if(e.target===svg.node()){etat.choisi=null;marquer(null);legendeNommes();}});
+  sim=d3.forceSimulation(noeuds)
+    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(l=>cat(l)==="population"?90:110).strength(.25))
+    .force("charge",d3.forceManyBody().strength(-420))
+    .force("x",d3.forceX(largeur/2).strength(.04)).force("y",d3.forceY(hauteur/2).strength(.06))
+    .force("collision",d3.forceCollide().radius(28))
+    .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
+      noeud.attr("transform",n=>`translate(${n.x},${n.y})`);});
+  if(etat.choisi&&par.has(etat.choisi)){marquer(etat.choisi);detailNomme(par.get(etat.choisi));} else legendeNommes();
+}
+function legendeNommes(){
+  document.getElementById("detail").innerHTML=`<h3>Réseau des acteurs nommés</h3><div class="sous">${D.nommes.acteurs.length} acteurs · ${D.nommes.liens.length} liens · premier lot (dirigeants et patrons)</div>`+
+  `<p style="font-size:13px">Des personnes publiques, dans leur rôle public, à un moment de leur cycle (mandat, direction d'entreprise) : elles passent, les mécanismes des écosystèmes restent. Cliquez sur un acteur : ses <b>proches</b> (niveau 1, lien direct), <b>voisins</b> (niveau 2, un intermédiaire) et <b>éloignés</b> (niveau 3, deux intermédiaires) s'allument.</p>`+
+  `<div class="legende"><span><i style="border-color:var(--texte)"></i>hiérarchie (nomme, commande)</span><span><i style="border-color:var(--plus)"></i>accord (allié, négocie, associé)</span>`+
+  `<span><i style="border-color:var(--surbrillance)"></i>argent (finance, fournit)</span><span><i style="border-color:var(--moins)"></i>conflit (rival, désaccord public)</span>`+
+  `<span><i style="border-color:var(--aval);border-top-style:dashed"></i>vers la population (gouverne, élu par, informe)</span>`+
+  `<span>cercle rouge brique : dirigeant · vert : patron · carré : compartiment (population, institution)</span><span>trait plein : structurel · tirets : conjoncturel</span></div>`;
+}
+function detailNomme(a){
+  const par=new Map(D.nommes.acteurs.map(x=>[x.id,x]));const nv=niveauxNommes(a.id);
+  const lienA=id=>`<a href="#" onclick="etat.choisi='${id}';dessiner();return false;">${esc(par.get(id).nom)}</a>`;
+  const srcs=ss=>ss.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.titre||s.url)}</a>${s.lecture==="titre"?' <span class="etiq">titre seulement, à recouper</span>':""}`).join("<br>");
+  let h=`<h3>${esc(a.nom)}</h3><div class="sous">${esc(a.sorte)} · ${esc(a.role)}</div><table><tr><td>depuis</td><td>${esc(a.depuis)}</td></tr><tr><td>cycle</td><td>${esc(a.cycle)}</td></tr></table>`;
+  h+=`<h2>Rattaché à</h2><ul>${a.compartiments.map(c=>{const m=D.parId.get(c);return `<li><a href="#" onclick="basculer('${esc(c)}');return false;">↗ ${esc(m?m.fiche_nom+" : "+m.nom:c)}</a></li>`;}).join("")}</ul>`;
+  const directs=D.nommes.liens.filter(l=>l.de===a.id||l.vers===a.id);
+  for(const k of [1,2,3]){const xs=[...nv.entries()].filter(([,v])=>v===k).map(([x])=>x);if(!xs.length) continue;
+    h+=`<h2>Niveau ${k} — ${NIV_NOM[k]} (${xs.length})</h2><ul>`+xs.map(x=>{
+      const l=k===1?directs.find(l=>l.de===x||l.vers===x):null;
+      return `<li>${lienA(x)}${l?` <span class="etiq">${esc(l.de===a.id?REL_NOMME[l.relation][0]:"← "+REL_NOMME[l.relation][0])} · ${esc(l.domaine)}</span><br><span style="color:var(--doux)">${esc(l.texte)}</span>`:""}</li>`;}).join("")+`</ul>`;}
+  const pop=directs.filter(l=>l.de===a.id&&REL_NOMME[l.relation][1]==="population");
+  if(pop.length) h+=`<h2>Vers la population</h2><ul>${pop.map(l=>{const m=D.parId.get(l.vers);return `<li>${esc(REL_NOMME[l.relation][0])}${l.via?" (par "+esc(l.via)+")":""} → <a href="#" onclick="basculer('${esc(l.vers)}');return false;">${esc(m?m.nom:l.vers)}</a><br><span style="color:var(--doux)">${esc(l.texte)}</span></li>`;}).join("")}</ul>`;
+  h+=`<h2>Sources</h2><p style="font-size:12px">${srcs(a.sources)}</p>`;
+  const ls=directs.flatMap(l=>l.sources);if(ls.length) h+=`<h2>Sources des liens</h2><p style="font-size:12px">${srcs(ls)}</p>`;
+  document.getElementById("detail").innerHTML=h;
+}
 function vueEnsemble(sits){
   // un noeud par fiche : position moyenne de ses compartiments sur la variable choisie ; arêtes = ponts entre fiches
   const parFiche=new Map();
@@ -356,6 +445,7 @@ function dessiner(){
   const zone=document.getElementById("carte");largeur=zone.clientWidth;hauteur=zone.clientHeight;
   const sits=situationsFiltrees();
   if(!etat.fiche) return dessinerEnsemble(sits);
+  if(etat.fiche==="__acteurs__") return dessinerActeurs();
   const activite=new Map();for(const s of sits) for(const c of s.compartiments) activite.set(c,(activite.get(c)||0)+1);
   const noeuds=D.noeuds.filter(garde).map(n=>Object.assign({},n));
   const ids=new Set(noeuds.map(n=>n.id));
@@ -533,6 +623,8 @@ function detail(n,sits){
     if(n.elements.length) h+=`<h2>Éléments</h2><ul>${n.elements.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
     const ac=D.noeuds.filter(m=>m.compartiment===n.id);
     if(ac.length) h+=`<h2>Acteurs (fiche)</h2><ul>${ac.map(m=>`<li>${esc(m.nom)} <span class="etiq">${esc(m.niveau.taille||"")}</span></li>`).join("")}</ul>`;
+    const nm=(D.nommes?D.nommes.acteurs:[]).filter(x=>x.compartiments.includes(n.id));
+    if(nm.length) h+=`<h2>Acteurs nommés (aujourd'hui)</h2><ul>${nm.map(x=>`<li><a href="#" onclick="etat.fiche='__acteurs__';etat.choisi='${x.id}';document.getElementById('fiche').value='__acteurs__';dessiner();return false;">${esc(x.nom)}</a> <span class="etiq">${esc(x.role)}</span></li>`).join("")}</ul>`;
     if(etat.sorte==="causes") h+=blocCauses(n);
     const rel=D.aretes.filter(a=>(a.de===n.id||a.vers===n.id)&&a.sorte!=="appartient");
     if(rel.length) h+=`<h2>Relations et ponts</h2><ul>${rel.map(a=>{const autre=D.parId.get(a.de===n.id?a.vers:a.de);

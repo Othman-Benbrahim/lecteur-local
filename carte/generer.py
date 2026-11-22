@@ -128,12 +128,28 @@ def principal() -> int:
     f = bot / "registre/recherche-evolution.json"
     recherche = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
 
+    # acteurs nommés et leurs réseaux (bot 0.10.444, décision de l'auteur du 2026-11-22, 7 h 41 - 7 h 49) : à part des
+    # noeuds des fiches ; chacun rattaché à des compartiments ; liens entre acteurs et vers la population
+    nommes = {"acteurs": [], "liens": []}
+    fn = bot / "ecosystemes/acteurs-nommes.yaml"
+    if fn.exists():
+        dn = yaml.safe_load(fn.read_text(encoding="utf-8")) or {}
+        src = lambda x: [{"titre": s.get("titre", ""), "url": s.get("url", ""), "lecture": s.get("lecture", "")}
+                         for s in x.get("sources") or [] if isinstance(s, dict)]
+        nommes["acteurs"] = [{"id": a["id"], "nom": a["nom"], "sorte": a.get("sorte", ""), "role": a.get("role", ""),
+                              "depuis": str(a.get("depuis", "")), "cycle": a.get("cycle", ""),
+                              "compartiments": a.get("compartiments") or [], "sources": src(a)} for a in dn.get("acteurs") or []]
+        nommes["liens"] = [{"id": l["id"], "de": l["de"], "vers": l["vers"], "relation": l.get("relation", ""),
+                            "via": l.get("via", ""), "domaine": l.get("domaine", ""), "texte": l.get("texte", ""),
+                            "temps": (l.get("temps") or {}).get("statut", ""), "phase": (l.get("temps") or {}).get("phase", ""),
+                            "sources": src(l)} for l in dn.get("liens") or []]
+
     # santé du collecteur : date de la dernière situation enregistrée (aucune = jamais lancé ou en panne)
     collecte = {"situations": len(situations), "derniere": max((s["jour"] for s in situations), default=None)}
     donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
-               "situations": situations, "types_actifs": types_actifs}
+               "situations": situations, "types_actifs": types_actifs, "nommes": nommes}
     out = ICI / "docs/donnees.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(donnees, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
