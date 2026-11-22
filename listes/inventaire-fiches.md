@@ -2,7 +2,7 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 69 fiches, 743 compartiments (463 sans aucune trace collectée)
+- 69 fiches, 743 compartiments (445 sans aucune trace collectée)
 - 2195 éléments (2079 textes distincts)
 - 521 acteurs (497 distincts) : 367 types génériques (« un média d'État »…), à peupler de noms ; 154 désignés autrement (déjà nommés, ou à relire)
 
@@ -59,17 +59,17 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | fiche | compartiments | éléments | acteurs | compartiments sans trace collectée |
 |---|---|---|---|---|
-| afrique-subsaharienne | 15 | 29 | 12 | 15 |
+| afrique-subsaharienne | 15 | 29 | 12 | 13 |
 | alimentation-mondiale | 14 | 58 | 21 | 8 |
-| asie-du-nord-est | 6 | 14 | 4 | 6 |
-| asie-du-sud | 7 | 15 | 4 | 7 |
+| asie-du-nord-est | 6 | 14 | 4 | 4 |
+| asie-du-sud | 7 | 15 | 4 | 5 |
 | biocenose | 9 | 21 | 1 | 6 |
 | biodiversite-sols | 8 | 26 | 13 | 8 |
 | calendriers-echeances | 10 | 32 | 10 | 2 |
-| classes-sociales | 11 | 15 | 0 | 11 |
+| classes-sociales | 11 | 15 | 0 | 10 |
 | climat-extremes | 13 | 42 | 17 | 6 |
 | competitions-culture | 9 | 35 | 8 | 7 |
-| corps-humain | 10 | 30 | 4 | 10 |
+| corps-humain | 10 | 30 | 4 | 9 |
 | corruption | 8 | 17 | 4 | 8 |
 | crime-organise | 8 | 9 | 1 | 4 |
 | crises-bancaires | 10 | 35 | 9 | 1 |
@@ -99,7 +99,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | medias-diffusion | 11 | 23 | 1 | 11 |
 | migrations-demographie | 10 | 38 | 10 | 5 |
 | militaire | 9 | 13 | 3 | 4 |
-| minerais-critiques | 7 | 13 | 2 | 7 |
+| minerais-critiques | 7 | 13 | 2 | 5 |
 | monnaie-pouvoir | 7 | 8 | 0 | 2 |
 | niveaux-de-base | 3 | 3 | 0 | 3 |
 | non-proliferation | 9 | 26 | 2 | 5 |
@@ -109,14 +109,14 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | organisations-internationales | 9 | 11 | 1 | 8 |
 | ormuz | 13 | 60 | 15 | 2 |
 | partis-politiques | 14 | 17 | 1 | 14 |
-| plancher-social | 6 | 14 | 9 | 6 |
+| plancher-social | 6 | 14 | 9 | 5 |
 | politique-americaine | 14 | 56 | 25 | 1 |
 | politique-interieure | 8 | 34 | 3 | 8 |
-| psyche | 12 | 14 | 0 | 12 |
+| psyche | 12 | 14 | 0 | 10 |
 | relief-et-montagnes | 11 | 34 | 6 | 7 |
 | reseaux-humains | 9 | 12 | 0 | 9 |
-| reseaux-sociaux | 11 | 20 | 2 | 11 |
-| reseaux-transport | 6 | 8 | 0 | 6 |
+| reseaux-sociaux | 11 | 20 | 2 | 9 |
+| reseaux-transport | 6 | 8 | 0 | 4 |
 | rivalite-sino-americaine | 12 | 46 | 20 | 1 |
 | russie-ukraine | 13 | 51 | 25 | 3 |
 | sciences-techniques | 10 | 33 | 5 | 1 |
@@ -126,5 +126,5 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | soleil-espace | 10 | 33 | 5 | 7 |
 | soudan | 5 | 16 | 4 | 1 |
 | transport-maritime | 13 | 51 | 15 | 6 |
-| transports-villes | 7 | 16 | 10 | 7 |
+| transports-villes | 7 | 16 | 10 | 6 |
 | union-europeenne | 8 | 24 | 4 | 8 |
