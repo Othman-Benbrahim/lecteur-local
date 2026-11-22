@@ -2,8 +2,8 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 68 fiches, 731 compartiments (474 sans aucune trace collectée)
-- 2181 éléments (2065 textes distincts)
+- 69 fiches, 743 compartiments (486 sans aucune trace collectée)
+- 2195 éléments (2079 textes distincts)
 - 521 acteurs (497 distincts) : 367 types génériques (« un média d'État »…), à peupler de noms ; 154 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
@@ -36,8 +36,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | convention | 273 |
 | technique | 222 |
 | societe | 210 |
-| ideologie | 151 |
-| psychologique | 115 |
+| ideologie | 152 |
+| psychologique | 122 |
 | eau | 87 |
 | animal | 72 |
 | chimique | 71 |
@@ -49,8 +49,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | climat | 46 |
 | vegetal | 45 |
 | physique | 37 |
-| entourage | 32 |
-| personne | 29 |
+| entourage | 34 |
+| personne | 33 |
 | atomique | 27 |
 | ocean | 26 |
 | sol_vivant | 11 |
@@ -112,6 +112,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | plancher-social | 6 | 14 | 9 | 6 |
 | politique-americaine | 14 | 56 | 25 | 1 |
 | politique-interieure | 8 | 34 | 3 | 8 |
+| psyche | 12 | 14 | 0 | 12 |
 | relief-et-montagnes | 11 | 34 | 6 | 7 |
 | reseaux-humains | 9 | 12 | 0 | 9 |
 | reseaux-sociaux | 11 | 20 | 2 | 11 |
