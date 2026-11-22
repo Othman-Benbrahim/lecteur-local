@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 61 fiches, 657 compartiments (400 sans aucune trace collectée)
-- 2087 éléments (1971 textes distincts)
-- 499 acteurs (475 distincts) : 365 types génériques (« un média d'État »…), à peupler de noms ; 134 désignés autrement (déjà nommés, ou à relire)
+- 62 fiches, 675 compartiments (418 sans aucune trace collectée)
+- 2114 éléments (1998 textes distincts)
+- 518 acteurs (494 distincts) : 365 types génériques (« un média d'État »…), à peupler de noms ; 153 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 299 |
+| collectif | 318 |
 | non_humain | 126 |
 | statut | 29 |
 | ideologie | 18 |
@@ -21,9 +21,9 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 238 |
-| méso | 166 |
-| micro | 94 |
+| macro | 242 |
+| méso | 174 |
+| micro | 101 |
 | micro à méso | 1 |
 
 ## Éléments et acteurs par niveau d'organisation
@@ -31,13 +31,13 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | | nombre |
 |---|---|
 | economie | 350 |
-| statut | 317 |
-| geopolitique | 294 |
-| convention | 256 |
+| statut | 319 |
+| geopolitique | 300 |
+| convention | 258 |
 | technique | 219 |
-| societe | 197 |
+| societe | 202 |
+| ideologie | 141 |
 | psychologique | 115 |
-| ideologie | 110 |
 | eau | 87 |
 | animal | 72 |
 | chimique | 71 |
@@ -71,6 +71,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | corps-humain | 10 | 30 | 4 | 10 |
 | corruption | 8 | 17 | 4 | 8 |
 | crises-bancaires | 10 | 35 | 9 | 1 |
+| croyances-religions | 18 | 27 | 19 | 18 |
 | culture-memoire | 7 | 18 | 2 | 7 |
 | cycles-biogeochimiques | 11 | 37 | 9 | 6 |
 | dette-emergents | 12 | 47 | 17 | 6 |
