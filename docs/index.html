@@ -104,6 +104,9 @@ svg{width:100%;height:100%;display:block}
     <label class="case"><input type="checkbox" id="vPonts" checked> ponts entre fiches</label>
     <label class="case"><input type="checkbox" id="vLiens" checked> liens entre acteurs</label>
 
+    <h2>Canal des ponts</h2>
+    <select id="canal"><option value="">tous les canaux</option></select>
+
     <h2>Lecture du temps</h2>
     <div class="seg" id="lecture">
       <button data-l="structurel" class="on">Structurel</button><button data-l="conjoncturel">Conjoncturel (T)</button>
@@ -191,7 +194,7 @@ function binT(n){ // temps écrit en mots dans les fiches : rangé en conjonctur
   if(/mois|trimestre|semaine|réunion|session|campagne/.test(t)) return 1;
   return 0;}
 
-let D,etat={fiche:"",variable:"taille",echelles:new Set(),cats:new Set(),terme:"",emetteur:"",lecture:"structurel",jour:null,
+let D,etat={canal:"",fiche:"",variable:"taille",echelles:new Set(),cats:new Set(),terme:"",emetteur:"",lecture:"structurel",jour:null,
   acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
 let sim,svg,gZoom,largeur,hauteur;
 
@@ -216,6 +219,10 @@ function preparer(){
   document.getElementById("meta").textContent=
     `${nf.size} écosystèmes · ${D.noeuds.filter(n=>n.sorte==="compartiment").length} compartiments · `+
     `${D.termes.length} termes validés · ${D.situations.length} situations observées · données du ${D.genere}`;
+  // santé du collecteur : distinguer « aucune situation » d'une panne ou d'un collecteur jamais lancé
+  const col=D.collecte||{};const m=document.getElementById("meta");
+  m.innerHTML=esc(m.textContent)+(col.derniere?` · dernière collecte : ${esc(col.derniere)}`:
+    ` · <span style="color:var(--moins)">collecteur : aucune collecte enregistrée</span>`);
 }
 
 function construireControles(){
@@ -245,6 +252,11 @@ function construireControles(){
     sug.style.display="block";
     sug.querySelectorAll("div[data-t]").forEach(d=>d.onclick=()=>{inp.value=d.dataset.t;etat.terme=d.dataset.t;sug.style.display="none";dessiner();});};
   inp.onsearch=()=>{if(!inp.value){etat.terme="";dessiner();}};
+  // canal des ponts transversaux (énergie, climat, eau…) : ne garder que les ponts de ce canal
+  const ca=document.getElementById("canal");
+  const canaux=[...new Set(D.aretes.filter(a=>a.sorte==="pont"&&a.canal).map(a=>a.canal))].sort();
+  ca.innerHTML=`<option value="">tous les canaux</option>`+canaux.map(c=>`<option value="${c}">${esc(c)}</option>`).join("");
+  ca.onchange=()=>{etat.canal=ca.value;dessiner();};
   const em=document.getElementById("emetteur");
   const doms=[...new Set(D.situations.map(s=>s.emetteur))].sort();
   em.innerHTML=`<option value="">tous</option>`+doms.map(d=>{const e=D.emetteursId.get(d);return `<option value="${d}">${esc(e?e.nom:d)}</option>`;}).join("");
@@ -292,11 +304,13 @@ function vueEnsemble(sits){
   const act=new Map();for(const x of sits) for(const c of x.compartiments){const fi=c.split(":")[0];act.set("F:"+fi,(act.get("F:"+fi)||0)+1);}
   const noeuds=[...parFiche.values()].map(f=>{const ps=f.comps.map(position).filter(Boolean);
     f.m=ps.length?d3.mean(ps,p=>p.m):null;f.couleur=COULEUR_FAMILLE[[...f.fam.entries()].sort((a,b)=>b[1]-a[1])[0][0]];return f;});
-  const cnt=new Map();
-  for(const a of D.aretes) if(a.sorte==="pont"){const x="F:"+a.de.split(":")[0],y="F:"+a.vers.split(":")[0];
-    if(x!==y&&parFiche.has(x.slice(2))&&parFiche.has(y.slice(2))){const k=[x,y].sort().join("|");cnt.set(k,(cnt.get(k)||0)+1);}}
-  const aretes=[...cnt.entries()].map(([k,v])=>{const[a,b]=k.split("|");return {source:a,target:b,n:v};});
-  return {noeuds,aretes,act};
+  const cnt=new Map(),can=new Map(),voisins=new Map();
+  for(const a of D.aretes) if(a.sorte==="pont"&&(!etat.canal||a.canal===etat.canal)){const x="F:"+a.de.split(":")[0],y="F:"+a.vers.split(":")[0];
+    if(x!==y&&parFiche.has(x.slice(2))&&parFiche.has(y.slice(2))){const k=[x,y].sort().join("|");cnt.set(k,(cnt.get(k)||0)+1);
+      if(!can.has(k)) can.set(k,new Set()); if(a.canal) can.get(k).add(a.canal);}}
+  const aretes=[...cnt.entries()].map(([k,v])=>{const[a,b]=k.split("|");return {source:a,target:b,n:v,canaux:[...can.get(k)].sort()};});
+  for(const a of aretes){for(const[u,w]of[[a.source,a.target],[a.target,a.source]]){if(!voisins.has(u)) voisins.set(u,[]);voisins.get(u).push([w,a.n]);}}
+  return {noeuds,aretes,act,voisins};
 }
 
 function dessiner(){
@@ -307,7 +321,7 @@ function dessiner(){
   const noeuds=D.noeuds.filter(garde).map(n=>Object.assign({},n));
   const ids=new Set(noeuds.map(n=>n.id));
   const aretes=D.aretes.filter(a=>ids.has(a.de)&&ids.has(a.vers)&&(
-      (a.sorte==="relation"&&etat.relations)||(a.sorte==="pont"&&etat.ponts)||(a.sorte==="appartient")||
+      (a.sorte==="relation"&&etat.relations)||(a.sorte==="pont"&&etat.ponts&&(!etat.canal||a.canal===etat.canal))||(a.sorte==="appartient")||
       (a.sorte==="lien_acteur"&&etat.liens&&(etat.lecture==="structurel"||a.temps!=="structurel"||true))))
     .map(a=>({...a,source:a.de,target:a.vers}));
   // surbrillance : terme, émetteur
@@ -377,7 +391,8 @@ function dessiner(){
 }
 
 function dessinerEnsemble(sits){
-  const {noeuds,aretes,act}=vueEnsemble(sits);
+  const {noeuds,aretes,act,voisins}=vueEnsemble(sits);
+  const nomF=new Map(noeuds.map(f=>[f.id,f.nom]));
   const E=ECHELLES[etat.variable];const nb=E.noms.length;
   const xEch=i=>60+(largeur-120)*(nb===1?0.5:i/(nb-1));
   document.getElementById("axe").innerHTML=E.noms.map(n=>`<span>${n}</span>`).join("");
@@ -388,13 +403,22 @@ function dessinerEnsemble(sits){
     for(const s of sits) s.compartiments.forEach(c=>vifs.add("F:"+c.split(":")[0]));}
   if(etat.emetteur) for(const s of sits) s.compartiments.forEach(c=>vifs.add("F:"+c.split(":")[0]));
   const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("stroke","var(--pont)")
-    .attr("stroke-opacity",.45).attr("stroke-width",a=>Math.min(1+a.n*.8,7));
+    .attr("stroke-opacity",.45).attr("stroke-width",a=>Math.min(1+a.n*.8,7)).style("cursor","help")
+    .on("mousemove",(e,a)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
+      const s=typeof a.source==="object"?a.source.id:a.source,t=typeof a.target==="object"?a.target.id:a.target;
+      b.innerHTML=`<b>${esc(nomF.get(s))}</b> ↔ <b>${esc(nomF.get(t))}</b><br>${a.n} pont(s)`+
+        (a.canaux.length?`<br>canaux : ${a.canaux.map(esc).join(", ")}`:"");
+      b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
+    .on("mouseleave",()=>document.getElementById("infobulle").style.display="none");
   const r=f=>9+Math.sqrt(f.comps.length)*2.2+Math.sqrt(act.get(f.id)||0)*2.5;
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
     .classed("estompe",f=>vifs.size&&!vifs.has(f.id))
     .on("click",(e,f)=>{const sel=document.getElementById("fiche");sel.value=f.fiche;etat.fiche=f.fiche;etat.choisi=null;dessiner();})
     .on("mousemove",(e,f)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
-      b.innerHTML=`<b>${esc(f.nom)}</b><br>${f.comps.length} compartiments · ${act.get(f.id)||0} situations<br><span style="color:var(--doux)">cliquer pour ouvrir l'écosystème</span>`;
+      const vs=(voisins.get(f.id)||[]).sort((x,y)=>y[1]-x[1]);
+      b.innerHTML=`<b>${esc(f.nom)}</b><br>${f.comps.length} compartiments · ${act.get(f.id)||0} situations`+
+        `<br>reliée à ${vs.length} écosystème(s)${vs.length?" : "+vs.slice(0,5).map(([w,n])=>esc(nomF.get(w))+" ("+n+")").join(", ")+(vs.length>5?"…":""):""}`+
+        `<br><span style="color:var(--doux)">cliquer pour ouvrir l'écosystème</span>`;
       b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
     .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})

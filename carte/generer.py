@@ -128,7 +128,9 @@ def principal() -> int:
     f = bot / "registre/recherche-evolution.json"
     recherche = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
 
-    donnees = {"genere": date.today().isoformat(), "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
+    # santé du collecteur : date de la dernière situation enregistrée (aucune = jamais lancé ou en panne)
+    collecte = {"situations": len(situations), "derniere": max((s["jour"] for s in situations), default=None)}
+    donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
                "situations": situations, "types_actifs": types_actifs}
