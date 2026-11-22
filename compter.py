@@ -37,6 +37,7 @@ import csv
 import html
 import json
 import re
+from urllib.parse import urljoin, urlparse
 import sys
 import time
 import xml.etree.ElementTree as ET
@@ -244,7 +245,9 @@ def principal() -> int:
                     vus.add(a["lien"])
                     nouveaux_vus.append(a["lien"])
                     lus += 1
-                    em = re.sub(r"^www\.", "", a["lien"].split("/")[2]) if a["lien"].count("/") >= 2 else "?"
+                    # 2026-11-22 : un lien relatif (« /updates/… », « news/… ») est résolu contre l'adresse du flux ; avant,
+                    # son premier segment était pris pour un domaine (« updates », « news »)
+                    em = re.sub(r"^www\.", "", urlparse(urljoin(u, a["lien"])).netloc) or "?"
                     ident = emetteurs.get(em, {})
                     s_ = situation(a["texte"], ident.get("langue1", ""), termes, a["etiquettes"], acteurs, niveaux, em)
                     if s_ is None:

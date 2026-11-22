@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import csv
 import re
+from urllib.parse import urljoin, urlparse
 import sys
 import time
 import xml.etree.ElementTree as ET
@@ -179,7 +180,7 @@ def flux_rss(c, politesse, flux: dict, connus: dict[str, str]) -> list[tuple[str
             dom = re.sub(r"^www\.", "", u.split("/")[2])
             for t, lien, quand in etiquettes(r.content):
                 # l'émetteur est le site de l'article (un relais comme FeedBurner n'est pas un émetteur)
-                em = re.sub(r"^www\.", "", lien.split("/")[2]) if lien.startswith("http") and lien.count("/") >= 2 else dom
+                em = re.sub(r"^www\.", "", urlparse(urljoin(u, lien)).netloc) or dom   # lien relatif résolu contre le flux
                 out.append((t, "?", connus.get(t.lower(), "?"), f"étiquette:{rubrique}:{em}", em, rubrique, lien, quand))
             time.sleep(0.5)
     return out
