@@ -2,17 +2,17 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 50 fiches, 532 compartiments (275 sans aucune trace collectée)
-- 1854 éléments (1738 textes distincts)
-- 472 acteurs (448 distincts) : 355 types génériques (« un média d'État »…), à peupler de noms ; 117 désignés autrement (déjà nommés, ou à relire)
+- 51 fiches, 539 compartiments (282 sans aucune trace collectée)
+- 1867 éléments (1751 textes distincts)
+- 474 acteurs (450 distincts) : 355 types génériques (« un média d'État »…), à peupler de noms ; 119 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 278 |
+| collectif | 279 |
 | non_humain | 126 |
-| statut | 25 |
+| statut | 26 |
 | ideologie | 17 |
 | personne | 17 |
 | psyche | 9 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 219 |
-| méso | 161 |
+| macro | 220 |
+| méso | 162 |
 | micro | 91 |
 | micro à méso | 1 |
 
@@ -30,11 +30,11 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 320 |
-| statut | 296 |
-| geopolitique | 271 |
-| convention | 197 |
-| technique | 186 |
+| economie | 324 |
+| statut | 297 |
+| geopolitique | 274 |
+| convention | 198 |
+| technique | 187 |
 | societe | 165 |
 | psychologique | 113 |
 | ideologie | 95 |
@@ -46,7 +46,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | climat | 46 |
 | corps | 45 |
 | microbiologique | 44 |
-| mineral | 38 |
+| mineral | 43 |
 | vegetal | 35 |
 | physique | 34 |
 | entourage | 27 |
@@ -89,6 +89,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | iran-nucleaire | 14 | 53 | 21 | 4 |
 | liban-institutions | 9 | 30 | 8 | 3 |
 | migrations-demographie | 10 | 38 | 10 | 5 |
+| minerais-critiques | 7 | 13 | 2 | 7 |
 | non-proliferation | 9 | 26 | 2 | 5 |
 | nucleaire-radiologique | 10 | 34 | 8 | 7 |
 | observateur-mesure | 15 | 47 | 3 | 1 |
