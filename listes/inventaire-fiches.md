@@ -2,17 +2,17 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 48 fiches, 519 compartiments (262 sans aucune trace collectée)
-- 1825 éléments (1709 textes distincts)
-- 464 acteurs (440 distincts) : 355 types génériques (« un média d'État »…), à peupler de noms ; 109 désignés autrement (déjà nommés, ou à relire)
+- 49 fiches, 526 compartiments (269 sans aucune trace collectée)
+- 1840 éléments (1724 textes distincts)
+- 468 acteurs (444 distincts) : 355 types génériques (« un média d'État »…), à peupler de noms ; 113 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 276 |
+| collectif | 277 |
 | non_humain | 126 |
-| statut | 19 |
+| statut | 22 |
 | ideologie | 17 |
 | personne | 17 |
 | psyche | 9 |
@@ -21,8 +21,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 212 |
-| méso | 160 |
+| macro | 215 |
+| méso | 161 |
 | micro | 91 |
 | micro à méso | 1 |
 
@@ -30,15 +30,15 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 318 |
-| statut | 283 |
-| geopolitique | 255 |
+| economie | 320 |
+| statut | 289 |
+| geopolitique | 263 |
 | convention | 194 |
 | technique | 186 |
-| societe | 164 |
+| societe | 165 |
 | psychologique | 113 |
 | ideologie | 95 |
-| eau | 83 |
+| eau | 85 |
 | chimique | 70 |
 | animal | 65 |
 | relief | 56 |
@@ -61,6 +61,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 |---|---|---|---|---|
 | afrique-subsaharienne | 8 | 19 | 10 | 8 |
 | alimentation-mondiale | 14 | 58 | 21 | 8 |
+| asie-du-sud | 7 | 15 | 4 | 7 |
 | biodiversite-sols | 8 | 26 | 13 | 8 |
 | calendriers-echeances | 10 | 32 | 10 | 2 |
 | climat-extremes | 13 | 42 | 17 | 6 |
