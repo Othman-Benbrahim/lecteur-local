@@ -144,7 +144,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
       <span><i style="border-color:var(--amont)"></i>mode Causes : en amont (causes)</span>
       <span><i style="border-color:var(--aval)"></i>mode Causes : en aval (conséquences)</span>
       <span><i style="border-color:var(--acteur)"></i>lien entre acteurs (pointillé : conjoncturel)</span>
-      <span><i style="border-color:var(--dirigeant)"></i>acteur nommé : dirigeant (brique) ou patron (vert)</span>
+      <span><i style="border-color:var(--dirigeant)"></i>acteur nommé : dirigeant (brique), patron (vert), religieux (violet)</span>
       <span>taille d'un cercle : nombre de situations observées</span>
     </div>
   </aside>
@@ -378,7 +378,7 @@ function dessinerActeurs(){
     .on("click",(e,n)=>{e.stopPropagation();if(n.genre==="population"){basculer(n.id);return;}etat.choisi=n.id;marquer(n.id);detailNomme(n);})
     .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
       .on("drag",(e,n)=>{n.fx=e.x;n.fy=e.y;}).on("end",(e,n)=>{if(!e.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}));
-  noeud.filter(n=>n.genre==="nomme").append("circle").attr("r",9).attr("fill",n=>n.sorte==="patron"?"var(--patron)":"var(--dirigeant)");
+  noeud.filter(n=>n.genre==="nomme").append("circle").attr("r",9).attr("fill",n=>n.sorte==="patron"?"var(--patron)":n.sorte==="religieux"?"var(--acteur)":"var(--dirigeant)");
   noeud.filter(n=>n.genre==="population").append("rect").attr("x",-7).attr("y",-7).attr("width",14).attr("height",14).attr("rx",3)
     .attr("fill","var(--fond)").attr("stroke","var(--aval)").attr("stroke-width",1.5).style("cursor","pointer");
   noeud.append("text").attr("x",12).attr("y",4).text(n=>n.genre==="population"?"↗ "+n.fiche_nom.slice(0,20)+" : "+n.nom.slice(0,26):n.nom);
@@ -405,7 +405,7 @@ function legendeNommes(){
   `<div class="legende"><span><i style="border-color:var(--texte)"></i>hiérarchie (nomme, commande)</span><span><i style="border-color:var(--plus)"></i>accord (allié, négocie, associé, proche)</span>`+
   `<span><i style="border-color:var(--surbrillance)"></i>argent (finance, fournit)</span><span><i style="border-color:var(--moins)"></i>conflit (rival, désaccord public)</span>`+
   `<span><i style="border-color:var(--aval);border-top-style:dashed"></i>vers la population (gouverne, élu par, informe)</span>`+
-  `<span>cercle rouge brique : dirigeant · vert : patron · carré : compartiment (population, institution)</span><span>trait plein : structurel · tirets : conjoncturel</span></div>`;
+  `<span>cercle rouge brique : dirigeant · vert : patron · violet : personnalité religieuse · carré : compartiment (population, institution)</span><span>trait plein : structurel · tirets : conjoncturel</span></div>`;
 }
 function detailNomme(a){
   const par=new Map(D.nommes.acteurs.map(x=>[x.id,x]));const nv=niveauxNommes(a.id);
@@ -532,7 +532,7 @@ function dessiner(){
   }
   svg.on("click",e=>{if(e.target===svg.node()){etat.choisi=null;noeud.classed("vif",false);voisinage(null);}});
   noeud.append("circle").attr("r",rayon)
-    .attr("fill",n=>n.sorte==="nomme"?(n.genre==="patron"?"var(--patron)":"var(--dirigeant)"):n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
+    .attr("fill",n=>n.sorte==="nomme"?(n.genre==="patron"?"var(--patron)":n.genre==="religieux"?"var(--acteur)":"var(--dirigeant)"):n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
     .attr("fill-opacity",n=>n.externe?.35:1).attr("stroke-dasharray",n=>n.externe?"3 2":null)
     .attr("stroke",n=>n.externe?"var(--pont)":null).style("cursor",n=>n.externe?"pointer":null);
   noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5).style("font-style",n=>n.externe?"italic":null).style("font-weight",n=>n.sorte==="nomme"?"600":null)
