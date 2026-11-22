@@ -78,8 +78,11 @@ def realise(s: dict, regle: dict, continent_de: dict[str, str]) -> bool:
     communs = comps & set(regle["compartiments"])
     if not communs:
         return False
+    # 2026-11-22, 6 h 38 (décision de l'auteur, après la première collecte) : un indice de la règle est désormais EXIGÉ ;
+    # deux compartiments communs ne suffisent plus (96 réalisations sur 172 n'avaient aucun indice, dont une vérification
+    # sur une manifestation allemande comptée comme « contestation contre un régime »)
     indices = {i.lower() for i in regle.get("indices") or []}
-    if len(communs) < 2 and not (indices & {t.lower() for t in s.get("termes", [])}):
+    if not (indices & {t.lower() for t in s.get("termes", [])}):
         return False
     return compatible(s.get("espace", []), regle["perimetre"], continent_de)
 

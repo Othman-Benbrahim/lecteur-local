@@ -23,7 +23,9 @@ Règles de lecture (fixées ici) :
     2026-11-22, 2 h 45) seulement comme étiquettes posées par une rédaction, jamais dans le texte ;
   - un terme dont la note dit « anglais seulement » (RSF, décision de 0 h 59) ne compte que chez un émetteur dont la
     première langue au registre est l'anglais ;
-  - un article sans aucun terme validé n'est pas enregistré (il est seulement noté comme lu).
+  - un article sans aucun terme validé n'est pas enregistré (il est seulement noté comme lu) ;
+  - 2026-11-22, 6 h 38 (décision de l'auteur) : un article sans aucun compartiment (seulement un lieu ou un acteur sans
+    fiche) n'est pas une situation de nos écosystèmes : il est noté comme lu et compté, pas enregistré.
 
 Sorties : comptes/situations.jsonl (une ligne par article-situation, cumulée), comptes/vus.txt (liens déjà lus).
 
@@ -222,7 +224,7 @@ def principal() -> int:
     vus_f = COMPTES / "vus.txt"
     vus = set(vus_f.read_text(encoding="utf-8").split()) if vus_f.exists() else set()
     nouveaux_vus, situations = [], []
-    lus = 0
+    lus = sans_compartiment = 0
     releve = date.today().isoformat()
     with httpx.Client(headers={"User-Agent": politesse.UA.replace("metac-bot-template", "lecteur-local")},
                       timeout=30, follow_redirects=True) as c:
@@ -247,6 +249,9 @@ def principal() -> int:
                     s_ = situation(a["texte"], ident.get("langue1", ""), termes, a["etiquettes"], acteurs, niveaux, em)
                     if s_ is None:
                         continue
+                    if not s_.get("compartiments"):
+                        sans_compartiment += 1
+                        continue
                     situations.append({"jour": a["date"] or releve, "date_article_connue": bool(a["date"]),
                                        "releve": releve, "lien": a["lien"], "rubrique": rubrique,
                                        "emetteur": {"domaine": em, **{k: v for k, v in ident.items() if k != "langue1"},
@@ -258,6 +263,7 @@ def principal() -> int:
     with vus_f.open("a", encoding="utf-8") as f:
         f.write("".join(x + "\n" for x in nouveaux_vus))
     print(f"articles nouveaux lus : {lus} ; situations enregistrées : {len(situations)} ; "
+          f"écartés faute de compartiment : {sans_compartiment} ; "
           f"avec au moins un acteur : {sum(1 for x in situations if x['acteurs'])} ; avec un espace : "
           f"{sum(1 for x in situations if x['espace'])} ; termes validés en jeu : {len(termes)}", flush=True)
     return 0
