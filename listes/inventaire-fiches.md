@@ -2,8 +2,8 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 57 fiches, 623 compartiments (366 sans aucune trace collectée)
-- 2034 éléments (1918 textes distincts)
+- 60 fiches, 646 compartiments (389 sans aucune trace collectée)
+- 2067 éléments (1951 textes distincts)
 - 497 acteurs (473 distincts) : 363 types génériques (« un média d'État »…), à peupler de noms ; 134 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
@@ -30,14 +30,14 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 347 |
-| statut | 315 |
-| geopolitique | 284 |
-| convention | 247 |
-| technique | 210 |
-| societe | 182 |
+| economie | 348 |
+| statut | 316 |
+| geopolitique | 292 |
+| convention | 252 |
+| technique | 216 |
+| societe | 190 |
 | psychologique | 115 |
-| ideologie | 105 |
+| ideologie | 107 |
 | eau | 87 |
 | animal | 72 |
 | chimique | 71 |
@@ -49,8 +49,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | mineral | 45 |
 | vegetal | 45 |
 | physique | 37 |
+| entourage | 30 |
 | personne | 28 |
-| entourage | 28 |
 | atomique | 27 |
 | ocean | 26 |
 | sol_vivant | 11 |
@@ -84,6 +84,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | environnement-dechets | 13 | 33 | 7 | 13 |
 | epidemies | 10 | 39 | 8 | 6 |
 | foret-et-sols-vivants | 13 | 34 | 8 | 13 |
+| frontieres | 8 | 13 | 0 | 8 |
 | guerre-levant | 14 | 60 | 24 | 4 |
 | humain | 40 | 165 | 0 | 24 |
 | inflation-mondiale | 13 | 46 | 13 | 2 |
@@ -105,6 +106,8 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | politique-americaine | 14 | 56 | 25 | 1 |
 | politique-interieure | 8 | 34 | 3 | 8 |
 | relief-et-montagnes | 11 | 34 | 6 | 7 |
+| reseaux-humains | 9 | 12 | 0 | 9 |
+| reseaux-transport | 6 | 8 | 0 | 6 |
 | rivalite-sino-americaine | 12 | 46 | 20 | 1 |
 | russie-ukraine | 13 | 51 | 25 | 3 |
 | sciences-techniques | 10 | 33 | 5 | 1 |
