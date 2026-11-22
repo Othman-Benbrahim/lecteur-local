@@ -135,6 +135,16 @@ def principal() -> int:
                                    "espace": s.get("espace", []), "acteurs": [a["acteur"] for a in s.get("acteurs", [])],
                                    "compartiments": [c["compartiment"] for c in s.get("compartiments", [])],
                                    "termes": s.get("termes", [])})
+    signaux = []   # 2026-11-22, 16 h 26 : signaux forts et faibles (realiser.py)
+    fs = ICI / "comptes/signaux.csv"
+    if fs.exists():
+        with fs.open(encoding="utf-8") as fo:
+            signaux = [r for r in csv.DictReader(fo) if r["classe"] != "bruit"]
+    suivi = {}
+    fv = ICI / "comptes/signaux-faibles-suivi.csv"
+    if fv.exists():
+        with fv.open(encoding="utf-8") as fo:
+            suivi = {r["jour"] + "|" + r["regle"]: r["statut"] for r in csv.DictReader(fo)}
     types_actifs = []
     f = ICI / "comptes/types-actifs.csv"
     if f.exists():
@@ -171,7 +181,7 @@ def principal() -> int:
     donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
-               "situations": situations, "types_actifs": types_actifs, "nommes": nommes,
+               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes,
                "jours30": [jours30[0], jours30[-1]]}
     out = ICI / "docs/donnees.json"
     out.parent.mkdir(exist_ok=True)
