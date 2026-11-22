@@ -2,8 +2,8 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 53 fiches, 564 compartiments (307 sans aucune trace collectée)
-- 1924 éléments (1808 textes distincts)
+- 53 fiches, 569 compartiments (312 sans aucune trace collectée)
+- 1935 éléments (1819 textes distincts)
 - 483 acteurs (459 distincts) : 356 types génériques (« un média d'État »…), à peupler de noms ; 127 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
@@ -30,11 +30,11 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 334 |
+| economie | 338 |
 | statut | 302 |
 | geopolitique | 280 |
 | convention | 227 |
-| technique | 189 |
+| technique | 192 |
 | societe | 171 |
 | psychologique | 115 |
 | ideologie | 98 |
@@ -44,10 +44,10 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | relief | 56 |
 | meteo | 51 |
 | climat | 46 |
+| mineral | 45 |
 | microbiologique | 45 |
 | corps | 45 |
-| mineral | 43 |
-| vegetal | 35 |
+| vegetal | 37 |
 | physique | 35 |
 | entourage | 27 |
 | ocean | 26 |
@@ -76,7 +76,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | eau-douce-potable | 11 | 36 | 4 | 10 |
 | eau-moyen-orient | 14 | 48 | 19 | 10 |
 | economie-chinoise | 14 | 55 | 25 | 6 |
-| economie-entreprises | 8 | 16 | 2 | 8 |
+| economie-entreprises | 13 | 27 | 2 | 13 |
 | elections-amerique-latine | 9 | 31 | 6 | 5 |
 | energie-mondiale | 13 | 56 | 8 | 2 |
 | environnement-dechets | 7 | 22 | 4 | 7 |
