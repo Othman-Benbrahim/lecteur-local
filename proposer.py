@@ -195,7 +195,12 @@ def principal() -> int:
         inv = list(csv.DictReader(f))
     connus = {l["texte"].lower(): f'{l["fiche"]}:{l["compartiment"]}:{l["texte"]}' for l in inv}
     decides = {cle(l[1], l[2]) for l in lire_lignes(VALIDES) if l[0] in ("+", "-")}
-    anciens = {cle(l[1], l[2]): l for l in lire_lignes(CANDIDATS) if l[0] == "?" and cle(l[1], l[2]) not in decides}
+    termes_decides = {k[0] for k in decides}
+
+    def deja_decide(k: tuple[str, str]) -> bool:
+        # une étiquette RSS arrive sans langue (« ? ») : décidée si le terme l'est, quelle que soit la langue notée au tri
+        return k in decides or (k[1] == "?" and k[0] in termes_decides)
+    anciens = {cle(l[1], l[2]): l for l in lire_lignes(CANDIDATS) if l[0] == "?" and not deja_decide(cle(l[1], l[2]))}
     aujourdhui = date.today().isoformat()
     vus_ce_passage: dict[tuple[str, str], list] = {}
     with httpx.Client(headers={"User-Agent": politesse.UA.replace("metac-bot-template", "lecteur-local")},
@@ -227,7 +232,7 @@ def principal() -> int:
         "# émetteurs vus, absents de listes/emetteurs.txt\n" + "\n".join(a_identifier) + "\n", encoding="utf-8")
     for terme, lg, place, source, *_ in props:
         k = cle(terme, lg)
-        if k in decides:
+        if deja_decide(k):
             continue
         if k in vus_ce_passage:                       # compté une fois par passage
             continue
