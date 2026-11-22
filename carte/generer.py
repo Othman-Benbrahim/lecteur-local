@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from datetime import date
@@ -39,6 +40,26 @@ def principal() -> int:
     from ontologie import graphe
 
     fiches = eco.charger(bot / "ecosystemes")
+    # 2026-11-22, 11 h 36 : comptes du collecteur RSS du bot (articles nouveaux par famille et par jour), rattachés aux
+    # compartiments dont une trace nomme la famille (« famille « X » ») ; 30 derniers jours
+    par_famille: dict[str, dict] = {}
+    ff = bot / "registre/rss-familles.csv"
+    if ff.exists():
+        import csv as _csv
+        for r in _csv.DictReader(ff.open(encoding="utf-8")):
+            par_famille.setdefault(r["famille"], {})[r["jour"]] = int(r["articles"])
+    from datetime import timedelta
+    jours30 = [(date.today() - timedelta(days=k)).isoformat() for k in range(29, -1, -1)]
+
+    def flux_de(traces):
+        out = []
+        for t in traces or []:
+            m = re.search(r"famille « (\w+) »", str(t.get("source", ""))) if isinstance(t, dict) else None
+            if m and m.group(1) not in [x["famille"] for x in out]:
+                serie = par_famille.get(m.group(1), {})
+                out.append({"famille": m.group(1), "serie": [serie.get(j, 0) for j in jours30],
+                            "debut": min(serie) if serie else None})
+        return out
     odd = eco.odd(bot / "ecosystemes/odd.yaml") if hasattr(eco, "odd") else {}   # codes officiels des indicateurs ODD
     noeuds, aretes = [], []
     for theme, f in fiches.items():
@@ -50,7 +71,8 @@ def principal() -> int:
                            "niveau": c.get("niveau") or {}, "axes": ax, "elements": c.get("elements") or [],
                            "traces": [{"source": t.get("source", ""), "statut": t.get("statut", ""),
                                        "odd": [{"code": str(k), "libelle": odd.get(str(k), "")} for k in t.get("odd") or []]}
-                                      for t in c.get("traces") or [] if isinstance(t, dict)]})
+                                      for t in c.get("traces") or [] if isinstance(t, dict)],
+                           "flux": flux_de(c.get("traces"))})
             for a in c.get("acteurs") or []:
                 aid = f"{cid}::{a.get('nom')}"
                 noeuds.append({"id": aid, "sorte": "acteur", "fiche": theme, "fiche_nom": f.get("nom", theme),
@@ -149,7 +171,8 @@ def principal() -> int:
     donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
-               "situations": situations, "types_actifs": types_actifs, "nommes": nommes}
+               "situations": situations, "types_actifs": types_actifs, "nommes": nommes,
+               "jours30": [jours30[0], jours30[-1]]}
     out = ICI / "docs/donnees.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(donnees, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

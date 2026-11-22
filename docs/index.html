@@ -652,6 +652,11 @@ function detail(n,sits){
       return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
     const tr=n.traces||[];
     h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span>${(t.odd||[]).map(o=>` <span class="etiq" title="${esc(o.libelle)}">ODD ${esc(o.code)}</span>`).join("")}</li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
+    const fl=n.flux||[];
+    if(fl.length) h+=`<h2>Flux branchés : articles par jour (30 j${D.jours30?`, du ${esc(D.jours30[0])} au ${esc(D.jours30[1])}`:""})</h2><ul>${fl.map(f=>{
+      const tot=f.serie.reduce((a,b)=>a+b,0), mx=Math.max(1,...f.serie);
+      const bars=f.serie.map((v,i)=>`<rect x="${i*4}" y="${20-Math.round(18*v/mx)}" width="3" height="${Math.max(v?1:0,Math.round(18*v/mx))}" fill="var(--accent,#3a6ea5)"><title>${v}</title></rect>`).join("");
+      return `<li>famille « ${esc(f.famille)} » : <b>${tot}</b> articles${f.debut?` <span class="etiq">compté depuis le ${esc(f.debut)}</span>`:` <span class="etiq">pas encore compté</span>`}<br><svg width="120" height="22" role="img" aria-label="articles par jour">${bars}</svg></li>`;}).join("")}</ul><p class="vide">Tous les articles nouveaux de ces flux, qu'ils touchent ou non ce compartiment : c'est l'activité de la source, pas celle du compartiment.</p>`;
     const te=D.termesPar.get(n.id)||[];
     h+=`<h2>Termes validés (${te.length})</h2>`+(te.length?`<div class="puces">${te.slice(0,80).map(t=>`<span class="puce" title="${esc(t.note)}" onclick="choisirTerme('${esc(t.terme).replace(/'/g,"\\'")}')">${esc(t.terme)} <small>${t.langue}</small></span>`).join("")}</div>`:`<p class="vide">aucun</p>`);
     if(n.fiche==="observateur-mesure"&&D.recherche&&D.recherche.semaines){
