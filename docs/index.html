@@ -655,6 +655,12 @@ function detail(n,sits){
       return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
     const tr=n.traces||[];
     h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span>${(t.odd||[]).map(o=>` <span class="etiq" title="${esc(o.libelle)}">ODD ${esc(o.code)}</span>`).join("")}</li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
+    // 0.10.461 : cycles (rythme, phase vulnérable) et tensions (forme, seuil, bascule) déclarés dans la fiche
+    const cy=n.cycles||[], tn=n.tensions||[];
+    const SORTE={force:"forcé",endogene:"endogène",conventionnel:"conventionnel"}, FORME={cumulative:"cumulative",oppositionnelle:"oppositionnelle",desynchronisation:"de désynchronisation"};
+    if(cy.length) h+=`<h2>Cycles (${cy.length})</h2><ul>${cy.map(y=>`<li><b>${esc(y.nom||y.id)}</b> <span class="etiq">${esc(SORTE[y.sorte]||y.sorte)}${y.periode?" · "+esc(y.periode):""} · ${y.statut==="identifie"?"identifié":"mécanisme décrit"}</span><br>${esc(y.mecanisme||"")}${y.phase_vulnerable?`<br><span style="color:var(--doux)">phase vulnérable : ${esc(y.phase_vulnerable)}</span>`:""}</li>`).join("")}</ul>`;
+    if(tn.length) h+=`<h2>Tensions (${tn.length})</h2><ul>${tn.map(y=>{const sl=y.seuil||{};return `<li><b>${esc(y.nom||y.id)}</b> <span class="etiq">tension ${esc(FORME[y.forme]||y.forme)} · ${esc((y.entre||[]).join(" ↔ "))}</span>${y.texte?`<br>${esc(y.texte)}`:""}`+
+      `${sl.habitus?`<br><span style="color:var(--doux)">seuil (habitus) : ${esc(sl.habitus)}</span>`:""}${sl.bascule?`<br><span style="color:var(--doux)">bascule : ${esc(sl.bascule)} · hystérésis : ${esc(sl.hysteresis||"inconnu")}</span>`:""}</li>`;}).join("")}</ul>`;
     const fl=n.flux||[];
     if(fl.length) h+=`<h2>Flux branchés : articles par jour (30 j${D.jours30?`, du ${esc(D.jours30[0])} au ${esc(D.jours30[1])}`:""})</h2><ul>${fl.map(f=>{
       const tot=f.serie.reduce((a,b)=>a+b,0), mx=Math.max(1,...f.serie);

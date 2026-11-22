@@ -72,7 +72,14 @@ def principal() -> int:
                            "traces": [{"source": t.get("source", ""), "statut": t.get("statut", ""),
                                        "odd": [{"code": str(k), "libelle": odd.get(str(k), "")} for k in t.get("odd") or []]}
                                       for t in c.get("traces") or [] if isinstance(t, dict)],
-                           "flux": flux_de(c.get("traces"))})
+                           "flux": flux_de(c.get("traces")),
+                           # 0.10.461 : cycles qui touchent ce compartiment, tensions dont il est un pôle
+                           "cycles": [{k: y.get(k) for k in ("id", "nom", "sorte", "mecanisme", "periode",
+                                                            "phase_vulnerable", "statut")}
+                                      for y in f.get("cycles") or [] if c["id"] in (y.get("compartiments") or [])],
+                           "tensions": [{k: y.get(k) for k in ("id", "nom", "forme", "entre", "stock", "module_par",
+                                                              "seuil", "statut", "texte")}
+                                        for y in f.get("tensions") or [] if c["id"] in (y.get("entre") or [])]})
             for a in c.get("acteurs") or []:
                 aid = f"{cid}::{a.get('nom')}"
                 noeuds.append({"id": aid, "sorte": "acteur", "fiche": theme, "fiche_nom": f.get("nom", theme),
