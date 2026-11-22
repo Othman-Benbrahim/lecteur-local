@@ -7,14 +7,14 @@
 <style>
 :root{
   --fond:#f6f5f1;--panneau:#ffffff;--trait:#d9d6cc;--texte:#1d1c19;--doux:#6b675d;--accent:#2f5d8a;--lien:#5e7a86;
-  --plus:#2e7d4f;--moins:#b23a3a;--pont:#9a958a;--acteur:#7a5a9e;--surbrillance:#e8a317;--ombre:rgba(0,0,0,.06);
+  --plus:#2e7d4f;--moins:#b23a3a;--pont:#9a958a;--amont:#b5651d;--aval:#2f6f9f;--acteur:#7a5a9e;--surbrillance:#e8a317;--ombre:rgba(0,0,0,.06);
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;--lien:#9db3bd;
-  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--acteur:#b89be0;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}}
+  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}}
 :root[data-theme="dark"]{
   --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;--lien:#9db3bd;
-  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--acteur:#b89be0;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}
+  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--fond);color:var(--texte);
   font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -48,6 +48,8 @@ svg{width:100%;height:100%;display:block}
 .noeud text{font-size:10.5px;fill:var(--texte);pointer-events:none;paint-order:stroke;stroke:var(--fond);stroke-width:3px}
 .estompe{opacity:.12}
 .pale{opacity:.07}
+.amont circle{stroke:var(--amont);stroke-width:3px}.aval circle{stroke:var(--aval);stroke-width:3px}
+.niv{font-size:11px;color:var(--doux);margin:6px 0 2px}
 .vif circle{stroke:var(--surbrillance)!important;stroke-width:3px!important}
 #axe{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:space-between;padding:0 30px;
   color:var(--doux);font-size:11.5px;pointer-events:none}
@@ -109,6 +111,12 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
     <h2>Canal des ponts</h2>
     <select id="canal"><option value="">tous les canaux</option></select>
 
+    <h2>Sorte de liens</h2>
+    <div class="seg" id="sorteLiens"><button data-s="tous" class="on">Tous</button><button data-s="causes">Causes</button></div>
+    <div style="font-size:11px;color:var(--doux);margin-top:4px">« Causes » ne garde que les liens de cause, flèche de la
+      cause vers l'effet ; un clic sur un compartiment montre ses causes (en amont) et ses conséquences (en aval), sur
+      trois niveaux. Les liens « même chose » et « lien de voisinage » restent pour naviguer en mode « Tous ».</div>
+
     <h2>Lecture du temps</h2>
     <div class="seg" id="lecture">
       <button data-l="structurel" class="on">Structurel</button><button data-l="conjoncturel">Conjoncturel (T)</button>
@@ -129,7 +137,10 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
     <div class="legende">
       <span><i style="border-color:var(--plus)"></i>effet positif (+)</span>
       <span><i style="border-color:var(--moins)"></i>effet négatif (−)</span>
-      <span><i style="border-color:var(--pont);border-top-style:dashed"></i>pont entre fiches</span>
+      <span><i style="border-color:var(--pont);border-top-style:dashed"></i>pont de cause (flèche vers l'effet)</span>
+      <span><i style="border-color:var(--pont);border-top-style:dotted"></i>même chose, ou lien de voisinage (plus pâle)</span>
+      <span><i style="border-color:var(--amont)"></i>mode Causes : en amont (causes)</span>
+      <span><i style="border-color:var(--aval)"></i>mode Causes : en aval (conséquences)</span>
       <span><i style="border-color:var(--acteur)"></i>lien entre acteurs (pointillé : conjoncturel)</span>
       <span>taille d'un cercle : nombre de situations observées</span>
     </div>
@@ -197,7 +208,7 @@ function binT(n){ // temps écrit en mots dans les fiches : rangé en conjonctur
   if(/mois|trimestre|semaine|réunion|session|campagne/.test(t)) return 1;
   return 0;}
 
-let D,etat={canal:"",fiche:"",variable:"taille",echelles:new Set(),cats:new Set(),terme:"",emetteur:"",lecture:"structurel",jour:null,
+let D,etat={sorte:"tous",canal:"",fiche:"",variable:"taille",echelles:new Set(),cats:new Set(),terme:"",emetteur:"",lecture:"structurel",jour:null,
   acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
 let sim,svg,gZoom,largeur,hauteur;
 
@@ -260,6 +271,8 @@ function construireControles(){
   const canaux=[...new Set(D.aretes.filter(a=>a.sorte==="pont"&&a.canal).map(a=>a.canal))].sort();
   ca.innerHTML=`<option value="">tous les canaux</option>`+canaux.map(c=>`<option value="${c}">${esc(c)}</option>`).join("");
   ca.onchange=()=>{etat.canal=ca.value;dessiner();};
+  document.querySelectorAll("#sorteLiens button").forEach(b=>b.onclick=()=>{
+    document.querySelectorAll("#sorteLiens button").forEach(x=>x.classList.toggle("on",x===b));etat.sorte=b.dataset.s;dessiner();});
   const em=document.getElementById("emetteur");
   const doms=[...new Set(D.situations.map(s=>s.emetteur))].sort();
   em.innerHTML=`<option value="">tous</option>`+doms.map(d=>{const e=D.emetteursId.get(d);return `<option value="${d}">${esc(e?e.nom:d)}</option>`;}).join("");
@@ -298,6 +311,28 @@ function garde(n){
 }
 
 // ---------------------------------------------------------------- dessin
+// 2026-11-22 (décision de l'auteur, 7 h 27 - 7 h 33) : filtre « Causes ». Un pont est une cause (type influence,
+// flèche de la cause vers l'effet), la même chose (meme) ou un lien de voisinage (voisinage).
+const NOM_TYPE={influence:"cause",meme:"même chose",voisinage:"lien de voisinage"};
+function pontVisible(a){return a.sorte==="pont"&&(!etat.canal||a.canal===etat.canal)&&(etat.sorte!=="causes"||a.type==="influence");}
+let CAUSAL=null; // index des liens de cause ; les « même chose » relient deux lectures sans changer de niveau
+function indexCausal(){
+  if(CAUSAL) return CAUSAL;
+  const ent=new Map(),sor=new Map(),meme=new Map();
+  const add=(m,k,v)=>{if(!m.has(k)) m.set(k,[]);m.get(k).push(v);};
+  for(const a of D.aretes){
+    if((a.sorte==="relation"&&a.effet!=="0")||(a.sorte==="pont"&&a.type==="influence")){add(sor,a.de,a);add(ent,a.vers,a);}
+    else if(a.sorte==="pont"&&a.type==="meme"){add(meme,a.de,a.vers);add(meme,a.vers,a.de);}}
+  return CAUSAL={ent,sor,meme};
+}
+function chaine(id,sens,max=3){ // « amont » (causes) ou « aval » (conséquences) : compartiment → {k : niveau 1 à 3, via}
+  const {ent,sor,meme}=indexCausal();const niv=new Map();let front=[id];const vu=new Set([id,...(meme.get(id)||[])]);
+  for(let k=1;k<=max;k++){const suiv=[];
+    for(const x of front) for(const y of [x,...(meme.get(x)||[])]) for(const a of ((sens==="amont"?ent:sor).get(y)||[])){
+      const z=sens==="amont"?a.de:a.vers;if(vu.has(z)) continue;vu.add(z);niv.set(z,{k,via:a});suiv.push(z);}
+    front=suiv;}
+  return niv;
+}
 function vueEnsemble(sits){
   // un noeud par fiche : position moyenne de ses compartiments sur la variable choisie ; arêtes = ponts entre fiches
   const parFiche=new Map();
@@ -308,7 +343,7 @@ function vueEnsemble(sits){
   const noeuds=[...parFiche.values()].map(f=>{const ps=f.comps.map(position).filter(Boolean);
     f.m=ps.length?d3.mean(ps,p=>p.m):null;f.couleur=COULEUR_FAMILLE[[...f.fam.entries()].sort((a,b)=>b[1]-a[1])[0][0]];return f;});
   const cnt=new Map(),can=new Map(),voisins=new Map();
-  for(const a of D.aretes) if(a.sorte==="pont"&&(!etat.canal||a.canal===etat.canal)){const x="F:"+a.de.split(":")[0],y="F:"+a.vers.split(":")[0];
+  for(const a of D.aretes) if(pontVisible(a)){const x="F:"+a.de.split(":")[0],y="F:"+a.vers.split(":")[0];
     if(x!==y&&parFiche.has(x.slice(2))&&parFiche.has(y.slice(2))){const k=[x,y].sort().join("|");cnt.set(k,(cnt.get(k)||0)+1);
       if(!can.has(k)) can.set(k,new Set()); if(a.canal) can.get(k).add(a.canal);}}
   const aretes=[...cnt.entries()].map(([k,v])=>{const[a,b]=k.split("|");return {source:a,target:b,n:v,canaux:[...can.get(k)].sort()};});
@@ -327,14 +362,14 @@ function dessiner(){
   // 2026-11-22 (remarque de l'auteur, 6 h 54) : les ponts vers les autres écosystèmes sont dessinés, avec le compartiment
   // d'arrivée en nœud « externe » ; un clic dessus bascule dans cet écosystème
   if(etat.ponts) for(const a of D.aretes){
-    if(a.sorte!=="pont"||(etat.canal&&a.canal!==etat.canal)) continue;
+    if(!pontVisible(a)) continue;
     const dedans=ids.has(a.de)?a.de:ids.has(a.vers)?a.vers:null;if(!dedans) continue;
     const autre=dedans===a.de?a.vers:a.de;const n=D.parId.get(autre);
     if(n&&n.fiche!==etat.fiche&&!ids.has(autre)){noeuds.push(Object.assign({},n,{externe:true}));ids.add(autre);}
   }
   const aretes=D.aretes.filter(a=>ids.has(a.de)&&ids.has(a.vers)&&(
-      (a.sorte==="relation"&&etat.relations)||(a.sorte==="pont"&&etat.ponts&&(!etat.canal||a.canal===etat.canal))||(a.sorte==="appartient")||
-      (a.sorte==="lien_acteur"&&etat.liens&&(etat.lecture==="structurel"||a.temps!=="structurel"||true))))
+      (a.sorte==="relation"&&etat.relations)||(etat.ponts&&pontVisible(a))||(a.sorte==="appartient")||
+      (a.sorte==="lien_acteur"&&etat.liens&&etat.sorte!=="causes"&&(etat.lecture==="structurel"||a.temps!=="structurel"||true))))
     .map(a=>({...a,source:a.de,target:a.vers}));
   // surbrillance : terme, émetteur
   const vifs=new Set();
@@ -361,9 +396,10 @@ function dessiner(){
   const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("class","lien")
     .attr("stroke",couleurArete)
     .attr("stroke-width",a=>a.sorte==="relation"?({forte:2.4,moyenne:1.6,faible:1}[a.force]||1.2):1)
-    .attr("stroke-dasharray",a=>a.sorte==="pont"?"5 4":(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
+    .attr("stroke-opacity",a=>a.sorte==="pont"&&a.type==="voisinage"?.3:null)
+    .attr("stroke-dasharray",a=>a.sorte==="pont"?(a.type==="influence"?"5 4":"1 3"):(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
     .attr("marker-end",a=>a.sorte==="relation"?`url(#f-${a.effet==="+"?"plus":a.effet==="-"?"moins":"neutre"})`:
-      a.sorte==="lien_acteur"?"url(#f-acteur)":null);
+      a.sorte==="lien_acteur"?"url(#f-acteur)":a.sorte==="pont"&&a.type==="influence"?"url(#f-neutre)":null);
 
   const rayon=n=>n.sorte==="acteur"?4.5:5+Math.sqrt(activite.get(n.id)||0)*3;
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
@@ -379,7 +415,12 @@ function dessiner(){
   // ses voisins directs et leurs liens ; un clic sur le fond rétablit tout
   const idDe=x=>typeof x==="object"?x.id:x;
   function voisinage(id){
+    noeud.classed("amont",false).classed("aval",false);
     if(!id){noeud.classed("pale",false);lien.classed("pale",false);return;}
+    if(etat.sorte==="causes"){ // amont et aval sur trois niveaux ; le reste pâlit
+      const am=chaine(id,"amont"),av=chaine(id,"aval");const v=new Set([id,...am.keys(),...av.keys()]);
+      noeud.classed("amont",m=>am.has(m.id)).classed("aval",m=>av.has(m.id)&&!am.has(m.id)).classed("pale",m=>!v.has(m.id));
+      lien.classed("pale",a=>!(v.has(idDe(a.source))&&v.has(idDe(a.target))));return;}
     const v=new Set([id]);
     for(const a of aretes){const s=idDe(a.source),t=idDe(a.target);if(s===id)v.add(t);if(t===id)v.add(s);}
     noeud.classed("pale",m=>!v.has(m.id));
@@ -492,9 +533,10 @@ function detail(n,sits){
     if(n.elements.length) h+=`<h2>Éléments</h2><ul>${n.elements.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
     const ac=D.noeuds.filter(m=>m.compartiment===n.id);
     if(ac.length) h+=`<h2>Acteurs (fiche)</h2><ul>${ac.map(m=>`<li>${esc(m.nom)} <span class="etiq">${esc(m.niveau.taille||"")}</span></li>`).join("")}</ul>`;
+    if(etat.sorte==="causes") h+=blocCauses(n);
     const rel=D.aretes.filter(a=>(a.de===n.id||a.vers===n.id)&&a.sorte!=="appartient");
     if(rel.length) h+=`<h2>Relations et ponts</h2><ul>${rel.map(a=>{const autre=D.parId.get(a.de===n.id?a.vers:a.de);
-      const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}</span>`:`<span class="etiq">${a.sorte==="pont"?("pont"+(a.canal?" · "+esc(a.canal):"")):"lien"}</span>`;
+      const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}</span>`:`<span class="etiq">${a.sorte==="pont"?(esc(NOM_TYPE[a.type]||"pont")+(a.canal?" · "+esc(a.canal):"")):"lien"}</span>`;
       const nom=esc(autre?autre.nom:"?");
       const cible=autre&&autre.fiche!==n.fiche?`<a href="#" onclick="basculer('${esc(autre.id).replace(/'/g,"\\'")}');return false;">↗ ${esc(autre.fiche_nom)} : ${nom}</a>`:nom;
       return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
@@ -516,6 +558,27 @@ function detail(n,sits){
         `termes : ${esc(x.termes.join(", "))}<br><a href="${esc(x.lien)}" target="_blank" rel="noopener">${esc(x.lien)}</a></li>`;}).join("")}</ul>`:`<p class="vide">aucune pour ces filtres</p>`);
   }
   el.innerHTML=h;
+}
+function blocCauses(n){
+  const am=chaine(n.id,"amont"),av=chaine(n.id,"aval");const {ent}=indexCausal();
+  const nom=id=>{const m=D.parId.get(id);if(!m) return esc(id);
+    const t=m.fiche!==n.fiche?"↗ "+esc(m.fiche_nom)+" : "+esc(m.nom):esc(m.nom);
+    return `<a href="#" onclick="basculer('${esc(id).replace(/'/g,"\\'")}');return false;">${t}</a>`;};
+  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.statut==="a_verifier"?" · hypothèse":""}</span>`:
+    `<span class="etiq">pont${a.canal?" · "+esc(a.canal):""}</span>`;
+  const liste=(m,titre,vide)=>{let h=`<h2>${titre} (${m.size})</h2>`;if(!m.size) return h+`<p class="vide">${vide}</p>`;
+    for(const k of [1,2,3]){const xs=[...m.entries()].filter(([,v])=>v.k===k);if(!xs.length) continue;
+      h+=`<div class="niv">niveau ${k} — ${k===1?"lien direct":k===2?"par un intermédiaire":"par deux intermédiaires"}</div><ul>`+
+        xs.map(([id,v])=>`<li>${nom(id)} ${sig(v.via)}</li>`).join("")+`</ul>`;}
+    return h;};
+  let h=liste(am,"Causes, en amont","aucune cause dans la carte")+liste(av,"Conséquences, en aval","aucune conséquence dans la carte");
+  const boucles=[...am.keys()].filter(id=>av.has(id));
+  if(boucles.length) h+=`<h2>Boucles (rétroactions) (${boucles.length})</h2><p style="font-size:12px">À la fois cause et conséquence : la cause dépend ici de l'échelle de temps.</p><ul>${boucles.map(id=>`<li>${nom(id)}</li>`).join("")}</ul>`;
+  const racines=[...am.keys()].filter(id=>!(ent.get(id)||[]).length);
+  if(racines.length) h+=`<h2>Causes racines (dans notre carte) (${racines.length})</h2><p style="font-size:12px">Aucune cause en amont dans la carte : premières seulement à l'intérieur de notre carte, pas dans le monde.</p><ul>${racines.map(id=>`<li>${nom(id)}</li>`).join("")}</ul>`;
+  const tous=[...am.values(),...av.values()].map(v=>v.via).filter(a=>a.sorte==="relation");
+  if(tous.length) h+=`<p style="font-size:12px;color:var(--doux)">${tous.filter(a=>a.statut==="a_verifier").length} des ${tous.length} relations de cette chaîne sont des hypothèses à vérifier sur sources.</p>`;
+  return h;
 }
 window.choisirTerme=t=>{document.getElementById("terme").value=t;etat.terme=t;dessiner();};
 
