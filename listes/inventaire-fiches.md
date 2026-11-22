@@ -2,8 +2,8 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 53 fiches, 575 compartiments (318 sans aucune trace collectée)
-- 1946 éléments (1830 textes distincts)
+- 53 fiches, 576 compartiments (319 sans aucune trace collectée)
+- 1951 éléments (1835 textes distincts)
 - 486 acteurs (462 distincts) : 357 types génériques (« un média d'État »…), à peupler de noms ; 129 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
@@ -43,10 +43,10 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | animal | 65 |
 | relief | 56 |
 | meteo | 51 |
+| corps | 50 |
 | climat | 46 |
 | mineral | 45 |
 | microbiologique | 45 |
-| corps | 45 |
 | vegetal | 37 |
 | physique | 35 |
 | entourage | 27 |
@@ -83,7 +83,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | epidemies | 10 | 39 | 8 | 6 |
 | foret-et-sols-vivants | 13 | 34 | 8 | 13 |
 | guerre-levant | 14 | 60 | 24 | 4 |
-| humain | 39 | 160 | 0 | 23 |
+| humain | 40 | 165 | 0 | 24 |
 | inflation-mondiale | 13 | 46 | 13 | 2 |
 | information-cyber | 10 | 33 | 7 | 1 |
 | infrastructures-critiques | 9 | 30 | 5 | 2 |

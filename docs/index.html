@@ -437,7 +437,7 @@ function detail(n,sits){
     if(ac.length) h+=`<h2>Acteurs (fiche)</h2><ul>${ac.map(m=>`<li>${esc(m.nom)} <span class="etiq">${esc(m.niveau.taille||"")}</span></li>`).join("")}</ul>`;
     const rel=D.aretes.filter(a=>(a.de===n.id||a.vers===n.id)&&a.sorte!=="appartient");
     if(rel.length) h+=`<h2>Relations et ponts</h2><ul>${rel.map(a=>{const autre=D.parId.get(a.de===n.id?a.vers:a.de);
-      const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}</span>`:`<span class="etiq">${a.sorte==="pont"?"pont":"lien"}</span>`;
+      const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}</span>`:`<span class="etiq">${a.sorte==="pont"?("pont"+(a.canal?" · "+esc(a.canal):"")):"lien"}</span>`;
       return `<li>${sens} ${esc(autre?autre.nom:"?")} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
     const tr=n.traces||[];
     h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span>${(t.odd||[]).map(o=>` <span class="etiq" title="${esc(o.libelle)}">ODD ${esc(o.code)}</span>`).join("")}</li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);

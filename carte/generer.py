@@ -66,7 +66,8 @@ def principal() -> int:
                            "forme": eco.forme_deduite(r.get("effet"), r.get("retour"))})
         for p in f.get("ponts") or []:
             vers = p["vers"] if ":" in p["vers"] else f"{theme}:{p['vers']}"
-            aretes.append({"de": f"{theme}:{p['depuis']}", "vers": vers, "sorte": "pont", "texte": p.get("nature", "")})
+            aretes.append({"de": f"{theme}:{p['depuis']}", "vers": vers, "sorte": "pont", "texte": p.get("nature", ""),
+                           "canal": p.get("canal", ""), "type": p.get("type", "influence")})
     ids = {n["id"] for n in noeuds}
     # liens entre acteurs (fichier à part) : « fiche:début du nom »
     liens_acteurs = []
