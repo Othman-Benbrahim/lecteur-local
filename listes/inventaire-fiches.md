@@ -2,16 +2,16 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 43 fiches, 466 compartiments (216 sans aucune trace collectée)
-- 1676 éléments (1563 textes distincts)
-- 411 acteurs (389 distincts) : 327 types génériques (« un média d'État »…), à peupler de noms ; 84 désignés autrement (déjà nommés, ou à relire)
+- 44 fiches, 476 compartiments (226 sans aucune trace collectée)
+- 1706 éléments (1591 textes distincts)
+- 415 acteurs (392 distincts) : 330 types génériques (« un média d'État »…), à peupler de noms ; 85 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 234 |
-| non_humain | 116 |
+| collectif | 237 |
+| non_humain | 117 |
 | ideologie | 17 |
 | personne | 17 |
 | statut | 17 |
@@ -21,9 +21,9 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 175 |
+| macro | 178 |
 | méso | 150 |
-| micro | 85 |
+| micro | 86 |
 | micro à méso | 1 |
 
 ## Éléments et acteurs par niveau d'organisation
@@ -31,27 +31,27 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | | nombre |
 |---|---|
 | economie | 306 |
-| statut | 274 |
+| statut | 279 |
 | geopolitique | 234 |
 | technique | 165 |
 | societe | 151 |
 | convention | 140 |
-| psychologique | 116 |
+| psychologique | 118 |
 | ideologie | 94 |
 | eau | 83 |
+| chimique | 56 |
 | relief | 56 |
-| chimique | 53 |
 | meteo | 51 |
 | climat | 46 |
 | animal | 45 |
-| microbiologique | 41 |
+| microbiologique | 44 |
+| corps | 43 |
 | mineral | 36 |
+| physique | 34 |
 | vegetal | 32 |
-| physique | 31 |
 | entourage | 27 |
 | ocean | 26 |
 | personne | 26 |
-| corps | 25 |
 | atomique | 25 |
 | sol_vivant | 4 |
 
@@ -63,6 +63,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | calendriers-echeances | 10 | 32 | 10 | 2 |
 | climat-extremes | 13 | 42 | 17 | 6 |
 | competitions-culture | 9 | 35 | 8 | 7 |
+| corps-humain | 10 | 30 | 4 | 10 |
 | crises-bancaires | 10 | 35 | 9 | 1 |
 | culture-memoire | 3 | 9 | 0 | 3 |
 | cycles-biogeochimiques | 11 | 37 | 9 | 6 |
