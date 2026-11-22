@@ -343,7 +343,7 @@ function chaine(id,sens,max=3){ // « amont » (causes) ou « aval » (conséque
 const REL_NOMME={nomme:["nomme","hierarchie"],commande:["commande","hierarchie"],allie:["allié de","accord"],
   negocie_avec:["négocie avec","accord"],associe:["associé à","accord"],finance:["finance","argent"],fournit:["fournit","argent"],
   rival:["rival de","conflit"],proche:["proche de","accord"],desaccord_public:["désaccord public avec","conflit"],gouverne:["gouverne","population"],
-  elu_par:["élu ou jugé par","population"],informe:["informe par ses médias","population"],influence_documentee:["influence documentée","population"]};
+  elu_par:["élu ou jugé par","population"],informe:["informe par ses médias","population"],influence_documentee:["influence documentée","population"],membre_de:["membre de","population"]};
 const COUL_REL={hierarchie:"var(--texte)",accord:"var(--plus)",argent:"var(--surbrillance)",conflit:"var(--moins)",population:"var(--aval)"};
 const NIV_NOM={1:"proche",2:"voisin",3:"éloigné"};
 function niveauxNommes(id){ // distance dans le graphe des liens entre acteurs (deux sens), jusqu'à 3
