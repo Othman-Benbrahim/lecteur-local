@@ -121,6 +121,7 @@ svg{width:100%;height:100%;display:block}
 
     <h2>Émetteur</h2>
     <select id="emetteur"><option value="">tous</option></select>
+    <div id="emetteurInfo" style="font-size:12px;margin-top:6px"></div>
 
     <h2>Légende</h2>
     <div class="legende">
@@ -314,6 +315,7 @@ function vueEnsemble(sits){
 }
 
 function dessiner(){
+  infoEmetteur();
   const zone=document.getElementById("carte");largeur=zone.clientWidth;hauteur=zone.clientHeight;
   const sits=situationsFiltrees();
   if(!etat.fiche) return dessinerEnsemble(sits);
@@ -451,6 +453,20 @@ function dessinerEnsemble(sits){
     `Traits : ponts entre écosystèmes (plus épais = plus de ponts).</p><p style="font-size:13px">Cliquez sur un écosystème pour l'ouvrir.</p>`;
 }
 
+function infoEmetteur(){ // 2026-11-22 (remarque de l'auteur, 6 h 59) : identité de l'émetteur et écosystèmes qu'il touche, cliquables
+  const el=document.getElementById("emetteurInfo");if(!el) return;
+  if(!etat.emetteur){el.innerHTML="";return;}
+  const e=D.emetteursId.get(etat.emetteur);
+  const sits=D.situations.filter(x=>x.emetteur===etat.emetteur);
+  const par=new Map();for(const x of sits) for(const f of new Set(x.compartiments.map(c=>c.split(":")[0]))) par.set(f,(par.get(f)||0)+1);
+  const noms=new Map(D.noeuds.map(n=>[n.fiche,n.fiche_nom]));
+  const liste=[...par.entries()].sort((a,b)=>b[1]-a[1]);
+  el.innerHTML=(e?`<b>${esc(e.nom)}</b> · ${esc(e.nature)}<br>${esc(e.pays)} · ${esc(e.proprietaire)}<br><a href="${esc(e.source.split(" ; ")[0])}" target="_blank" rel="noopener">source</a> (consultée le ${esc(e.consulte)})`
+      :`<span style="color:var(--moins)">émetteur non identifié au registre</span>`)+
+    `<br>${sits.length} situation(s) dans ${liste.length} écosystème(s) :<br>`+
+    (liste.map(([f,n])=>f===etat.fiche?`<b>${esc(noms.get(f)||f)} (${n})</b>`:
+      `<a href="#" onclick="etat.fiche='${f}';etat.choisi=null;document.getElementById('fiche').value='${f}';dessiner();return false;">↗ ${esc(noms.get(f)||f)} (${n})</a>`).join("<br>")||"aucun");
+}
 function basculer(id){ // ouvrir l'écosystème d'un compartiment relié par un pont, ce compartiment choisi
   const n=D.parId.get(id);if(!n) return;
   etat.fiche=n.fiche;etat.choisi=id;document.getElementById("fiche").value=n.fiche;dessiner();
