@@ -2,15 +2,15 @@
 
 Extrait automatiquement des fiches du bot, sans classement ajouté. Détail ligne par ligne : `inventaire-fiches.csv`.
 
-- 62 fiches, 675 compartiments (418 sans aucune trace collectée)
-- 2114 éléments (1998 textes distincts)
-- 518 acteurs (494 distincts) : 365 types génériques (« un média d'État »…), à peupler de noms ; 153 désignés autrement (déjà nommés, ou à relire)
+- 64 fiches, 700 compartiments (443 sans aucune trace collectée)
+- 2146 éléments (2030 textes distincts)
+- 519 acteurs (495 distincts) : 366 types génériques (« un média d'État »…), à peupler de noms ; 153 désignés autrement (déjà nommés, ou à relire)
 
 ## Acteurs par facette
 
 | | nombre |
 |---|---|
-| collectif | 318 |
+| collectif | 319 |
 | non_humain | 126 |
 | statut | 29 |
 | ideologie | 18 |
@@ -21,7 +21,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| macro | 242 |
+| macro | 243 |
 | méso | 174 |
 | micro | 101 |
 | micro à méso | 1 |
@@ -30,13 +30,13 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 
 | | nombre |
 |---|---|
-| economie | 350 |
-| statut | 319 |
+| economie | 356 |
+| statut | 326 |
 | geopolitique | 300 |
-| convention | 258 |
+| convention | 262 |
 | technique | 219 |
-| societe | 202 |
-| ideologie | 141 |
+| societe | 207 |
+| ideologie | 151 |
 | psychologique | 115 |
 | eau | 87 |
 | animal | 72 |
@@ -50,7 +50,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | vegetal | 45 |
 | physique | 37 |
 | entourage | 30 |
-| personne | 28 |
+| personne | 29 |
 | atomique | 27 |
 | ocean | 26 |
 | sol_vivant | 11 |
@@ -66,6 +66,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | biocenose | 9 | 21 | 1 | 9 |
 | biodiversite-sols | 8 | 26 | 13 | 8 |
 | calendriers-echeances | 10 | 32 | 10 | 2 |
+| classes-sociales | 11 | 15 | 0 | 11 |
 | climat-extremes | 13 | 42 | 17 | 6 |
 | competitions-culture | 9 | 35 | 8 | 7 |
 | corps-humain | 10 | 30 | 4 | 10 |
@@ -103,6 +104,7 @@ Extrait automatiquement des fiches du bot, sans classement ajouté. Détail lign
 | observateur-mesure | 15 | 47 | 3 | 1 |
 | oceans-et-fleuves | 16 | 47 | 11 | 11 |
 | ormuz | 13 | 60 | 15 | 2 |
+| partis-politiques | 14 | 17 | 1 | 14 |
 | plancher-social | 6 | 14 | 9 | 6 |
 | politique-americaine | 14 | 56 | 25 | 1 |
 | politique-interieure | 8 | 34 | 3 | 8 |
