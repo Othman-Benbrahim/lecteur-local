@@ -144,11 +144,31 @@ def articles(xml: bytes) -> list[dict]:
     return out
 
 
+MOT = re.compile(r"\w+")
+_INDEX: dict[int, dict[str, list[dict]]] = {}
+
+
+def _index(termes: list[dict]) -> dict[str, list[dict]]:
+    """Premier mot (en minuscules) → termes qui commencent par ce mot. Évite de tester chaque terme sur chaque texte
+    (2026-11-22 : l'exploration GDELT, 1 200 termes × 200 000 titres, ne finissait pas en 25 minutes)."""
+    k = id(termes)
+    if k not in _INDEX:
+        ix: dict[str, list[dict]] = {}
+        for t in termes:
+            m = MOT.search(t["terme"])
+            ix.setdefault(m.group(0).lower() if m else "", []).append(t)
+        _INDEX[k] = ix
+    return _INDEX[k]
+
+
 def situation(texte: str, langue_em: str, termes: list[dict], etiquettes: list[str] | None,
               acteurs: dict[str, dict], niveaux: dict[str, dict]) -> dict | None:
     """Ce que l'article relie : espace, acteurs, compartiments (avec leur niveau), termes. None s'il n'y a rien."""
     espace, comps, acts, vus_termes = set(), {}, {}, []
-    for t in termes:
+    ix = _index(termes)
+    mots = {w.lower() for w in MOT.findall(texte)}
+    candidats = [t for w in mots for t in ix.get(w, [])] + ix.get("", [])
+    for t in candidats:
         if t["anglais_seul"] and langue_em != "anglais":
             continue
         if t["etiquette_seule"]:
