@@ -1,6 +1,6 @@
 # Termes validés par l'auteur (2026-11-22, 0 h 28 : « je conserve tout, sauf les rubriques maison »). Seule liste que le
 # collecteur comptera. « + » validé, « - » refusé (jamais reproposé). « à classer » : conservé, en attente d'une
-# catégorie nouvelle (proposée par Claude, validée par l'auteur). Catégories nouvelles validées à 0 h 32 (six fiches, bot 0.10.412).
+# catégorie nouvelle (proposée par Claude, validée par l'auteur). Catégories nouvelles validées à 0 h 32 (six fiches, bot 0.10.412). Noms Wikidata validés à 0 h 59.
 # Format : décision | terme | langue | rattachement | note | émetteurs
 + | Food and farming | en | alimentation-mondiale:cultures |  | consilium.europa.eu
 + | Grippe aviaire | fr | alimentation-mondiale:pathogenes;epidemies:agent |  | fr.hespress.com
@@ -977,3 +977,406 @@
 - | Zwischen Rezept und Rausch | de |  | rubrique maison (sans contenu) | correctiv.org
 - | À ne pas manquer | fr |  | rubrique maison (sans contenu) | europarl.europa.eu
 - | Étude | fr |  | rubrique maison (sans contenu) | europarl.europa.eu
+- | Amérique | fr |  | désigne le continent : compterait autre chose que l'acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
+- | BPC | fr |  | sigle partagé : compterait autre chose que l'acteur ; wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
+- | Bureau national des statistiques | fr |  | mauvaise entité : institut statistique du Nigeria, alors que la fiche vise celui de la Chine ; wikidata:Q6971159 (institut statistique du Nigeria) | wikidata.org
+- | CBR | en |  | sigle partagé : compterait autre chose que l'acteur ; wikidata:Q806651 (banque centrale) | wikidata.org
+- | CCF | en |  | sigle partagé : compterait autre chose que l'acteur ; wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
+- | CE | fr |  | mot courant (« ce ») et sigle partagé : compterait autre chose que l'acteur ; wikidata:Q8880 (institution exécutive de l'Union européenne) | wikidata.org
+- | cn | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
+- | Commission on Safety Standards | fr |  | organe interne, pas un nom de l'AIEA : compterait autre chose que l'acteur ; wikidata:Q41984 (organisation internationale) | wikidata.org
+- | Congress | en |  | générique (tout congrès) : compterait autre chose que l'acteur ; wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
+- | CPG | en |  | sigle partagé : compterait autre chose que l'acteur ; wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | department of finance | en | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
+- | EC | en |  | sigle partagé (Commission, Conseil européen…) : compterait autre chose que l'acteur ; wikidata:Q8880 (institution exécutive de l'Union européenne) | wikidata.org
+- | et | en |  | mot courant (« et ») : compterait autre chose que l'acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | finance department | en | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
++ | finance ministry | en | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
+- | FRS | en |  | sigle partagé : compterait autre chose que l'acteur ; wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
+- | il | en |  | mot courant (« il ») : compterait autre chose que l'acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
+- | iq | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
+- | ir | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
+- | IRI | en |  | sigle partagé : compterait autre chose que l'acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
+- | kp | fr |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
+- | kp | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
+- | Les Médiateurs du Pacifique | fr |  | mauvaise entité : un film de 1997 ; wikidata:Q3234112 (film de Charles Belmont, sorti en 1997) | wikidata.org
+- | les États | fr |  | générique : compterait autre chose que l'acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | ministry of finance | en | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
++ | ministère des Finances | fr | politique-interieure:gouvernement | générique (tout ministère des Finances) : rattaché au gouvernement en général, pas au ministère chinois ; wikidata:Q15711797 (exécutif gouvernemental qui est responsable de la gestion de) | wikidata.org
+- | Médiateurs du Pacifique | fr |  | mauvaise entité : un film de 1997 ; wikidata:Q3234112 (film de Charles Belmont, sorti en 1997) | wikidata.org
+- | National Bureau of Statistics | fr |  | mauvaise entité : institut statistique du Nigeria, alors que la fiche vise celui de la Chine ; wikidata:Q6971159 (institut statistique du Nigeria) | wikidata.org
+- | National Bureau of Statistics | en |  | mauvaise entité : institut statistique du Nigeria, alors que la fiche vise celui de la Chine ; wikidata:Q6971159 (institut statistique du Nigeria) | wikidata.org
+- | NBS | fr |  | mauvaise entité : institut statistique du Nigeria, alors que la fiche vise celui de la Chine ; wikidata:Q6971159 (institut statistique du Nigeria) | wikidata.org
+- | NBS | en |  | mauvaise entité : institut statistique du Nigeria, alors que la fiche vise celui de la Chine ; wikidata:Q6971159 (institut statistique du Nigeria) | wikidata.org
+- | Nuclear Explained | en |  | intitulé d'une publication, pas un nom de l'AIEA : compterait autre chose que l'acteur ; wikidata:Q41984 (organisation internationale) | wikidata.org
+- | om | fr |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
+- | om | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | parti communiste | fr | politique-interieure:partis | générique (tout parti communiste) : rattaché aux partis en général ; wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
+- | Perse | fr |  | désigne aussi l'Empire perse et la langue : compterait autre chose que l'acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
+- | PSE | en |  | sigle partagé (parti socialiste européen) : compterait autre chose que l'acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
+- | qa | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
+- | RDC | fr |  | désigne la république démocratique du Congo, pas Taïwan : compterait autre chose que l'acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
+- | Red Army | en |  | désigne aussi l'Armée rouge soviétique : compterait autre chose que l'acteur ; wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | RSF | en | soudan:fsr | langue : anglais seulement (en français, RSF désigne surtout Reporters sans frontières) ; décision de l'auteur, 0 h 59 ; wikidata:Q18210867 (force paramilitaire soudanaise) | wikidata.org
+- | RU | fr |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
+- | SC | en |  | sigle trop général : compterait autre chose que l'acteur ; wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
+- | Sepah | en |  | mot courant persan (« armée ») : compterait autre chose que l'acteur ; wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
+- | Sipah | en |  | mot courant (« armée ») : compterait autre chose que l'acteur ; wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
+- | States | fr |  | générique : compterait autre chose que l'acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
+- | the States | en |  | générique : compterait autre chose que l'acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
+- | Trésor | fr |  | générique : compterait autre chose que l'acteur ; wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
+- | TW | en |  | code trop court : compterait autre chose que l'acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
+- | Uman | en |  | translittération rare, et nom d'une ville d'Ukraine : compterait autre chose que l'acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
+- | USDT | en |  | désigne le stablecoin Tether : compterait autre chose que l'acteur ; wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | OPEC Plus | en | calendriers-echeances:banques_centrales | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
++ | OPEC+ | en | calendriers-echeances:banques_centrales | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
++ | OPEP+ | fr | calendriers-echeances:banques_centrales | wikidata:Q121826282 (l'OPEP plus d'autres pays producteurs) | wikidata.org
++ | FMI | fr | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
++ | Fonds monétaire international | fr | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
++ | IMF | en | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
++ | International Monetary Fund | en | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
++ | International Monetary Fund, IMF | en | dette-emergents:fmi | wikidata:Q7804 (organisation internationale) | wikidata.org
++ | Banque populaire de Chine | fr | economie-chinoise:politique_monetaire | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
++ | People's Bank of China | en | economie-chinoise:politique_monetaire | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
++ | People's Bank of China | fr | economie-chinoise:politique_monetaire | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
++ | Peoples Bank of China | en | economie-chinoise:politique_monetaire | wikidata:Q249203 (banque centrale de la Chine) | wikidata.org
++ | CCP | en | economie-chinoise:pouvoir | wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
++ | Central People's Government | en | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | Central People's Government of the People's Republic of China | en | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | Chinese Communist Party | en | economie-chinoise:pouvoir | wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
++ | Communist Party of China | en | economie-chinoise:pouvoir | wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
++ | Conseil des affaires d'État | fr | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | Conseil des affaires de l'État | fr | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | Conseil des affaires de l'État de la république populaire de Chine | fr | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | CPC | fr | economie-chinoise:pouvoir | wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
++ | CPC | en | economie-chinoise:pouvoir | wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
++ | gouvernement central populaire | fr | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | gouvernement chinois | fr | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | gouvernement de la Chine | fr | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | gouvernement de la République populaire de Chine | fr | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | Government of China | en | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | Government of the People's Republic of China | en | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | guowuyuan | fr | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | Parti communiste chinois | fr | economie-chinoise:pouvoir | wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
++ | PCC | fr | economie-chinoise:pouvoir | wikidata:Q17427 (parti politique créé en 1921 au pouvoir en Chine depuis 1949) | wikidata.org
++ | State Council of China | en | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | State Council of the People's Republic of China | en | economie-chinoise:pouvoir | wikidata:Q59261 (principale autorité administrative de la république populair) | wikidata.org
++ | OMS | fr | epidemies:autorites | wikidata:Q7817 (agence de l'ONU chargée de la santé publique) | wikidata.org
++ | Organisation mondiale de la Santé | fr | epidemies:autorites | wikidata:Q7817 (agence de l'ONU chargée de la santé publique) | wikidata.org
++ | World Health Organisation | en | epidemies:autorites | wikidata:Q7817 (agence de l'ONU chargée de la santé publique) | wikidata.org
++ | World Health Organization | en | epidemies:autorites | wikidata:Q7817 (agence de l'ONU chargée de la santé publique) | wikidata.org
++ | World Health Organization (WHO) | en | epidemies:autorites | wikidata:Q7817 (agence de l'ONU chargée de la santé publique) | wikidata.org
++ | Saudi | en | espace:pays:Arabie saoudite | forme rare ou abréviation, sans ambiguïté ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | Arabie Séoudite | fr | espace:pays:Arabie saoudite;energie-mondiale:production | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | Kingdom of Saudi Arabia | en | espace:pays:Arabie saoudite;energie-mondiale:production | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | Royaume d’Arabie saoudite | fr | espace:pays:Arabie saoudite;energie-mondiale:production | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | Royaume d’Arabie séoudite | fr | espace:pays:Arabie saoudite;energie-mondiale:production | État : espace et acteur ; wikidata:Q851 (pays du Moyen-Orient, monarchie arabe créée en 1932) | wikidata.org
++ | China PR | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Chine communiste | fr | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Chine continentale | fr | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Chine populaire | fr | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Communist China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | P.R.C. | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | People's Republic of China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | PR China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Red China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | République populaire de Chine | fr | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | the People's Republic of China | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | The PRC | en | espace:pays:Chine;dette-emergents:creanciers | État : espace et acteur ; wikidata:Q148 (pays d'Asie de l'Est) | wikidata.org
++ | Corée du Nord | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | Democratic People's Republic of Korea | en | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | DPR Korea | en | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | DPRK | en | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | la République populaire démocratique de Corée | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | N. Korea | en | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | RPDC | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | République populaire de Corée | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | République populaire démocratique de Corée | fr | espace:pays:Corée du Nord;russie-ukraine:soutiens | État : espace et acteur ; wikidata:Q423 (pays d'Asie orientale) | wikidata.org
++ | al-‘Irāq | fr | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | Irak | fr | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | Iraq | en | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | Republic of Iraq | en | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | République d’Irak | fr | espace:pays:Irak;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q796 (État du Moyen-Orient, situé au nord de la péninsule arabique) | wikidata.org
++ | Iran | fr | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | Islamic Rep. Iran | en | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | Islamic Republic of Iran | en | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | La République Islamique d’Iran | fr | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | République islamique d'Iran | fr | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | République islamique iranienne | fr | espace:pays:Iran;guerre-levant:iran | État : espace et acteur ; wikidata:Q794 (État d'Asie de l'Ouest) | wikidata.org
++ | ISR | fr | espace:pays:Israël | forme rare ou abréviation, sans ambiguïté ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | ISR | en | espace:pays:Israël | forme rare ou abréviation, sans ambiguïté ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | Isr. | fr | espace:pays:Israël | forme rare ou abréviation, sans ambiguïté ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | Israel | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | Israël | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | l’État d’Israël | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | State of Israel | en | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | Yisrael | en | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | État d'Israël | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | État hébreu | fr | espace:pays:Israël;guerre-levant:israel | État : espace et acteur ; wikidata:Q801 (État du Proche-Orient indépendant depuis 1948) | wikidata.org
++ | OMA | fr | espace:pays:Oman | forme rare ou abréviation, sans ambiguïté ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | omn | en | espace:pays:Oman | forme rare ou abréviation, sans ambiguïté ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | le Sultanat d’Oman | fr | espace:pays:Oman;ormuz:riverains | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | Oman | en | espace:pays:Oman;ormuz:riverains | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | Sultanat d’Oman | fr | espace:pays:Oman;ormuz:riverains | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | Sultanate of Oman | en | espace:pays:Oman;ormuz:riverains | État : espace et acteur ; wikidata:Q842 (sultanat du Moyen-Orient, au sud-est de la péninsule d’Arabi) | wikidata.org
++ | Palestine | fr | espace:pays:Palestine;guerre-levant:gaza | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | State of Palestine | en | espace:pays:Palestine;guerre-levant:gaza | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | État de Palestine | fr | espace:pays:Palestine;guerre-levant:gaza | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | État palestinien | fr | espace:pays:Palestine;guerre-levant:gaza | État : espace et acteur ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | Qa. | fr | espace:pays:Qatar | forme rare ou abréviation, sans ambiguïté ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | qat | en | espace:pays:Qatar | forme rare ou abréviation, sans ambiguïté ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | Katar | fr | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | l’État du Qatar | fr | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | Qatar | fr | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | Qatar | en | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | State of Qatar | en | espace:pays:Qatar;guerre-levant:mediateurs | État : espace et acteur ; wikidata:Q846 (émirat du Moyen-Orient) | wikidata.org
++ | RUS | fr | espace:pays:Russie | forme rare ou abréviation, sans ambiguïté ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
++ | Fédération de Russie | fr | espace:pays:Russie;iran-nucleaire:russie_chine | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
++ | Fédération russe | fr | espace:pays:Russie;iran-nucleaire:russie_chine | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
++ | Russian Federation | en | espace:pays:Russie;iran-nucleaire:russie_chine | État : espace et acteur ; wikidata:Q159 (pays d'Europe de l'Est et d'Asie du Nord) | wikidata.org
++ | TWN | en | espace:pays:Taïwan | forme rare ou abréviation, sans ambiguïté ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | China, Republic of | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chine nationaliste | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chinese Republic | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chinese Taipei | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chunghwa Minkuo | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Chunghwa Minkwo | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Formose | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Free China | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Nationalist China | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Republic of China | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Republic of China (Taiwan) | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | ROC | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | république de Chine | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | république nationaliste de Chine | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Taiwan | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Taiwan ROC | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Taïwan | fr | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | The ROC | en | espace:pays:Taïwan;rivalite-sino-americaine:taiwan | État : espace et acteur ; wikidata:Q865 (pays insulaire d'Asie orientale) | wikidata.org
++ | Turq | fr | espace:pays:Turquie | forme rare ou abréviation, sans ambiguïté ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | la République de Turquie | fr | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | Republic of Turkey | en | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | Republic of Türkiye | en | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | République de Turquie | fr | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | République turque | fr | espace:pays:Turquie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q43 (pays d'Asie occidentale et d'Europe du Sud-Est) | wikidata.org
++ | Ukr. | fr | espace:pays:Ukraine | forme rare ou abréviation, sans ambiguïté ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
++ | Ukr. | en | espace:pays:Ukraine | forme rare ou abréviation, sans ambiguïté ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
++ | Ukrainia | en | espace:pays:Ukraine | forme rare ou abréviation, sans ambiguïté ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
++ | Ukraïna | en | espace:pays:Ukraine | forme rare ou abréviation, sans ambiguïté ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
++ | Ukraine | fr | espace:pays:Ukraine;russie-ukraine:negociations | État : espace et acteur ; wikidata:Q212 (pays d'Europe de l'Est) | wikidata.org
++ | Misr | en | espace:pays:Égypte | forme rare ou abréviation, sans ambiguïté ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Ég. | fr | espace:pays:Égypte | forme rare ou abréviation, sans ambiguïté ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Arab Rep. Egypt | en | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Arab Republic of Egypt | en | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Rep. Egypt | en | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Republic of Egypt | en | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | République arabe d'Égypte | fr | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | Égypte | fr | espace:pays:Égypte;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q79 (État situé au nord-est de l'Afrique et au sud-ouest de l'Asi) | wikidata.org
++ | 'Murica | en | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | E.-U. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | Merica | en | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | Murica | en | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | U. S. | en | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | U. S. A. | en | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | É-U | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | É-U. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | É.-U. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | É.-U. A. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | É.U. | fr | espace:pays:États-Unis | forme rare ou abréviation, sans ambiguïté ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | les États-Unis d’Amérique | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | Oncle Sam | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | Pays de l'Oncle Sam | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | pays de l’Oncle Sam | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the U.S. | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the U.S. of A | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the U.S. of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the U.S.A. | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the United States | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the United States of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the US | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the US of A | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the US of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | the USA | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | U.S. of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | United States | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | United States of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | US of A | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | US of America | en | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | États-Unis d'Amérique | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | États-Unis d’Amérique | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | ÉU | fr | espace:pays:États-Unis;economie-chinoise:exterieur | État : espace et acteur ; wikidata:Q30 (pays d'Amérique du Nord) | wikidata.org
++ | Ethiopie | fr | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | Federal Democratic Republic of Ethiopia | en | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | la République démocratique fédérale d’Éthiopie | fr | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | République fédérale démocratique d'Éthiopie | fr | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | Éthiopie | fr | espace:pays:Éthiopie;eau-moyen-orient:etats_riverains | État : espace et acteur ; wikidata:Q115 (pays d'Afrique de l'Est) | wikidata.org
++ | Autorité nationale palestinienne | fr | guerre-levant:gaza | Autorité palestinienne ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | Autorité palestinienne | fr | guerre-levant:gaza | Autorité palestinienne ; wikidata:Q219060 (État d'Asie de l'Ouest) | wikidata.org
++ | Hamas | en | guerre-levant:gaza | wikidata:Q38799 (organisation armée islamiste palestinienne) | wikidata.org
++ | Harakat al-Muqawama al-Islamiya | en | guerre-levant:gaza | wikidata:Q38799 (organisation armée islamiste palestinienne) | wikidata.org
++ | Islamic Resistance Movement | en | guerre-levant:gaza | wikidata:Q38799 (organisation armée islamiste palestinienne) | wikidata.org
++ | Mouvement de résistance islamique | fr | guerre-levant:gaza | wikidata:Q38799 (organisation armée islamiste palestinienne) | wikidata.org
++ | Army of the Guardians of the Islamic Revolution | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Corps des gardiens de la révolution islamique | fr | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Gardes de la Révolution | fr | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Gardiens de la Révolution | fr | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Gardiens de la Révolution islamique | fr | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Iran's Revolutionary Guard Corps | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Iranian Revolutionary Guard Corps | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Iranian Revolutionary Guards | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | IRGC | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Islamic Revolution Guard Corps | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Islamic Revolution Guards Corps | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Islamic Revolutionary Guard Corps | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Pasdaran | fr | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Pasdaran | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Pasdaran e Enqelab | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Pasdarans | fr | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Revolutionary Guards of Iran | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Sepah e Pasdaran | en | guerre-levant:iran | wikidata:Q271110 (organisation paramilitaire dépendant du Guide suprême de la ) | wikidata.org
++ | Hesbollah | fr | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Hezbollah | fr | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Hezbollah | en | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Hizballah | en | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Hizbollah | fr | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Hizbollah | en | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Hizbullah | en | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Lebanese Hezbollah | en | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Lebanese Hizbullah | en | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | Parti de Dieu | fr | guerre-levant:liban | wikidata:Q41053 (parti politique et organisation armée islamiste chiite soute) | wikidata.org
++ | European Union | en | guerre-levant:puissances | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
++ | U.E. | fr | guerre-levant:puissances | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
++ | Union européenne | fr | guerre-levant:puissances | wikidata:Q458 (union politico-économique sui generis d'États européens) | wikidata.org
++ | Ansar Allah | fr | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
++ | Ansar Allah | en | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
++ | Ansarallah | fr | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
++ | Ansarullah | en | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
++ | Houthi movement | en | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
++ | Houthi rebels | en | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
++ | Houthis | en | guerre-levant:yemen | wikidata:Q3042087 (organisation armée politico-religieuse chiite yéménite formé) | wikidata.org
++ | Banque centrale européenne | fr | inflation-mondiale:banques_centrales | wikidata:Q8901 (banque centrale de l'Union européenne (BCE)) | wikidata.org
++ | BCE | fr | inflation-mondiale:banques_centrales | wikidata:Q8901 (banque centrale de l'Union européenne (BCE)) | wikidata.org
++ | European Central Bank | en | inflation-mondiale:banques_centrales | wikidata:Q8901 (banque centrale de l'Union européenne (BCE)) | wikidata.org
++ | Fed | en | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Federal Reserve | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Federal Reserve | en | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Federal Reserve System | en | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Federal Reserve System | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Réserve fédérale | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | Réserve fédérale des États-Unis | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | the Fed | fr | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | The Fed | en | inflation-mondiale:banques_centrales | wikidata:Q53536 (banque centrale des États-Unis) | wikidata.org
++ | American Congress | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | American legislature | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | Congress of the United States | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | Congrès américain | fr | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | Congrès des États-Unis | fr | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | Legislature of the United States | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | U.S. Congress | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | United States Congress | fr | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | United States Congress | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | United states legislative branch | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | US Congress | en | iran-nucleaire:etats_unis | wikidata:Q11268 (parlement bicaméral des États-Unis) | wikidata.org
++ | A.I.E.A | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | AEIA | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | Agence internationale de l'energie atomique | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | Agence internationale de l'énergie atomique | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | Agence internationale pour l'Énergie atomique | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | Agence internationale à l'énergie atomique | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | AIEA | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | IAEA | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | IAEA | en | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | iaea.org | en | iran-nucleaire:verification | forme rare ou abréviation, sans ambiguïté ; wikidata:Q41984 (organisation internationale) | wikidata.org
++ | International Atomic Energy Agency | en | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | International Atomic Energy Agency | fr | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | International Atomic Energy Agency，IAEA | en | iran-nucleaire:verification | wikidata:Q41984 (organisation internationale) | wikidata.org
++ | GDELT Project | en | observateur-mesure:biais | wikidata:Q18357239 | wikidata.org
++ | Global Database of Events, Language, and Tone | en | observateur-mesure:biais | wikidata:Q18357239 | wikidata.org
++ | The GDELT Project | en | observateur-mesure:biais | wikidata:Q18357239 | wikidata.org
++ | Departement du Tresor des Etats-Unis | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Department of the Treasury | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département américain du Trésor | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département du Trésor | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département du Trésor des Etats-Unis | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | département du Trésor des États-Unis | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Treasury Department | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Trésor Américain | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | U.S. Department of the Treasury | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | U.S. Treasury Department | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | United States Department of the Treasury | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | United States Department of the Treasury | fr | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | United States Treasury Department | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | US Treasury Department | en | politique-americaine:budget | wikidata:Q648666 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Departement de l'Energie des Etats-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Department of Energy | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Department of Energy | en | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | DOE | en | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département Américain de l'énergie | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département de l'Energie des Etats-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département de l'énergie des Etats-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département de l'Énergie des États-unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département de l’Energie des Etats-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département de l’énergie des Etats-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département de l’énergie des États-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département à l'Energie américain | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département à l'énergie des Etats-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Département à l'énergie des États-Unis | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | energy.gov | en | politique-americaine:energie | forme rare ou abréviation, sans ambiguïté ; wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | U.S. Department of Energy | en | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | United States Department of Energy | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | United States Department of Energy | en | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | US Department of Energy | en | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | US-DOE | fr | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | USDOE | en | politique-americaine:energie | wikidata:Q217810 (département exécutif fédéral des États-Unis) | wikidata.org
++ | Office of the Special Trade Representative | en | rivalite-sino-americaine:commerce | wikidata:Q1574977 | wikidata.org
++ | Office of the U.S. Trade Representative | en | rivalite-sino-americaine:commerce | wikidata:Q1574977 | wikidata.org
++ | Office of the United States Trade Representative | en | rivalite-sino-americaine:commerce | wikidata:Q1574977 | wikidata.org
++ | Representant americain au commerce | fr | rivalite-sino-americaine:commerce | wikidata:Q1574977 | wikidata.org
++ | Représentant américain au commerce | fr | rivalite-sino-americaine:commerce | wikidata:Q1574977 | wikidata.org
++ | United States Trade Representative | en | rivalite-sino-americaine:commerce | wikidata:Q1574977 | wikidata.org
++ | US Trade Representative Office | en | rivalite-sino-americaine:commerce | wikidata:Q1574977 | wikidata.org
++ | USTR | en | rivalite-sino-americaine:commerce | wikidata:Q1574977 | wikidata.org
++ | ustr.gov | en | rivalite-sino-americaine:commerce | forme rare ou abréviation, sans ambiguïté ; wikidata:Q1574977 | wikidata.org
++ | Armee populaire de liberation | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Armée chinoise populaire de libération | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Armée de la république populaire de Chine | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Armée de libération du peuple | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Armée populaire de libération | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Armée rouge chinoise | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Chinese Communist Forces | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Chinese People’s Liberation Army | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Chinese PLA | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Forces armées chinoises | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Forces armées de la Chine | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Forces armées de la république populaire de Chine | fr | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | mil China | en | rivalite-sino-americaine:taiwan | forme rare ou abréviation, sans ambiguïté ; wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | military of PR China | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | P.L.A. | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | People’s Liberation Army | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | PLA | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | PLA China | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | PLA PRC | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | PRC PLA | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Zhongguo ren min jie fang jun | en | rivalite-sino-americaine:taiwan | wikidata:Q200106 (ensemble des forces armées de la république populaire de Chi) | wikidata.org
++ | Bank of Russia | en | russie-ukraine:economie_russe | wikidata:Q806651 (banque centrale) | wikidata.org
++ | Banque Centrale de la Fédération de Russie | fr | russie-ukraine:economie_russe | wikidata:Q806651 (banque centrale) | wikidata.org
++ | Banque Centrale De Russie | fr | russie-ukraine:economie_russe | wikidata:Q806651 (banque centrale) | wikidata.org
++ | Banque de Russie | fr | russie-ukraine:economie_russe | wikidata:Q806651 (banque centrale) | wikidata.org
++ | Central Bank of Russia | en | russie-ukraine:economie_russe | wikidata:Q806651 (banque centrale) | wikidata.org
++ | Central Bank of the Russian Federation | en | russie-ukraine:economie_russe | wikidata:Q806651 (banque centrale) | wikidata.org
++ | Commission européenne | fr | russie-ukraine:sanctions | wikidata:Q8880 (institution exécutive de l'Union européenne) | wikidata.org
++ | ec.europa.eu | en | russie-ukraine:sanctions | forme rare ou abréviation, sans ambiguïté ; wikidata:Q8880 (institution exécutive de l'Union européenne) | wikidata.org
++ | EU commission | en | russie-ukraine:sanctions | wikidata:Q8880 (institution exécutive de l'Union européenne) | wikidata.org
++ | European Commission | en | russie-ukraine:sanctions | wikidata:Q8880 (institution exécutive de l'Union européenne) | wikidata.org
++ | Forces armées soudanaises | fr | soudan:armee | wikidata:Q371721 (armée nationale du Soudan) | wikidata.org
++ | mil Sudan | en | soudan:armee | forme rare ou abréviation, sans ambiguïté ; wikidata:Q371721 (armée nationale du Soudan) | wikidata.org
++ | military of Sudan | en | soudan:armee | wikidata:Q371721 (armée nationale du Soudan) | wikidata.org
++ | Sudanese Armed Forces | en | soudan:armee | wikidata:Q371721 (armée nationale du Soudan) | wikidata.org
++ | Forces de soutien rapide | fr | soudan:fsr | wikidata:Q18210867 (force paramilitaire soudanaise) | wikidata.org
++ | FSR | fr | soudan:fsr | wikidata:Q18210867 (force paramilitaire soudanaise) | wikidata.org
++ | Quwwāt ad-daʿm as-sarīʿ | en | soudan:fsr | wikidata:Q18210867 (force paramilitaire soudanaise) | wikidata.org
++ | Rapid Support Forces | en | soudan:fsr | wikidata:Q18210867 (force paramilitaire soudanaise) | wikidata.org
++ | Autorite du Canal de Panama | fr | transport-maritime:detroits | wikidata:Q2048917 (agence gouvernementale responsable de la gestion et de l'exp) | wikidata.org
++ | Autorité du canal de Panama | fr | transport-maritime:detroits | wikidata:Q2048917 (agence gouvernementale responsable de la gestion et de l'exp) | wikidata.org
++ | Autorité Du Canal De Panamá | fr | transport-maritime:detroits | wikidata:Q2048917 (agence gouvernementale responsable de la gestion et de l'exp) | wikidata.org
++ | Panama Canal Authority | en | transport-maritime:detroits | wikidata:Q2048917 (agence gouvernementale responsable de la gestion et de l'exp) | wikidata.org
