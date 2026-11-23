@@ -170,6 +170,21 @@ def principal() -> int:
     if fc.exists():
         lc = [l for l in fc.read_text(encoding="utf-8").splitlines() if l and not l.startswith("#")]
         mecanique["noms"] = {r["fips"]: r["nom"] for r in csv.DictReader(lc)}
+    # cartes publiées lues par le bot (0.10.470-471, standard de lecture ; décision de l'auteur du 2026-11-23) : UCDP,
+    # état du mois par pays et enchaînements d'un mois au suivant (1989-2025)
+    ucdp = {}
+    fu = bot / "registre/cartes/ucdp-etats.json"
+    if fu.exists():
+        ucdp = json.loads(fu.read_text(encoding="utf-8"))
+        nf = {}
+        fc2 = bot / "ecosystemes/codes-pays-fips.csv"
+        if fc2.exists():
+            lc2 = [l for l in fc2.read_text(encoding="utf-8").splitlines() if l and not l.startswith("#")]
+            nf = {r["iso3"]: r["nom_fr"] for r in csv.DictReader(lc2) if r.get("nom_fr")}
+        import re as _re
+        for p_ in ucdp.get("pays", []):
+            p_["nom_fr"] = nf.get(p_["iso3"]) or _re.sub(r"\s*\(.*?\)", "", p_["nom"])
+        ucdp["pays"] = [p_ for p_ in ucdp.get("pays", []) if p_["morts_mois"] > 0 or p_["mediane_12"] > 0][:40]
     types_actifs = []
     f = ICI / "comptes/types-actifs.csv"
     if f.exists():
@@ -206,7 +221,7 @@ def principal() -> int:
     donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
-               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes, "mecanique": mecanique,
+               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes, "mecanique": mecanique, "ucdp": ucdp,
                "jours30": [jours30[0], jours30[-1]]}
     out = ICI / "docs/donnees.json"
     out.parent.mkdir(exist_ok=True)

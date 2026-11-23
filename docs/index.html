@@ -179,6 +179,10 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
         <div id="futur" class="vide">aucune situation observée pour l'instant</div>
       </details>
     </div>
+    <details class="bloc sec" data-cle="ucdp">
+      <summary>Violence organisée (UCDP, carte publiée) : état du mois et enchaînements <span id="nbUcdp" class="etiq"></span></summary>
+      <div id="ucdp" class="vide">pas encore de lecture de l'UCDP</div>
+    </details>
     <details class="bloc sec" data-cle="mecanique">
       <summary>Mécanique de bascule (ombre) : étincelles et probabilité de prendre dans les 8 semaines <span id="nbMeca" class="etiq"></span></summary>
       <div id="mecanique" class="vide">aucune étincelle inscrite pour l'instant (la mécanique tourne chaque lundi)</div>
@@ -230,7 +234,7 @@ let D,etat={sorte:"tous",canal:"",fiche:"",variable:"taille",echelles:new Set(),
   nommes:true,acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
 let sim,svg,gZoom,largeur,hauteur;
 
-fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;rendreMecanique();preparer();construireControles();dessiner();
+fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;rendreMecanique();rendreUcdp();preparer();construireControles();dessiner();
   // 2026-11-23 : rubriques du bas repliables ; l'état ouvert ou fermé est gardé pour ce navigateur (commodité seulement)
   for(const el of document.querySelectorAll("#frise details[data-cle]")){
     try{if(localStorage.getItem("ouvert:"+el.dataset.cle)==="1") el.open=true;}catch(e){}
@@ -893,6 +897,25 @@ function rendreMecanique(){
     h+=`<div style="color:var(--doux);margin-top:6px">Résidus — surprises (a pris sous 25 % annoncés, ou s'est éteinte au-dessus de 60 %) : ${su.nombre||0}`+
       (su.nombre?` ; par région : ${Object.entries(su.par_region).map(([k,v])=>esc(k)+" "+v).join(", ")} (un regroupement désigne un mécanisme manquant)`:"")+`</div>`;
   }
+  el.innerHTML=h;
+}
+// 2026-11-23 (décision de l'auteur, 7 h 51 - 8 h 00) : carte publiée de l'UCDP lue par le bot (standard de lecture) —
+// état du mois par pays, 13 derniers mois en petite courbe, et taux de départ du mois suivant d'après 1989-2025
+function rendreUcdp(){
+  const U=D.ucdp||{},P=U.pays||[];const el=document.getElementById("ucdp");if(!P.length)return;
+  el.className="";const T=U.transitions||{},E=T.etats||[],PR=T.probabilites||[];
+  const NOM={calme:"calme",bas:"bas",moyen:"moyen",haut:"haut"},COUL={calme:"var(--doux)",bas:"var(--aval)",moyen:"var(--amont)",haut:"var(--moins)"};
+  const pct=x=>Math.round(100*x)+" %";
+  document.getElementById("nbUcdp").textContent=U.dernier_mois+" · "+P.filter(p=>p.etat==="haut"||p.etat==="moyen").length+" pays à 25 morts ou plus";
+  const spark=s=>{const mx=Math.max(1,...s);return `<svg width="${s.length*5}" height="18" style="vertical-align:middle;display:inline-block;width:${s.length*5}px;height:18px">${s.map((v,i)=>`<rect x="${i*5}" y="${18-Math.max(v?1:0,Math.round(16*v/mx))}" width="4" height="${Math.max(v?1:0,Math.round(16*v/mx))}" fill="var(--accent)"><title>${U.mois_recents[i]} : ${Math.round(v)} morts</title></rect>`).join("")}</svg>`;};
+  let h=`<p style="margin:2px 0 6px;color:var(--doux)">Dernier mois publié : ${esc(U.dernier_mois)} (événements candidats, encore révisables) · états : ${esc(U.seuils)} · source : UCDP, université d'Uppsala, CC BY 4.0</p>`;
+  if(PR.length) h+=`<p style="margin:4px 0 2px"><b>Enchaînements d'un mois au suivant (${esc(U.historique[0])} à ${esc(U.historique[1])})</b></p><table>`+
+    `<tr><td></td>${E.map(e=>`<td style="padding:1px 8px;color:var(--doux)">→ ${NOM[e]}</td>`).join("")}</tr>`+
+    E.map((e,i)=>`<tr><td style="padding:1px 8px 1px 0">${NOM[e]}</td>${PR[i].map(x=>`<td style="padding:1px 8px">${pct(x)}</td>`).join("")}</tr>`).join("")+`</table>`+
+    `<p style="margin:2px 0;color:var(--doux)">Épisodes d'au moins 25 morts par mois : ${U.episodes_moyen_ou_plus.nombre}, durée médiane ${U.episodes_moyen_ou_plus.duree_mediane_mois} mois, 9 sur 10 durent ${U.episodes_moyen_ou_plus.duree_q90_mois} mois ou moins.</p>`;
+  h+=`<p style="margin:8px 0 2px"><b>État du mois, par pays</b> <span style="color:var(--doux)">(13 derniers mois ; « mois suivant » = taux de départ de l'état, pas une prévision propre au pays)</span></p>`+
+    P.map(p=>`<div>• <b>${esc(p.nom_fr)}</b> <span style="color:${COUL[p.etat]}">${NOM[p.etat]}</span> · ${Math.round(p.morts_mois)} morts ${spark(p.serie)} `+
+      `<span style="color:var(--doux)">médiane des 12 mois précédents ${Math.round(p.mediane_12)} · mois suivant : reste ${NOM[p.etat]} ${pct(p.proba_mois_suivant[p.etat]||0)}</span></div>`).join("");
   el.innerHTML=h;
 }
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
