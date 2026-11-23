@@ -878,6 +878,21 @@ function rendreMecanique(){
   if(closes.length) h+=`<p style="margin:8px 0 2px"><b>Constatées (${closes.length})</b></p>`+closes.slice(0,40).map(r=>{const i=I[r.id];
     return `<div>• <b>${nom(r)}</b> — semaine du ${esc(r.semaine)} · prédit ${pct(+r.p_prend)} · <b>${i.prend?"a pris":"s'est éteinte"}</b> `+
     `<span style="color:var(--doux)">(${i.semaines_elevees} semaine(s) élevée(s) sur 8)</span></div>`;}).join("");
+  // 0.10.468 (veille Munshi, accord de l'auteur du 2026-11-23, 7 h 06) : contrôles du modèle, une fois des issues constatées
+  const C=S.controles||{};
+  if((C.calibration||[]).length){
+    const td=x=>`<td style="padding:1px 8px 1px 0">${x}</td>`;
+    h+=`<p style="margin:10px 0 2px"><b>Contrôles du modèle</b> <span style="color:var(--doux)">(un modèle faux devient plus sûr de lui quand les données s'accumulent : on regarde, on ne décide rien)</span></p>`+
+      `<div style="color:var(--doux)">Calibration — annoncé contre observé, par tranche (fiable au-delà d'une trentaine de cas par tranche)</div>`+
+      `<table>${C.calibration.map(t=>`<tr>${td(esc(t.tranche))}${td(t.n+" cas")}${td("annoncé "+pct(t.annoncee))}${td("observé "+pct(t.observee))}</tr>`).join("")}</table>`;
+    const blocs=(titre,o)=>o?`<div style="color:var(--doux);margin-top:6px">${titre}</div><table>${Object.entries(o).map(([k,v])=>`<tr>${td(esc(k))}${td(v.n+" cas")}${td("annoncé "+pct(v.annoncee))}${td("observé "+pct(v.observee))}${td("Brier "+v.brier+" / départ "+v.brier_taux_depart)}</tr>`).join("")}</table>`:"";
+    const SE=C.sous_ensembles||{};
+    h+=blocs("Sous-ensembles par région — même comportement partout : mécanisme reproductible ; comportements opposés : cadre à déplacer",SE.regions)+
+       blocs("Sous-ensembles par période",SE.periodes);
+    const su=C.surprises||{};
+    h+=`<div style="color:var(--doux);margin-top:6px">Résidus — surprises (a pris sous 25 % annoncés, ou s'est éteinte au-dessus de 60 %) : ${su.nombre||0}`+
+      (su.nombre?` ; par région : ${Object.entries(su.par_region).map(([k,v])=>esc(k)+" "+v).join(", ")} (un regroupement désigne un mécanisme manquant)`:"")+`</div>`;
+  }
   el.innerHTML=h;
 }
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
