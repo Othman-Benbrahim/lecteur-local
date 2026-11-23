@@ -843,7 +843,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){const el=document.g
 function geoUcdp(n){
   const U=D.ucdp||{},P=U.par_pays||{},N=U.noms_pays||{};
   const spark=s=>{const mx=Math.max(1,...s);return `<svg width="${s.length*5}" height="18" style="vertical-align:middle;display:inline-block;width:${s.length*5}px;height:18px">${s.map((v,i)=>`<rect x="${i*5}" y="${18-Math.max(v?1:0,Math.round(16*v/mx))}" width="4" height="${Math.max(v?1:0,Math.round(16*v/mx))}" fill="var(--accent)"><title>${(U.mois_recents||[])[i]} : ${Math.round(v)} morts</title></rect>`).join("")}</svg>`;};
-  let h=`<h2>Géopolitique : pays concernés (${n.pays.length})</h2><p style="margin:2px 0;color:var(--doux)">état UCDP du mois ${esc(U.dernier_mois||"")} (violence organisée, morts par mois) ; pays proposés par Claude, acceptés par défaut</p><ul>`;
+  let h=`<h2>Géopolitique : pays concernés (${n.pays.length})</h2><p style="margin:2px 0;color:var(--doux)">état UCDP du mois ${esc(U.dernier_mois||"")} (violence organisée, morts par mois)</p><ul>`;
   for(const x of n.pays){const p=P[x];
     if(!p){h+=`<li><b class="lienpays" data-pays="${esc(x)}">${esc(N[x]||x)}</b> <span style="color:var(--doux)">aucun événement relevé par l'UCDP</span></li>`;continue;}
     h+=`<li><b class="lienpays" data-pays="${esc(x)}">${esc(p.nom_fr||N[x]||x)}</b> <span style="color:${COUL_ETAT[p.etat]||"var(--doux)"}">${esc(p.etat)}</span> · ${Math.round(p.morts_mois)} morts ${spark(p.serie)} <span style="color:var(--doux)">médiane des 12 mois précédents ${Math.round(p.mediane_12)}</span>${detailUcdp(p)}</li>`;}
