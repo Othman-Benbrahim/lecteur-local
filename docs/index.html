@@ -478,6 +478,19 @@ function cacherChevauchements(sel,prio){
   items.forEach((it,i)=>{const b=it.b;
     if(pris.some(q=>!(b.right<q.left-3||b.left>q.right+3||b.bottom<q.top-1||b.top>q.bottom+1))||(i>=15&&surCercle(b,it.g))) it.t.classList.add("cachee"); else pris.push(b);});
 }
+// centre la vue sur un nœud ; le zoom ne fait que réduire, juste assez pour que ses voisins et leurs noms tiennent
+function centrer(sel,zoom,id,aretes){
+  const ide=x=>typeof x==="object"?x.id:x;const v=new Set([id]);
+  for(const a of aretes){const s=ide(a.source),t=ide(a.target);if(s===id)v.add(t);if(t===id)v.add(s);}
+  let c=null;sel.each(d=>{if(d.id===id)c=d;});if(!c)return;
+  let dx=60,dy=40;
+  sel.each(function(d){if(!v.has(d.id))return;let bb=null;try{bb=this.getBBox();}catch(e){}
+    const a0=bb?d.x+bb.x:d.x-10,a1=bb?d.x+bb.x+bb.width:d.x+10,b0=bb?d.y+bb.y:d.y-10,b1=bb?d.y+bb.y+bb.height:d.y+10;
+    dx=Math.max(dx,Math.abs(a0-c.x),Math.abs(a1-c.x));dy=Math.max(dy,Math.abs(b0-c.y),Math.abs(b1-c.y));});
+  const kc=d3.zoomTransform(svg.node()).k||1;
+  const k=Math.max(.2,Math.min(kc,(largeur/2-30)/dx,(hauteur/2-30)/dy));
+  svg.transition().duration(450).call(zoom.transform,d3.zoomIdentity.translate(largeur/2-k*c.x,hauteur/2-k*c.y).scale(k));
+}
 // positions gardées d'un dessin à l'autre (un clic redessine sans faire sauter la carte)
 const POS=new Map();
 function cadrer(sel,zoom,marge=40){ // ajuste le zoom pour que tous les nœuds tiennent dans la vue
@@ -490,6 +503,7 @@ function cadrer(sel,zoom,marge=40){ // ajuste le zoom pour que tous les nœuds t
 }
 
 function dessiner(){
+  if(sim) sim.stop();   // 2026-11-23 : l'ancienne simulation ne doit plus recentrer la vue après un nouveau dessin
   infoEmetteur();
   const zone=document.getElementById("carte");largeur=zone.clientWidth;hauteur=zone.clientHeight;
   const sits=situationsFiltrees();
@@ -541,6 +555,10 @@ function dessiner(){
     const k=e.transform.k;noeud.select("text").style("font-size",(11/k)+"px").style("stroke-width",(4/k)+"px");
     clearTimeout(tz);tz=setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:0)),120);});
   svg.call(zoomE);
+  // 2026-11-23, 6 h 45 (remarque de l'auteur) : un clic dans le même écosystème garde la vue en place (pas de retour au
+  // cadrage initial), puis centre sur le compartiment choisi ; un nouvel écosystème repart d'un cadrage complet
+  const memeFiche=dessiner._fiche===etat.fiche;dessiner._fiche=etat.fiche;
+  if(memeFiche) gZoom.attr("transform",d3.zoomTransform(svg.node())); else svg.property("__zoom",d3.zoomIdentity);   // remise à zéro sans déclencher l'événement de zoom
   const defs=svg.append("defs");
   for(const[k,c]of[["plus","var(--plus)"],["moins","var(--moins)"],["neutre","var(--pont)"],["acteur","var(--acteur)"]])
     defs.append("marker").attr("id","f-"+k).attr("viewBox","0 -4 8 8").attr("refX",14).attr("refY",0)
@@ -604,7 +622,9 @@ function dessiner(){
     .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
       noeud.attr("transform",n=>`translate(${n.x},${n.y})`);})
     .on("end",()=>{for(const n of noeuds){POS.set(etat.fiche+"|"+n.id,{x:n.x,y:n.y});n._r=rayon(n);}
-      cadrer(noeud,zoomE);setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:0)),450);});
+      if(etat.choisi&&noeuds.some(n=>n.id===etat.choisi)) centrer(noeud,zoomE,etat.choisi,aretes);
+      else if(!memeFiche) cadrer(noeud,zoomE);
+      setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:0)),450);});
   if(connus>noeuds.length*.6) sim.alpha(.25);
   frise(sits);
   if(etat.choisi&&D.parId.has(etat.choisi)){detail(D.parId.get(etat.choisi),sits);voisinage(etat.choisi);}
