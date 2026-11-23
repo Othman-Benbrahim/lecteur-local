@@ -933,7 +933,7 @@ function detailUcdp(p){
   if(p.par_type){const t=Object.entries(p.par_type).filter(([k,v])=>v>0).map(([k,v])=>`${k} ${Math.round(v)}`);if(t.length)b.push(t.join(", "));}
   if(p.morts_civils!=null)b.push(`dont civils ${Math.round(p.morts_civils)}`);
   if(p.regions!=null)b.push(`${p.regions} région${p.regions>1?"s":""} touchée${p.regions>1?"s":""}`);
-  if((p.acteurs||[]).length)b.push(`acteurs : ${p.acteurs.map(esc).join(", ")}`);
+  if((p.acteurs||[]).length)b.push(`acteurs : ${p.acteurs.map(a=>/^XXX\d+$/.test(a)?"acteur non identifié (code UCDP "+esc(a)+")":esc(a)).join(", ")}`);
   if(p.dernier_declenchement)b.push(`dernier déclenchement ${esc(p.dernier_declenchement.annee)}`);
   if(p.vpp_derniere_annee)b.push(`${p.vpp_derniere_annee} manifestations violentes l'an dernier publié`);
   return b.length?`<div style="margin:0 0 3px 14px;color:var(--doux);font-size:.92em">${b.join(" · ")}</div>`:"";
