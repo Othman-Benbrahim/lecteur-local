@@ -233,7 +233,7 @@ def principal() -> int:
             fiches_v[theme] = {"liens": _v.liens_fiche(cat, theme), "flux": _v.flux_fiche(cat, theme),
                                "nom": f.get("nom", theme), "but": (f.get("declaration") or {}).get("but", "")}
             for c in f.get("compartiments") or []:
-                comps[f"{theme}:{c['id']}"] = _v.flux_compartiment(cat, theme, c, tab)
+                comps[f"{theme}:{c['id']}"] = _v.flux_compartiment(cat, theme, c, tab, sauf=_v.muets(lus) if lus else frozenset())
         utiles = {x for l in comps.values() for x in l} | {x for d in fiches_v.values() for x in d["flux"]}
         veille = {"fiches": fiches_v, "compartiments": comps,
                   "flux": {k: {"titre": (lus.get(k) or {}).get("titre") or v["titre"],
