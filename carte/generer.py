@@ -68,6 +68,8 @@ def principal() -> int:
             ax = eco.axes(c.get("niveau") or {})
             noeuds.append({"id": cid, "sorte": "compartiment", "fiche": theme, "fiche_nom": f.get("nom", theme),
                            "nom": c.get("nom", c["id"]), "organisation": c.get("organisation", ""),
+                           # 0.10.473 : pays concernés (champ « geopolitique ») ; l'état UCDP s'y accroche
+                           "pays": list((c.get("geopolitique") or {}).get("pays") or []),
                            "niveau": c.get("niveau") or {}, "axes": ax, "elements": c.get("elements") or [],
                            "traces": [{"source": t.get("source", ""), "statut": t.get("statut", ""),
                                        "odd": [{"code": str(k), "libelle": odd.get(str(k), "")} for k in t.get("odd") or []]}
@@ -184,6 +186,10 @@ def principal() -> int:
         import re as _re
         for p_ in ucdp.get("pays", []):
             p_["nom_fr"] = nf.get(p_["iso3"]) or _re.sub(r"\s*\(.*?\)", "", p_["nom"])
+        # 0.10.473 : état de chaque pays rattaché à un compartiment (champ « geopolitique »), même hors des 40 premiers
+        vises = {x for n in noeuds for x in n.get("pays") or []}
+        ucdp["par_pays"] = {p_["iso3"]: p_ for p_ in ucdp.get("pays", []) if p_["iso3"] in vises}
+        ucdp["noms_pays"] = {x: nf.get(x, x) for x in sorted(vises)}
         ucdp["pays"] = [p_ for p_ in ucdp.get("pays", []) if p_["morts_mois"] > 0 or p_["mediane_12"] > 0][:40]
         # 0.10.472 : manifestations politiques violentes et déclenchements (noms en français, tables d'index retirées)
         for p_ in (ucdp.get("vpp") or {}).get("pays", []) + (ucdp.get("declenchements") or {}).get("recents", []):

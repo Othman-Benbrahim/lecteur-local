@@ -147,6 +147,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
     <div class="legende">
       <span><i style="border-color:var(--plus)"></i>effet positif (+)</span>
       <span><i style="border-color:var(--sousproduit);border-top-style:dashed"></i>sous-produit de (métal porteur → compagnon)</span>
+      <span><b style="display:inline-block;width:10px;height:10px;border-radius:50%;border:2.5px solid var(--moins);vertical-align:middle;margin-right:4px"></b>liseré : état UCDP du mois des pays concernés (bleu bas, ocre moyen, rouge haut)</span>
       <span><i style="border-color:var(--moins)"></i>effet négatif (−)</span>
       <span><i style="border-color:var(--pont);border-top-style:dashed"></i>pont de cause (flèche vers l'effet)</span>
       <span><i style="border-color:var(--pont);border-top-style:dotted"></i>même chose, ou lien de voisinage (plus pâle)</span>
@@ -609,6 +610,11 @@ function dessiner(){
     lien.classed("pale",a=>idDe(a.source)!==id&&idDe(a.target)!==id);
   }
   svg.on("click",e=>{if(e.target===svg.node()&&etat.choisi){etat.choisi=null;dessiner();}});
+  noeud.filter(n=>etatGeo(n)&&etatGeo(n)!=="calme").append("circle").attr("r",n=>rayon(n)+2)
+    .attr("fill","none").style("stroke","var(--fond)").style("stroke-width","2.5px").style("pointer-events","none");   // un blanc entre le nœud et le liseré
+  noeud.filter(n=>etatGeo(n)&&etatGeo(n)!=="calme").append("circle").attr("class","lisereGeo").attr("r",n=>rayon(n)+4.5)
+    .attr("fill","none").style("stroke",n=>COUL_ETAT[etatGeo(n)]).style("stroke-width","2.5px")
+    .append("title").text(n=>"UCDP, "+(D.ucdp.dernier_mois||"")+" : "+(n.pays||[]).map(x=>{const p=D.ucdp.par_pays[x];return (p?p.nom_fr:x)+" "+(p?p.etat:"calme");}).join(", "));
   noeud.append("circle").attr("r",rayon)
     .attr("fill",n=>n.sorte==="nomme"?(n.genre==="patron"?"var(--patron)":n.genre==="religieux"?"var(--acteur)":"var(--dirigeant)"):n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
     .attr("fill-opacity",n=>n.externe?.35:1).attr("stroke-dasharray",n=>n.externe?"3 2":null)
@@ -740,6 +746,7 @@ function detail(n,sits){
      `<tr><td>vitesse</td><td>${esc(ax.vitesse||"—")}</td></tr><tr><td>taille</td><td>${esc(ax.taille||"—")}</td></tr></table>`;
   if(n.sorte==="compartiment"){
     if(n.elements.length) h+=`<h2>Éléments</h2><ul>${n.elements.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    if((n.pays||[]).length) h+=geoUcdp(n);
     const ac=D.noeuds.filter(m=>m.compartiment===n.id);
     if(ac.length) h+=`<h2>Acteurs (fiche)</h2><ul>${ac.map(m=>`<li>${esc(m.nom)} <span class="etiq">${esc(m.niveau.taille||"")}</span></li>`).join("")}</ul>`;
     const nm=(D.nommes?D.nommes.acteurs:[]).filter(x=>x.compartiments.includes(n.id));
@@ -780,7 +787,24 @@ function detail(n,sits){
         `termes : ${esc(x.termes.join(", "))}<br><a href="${esc(x.lien)}" target="_blank" rel="noopener">${esc(x.lien)}</a></li>`;}).join("")}</ul>`:((n.tensions||[]).length?`<p class="vide"><b>calme apparent</b> : une tension est déclarée ici, mais aucun article ne la signale sur ces filtres ; le silence des sources n'est pas l'absence de tension (les tampons peuvent absorber sans être vus)</p>`:`<p class="vide">rien à signaler pour ces filtres (aucune tension déclarée, aucun article)</p>`));
   }
   el.innerHTML=h;
-  plier(el,new Set(["Éléments"]));
+  plier(el,new Set(["Éléments","Géopolitique"]));
+}
+// 0.10.473 (décision de l'auteur, 2026-11-23, 8 h 35) : pays concernés (champ « geopolitique ») et leur état UCDP —
+// liseré sur le nœud (l'état le plus élevé de ses pays) et détail au clic
+const RANG_ETAT={calme:0,bas:1,moyen:2,haut:3},COUL_ETAT={bas:"var(--aval)",moyen:"var(--amont)",haut:"var(--moins)"};
+function etatGeo(n){
+  const P=(D.ucdp&&D.ucdp.par_pays)||{};let e=null;
+  for(const x of n.pays||[]){const p=P[x];if(p&&(e===null||RANG_ETAT[p.etat]>RANG_ETAT[e]))e=p.etat;}
+  return e;
+}
+function geoUcdp(n){
+  const U=D.ucdp||{},P=U.par_pays||{},N=U.noms_pays||{};
+  const spark=s=>{const mx=Math.max(1,...s);return `<svg width="${s.length*5}" height="18" style="vertical-align:middle;display:inline-block;width:${s.length*5}px;height:18px">${s.map((v,i)=>`<rect x="${i*5}" y="${18-Math.max(v?1:0,Math.round(16*v/mx))}" width="4" height="${Math.max(v?1:0,Math.round(16*v/mx))}" fill="var(--accent)"><title>${(U.mois_recents||[])[i]} : ${Math.round(v)} morts</title></rect>`).join("")}</svg>`;};
+  let h=`<h2>Géopolitique : pays concernés (${n.pays.length})</h2><p style="margin:2px 0;color:var(--doux)">état UCDP du mois ${esc(U.dernier_mois||"")} (violence organisée, morts par mois) ; pays proposés par Claude, acceptés par défaut</p><ul>`;
+  for(const x of n.pays){const p=P[x];
+    if(!p){h+=`<li><b>${esc(N[x]||x)}</b> <span style="color:var(--doux)">aucun événement relevé par l'UCDP</span></li>`;continue;}
+    h+=`<li><b>${esc(p.nom_fr||N[x]||x)}</b> <span style="color:${COUL_ETAT[p.etat]||"var(--doux)"}">${esc(p.etat)}</span> · ${Math.round(p.morts_mois)} morts ${spark(p.serie)} <span style="color:var(--doux)">médiane des 12 mois précédents ${Math.round(p.mediane_12)}</span>${detailUcdp(p)}</li>`;}
+  return h+"</ul>";
 }
 // 2026-11-23 : chaque titre de section du panneau devient une section repliable ; seules les sections listées s'ouvrent
 function plier(el,ouvertes){
