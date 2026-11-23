@@ -654,6 +654,7 @@ function dessiner(){
   if(connus>noeuds.length*.6) sim.alpha(.25);
   frise(sits);
   if(etat.choisi&&D.parId.has(etat.choisi)){detail(D.parId.get(etat.choisi),sits);voisinage(etat.choisi);}
+  else detailFiche(etat.fiche);
 }
 
 function dessinerEnsemble(sits){
@@ -779,11 +780,9 @@ function detail(n,sits){
     if(cy.length) h+=`<h2>Cycles (${cy.length})</h2><ul>${cy.map(y=>`<li><b>${esc(y.nom||y.id)}</b> <span class="etiq">${esc(SORTE[y.sorte]||y.sorte)}${y.periode?" · "+esc(y.periode):""} · ${y.statut==="identifie"?"identifié":"mécanisme décrit"}</span><br>${esc(y.mecanisme||"")}${y.phase_vulnerable?`<br><span style="color:var(--doux)">phase vulnérable : ${esc(y.phase_vulnerable)}</span>`:""}</li>`).join("")}</ul>`;
     if(tn.length) h+=`<h2>Tensions (${tn.length})</h2><ul>${tn.map(y=>{const sl=y.seuil||{};return `<li><b>${esc(y.nom||y.id)}</b> <span class="etiq">tension ${esc(FORME[y.forme]||y.forme)} · ${esc((y.entre||[]).join(" ↔ "))}</span>${y.texte?`<br>${esc(y.texte)}`:""}`+
       `${(y.tampons||[]).length?`<br><span style="color:var(--doux)">tampons (ce qui absorbe sans être vu) : ${esc(y.tampons.map(t=>t.nom+(t.niveau&&t.niveau!=="inconnu"?" ("+t.niveau+")":"")).join(" ; "))}</span>`:""}${sl.habitus?`<br><span style="color:var(--doux)">seuil (habitus) : ${esc(sl.habitus)}</span>`:""}${sl.bascule?`<br><span style="color:var(--doux)">bascule : ${esc(sl.bascule)} · hystérésis : ${esc(sl.hysteresis||"inconnu")}</span>`:""}</li>`;}).join("")}</ul>`;
-    const fl=n.flux||[];
-    if(fl.length) h+=`<h2>Flux branchés : articles par jour (30 j${D.jours30?`, du ${esc(D.jours30[0])} au ${esc(D.jours30[1])}`:""})</h2><ul>${fl.map(f=>{
-      const tot=f.serie.reduce((a,b)=>a+b,0), mx=Math.max(1,...f.serie);
-      const bars=f.serie.map((v,i)=>`<rect x="${i*4}" y="${20-Math.round(18*v/mx)}" width="3" height="${Math.max(v?1:0,Math.round(18*v/mx))}" fill="var(--accent,#3a6ea5)"><title>${v}</title></rect>`).join("");
-      return `<li>famille « ${esc(f.famille)} » : <b>${tot}</b> articles${f.debut?` <span class="etiq">plus ancien article lu : ${esc(f.debut)}</span>`:` <span class="etiq">aucun article lu (flux en erreur ou pas encore passé)</span>`}<br><svg width="120" height="22" role="img" aria-label="articles par jour">${bars}</svg></li>`;}).join("")}</ul><p class="vide">Tous les articles nouveaux de ces flux, qu'ils touchent ou non ce compartiment : c'est l'activité de la source, pas celle du compartiment.</p>`;
+    // 0.10.480 (décision de l'auteur, 20 h 10) : les familles RSS des signaux ne sont plus montrées ici, seulement au niveau
+    // de la fiche ; le compartiment a sa propre veille (flux RSS de son thème)
+    h+=veilleCompartiment(n.id);
     const te=D.termesPar.get(n.id)||[];
     h+=`<h2>Termes validés (${te.length})</h2>`+(te.length?`<div class="puces">${te.slice(0,80).map(t=>`<span class="puce" title="${esc(t.note)}" onclick="choisirTerme('${esc(t.terme).replace(/'/g,"\\'")}')">${esc(t.terme)} <small>${t.langue}</small></span>`).join("")}</div>`:`<p class="vide">aucun</p>`);
     if(n.fiche==="observateur-mesure"&&D.recherche&&D.recherche.semaines){
@@ -800,7 +799,7 @@ function detail(n,sits){
         `termes : ${esc(x.termes.join(", "))}<br><a href="${esc(x.lien)}" target="_blank" rel="noopener">${esc(x.lien)}</a></li>`;}).join("")}</ul>`:((n.tensions||[]).length?`<p class="vide"><b>calme apparent</b> : une tension est déclarée ici, mais aucun article ne la signale sur ces filtres ; le silence des sources n'est pas l'absence de tension (les tampons peuvent absorber sans être vus)</p>`:`<p class="vide">rien à signaler pour ces filtres (aucune tension déclarée, aucun article)</p>`));
   }
   el.innerHTML=h;
-  plier(el,new Set(["Éléments","Géopolitique"]));
+  plier(el,new Set(["Éléments","Géopolitique","Veille"]));
 }
 // 0.10.473 (décision de l'auteur, 2026-11-23, 8 h 35) : pays concernés (champ « geopolitique ») et leur état UCDP —
 // liseré sur le nœud (l'état le plus élevé de ses pays) et détail au clic
@@ -840,6 +839,40 @@ document.addEventListener("click",e=>{const t=e.target.closest&&e.target.closest
   if(t){e.stopPropagation();afficherReleve([t.dataset.pays],e.clientX,e.clientY);return;}
   const el=document.getElementById("releve");if(el&&el.style.display==="block"&&!el.contains(e.target)&&!(e.target.closest&&e.target.closest(".noeud")))el.style.display="none";});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){const el=document.getElementById("releve");if(el)el.style.display="none";}});
+// 0.10.480 (décision de l'auteur, 2026-11-23, 19 h 08 - 20 h 10) : veille de la carte — au niveau de la fiche, les
+// « Ressources » (liens dont le titre indique la source), puis en dessous la veille RSS de la fiche, puis, à part, les
+// familles RSS des signaux ; au niveau du compartiment, sa veille RSS (flux de son thème et de sa région)
+function articlesFlux(ids,parFlux){
+  const V=(D.veille||{}).flux||{};
+  return ids.map(id=>{const f=V[id];if(!f)return "";
+    const tete=`<div style="margin-top:5px"><a href="${esc(f.url)}" target="_blank" rel="noopener"><b>${esc(f.titre)}</b></a>`;
+    if(!f.articles.length){const st=f.statut==="pas_encore_lu"?"pas encore lu par le bot":f.statut==="refuse_robots"?"lecture refusée par le site (robots.txt)":"flux muet au dernier passage";
+      return tete+` <span style="color:var(--doux)">${st}</span></div>`;}
+    return tete+`<ul style="margin:2px 0 0">`+f.articles.slice(0,parFlux).map(a=>`<li><a href="${esc(a.lien)}" target="_blank" rel="noopener">${esc(a.titre)}</a> <span style="color:var(--doux)">${esc((a.date||"").slice(0,10))}</span></li>`).join("")+`</ul></div>`;
+  }).join("");
+}
+function veilleCompartiment(id){
+  const ids=((D.veille||{}).compartiments||{})[id]||[];
+  if(!ids.length) return "";
+  return `<h2>Veille (flux RSS du thème)</h2>`+articlesFlux(ids,3);
+}
+function detailFiche(theme){
+  const el=document.getElementById("detail");if(!el||!theme||theme==="__acteurs__")return;
+  const F=((D.veille||{}).fiches||{})[theme];if(!F)return;
+  let h=`<h3>${esc(F.nom)}</h3><div class="sous">fiche · ${D.noeuds.filter(n=>n.fiche===theme&&n.sorte==="compartiment").length} compartiments · cliquez sur un compartiment pour son détail</div>`;
+  if(F.but) h+=`<p>${esc(F.but)}</p>`;
+  h+=`<h2>Ressources (${F.liens.length})</h2><ul>`+F.liens.map(l=>`<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.titre)}</a></li>`).join("")+`</ul>`;
+  if(F.flux.length) h+=`<h2>Veille de la fiche (flux RSS)</h2>`+articlesFlux(F.flux,5);
+  const fam=new Map();
+  for(const n of D.noeuds) if(n.fiche===theme) for(const f of n.flux||[]) if(!fam.has(f.famille)) fam.set(f.famille,f);
+  if(fam.size) h+=`<h2>Flux des signaux (collecteur, familles RSS)</h2><ul>`+[...fam.values()].map(f=>{
+      const tot=f.serie.reduce((a,b)=>a+b,0),mx=Math.max(1,...f.serie);
+      const bars=f.serie.map((v,i)=>`<rect x="${i*4}" y="${20-Math.round(18*v/mx)}" width="3" height="${Math.max(v?1:0,Math.round(18*v/mx))}" fill="var(--accent,#3a6ea5)"><title>${v}</title></rect>`).join("");
+      return `<li>famille « ${esc(f.famille)} » : <b>${tot}</b> articles en 30 jours<br><svg width="120" height="22" role="img" aria-label="articles par jour">${bars}</svg></li>`;}).join("")+
+      `</ul><p class="vide">Activité des sources du collecteur des signaux, à part de la veille ci-dessus.</p>`;
+  el.innerHTML=h;
+  plier(el,new Set(["Ressources","Veille"]));
+}
 function geoUcdp(n){
   const U=D.ucdp||{},P=U.par_pays||{},N=U.noms_pays||{};
   const spark=s=>{const mx=Math.max(1,...s);return `<svg width="${s.length*5}" height="18" style="vertical-align:middle;display:inline-block;width:${s.length*5}px;height:18px">${s.map((v,i)=>`<rect x="${i*5}" y="${18-Math.max(v?1:0,Math.round(16*v/mx))}" width="4" height="${Math.max(v?1:0,Math.round(16*v/mx))}" fill="var(--accent)"><title>${(U.mois_recents||[])[i]} : ${Math.round(v)} morts</title></rect>`).join("")}</svg>`;};

@@ -216,6 +216,31 @@ def principal() -> int:
                 indicateurs[theme] = sorted(vus.values(), key=lambda x: (not x.get("serie"), x.get("perimee", False), x["source"]))
     except Exception as e:
         print(f"indicateurs : {type(e).__name__} {e}")
+    # 0.10.480 (décision de l'auteur, 2026-11-23, 19 h 08 - 20 h 10) : veille de la carte — liens « Ressources » et flux
+    # RSS de chaque fiche, flux RSS de chaque compartiment (catalogue du bot, veille/catalogue.yaml) ; derniers articles
+    # lus par le bot (registre/veille-flux.json : titre, lien, date seulement)
+    veille = {}
+    try:
+        import veille as _v
+        cat = _v.catalogue(bot / "veille/catalogue.yaml")
+        lus = {}
+        fv = bot / "registre/veille-flux.json"
+        if fv.exists():
+            lus = json.loads(fv.read_text(encoding="utf-8"))
+        tab = _v.regions_pays()
+        comps, fiches_v = {}, {}
+        for theme, f in fiches.items():
+            fiches_v[theme] = {"liens": _v.liens_fiche(cat, theme), "flux": _v.flux_fiche(cat, theme),
+                               "nom": f.get("nom", theme), "but": (f.get("declaration") or {}).get("but", "")}
+            for c in f.get("compartiments") or []:
+                comps[f"{theme}:{c['id']}"] = _v.flux_compartiment(cat, theme, c, tab)
+        utiles = {x for l in comps.values() for x in l} | {x for d in fiches_v.values() for x in d["flux"]}
+        veille = {"fiches": fiches_v, "compartiments": comps,
+                  "flux": {k: {"titre": v["titre"], "url": v["url"], "statut": (lus.get(k) or {}).get("statut", "pas_encore_lu"),
+                               "lu_le": (lus.get(k) or {}).get("lu_le"), "articles": ((lus.get(k) or {}).get("articles") or [])[:6]}
+                           for k, v in (cat.get("flux") or {}).items() if k in utiles}}
+    except Exception as e:
+        print(f"veille : {type(e).__name__} {e}")
     ucdp = {}
     fu = bot / "registre/cartes/ucdp-etats.json"
     if fu.exists():
@@ -323,7 +348,7 @@ def principal() -> int:
     donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
-               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes, "mecanique": mecanique, "ucdp": ucdp, "indicateurs": indicateurs,
+               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes, "mecanique": mecanique, "ucdp": ucdp, "indicateurs": indicateurs, "veille": veille,
                "jours30": [jours30[0], jours30[-1]]}
     out = ICI / "docs/donnees.json"
     out.parent.mkdir(exist_ok=True)
