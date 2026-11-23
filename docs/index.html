@@ -7,14 +7,14 @@
 <style>
 :root{
   --fond:#f6f5f1;--panneau:#ffffff;--trait:#d9d6cc;--texte:#1d1c19;--doux:#6b675d;--accent:#2f5d8a;--lien:#5e7a86;
-  --plus:#2e7d4f;--moins:#b23a3a;--pont:#9a958a;--amont:#b5651d;--aval:#2f6f9f;--acteur:#7a5a9e;--dirigeant:#8a3b2e;--patron:#2e6b5e;--surbrillance:#e8a317;--ombre:rgba(0,0,0,.06);
+  --plus:#2e7d4f;--moins:#b23a3a;--pont:#9a958a;--amont:#b5651d;--aval:#2f6f9f;--acteur:#7a5a9e;--dirigeant:#8a3b2e;--patron:#2e6b5e;--surbrillance:#e8a317;--ombre:rgba(0,0,0,.06);--sousproduit:#a0662b;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;--lien:#9db3bd;
-  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--dirigeant:#e08a7a;--patron:#6fc2ad;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}}
+  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--dirigeant:#e08a7a;--patron:#6fc2ad;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);--sousproduit:#d9a066;}}
 :root[data-theme="dark"]{
   --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;--lien:#9db3bd;
-  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--dirigeant:#e08a7a;--patron:#6fc2ad;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);}
+  --plus:#5fbf86;--moins:#e07070;--pont:#7d796f;--amont:#e0a060;--aval:#6fa8d6;--acteur:#b89be0;--dirigeant:#e08a7a;--patron:#6fc2ad;--surbrillance:#f0b84a;--ombre:rgba(0,0,0,.3);--sousproduit:#d9a066;}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--fond);color:var(--texte);
   font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -48,7 +48,7 @@ svg{width:100%;height:100%;display:block}
 .noeud text{font-size:11px;fill:var(--texte);pointer-events:none;paint-order:stroke;stroke:var(--fond);stroke-width:4px;stroke-linejoin:round}
 /* 2026-11-23 (lisibilité, validée par l'auteur à 6 h 30) : étiquettes qui se chevauchent cachées (montrées au survol),
    sections repliables, liens de second niveau seulement au clic */
-.noeud text.cachee{display:none}.noeud:hover text.cachee,.noeud.voisin text.cachee{display:block}
+.noeud text.cachee{display:none}.noeud:hover text.cachee{display:block}
 .lienF{transition:stroke-opacity .15s}
 details.sec{margin:6px 0;border-top:1px solid var(--trait);padding-top:4px}
 details.sec>summary{cursor:pointer;list-style:none;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--doux);font-weight:600;padding:3px 0}
@@ -146,6 +146,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
     <h2>Légende</h2>
     <div class="legende">
       <span><i style="border-color:var(--plus)"></i>effet positif (+)</span>
+      <span><i style="border-color:var(--sousproduit);border-top-style:dashed"></i>sous-produit de (métal porteur → compagnon)</span>
       <span><i style="border-color:var(--moins)"></i>effet négatif (−)</span>
       <span><i style="border-color:var(--pont);border-top-style:dashed"></i>pont de cause (flèche vers l'effet)</span>
       <span><i style="border-color:var(--pont);border-top-style:dotted"></i>même chose, ou lien de voisinage (plus pâle)</span>
@@ -553,26 +554,28 @@ function dessiner(){
   gZoom=svg.append("g");
   let tz=null;const zoomE=d3.zoom().scaleExtent([.2,6]).on("zoom",e=>{gZoom.attr("transform",e.transform);
     const k=e.transform.k;noeud.select("text").style("font-size",(11/k)+"px").style("stroke-width",(4/k)+"px");
-    clearTimeout(tz);tz=setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:0)),120);});
+    clearTimeout(tz);tz=setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:voisChoisi.has(n.id)?500:0)),120);});
   svg.call(zoomE);
   // 2026-11-23, 6 h 45 (remarque de l'auteur) : un clic dans le même écosystème garde la vue en place (pas de retour au
   // cadrage initial), puis centre sur le compartiment choisi ; un nouvel écosystème repart d'un cadrage complet
   const memeFiche=dessiner._fiche===etat.fiche;dessiner._fiche=etat.fiche;
+  const voisChoisi=new Set();   // voisins du compartiment choisi : leurs noms passent avant les autres
   if(memeFiche) gZoom.attr("transform",d3.zoomTransform(svg.node())); else svg.property("__zoom",d3.zoomIdentity);   // remise à zéro sans déclencher l'événement de zoom
   const defs=svg.append("defs");
-  for(const[k,c]of[["plus","var(--plus)"],["moins","var(--moins)"],["neutre","var(--pont)"],["acteur","var(--acteur)"]])
+  for(const[k,c]of[["plus","var(--plus)"],["moins","var(--moins)"],["neutre","var(--pont)"],["acteur","var(--acteur)"],["sousproduit","var(--sousproduit)"]])
     defs.append("marker").attr("id","f-"+k).attr("viewBox","0 -4 8 8").attr("refX",14).attr("refY",0)
       .attr("markerWidth",6).attr("markerHeight",6).attr("orient","auto")
       .append("path").attr("d","M0,-4L8,0L0,4").attr("fill",c);
 
   const couleurArete=a=>a.sorte==="rattache"?"var(--trait)":a.sorte==="lien_nomme"?COUL_REL[(REL_NOMME[a.relation]||["","accord"])[1]]:a.sorte==="pont"?"var(--pont)":a.sorte==="lien_acteur"?"var(--acteur)":
-    a.sorte==="appartient"?"var(--trait)":a.effet==="+"?"var(--plus)":a.effet==="-"?"var(--moins)":"var(--pont)";
+    a.sorte==="appartient"?"var(--trait)":(a.sorte==="relation"&&/^sous-produit/.test(a.texte||""))?"var(--sousproduit)":a.effet==="+"?"var(--plus)":a.effet==="-"?"var(--moins)":"var(--pont)";
   const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("class","lien")
     .attr("stroke",couleurArete)
     .attr("stroke-width",a=>a.sorte==="relation"?({forte:2.4,moyenne:1.6,faible:1}[a.force]||1.2):1)
     .attr("stroke-opacity",a=>a.sorte==="pont"&&a.type==="voisinage"?.3:null)
-    .attr("stroke-dasharray",a=>a.sorte==="rattache"?"2 2":a.sorte==="pont"?(a.type==="influence"?"5 4":"1 3"):(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
-    .attr("marker-end",a=>a.sorte==="relation"?`url(#f-${a.effet==="+"?"plus":a.effet==="-"?"moins":"neutre"})`:
+    // 0.10.467 (roue des métaux, décision de l'auteur du 2026-11-23) : « sous-produit de » en tirets ocre
+    .attr("stroke-dasharray",a=>(a.sorte==="relation"&&/^sous-produit/.test(a.texte||""))?"6 3":a.sorte==="rattache"?"2 2":a.sorte==="pont"?(a.type==="influence"?"5 4":"1 3"):(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
+    .attr("marker-end",a=>a.sorte==="relation"?`url(#f-${/^sous-produit/.test(a.texte||"")?"sousproduit":a.effet==="+"?"plus":a.effet==="-"?"moins":"neutre"})`:
       a.sorte==="lien_acteur"?"url(#f-acteur)":a.sorte==="pont"&&a.type==="influence"?"url(#f-neutre)":null);
 
   const rayon=n=>n.sorte==="nomme"?7:n.sorte==="acteur"?4.5:5+Math.sqrt(activite.get(n.id)||0)*3;
@@ -614,17 +617,18 @@ function dessiner(){
   let connus=0;const pc=POS.get(etat.fiche+"|"+etat.choisi);
   for(const n of noeuds){const q=POS.get(etat.fiche+"|"+n.id);if(q){n.x=q.x;n.y=q.y;connus++;}else if(n.externe&&pc){n.x=pc.x+(Math.random()-.5)*40;n.y=pc.y+(Math.random()-.5)*40;}}
   sim=d3.forceSimulation(noeuds)
-    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(a=>a.sorte==="appartient"?22:a.sorte==="pont"?120:70).strength(a=>a.sorte==="pont"?.05:.3))
-    .force("charge",d3.forceManyBody().strength(etat.fiche?-140:-35))
+    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(a=>a.sorte==="appartient"?22:a.sorte==="pont"?140:95).strength(a=>a.sorte==="pont"?.05:.3))
+    .force("charge",d3.forceManyBody().strength(etat.fiche?-280:-35))
     .force("x",d3.forceX(n=>{const p=position(n);return p?xEch(p.m):largeur/2;}).strength(n=>position(n)?.35:.02))
     .force("y",d3.forceY(hauteur/2).strength(.06))
-    .force("collision",d3.forceCollide().radius(n=>rayon(n)+2))
+    .force("collision",d3.forceCollide().radius(n=>rayon(n)+16))
     .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
       noeud.attr("transform",n=>`translate(${n.x},${n.y})`);})
     .on("end",()=>{for(const n of noeuds){POS.set(etat.fiche+"|"+n.id,{x:n.x,y:n.y});n._r=rayon(n);}
+      for(const a of aretes){const s=idDe(a.source),t=idDe(a.target);if(s===etat.choisi)voisChoisi.add(t);if(t===etat.choisi)voisChoisi.add(s);}
       if(etat.choisi&&noeuds.some(n=>n.id===etat.choisi)) centrer(noeud,zoomE,etat.choisi,aretes);
       else if(!memeFiche) cadrer(noeud,zoomE);
-      setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:0)),450);});
+      setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:voisChoisi.has(n.id)?500:0)),450);});
   if(connus>noeuds.length*.6) sim.alpha(.25);
   frise(sits);
   if(etat.choisi&&D.parId.has(etat.choisi)){detail(D.parId.get(etat.choisi),sits);voisinage(etat.choisi);}
