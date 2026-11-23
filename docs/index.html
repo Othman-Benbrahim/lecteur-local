@@ -915,8 +915,28 @@ function rendreUcdp(){
     `<p style="margin:2px 0;color:var(--doux)">Épisodes d'au moins 25 morts par mois : ${U.episodes_moyen_ou_plus.nombre}, durée médiane ${U.episodes_moyen_ou_plus.duree_mediane_mois} mois, 9 sur 10 durent ${U.episodes_moyen_ou_plus.duree_q90_mois} mois ou moins.</p>`;
   h+=`<p style="margin:8px 0 2px"><b>État du mois, par pays</b> <span style="color:var(--doux)">(13 derniers mois ; « mois suivant » = taux de départ de l'état, pas une prévision propre au pays)</span></p>`+
     P.map(p=>`<div>• <b>${esc(p.nom_fr)}</b> <span style="color:${COUL[p.etat]}">${NOM[p.etat]}</span> · ${Math.round(p.morts_mois)} morts ${spark(p.serie)} `+
-      `<span style="color:var(--doux)">médiane des 12 mois précédents ${Math.round(p.mediane_12)} · mois suivant : reste ${NOM[p.etat]} ${pct(p.proba_mois_suivant[p.etat]||0)}</span></div>`).join("");
+      `<span style="color:var(--doux)">médiane des 12 mois précédents ${Math.round(p.mediane_12)} · mois suivant : reste ${NOM[p.etat]} ${pct(p.proba_mois_suivant[p.etat]||0)}</span>`+detailUcdp(p)+`</div>`).join("");
+  // 0.10.472 : manifestations politiques violentes (VPP) et déclenchements (Onset), jeux annuels de l'UCDP
+  const V=U.vpp||{};
+  if((V.pays||[]).length){const ans=[];for(let a=+V.annees[0];a<=+V.annees[1];a++)ans.push(a);
+    const sp=s=>{const mx=Math.max(1,...s);return `<svg width="${s.length*5}" height="18" style="vertical-align:middle;display:inline-block;width:${s.length*5}px;height:18px">${s.map((v,i)=>`<rect x="${i*5}" y="${18-Math.max(v?1:0,Math.round(16*v/mx))}" width="4" height="${Math.max(v?1:0,Math.round(16*v/mx))}" fill="var(--amont)"><title>${ans[i]} : ${v} événements</title></rect>`).join("")}</svg>`;};
+    h+=`<p style="margin:10px 0 2px"><b>Manifestations politiques violentes, ${esc(V.derniere_annee)}</b> <span style="color:var(--doux)">(${V.pays_actifs} pays ; événements par an de ${esc(V.annees[0])} à ${esc(V.annees[1])} ; jeu annuel VPP)</span></p>`+
+      V.pays.map(p=>`<div>• <b>${esc(p.nom_fr)}</b> · ${p.evenements} événements, ${Math.round(p.morts)} morts ${sp(p.serie_evenements)}</div>`).join("");}
+  const O=U.declenchements||{};
+  if((O.recents||[]).length){const TY={interne:"interne",entre_etats:"entre États"};
+    h+=`<p style="margin:10px 0 2px"><b>Déclenchements de conflits armés, ${+O.derniere_annee-4} à ${esc(O.derniere_annee)}</b> <span style="color:var(--doux)">(${esc(O.definition)} ; taux de départ : ${pct(O.taux_annuel)} des pays-années de ${esc(O.annees[0])} à ${esc(O.annees[1])} ; jeu annuel Onset)</span></p>`+
+      O.recents.map(r=>`<div>• ${esc(r.annee)} · <b>${esc(r.nom_fr)}</b> <span style="color:var(--doux)">${r.types.map(t=>TY[t]||t).join(", ")}</span></div>`).join("");}
   el.innerHTML=h;
+}
+function detailUcdp(p){
+  const b=[];
+  if(p.par_type){const t=Object.entries(p.par_type).filter(([k,v])=>v>0).map(([k,v])=>`${k} ${Math.round(v)}`);if(t.length)b.push(t.join(", "));}
+  if(p.morts_civils!=null)b.push(`dont civils ${Math.round(p.morts_civils)}`);
+  if(p.regions!=null)b.push(`${p.regions} région${p.regions>1?"s":""} touchée${p.regions>1?"s":""}`);
+  if((p.acteurs||[]).length)b.push(`acteurs : ${p.acteurs.map(esc).join(", ")}`);
+  if(p.dernier_declenchement)b.push(`dernier déclenchement ${esc(p.dernier_declenchement.annee)}`);
+  if(p.vpp_derniere_annee)b.push(`${p.vpp_derniere_annee} manifestations violentes l'an dernier publié`);
+  return b.length?`<div style="margin:0 0 3px 14px;color:var(--doux);font-size:.92em">${b.join(" · ")}</div>`:"";
 }
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 addEventListener("resize",()=>{if(D) dessiner();});

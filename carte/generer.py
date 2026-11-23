@@ -185,6 +185,14 @@ def principal() -> int:
         for p_ in ucdp.get("pays", []):
             p_["nom_fr"] = nf.get(p_["iso3"]) or _re.sub(r"\s*\(.*?\)", "", p_["nom"])
         ucdp["pays"] = [p_ for p_ in ucdp.get("pays", []) if p_["morts_mois"] > 0 or p_["mediane_12"] > 0][:40]
+        # 0.10.472 : manifestations politiques violentes et déclenchements (noms en français, tables d'index retirées)
+        for p_ in (ucdp.get("vpp") or {}).get("pays", []) + (ucdp.get("declenchements") or {}).get("recents", []):
+            p_["nom_fr"] = nf.get(p_["iso3"]) or _re.sub(r"\s*\(.*?\)", "", p_["nom"])
+        for p_ in ucdp["pays"]:
+            if p_.get("dernier_declenchement"):
+                p_["dernier_declenchement"].pop("nom", None)
+        (ucdp.get("vpp") or {}).pop("par_pays", None)
+        (ucdp.get("declenchements") or {}).pop("dernier_par_pays", None)
     types_actifs = []
     f = ICI / "comptes/types-actifs.csv"
     if f.exists():
