@@ -232,6 +232,52 @@ def principal() -> int:
         vises = {x for n in noeuds for x in n.get("pays") or []}
         ucdp["par_pays"] = {p_["iso3"]: p_ for p_ in ucdp.get("pays", []) if p_["iso3"] in vises}
         ucdp["noms_pays"] = {x: nf.get(x, x) for x in sorted(vises)}
+    # 0.10.479 (décision de l'auteur, 2026-11-23, 18 h 49 et 20 h 10) : relevé statistique de chaque pays rattaché à un
+    # compartiment, pour l'infobulle « pays » : dernières valeurs de la Banque mondiale (WDI, registre du bot) et
+    # manifestations des 30 derniers jours (GDELT, adaptateur du bot)
+    releves = {}
+    try:
+        import gzip as _gz
+        import csv as _csv2
+        INDIC = {"SP.POP.TOTL": "population", "NY.GDP.MKTP.CD": "PIB (dollars courants)", "NY.GDP.PCAP.CD": "PIB par habitant (dollars)",
+                 "NY.GDP.MKTP.KD.ZG": "croissance du PIB (%)", "FP.CPI.TOTL.ZG": "inflation (%)",
+                 "SL.UEM.TOTL.ZS": "chômage (%)", "SL.UEM.1524.ZS": "chômage des 15-24 ans (%)",
+                 "MS.MIL.XPND.GD.ZS": "dépenses militaires (% du PIB)", "SP.DYN.LE00.IN": "espérance de vie (ans)",
+                 "SP.DYN.TFRT.IN": "enfants par femme", "EG.ELC.ACCS.ZS": "accès à l'électricité (%)",
+                 "SP.URB.TOTL.IN.ZS": "population urbaine (%)", "GOV_WGI_PV_EST": "stabilité politique (indice −2,5 à +2,5)"}
+        vises_all = {x for n in noeuds for x in n.get("pays") or []}
+        fw = bot / "registre/banque-mondiale-wdi.csv.gz"
+        if fw.exists():
+            with _gz.open(fw, "rt", encoding="utf-8") as h:
+                for r in _csv2.DictReader(h):
+                    if r["pays"] not in vises_all:
+                        continue
+                    d = releves.setdefault(r["pays"], {})
+                    for k, lib in INDIC.items():
+                        x = r.get(k)
+                        if x and (k not in d or int(r["annee"]) >= d[k][0]):
+                            d[k] = [int(r["annee"]), float(x)]
+        iso2 = {}
+        fc = bot / "ecosystemes/codes-pays-fips.csv"
+        for r in _csv2.DictReader(l for l in fc.read_text(encoding="utf-8").splitlines() if l and not l.startswith("#")):
+            if r.get("iso2"):
+                iso2[r["iso3"]] = r["iso2"]
+        import adaptateurs as _ad2
+        out_r = {}
+        for x in sorted(vises_all):
+            e = {"wdi": {INDIC[k]: v for k, v in releves.get(x, {}).items()}, "iso2": iso2.get(x, "")}
+            try:
+                m = _ad2.lire(f"manifestations:{iso2.get(x, '')}", bot / "registre") if iso2.get(x) else []
+            except Exception:
+                m = []
+            if m:
+                e["manifestations_30j"] = int(sum(v for _, v in m[-30:]))
+                e["manifestations_30j_avant"] = int(sum(v for _, v in m[-60:-30]))
+                e["manifestations_jusquau"] = m[-1][0][:10]
+            out_r[x] = e
+        ucdp["releves"] = out_r
+    except Exception as e:
+        print(f"relevés : {type(e).__name__} {e}")
         ucdp["pays"] = [p_ for p_ in ucdp.get("pays", []) if p_["morts_mois"] > 0 or p_["mediane_12"] > 0][:40]
         # 0.10.472 : manifestations politiques violentes et déclenchements (noms en français, tables d'index retirées)
         for p_ in (ucdp.get("vpp") or {}).get("pays", []) + (ucdp.get("declenchements") or {}).get("recents", []):

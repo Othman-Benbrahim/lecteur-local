@@ -62,6 +62,11 @@ details.sec>summary::-webkit-details-marker{display:none}
 .vif circle{stroke:var(--surbrillance)!important;stroke-width:3px!important}
 #axe{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:space-between;padding:0 30px;
   color:var(--doux);font-size:11.5px;pointer-events:none}
+#releve{position:fixed;z-index:50;display:none;max-width:380px;max-height:70vh;overflow:auto;background:var(--panneau);
+  border:1px solid var(--trait);border-radius:8px;padding:10px 12px;box-shadow:0 6px 24px rgba(0,0,0,.18);font-size:.9em}
+#releve table{border-collapse:collapse;width:100%}#releve td{padding:1px 4px;vertical-align:top}#releve td:last-child{text-align:right;white-space:nowrap}
+#releve .fermer{float:right;cursor:pointer;border:none;background:none;font-size:1.1em;color:var(--doux)}
+.lienpays{cursor:pointer;text-decoration:underline dotted}
 #infobulle{position:absolute;pointer-events:none;background:var(--panneau);border:1px solid var(--trait);border-radius:6px;
   padding:6px 8px;font-size:12px;box-shadow:0 2px 8px var(--ombre);display:none;max-width:280px}
 #detail h3{margin:0 0 2px;font-size:15px}
@@ -165,6 +170,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
     <svg id="svg"></svg>
     <div id="axe"></div>
     <div id="infobulle"></div>
+    <div id="releve" role="dialog" aria-label="relevé statistique du pays"></div>
   </main>
 
   <section id="detail"><p class="vide">Cliquez sur un compartiment ou un acteur pour voir ses quatre variables, ses relations, les termes qui s'y rattachent et les situations datées et sourcées qui l'ont touché.</p></section>
@@ -594,7 +600,8 @@ function dessiner(){
     .classed("vif",n=>etat.choisi===n.id)
     .on("click",(e,n)=>{e.stopPropagation();if(n.externe){basculer(n.id);return;}
       if(n.sorte==="nomme"){etat.fiche="__acteurs__";etat.choisi=n.id.slice(2);document.getElementById("fiche").value="__acteurs__";dessiner();return;}
-      etat.choisi=n.id;dessiner();})
+      etat.choisi=n.id;dessiner();
+      if((n.pays||[]).length) afficherReleve(n.pays,e.clientX,e.clientY);})
     .on("mousemove",(e,n)=>bulle(e,n,activite))
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
     .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
@@ -803,13 +810,43 @@ function etatGeo(n){
   for(const x of n.pays||[]){const p=P[x];if(p&&(e===null||RANG_ETAT[p.etat]>RANG_ETAT[e]))e=p.etat;}
   return e;
 }
+// 0.10.479 (décision de l'auteur, 2026-11-23, 18 h 49 et 20 h 10) : infobulle « pays » — relevé statistique de chaque pays
+// rattaché au nœud cliqué : état UCDP du mois, Banque mondiale (dernière année publiée), manifestations des 30 jours
+function releveHtml(x){
+  const U=D.ucdp||{},R=(U.releves||{})[x]||{},P=(U.par_pays||{})[x],N=(U.noms_pays||{})[x]||x;
+  const nf=(v,lib)=>{if(lib==="population")return (v/1e6).toLocaleString("fr-FR",{maximumFractionDigits:1})+" millions";
+    if(/dollars courants/.test(lib))return (v>=1e12?(v/1e12).toFixed(2).replace(".",",")+" billions":Math.round(v/1e9).toLocaleString("fr-FR")+" milliards");
+    return (+v).toLocaleString("fr-FR",{maximumFractionDigits:Math.abs(v)<10?2:1});};
+  let h=`<h3 style="margin:0 0 4px">${esc(P&&P.nom_fr||N)}</h3>`;
+  h+=P?`<div>UCDP ${esc(U.dernier_mois||"")} : <b style="color:${COUL_ETAT[P.etat]||"inherit"}">${esc(P.etat)}</b>, ${Math.round(P.morts_mois)} morts (médiane des 12 mois précédents ${Math.round(P.mediane_12)})</div>`
+       :`<div style="color:var(--doux)">UCDP : aucun événement relevé depuis 1989</div>`;
+  if(R.manifestations_30j!=null){const a=R.manifestations_30j_avant;
+    h+=`<div>Manifestations (GDELT), 30 jours jusqu'au ${esc(R.manifestations_jusquau)} : <b>${R.manifestations_30j.toLocaleString("fr-FR")}</b>`+(a?` (30 jours d'avant : ${a.toLocaleString("fr-FR")})`:"")+`</div>`;}
+  const W=Object.entries(R.wdi||{});
+  if(W.length) h+=`<table style="margin-top:6px">`+W.map(([k,[an,v]])=>`<tr><td>${esc(k)}</td><td><b>${nf(v,k)}</b> <span style="color:var(--doux)">${an}</span></td></tr>`).join("")+`</table>`;
+  if(R.iso2) h+=`<div style="margin-top:6px"><a href="https://data.worldbank.org/country/${esc(R.iso2.toLowerCase())}" target="_blank" rel="noopener">Banque mondiale : toutes les données du pays</a></div>`;
+  return h;
+}
+function afficherReleve(pays,x,y){
+  const el=document.getElementById("releve");if(!el)return;
+  el.innerHTML=`<button class="fermer" aria-label="fermer">×</button>`+pays.map(releveHtml).join('<hr style="border:none;border-top:1px solid var(--trait)">')+
+    `<div style="margin-top:6px;color:var(--doux);font-size:.9em">sources : UCDP (carte lue chaque mois), Banque mondiale (WDI), GDELT</div>`;
+  el.style.display="block";
+  const w=el.offsetWidth,h=el.offsetHeight;
+  el.style.left=Math.max(8,Math.min(x+14,innerWidth-w-8))+"px";el.style.top=Math.max(8,Math.min(y+14,innerHeight-h-8))+"px";
+  el.querySelector(".fermer").onclick=()=>el.style.display="none";
+}
+document.addEventListener("click",e=>{const t=e.target.closest&&e.target.closest(".lienpays");
+  if(t){e.stopPropagation();afficherReleve([t.dataset.pays],e.clientX,e.clientY);return;}
+  const el=document.getElementById("releve");if(el&&el.style.display==="block"&&!el.contains(e.target)&&!(e.target.closest&&e.target.closest(".noeud")))el.style.display="none";});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){const el=document.getElementById("releve");if(el)el.style.display="none";}});
 function geoUcdp(n){
   const U=D.ucdp||{},P=U.par_pays||{},N=U.noms_pays||{};
   const spark=s=>{const mx=Math.max(1,...s);return `<svg width="${s.length*5}" height="18" style="vertical-align:middle;display:inline-block;width:${s.length*5}px;height:18px">${s.map((v,i)=>`<rect x="${i*5}" y="${18-Math.max(v?1:0,Math.round(16*v/mx))}" width="4" height="${Math.max(v?1:0,Math.round(16*v/mx))}" fill="var(--accent)"><title>${(U.mois_recents||[])[i]} : ${Math.round(v)} morts</title></rect>`).join("")}</svg>`;};
   let h=`<h2>Géopolitique : pays concernés (${n.pays.length})</h2><p style="margin:2px 0;color:var(--doux)">état UCDP du mois ${esc(U.dernier_mois||"")} (violence organisée, morts par mois) ; pays proposés par Claude, acceptés par défaut</p><ul>`;
   for(const x of n.pays){const p=P[x];
-    if(!p){h+=`<li><b>${esc(N[x]||x)}</b> <span style="color:var(--doux)">aucun événement relevé par l'UCDP</span></li>`;continue;}
-    h+=`<li><b>${esc(p.nom_fr||N[x]||x)}</b> <span style="color:${COUL_ETAT[p.etat]||"var(--doux)"}">${esc(p.etat)}</span> · ${Math.round(p.morts_mois)} morts ${spark(p.serie)} <span style="color:var(--doux)">médiane des 12 mois précédents ${Math.round(p.mediane_12)}</span>${detailUcdp(p)}</li>`;}
+    if(!p){h+=`<li><b class="lienpays" data-pays="${esc(x)}">${esc(N[x]||x)}</b> <span style="color:var(--doux)">aucun événement relevé par l'UCDP</span></li>`;continue;}
+    h+=`<li><b class="lienpays" data-pays="${esc(x)}">${esc(p.nom_fr||N[x]||x)}</b> <span style="color:${COUL_ETAT[p.etat]||"var(--doux)"}">${esc(p.etat)}</span> · ${Math.round(p.morts_mois)} morts ${spark(p.serie)} <span style="color:var(--doux)">médiane des 12 mois précédents ${Math.round(p.mediane_12)}</span>${detailUcdp(p)}</li>`;}
   return h+"</ul>";
 }
 // 2026-11-23 : chaque titre de section du panneau devient une section repliable ; seules les sections listées s'ouvrent
