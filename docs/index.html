@@ -765,7 +765,10 @@ function rendreMecanique(){
     const a=k.filter(x=>+m[x]!==0).map(x=>(m[x]<0?"− ":"+ ")+esc(NOMS[x]||x)+(Math.abs(m[x])!==1?" "+Math.abs(m[x]):""));return a.length?"mécanismes : "+a.join(", "):"aucun mécanisme actif (pays peu couvert par le collecteur)";}catch(e){return "";}};
   let h=`<p style="margin:2px 0 6px;color:var(--doux)">${S.inscrites||J.length} inscrite(s), ${S.ouvertes??ouvertes.length} ouverte(s), ${S.constatees||closes.length} constatée(s)`+
     (S.brier!=null?` · score de Brier ${S.brier} (taux de départ seul : ${S.brier_taux_depart}) · part qui a pris : ${pct(S.part_prend)}`:" · aucun score avant les premières issues (8 semaines)")+
-    ` · taux de départ ${pct(S.taux_depart??0.315)} (2015-2021)</p>`;
+    ` · taux de départ ${pct(S.taux_depart??0.315)} (2015-2021)`+
+    // 0.10.466 : e-valeur (test par pari) ; seuil préenregistré 20 = erreur 5 % ; on peut la regarder chaque semaine
+    (S.e_valeur!=null&&S.e_comparees?` · preuve contre « la mécanique ne fait pas mieux que le taux de départ » : e = ${S.e_valeur} (maximum ${S.e_max}, seuil ${S.e_seuil})`+
+      (S.e_franchi_le?` — <b>seuil franchi le ${esc(S.e_franchi_le)}</b>`:""):"")+`</p>`;
   if(ouvertes.length) h+=`<p style="margin:4px 0 2px"><b>En cours (${ouvertes.length})</b></p>`+ouvertes.map(r=>
     `<div>• <b>${nom(r)}</b> — semaine du ${esc(r.semaine)} · part des manifestations × ${esc(r.rapport)} · <b>${pct(+r.p_prend)}</b> de prendre `+
     `<span style="color:var(--doux)">· issue attendue vers le ${esc(new Date(Date.parse(r.semaine)+9*7*864e5).toISOString().slice(0,10))} · ${mods(r)}</span></div>`).join("");
