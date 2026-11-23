@@ -180,6 +180,10 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
         <div id="futur" class="vide">aucune situation observée pour l'instant</div>
       </details>
     </div>
+    <details class="bloc sec" data-cle="indicateurs" id="blocIndicateurs">
+      <summary>Indicateurs de la fiche : dernières valeurs des séries du bot <span id="nbIndic" class="etiq"></span></summary>
+      <div id="indicateurs" class="vide">cliquez sur la bulle d'une fiche pour voir ses indicateurs</div>
+    </details>
     <details class="bloc sec" data-cle="ucdp">
       <summary>Violence organisée (UCDP, carte publiée) : état du mois et enchaînements <span id="nbUcdp" class="etiq"></span></summary>
       <div id="ucdp" class="vide">pas encore de lecture de l'UCDP</div>
@@ -510,6 +514,7 @@ function cadrer(sel,zoom,marge=40){ // ajuste le zoom pour que tous les nœuds t
 
 function dessiner(){
   if(sim) sim.stop();   // 2026-11-23 : l'ancienne simulation ne doit plus recentrer la vue après un nouveau dessin
+  rendreIndicateurs();
   infoEmetteur();
   const zone=document.getElementById("carte");largeur=zone.clientWidth;hauteur=zone.clientHeight;
   const sits=situationsFiltrees();
@@ -671,7 +676,8 @@ function dessinerEnsemble(sits){
   const r=f=>9+Math.sqrt(f.comps.length)*2.2+Math.sqrt(act.get(f.id)||0)*2.5;
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
     .classed("estompe",f=>vifs.size&&!vifs.has(f.id))
-    .on("click",(e,f)=>{const sel=document.getElementById("fiche");sel.value=f.fiche;etat.fiche=f.fiche;etat.choisi=null;dessiner();})
+    .on("click",(e,f)=>{const sel=document.getElementById("fiche");sel.value=f.fiche;etat.fiche=f.fiche;etat.choisi=null;dessiner();
+      allerIndicateurs();})
     .on("mouseenter",(e,f)=>{const vs=new Set((voisins.get(f.id)||[]).map(v=>v[0]));vs.add(f.id);
       const ide=x=>typeof x==="object"?x.id:x;
       lien.attr("stroke-opacity",a=>ide(a.source)===f.id||ide(a.target)===f.id?.75:.04);
@@ -925,6 +931,34 @@ function rendreMecanique(){
 }
 // 2026-11-23 (décision de l'auteur, 7 h 51 - 8 h 00) : carte publiée de l'UCDP lue par le bot (standard de lecture) —
 // état du mois par pays, 13 derniers mois en petite courbe, et taux de départ du mois suivant d'après 1989-2025
+// 0.10.478 (décision de l'auteur, 2026-11-23, 19 h 14) : un clic sur la bulle d'une fiche mène à ses indicateurs, en
+// bas : chaque série du bot branchée sur une trace de la fiche, sa dernière valeur et sa date, ses 30 derniers points
+function allerIndicateurs(){
+  const b=document.getElementById("blocIndicateurs");if(!b)return;
+  b.open=true;
+  setTimeout(()=>b.scrollIntoView({behavior:"smooth",block:"start"}),150);
+}
+function rendreIndicateurs(){
+  const el=document.getElementById("indicateurs"),nb=document.getElementById("nbIndic");if(!el)return;
+  const f=etat.fiche,L=(D.indicateurs||{})[f]||[];
+  if(!f||f==="__acteurs__"){el.className="vide";el.textContent="cliquez sur la bulle d'une fiche pour voir ses indicateurs";nb.textContent="";return;}
+  const nom=(D.noeuds.find(n=>n.fiche===f)||{}).fiche_nom||f;
+  if(!L.length){el.className="vide";el.textContent=`aucune série du bot n'est encore branchée sur la fiche « ${nom} »`;nb.textContent="";return;}
+  el.className="";
+  const frais=L.filter(x=>x.serie&&!x.perimee).length;
+  nb.textContent=`${nom} : ${frais} à jour sur ${L.length}`;
+  const spark=s=>{const mn=Math.min(...s),mx=Math.max(...s),h=18,w=s.length*4;const y=v=>mx>mn?h-1-Math.round((h-2)*(v-mn)/(mx-mn)):h/2;
+    return `<svg width="${w}" height="${h}" style="vertical-align:middle;display:inline-block;width:${w}px;height:${h}px"><polyline fill="none" stroke="var(--accent)" stroke-width="1.5" points="${s.map((v,i)=>`${i*4+1},${y(v)}`).join(" ")}"/></svg>`;};
+  const nf=v=>Math.abs(v)>=1000?Math.round(v).toLocaleString("fr-FR"):(+v).toLocaleString("fr-FR",{maximumFractionDigits:2});
+  el.innerHTML=`<p style="margin:2px 0 6px;color:var(--doux)">${esc(nom)} — séries lues dans le registre du bot à la génération de la carte ; écart : dernier relevé comparé aux 30 précédents, en écarts-types</p>`+
+    L.map(x=>{
+      const comp=`<span style="color:var(--doux)">${x.compartiments.map(esc).join(", ")}</span>`;
+      if(!x.serie) return `<div>• ${esc(x.source)} · ${comp}<br><span style="color:var(--doux);margin-left:12px">pas encore de relevé</span></div>`;
+      const ec=x.ecart==null?"":` · écart ${x.ecart>0?"+":""}${String(x.ecart).replace(".",",")}`;
+      const per=x.perimee?` <span style="color:var(--moins)">(série arrêtée depuis le ${esc(x.dernier_jour)})</span>`:"";
+      return `<div style="margin-bottom:3px">• ${esc(x.source)} · ${comp}<br><span style="margin-left:12px"><b>${nf(x.derniere_valeur)}</b> le ${esc(x.dernier_jour)}${ec} ${spark(x.serie)}${per}</span></div>`;
+    }).join("");
+}
 function rendreUcdp(){
   const U=D.ucdp||{},P=U.pays||[];const el=document.getElementById("ucdp");if(!P.length)return;
   el.className="";const T=U.transitions||{},E=T.etats||[],PR=T.probabilites||[];

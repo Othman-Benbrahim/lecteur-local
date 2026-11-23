@@ -174,6 +174,48 @@ def principal() -> int:
         mecanique["noms"] = {r["fips"]: r["nom"] for r in csv.DictReader(lc)}
     # cartes publiées lues par le bot (0.10.470-471, standard de lecture ; décision de l'auteur du 2026-11-23) : UCDP,
     # état du mois par pays et enchaînements d'un mois au suivant (1989-2025)
+    # 0.10.478 (décision de l'auteur, 2026-11-23, 19 h 14 : « cliquer sur la bulle pour atterrir sur les indicateurs de
+    # la fiche, en bas, valeurs à jour quand ils existent ») : pour chaque fiche, chaque série branchée sur une trace
+    # (adaptateur du bot), lue dans le registre du bot : dernier relevé, sa date, les 30 derniers points, l'écart du
+    # dernier relevé à la moyenne des relevés précédents (en écarts-types), et « périmée » si le dernier relevé est vieux.
+    indicateurs = {}
+    try:
+        import adaptateurs as _ad
+        import statistics as _st
+        cache = {}
+        for theme, f in fiches.items():
+            vus = {}
+            for c in f.get("compartiments") or []:
+                for t in c.get("traces") or []:
+                    if not isinstance(t, dict) or not t.get("adaptateur"):
+                        continue
+                    a = t["adaptateur"]
+                    if a in vus:
+                        vus[a]["compartiments"].append(c.get("nom", c["id"]))
+                        continue
+                    if a not in cache:
+                        try:
+                            cache[a] = _ad.lire(a, bot / "registre")
+                        except Exception:
+                            cache[a] = []
+                    s = cache[a]
+                    it = {"adaptateur": a, "source": t.get("source", ""), "compartiments": [c.get("nom", c["id"])]}
+                    if s:
+                        v = [x for _, x in s]
+                        avant = v[-31:-1]
+                        ec = sorted((date.fromisoformat(y[0][:10]) - date.fromisoformat(x[0][:10])).days
+                                    for x, y in zip(s[-30:], s[-29:]))
+                        pas = ec[len(ec) // 2] if ec else 1        # pas de la série : jour, semaine, mois
+                        it.update(dernier_jour=s[-1][0][:10], derniere_valeur=round(v[-1], 3),
+                                  serie=[round(x, 3) for x in v[-30:]], debut=s[0][0][:10], pas_jours=pas,
+                                  perimee=(date.today() - date.fromisoformat(s[-1][0][:10])).days > max(45, 3 * pas))
+                        if len(avant) >= 5 and (_st.pstdev(avant) or 0) > 0:
+                            it["ecart"] = round((v[-1] - _st.mean(avant)) / _st.pstdev(avant), 2)
+                    vus[a] = it
+            if vus:
+                indicateurs[theme] = sorted(vus.values(), key=lambda x: (not x.get("serie"), x.get("perimee", False), x["source"]))
+    except Exception as e:
+        print(f"indicateurs : {type(e).__name__} {e}")
     ucdp = {}
     fu = bot / "registre/cartes/ucdp-etats.json"
     if fu.exists():
@@ -235,7 +277,7 @@ def principal() -> int:
     donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
-               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes, "mecanique": mecanique, "ucdp": ucdp,
+               "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes, "mecanique": mecanique, "ucdp": ucdp, "indicateurs": indicateurs,
                "jours30": [jours30[0], jours30[-1]]}
     out = ICI / "docs/donnees.json"
     out.parent.mkdir(exist_ok=True)
