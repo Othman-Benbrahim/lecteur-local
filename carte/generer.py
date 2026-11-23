@@ -236,7 +236,8 @@ def principal() -> int:
                 comps[f"{theme}:{c['id']}"] = _v.flux_compartiment(cat, theme, c, tab)
         utiles = {x for l in comps.values() for x in l} | {x for d in fiches_v.values() for x in d["flux"]}
         veille = {"fiches": fiches_v, "compartiments": comps,
-                  "flux": {k: {"titre": v["titre"], "url": v["url"], "statut": (lus.get(k) or {}).get("statut", "pas_encore_lu"),
+                  "flux": {k: {"titre": (lus.get(k) or {}).get("titre") or v["titre"],
+                               "url": (lus.get(k) or {}).get("url") or v["url"], "statut": (lus.get(k) or {}).get("statut", "pas_encore_lu"),
                                "lu_le": (lus.get(k) or {}).get("lu_le"), "articles": ((lus.get(k) or {}).get("articles") or [])[:6]}
                            for k, v in (cat.get("flux") or {}).items() if k in utiles}}
     except Exception as e:
