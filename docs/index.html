@@ -21,12 +21,12 @@ html,body{margin:0;height:100%;background:var(--fond);color:var(--texte);
 header{display:flex;align-items:baseline;gap:16px;padding:10px 16px;border-bottom:1px solid var(--trait);flex-wrap:wrap}
 header h1{font-size:17px;margin:0;font-weight:650}
 header .meta{color:var(--doux);font-size:12.5px}
-#app{display:grid;grid-template-columns:280px 1fr 340px;grid-template-rows:1fr 190px;height:calc(100vh - 46px)}
+#app{display:grid;grid-template-columns:280px 1fr 340px;grid-template-rows:1fr auto;height:calc(100vh - 46px)}
 aside,#detail{background:var(--panneau);overflow:auto;padding:12px 14px}
 aside{grid-row:1/3;border-right:1px solid var(--trait)}
 #detail{grid-row:1/3;grid-column:3;border-left:1px solid var(--trait)}
 #carte{position:relative;overflow:hidden}
-#frise{border-top:1px solid var(--trait);background:var(--panneau);padding:8px 14px;overflow:auto}
+#frise{border-top:1px solid var(--trait);background:var(--panneau);padding:6px 14px;overflow:auto;max-height:45vh}
 h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--doux);margin:14px 0 6px;font-weight:600}
 h2:first-child{margin-top:0}
 select,input[type=search]{width:100%;padding:6px 8px;border:1px solid var(--trait);border-radius:6px;background:var(--fond);color:var(--texte);font:inherit}
@@ -45,7 +45,15 @@ label.case{display:flex;gap:6px;align-items:center;font-size:13px;margin:3px 0;c
 svg{width:100%;height:100%;display:block}
 .lien{stroke-opacity:.55}
 .noeud circle{stroke:var(--panneau);stroke-width:1.2px;cursor:pointer}
-.noeud text{font-size:10.5px;fill:var(--texte);pointer-events:none;paint-order:stroke;stroke:var(--fond);stroke-width:3px}
+.noeud text{font-size:11px;fill:var(--texte);pointer-events:none;paint-order:stroke;stroke:var(--fond);stroke-width:4px;stroke-linejoin:round}
+/* 2026-11-23 (lisibilité, validée par l'auteur à 6 h 30) : étiquettes qui se chevauchent cachées (montrées au survol),
+   sections repliables, liens de second niveau seulement au clic */
+.noeud text.cachee{display:none}.noeud:hover text.cachee,.noeud.voisin text.cachee{display:block}
+.lienF{transition:stroke-opacity .15s}
+details.sec{margin:6px 0;border-top:1px solid var(--trait);padding-top:4px}
+details.sec>summary{cursor:pointer;list-style:none;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--doux);font-weight:600;padding:3px 0}
+details.sec>summary::before{content:"▸ ";}details.sec[open]>summary::before{content:"▾ ";}
+details.sec>summary::-webkit-details-marker{display:none}
 .estompe{opacity:.12}
 .pale{opacity:.07}
 .amont circle{stroke:var(--amont);stroke-width:3px}.aval circle{stroke:var(--aval);stroke-width:3px}
@@ -161,19 +169,19 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
 
   <section id="frise">
     <div class="ligne">
-      <div class="bloc">
-        <h2>Passé → présent : articles rattachés par jour <span id="jourT" class="etiq"></span></h2>
+      <details class="bloc sec" data-cle="histo">
+        <summary>Passé → présent : articles rattachés par jour <span id="jourT" class="etiq"></span></summary>
         <svg id="histo"></svg>
-      </div>
-      <div class="bloc">
-        <h2>Signaux : forts (accumulation) et faibles (isolés mais rares, spécifiques, à fort enjeu)</h2>
+      </details>
+      <details class="bloc sec" data-cle="signaux">
+        <summary>Signaux : forts et faibles <span id="nbSignaux" class="etiq"></span></summary>
         <div id="futur" class="vide">aucune situation observée pour l'instant</div>
-      </div>
+      </details>
     </div>
-    <div class="bloc" style="margin-top:10px">
-      <h2>Mécanique de bascule (ombre) : étincelles de la semaine et probabilité qu'elles prennent dans les 8 semaines</h2>
+    <details class="bloc sec" data-cle="mecanique">
+      <summary>Mécanique de bascule (ombre) : étincelles et probabilité de prendre dans les 8 semaines <span id="nbMeca" class="etiq"></span></summary>
       <div id="mecanique" class="vide">aucune étincelle inscrite pour l'instant (la mécanique tourne chaque lundi)</div>
-    </div>
+    </details>
   </section>
 </div>
 
@@ -221,7 +229,13 @@ let D,etat={sorte:"tous",canal:"",fiche:"",variable:"taille",echelles:new Set(),
   nommes:true,acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
 let sim,svg,gZoom,largeur,hauteur;
 
-fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;rendreMecanique();preparer();construireControles();dessiner();})
+fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;rendreMecanique();preparer();construireControles();dessiner();
+  // 2026-11-23 : rubriques du bas repliables ; l'état ouvert ou fermé est gardé pour ce navigateur (commodité seulement)
+  for(const el of document.querySelectorAll("#frise details[data-cle]")){
+    try{if(localStorage.getItem("ouvert:"+el.dataset.cle)==="1") el.open=true;}catch(e){}
+    el.addEventListener("toggle",()=>{try{localStorage.setItem("ouvert:"+el.dataset.cle,el.open?"1":"0");}catch(e){}
+      if(el.open&&el.dataset.cle==="histo"&&window._sits) frise(window._sits);});}
+  if(document.querySelector('#frise details[data-cle="histo"]').open&&window._sits) frise(window._sits);})
   .catch(e=>{document.getElementById("meta").textContent="données introuvables (docs/donnees.json) : "+e;});
 
 function preparer(){
@@ -448,6 +462,33 @@ function vueEnsemble(sits){
   return {noeuds,aretes,act,voisins};
 }
 
+// 2026-11-23 (lisibilité, validée par l'auteur à 6 h 30) ---------------------------------------------------------------
+// étiquettes : par ordre de priorité (les plus gros nœuds d'abord), une étiquette qui en chevaucherait une déjà placée est
+// cachée ; elle reparaît au survol de son nœud ou quand son nœud est voisin du nœud survolé ou choisi.
+function cacherChevauchements(sel,prio){
+  const items=[],cercles=[];
+  sel.each(function(d){const c=this.querySelector("circle");if(c){const cb=c.getBoundingClientRect();
+      cercles.push({g:this,x:(cb.left+cb.right)/2,y:(cb.top+cb.bottom)/2,r:cb.width/2});}
+    const t=this.querySelector("text");if(!t||!t.textContent)return;t.classList.remove("cachee");
+    const b=t.getBoundingClientRect();if(b.width)items.push({g:this,t,b,p:prio(d)});});
+  // une étiquette ne recouvre ni une autre étiquette déjà placée, ni le cercle d'un autre nœud
+  const surCercle=(b,g)=>cercles.some(c=>{if(c.g===g||c.r<=3)return false;const dx=Math.max(b.left,Math.min(c.x,b.right))-c.x,dy=Math.max(b.top,Math.min(c.y,b.bottom))-c.y;return dx*dx+dy*dy<c.r*c.r;});
+  items.sort((a,b)=>b.p-a.p);const pris=[];
+  // les 15 plus gros nœuds gardent leur nom même s'il frôle un autre cercle (le liseré le garde lisible)
+  items.forEach((it,i)=>{const b=it.b;
+    if(pris.some(q=>!(b.right<q.left-3||b.left>q.right+3||b.bottom<q.top-1||b.top>q.bottom+1))||(i>=15&&surCercle(b,it.g))) it.t.classList.add("cachee"); else pris.push(b);});
+}
+// positions gardées d'un dessin à l'autre (un clic redessine sans faire sauter la carte)
+const POS=new Map();
+function cadrer(sel,zoom,marge=40){ // ajuste le zoom pour que tous les nœuds tiennent dans la vue
+  let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+  sel.each(function(d){let bb=null;try{bb=this.getBBox();}catch(e){}   // le nœud et son étiquette
+    const r=d._r||10;const a0=bb?d.x+bb.x:d.x-r,b0=bb?d.y+bb.y:d.y-r,a1=bb?d.x+bb.x+bb.width:d.x+r,b1=bb?d.y+bb.y+bb.height:d.y+r+16;
+    x0=Math.min(x0,a0);y0=Math.min(y0,b0);x1=Math.max(x1,a1);y1=Math.max(y1,b1);});
+  if(!isFinite(x0))return;const k=Math.min(1,(largeur-2*marge)/(x1-x0),(hauteur-2*marge)/(y1-y0));
+  svg.transition().duration(400).call(zoom.transform,d3.zoomIdentity.translate(largeur/2-k*(x0+x1)/2,hauteur/2-k*(y0+y1)/2).scale(k));
+}
+
 function dessiner(){
   infoEmetteur();
   const zone=document.getElementById("carte");largeur=zone.clientWidth;hauteur=zone.clientHeight;
@@ -459,8 +500,11 @@ function dessiner(){
   const ids=new Set(noeuds.map(n=>n.id));
   // 2026-11-22 (remarque de l'auteur, 6 h 54) : les ponts vers les autres écosystèmes sont dessinés, avec le compartiment
   // d'arrivée en nœud « externe » ; un clic dessus bascule dans cet écosystème
-  if(etat.ponts) for(const a of D.aretes){
+  // 2026-11-23 : liens de second niveau seulement au clic — les ponts vers les autres écosystèmes ne sont dessinés que
+  // pour le compartiment choisi
+  if(etat.ponts&&etat.choisi) for(const a of D.aretes){
     if(!pontVisible(a)) continue;
+    if(a.de!==etat.choisi&&a.vers!==etat.choisi) continue;
     const dedans=ids.has(a.de)?a.de:ids.has(a.vers)?a.vers:null;if(!dedans) continue;
     const autre=dedans===a.de?a.vers:a.de;const n=D.parId.get(autre);
     if(n&&n.fiche!==etat.fiche&&!ids.has(autre)){noeuds.push(Object.assign({},n,{externe:true}));ids.add(autre);}
@@ -477,7 +521,7 @@ function dessiner(){
     nid.forEach(x=>ids.add(x));
   }
   const aretes=D.aretes.filter(a=>ids.has(a.de)&&ids.has(a.vers)&&(
-      (a.sorte==="relation"&&etat.relations)||(etat.ponts&&pontVisible(a))||(a.sorte==="appartient")||
+      (a.sorte==="relation"&&etat.relations)||(etat.ponts&&pontVisible(a)&&(a.de===etat.choisi||a.vers===etat.choisi||(!(D.parId.get(a.de)||{}).externe&&(D.parId.get(a.de)||{}).fiche===etat.fiche&&(D.parId.get(a.vers)||{}).fiche===etat.fiche)))||(a.sorte==="appartient")||
       (a.sorte==="lien_acteur"&&etat.liens&&etat.sorte!=="causes"&&(etat.lecture==="structurel"||a.temps!=="structurel"||true))))
     .map(a=>({...a,source:a.de,target:a.vers})).concat(extra);
   // surbrillance : terme, émetteur
@@ -493,7 +537,10 @@ function dessiner(){
 
   svg=d3.select("#svg");svg.selectAll("*").remove();
   gZoom=svg.append("g");
-  svg.call(d3.zoom().scaleExtent([.2,6]).on("zoom",e=>gZoom.attr("transform",e.transform)));
+  let tz=null;const zoomE=d3.zoom().scaleExtent([.2,6]).on("zoom",e=>{gZoom.attr("transform",e.transform);
+    const k=e.transform.k;noeud.select("text").style("font-size",(11/k)+"px").style("stroke-width",(4/k)+"px");
+    clearTimeout(tz);tz=setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:0)),120);});
+  svg.call(zoomE);
   const defs=svg.append("defs");
   for(const[k,c]of[["plus","var(--plus)"],["moins","var(--moins)"],["neutre","var(--pont)"],["acteur","var(--acteur)"]])
     defs.append("marker").attr("id","f-"+k).attr("viewBox","0 -4 8 8").attr("refX",14).attr("refY",0)
@@ -516,7 +563,7 @@ function dessiner(){
     .classed("vif",n=>etat.choisi===n.id)
     .on("click",(e,n)=>{e.stopPropagation();if(n.externe){basculer(n.id);return;}
       if(n.sorte==="nomme"){etat.fiche="__acteurs__";etat.choisi=n.id.slice(2);document.getElementById("fiche").value="__acteurs__";dessiner();return;}
-      etat.choisi=n.id;detail(n,sits);noeud.classed("vif",m=>m.id===n.id);voisinage(n.id);})
+      etat.choisi=n.id;dessiner();})
     .on("mousemove",(e,n)=>bulle(e,n,activite))
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
     .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
@@ -533,18 +580,21 @@ function dessiner(){
       lien.classed("pale",a=>!(v.has(idDe(a.source))&&v.has(idDe(a.target))));return;}
     const v=new Set([id]);
     for(const a of aretes){const s=idDe(a.source),t=idDe(a.target);if(s===id)v.add(t);if(t===id)v.add(s);}
-    noeud.classed("pale",m=>!v.has(m.id));
+    noeud.classed("pale",m=>!v.has(m.id)).classed("voisin",m=>v.has(m.id));
     lien.classed("pale",a=>idDe(a.source)!==id&&idDe(a.target)!==id);
   }
-  svg.on("click",e=>{if(e.target===svg.node()){etat.choisi=null;noeud.classed("vif",false);voisinage(null);}});
+  svg.on("click",e=>{if(e.target===svg.node()&&etat.choisi){etat.choisi=null;dessiner();}});
   noeud.append("circle").attr("r",rayon)
     .attr("fill",n=>n.sorte==="nomme"?(n.genre==="patron"?"var(--patron)":n.genre==="religieux"?"var(--acteur)":"var(--dirigeant)"):n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
     .attr("fill-opacity",n=>n.externe?.35:1).attr("stroke-dasharray",n=>n.externe?"3 2":null)
     .attr("stroke",n=>n.externe?"var(--pont)":null).style("cursor",n=>n.externe?"pointer":null);
   noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5).style("font-style",n=>n.externe?"italic":null).style("font-weight",n=>n.sorte==="nomme"?"600":null)
-    .text(n=>n.externe?"":(etat.fiche||activite.get(n.id))?n.nom.slice(0,38):"");
+    .text(n=>n.externe?(n.fiche_nom.length>28?n.fiche_nom.slice(0,27)+"…":n.fiche_nom)+" : "+n.nom.slice(0,28):(etat.fiche||activite.get(n.id))?n.nom.slice(0,38):"");
   noeud.filter(n=>n.externe).append("title").text(n=>"↗ "+n.fiche_nom+" : "+n.nom+" (cliquer pour ouvrir cette fiche)");
 
+  // positions gardées : un nouveau nœud externe part du compartiment choisi
+  let connus=0;const pc=POS.get(etat.fiche+"|"+etat.choisi);
+  for(const n of noeuds){const q=POS.get(etat.fiche+"|"+n.id);if(q){n.x=q.x;n.y=q.y;connus++;}else if(n.externe&&pc){n.x=pc.x+(Math.random()-.5)*40;n.y=pc.y+(Math.random()-.5)*40;}}
   sim=d3.forceSimulation(noeuds)
     .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(a=>a.sorte==="appartient"?22:a.sorte==="pont"?120:70).strength(a=>a.sorte==="pont"?.05:.3))
     .force("charge",d3.forceManyBody().strength(etat.fiche?-140:-35))
@@ -552,7 +602,10 @@ function dessiner(){
     .force("y",d3.forceY(hauteur/2).strength(.06))
     .force("collision",d3.forceCollide().radius(n=>rayon(n)+2))
     .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
-      noeud.attr("transform",n=>`translate(${n.x},${n.y})`);});
+      noeud.attr("transform",n=>`translate(${n.x},${n.y})`);})
+    .on("end",()=>{for(const n of noeuds){POS.set(etat.fiche+"|"+n.id,{x:n.x,y:n.y});n._r=rayon(n);}
+      cadrer(noeud,zoomE);setTimeout(()=>cacherChevauchements(noeud,n=>rayon(n)+(n.id===etat.choisi?1e3:0)),450);});
+  if(connus>noeuds.length*.6) sim.alpha(.25);
   frise(sits);
   if(etat.choisi&&D.parId.has(etat.choisi)){detail(D.parId.get(etat.choisi),sits);voisinage(etat.choisi);}
 }
@@ -564,13 +617,17 @@ function dessinerEnsemble(sits){
   const xEch=i=>60+(largeur-120)*(nb===1?0.5:i/(nb-1));
   document.getElementById("axe").innerHTML=E.noms.map(n=>`<span>${n}</span>`).join("");
   svg=d3.select("#svg");svg.selectAll("*").remove();gZoom=svg.append("g");
-  svg.call(d3.zoom().scaleExtent([.3,5]).on("zoom",e=>gZoom.attr("transform",e.transform)));
+  let tz=null;const zoomV=d3.zoom().scaleExtent([.2,5]).on("zoom",e=>{gZoom.attr("transform",e.transform);
+    const k=e.transform.k;noeud.select("text").style("font-size",(11.5/k)+"px").style("stroke-width",(4/k)+"px").attr("y",f=>r(f)+12/k);
+    clearTimeout(tz);tz=setTimeout(()=>cacherChevauchements(noeud,f=>r(f)),120);});
+  svg.call(zoomV);
   const vifs=new Set();
   if(etat.terme){const t=D.termes.find(x=>x.terme===etat.terme);if(t) t.rattachement.forEach(r=>vifs.add("F:"+r.split(":")[0]));
     for(const s of sits) s.compartiments.forEach(c=>vifs.add("F:"+c.split(":")[0]));}
   if(etat.emetteur) for(const s of sits) s.compartiments.forEach(c=>vifs.add("F:"+c.split(":")[0]));
-  const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("stroke","var(--pont)")
-    .attr("stroke-opacity",.45).attr("stroke-width",a=>Math.min(1+a.n*.8,7)).style("cursor","help")
+  // 2026-11-23 : un seul trait par paire d'écosystèmes, discret par défaut ; il s'affirme au survol d'un écosystème
+  const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("class","lienF").attr("stroke","var(--pont)")
+    .attr("stroke-opacity",.12).attr("stroke-width",a=>Math.min(.8+a.n*.5,6)).style("cursor","help")
     .on("mousemove",(e,a)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
       const s=typeof a.source==="object"?a.source.id:a.source,t=typeof a.target==="object"?a.target.id:a.target;
       b.innerHTML=`<b>${esc(nomF.get(s))}</b> ↔ <b>${esc(nomF.get(t))}</b><br>${a.n} pont(s)`+
@@ -581,27 +638,36 @@ function dessinerEnsemble(sits){
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
     .classed("estompe",f=>vifs.size&&!vifs.has(f.id))
     .on("click",(e,f)=>{const sel=document.getElementById("fiche");sel.value=f.fiche;etat.fiche=f.fiche;etat.choisi=null;dessiner();})
+    .on("mouseenter",(e,f)=>{const vs=new Set((voisins.get(f.id)||[]).map(v=>v[0]));vs.add(f.id);
+      const ide=x=>typeof x==="object"?x.id:x;
+      lien.attr("stroke-opacity",a=>ide(a.source)===f.id||ide(a.target)===f.id?.75:.04);
+      noeud.classed("voisin",m=>vs.has(m.id)).style("opacity",m=>vs.has(m.id)?1:.35);})
     .on("mousemove",(e,f)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
       const vs=(voisins.get(f.id)||[]).sort((x,y)=>y[1]-x[1]);
       b.innerHTML=`<b>${esc(f.nom)}</b><br>${f.comps.length} compartiments · ${act.get(f.id)||0} articles rattachés`+
         `<br>reliée à ${vs.length} écosystème(s)${vs.length?" : "+vs.slice(0,5).map(([w,n])=>esc(nomF.get(w))+" ("+n+")").join(", ")+(vs.length>5?"…":""):""}`+
         `<br><span style="color:var(--doux)">cliquer pour ouvrir l'écosystème</span>`;
       b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
-    .on("mouseleave",()=>document.getElementById("infobulle").style.display="none")
+    .on("mouseleave",()=>{document.getElementById("infobulle").style.display="none";
+      lien.attr("stroke-opacity",.12);noeud.classed("voisin",false).style("opacity",null);})
     .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
       .on("drag",(e,n)=>{n.fx=e.x;n.fy=e.y;}).on("end",(e,n)=>{if(!e.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}));
   noeud.append("circle").attr("r",r).attr("fill",f=>f.couleur).attr("fill-opacity",.85);
-  noeud.append("text").attr("text-anchor","middle").attr("y",f=>r(f)+12).text(f=>f.nom.length>34?f.nom.slice(0,33)+"…":f.nom);
+  for(const f of noeuds) f._r=r(f);
+  noeud.append("text").attr("text-anchor","middle").attr("y",f=>r(f)+12).text(f=>{const n=f.nom.replace(/\s*\(.*$/,"");return n.length>26?n.slice(0,25)+"…":n;});
   // 2026-11-22 (remarque de l'auteur, 9 h 31) : la psyché humaine, centrée sur « l'humain », au centre de la vue d'ensemble
   for(const f of noeuds) if(f.fiche==="psyche"){f.fx=largeur/2;f.fy=hauteur/2;}
+  // 2026-11-23 (remarque de l'auteur, 6 h 30) : les plus gros nœuds bien espacés — répulsion et marge de collision qui
+  // croissent avec la taille, liens allongés selon les rayons, horizontale moins contrainte pour laisser s'étaler en hauteur
   sim=d3.forceSimulation(noeuds)
-    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(140).strength(a=>Math.min(.05+a.n*.03,.4)))
-    .force("charge",d3.forceManyBody().strength(-260))
-    .force("x",d3.forceX(f=>f.m==null?largeur/2:xEch(f.m)).strength(.25))
-    .force("y",d3.forceY(hauteur/2).strength(.07))
-    .force("collision",d3.forceCollide().radius(f=>r(f)+22))
+    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(a=>r(a.source)+r(a.target)+110).strength(a=>Math.min(.03+a.n*.02,.25)))
+    .force("charge",d3.forceManyBody().strength(f=>-180-r(f)*r(f)*2.2).distanceMax(900))
+    .force("x",d3.forceX(f=>f.m==null?largeur/2:xEch(f.m)).strength(.1))
+    .force("y",d3.forceY(hauteur/2).strength(.03))
+    .force("collision",d3.forceCollide().radius(f=>r(f)*1.8+28).strength(1).iterations(3))
     .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
-      noeud.attr("transform",n=>`translate(${n.x},${n.y})`);});
+      noeud.attr("transform",n=>`translate(${n.x},${n.y})`);})
+    .on("end",()=>{cadrer(noeud,zoomV);setTimeout(()=>cacherChevauchements(noeud,f=>r(f)),450);});
   frise(sits);
   document.getElementById("detail").innerHTML=`<h3>Vue d'ensemble</h3><div class="sous">un cercle par écosystème</div>`+
     `<p style="font-size:13px">Position horizontale : moyenne de ses compartiments sur la variable choisie (${E.noms[0]} → ${E.noms[nb-1]}). `+
@@ -686,6 +752,17 @@ function detail(n,sits){
         `termes : ${esc(x.termes.join(", "))}<br><a href="${esc(x.lien)}" target="_blank" rel="noopener">${esc(x.lien)}</a></li>`;}).join("")}</ul>`:((n.tensions||[]).length?`<p class="vide"><b>calme apparent</b> : une tension est déclarée ici, mais aucun article ne la signale sur ces filtres ; le silence des sources n'est pas l'absence de tension (les tampons peuvent absorber sans être vus)</p>`:`<p class="vide">rien à signaler pour ces filtres (aucune tension déclarée, aucun article)</p>`));
   }
   el.innerHTML=h;
+  plier(el,new Set(["Éléments"]));
+}
+// 2026-11-23 : chaque titre de section du panneau devient une section repliable ; seules les sections listées s'ouvrent
+function plier(el,ouvertes){
+  const enfants=[...el.children];let cur=null;
+  for(const c of enfants){
+    if(c.tagName==="H2"){cur=document.createElement("details");cur.className="sec";
+      const t=c.textContent;if([...ouvertes].some(o=>t.startsWith(o))) cur.open=true;
+      const su=document.createElement("summary");su.innerHTML=c.innerHTML;cur.appendChild(su);el.replaceChild(cur,c);}
+    else if(cur) cur.appendChild(c);
+  }
 }
 function blocCauses(n){
   const am=chaine(n.id,"amont"),av=chaine(n.id,"aval");const {ent}=indexCausal();
@@ -712,6 +789,7 @@ window.choisirTerme=t=>{document.getElementById("terme").value=t;etat.terme=t;de
 
 // ---------------------------------------------------------------- frise : passé, présent (T), futur
 function frise(sits){
+  window._sits=sits;
   const jours=[...D.jours.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
   const s=d3.select("#histo");s.selectAll("*").remove();
   const w=s.node().clientWidth||400,h=90;
@@ -737,7 +815,7 @@ function frise(sits){
   for(const g of D.signaux||[]) if(joursSit.has(g.jour)){const v=parRegle.get(g.regle);if(!v||g.jour>v.jour||(g.classe==="fort"&&v.classe!=="fort")) parRegle.set(g.regle,g);}
   const evts=new Map(D.types.regles.map(r=>[r.regle,r]));
   const f=document.getElementById("futur");
-  if(!parRegle.size){f.className="vide";f.textContent=sits.length?"aucun signal fort ou faible sur ces jours":"aucun article pour ces filtres";return;}
+  if(!parRegle.size){f.className="vide";f.textContent=sits.length?"aucun signal fort ou faible sur ces jours":"aucun article pour ces filtres";document.getElementById("nbSignaux").textContent="aucun";return;}
   f.className="";
   const bloc=(cl,titre)=>{const l=[...parRegle.values()].filter(g=>g.classe===cl);if(!l.length)return "";
     return `<p style="margin:6px 0 2px"><b>${titre} (${l.length})</b></p>`+l.map(g=>{const r=evts.get(g.regle)||{};const st=(D.suivi||{})[g.jour+"|"+g.regle];
@@ -746,6 +824,7 @@ function frise(sits){
       `<span style="color:var(--doux)">condition : ${esc(g.type_de_situation)} — ${esc(g.jour)} · ${g.articles_7j} article(s), ${g.emetteurs_7j} émetteur(s) sur 7 j`+
       `${cl==="faible"?` · critères : ${esc(g.criteres.replace(/_/g," "))}${st?` · suivi : ${esc(st)}`:""}`:""}${liens} · règle ${esc(g.regle)}</span></div>`;}).join("");};
   f.innerHTML=bloc("fort","Signaux forts : accumulation")+bloc("faible","Signaux faibles : isolés, rares, spécifiques, à fort enjeu");
+  const nf=[...parRegle.values()].filter(g=>g.classe==="fort").length;document.getElementById("nbSignaux").textContent=nf+" fort(s), "+(parRegle.size-nf)+" faible(s)";
 }
 // 2026-11-22, 20 h 57 (décision de l'auteur : inscrire la mécanique sur la carte, appui visuel) : journal à ajout seul du bot
 // (registre/mecanique-journal.csv) ; étincelle = part des manifestations (GDELT) ≥ 2 × son niveau habituel après un mois
@@ -754,7 +833,7 @@ function rendreMecanique(){
   const M=D.mecanique||{}, J=M.journal||[], I=M.issues||{}, S=M.score||{}, N=M.noms||{};
   const el=document.getElementById("mecanique");
   if(!J.length) return;
-  el.className="";
+  el.className="";document.getElementById("nbMeca").textContent=(S.ouvertes??J.filter(r=>!I[r.id]).length)+" en cours";
   const ouvertes=J.filter(r=>!I[r.id]).sort((a,b)=>b.semaine.localeCompare(a.semaine)||b.p_prend-a.p_prend);
   const closes=J.filter(r=>I[r.id]).sort((a,b)=>b.semaine.localeCompare(a.semaine));
   const nom=r=>esc(N[r.pays]||r.iso3||r.pays);
