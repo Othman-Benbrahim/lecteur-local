@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tableau Metaculus</title>
+<style>
+:root{
+  --fond:#f6f5f1;--panneau:#ffffff;--trait:#d9d6cc;--texte:#1d1c19;--doux:#6b675d;--accent:#2f5d8a;
+  --oui:#2e7d4f;--non:#b23a3a;--attente:#b5651d;--barre:#e9e6dd;--ombre:rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;
+  --oui:#5fbf86;--non:#e07070;--attente:#e0a060;--barre:#2c2b27;--ombre:rgba(0,0,0,.3);}}
+:root[data-theme="dark"]{
+  --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;
+  --oui:#5fbf86;--non:#e07070;--attente:#e0a060;--barre:#2c2b27;--ombre:rgba(0,0,0,.3);}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fond);color:var(--texte);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{display:flex;align-items:baseline;gap:16px;padding:10px 16px;border-bottom:1px solid var(--trait);flex-wrap:wrap;background:var(--panneau)}
+header h1{font-size:17px;margin:0;font-weight:650}
+header .meta{color:var(--doux);font-size:12.5px}
+header a{color:var(--accent);text-decoration:none;font-size:13px;margin-left:auto}
+main{max-width:1200px;margin:0 auto;padding:16px}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--doux);margin:22px 0 8px;font-weight:600}
+.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tuile{background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:10px 12px;box-shadow:0 1px 2px var(--ombre)}
+.tuile .v{font-size:24px;font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tuile .v.date{font-size:18px;padding-top:5px}
+.tuile .l{font-size:12px;color:var(--doux)}
+.note{font-size:12.5px;color:var(--doux);margin:6px 0 0}
+.cartes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.bloc{background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:10px 12px}
+.ligne-cal{display:grid;grid-template-columns:70px 1fr 54px;gap:8px;align-items:center;font-size:12.5px;margin:4px 0}
+.piste{position:relative;height:12px;background:var(--barre);border-radius:6px}
+.piste .p{position:absolute;top:-2px;width:2px;height:16px;background:var(--doux)}
+.piste .o{position:absolute;top:2px;height:8px;border-radius:4px;background:var(--accent)}
+.filtres{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filtres input,.filtres select{padding:6px 8px;border:1px solid var(--trait);border-radius:6px;background:var(--panneau);color:var(--texte);font:inherit}
+.filtres input{flex:1;min-width:180px}
+.table-zone{overflow-x:auto;background:var(--panneau);border:1px solid var(--trait);border-radius:10px;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--trait);text-align:left;vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--doux);cursor:pointer;white-space:nowrap;user-select:none;position:sticky;top:0;background:var(--panneau)}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+td a{color:var(--texte);text-decoration:none}
+td a:hover{color:var(--accent);text-decoration:underline}
+.pastille{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;border:1px solid var(--trait);white-space:nowrap}
+.pastille.ouverte{color:var(--doux)}
+.pastille.oui{color:var(--oui);border-color:var(--oui)}
+.pastille.non{color:var(--non);border-color:var(--non)}
+.pastille.attente{color:var(--attente);border-color:var(--attente)}
+.barre-p{display:inline-block;width:60px;height:6px;background:var(--barre);border-radius:3px;vertical-align:middle;margin-left:6px;position:relative}
+.barre-p i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:3px}
+.vide{padding:20px;text-align:center;color:var(--doux)}
+@media (max-width:640px){th:nth-child(5),td:nth-child(5),th:nth-child(7),td:nth-child(7){display:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Tableau Metaculus</h1>
+  <span class="meta" id="meta">chargement…</span>
+  <a href="index.html">← carte des écosystèmes</a>
+</header>
+<main>
+  <div class="tuiles" id="tuiles"></div>
+  <p class="note">Réussite : prévision du bon côté de 50 % sur les questions binaires résolues. Score de référence : règle de
+  Metaculus, 100 × (log₂ p + 1) ; 0 = pile ou face, 100 = certitude juste, négatif = pire que pile ou face. Brier : plus bas
+  = mieux. Les issues sont relevées chaque lundi sur Metaculus ; les autres types de questions gardent le score de Metaculus.</p>
+
+  <h2>Calibration et briques</h2>
+  <div class="cartes">
+    <div class="bloc"><div style="font-size:12.5px;margin-bottom:6px">Calibration (binaires résolues) — trait : prévision moyenne ; barre : part de oui réelle</div><div id="calibration"></div></div>
+    <div class="bloc"><div style="font-size:12.5px;margin-bottom:6px">Par brique mesurée (binaires résolues)</div><div id="briques"></div></div>
+  </div>
+
+  <h2>Questions</h2>
+  <div class="filtres">
+    <input type="search" id="cherche" placeholder="chercher dans les titres…">
+    <select id="statut"><option value="">tous les statuts</option><option>ouverte</option><option>résolue</option><option>échéance passée, issue à relever</option></select>
+    <select id="type"><option value="">tous les types</option></select>
+  </div>
+  <div class="table-zone"><table>
+    <thead><tr>
+      <th data-c="echeance">Échéance</th><th data-c="titre">Question</th><th data-c="type">Type</th>
+      <th data-c="p">Prévision</th><th data-c="brique">Brique</th><th data-c="statut">Statut</th><th data-c="score">Score réf.</th>
+    </tr></thead>
+    <tbody id="lignes"></tbody>
+  </table></div>
+</main>
+<script>
+let D = null, tri = {c: "echeance", sens: 1};
+const pc = v => v == null ? "—" : (100 * v).toFixed(0) + " %";
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+function tuiles(s) {
+  const t = [
+    [s.questions, "questions traitées"], [s.ouvertes, "ouvertes"], [s.resolues, "résolues"],
+    [s.taux_reussite == null ? "—" : pc(s.taux_reussite), "taux de réussite"],
+    [s.score_reference_moyen == null ? "—" : s.score_reference_moyen.toFixed(1), "score de référence moyen"],
+    [s.brier_moyen == null ? "—" : s.brier_moyen.toFixed(3), "Brier moyen"],
+    [s.prochaine_echeance || "—", "prochaine échéance", "date"]];
+  if (s.a_relever) t.splice(3, 0, [s.a_relever, "issues à relever"]);
+  document.getElementById("tuiles").innerHTML = t.map(([v, l, c]) => `<div class="tuile"><div class="v ${c || ""}">${esc(v)}</div><div class="l">${l}</div></div>`).join("");
+}
+function blocs(s) {
+  const cal = document.getElementById("calibration");
+  cal.innerHTML = s.calibration.length ? s.calibration.map(c =>
+    `<div class="ligne-cal"><span>${c.tranche}</span><div class="piste"><div class="o" style="width:${100 * c.part_oui}%"></div><div class="p" style="left:${100 * c.prevision_moyenne}%"></div></div><span>n = ${c.n}</span></div>`).join("")
+    : `<div class="vide">Aucune question binaire résolue pour l'instant.</div>`;
+  const b = Object.entries(s.par_brique);
+  document.getElementById("briques").innerHTML = b.length ? `<table><thead><tr><th>Brique</th><th>n</th><th>Réussite</th><th>Score réf.</th></tr></thead><tbody>` +
+    b.sort((x, y) => y[1].n - x[1].n).map(([k, v]) => `<tr><td>${esc(k)}</td><td class="num">${v.n}</td><td class="num">${pc(v.taux_reussite)}</td><td class="num">${v.score_reference_moyen == null ? "—" : v.score_reference_moyen.toFixed(1)}</td></tr>`).join("") + `</tbody></table>`
+    : `<div class="vide">Aucune question résolue avec brique pour l'instant.</div>`;
+}
+function cle(q, c) {
+  if (c === "p") return q.prevision ?? -1;
+  if (c === "brique") return (q.brique || {}).brique || "";
+  if (c === "score") return q.score_reference ?? -1e9;
+  return q[c] || "";
+}
+function rendre() {
+  const f = document.getElementById("cherche").value.toLowerCase(), st = document.getElementById("statut").value,
+        ty = document.getElementById("type").value;
+  let L = D.questions.filter(q => (!f || (q.titre || "").toLowerCase().includes(f)) && (!st || q.statut === st) && (!ty || q.type === ty));
+  L.sort((a, b) => { const x = cle(a, tri.c), y = cle(b, tri.c); return (x > y ? 1 : x < y ? -1 : 0) * tri.sens; });
+  document.getElementById("lignes").innerHTML = L.length ? L.map(q => {
+    const prev = q.type === "binaire" ? `${pc(q.prevision)}<span class="barre-p"><i style="width:${100 * q.prevision}%"></i></span>` : esc(q.prevision_texte);
+    let cl = "ouverte", lib = q.statut;
+    if (q.statut === "résolue") { cl = q.type !== "binaire" ? "ouverte" : (q.reussite ? "oui" : "non"); lib = "résolue : " + q.issue + (q.type === "binaire" ? (q.reussite ? " ✓" : " ✗") : ""); }
+    else if (q.statut.startsWith("échéance")) cl = "attente";
+    const br = q.brique ? `${esc(q.brique.brique)}<br><span style="color:var(--doux);font-size:11.5px">bot ${pc(q.brique.p_bot)} → posté ${pc(q.brique.p_poste)}</span>` : `<span style="color:var(--doux)">—</span>`;
+    return `<tr><td class="num">${esc(q.echeance || "—")}</td><td><a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(q.titre)}</a>${q.mises_a_jour > 1 ? `<br><span style="color:var(--doux);font-size:11.5px">${q.mises_a_jour} prévisions, dernière le ${esc(q.date_prevision)}</span>` : ""}</td>` +
+      `<td>${esc(q.type)}</td><td class="num">${prev}</td><td>${br}</td><td><span class="pastille ${cl}">${esc(lib)}</span></td><td class="num">${q.score_reference == null ? "—" : q.score_reference.toFixed(1)}</td></tr>`;
+  }).join("") : `<tr><td colspan="7" class="vide">Aucune question ne correspond.</td></tr>`;
+}
+fetch("metaculus.json", {cache: "no-store"}).then(r => r.json()).then(d => {
+  D = d;
+  document.getElementById("meta").textContent = `mis à jour le ${d.genere_le.replace("T", " à ").replace("+00:00", " UTC")}`;
+  tuiles(d.stats); blocs(d.stats);
+  const types = [...new Set(d.questions.map(q => q.type))].sort();
+  document.getElementById("type").insertAdjacentHTML("beforeend", types.map(t => `<option>${esc(t)}</option>`).join(""));
+  ["cherche", "statut", "type"].forEach(i => document.getElementById(i).addEventListener("input", rendre));
+  document.querySelectorAll("th[data-c]").forEach(th => th.addEventListener("click", () => {
+    tri = {c: th.dataset.c, sens: tri.c === th.dataset.c ? -tri.sens : 1}; rendre(); }));
+  rendre();
+}).catch(() => { document.getElementById("meta").textContent = "données indisponibles"; });
+</script>
+</body>
+</html>

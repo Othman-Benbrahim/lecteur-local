@@ -1,0 +1,682 @@
+{
+ "genere_le": "2026-11-24T17:45+00:00",
+ "stats": {
+  "questions": 45,
+  "binaires": 18,
+  "ouvertes": 45,
+  "a_relever": 0,
+  "resolues": 0,
+  "resolues_binaires": 0,
+  "taux_reussite": null,
+  "brier_moyen": null,
+  "score_reference_moyen": null,
+  "avec_brique": 0,
+  "prochaine_echeance": "2026-11-26",
+  "calibration": [],
+  "par_brique": {}
+ },
+ "questions": [
+  {
+   "id": "46832",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will the Tokyo (Ku-area) core CPI year-on-year inflation rate be for November 2026?",
+   "url": "https://www.metaculus.com/questions/46572",
+   "echeance": "2026-11-26",
+   "prevision_texte": "médiane ≈ 2.7",
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46821",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-16",
+     0.75
+    ]
+   ],
+   "titre": "Will Volodymyr Zelenskyy attend the Special European Council in Brussels in person on 26–27 November 2026?",
+   "url": "https://www.metaculus.com/questions/46561",
+   "echeance": "2026-11-27",
+   "prevision": 0.75,
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46831",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "Which of Nvidia, AMD, Broadcom, or Micron will post the highest percentage change in closing share price from the November 13, 2026 close to the November 27, 2026 close?",
+   "url": "https://www.metaculus.com/questions/46571",
+   "echeance": "2026-11-27",
+   "prevision_texte": "Nvidia (NVDA) (50%)",
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46833",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-16",
+     0.3
+    ]
+   ],
+   "titre": "Will Argentina's Senate give media sanción to a bill suspending or eliminating the PASO primaries in its 26 November 2026 session?",
+   "url": "https://www.metaculus.com/questions/46573",
+   "echeance": "2026-11-27",
+   "prevision": 0.3,
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46835",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-16",
+     0.35
+    ]
+   ],
+   "titre": "Will Mexican federal authorities have confirmed recovery of all nine radioactive packages stolen in the November 7, 2026 Tlaxcala truck crash by November 27, 2026?",
+   "url": "https://www.metaculus.com/questions/46575",
+   "echeance": "2026-11-27",
+   "prevision": 0.35,
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46836",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will the Nasdaq Composite (^IXIC) close at on Friday, November 27, 2026?",
+   "url": "https://www.metaculus.com/questions/46576",
+   "echeance": "2026-11-27",
+   "prevision_texte": "médiane ≈ 25 800",
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46849",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-16",
+     0.75
+    ]
+   ],
+   "titre": "Will the U.S. Trustee's official committee of unsecured creditors in The Children's Place Chapter 11 case have seven or more members as of November 27, 2026?",
+   "url": "https://www.metaculus.com/questions/46589",
+   "echeance": "2026-11-27",
+   "prevision": 0.75,
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46850",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will President Lee Jae-myung's job approval rating be in Gallup Korea's weekly poll released on November 27, 2026?",
+   "url": "https://www.metaculus.com/questions/46590",
+   "echeance": "2026-11-27",
+   "prevision_texte": "médiane ≈ 40",
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46851",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "How many postal ballots will Correos report as admitted for Spain's 29 November 2026 general election in the most recent figure it publishes on or before 26 November 2026?",
+   "url": "https://www.metaculus.com/questions/46591",
+   "echeance": "2026-11-27",
+   "prevision_texte": "médiane ≈ 1 200 000",
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46852",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-16",
+     0.3
+    ]
+   ],
+   "titre": "Will Strategy (MSTR) close below $100 on Friday, November 27, 2026?",
+   "url": "https://www.metaculus.com/questions/46592",
+   "echeance": "2026-11-27",
+   "prevision": 0.3,
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46854",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will the Northern Sierra 8-Station Precipitation Index be for November 26, 2026 (water-year-to-date, inches)?",
+   "url": "https://www.metaculus.com/questions/46594",
+   "echeance": "2026-11-27",
+   "prevision_texte": "médiane ≈ 6.5",
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46862",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will Nvidia's (NVDA) closing share price be on Friday, November 27, 2026?",
+   "url": "https://www.metaculus.com/questions/46602",
+   "echeance": "2026-11-27",
+   "prevision_texte": "médiane ≈ 170",
+   "date_prevision": "2026-11-17",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46867",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will Anthropic (ANT) close at on Friday, November 27, 2026?",
+   "url": "https://www.metaculus.com/questions/46607",
+   "echeance": "2026-11-27",
+   "prevision_texte": "médiane ≈ 92",
+   "date_prevision": "2026-11-17",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46869",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "How many confirmed U.S. measles cases for 2026 will CDC report in its November 27, 2026 update?",
+   "url": "https://www.metaculus.com/questions/46609",
+   "echeance": "2026-11-27",
+   "prevision_texte": "médiane ≈ 6 000",
+   "date_prevision": "2026-11-17",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46873",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "Which party's member will GPS name as its candidate for Sarawak's Bawang Assan seat before nomination day on 28 November 2026?",
+   "url": "https://www.metaculus.com/questions/46613",
+   "echeance": "2026-11-27",
+   "prevision_texte": "PDP (50%)",
+   "date_prevision": "2026-11-17",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46874",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will be the last date for filing claims and objections in Delhi's SIR, as of November 27, 2026?",
+   "url": "https://www.metaculus.com/questions/46614",
+   "echeance": "2026-11-27",
+   "prevision_texte": "November 25, 2026 or earlier (no further extension) (40%)",
+   "date_prevision": "2026-11-17",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46875",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "On Black Friday (November 27, 2026), what will be the deepest percentage-off discount advertised on the childrensplace.com homepage?",
+   "url": "https://www.metaculus.com/questions/46615",
+   "echeance": "2026-11-27",
+   "prevision_texte": "médiane ≈ 70",
+   "date_prevision": "2026-11-17",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46834",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-16",
+     0.2
+    ]
+   ],
+   "titre": "Will Lebanon's cabinet refer the Dahr al-Baidar explosives case to the Judicial Council before November 28, 2026?",
+   "url": "https://www.metaculus.com/questions/46574",
+   "echeance": "2026-11-28",
+   "prevision": 0.2,
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46853",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What rating will MasterChef Celebrity (Telefe) record for its Thursday, November 26, 2026 broadcast?",
+   "url": "https://www.metaculus.com/questions/46593",
+   "echeance": "2026-11-28",
+   "prevision_texte": "médiane ≈ 12.8",
+   "date_prevision": "2026-11-16",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46861",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-17",
+     0.25
+    ]
+   ],
+   "titre": "Will front-month ICE Brent crude futures (January 2027 contract) settle above $100.00 per barrel on 27 November 2026?",
+   "url": "https://www.metaculus.com/questions/46601",
+   "echeance": "2026-11-28",
+   "prevision": 0.25,
+   "date_prevision": "2026-11-17",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46868",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-17",
+     0.25
+    ]
+   ],
+   "titre": "Will at least one of the two Ir-192 sources stolen from the Rivers State radiography facility be publicly confirmed recovered by 28 November 2026?",
+   "url": "https://www.metaculus.com/questions/46608",
+   "echeance": "2026-11-28",
+   "prevision": 0.25,
+   "date_prevision": "2026-11-17",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46880",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-18",
+     0.62
+    ]
+   ],
+   "titre": "Will the Banco Central del Paraguay announce a payment start date for ueno bank CDA holders by 28 November 2026?",
+   "url": "https://www.metaculus.com/questions/46620",
+   "echeance": "2026-11-29",
+   "prevision": 0.62,
+   "date_prevision": "2026-11-18",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46881",
+   "type": "choix multiple",
+   "mises_a_jour": 12,
+   "historique": [],
+   "titre": "Which film will win the Étoile d’Or at the 2026 Marrakech International Film Festival?",
+   "url": "https://www.metaculus.com/questions/46621",
+   "echeance": "2026-11-29",
+   "prevision_texte": "Other outcome (45%)",
+   "date_prevision": "2026-11-19",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46882",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will the first reported revenues after October 2026 be for Snowflake?",
+   "url": "https://www.metaculus.com/questions/46622",
+   "echeance": "2026-12-02",
+   "prevision_texte": ">1,615 mil. & <1,670 mil. (60%)",
+   "date_prevision": "2026-11-19",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46883",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will Salesforce report for GAAP diluted EPS for Q3 FY2027?",
+   "url": "https://www.metaculus.com/questions/46623",
+   "echeance": "2026-12-03",
+   "prevision_texte": "médiane ≈ 1.9",
+   "date_prevision": "2026-11-20",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46884",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-20",
+     0.08
+    ]
+   ],
+   "titre": "Will the Belgian State and Engie conclude an agreement for Belgium's acquisition of Engie's nuclear activities before December 14, 2026?",
+   "url": "https://www.metaculus.com/questions/46624",
+   "echeance": "2026-12-14",
+   "prevision": 0.08,
+   "date_prevision": "2026-11-20",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46982",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-23",
+     0.3
+    ]
+   ],
+   "titre": "Will any of these high-ranking U.S. officials leave office before January 1, 2027?",
+   "url": "https://www.metaculus.com/questions/46717",
+   "echeance": "2026-12-16",
+   "prevision": 0.3,
+   "date_prevision": "2026-11-23",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46885",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "How many trillion dollar companies will there be on December 18, 2026?",
+   "url": "https://www.metaculus.com/questions/46625",
+   "echeance": "2026-12-19",
+   "prevision_texte": "14 (50%)",
+   "date_prevision": "2026-11-20",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46886",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "How many votes of no confidence will Thai PM Anutin Charnvirakul receive?",
+   "url": "https://www.metaculus.com/questions/46626",
+   "echeance": "2026-12-23",
+   "prevision_texte": "145-148 (41%)",
+   "date_prevision": "2026-11-21",
+   "statut": "ouverte"
+  },
+  {
+   "id": "43322",
+   "type": "numérique",
+   "mises_a_jour": 2,
+   "historique": [],
+   "titre": "How many of these 15 top US executive branch officials will be out before 2027?",
+   "url": "https://www.metaculus.com/questions/43321",
+   "echeance": "2027-01-01",
+   "prevision_texte": "médiane ≈ 3",
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "43325",
+   "type": "numérique",
+   "mises_a_jour": 2,
+   "historique": [],
+   "titre": "What will be Donald Trump's net approval on December 31, 2026?",
+   "url": "https://www.metaculus.com/questions/43323",
+   "echeance": "2027-01-01",
+   "prevision_texte": "médiane ≈ -21.7",
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "43329",
+   "type": "binaire",
+   "mises_a_jour": 4,
+   "historique": [
+    [
+     "2026-11-03",
+     0.02
+    ],
+    [
+     "2026-11-04",
+     0.02
+    ],
+    [
+     "2026-11-04",
+     0.01
+    ],
+    [
+     "2026-11-04",
+     0.03
+    ]
+   ],
+   "titre": "Will the sitting U.S. president’s net worth reach ≥4x its value before they became president at any point in the following years? (2025-2026)",
+   "url": "https://www.metaculus.com/questions/43325",
+   "echeance": "2027-01-01",
+   "prevision": 0.03,
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46887",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will be the nationwide wastewater detection category of rotavirus on January 1, 2027?",
+   "url": "https://www.metaculus.com/questions/46627",
+   "echeance": "2027-01-01",
+   "prevision_texte": "Medium (55%)",
+   "date_prevision": "2026-11-21",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46889",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-23",
+     0.1
+    ]
+   ],
+   "titre": "Will any of these AI companies (Lovable, DeepSeek, or Perplexity) have a funding round in December 2026?",
+   "url": "https://www.metaculus.com/questions/46629",
+   "echeance": "2027-01-01",
+   "prevision": 0.1,
+   "date_prevision": "2026-11-23",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46890",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "How many Clade I Mpox cases will have been reported in the US before 2027?",
+   "url": "https://www.metaculus.com/questions/46630",
+   "echeance": "2027-01-01",
+   "prevision_texte": "246-295 (54%)",
+   "date_prevision": "2026-11-23",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46891",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-24",
+     0.28
+    ]
+   ],
+   "titre": "Will Russian Foreign Minister Sergey Lavrov visit Florida in December 2026?",
+   "url": "https://www.metaculus.com/questions/46631",
+   "echeance": "2027-01-01",
+   "prevision": 0.28,
+   "date_prevision": "2026-11-24",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46892",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-24",
+     0.09
+    ]
+   ],
+   "titre": "Will a US governor, congressperson or cabinet member formally declare a 2028 presidential run before 2027?",
+   "url": "https://www.metaculus.com/questions/46632",
+   "echeance": "2027-01-01",
+   "prevision": 0.09,
+   "date_prevision": "2026-11-24",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46893",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-24",
+     0.13
+    ]
+   ],
+   "titre": "Will Senegal's National Assembly be dissolved before January 1, 2027?",
+   "url": "https://www.metaculus.com/questions/46633",
+   "echeance": "2027-01-01",
+   "prevision": 0.13,
+   "date_prevision": "2026-11-24",
+   "statut": "ouverte"
+  },
+  {
+   "id": "43332",
+   "type": "binaire",
+   "mises_a_jour": 3,
+   "historique": [
+    [
+     "2026-11-03",
+     0.01
+    ],
+    [
+     "2026-11-04",
+     0.01
+    ],
+    [
+     "2026-11-04",
+     0.01
+    ]
+   ],
+   "titre": "Will any of Belgium, France, Italy, Luxembourg, Netherlands, and/or Germany leave the EU before 2027?",
+   "url": "https://www.metaculus.com/questions/43327",
+   "echeance": "2027-01-31",
+   "prevision": 0.01,
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "43326",
+   "type": "date",
+   "mises_a_jour": 2,
+   "historique": [],
+   "titre": "When will martial law be lifted in at least 3/4 of Ukraine?",
+   "url": "https://www.metaculus.com/questions/43324",
+   "echeance": "2027-05-28",
+   "prevision_texte": "médiane ≈ 1 811 462 400",
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "45708",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will the average new forecasters per day be on this question before this question closes?",
+   "url": "https://www.metaculus.com/questions/45517",
+   "echeance": "2028-09-06",
+   "prevision_texte": "médiane ≈ 0.41",
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "43324",
+   "type": "numérique",
+   "mises_a_jour": 2,
+   "historique": [],
+   "titre": "What will the average interest rate on the US federal government's total debt be at the end of these fiscal years? (FY 2028 (ending Sep 30, 2028))",
+   "url": "https://www.metaculus.com/questions/43322",
+   "echeance": "2028-10-01",
+   "prevision_texte": "médiane ≈ 3.75",
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46451",
+   "type": "numérique",
+   "mises_a_jour": 2,
+   "historique": [],
+   "titre": "What will net outlays by the US government be in millions of dollars in FY 2028?",
+   "url": "https://www.metaculus.com/questions/46224",
+   "echeance": "2028-10-20",
+   "prevision_texte": "médiane ≈ 8 130 000",
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46450",
+   "type": "choix multiple",
+   "mises_a_jour": 2,
+   "historique": [],
+   "titre": "Which party's nominee will win the 2028 US presidential election?",
+   "url": "https://www.metaculus.com/questions/46223",
+   "echeance": "2028-11-08",
+   "prevision_texte": "Democratic Party (56%)",
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  },
+  {
+   "id": "43330",
+   "type": "binaire",
+   "mises_a_jour": 4,
+   "historique": [
+    [
+     "2026-11-03",
+     0.06
+    ],
+    [
+     "2026-11-04",
+     0.08
+    ],
+    [
+     "2026-11-04",
+     0.08
+    ],
+    [
+     "2026-11-04",
+     0.09
+    ]
+   ],
+   "titre": "Will the sitting U.S. president’s net worth reach ≥4x its value before they became president at any point in the following years? (2027-2028)",
+   "url": "https://www.metaculus.com/questions/43325",
+   "echeance": "2029-01-01",
+   "prevision": 0.09,
+   "date_prevision": "2026-11-04",
+   "statut": "ouverte"
+  }
+ ]
+}

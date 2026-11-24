@@ -38,6 +38,14 @@ select,input[type=search]{width:100%;padding:6px 8px;border:1px solid var(--trai
 .puce.on{border-color:var(--accent);background:var(--accent);color:#fff}
 label.case{display:flex;gap:6px;align-items:center;font-size:13px;margin:3px 0;cursor:pointer}
 .legende{font-size:12px;color:var(--doux);display:grid;gap:3px}
+#metaculusBouton{margin-top:6px;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:6px;padding:5px 8px;font:inherit;font-size:12.5px;cursor:pointer;text-align:left}
+#metaculusBouton:hover{background:var(--accent);color:#fff}
+#metaculusPanneau{display:none;position:fixed;left:16px;bottom:16px;z-index:50;width:min(340px,calc(100vw - 32px));background:var(--panneau);border:1px solid var(--trait);border-radius:10px;box-shadow:0 6px 24px var(--ombre);padding:12px 14px;font-size:13px}
+#metaculusPanneau.ouvert{display:block}
+#metaculusPanneau .grille{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin:8px 0}
+#metaculusPanneau .grille b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
+#metaculusPanneau .grille span{font-size:11.5px;color:var(--doux)}
+#metaculusPanneau a{color:var(--accent)}
 .legende i{display:inline-block;width:18px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
 #suggestions{border:1px solid var(--trait);border-radius:6px;margin-top:4px;max-height:180px;overflow:auto;display:none;background:var(--panneau)}
 #suggestions div{padding:4px 8px;cursor:pointer;font-size:13px}
@@ -162,6 +170,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
       <span><i style="border-color:var(--dirigeant)"></i>acteur nommé : dirigeant (brique), patron (vert), religieux (violet)</span>
       <span>taille d'un cercle : nombre d'articles rattachés (un article compte une fois par écosystème)</span>
       <span>compartiment d'une autre fiche (pointillé) : nom au survol</span>
+      <button id="metaculusBouton" type="button" aria-expanded="false">Metaculus : où en est le bot ?</button>
       <span style="margin-top:4px">Ce que la carte mesure : la couverture de nos sources (articles qui contiennent un terme validé), pas l'ampleur réelle d'un phénomène ; un même événement peut faire plusieurs articles, un terme peut être nié ou hypothétique.</span>
     </div>
   </aside>
@@ -171,6 +180,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
     <div id="axe"></div>
     <div id="infobulle"></div>
     <div id="releve" role="dialog" aria-label="relevé statistique du pays"></div>
+    <div id="metaculusPanneau" role="dialog" aria-label="statistiques Metaculus"></div>
   </main>
 
   <section id="detail"><p class="vide">Cliquez sur un compartiment ou un acteur pour voir ses quatre variables, ses relations, les termes qui s'y rattachent et les situations datées et sourcées qui l'ont touché.</p></section>
@@ -1068,6 +1078,32 @@ function detailUcdp(p){
 }
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 addEventListener("resize",()=>{if(D) dessiner();});
+</script>
+<script>
+// 2026-11-24 (décision de l'auteur, 18 h 43) : statistiques Metaculus du bot, depuis docs/metaculus.json
+(function(){
+  const b = document.getElementById("metaculusBouton"), p = document.getElementById("metaculusPanneau");
+  const pc = v => v == null ? "—" : (100 * v).toFixed(0) + " %";
+  function remplir(d){
+    const s = d.stats;
+    p.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:baseline"><strong>Metaculus</strong>` +
+      `<button type="button" id="metaculusFermer" style="border:0;background:transparent;color:var(--doux);cursor:pointer;font-size:16px" aria-label="fermer">×</button></div>` +
+      `<div class="grille"><div><b>${s.questions}</b><span>questions traitées</span></div><div><b>${s.ouvertes}</b><span>ouvertes</span></div>` +
+      `<div><b>${s.resolues}</b><span>résolues</span></div><div><b>${pc(s.taux_reussite)}</b><span>taux de réussite (binaires)</span></div>` +
+      `<div><b>${s.score_reference_moyen == null ? "—" : s.score_reference_moyen.toFixed(1)}</b><span>score de référence moyen</span></div>` +
+      `<div><b>${s.prochaine_echeance || "—"}</b><span>prochaine échéance</span></div></div>` +
+      `<div style="font-size:11.5px;color:var(--doux)">mis à jour le ${d.genere_le.replace("T", " à ").replace("+00:00", " UTC")}</div>` +
+      `<div style="margin-top:8px"><a href="metaculus.html">Ouvrir le tableau complet →</a></div>`;
+    document.getElementById("metaculusFermer").onclick = () => { p.classList.remove("ouvert"); b.setAttribute("aria-expanded", "false"); };
+  }
+  b.addEventListener("click", () => {
+    if (p.classList.toggle("ouvert")) {
+      b.setAttribute("aria-expanded", "true");
+      p.textContent = "chargement…";
+      fetch("metaculus.json", {cache: "no-store"}).then(r => r.json()).then(remplir).catch(() => { p.textContent = "données Metaculus indisponibles"; });
+    } else b.setAttribute("aria-expanded", "false");
+  });
+})();
 </script>
 </body>
 </html>
