@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-24T18:02+00:00",
+ "genere_le": "2026-11-24T20:08+00:00",
  "stats": {
-  "questions": 45,
+  "questions": 46,
   "binaires": 18,
-  "ouvertes": 45,
+  "ouvertes": 46,
   "a_relever": 0,
   "resolues": 0,
   "resolues_binaires": 0,
@@ -561,6 +561,18 @@
    "url": "https://www.metaculus.com/questions/46633",
    "echeance": "2027-01-01",
    "prevision": 0.13,
+   "date_prevision": "2026-11-24",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46894",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will be the water level of the Great Salt Lake on December 31, 2026?",
+   "url": "https://www.metaculus.com/questions/46634",
+   "echeance": "2027-01-01",
+   "prevision_texte": "médiane ≈ 4 190",
    "date_prevision": "2026-11-24",
    "statut": "ouverte"
   },

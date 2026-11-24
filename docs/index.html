@@ -783,6 +783,8 @@ function detail(n,sits){
       const cible=autre&&autre.fiche!==n.fiche?`<a href="#" onclick="basculer('${esc(autre.id).replace(/'/g,"\\'")}');return false;">↗ ${esc(autre.fiche_nom)} : ${nom}</a>`:nom;
       return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
     const tr=n.traces||[];
+    if((n.lacunes||[]).length){const tot=n.lacunes.reduce((a,x)=>a+x[1],0);
+      h+=`<h2>Où la carte reste muette</h2><p style="font-size:12px;color:var(--doux)">Sur les questions résolues, ce compartiment n'a pas pu être lu ${tot} fois :</p><ul>${n.lacunes.map(x=>`<li>${esc(x[0].includes(" → ")?"amont « "+x[0].split(" → ")[0].split(":").pop()+" » sans série":"aucune relation entrante")} <span class="etiq">${x[1]}</span></li>`).join("")}</ul>`;}
     h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span>${(t.odd||[]).map(o=>` <span class="etiq" title="${esc(o.libelle)}">ODD ${esc(o.code)}</span>`).join("")}</li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
     // 0.10.461 : cycles (rythme, phase vulnérable) et tensions (forme, seuil, bascule) déclarés dans la fiche
     const cy=n.cycles||[], tn=n.tensions||[];

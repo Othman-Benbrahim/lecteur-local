@@ -66,6 +66,15 @@ def principal() -> int:
         for c in f.get("compartiments") or []:
             cid = f"{theme}:{c['id']}"
             ax = eco.axes(c.get("niveau") or {})
+            if "_lacunes" not in dir():                       # 2026-11-24 : où la carte reste muette (couche écosystème)
+                try:
+                    _lj = json.loads((bot / "registre" / "carte-lacunes.json").read_text(encoding="utf-8"))
+                    _lacunes = {}
+                    for k, v in _lj.get("par_compartiment", []):
+                        cib = k.split(" → ")[-1]
+                        _lacunes.setdefault(cib, []).append([k, v])
+                except Exception:
+                    _lacunes = {}
             noeuds.append({"id": cid, "sorte": "compartiment", "fiche": theme, "fiche_nom": f.get("nom", theme),
                            "nom": c.get("nom", c["id"]), "organisation": c.get("organisation", ""),
                            # 0.10.473 : pays concernés (champ « geopolitique ») ; l'état UCDP s'y accroche
@@ -75,6 +84,7 @@ def principal() -> int:
                                        "odd": [{"code": str(k), "libelle": odd.get(str(k), "")} for k in t.get("odd") or []]}
                                       for t in c.get("traces") or [] if isinstance(t, dict)],
                            "flux": flux_de(c.get("traces")),
+                           "lacunes": _lacunes.get(cid, []),
                            # 0.10.461 : cycles qui touchent ce compartiment, tensions dont il est un pôle
                            "cycles": [{k: y.get(k) for k in ("id", "nom", "sorte", "mecanisme", "periode",
                                                             "phase_vulnerable", "statut")}
