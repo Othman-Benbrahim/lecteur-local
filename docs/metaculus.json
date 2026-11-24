@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-24T20:08+00:00",
+ "genere_le": "2026-11-24T21:35+00:00",
  "stats": {
-  "questions": 46,
+  "questions": 47,
   "binaires": 18,
-  "ouvertes": 46,
+  "ouvertes": 47,
   "a_relever": 0,
   "resolues": 0,
   "resolues_binaires": 0,
@@ -573,6 +573,18 @@
    "url": "https://www.metaculus.com/questions/46634",
    "echeance": "2027-01-01",
    "prevision_texte": "médiane ≈ 4 190",
+   "date_prevision": "2026-11-24",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46895",
+   "type": "numérique",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "What will be the average US 30-year Fixed-Rate Mortgage on December 31, 2026?",
+   "url": "https://www.metaculus.com/questions/46635",
+   "echeance": "2027-01-01",
+   "prevision_texte": "médiane ≈ 7.6",
    "date_prevision": "2026-11-24",
    "statut": "ouverte"
   },
