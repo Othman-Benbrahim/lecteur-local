@@ -320,13 +320,20 @@ def principal() -> int:
             types_actifs = list(csv.DictReader(fo))
 
     # évolution de notre recherche (fiche « L'observateur et la mesure ») : recalculée depuis l'historique du bot si possible
+    import os
     import subprocess
-    try:
-        subprocess.run([sys.executable, "recherche_evolution.py"], cwd=bot, check=True, capture_output=True, timeout=120)
-    except Exception as e:
-        print(f"évolution de la recherche non recalculée ({type(e).__name__}) ; version enregistrée utilisée")
+    import tempfile
     f = bot / "registre/recherche-evolution.json"
-    recherche = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    with tempfile.TemporaryDirectory() as tmp:          # 2026-11-24 : calcul hors du registre du bot (dépôt laissé propre)
+        sortie = Path(tmp) / "recherche-evolution.json"
+        try:
+            subprocess.run([sys.executable, "recherche_evolution.py"], cwd=bot, check=True, capture_output=True, timeout=120,
+                           env={**os.environ, "RECHERCHE_EVOLUTION_SORTIE": str(sortie)})
+            if sortie.exists():
+                f = sortie
+        except Exception as e:
+            print(f"évolution de la recherche non recalculée ({type(e).__name__}) ; version enregistrée utilisée")
+        recherche = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
 
     # acteurs nommés et leurs réseaux (bot 0.10.444, décision de l'auteur du 2026-11-22, 7 h 41 - 7 h 49) : à part des
     # noeuds des fiches ; chacun rattaché à des compartiments ; liens entre acteurs et vers la population
