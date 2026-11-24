@@ -1,0 +1,157 @@
+# Rattachement des QUESTIONS aux compartiments (proposé par Claude le 2026-11-24, chantier A, en attente de validation).
+# But : orienter la carte vers les questions de Metaculus. Distinct de valides.txt (termes comptés dans les sources).
+# Une ligne par groupe de termes ; mettre « + » (validé) ou « - » (refusé) en tête, ou corriger termes et compartiments.
+# Règle : un terme apparaît dans le titre de la question (mot entier ; sigles en majuscules sensibles à la casse).
+# Effet mesuré sur 2 196 questions résolues distinctes : rattachées 28 % -> 82 % (Metaculus : 99 -> 233 sur 272) ;
+# avec la table des pays (plus bas) : 88 % (245 sur 272).
+# Format : décision | termes (séparés par /) | compartiments (séparés par ;)
+
+? | election/elections/elección/elecciones/vote/votes/referendum/ballot | calendriers-echeances:elections;politique-interieure:elections
+? | presidential election/presidential/president-elect | calendriers-echeances:elections;politique-interieure:elections;dirigeants-elus:mandats_succession
+? | parliamentary election/general election/snap election/seats/most seats/majority | calendriers-echeances:parlements;politique-interieure:elections;partis-politiques:systemes_partisans
+? | primary/primaries/nominee/nomination/caucus | politique-interieure:partis;partis-politiques:adhesion_militantisme
+? | party/parties/partido/coalition | politique-interieure:partis;partis-politiques:systemes_partisans
+? | House seat/House of Representatives/Senate race/Senate election/midterms/midterm/governor/gubernatorial/Democrats/Democratic/Republicans/Republican/GOP | politique-americaine:elections;politique-americaine:congres
+? | Mayor/mayoral/mayor of | politique-interieure:elections;transports-villes:gouvernance_urbaine
+? | polls/polling/approval rating/encuestas/intención de voto | dirigeants-elus:popularite
+? | prime minister/chancellor/premier/supreme leader/head of state/presidente | dirigeants-elus:executifs;dirigeants-elus:mandats_succession
+? | cease to be/resign/resignation/step down/ousted/removed from office/impeach/impeachment/no-confidence/out as | dirigeants-elus:departs;politique-interieure:procedures
+? | visit/summit/trilateral/face-to-face/diplomatic meeting/bilateral meeting | dirigeants-elus:diplomatie_personnelle
+? | executive order/Insurrection Act/emergency powers/autopen/pardon | politique-americaine:executif
+? | Attorney General/U.S. Attorney/DOJ/Department of Justice/FBI | politique-americaine:entourage;securite-publique:justice
+? | Supreme Court/SCOTUS/federal court/federal courts/court ruling/ruling/strike down | politique-americaine:tribunaux;organisations-internationales:justice_internationale
+? | arrested/indicted/charged/convicted/imprisoned/sentenced | securite-publique:justice;dirigeants-elus:justice_immunites
+? | bill/law/legislation/pass into law/Congress/shutdown/debt ceiling | politique-americaine:congres;politique-interieure:procedures
+? | coup/coups/junta/martial law/uprising | politique-interieure:coups_transitions;politique-interieure:contestation
+? | strike/strikes/airstrike/military action/attack/attacks/bomb | militaire:forces;militaire:doctrines
+? | invade/invasion/ground invasion/occupy/blockade/quarantine/annex | militaire:forces;militaire:bases_projection
+? | ceasefire/cease-fire/truce/peace deal/peace agreement/peace talks/armistice | russie-ukraine:negociations;guerre-levant:mediateurs;iran-nucleaire:negociations
+? | capture/captures/controlled territory/territory/front line/offensive | russie-ukraine:front
+? | mobilization/conscription/draft | russie-ukraine:capacites;militaire:forces
+? | clash/clashes/border clash/fatalities/killed | militaire:forces;securite-publique:alertes
+? | missile/missiles/drone/drones/hypersonic | militaire:technologies;militaire:forces
+? | troops/withdrawal of troops/deploy/deployment/military base | militaire:bases_projection;militaire:forces
+? | NATO/Article 5 | securite-europeenne:otan_ue;militaire:alliances
+? | nuclear test/detonate/nuclear device/nuclear weapon/nuclear weapons program/enrichment | non-proliferation:dissuasion;non-proliferation:etats_du_seuil;militaire:arsenaux_nucleaires
+? | Hormuz/Strait of Hormuz/Kharg | ormuz:navigation;ormuz:force;transport-maritime:detroit_ormuz
+? | shipping/shipping traffic/tankers/Red Sea/Bab el-Mandeb/Suez | transport-maritime:detroits;transport-maritime:fret
+? | Taiwan Strait/blockade Taiwan | rivalite-sino-americaine:taiwan;transport-maritime:detroit_taiwan
+? | sanctions/sanction/sanctioned | politique-americaine:sanctions;monnaie-pouvoir:sanctions_financieres
+? | tariff/tariffs/duties/trade war/trade deal | politique-americaine:commerce;organisations-internationales:commerce_mondial
+? | refugees/displaced/displacement/deportation/migrants/asylum | migrations-demographie:migrations;migrations-demographie:politiques_migratoires
+? | Fed/Federal Reserve/FOMC/interest rates/interest rate/rate cut/rate hike/bps/basis points/Powell | politique-americaine:reserve_federale;calendriers-echeances:banques_centrales;inflation-mondiale:banques_centrales
+? | ECB/Bank of England/Bank of Japan/central bank | inflation-mondiale:banques_centrales;calendriers-echeances:banques_centrales
+? | inflation/CPI/core CPI/PCE/prices/precios | inflation-mondiale:prix_conso;inflation-mondiale:statistiques
+? | unemployment/jobs/payrolls/jobless/employment | economie-entreprises:conjoncture;inflation-mondiale:salaires
+? | GDP/recession/stagflation/growth/PIB/economía | economie-entreprises:conjoncture
+? | gas prices/gasoline/crude oil/oil price/oil/Brent/WTI/OPEC | energie-mondiale:prix;energie-mondiale:decisions
+? | Bitcoin/Ethereum/Solana/XRP/crypto/cryptocurrency/stablecoin/stablecoins/USDT/USDC/FDV/token | crises-bancaires:cryptomonnaies;monnaie-pouvoir:monnaies_numeriques
+? | stock/stocks/shares/market cap/market capitalization/largest company/S&P 500/Nasdaq/Dow/IBEX/VIX/acción/bolsa | economie-entreprises:finance_entreprise;crises-bancaires:marches
+? | IPO/S-1/SEC filing/10-Q/going concern/bankruptcy | economie-entreprises:finance_entreprise;economie-entreprises:defaillances
+? | treasury/bond/yield/30-year/10-year | politique-americaine:budget;inflation-mondiale:budget
+? | euro/dollar/yen/yuan/exchange rate/currency | monnaie-pouvoir:dollar_reserve;inflation-mondiale:monnaies
+? | housing/house prices/home prices/vivienda/rent | economie-entreprises:immobilier_consommation
+? | Nvidia/Tesla/Apple/Microsoft/Google/Alphabet/Amazon/Meta/Magnificent Seven | economie-entreprises:entreprises;economie-entreprises:investissement_ia
+? | AI/AI model/artificial intelligence/LLM/AGI/OpenAI/Anthropic/Google DeepMind/xAI/GPT/GPT-5/ChatGPT/Claude/Gemini/Grok | sciences-techniques:ia;sciences-techniques:attentes
+? | benchmark/FrontierMath/GPQA/leaderboard/time horizon/Chatbot Arena/LMArena | sciences-techniques:ia;sciences-techniques:recherche
+? | AI regulation/AI Act/license/compute/data center/data centers | sciences-techniques:regulation;sciences-techniques:calcul
+? | chips/GPUs/semiconductors/export controls/H200 | rivalite-sino-americaine:technologie;sciences-techniques:course_etats
+? | launch/rocket/SpaceX/Starship/NASA/Artemis/satellite/Starlink | soleil-espace:satellites;sciences-techniques:recherche
+? | hack/hacked/cyberattack/ransomware/outage/incident/breach | information-cyber:cyber;infrastructures-critiques:attaques
+? | H5N1/avian influenza/bird flu/measles/COVID/pandemic/outbreak/epidemic/human cases/WHO | epidemies:agent;epidemies:malades;epidemies:autorites
+? | temperature/record high/heat/hottest/degrees/sea surface temperature | climat-extremes:tendance;climat-extremes:atmosphere
+? | hurricane/typhoon/cyclone/storm/landfall | climat-extremes:tempetes
+? | earthquake/volcano/eruption | relief-et-montagnes:seismes_volcans
+? | NBA/NFL/NHL/MLB/FIFA/UEFA/World Cup/Champions League/Premier League/La Liga/LaLiga/Super Bowl/Stanley Cup/World Series/Olympics/Olympic/Grand Slam/US Open/Wimbledon/Formula 1/F1/NCAA | competitions-culture:forme;competitions-culture:calendrier
+? | champion/championship/finals/playoffs/MVP/medal/tournament/coach/Ballon d'Or | competitions-culture:forme
+? | Eurovision/Eurovisión | competitions-culture:public;competitions-culture:geopolitique
+? | Academy Awards/Oscar/Oscars/Emmy/Grammy/Golden Globe/Best Picture/Best Actor/Best Actress | competitions-culture:public;medias-diffusion:cinema_series
+? | box office/grossing/opening weekend/movie/film/película | medias-diffusion:cinema_series
+? | Billboard/Hot 100/Spotify/album/song | medias-diffusion:createurs
+? | Nobel/Nobel Peace Prize | competitions-culture:public;organisations-internationales:onu
+? | Elon Musk/Musk/tweet/tweets/X post | reseaux-sociaux:personnalites
+
+# Table des pays : nom ou gentilé dans le titre -> pays (ISO3) -> compartiments dont geopolitique.pays contient ce pays.
+# S'ajoute aux 250 noms anglais de codes-pays-fips.csv. Même format de décision.
+
+? | US | pays:USA
+? | U.S. | pays:USA
+? | USA | pays:USA
+? | United States | pays:USA
+? | America | pays:USA
+? | American | pays:USA
+? | UK | pays:GBR
+? | U.K. | pays:GBR
+? | Britain | pays:GBR
+? | British | pays:GBR
+? | England | pays:GBR
+? | Scotland | pays:GBR
+? | Russia | pays:RUS
+? | Russian | pays:RUS
+? | Iran | pays:IRN
+? | Iranian | pays:IRN
+? | Israel | pays:ISR
+? | Israeli | pays:ISR
+? | Ukraine | pays:UKR
+? | Ukrainian | pays:UKR
+? | China | pays:CHN
+? | Chinese | pays:CHN
+? | Taiwan | pays:TWN
+? | Gaza | pays:PSE
+? | Palestinian | pays:PSE
+? | Palestinians | pays:PSE
+? | South Korea | pays:KOR
+? | North Korea | pays:PRK
+? | Korea | pays:KOR
+? | Venezuela | pays:VEN
+? | Venezuelan | pays:VEN
+? | Brazil | pays:BRA
+? | Brazilian | pays:BRA
+? | Mexico | pays:MEX
+? | Canada | pays:CAN
+? | Canadian | pays:CAN
+? | India | pays:IND
+? | Indian | pays:IND
+? | Pakistan | pays:PAK
+? | Japan | pays:JPN
+? | Japanese | pays:JPN
+? | Germany | pays:DEU
+? | German | pays:DEU
+? | France | pays:FRA
+? | French | pays:FRA
+? | Spain | pays:ESP
+? | España | pays:ESP
+? | Spanish | pays:ESP
+? | Italy | pays:ITA
+? | Turkey | pays:TUR
+? | Turkish | pays:TUR
+? | Saudi Arabia | pays:SAU
+? | Saudi | pays:SAU
+? | Syria | pays:SYR
+? | Lebanon | pays:LBN
+? | Lebanese | pays:LBN
+? | Yemen | pays:YEM
+? | Houthis | pays:YEM
+? | Nigeria | pays:NGA
+? | Nigerian | pays:NGA
+? | Hungary | pays:HUN
+? | Hungarian | pays:HUN
+? | Poland | pays:POL
+? | Philippines | pays:PHL
+? | Thailand | pays:THA
+? | Cambodia | pays:KHM
+? | Argentina | pays:ARG
+? | Colombia | pays:COL
+? | Chile | pays:CHL
+? | Peru | pays:PER
+? | Greenland | pays:GRL
+? | Denmark | pays:DNK
+? | Albania | pays:ALB
+? | Bosnia | pays:BIH
+? | Sudan | pays:SDN
+? | South Africa | pays:ZAF
+? | Egypt | pays:EGY
+? | Iraq | pays:IRQ
+? | Qatar | pays:QAT
+? | United Arab Emirates | pays:ARE
+? | UAE | pays:ARE
