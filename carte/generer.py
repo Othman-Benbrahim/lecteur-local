@@ -94,6 +94,7 @@ def principal() -> int:
             aretes.append({"de": f"{theme}:{r['de']}", "vers": f"{theme}:{r['vers']}", "sorte": "relation",
                            "effet": r.get("effet"), "retour": r.get("retour"), "force": r.get("force", "inconnue"),
                            "delai": r.get("delai", ""), "statut": r.get("statut", ""), "texte": r.get("texte", ""),
+                           "verification": r.get("verification", ""),
                            "forme": eco.forme_deduite(r.get("effet"), r.get("retour"))})
         for p in f.get("ponts") or []:
             vers = p["vers"] if ":" in p["vers"] else f"{theme}:{p['vers']}"

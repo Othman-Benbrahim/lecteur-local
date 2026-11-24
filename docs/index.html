@@ -907,7 +907,7 @@ function blocCauses(n){
   const nom=id=>{const m=D.parId.get(id);if(!m) return esc(id);
     const t=m.fiche!==n.fiche?"↗ "+esc(m.fiche_nom)+" : "+esc(m.nom):esc(m.nom);
     return `<a href="#" onclick="basculer('${esc(id).replace(/'/g,"\\'")}');return false;">${t}</a>`;};
-  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.statut==="a_verifier"?" · non encore mesuré":""}</span>`:
+  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.statut==="a_verifier"?(a.verification?" · série à revoir":" · non encore mesuré"):a.statut==="verifie"?" · vérifiée par les séries":""}</span>${a.verification?`<span title="${esc(a.verification)}" style="cursor:help;color:var(--doux)"> ⓘ</span>`:""}`:
     `<span class="etiq">pont${a.canal?" · "+esc(a.canal):""}</span>`;
   const liste=(m,titre,vide)=>{let h=`<h2>${titre} (${m.size})</h2>`;if(!m.size) return h+`<p class="vide">${vide}</p>`;
     for(const k of [1,2,3]){const xs=[...m.entries()].filter(([,v])=>v.k===k);if(!xs.length) continue;
