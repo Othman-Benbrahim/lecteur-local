@@ -71,6 +71,17 @@
 + | Nobel/Nobel Peace Prize | competitions-culture:public;organisations-internationales:onu
 + | Elon Musk/Musk/tweet/tweets/X post | reseaux-sociaux:personnalites
 
+
+# Ajustements vers les compartiments du chantier B (validés par l'auteur le 2026-11-24 à 14 h 35)
++ | benchmark/FrontierMath/GPQA/leaderboard/time horizon/Chatbot Arena/LMArena | sciences-techniques:bancs_ia
++ | AI model/GPT-5/ChatGPT/Claude/Gemini/Grok/release/released/rollout | sciences-techniques:sorties_modeles
++ | IPO/S-1/nonprofit board/nonprofit | sciences-techniques:gouvernance_labos
++ | all-time high/new all-time high/record high/market cap/Bitcoin/Ethereum/Solana/XRP/S&P 500/Nasdaq/Dow/VIX/gas prices/crude oil/Brent/WTI/treasury/yield/close above/close below | crises-bancaires:seuils_de_prix
++ | U.S. Attorney/Attorney General/sworn in/confirmed/confirmation/Senate confirmation | politique-americaine:nominations_interim
++ | arrested/indicted/charged/convicted/imprisoned | politique-americaine:poursuites_personnalites
++ | Academy Awards/Oscar/Oscars/Emmy/Grammy/Golden Globe/Best Picture/Best Actor/Best Actress/Eurovision/Eurovisión | competitions-culture:precurseurs_recompenses
++ | NBA/NFL/NHL/MLB/FIFA/UEFA/World Cup/Champions League/Premier League/La Liga/LaLiga/Super Bowl/Stanley Cup/World Series/Grand Slam/US Open/Wimbledon/champion/championship/finals/playoffs/MVP/tournament | competitions-culture:classements_force
+
 # Table des pays : nom ou gentilé dans le titre -> pays (ISO3) -> compartiments dont geopolitique.pays contient ce pays.
 # S'ajoute aux 250 noms anglais de codes-pays-fips.csv. Même format de décision.
 
