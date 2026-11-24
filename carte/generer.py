@@ -75,6 +75,11 @@ def principal() -> int:
                         _lacunes.setdefault(cib, []).append([k, v])
                 except Exception:
                     _lacunes = {}
+                try:                                          # 2026-11-24, 23 h 14 : couverture en données (au fil de l'eau)
+                    _couv = json.loads((bot / "registre" / "carte-couverture.json").read_text(encoding="utf-8"))
+                except Exception:
+                    _couv = {}
+                _couv_rel = {(x["de"], x["vers"]): x for x in _couv.get("relations", [])}
             noeuds.append({"id": cid, "sorte": "compartiment", "fiche": theme, "fiche_nom": f.get("nom", theme),
                            "nom": c.get("nom", c["id"]), "organisation": c.get("organisation", ""),
                            # 0.10.473 : pays concernés (champ « geopolitique ») ; l'état UCDP s'y accroche
@@ -85,6 +90,7 @@ def principal() -> int:
                                       for t in c.get("traces") or [] if isinstance(t, dict)],
                            "flux": flux_de(c.get("traces")),
                            "lacunes": _lacunes.get(cid, []),
+                           "couverture": (_couv.get("compartiments") or {}).get(cid, {}),
                            # 0.10.461 : cycles qui touchent ce compartiment, tensions dont il est un pôle
                            "cycles": [{k: y.get(k) for k in ("id", "nom", "sorte", "mecanisme", "periode",
                                                             "phase_vulnerable", "statut")}
@@ -105,6 +111,7 @@ def principal() -> int:
                            "effet": r.get("effet"), "retour": r.get("retour"), "force": r.get("force", "inconnue"),
                            "delai": r.get("delai", ""), "statut": r.get("statut", ""), "texte": r.get("texte", ""),
                            "verification": r.get("verification", ""),
+                           "testable": (_couv_rel.get((f"{theme}:{r['de']}", f"{theme}:{r['vers']}")) or {}).get("testable"),
                            "forme": eco.forme_deduite(r.get("effet"), r.get("retour"))})
         for p in f.get("ponts") or []:
             vers = p["vers"] if ":" in p["vers"] else f"{theme}:{p['vers']}"
@@ -364,7 +371,11 @@ def principal() -> int:
 
     # santé du collecteur : date de la dernière situation enregistrée (aucune = jamais lancé ou en panne)
     collecte = {"situations": len(situations), "derniere": max((s["jour"] for s in situations), default=None)}
-    donnees = {"genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
+    _noms = {n["id"]: n["nom"] for n in noeuds}
+    couverture = {"genere_le": _couv.get("genere_le"), "avancement": _couv.get("avancement"),
+                  "priorites": [{**x, "nom": _noms.get(x["compartiment"], x["compartiment"])}
+                                for x in (_couv.get("priorites") or [])[:30]]} if _couv else None
+    donnees = {"couverture": couverture, "genere": date.today().isoformat(), "collecte": collecte, "recherche": recherche, "noeuds": noeuds, "aretes": aretes,
                "types": {"situations": g["situations"], "evenements": g["evenements"], "regles": g["aretes"]},
                "termes": termes, "acteurs_termes": acteurs, "emetteurs": emetteurs,
                "situations": situations, "types_actifs": types_actifs, "signaux": signaux, "suivi": suivi, "nommes": nommes, "mecanique": mecanique, "ucdp": ucdp, "indicateurs": indicateurs, "veille": veille,

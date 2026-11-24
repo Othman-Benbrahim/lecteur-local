@@ -42,6 +42,15 @@ label.case{display:flex;gap:6px;align-items:center;font-size:13px;margin:3px 0;c
 #metaculusBouton:hover{background:var(--accent);color:#fff}
 #metaculusPanneau{display:none;position:fixed;left:16px;bottom:16px;z-index:50;width:min(340px,calc(100vw - 32px));background:var(--panneau);border:1px solid var(--trait);border-radius:10px;box-shadow:0 6px 24px var(--ombre);padding:12px 14px;font-size:13px}
 #metaculusPanneau.ouvert{display:block}
+#couvBouton{margin-top:6px;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:6px;padding:5px 8px;font:inherit;font-size:12.5px;cursor:pointer;text-align:left}
+#couvBouton:hover,#couvBouton[aria-pressed="true"]{background:var(--accent);color:#fff}
+#couvPanneau{display:none;position:fixed;right:16px;bottom:16px;z-index:50;width:min(360px,calc(100vw - 32px));max-height:70vh;overflow:auto;background:var(--panneau);border:1px solid var(--trait);border-radius:10px;box-shadow:0 6px 24px var(--ombre);padding:12px 14px;font-size:13px}
+#couvPanneau.ouvert{display:block}
+#couvPanneau .grille{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin:8px 0}
+#couvPanneau .grille b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
+#couvPanneau .grille span{font-size:11.5px;color:var(--doux)}
+#couvPanneau .pastille{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:5px}
+#couvPanneau ol{margin:6px 0 0;padding-left:20px;font-size:12px}
 #metaculusPanneau .grille{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin:8px 0}
 #metaculusPanneau .grille b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
 #metaculusPanneau .grille span{font-size:11.5px;color:var(--doux)}
@@ -171,6 +180,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
       <span>taille d'un cercle : nombre d'articles rattachés (un article compte une fois par écosystème)</span>
       <span>compartiment d'une autre fiche (pointillé) : nom au survol</span>
       <button id="metaculusBouton" type="button" aria-expanded="false">Metaculus : où en est le bot ?</button>
+      <button id="couvBouton" type="button" aria-pressed="false">Couverture en données : ce que la carte mesure</button>
       <span style="margin-top:4px">Ce que la carte mesure : la couverture de nos sources (articles qui contiennent un terme validé), pas l'ampleur réelle d'un phénomène ; un même événement peut faire plusieurs articles, un terme peut être nié ou hypothétique.</span>
     </div>
   </aside>
@@ -181,6 +191,7 @@ a:hover{color:var(--texte);text-decoration-color:currentColor}
     <div id="infobulle"></div>
     <div id="releve" role="dialog" aria-label="relevé statistique du pays"></div>
     <div id="metaculusPanneau" role="dialog" aria-label="statistiques Metaculus"></div>
+    <div id="couvPanneau" role="dialog" aria-label="couverture en données de la carte"></div>
   </main>
 
   <section id="detail"><p class="vide">Cliquez sur un compartiment ou un acteur pour voir ses quatre variables, ses relations, les termes qui s'y rattachent et les situations datées et sourcées qui l'ont touché.</p></section>
@@ -600,7 +611,7 @@ function dessiner(){
     .attr("stroke-width",a=>a.sorte==="relation"?({forte:2.4,moyenne:1.6,faible:1}[a.force]||1.2):1)
     .attr("stroke-opacity",a=>a.sorte==="pont"&&a.type==="voisinage"?.3:null)
     // 0.10.467 (roue des métaux, décision de l'auteur du 2026-11-23) : « sous-produit de » en tirets ocre
-    .attr("stroke-dasharray",a=>(a.sorte==="relation"&&/^sous-produit/.test(a.texte||""))?"6 3":a.sorte==="rattache"?"2 2":a.sorte==="pont"?(a.type==="influence"?"5 4":"1 3"):(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
+    .attr("stroke-dasharray",a=>(COUV&&a.sorte==="relation"&&!a.testable)?"2 4":(a.sorte==="relation"&&/^sous-produit/.test(a.texte||""))?"6 3":a.sorte==="rattache"?"2 2":a.sorte==="pont"?(a.type==="influence"?"5 4":"1 3"):(a.sorte==="lien_acteur"&&a.temps!=="structurel")?"2 3":null)
     .attr("marker-end",a=>a.sorte==="relation"?`url(#f-${/^sous-produit/.test(a.texte||"")?"sousproduit":a.effet==="+"?"plus":a.effet==="-"?"moins":"neutre"})`:
       a.sorte==="lien_acteur"?"url(#f-acteur)":a.sorte==="pont"&&a.type==="influence"?"url(#f-neutre)":null);
 
@@ -638,7 +649,7 @@ function dessiner(){
     .attr("fill","none").style("stroke",n=>COUL_ETAT[etatGeo(n)]).style("stroke-width","2.5px")
     .append("title").text(n=>"UCDP, "+(D.ucdp.dernier_mois||"")+" : "+(n.pays||[]).map(x=>{const p=D.ucdp.par_pays[x];return (p?p.nom_fr:x)+" "+(p?p.etat:"calme");}).join(", "));
   noeud.append("circle").attr("r",rayon)
-    .attr("fill",n=>n.sorte==="nomme"?(n.genre==="patron"?"var(--patron)":n.genre==="religieux"?"var(--acteur)":"var(--dirigeant)"):n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
+    .attr("fill",n=>(COUV&&n.sorte==="compartiment")?COUL_COUV[(n.couverture||{}).statut||"a_trouver"]:n.sorte==="nomme"?(n.genre==="patron"?"var(--patron)":n.genre==="religieux"?"var(--acteur)":"var(--dirigeant)"):n.sorte==="acteur"?"var(--acteur)":COULEUR_FAMILLE[famille(n.organisation)])
     .attr("fill-opacity",n=>n.externe?.35:1).attr("stroke-dasharray",n=>n.externe?"3 2":null)
     .attr("stroke",n=>n.externe?"var(--pont)":null).style("cursor",n=>n.externe?"pointer":null);
   noeud.append("text").attr("x",n=>rayon(n)+3).attr("y",3.5).style("font-style",n=>n.externe?"italic":null).style("font-weight",n=>n.sorte==="nomme"?"600":null)
@@ -783,6 +794,8 @@ function detail(n,sits){
       const cible=autre&&autre.fiche!==n.fiche?`<a href="#" onclick="basculer('${esc(autre.id).replace(/'/g,"\\'")}');return false;">↗ ${esc(autre.fiche_nom)} : ${nom}</a>`:nom;
       return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
     const tr=n.traces||[];
+    if(n.couverture&&n.couverture.statut){const c=n.couverture;
+      h+=`<h2>Données</h2><p style="font-size:12.5px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${COUL_COUV[c.statut]};margin-right:5px"></span>${esc(LIB_COUV[c.statut])}${c.serie?` · série <code>${esc(c.serie)}</code>`:""}${c.derniere?` · dernière valeur le ${esc(c.derniere)}`:""}${c.motif?` · ${esc(c.motif)}`:""}</p>`;}
     if((n.lacunes||[]).length){const tot=n.lacunes.reduce((a,x)=>a+x[1],0);
       h+=`<h2>Où la carte reste muette</h2><p style="font-size:12px;color:var(--doux)">Sur les questions résolues, ce compartiment n'a pas pu être lu ${tot} fois :</p><ul>${n.lacunes.map(x=>`<li>${esc(x[0].includes(" → ")?"amont « "+x[0].split(" → ")[0].split(":").pop()+" » sans série":"aucune relation entrante")} <span class="etiq">${x[1]}</span></li>`).join("")}</ul>`;}
     h+=`<h2>Traces</h2>`+(tr.length?`<ul>${tr.map(t=>`<li>${esc(t.source)} <span class="etiq">${esc(t.statut)}</span>${(t.odd||[]).map(o=>` <span class="etiq" title="${esc(o.libelle)}">ODD ${esc(o.code)}</span>`).join("")}</li>`).join("")}</ul>`:`<p class="vide">aucune</p>`);
@@ -1078,8 +1091,40 @@ function detailUcdp(p){
   if(p.vpp_derniere_annee)b.push(`${p.vpp_derniere_annee} manifestations violentes l'an dernier publié`);
   return b.length?`<div style="margin:0 0 3px 14px;color:var(--doux);font-size:.92em">${b.join(" · ")}</div>`:"";
 }
+var COUV=false;
+const COUL_COUV={fraiche:"var(--plus)",ancienne:"var(--surbrillance)",vide:"var(--amont)",a_trouver:"var(--moins)",non_mesurable:"var(--pont)"};
+const LIB_COUV={fraiche:"série à jour (45 jours au plus)",ancienne:"série ancienne",vide:"série déclarée, aucune donnée lue",a_trouver:"pas de série (à trouver)",non_mesurable:"non mesurable par nature"};
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 addEventListener("resize",()=>{if(D) dessiner();});
+</script>
+<script>
+// 2026-11-24 (décision de l'auteur, 23 h 11 et 23 h 14) : couverture en données, complétée au fil de l'eau
+(function(){
+  const b = document.getElementById("couvBouton"), p = document.getElementById("couvPanneau");
+  function remplir(){
+    const c = D && D.couverture;
+    if(!c || !c.avancement){ p.textContent = "couverture indisponible"; return; }
+    const a = c.avancement, st = a.par_statut || {}, n = a.compartiments || 1;
+    const pc = v => Math.round(100 * (v || 0) / n) + " %";
+    const ligne = k => `<div style="font-size:12.5px;margin:2px 0"><span class="pastille" style="background:${COUL_COUV[k]}"></span>${LIB_COUV[k]} : <b>${st[k] || 0}</b> (${pc(st[k])})</div>`;
+    p.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:baseline"><strong>Couverture en données</strong>` +
+      `<button type="button" id="couvFermer" style="border:0;background:transparent;color:var(--doux);cursor:pointer;font-size:16px" aria-label="fermer">×</button></div>` +
+      `<div class="grille"><div><b>${pc((st.fraiche||0)+(st.ancienne||0))}</b><span>compartiments avec une série</span></div>` +
+      `<div><b>${a.relations_testables} / ${a.relations}</b><span>relations testables (série aux deux bouts)</span></div></div>` +
+      ["fraiche","ancienne","vide","a_trouver","non_mesurable"].map(ligne).join("") +
+      `<div style="font-size:12px;margin-top:6px">Relations contrôlées par les séries : ${(a.relations_par_verdict||{}).verifie||0} vérifiées, ${(a.relations_par_verdict||{}).conteste||0} à revoir, ${(a.relations_par_verdict||{}).non_tranche||0} non tranchées.</div>` +
+      `<div style="margin-top:8px;font-size:12.5px"><strong>Prochains manques à combler</strong> <span style="color:var(--doux);font-size:11.5px">(lectures manquées sur les questions résolues)</span></div>` +
+      `<ol>${(c.priorites||[]).slice(0,12).map(x=>`<li><a href="#" onclick="etat.fiche='${x.compartiment.split(":")[0]}';etat.choisi='${x.compartiment}';document.getElementById('fiche').value=etat.fiche;dessiner();return false;">${esc(x.nom)}</a> <span style="color:var(--doux)">${esc(x.compartiment.split(":")[0])}</span> <span class="etiq">${x.lectures_manquees}</span></li>`).join("")}</ol>` +
+      `<div style="font-size:11.5px;color:var(--doux);margin-top:6px">Sur la carte : couleur du compartiment = état de sa série ; relation en pointillés fins = pas testable. Calculé le ${esc(c.genere_le||"")}.</div>`;
+    document.getElementById("couvFermer").onclick = () => basculer(false);
+  }
+  function basculer(on){
+    COUV = on; b.setAttribute("aria-pressed", on ? "true" : "false");
+    p.classList.toggle("ouvert", on); if(on) remplir();
+    if(D) dessiner();
+  }
+  b.addEventListener("click", () => basculer(!COUV));
+})();
 </script>
 <script>
 // 2026-11-24 (décision de l'auteur, 18 h 43) : statistiques Metaculus du bot, depuis docs/metaculus.json
