@@ -77,7 +77,7 @@
 + | AI model/GPT-5/ChatGPT/Claude/Gemini/Grok/release/released/rollout | sciences-techniques:sorties_modeles
 + | IPO/S-1/nonprofit board/nonprofit | sciences-techniques:gouvernance_labos
 + | all-time high/new all-time high/record high/market cap/Bitcoin/Ethereum/Solana/XRP/S&P 500/Nasdaq/Dow/VIX/gas prices/crude oil/Brent/WTI/treasury/yield/close above/close below | crises-bancaires:seuils_de_prix
-+ | U.S. Attorney/Attorney General/sworn in/confirmed/confirmation/Senate confirmation | politique-americaine:nominations_interim
++ | U.S. Attorney/Attorney General/sworn in/confirmed by the Senate/Senate confirmation/Senate-confirmed | politique-americaine:nominations_interim
 + | arrested/indicted/charged/convicted/imprisoned | politique-americaine:poursuites_personnalites
 + | Academy Awards/Oscar/Oscars/Emmy/Grammy/Golden Globe/Best Picture/Best Actor/Best Actress/Eurovision/Eurovisión | competitions-culture:precurseurs_recompenses
 + | NBA/NFL/NHL/MLB/FIFA/UEFA/World Cup/Champions League/Premier League/La Liga/LaLiga/Super Bowl/Stanley Cup/World Series/Grand Slam/US Open/Wimbledon/champion/championship/finals/playoffs/MVP/tournament | competitions-culture:classements_force
