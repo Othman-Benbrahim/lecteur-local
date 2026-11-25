@@ -1,16 +1,16 @@
 {
- "genere_le": "2026-11-24T22:05+00:00",
+ "genere_le": "2026-11-25T06:12+00:00",
  "stats": {
-  "questions": 47,
-  "binaires": 18,
-  "ouvertes": 47,
+  "questions": 49,
+  "binaires": 19,
+  "ouvertes": 49,
   "a_relever": 0,
   "resolues": 0,
   "resolues_binaires": 0,
   "taux_reussite": null,
   "brier_moyen": null,
   "score_reference_moyen": null,
-  "avec_brique": 0,
+  "avec_brique": 1,
   "prochaine_echeance": "2026-11-26",
   "calibration": [],
   "par_brique": {}
@@ -586,6 +586,41 @@
    "echeance": "2027-01-01",
    "prevision_texte": "médiane ≈ 7.6",
    "date_prevision": "2026-11-24",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46896",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-25",
+     0.28
+    ]
+   ],
+   "titre": "Will the European Council reach a political agreement on the overall 2028-2034 Multiannual Financial Framework before January 1, 2027?",
+   "url": "https://www.metaculus.com/questions/46636",
+   "echeance": "2027-01-01",
+   "prevision": 0.28,
+   "date_prevision": "2026-11-25",
+   "statut": "ouverte",
+   "brique": {
+    "brique": "accords (guerres, rencontres, justice…)",
+    "p_bot": 0.28,
+    "p_poste": 0.24119518403167584,
+    "le": "2026-11-25"
+   }
+  },
+  {
+   "id": "46897",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "Which epidemiological week will be the onset week for the flu in HHS Region 8 in 2026-27?",
+   "url": "https://www.metaculus.com/questions/46637",
+   "echeance": "2027-01-05",
+   "prevision_texte": "47 (42%)",
+   "date_prevision": "2026-11-25",
    "statut": "ouverte"
   },
   {
