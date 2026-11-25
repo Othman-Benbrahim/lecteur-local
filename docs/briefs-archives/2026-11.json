@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-11-25T12:24:14+00:00",
+ "genere_le": "2026-11-25T16:09:06+00:00",
  "mois": "2026-11",
  "resume": {
   "briefs": 10,
@@ -36,7 +36,42 @@
    "limites": [
     "Le texte ne fournit aucun chiffre précis sur le nombre d’incidents.",
     "Il ne précise pas quels acteurs ou quelles victimes sont ciblés."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://citizenlab.ca/gangsters-run-the-world-citizen-lab-founder-ron-deibert-warns-of-unchecked-spyware-buse/",
+    "compartiments": [
+     {
+      "compartiment": "surveillance-espionnage:cibles",
+      "series": [],
+      "attention": [
+       {
+        "adaptateur": "rss_matiere:cibles",
+        "source": "articles où une cible (journaliste, militant, opposant, élu) est rapprochée d'un logiciel espion ou d'une surveillance, par jour ; flux suivis : Citizen Lab, EF",
+        "date": "2026-11-25",
+        "valeur": 0.0,
+        "age_jours": 0,
+        "variation": 0.0
+       }
+      ]
+     },
+     {
+      "compartiment": "surveillance-espionnage:industrie_intrusion",
+      "series": [],
+      "attention": [
+       {
+        "adaptateur": "rss_matiere:spyware",
+        "source": "articles qui nomment un logiciel espion ou un vendeur (Pegasus, Predator, Paragon, NSO, Intellexa, Candiru, sans clic), par jour ; flux suivis : Citizen Lab, EF",
+        "date": "2026-11-25",
+        "valeur": 0.0,
+        "age_jours": 0,
+        "variation": 0.0
+       }
+      ]
+     }
+    ],
+    "chiffres": []
+   }
   },
   {
    "jour": "2026-11-25",
@@ -74,7 +109,33 @@
    "limites": [
     "Le document ne détaille pas le contenu ni les conclusions de la pièce.",
     "Aucun chiffre, donnée ou analyse n’est fourni."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://citizenlab.ca/the-biometric-dragnet/",
+    "compartiments": [
+     {
+      "compartiment": "surveillance-espionnage:biometrie",
+      "series": [],
+      "attention": [
+       {
+        "adaptateur": "rss_matiere:biometrie",
+        "source": "articles qui nomment la reconnaissance faciale ou la biométrie, par jour ; flux suivis : Citizen Lab, EFF, The Record, Google TAG, CISA, CERT-FR, Intelligence O",
+        "date": "2026-11-25",
+        "valeur": 0.0,
+        "age_jours": 0,
+        "variation": -2.0
+       }
+      ]
+     },
+     {
+      "compartiment": "sciences-techniques:ia",
+      "series": [],
+      "attention": []
+     }
+    ],
+    "chiffres": []
+   }
   },
   {
    "jour": "2026-11-25",
@@ -111,7 +172,19 @@
    "limites": [
     "Le document ne précise pas l'efficacité réelle des blocages mis en place par Signal.",
     "Aucune comparaison chiffrée des risques avant/après la mise à jour n'est fournie."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://www.eff.org/deeplinks/2026/11/signal-now-blocks-ai-agents",
+    "compartiments": [
+     {
+      "compartiment": "sciences-techniques:ia",
+      "series": [],
+      "attention": []
+     }
+    ],
+    "chiffres": []
+   }
   },
   {
    "jour": "2026-11-25",
@@ -149,7 +222,33 @@
    "limites": [
     "Le document ne précise pas les preuves concrètes des détournements de puces vers la Chine.",
     "Il n’évalue pas l’impact réel des nouvelles règles sur les flux de puces ou les alternatives chinoises."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://www.atlanticcouncil.org/dispatches/huang-is-back-at-nvidia-but-the-fight-over-who-controls-chip-exports-is-just-beginning/",
+    "compartiments": [
+     {
+      "compartiment": "economie-entreprises:entreprises",
+      "series": [],
+      "attention": []
+     },
+     {
+      "compartiment": "politique-americaine:congres",
+      "series": [
+       {
+        "adaptateur": "congres",
+        "source": "réunions de commission du Congrès par date prévue",
+        "date": "2026-11-25",
+        "valeur": 0.0,
+        "age_jours": 0,
+        "variation": 0.0
+       }
+      ],
+      "attention": []
+     }
+    ],
+    "chiffres": []
+   }
   },
   {
    "jour": "2026-11-25",
@@ -174,7 +273,19 @@
    "limites": [
     "Le document ne fournit aucun détail ni argumentation sur la thèse présentée.",
     "Aucun chiffre, source externe ou citation n’est mentionné."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://legrandcontinent.eu/fr/2026/11/24/moscou-est-la-troisieme-rome-il-ny-en-aura-pas-de-quatrieme/",
+    "compartiments": [
+     {
+      "compartiment": "dirigeants-elus:executifs",
+      "series": [],
+      "attention": []
+     }
+    ],
+    "chiffres": []
+   }
   },
   {
    "jour": "2026-11-25",
@@ -206,7 +317,24 @@
    "limites": [
     "Le texte ne précise pas l’ampleur exacte de la hausse de prix attendue.",
     "Aucune donnée chiffrée sur les prévisions météorologiques ou les prix actuels n’est fournie."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://legrandcontinent.eu/fr/2026/11/25/lincertitude-meteorologique-pourrait-faire-grimper-les-prix-du-gaz-en-europe-cet-hiver/",
+    "compartiments": [
+     {
+      "compartiment": "dirigeants-elus:executifs",
+      "series": [],
+      "attention": []
+     },
+     {
+      "compartiment": "dirigeants-elus:mandats_succession",
+      "series": [],
+      "attention": []
+     }
+    ],
+    "chiffres": []
+   }
   },
   {
    "jour": "2026-11-25",
@@ -243,7 +371,24 @@
    "limites": [
     "Aucun détail sur les coûts ou l'efficacité réelle des drones en termes de pertes humaines.",
     "Pas de preuve directe que ces drones suffiront à inverser le cours de la guerre."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://www.atlanticcouncil.org/blogs/ukrainealert/ukraine-is-now-a-drone-superpower-at-sea-on-land-and-in-the-air/",
+    "compartiments": [
+     {
+      "compartiment": "militaire:technologies",
+      "series": [],
+      "attention": []
+     }
+    ],
+    "chiffres": [
+     {
+      "chiffre": "45 %",
+      "verdict": "non recoupable"
+     }
+    ]
+   }
   },
   {
    "jour": "2026-11-25",
@@ -281,7 +426,29 @@
    "limites": [
     "Les documents ne précisent pas l'impact réel sur les utilisateurs après application.",
     "Aucune donnée sur l'efficacité des mesures pour protéger les mineurs n'est fournie."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://www.eff.org/deeplinks/2026/11/new-york-and-california-age-gating-rules-go-effect-new-year",
+    "compartiments": [
+     {
+      "compartiment": "medias-diffusion:plateformes_sociales",
+      "series": [],
+      "attention": []
+     },
+     {
+      "compartiment": "economie-entreprises:regles_sectorielles",
+      "series": [],
+      "attention": []
+     }
+    ],
+    "chiffres": [
+     {
+      "chiffre": "15 %",
+      "verdict": "non recoupable"
+     }
+    ]
+   }
   },
   {
    "jour": "2026-11-25",
@@ -319,7 +486,35 @@
    "limites": [
     "Aucun chiffre ou donnée chiffrée n’est fourni pour quantifier l’impact.",
     "Le texte ne précise pas quels relais européens sont mobilisés ni leur mode d’action."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://legrandcontinent.eu/fr/2026/11/24/comment-moscou-exploite-les-manifestations-de-la-jeunesse-en-europe-pour-nourrir-sa-guerre-informationnelle/",
+    "compartiments": [
+     {
+      "compartiment": "politique-interieure:contestation",
+      "series": [],
+      "attention": []
+     },
+     {
+      "compartiment": "information-cyber:recits",
+      "series": [],
+      "attention": [
+       {
+        "adaptateur": "recit_russe:MD",
+        "source": "articles des médias d'État russes sur la Moldavie",
+        "date": "2026-11-24",
+        "valeur": 0.0,
+        "age_jours": 1,
+        "variation": 0.0,
+        "z": 0.0,
+        "anormal": false
+       }
+      ]
+     }
+    ],
+    "chiffres": []
+   }
   },
   {
    "jour": "2026-11-25",
@@ -342,7 +537,13 @@
    "limites": [
     "Il ne fournit aucune donnée chiffrée ni description concrète des acteurs politiques.",
     "Il ne précise pas quels changements institutionnels ou de pouvoir sont observés au Soudan."
-   ]
+   ],
+   "recoupement": {
+    "jour": "2026-11-25",
+    "url": "https://legrandcontinent.eu/fr/2026/11/25/le-soudan-microcosme-de-ce-qui-succede-a-lordre-mondial-liberal/",
+    "compartiments": [],
+    "chiffres": []
+   }
   }
  ]
 }

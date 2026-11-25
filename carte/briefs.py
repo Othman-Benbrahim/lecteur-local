@@ -19,9 +19,14 @@ SORTIE = ICI / "docs" / "briefs.json"
 JOURS = 90
 
 
+RECOUPEMENT: dict = {}
+
+
 def _forme(x: dict) -> dict:
+    """2026-11-25 : « recoupement » = contexte chiffré et recoupement des chiffres (bot : recoupement_briefs.py)."""
     return {"jour": x.get("jour"), "url": x.get("url"), "media": x.get("media"), "classe": x.get("classe"),
-            "modele": x.get("modele"), "page_lue": x.get("page_lue", True), **x["brief"]}
+            "modele": x.get("modele"), "page_lue": x.get("page_lue", True), **x["brief"],
+            "recoupement": RECOUPEMENT.get(x.get("fichier") or "")}
 
 
 def _resume(briefs: list[dict]) -> dict:
@@ -71,6 +76,9 @@ def archiver(lignes: list[dict]) -> list[str]:
 
 if __name__ == "__main__":
     bot = Path(sys.argv[1]) if len(sys.argv) > 1 else ICI.parent / "metac-bot-template"
+    f = bot / "registre" / "briefs-recoupement.json"
+    if f.is_file():
+        RECOUPEMENT.update(json.loads(f.read_text(encoding="utf-8")))
     tout = lire(bot)
     d = construire(bot, tout)
     SORTIE.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")

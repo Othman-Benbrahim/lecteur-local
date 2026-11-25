@@ -109,11 +109,25 @@ function dessiner() {
     <h3>${esc(b.titre || "Sans titre")}</h3>
     <div class="src">${esc(b.jour)} · ${esc(b.media)} (${esc(b.classe)}) · <a href="${esc(b.url)}" target="_blank" rel="noopener">source</a>${b.page_lue ? "" : " · page non lue, résumé du flux seulement"}</div>
     <ul>${(b.faits || []).map(f => `<li>${esc(f.fait)}${f.chiffre ? " — <b>" + esc(f.chiffre) + "</b>" : ""}<span class="etiq ${cls(f.statut)}">${esc(f.statut)}</span></li>`).join("") || "<li>aucun fait retenu</li>"}</ul>
+    ${recoup(b)}
     <div class="titre-bloc">Ce que ça change</div><div>${esc(b.ce_que_ca_change || "—")}</div>
     ${(b.limites || []).length ? `<div class="titre-bloc">Limites</div><ul>${b.limites.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
     ${(b.compartiments || []).length ? `<div class="carte">Carte : ${b.compartiments.map(esc).join(", ")}</div>` : ""}
     <div class="src" style="margin:6px 0 0">modèle : ${esc(b.modele)}</div></article>`).join("")
     : `<div class="vide">${D.briefs.length ? "aucun brief pour ces filtres" : "aucun brief publié pour l'instant : le premier passage a lieu chaque nuit"}</div>`;
+}
+// 2026-11-25 : recoupement chiffré (bot : recoupement_briefs.py). Séries lues à la date du brief, sans valeur postérieure.
+function nb(v) { return Math.abs(v) >= 1e6 ? (v / 1e9 >= 1 ? (v / 1e9).toLocaleString("fr-FR", {maximumFractionDigits: 2}) + " Md" : (v / 1e6).toLocaleString("fr-FR", {maximumFractionDigits: 2}) + " M") : Number(v).toLocaleString("fr-FR", {maximumFractionDigits: 2}); }
+function recoup(b) {
+  const r = b.recoupement; if (!r) return "";
+  const lignes = (r.compartiments || []).map(c => {
+    const s = c.series || [];
+    const t = s.length ? s.map(x => `${esc(x.source || x.adaptateur)} : <b>${nb(x.valeur)}</b> (${esc(x.date)}${x.age_jours > 45 ? ", ancienne" : ""})${x.variation != null ? ", variation " + (x.variation >= 0 ? "+" : "") + nb(x.variation) : ""}${x.anormal ? ' <span class="etiq absent">mouvement anormal</span>' : ""}`).join("<br>")
+      : '<span style="color:var(--doux)">aucune série chiffrée sur ce compartiment</span>';
+    return `<li><b>${esc(c.compartiment)}</b><br>${t}</li>`;
+  }).join("");
+  const ch = (r.chiffres || []).map(f => `<li>${esc(f.chiffre)} : ${f.verdict === "non recoupable" ? "non recoupable" : `<span class="etiq verifie">cohérent</span> avec ${esc(f.source || f.adaptateur)} (${nb(f.valeur)}, ${esc(f.date)})`}</li>`).join("");
+  return `<div class="titre-bloc">Contexte chiffré (au jour du brief)</div><ul>${lignes}</ul>${ch ? `<div class="titre-bloc">Chiffres cités, recoupés</div><ul>${ch}</ul>` : ""}`;
 }
 let pret = false;
 function charger(url) {
