@@ -188,6 +188,15 @@ def terrain_pays(bot: Path) -> dict:
                     continue
                 out[x["iso2"]]["aridite"] = {"indice": float(x["indice_moyen"]), "aride": float(x["part_aride_pct"]),
                                              "seche": float(x["part_seche_pct"])}
+    f = bot / "ecosystemes" / "ucdb-pays.csv"
+    if f.exists():   # GHS-UCDB R2024A : centres urbains agrégés par pays (mise_au_point/ucdb_pays.py)
+        garder = {("pop_centres", "2025"), ("part_crue_fluviale_100", "2025"), ("part_submersion_100", "2025"),
+                  ("part_lecz_10", "2025"), ("part_seisme_6", "2025"), ("jours_utci32", "1980"), ("jours_utci32", "2020"),
+                  ("pm25", "2000"), ("pm25", "2020"), ("deces_pm25", "2020"), ("morts_ucdp", "2020")}
+        with f.open(encoding="utf-8") as h:
+            for x in csv.DictReader(l for l in h if not l.startswith("#")):
+                if (x["variable"], x["annee"]) in garder and x["iso2"] != "WLD":
+                    out[x["iso2"]].setdefault("ucdb", {})[f"{x['variable']}_{x['annee']}"] = float(x["valeur"])
     return dict(out)
 
 
