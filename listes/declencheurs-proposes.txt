@@ -3,81 +3,81 @@
 # phases vulnérables des cycles de la carte ; pas des sujets du moment. Un terme présent dans le titre d'un article donne
 # des points de priorité ; associé à une entité (entites-prioritaires-proposees.txt), il en donne davantage.
 # Format : statut | termes (variantes séparées par /, anglais et français) | phase | remarque
-# Statut : « ? » proposé par Claude ; « + » validé par l'auteur (seuls les « + » sont actifs) ; « - » refusé.
+# Statut : « ? » proposé par Claude ; tout validé par l'auteur le 2026-11-25 à 13 h 23 ; « + » validé par l'auteur (seuls les « + » sont actifs) ; « - » refusé.
 #
 # --- bascule politique ---
-? | coup/coup d'État/putsch/junta/junte | bascule |
-? | resigns/resignation/steps down/démission/démissionne | bascule |
-? | impeachment/impeached/destitution | bascule |
-? | snap election/early election/élection anticipée/élections anticipées | déclencheur |
-? | state of emergency/état d'urgence | bascule |
-? | martial law/loi martiale | bascule |
-? | curfew/couvre-feu | frein |
-? | dissolves parliament/dissolution | bascule |
-? | no-confidence/motion de censure/vote de confiance | déclencheur |
-? | assassination/assassinated/assassinat | déclencheur |
-? | arrested/arrest warrant/arrestation/mandat d'arrêt | déclencheur |
-? | indicted/indictment/inculpé/mise en examen | déclencheur |
-? | sentenced/convicted/condamné/condamnation | bascule |
-? | died/dies/death of/décès/meurt | déclencheur | à associer à une entité
-? | hospitalized/hospitalised/hospitalisé | déclencheur | à associer à une entité
-? | succession/successor/successeur | relais |
++ | coup/coup d'État/putsch/junta/junte | bascule |
++ | resigns/resignation/steps down/démission/démissionne | bascule |
++ | impeachment/impeached/destitution | bascule |
++ | snap election/early election/élection anticipée/élections anticipées | déclencheur |
++ | state of emergency/état d'urgence | bascule |
++ | martial law/loi martiale | bascule |
++ | curfew/couvre-feu | frein |
++ | dissolves parliament/dissolution | bascule |
++ | no-confidence/motion de censure/vote de confiance | déclencheur |
++ | assassination/assassinated/assassinat | déclencheur |
++ | arrested/arrest warrant/arrestation/mandat d'arrêt | déclencheur |
++ | indicted/indictment/inculpé/mise en examen | déclencheur |
++ | sentenced/convicted/condamné/condamnation | bascule |
++ | died/dies/death of/décès/meurt | déclencheur | à associer à une entité
++ | hospitalized/hospitalised/hospitalisé | déclencheur | à associer à une entité
++ | succession/successor/successeur | relais |
 # --- conflit ---
-? | ceasefire/truce/cessez-le-feu/trêve | frein |
-? | peace deal/peace agreement/accord de paix | bascule |
-? | peace talks/negotiations/pourparlers/négociations de paix | relais |
-? | invasion/invades/envahit | bascule |
-? | offensive/counteroffensive/contre-offensive | déclencheur |
-? | mobilization/mobilisation | amplificateur |
-? | airstrike/air strike/frappe aérienne/bombardement | déclencheur |
-? | blockade/blocus | bascule |
-? | ultimatum | déclencheur |
-? | annexation/annexes/annexion | bascule |
-? | nuclear test/essai nucléaire | bascule |
-? | enrichment/enrichissement | chargement |
-? | hostages/otages/prisoner swap/échange de prisonniers | relais |
++ | ceasefire/truce/cessez-le-feu/trêve | frein |
++ | peace deal/peace agreement/accord de paix | bascule |
++ | peace talks/negotiations/pourparlers/négociations de paix | relais |
++ | invasion/invades/envahit | bascule |
++ | offensive/counteroffensive/contre-offensive | déclencheur |
++ | mobilization/mobilisation | amplificateur |
++ | airstrike/air strike/frappe aérienne/bombardement | déclencheur |
++ | blockade/blocus | bascule |
++ | ultimatum | déclencheur |
++ | annexation/annexes/annexion | bascule |
++ | nuclear test/essai nucléaire | bascule |
++ | enrichment/enrichissement | chargement |
++ | hostages/otages/prisoner swap/échange de prisonniers | relais |
 # --- économie et finance ---
-? | default/defaults/défaut de paiement | bascule |
-? | bankruptcy/bankrupt/faillite/dépôt de bilan | bascule |
-? | bailout/rescue package/plan de sauvetage/renflouement | frein |
-? | rate cut/rate hike/baisse des taux/hausse des taux | déclencheur |
-? | devaluation/dévaluation | bascule |
-? | capital controls/contrôle des capitaux | frein |
-? | sanctions/sanctionne | déclencheur |
-? | tariffs/tariff/droits de douane | déclencheur |
-? | export ban/export controls/embargo | déclencheur |
-? | downgrade/downgraded/dégradation de la note | déclencheur |
-? | recession/récession | bascule |
-? | IPO/introduction en bourse | déclencheur | entreprises
-? | acquisition/merger/takeover/rachat/fusion | déclencheur | entreprises
-? | layoffs/licenciements/plan social | amplificateur |
++ | default/defaults/défaut de paiement | bascule |
++ | bankruptcy/bankrupt/faillite/dépôt de bilan | bascule |
++ | bailout/rescue package/plan de sauvetage/renflouement | frein |
++ | rate cut/rate hike/baisse des taux/hausse des taux | déclencheur |
++ | devaluation/dévaluation | bascule |
++ | capital controls/contrôle des capitaux | frein |
++ | sanctions/sanctionne | déclencheur |
++ | tariffs/tariff/droits de douane | déclencheur |
++ | export ban/export controls/embargo | déclencheur |
++ | downgrade/downgraded/dégradation de la note | déclencheur |
++ | recession/récession | bascule |
++ | IPO/introduction en bourse | déclencheur | entreprises
++ | acquisition/merger/takeover/rachat/fusion | déclencheur | entreprises
++ | layoffs/licenciements/plan social | amplificateur |
 # --- société ---
-? | protests/protesters/manifestations/manifestants | amplificateur |
-? | riots/émeutes | bascule |
-? | general strike/grève générale | bascule |
-? | referendum/référendum | déclencheur |
-? | massacre | bascule |
-? | famine | bascule |
-? | outbreak/épidémie/flambée | déclencheur |
-? | pandemic/pandémie | bascule |
-? | evacuation/évacuation | frein |
++ | protests/protesters/manifestations/manifestants | amplificateur |
++ | riots/émeutes | bascule |
++ | general strike/grève générale | bascule |
++ | referendum/référendum | déclencheur |
++ | massacre | bascule |
++ | famine | bascule |
++ | outbreak/épidémie/flambée | déclencheur |
++ | pandemic/pandémie | bascule |
++ | evacuation/évacuation | frein |
 # --- institutions et justice ---
-? | ruling/verdict/arrêt de la cour | bascule |
-? | Supreme Court/Cour suprême | relais |
-? | veto | frein |
-? | treaty/traité | bascule |
-? | withdraws from/withdrawal/se retire de/retrait de | bascule |
-? | suspended/suspension | frein |
-? | expels/expelled/expulse/expulsion | déclencheur |
++ | ruling/verdict/arrêt de la cour | bascule |
++ | Supreme Court/Cour suprême | relais |
++ | veto | frein |
++ | treaty/traité | bascule |
++ | withdraws from/withdrawal/se retire de/retrait de | bascule |
++ | suspended/suspension | frein |
++ | expels/expelled/expulse/expulsion | déclencheur |
 # --- technique ---
-? | cyberattack/ransomware/cyberattaque/rançongiciel | déclencheur |
-? | data breach/leak/fuite de données | déclencheur |
-? | outage/blackout/panne géante | bascule |
-? | ban/bans/banned/interdit/interdiction | frein | générique : seulement associé à une entité
-? | launches/launch/lance/lancement | déclencheur | générique : seulement associé à une entité
++ | cyberattack/ransomware/cyberattaque/rançongiciel | déclencheur |
++ | data breach/leak/fuite de données | déclencheur |
++ | outage/blackout/panne géante | bascule |
++ | ban/bans/banned/interdit/interdiction | frein | générique : seulement associé à une entité
++ | launches/launch/lance/lancement | déclencheur | générique : seulement associé à une entité
 # --- nature ---
-? | earthquake/séisme | déclencheur |
-? | hurricane/typhoon/cyclone/ouragan | déclencheur |
-? | eruption/éruption | déclencheur |
-? | floods/flooding/inondations | déclencheur |
-? | wildfire/wildfires/incendie de forêt | déclencheur |
++ | earthquake/séisme | déclencheur |
++ | hurricane/typhoon/cyclone/ouragan | déclencheur |
++ | eruption/éruption | déclencheur |
++ | floods/flooding/inondations | déclencheur |
++ | wildfire/wildfires/incendie de forêt | déclencheur |
