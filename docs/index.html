@@ -1024,7 +1024,8 @@ function detail(n,sits){
       const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}${a.fondement?" · "+esc(FONDEMENT[a.fondement]||a.fondement):""}</span>`:`<span class="etiq">${a.sorte==="pont"?(esc(NOM_TYPE[a.type]||"pont")+(a.canal?" · "+esc(a.canal):"")):"lien"}</span>`;
       const nom=esc(autre?autre.nom:"?");
       const cible=autre&&autre.fiche!==n.fiche?`<a href="#" onclick="basculer('${esc(autre.id).replace(/'/g,"\\'")}');return false;">↗ ${esc(autre.fiche_nom)} : ${nom}</a>`:nom;
-      return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
+      const src=a.sorte==="relation"&&a.source?`<br><span style="font-size:11.5px;color:var(--doux)">source du lien : ${esc(a.source).replace(/(https?:\/\/[^\s;)]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>')}</span>`:"";
+      return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span>${src}</li>`;}).join("")}</ul>`;
     const tr=n.traces||[];
     if(n.couverture&&n.couverture.statut){const c=n.couverture;
       h+=`<h2>Données</h2><p style="font-size:12.5px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${COUL_COUV[c.statut]};margin-right:5px"></span>${esc(LIB_COUV[c.statut])}${c.serie?` · série <code>${esc(c.serie)}</code>`:""}${c.derniere?` · dernière valeur le ${esc(c.derniere)}`:""}${c.motif?` · ${esc(c.motif)}`:""}</p>`;}
