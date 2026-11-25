@@ -180,3 +180,4 @@
 + | endangered language/endangered languages/indigenous language/minority language/regional language | cultures-emboitees:cultures_locales
 + | cultural exception/cultural diversity/screen quota/broadcasting quota | cultures-emboitees:protections_culturelles
 + | emergency use authorization/FDA/EMA/clinical trial/Phase 3 | sciences-techniques:developpement
++ | psychological defence/psychological defense/trust in government/institutional trust/societal resilience/crisis communication/cognitive warfare | information-cyber:resilience_informationnelle
