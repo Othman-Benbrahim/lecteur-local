@@ -1,16 +1,16 @@
 {
- "genere_le": "2026-11-25T18:15+00:00",
+ "genere_le": "2026-11-25T18:22+00:00",
  "stats": {
-  "questions": 51,
-  "binaires": 19,
-  "ouvertes": 51,
+  "questions": 52,
+  "binaires": 20,
+  "ouvertes": 52,
   "a_relever": 0,
   "resolues": 0,
   "resolues_binaires": 0,
   "taux_reussite": null,
   "brier_moyen": null,
   "score_reference_moyen": null,
-  "avec_brique": 1,
+  "avec_brique": 2,
   "prochaine_echeance": "2026-11-26",
   "calibration": [],
   "par_brique": {}
@@ -689,6 +689,29 @@
     "brique": "accords (guerres, rencontres, justice…)",
     "p_bot": 0.28,
     "p_poste": 0.24119518403167584,
+    "le": "2026-11-25"
+   }
+  },
+  {
+   "id": "47008",
+   "type": "binaire",
+   "mises_a_jour": 1,
+   "historique": [
+    [
+     "2026-11-25",
+     0.9
+    ]
+   ],
+   "titre": "Will Donald Trump and Vladimir Putin meet in person or talk on the phone before January 1, 2027?",
+   "url": "https://www.metaculus.com/questions/46751",
+   "echeance": "2027-01-01",
+   "prevision": 0.9,
+   "date_prevision": "2026-11-25",
+   "statut": "ouverte",
+   "brique": {
+    "brique": "accords (guerres, rencontres, justice…)",
+    "p_bot": 0.9,
+    "p_poste": 0.75,
     "le": "2026-11-25"
    }
   },
