@@ -1,4 +1,6 @@
 # Fondement des relations de la carte (2026-11-25, décision de l'auteur à 19 h 00 ; Guizzardi et Guarino 2024).
+# 2026-11-25, 19 h 16 (« on y va ») : étendu à toutes les relations des fiches (1 015). Les 60 de l'échantillon (« + ») sont
+# validées ; les 955 autres (« ? ») sont classées par Claude, actives dans les fiches, non relues une à une.
 # Échantillon de 60 relations tirées au hasard, classées par Claude. Le fondement dit ce qui rend la relation vraie,
 # donc ce qu'il faut vérifier :
 #   lien             une chose concrète relie les deux et se constate (règle, traité, institution, contrat, réseau, sous-produit)
@@ -11,63 +13,1018 @@
 # « - » : la relation elle-même est douteuse (à revoir). Seules les lignes « + » seront reportées dans les fiches.
 # Format : statut | fondement | fiche : de → vers (effet) | texte de la relation
 #
+? | causalite | afrique-subsaharienne : groupes_armes → deplacements (+) | les attaques et les blocus chassent les populations
+? | evenement | afrique-subsaharienne : groupes_armes → juntes_sahel (-) | un blocus ou une offensive affaiblit l'autorité des juntes (cas du blocus de Bamako, 2025-2026)
+? | evenement | afrique-subsaharienne : juntes_sahel → institutions_regionales (-) | les juntes ont quitté la CEDEAO et affaiblissent l'intégration régionale
+? | causalite | afrique-subsaharienne : puissances_exterieures → juntes_sahel (+) | le soutien militaire russe conforte les juntes
+? | causalite | afrique-subsaharienne : puissances_exterieures → grands_lacs (-) | les médiations américaine et qatarie cherchent à faire baisser les combats (le compartiment cible lit ici l'intensité des combats)
+? | causalite | afrique-subsaharienne : ressources → grands_lacs (+) | les minerais financent et motivent les combats dans l'est de la RDC
+? | causalite | afrique-subsaharienne : demographie_jeunesse → croissance (+) | une population active qui grossit peut porter la croissance (dividende démographique), si les emplois suivent
+? | causalite | afrique-subsaharienne : acces_electricite → croissance (+) | l'électricité permet d'irriguer, de conserver, de produire et de travailler le soir
+? | causalite | afrique-subsaharienne : argent_mobile → croissance (+) | payer, épargner et emprunter sans banque élargit les échanges
 + | causalite | afrique-subsaharienne : integration_commerciale → croissance (+) | le commerce entre pays africains, encore faible, peut entraîner l'industrie
+? | lien | afrique-subsaharienne : integration_commerciale → institutions_regionales (+) | la zone de libre-échange donne aux institutions régionales un projet commun
+? | causalite | afrique-subsaharienne : groupes_armes → croissance (-) | les blocus et l'insécurité freinent l'activité dans les pays touchés
+? | causalite | afrique-subsaharienne : alternances → institutions_regionales (+) | les alternances pacifiques renforcent la norme démocratique que défendent les institutions régionales
+? | causalite | afrique : climat_continent → conflits_continent (+) | sécheresses et pertes de récoltes aiguisent les conflits pour la terre et l'eau, sans en être la cause unique
+? | causalite | afrique : ressources_continent → puissances_continent (+) | les minerais attirent les puissances extérieures
+? | causalite | afrique : puissances_continent → conflits_continent (+) | les soutiens extérieurs prolongent les guerres (Soudan, Libye)
+? | causalite | afrique : union_africaine → conflits_continent (-) | médiations de l'Union africaine, d'effet limité
+? | causalite | afrique : demographie_continent → afrique_nord (+) | la jeunesse sans emploi pèse sur la stabilité et les départs (Tunisie, Libye)
+? | mecanisme | alimentation-mondiale : climat → eau_agricole (±) | la saison décide de l'eau disponible ; une sécheresse ne compte qu'au-delà d'un seuil
 + | mecanisme | alimentation-mondiale : eau_agricole → cultures (+) | sous un seuil d'eau, les rendements chutent d'un coup
+? | mecanisme | alimentation-mondiale : climat → cultures (-) | quelques jours de chaleur au mauvais moment suffisent à abîmer une récolte
+? | mecanisme | alimentation-mondiale : climat → ravageurs (+) | chaleur et humidité favorisent criquets et maladies
+? | mecanisme | alimentation-mondiale : ravageurs → cultures (-) | prédation : les ravageurs vivent des cultures
+? | mecanisme | alimentation-mondiale : sols → cultures (+) | la fertilité des sols porte les rendements sur la durée
+? | mecanisme | alimentation-mondiale : cultures → sols (-) | une exploitation intensive épuise les sols, qui ne se refont pas au même rythme
 + | causalite | alimentation-mondiale : engrais → cultures (+) | des engrais trop chers font moins épandre, et la récolte suivante baisse
+? | lien | alimentation-mondiale : cultures → stocks (+) | les récoltes remplissent les stocks
+? | causalite | alimentation-mondiale : stocks → prix (-) | des stocks abondants amortissent les chocs ; bas, chaque nouvelle fait bondir les prix
+? | causalite | alimentation-mondiale : commerce → prix (±) | les interdictions d'export s'entraînent l'une l'autre et font monter les prix mondiaux
+? | causalite | alimentation-mondiale : prix → commerce (±) | quand les prix montent, des exportateurs ferment leurs frontières pour protéger leur marché intérieur
+? | causalite | alimentation-mondiale : prix → importateurs (-) | au-delà d'un seuil de prix, les ménages pauvres et les budgets publics décrochent (lien documenté avec les émeutes, à vérifier)
+? | causalite | alimentation-mondiale : prix → cultures (+) | des prix hauts font semer plus la saison suivante
+? | mecanisme | alimentation-mondiale : chimie_sols → cultures (+) | le rendement suit l'élément qui manque le plus : abondants partout sauf un, il plafonne quand même
+? | mecanisme | alimentation-mondiale : engrais → chimie_sols (+) | les engrais remplissent le sol en nutriments, jusqu'à saturation ; l'excès part dans l'eau
+? | mecanisme | alimentation-mondiale : elevage → chimie_sols (+) | le fumier rend au sol l'azote et le phosphore que l'herbe a pris
+? | causalite | alimentation-mondiale : elevage → cultures (-) | les troupeaux nourris aux grains entrent en concurrence avec l'alimentation humaine pour les récoltes
+? | mecanisme | alimentation-mondiale : pathogenes → elevage (-) | une épizootie décime les troupeaux ; au-delà d'un seuil de foyers, les abattages massifs coupent l'offre
 + | mecanisme | alimentation-mondiale : pathogenes → cultures (-) | une nouvelle souche de rouille ou de mildiou peut contourner les résistances d'une région entière
+? | mecanisme | alimentation-mondiale : pollinisateurs → cultures (+) | les pollinisateurs font les fruits et les oléagineux, et vivent des fleurs (au sein du vivant, entre animal et végétal)
+? | evenement | amerique-latine : usa_chine_latam → venezuela (+) | la pression américaine a culminé dans l'intervention de janvier 2026
+? | causalite | amerique-latine : violences_criminelles → bascule_politique (+) | l'insécurité porte au pouvoir des candidats de l'ordre (Colombie)
+? | causalite | amerique-latine : ressources_latam → usa_chine_latam (+) | lithium, cuivre et soja attirent la Chine et les États-Unis
+? | causalite | amerique-latine : haiti → violences_criminelles (+) | les gangs haïtiens font partie des routes régionales d'armes et de drogue
+? | lien | antarctique : presences → traite (-) | des puissances qui bloquent le consensus affaiblissent le système du traité
 + | mecanisme | antarctique : glace_mer → krill_peche (-) | moins de glace de mer, moins d'habitat pour le krill
+? | mecanisme | antarctique : calotte → glace_mer (0) | la fonte de la calotte modifie l'eau de surface et la glace de mer, lien encore discuté
+? | mecanisme | arctique : glace_arctique → route_nord (-) | moins de glace, saison de navigation plus longue
+? | mecanisme | arctique : glace_arctique → ressources_arctique (-) | la fonte rend accessibles des gisements
+? | causalite | arctique : ressources_arctique → groenland (+) | les minerais du Groenland attirent les puissances
+? | causalite | arctique : militarisation → conseil_arctique (-) | la militarisation fige la coopération
+? | causalite | asie-centrale : partenaires → etats_c5 (+) | la concurrence des puissances donne de la marge aux cinq États
+? | causalite | asie-centrale : eau_region → etats_c5 (-) | le partage de l'eau entre amont et aval nourrit les tensions frontalières
+? | lien | asie-centrale : migrants_travail → etats_c5 (+) | les transferts des migrants soutiennent les économies les plus pauvres
+? | causalite | asie-du-nord-est : russie_coree → coree_du_nord (+) | l'aide militaire russe accroît les capacités nord-coréennes (missiles plus précis, défense aérienne)
+? | causalite | asie-du-nord-est : coree_du_nord → alliances (+) | la menace nord-coréenne resserre les alliances avec les États-Unis
 + | causalite | asie-du-nord-est : chine_japon → japon (+) | les tensions avec la Chine accélèrent le réarmement japonais (le compartiment cible lit ici l'effort de défense)
+? | causalite | asie-du-nord-est : japon → chine_japon (+) | le réarmement et les déclarations japonaises sur Taïwan avivent les tensions avec Pékin (boucle avec la relation précédente)
+? | causalite | asie-du-nord-est : coree_du_nord → coree_du_sud (+) | la menace pousse Séoul vers des capacités propres (sous-marins à propulsion nucléaire ; le compartiment cible lit ici l'effort de défense)
+? | causalite | asie-du-sud-est : mer_chine_meridionale → asean (-) | la mer disputée divise l'ASEAN entre riverains et pays continentaux
+? | causalite | asie-du-sud-est : birmanie → asean (-) | la guerre en Birmanie paralyse le consensus de l'ASEAN
+? | causalite | asie-du-sud-est : economie_region → mer_chine_meridionale (-) | l'intérêt commercial pour la Chine modère les riverains
+? | evenement | asie-du-sud : inde_pakistan → indus (-) | une crise militaire fragilise le partage des eaux (suspension partielle du traité en 2025 ; le compartiment cible lit ici la coopération sur l'eau)
+? | causalite | asie-du-sud : afghanistan_pakistan → pakistan_interieur (-) | les attentats et les combats à la frontière pèsent sur la sécurité et l'économie du Pakistan
+? | causalite | asie-du-sud : inde_pakistan → pakistan_interieur (+) | une crise avec l'Inde renforce la place de l'armée au Pakistan (effet de ralliement)
+? | causalite | asie-du-sud : puissances → inde_pakistan (-) | la pression extérieure, surtout américaine, aide à arrêter les échanges de tirs (le compartiment cible lit ici l'intensité de la crise)
+? | causalite | asie-du-sud : inde_pakistan → inde_puissance (-) | une crise militaire pèse peu et brièvement sur l'économie indienne
+? | causalite | australie : commerce_chine → aukus (-) | la dépendance commerciale à la Chine tempère l'engagement militaire
+? | lien | australie : minerais_aus → commerce_chine (+) | les minerais font le commerce avec la Chine
+? | causalite | australie : climat_aus → politique_aus (+) | les grands feux et sécheresses pèsent sur les élections et les politiques climatiques
+? | mecanisme | biocenose : biotope → producteurs (+) | lumière, eau, chaleur et nutriments du biotope font la production des plantes
+? | mecanisme | biocenose : producteurs → consommateurs (+) | les plantes nourrissent les herbivores, qui nourrissent les prédateurs
+? | mecanisme | biocenose : producteurs → decomposeurs (+) | feuilles mortes, bois et racines nourrissent les décomposeurs
+? | mecanisme | biocenose : decomposeurs → biotope (+) | la décomposition rend au sol les nutriments (le compartiment cible lit ici la fertilité du sol) — le cycle se ferme
+? | mecanisme | biocenose : biotope → cycle_vivant (+) | les saisons du biotope règlent floraisons, reproductions et migrations
+? | mecanisme | biocenose : espece_humaine → biomes (-) | le changement d'usage des terres et des mers est le premier facteur de perte de nature (IPBES 2019)
+? | mecanisme | biocenose : espece_humaine → diversite_especes (-) | exploitation, pollution, climat et espèces envahissantes réduisent la diversité
+? | mecanisme | biocenose : diversite_especes → apports_vivant (+) | plus d'espèces, plus de fonctions assurées (pollinisation, filtration, fertilité)
+? | mecanisme | biocenose : apports_vivant → espece_humaine (+) | les humains vivent de ce que le vivant produit ; la boucle se referme sur eux
+? | mecanisme | biocenose : biomes → biotope (+) | la végétation fait aussi son milieu (pluies des forêts, sols, ombre) ; biotope et biocénose se font l'un l'autre
+? | mecanisme | biodiversite-sols : habitats → populations (+) | moins d'habitats, moins de populations sauvages (première menace citée par le WWF, 2024)
+? | mecanisme | biodiversite-sols : populations → especes (-) | des populations qui s'effondrent font monter le risque d'extinction des espèces
+? | mecanisme | biodiversite-sols : surexploitation → populations (-) | la chasse, la pêche et le commerce au-delà du renouvellement font baisser les populations
+? | mecanisme | biodiversite-sols : envahissantes → especes (+) | les espèces envahissantes font monter les extinctions, surtout sur les îles (rôle clé dans 60 % des extinctions recensées, IPBES 2023) ; le compartiment cible lit ici le risque d'e
+? | mecanisme | biodiversite-sols : sols_vivants → habitats (+) | un sol érodé et appauvri en matière organique dégrade les habitats qu'il porte
 + | mecanisme | biodiversite-sols : aires_protegees → habitats (+) | les aires protégées freinent la perte d'habitats, à condition d'être bien gérées et reliées (effet conditionnel ; moins de 5 % des terres couvertes par des aires dont la gestion a 
+? | lien | biodiversite-sols : accords → aires_protegees (+) | les accords fixent des objectifs (30 % d'ici 2030) que les États transcrivent, avec retard
+? | causalite | calendriers-echeances : publications → banques_centrales (+) | les chiffres publiés entre deux réunions (inflation, emploi) fixent ce que la banque centrale décidera à la réunion suivante
+? | causalite | calendriers-echeances : anticipations → anticipations (+) | propre au niveau psychologique : plus la date approche, plus l'attente fige les décisions, puis tout se décide à la dernière minute
+? | causalite | calendriers-echeances : elections → anticipations (+) | un scrutin proche gèle les grandes décisions et pousse aux annonces
+? | lien | calendriers-echeances : elections → parlements (±) | propre aux conventions et statuts : le résultat recompose les majorités et le calendrier législatif
+? | causalite | calendriers-echeances : banques_centrales → marches (±) | les marchés bougent à la date de réunion selon la surprise, pas selon la décision
+? | causalite | calendriers-echeances : publications → marches (±) | une publication surprenante fait bouger les prix le jour même
+? | causalite | calendriers-echeances : publications → publications (-) | propre à la convention : un chiffre gênant peut être retardé, suspendu ou redéfini, et le silence devient lui-même un signal
+? | causalite | calendriers-echeances : memoire → anticipations (+) | les dates symboliques sont choisies pour agir, manifester ou réprimer
+? | causalite | calendriers-echeances : memoire → memoire (+) | propre à l'idéologie : chaque commémoration renforce la suivante, surtout aux anniversaires ronds
+? | causalite | calendriers-echeances : fetes → saisons (0) | neutralisme : les calendriers religieux et les saisons coexistent sans s'influencer (sauf fêtes agricoles)
+? | causalite | calendriers-echeances : fetes → marches (-) | les longs jours fériés ralentissent l'activité et les échanges, puis rattrapage
+? | causalite | calendriers-echeances : saisons → elections (±) | une mauvaise récolte ou une saison de catastrophes avant un scrutin pèse sur le vote
+? | causalite | calendriers-echeances : saisons → anticipations (+) | la saison de combat ou de récolte impose son rythme : on attend le gel, on agit avant la boue
+? | definition | calendriers-echeances : dates_limites → anticipations (+) | une question qui se résout à date fixe juge l'événement à ce jour-là ; ce qui arrive le lendemain ne compte pas
+? | lien | calendriers-echeances : dates_limites → publications (±) | la résolution d'une question dépend souvent d'une publication à date ; un retard de publication change l'issue mesurée
+? | causalite | canada : commerce_usa → economie_can (-) | les droits américains frappent les exportations et l'emploi
+? | causalite | canada : economie_can → politique_can (+) | la crise commerciale structure la vie politique
+? | causalite | canada : energie_minerais_can → commerce_usa (+) | énergie et minerais sont les principaux leviers de négociation
+? | causalite | classes-sociales : capitaux_reproduction → mobilite_sociale (-) | les capitaux hérités freinent la mobilité des autres
+? | causalite | classes-sociales : tres_riches → classes_moyennes (-) | la concentration du patrimoine au sommet comprime la part des classes moyennes
+? | causalite | classes-sociales : travail_informel → pauvrete_extreme (+) | sans contrat ni protection, un choc fait basculer dans la pauvreté
+? | causalite | classes-sociales : mobilite_sociale → classes_moyennes (+) | l'ascenseur social nourrit les classes moyennes
+? | causalite | classes-sociales : hierarchies_heritees → mobilite_sociale (-) | un rang de naissance bloque l'ascension
+? | causalite | classes-sociales : paysannerie → classes_populaires (+) | l'exode rural fait passer les enfants de paysans dans les classes populaires urbaines
+? | mecanisme | climat-extremes : oceans → oscillations (±) | la chaleur du Pacifique équatorial fait basculer El Niño ou La Niña
+? | mecanisme | climat-extremes : oscillations → atmosphere (±) | les oscillations déplacent pluies et chaleurs sur plusieurs continents (télé-connexions)
+? | mecanisme | climat-extremes : atmosphere → saisons (±) | un blocage qui dure transforme un temps chaud en vague de chaleur
+? | mecanisme | climat-extremes : atmosphere → tempetes (±) | la circulation dirige et nourrit les tempêtes
+? | mecanisme | climat-extremes : oceans → tempetes (+) | une mer chaude au-delà d'un seuil nourrit des cyclones plus intenses
+? | mecanisme | climat-extremes : saisons → secheresses (+) | chaleur et absence de pluie installent la sécheresse
+? | mecanisme | climat-extremes : secheresses → vegetation (-) | la végétation tient puis décroche d'un coup
+? | mecanisme | climat-extremes : vegetation → saisons (-) | boucle : des sols secs chauffent plus l'air, et l'air plus chaud assèche les sols (rétroaction qui entretient la chaleur)
+? | mecanisme | climat-extremes : vegetation → feux (+) | une végétation desséchée devient combustible
+? | mecanisme | climat-extremes : feux → vegetation (-) | les feux détruisent la végétation, qui met des années à revenir (ou ne revient pas à l'identique)
+? | mecanisme | climat-extremes : tendance → saisons (+) | le réchauffement de fond rend les extrêmes chauds plus fréquents
+? | mecanisme | climat-extremes : saisons → exposes (-) | au-delà d'un seuil de chaleur ou de froid, réseaux et santé cèdent
+? | mecanisme | climat-extremes : tempetes → exposes (-) | cyclones et inondations frappent infrastructures et récoltes
+? | mecanisme | climat-extremes : exposes → vegetation (-) | urbanisation et défrichement réduisent la végétation qui tamponnait les extrêmes
+? | mecanisme | climat-extremes : chimie_atmosphere → rayonnement (+) | les gaz à effet de serre retiennent la chaleur : le bilan d'énergie penche vers le réchauffement
+? | mecanisme | climat-extremes : rayonnement → tendance (+) | un bilan d'énergie positif fait monter les températures de fond
 + | mecanisme | climat-extremes : rayonnement → rayonnement (+) | au sein du niveau physique : moins de glace, moins de lumière renvoyée, plus de chaleur, encore moins de glace (rétroaction d'albédo)
+? | mecanisme | climat-extremes : oceans → chimie_atmosphere (-) | les océans absorbent une part du CO2 ; plus chauds et plus acides, ils en absorbent moins
+? | mecanisme | climat-extremes : relief → secheresses (+) | une chaîne de montagnes arrête les pluies : un versant arrosé, l'autre sec (ombre pluviométrique)
+? | mecanisme | climat-extremes : relief → atmosphere (±) | le relief canalise les vents et fixe la place des blocages et des moussons
+? | mecanisme | climat-extremes : tendance → oscillations (±) | le climat de fond peut changer la fréquence des épisodes El Niño (débat scientifique, à vérifier)
+? | causalite | competitions-culture : precurseurs_recompenses → public (+) | les votants des académies suivent en partie les guildes dont ils font partie
+? | causalite | competitions-culture : classements_force → forme (+) | la force classée et la forme récente se combinent ; les blessures annoncées corrigent
+? | lien | competitions-culture : regles → classements_force (±) | le format (élimination, poules, nombre de tours) fixe la part du hasard
+? | lien | competitions-culture : regles → forme (±) | le format décide de la part du hasard : une élimination directe donne plus de chances au moins fort qu'un championnat long
+? | causalite | competitions-culture : forme → psychologie (+) | victoires et confiance se nourrissent, jusqu'à un seuil où la série se brise
+? | causalite | competitions-culture : psychologie → forme (-) | la pression des grands enjeux fait perdre des moyens au-delà d'un seuil
+? | causalite | competitions-culture : public → psychologie (+) | l'avantage du terrain passe par le public (passage de la société au psychologique)
+? | causalite | competitions-culture : argent → forme (+) | les budgets achètent les meilleurs : sur une saison longue, l'argent prédit beaucoup
+? | causalite | competitions-culture : medias → public (+) | les campagnes et les récits orientent les votes du public
+? | causalite | competitions-culture : public → argent (+) | la ferveur fait les recettes et le box-office
+? | lien | competitions-culture : regles → public (±) | le partage entre jury et public décide de qui compte : une même performance gagne ou perd selon la règle
+? | mecanisme | competitions-culture : calendrier → forme (-) | un calendrier chargé fatigue et blesse au-delà d'un seuil
+? | mecanisme | competitions-culture : milieu → forme (-) | la chaleur et l'altitude pèsent sur les organismes non acclimatés (passage de la météo à la personne)
+? | causalite | competitions-culture : geopolitique → public (±) | votes de voisinage et de diaspora dans les concours (Eurovision)
+? | evenement | competitions-culture : geopolitique → regles (-) | exclusions et boycotts changent la liste des concurrents
+? | definition | competitions-culture : forme → forme (-) | propre au niveau personne : la compétition elle-même, ce que l'un gagne l'autre le perd
+? | mecanisme | corps-humain : nutrition → maladies_chroniques (+) | une alimentation déséquilibrée fait partie des facteurs de risque des maladies non transmissibles (OMS)
+? | mecanisme | corps-humain : pollution → maladies_chroniques (+) | la pollution de l'air est le premier facteur de risque environnemental des maladies non transmissibles, environ 5,6 millions de décès (OMS)
+? | mecanisme | corps-humain : chaleur_froid → besoins_vitaux (-) | la chaleur extrême dépasse la capacité du corps à maintenir sa température
+? | mecanisme | corps-humain : soins → vieillissement (+) | la couverture des soins allonge l'espérance de vie
+? | mecanisme | corps-humain : soins → reproduction (+) | l'accès aux soins fait reculer la mortalité maternelle et infantile
+? | mecanisme | corps-humain : antimicrobiens → soins (-) | la résistance aux antimicrobiens rend les soins courants plus risqués
+? | mecanisme | corps-humain : nutrition → reproduction (+) | une bonne nutrition maternelle et infantile fait reculer la mortalité des enfants
+? | causalite | corruption : marches_publics → grande_corruption (+) | les gros contrats publics et les secteurs à rente offrent les occasions de commissions (cas Midas, énergie)
+? | causalite | corruption : blanchiment → grande_corruption (+) | la possibilité de blanchir les fonds rend la grande corruption profitable
+? | causalite | corruption : lutte → grande_corruption (-) | des agences indépendantes et des lois appliquées font reculer la grande corruption
+? | causalite | corruption : presse_alerte → lutte (+) | les révélations déclenchent des enquêtes et des poursuites
+? | causalite | corruption : grande_corruption → confiance (-) | un scandale révélé fait chuter la confiance et peut déclencher démissions et manifestations
+? | definition | corruption : grande_corruption → perception (-) | la corruption perçue fait baisser le score de l'indice, avec retard (le compartiment cible lit ici le score)
+? | causalite | corruption : corruption_quotidienne → confiance (-) | les pots-de-vin du quotidien usent la confiance dans l'État
+? | causalite | crime-organise : drogues → cartels_mafias (+) | les profits de la drogue financent les cartels
+? | causalite | crime-organise : cartels_mafias → captation_etats (+) | l'argent et la violence achètent ou intimident les autorités
+? | causalite | crime-organise : escroqueries_cyber → traite (+) | les complexes d'escroquerie reposent sur le travail forcé
+? | causalite | crime-organise : cartels_mafias → blanchiment (+) | les profits doivent être blanchis
+? | causalite | crime-organise : repression → escroqueries_cyber (-) | les descentes déplacent les réseaux plus qu'elles ne les arrêtent
+? | causalite | crime-organise : repression → drogues (-) | les saisies record n'empêchent pas la hausse de la production
+? | causalite | crises-bancaires : marches → seuils_de_prix (±) | la volatilité du marché fixe la largeur des fourchettes ; une crise élargit tout
+? | definition | crises-bancaires : cryptomonnaies → seuils_de_prix (±) | cryptomonnaies : volatilité plus forte et queues plus épaisses, cotation tous les jours (racine de 365)
+? | causalite | crises-bancaires : confiance → depots (-) | au-delà d'un seuil de peur, les déposants retirent tous ensemble : la ruée
+? | causalite | crises-bancaires : depots → confiance (+) | les retraits des autres font peur à leur tour : boucle de la panique, propre au niveau psychologique et économique
+? | causalite | crises-bancaires : recits → confiance (-) | une rumeur ne déclenche la peur que si elle dépasse un seuil de diffusion
+? | causalite | crises-bancaires : bilans → confiance (-) | des pertes révélées entament la confiance
+? | definition | crises-bancaires : marches → bilans (-) | quand les taux montent, les obligations détenues perdent de la valeur
+? | lien | crises-bancaires : regulateurs → depots (+) | le prêteur en dernier ressort et la garantie des dépôts arrêtent la ruée
+? | causalite | crises-bancaires : depots → regulateurs (+) | l'autorité n'intervient qu'au-delà d'un seuil de risque pour le système
+? | lien | crises-bancaires : faillites → creanciers (-) | une faillite répartit les pertes entre créanciers selon leur rang (relation propre au niveau statut et économie)
+? | lien | crises-bancaires : creanciers → faillites (±) | le comité des créanciers pèse sur l'issue : liquidation ou plan de reprise
+? | causalite | crises-bancaires : cryptomonnaies → marches (±) | une forte chute ne déborde sur les marchés que si l'exposition dépasse un seuil
+? | causalite | crises-bancaires : marches → cryptomonnaies (+) | les cryptomonnaies suivent l'appétit général pour le risque, en l'amplifiant
+? | lien | crises-bancaires : convention → creanciers (-) | une déclaration de défaut ou une dégradation déclenche des ventes forcées : la convention agit sans que rien de matériel n'ait changé
 + | causalite | crises-bancaires : depots → marches (-) | contagion : quand plusieurs banques vacillent, la crise passe au système
+? | causalite | crises-bancaires : regulateurs → confiance (+) | une parole d'autorité crédible rassure, une parole hésitante aggrave
+? | causalite | croyances-religions : rapports_de_force → aires_geographiques (+) | la démographie déplace le centre de gravité des religions (le christianisme vers l'Afrique)
+? | causalite | croyances-religions : religion_politique → extremes_islam (+) | l'instrumentalisation politique d'une religion nourrit ses franges violentes (le compartiment cible lit ici leur capacité de recrutement)
 + | causalite | croyances-religions : religion_politique → extremes_hindouisme (+) | un pouvoir qui s'appuie sur l'identité religieuse peut couvrir ses franges violentes
+? | causalite | croyances-religions : religion_politique → extremes_bouddhisme (+) | en Birmanie, le régime militaire s'appuie sur des moines nationalistes radicaux
+? | causalite | croyances-religions : extremes_islam → islam (-) | les violences jihadistes frappent d'abord des musulmans et nourrissent la défiance envers l'ensemble (le compartiment cible lit ici l'image et la sécurité des communautés)
+? | causalite | croyances-religions : sans_religion → christianisme (-) | les sorties de religion font baisser la part chrétienne en Europe et dans les Amériques
+? | causalite | croyances-religions : rapports_de_force → religion_politique (+) | un groupe qui grandit pèse davantage dans la politique de son pays
+? | causalite | croyances-religions : sectes → sans_religion (0) | les dérives sectaires se développent aussi hors des religions établies (bien-être, santé) — lien à étudier
+? | causalite | culture-memoire : patrimoine_en_guerre → patrimoine (-) | les combats détruisent le patrimoine ; l'UNESCO réagit par l'inscription en péril
+? | causalite | culture-memoire : patrimoine → tourisme (+) | une inscription au patrimoine mondial attire des visiteurs
+? | causalite | culture-memoire : usages_memoire → histoire_memoire (+) | les pouvoirs mobilisent l'histoire au service d'un récit (le compartiment cible lit ici la place de la mémoire dans le débat public)
+? | causalite | culture-memoire : restitutions → usages_memoire (-) | une restitution peut apaiser une mémoire coloniale conflictuelle entre deux États
+? | causalite | cultures-emboitees : aires_culturelles → cultures_nationales (+) | l'héritage d'une aire donne à chaque culture nationale sa langue, ses valeurs et ses codes (emboîtement)
+? | causalite | cultures-emboitees : cultures_nationales → cultures_locales (-) | l'école et la langue officielle unifient, au détriment des langues régionales ; d'où la plus grande part des langues menacées (Ethnologue)
+? | causalite | cultures-emboitees : cultures_locales → individu_identites (+) | la culture locale et familiale forme la première couche de l'identité de chacun
+? | causalite | cultures-emboitees : diffusion_mondiale → cultures_nationales (-) | la culture mondiale dilue les cultures nationales, surtout chez les jeunes ; elle voyage avec les échanges économiques
+? | causalite | cultures-emboitees : diffusion_mondiale → protections_culturelles (+) | la dilution suscite une réaction (quotas, aides, exception culturelle)
+? | causalite | cultures-emboitees : protections_culturelles → diffusion_mondiale (-) | les quotas et les aides freinent la part des industries dominantes, sans l'inverser
+? | causalite | cultures-emboitees : culture_algorithmique → individu_identites (+) | le flux de recommandations change ce que chacun voit et le temps qu'il y passe ; son effet sur les attitudes est plus faible que supposé (Guess et al., Science, 2023)
+? | causalite | cultures-emboitees : culture_algorithmique → diffusion_mondiale (+) | les algorithmes des grandes plateformes portent les contenus mondiaux (musique coréenne +84 % à l'export en 2025, d'après le rapport coréen)
+? | causalite | cultures-emboitees : aires_culturelles → individu_identites (+) | l'héritage le plus ancien agit encore à travers la famille et la langue, même quand l'échelle nationale s'affaiblit
+? | mecanisme | cycles-biogeochimiques : combustion → carbone (+) | la combustion libère dans l'air le carbone stocké dans les roches
+? | mecanisme | cycles-biogeochimiques : carbone → climat (+) | plus de gaz à effet de serre réchauffe le climat (passage du chimique au climatique)
+? | mecanisme | cycles-biogeochimiques : climat → eau (+) | un air plus chaud contient plus de vapeur : pluies plus fortes et sécheresses plus dures
+? | mecanisme | cycles-biogeochimiques : eau → climat (+) | la vapeur d'eau amplifie le réchauffement (rétroaction au sein du système air-eau)
+? | mecanisme | cycles-biogeochimiques : vegetation → carbone (-) | la photosynthèse retire du carbone de l'air, qui nourrit la plante (mutualisme chimique-végétal) ; au-delà d'un seuil de stress, le puits devient source
+? | mecanisme | cycles-biogeochimiques : microbes_du_sol → carbone (+) | les décomposeurs rendent le carbone à l'air, plus vite quand il fait chaud
+? | mecanisme | cycles-biogeochimiques : microbes_du_sol → azote (±) | au sein du sol vivant, les bactéries fixent, transforment et relâchent l'azote
+? | causalite | cycles-biogeochimiques : engrais → azote (+) | l'industrie fixe autant d'azote que le vivant ou plus (à vérifier)
+? | mecanisme | cycles-biogeochimiques : azote → vegetation (+) | l'azote nourrit les plantes jusqu'à saturation ; l'excès pollue rivières et côtes
+? | mecanisme | cycles-biogeochimiques : elevage → carbone (+) | les ruminants émettent du méthane (passage de l'animal au chimique)
+? | mecanisme | cycles-biogeochimiques : elevage → azote (+) | fumiers et lisiers chargent les sols et les eaux en azote
+? | mecanisme | cycles-biogeochimiques : vegetation → elevage (+) | la prairie nourrit le troupeau ; au-delà d'une charge, le surpâturage la détruit (prédation)
+? | mecanisme | cycles-biogeochimiques : combustion → soufre (+) | charbon et fioul libèrent du soufre, qui retombe en pluies acides
+? | mecanisme | cycles-biogeochimiques : phosphore → engrais (+) | le phosphore des engrais vient de quelques roches, ressource finie à l'échelle humaine
+? | definition | dette-emergents : monnaies → dette_publique (-) | une dépréciation gonfle la dette en dollars ; au-delà d'un seuil elle devient insoutenable
+? | causalite | dette-emergents : monnaies → inflation_locale (+) | la dévaluation renchérit les importations, carburants et pain d'abord
+? | causalite | dette-emergents : reserves → monnaies (+) | des réserves suffisantes défendent la monnaie ; épuisées, la chute est brutale
+? | causalite | dette-emergents : dette_publique → creanciers (-) | un défaut fait perdre les créanciers et ferme les marchés au pays ; chacun réduit ce que l'autre obtient
+? | lien | dette-emergents : fmi → reserves (+) | un programme apporte des devises et rassure les autres créanciers, contre des conditions
+? | causalite | dette-emergents : fmi → politique_interieure (-) | les conditions d'austérité alimentent la contestation, qui peut faire dérailler le programme
+? | causalite | dette-emergents : inflation_locale → politique_interieure (-) | la hausse des prix de base déclenche des manifestations au-delà d'un seuil
+? | causalite | dette-emergents : banques → monnaies (-) | des retraits massifs convertis en dollars accélèrent la chute de la monnaie
+? | causalite | dette-emergents : monnaies → banques (-) | une chute de la monnaie fait fuir les déposants (boucle avec la relation inverse)
+? | causalite | dette-emergents : matieres_premieres → reserves (±) | les recettes d'exportation remplissent ou vident les réserves selon les prix
+? | causalite | dette-emergents : creanciers → monnaies (±) | les flux des investisseurs entrent et sortent avec l'humeur mondiale
+? | causalite | dette-emergents : politique_interieure → dette_publique (±) | élections et instabilité changent la volonté de payer ou d'ajuster
+? | lien | dette-emergents : notations_definitions → creanciers (±) | une dégradation sous un seuil de note oblige des fonds à vendre : la convention déclenche le flux
+? | lien | dette-emergents : notations_definitions → dette_publique (±) | ce qui « compte comme » défaut change le coût de la dette et l'accès aux marchés
+? | causalite | dette-emergents : dette_publique → notations_definitions (-) | au sein du couple économie-convention : la dette qui monte fait baisser la note, qui renchérit la dette
+? | evenement | dette-emergents : recoltes_catastrophes → matieres_premieres (-) | une sécheresse ou un cyclone coupe les recettes d'exportation agricoles
+? | evenement | dette-emergents : recoltes_catastrophes → dette_publique (-) | une catastrophe majeure creuse la dette d'un petit pays d'un coup
+? | causalite | dette-emergents : gisements → matieres_premieres (+) | les gisements font les recettes, mais attachent le pays aux cycles des prix
+? | causalite | dirigeants-elus : popularite → departs (-) | une forte impopularité rapproche le départ (défaite, démission, destitution) dans les régimes ouverts (le compartiment cible lit ici le maintien au pouvoir)
+? | causalite | dirigeants-elus : departs → mandats_succession (-) | quand perdre le pouvoir expose à l'exil, à la prison ou à la mort, le dirigeant s'accroche (le compartiment source lit ici le risque après le départ, la cible le respect des limite
+? | causalite | dirigeants-elus : justice_immunites → departs (+) | les poursuites précipitent des démissions, ou retiennent au pouvoir celui que l'immunité protège
+? | causalite | dirigeants-elus : entourage → executifs (+) | l'entourage filtre l'information et oriente les décisions du dirigeant
+? | causalite | dirigeants-elus : age_sante → mandats_succession (+) | l'âge et la santé déclarée ouvrent la question de la succession
+? | causalite | dirigeants-elus : programmes → popularite (+) | les idées portées et leur mise en œuvre font la popularité (le sens dépend du programme)
+? | evenement | dirigeants-elus : diplomatie_personnelle → popularite (+) | un sommet réussi peut relever brièvement la popularité (effet de stature)
+? | lien | dirigeants-elus : parlementaires → ministres (+) | dans les régimes parlementaires, la majorité fait et défait les gouvernements
+? | definition | eau-douce-potable : prelevements → stress (+) | le stress hydrique est par définition le rapport des prélèvements à l'eau disponible
+? | definition | eau-douce-potable : ressources → stress (-) | moins d'eau disponible, plus de stress à prélèvements égaux
+? | mecanisme | eau-douce-potable : prelevements → nappes (-) | le pompage au-delà de la recharge épuise les nappes
 + | mecanisme | eau-douce-potable : assainissement → maladies (-) | un meilleur assainissement fait reculer les maladies hydriques
+? | mecanisme | eau-douce-potable : qualite → maladies (-) | une eau de meilleure qualité fait reculer les maladies hydriques
+? | mecanisme | eau-douce-potable : acces → corps (+) | l'accès à l'eau couvre les besoins vitaux du corps
 + | causalite | eau-douce-potable : stress → tensions (+) | le manque d'eau peut être source de tensions, et l'eau sert de déclencheur de violence (catégorie « déclencheur » du Pacific Institute) ; remarque de l'auteur du 2026-11-22
+? | causalite | eau-douce-potable : tensions → acces (-) | en guerre, l'eau sert d'arme et les installations sont touchées (catégories « arme » et « victime » du Pacific Institute)
+? | lien | eau-douce-potable : gouvernance → tensions (-) | des accords de partage et des institutions de bassin peuvent contenir les tensions
+? | mecanisme | eau-moyen-orient : pluies → fleuves (+) | pluies et fonte des neiges font les crues des fleuves
+? | mecanisme | eau-moyen-orient : pluies → nappes (+) | les pluies rechargent lentement les seules nappes renouvelables
+? | mecanisme | eau-moyen-orient : chaleur → barrages (-) | la chaleur évapore les retenues
+? | causalite | eau-moyen-orient : chaleur → rarete (+) | au-delà d'un seuil de chaleur, la demande dépasse ce que les réseaux fournissent
+? | mecanisme | eau-moyen-orient : fleuves → barrages (+) | prédation : les barrages prennent au fleuve l'eau qu'ils stockent
+? | mecanisme | eau-moyen-orient : barrages → etats_riverains (±) | remplir un barrage d'amont en année sèche retire de l'eau à l'aval et tend les relations
+? | causalite | eau-moyen-orient : etats_riverains → etats_riverains (-) | amont et aval se disputent un même fleuve (style à mesurer : Égypte–Éthiopie, Irak–Turquie)
+? | mecanisme | eau-moyen-orient : irrigation → nappes (-) | l'irrigation vide les nappes plus vite qu'elles ne se remplissent ; une nappe affaissée ne se reconstitue pas
+? | mecanisme | eau-moyen-orient : nappes → irrigation (+) | les nappes portent l'agriculture là où les fleuves manquent
+? | mecanisme | eau-moyen-orient : fleuves → irrigation (+) | les plaines du Tigre, de l'Euphrate et du Nil vivent de l'eau du fleuve
+? | mecanisme | eau-moyen-orient : irrigation → rarete (+) | l'agriculture consomme l'essentiel de l'eau douce (part à vérifier) et laisse peu aux villes
+? | mecanisme | eau-moyen-orient : dessalement → rarete (-) | le dessalement fournit l'eau des villes du Golfe ; une usine arrêtée crée une pénurie immédiate
+? | causalite | eau-moyen-orient : rarete → villes (-) | des coupures qui durent font descendre les gens dans la rue (lien à vérifier par pays)
+? | causalite | eau-moyen-orient : villes → rarete (+) | la croissance urbaine accroît la demande et les fuites
+? | mecanisme | eau-moyen-orient : relief → pluies (+) | les montagnes captent les pluies et la neige qui nourrissent les fleuves ; l'autre versant reste sec
+? | mecanisme | eau-moyen-orient : relief → fleuves (±) | les lignes de partage des eaux décident quels pays partagent quel fleuve, et lequel est en amont
+? | mecanisme | eau-moyen-orient : climat_regime → pluies (-) | la dérive du climat réduit la neige et les pluies utiles
+? | mecanisme | eau-moyen-orient : fleuves → nappes (+) | relation propre au niveau de l'eau : les crues rechargent les nappes
+? | mecanisme | eau-moyen-orient : irrigation → chimie_eau (+) | irriguer sans drainer sale les sols ; un sol salé ne redevient pas fertile par le même chemin
+? | mecanisme | eau-moyen-orient : dessalement → chimie_eau (+) | la saumure rejetée rend le Golfe plus salé autour des usines
+? | mecanisme | eau-moyen-orient : rarete → maladies_hydriques (+) | quand l'eau potable manque assez longtemps, les maladies hydriques reviennent
 + | mecanisme | eau-moyen-orient : maladies_hydriques → villes (-) | une épidémie d'eau passe du niveau microbien au niveau social quand elle devient assez forte
+? | causalite | economie-chinoise : immobilier → activite (-) | la crise immobilière pèse longtemps sur l'investissement ; la confiance ne revient pas par le même chemin
+? | causalite | economie-chinoise : immobilier → consommation (-) | le logement est l'épargne principale des ménages ; sa baisse les rend prudents
+? | causalite | economie-chinoise : consommation → activite (+) | une consommation faible laisse l'activité dépendre des exportations et de l'investissement
+? | causalite | economie-chinoise : exportations → activite (+) | les exportations compensent la faiblesse intérieure
+? | lien | economie-chinoise : exterieur → exportations (-) | droits de douane et contrôles d'un côté, représailles de l'autre
+? | causalite | economie-chinoise : politique_monetaire → activite (+) | baisses de taux et obligations spéciales soutiennent l'activité, moins quand ménages et entreprises ne veulent plus s'endetter
+? | causalite | economie-chinoise : pouvoir → politique_monetaire (±) | les grandes orientations décident de l'ampleur des relances
+? | lien | economie-chinoise : pouvoir → statistiques (±) | un chiffre gênant peut être redéfini ou suspendu (la série du chômage des jeunes a été suspendue puis redéfinie, à vérifier)
 + | causalite | economie-chinoise : activite → emploi (+) | le chômage des jeunes monte chaque été et quand l'activité ralentit
+? | causalite | economie-chinoise : activite → matieres_premieres (+) | la demande chinoise de pétrole, de fer et de cuivre suit l'industrie et la construction
+? | causalite | economie-chinoise : statistiques → politique_monetaire (±) | les décisions et les marchés réagissent au chiffre publié, convention dont la fiabilité est débattue
+? | causalite | economie-chinoise : emploi → pouvoir (-) | le chômage des jeunes est une pression lente sur la légitimité
+? | mecanisme | economie-chinoise : eau_fleuves → activite (-) | une sécheresse fait baisser l'hydroélectricité et peut imposer des coupures aux usines
+? | causalite | economie-chinoise : demographie → immobilier (-) | moins de jeunes ménages, moins de demande de logements, et la confiance ne revient pas au même rythme
+? | causalite | economie-chinoise : demographie → consommation (-) | le vieillissement pousse à l'épargne de précaution
+? | evenement | economie-chinoise : epizooties → consommation (-) | une épizootie qui décime le cheptel porcin fait bondir le prix du porc et pèse sur le budget des ménages
 + | causalite | economie-chinoise : sols_chimie → pouvoir (±) | la qualité des sols ne remonte au niveau du pouvoir qu'à travers une alerte sur la sécurité alimentaire
+? | lien | economie-chinoise : pouvoir → statistiques (±) | entre statut et convention : le pouvoir décide de ce qui est publié et comment, et les chiffres publiés bornent à leur tour son récit
+? | lien | economie-entreprises : agriculture → industrie_manufacturiere (+) | l'agriculture fournit l'industrie agroalimentaire et les fibres
+? | lien | economie-entreprises : extraction → industrie_manufacturiere (+) | minerais et hydrocarbures sont les intrants de l'industrie
+? | lien | economie-entreprises : industrie_manufacturiere → services (+) | l'industrie achète des services (transport, finance, ingénierie, commerce)
+? | causalite | economie-entreprises : industrie_manufacturiere → conjoncture (+) | l'activité industrielle entraîne la conjoncture, surtout dans les pays exportateurs
+? | definition | economie-entreprises : services → conjoncture (+) | les services font près des deux tiers du PIB mondial ; ils font la conjoncture
+? | lien | economie-entreprises : echanges → industrie_manufacturiere (+) | l'industrie dépend des marchés d'exportation et des intrants importés
+? | causalite | economie-entreprises : finance_entreprise → industrie_manufacturiere (+) | l'investissement financé ouvre des usines et des capacités
+? | causalite | economie-entreprises : dirigeants_entreprise → entreprises (+) | les décisions des dirigeants (investir, fermer, délocaliser) orientent les entreprises (le compartiment cible lit ici leur activité)
+? | causalite | economie-entreprises : entreprises → industrie_manufacturiere (+) | les grandes entreprises nommées portent une part de l'activité industrielle (usines, fermetures, plans sociaux)
+? | lien | economie-entreprises : regles_sectorielles → entreprises (-) | une réglementation nouvelle contraint l'activité des entreprises du secteur (coûts de mise en conformité)
+? | causalite | economie-entreprises : conjoncture → entreprises (+) | la demande générale fait les résultats des entreprises
 + | causalite | economie-entreprises : conjoncture → defaillances (-) | une croissance faible fait monter les défaillances
+? | causalite | economie-entreprises : investissement_ia → conjoncture (+) | l'investissement dans l'IA soutient la croissance mondiale (FMI, octobre 2026)
+? | causalite | economie-entreprises : defaillances → finance_entreprise (-) | plus de défaillances rendent le crédit et les opérations plus difficiles
+? | causalite | economie-entreprises : conjoncture → immobilier_consommation (+) | la conjoncture porte la consommation et l'immobilier
+? | lien | elections-amerique-latine : executif → assemblees (±) | propre au niveau statut : l'exécutif propose, les chambres disposent ; sans majorité, un projet reste bloqué
+? | causalite | elections-amerique-latine : partis_gouverneurs → assemblees (±) | propre au niveau de l'entourage : les voix des sénateurs se négocient avec les gouverneurs ; un vote passe quand le seuil de la majorité est atteint
+? | lien | elections-amerique-latine : assemblees → regles (±) | une réforme des primaires exige l'approbation des deux chambres ; la première approbation n'est qu'une étape
+? | lien | elections-amerique-latine : regles → scrutins (±) | passage de la convention à la société : supprimer des primaires change qui se présente et comment
+? | causalite | elections-amerique-latine : economie → humeur (-) | l'inflation fait monter la colère des électeurs
+? | causalite | elections-amerique-latine : humeur → scrutins (±) | passage du psychologique à la société : la colère bascule le vote vers la sanction ou l'outsider
+? | lien | elections-amerique-latine : scrutins → assemblees (±) | les élections de mi-mandat redessinent les majorités
+? | lien | elections-amerique-latine : fmi → economie (±) | déboursements contre conditions ; un objectif manqué suspend l'argent
+? | causalite | elections-amerique-latine : fmi → humeur (-) | l'austérité demandée pèse sur l'humeur des électeurs
+? | evenement | elections-amerique-latine : recoltes_exports → economie (+) | passage du végétal à l'économie : une sécheresse prive le pays de devises
 + | causalite | elections-amerique-latine : executif → economie (±) | les choix de l'exécutif sur la monnaie et le budget
+? | causalite | energie-mondiale : production → prix (-) | plus de production fait baisser les prix ; quand la capacité inutilisée s'épuise, le moindre arrêt fait bondir les prix
+? | causalite | energie-mondiale : demande → prix (+) | une demande forte fait monter les prix
+? | causalite | energie-mondiale : stocks → prix (-) | les stocks amortissent les chocs ; bas, ils n'amortissent plus
 + | causalite | energie-mondiale : transport → prix (±) | un goulet fermé ou menacé fait monter les prix
+? | evenement | energie-mondiale : conflits → transport (-) | attaques et menaces sur les routes
+? | evenement | energie-mondiale : conflits → raffinage (-) | frappes sur les raffineries et terminaux (drones)
+? | causalite | energie-mondiale : raffinage → prix (±) | un arrêt de raffinage fait monter les produits plus que le brut
+? | lien | energie-mondiale : decisions → production (±) | les quotas de l'OPEP+ et les sanctions décident de la production réelle
+? | causalite | energie-mondiale : prix → decisions (±) | les producteurs réagissent aux prix (baisse de quotas quand les prix chutent) ; boucle de régulation
+? | causalite | energie-mondiale : prix → demande (-) | des prix hauts finissent par freiner la demande
+? | causalite | energie-mondiale : climat → demande (±) | un hiver froid fait monter la demande de gaz et de fioul
+? | evenement | energie-mondiale : climat → production (-) | ouragans dans le golfe du Mexique, arrêts de plateformes
+? | causalite | energie-mondiale : recits → prix (±) | annonces et menaces bougent les prix avant les flux
+? | mecanisme | energie-mondiale : demande → chimie_combustion (+) | brûler plus d'énergie fossile rejette plus de carbone et de soufre
+? | mecanisme | energie-mondiale : chimie_combustion → climat_regime (+) | le carbone accumulé réchauffe le climat ; l'effet traverse les niveaux, du chimique au climat, par accumulation lente
 + | mecanisme | energie-mondiale : climat_regime → climat (+) | le régime climatique rend plus fréquents les hivers anormaux, les vagues de chaleur et les ouragans de la saison
 + | mecanisme | energie-mondiale : nucleaire_civil → demande (-) | des réacteurs disponibles réduisent le besoin de gaz pour l'électricité ; des arrêts imprévus le font bondir
+? | lien | energie-mondiale : decisions → nucleaire_civil (±) | autorisations, sorties ou relances du nucléaire décident du parc disponible (une convention qui agit sur l'atomique)
+? | lien | energie-mondiale : transport → raffinage (+) | au sein du niveau technique : un transport interrompu prive les raffineries de brut
+? | causalite | energie-mondiale : decisions → prix (±) | une décision ou une sanction publiée bouge le prix avant tout flux physique (convention vers économie)
+? | mecanisme | environnement-dechets : dechets_menagers → qualite_air (-) | le brûlage à l'air libre des déchets dégrade la qualité de l'air (le compartiment cible lit ici sa qualité)
+? | mecanisme | environnement-dechets : dechets_menagers → pollution_sols (+) | les décharges non contrôlées polluent les sols
+? | mecanisme | environnement-dechets : dechets_electroniques → pollution_chimique (+) | le démantèlement informel des déchets électroniques libère métaux lourds et substances toxiques
+? | mecanisme | environnement-dechets : pollution_chimique → pollution_sols (+) | pesticides, métaux et PFAS s'accumulent dans les sols
+? | causalite | environnement-dechets : droit_contentieux → climat_politique (+) | l'avis de la CIJ et les procès climatiques poussent les États à relever leurs engagements
+? | causalite | environnement-dechets : environnement → dechets_menagers (-) | des politiques publiques (collecte, recyclage, réduction à la source) font baisser les déchets non gérés
+? | causalite | environnement-dechets : environnement → eaux_usees (-) | l'investissement dans l'épuration réduit les rejets non traités
+? | lien | environnement-dechets : traites → ozone (+) | le protocole de Montréal fait baisser les substances appauvrissant l'ozone et refermer le trou (OMM)
+? | mecanisme | environnement-dechets : dechets → pollution_chimique (+) | les plastiques portent plus de 10 000 additifs chimiques dans l'environnement (Persson et al., 2022)
+? | lien | environnement-dechets : traites → dechets (-) | un traité contraignant limiterait la production et la fuite de plastique ; l'opposition des États producteurs de pétrole a fait échouer Genève en 2025
+? | mecanisme | environnement-dechets : pollution_chimique → biodiversite (-) | pesticides et substances persistantes pèsent sur le vivant
+? | mecanisme | epidemies : agent → agent (+) | propre au niveau microbiologique : réplication et sélection font apparaître des variants plus transmissibles
+? | mecanisme | epidemies : reservoirs → reservoirs (+) | propre au niveau animal : un élevage dense amplifie une épizootie
+? | mecanisme | epidemies : reservoirs → agent (+) | le passage de l'animal à l'humain (zoonose) est rare et demande un contact assez fort
+? | mecanisme | epidemies : agent → malades (+) | l'agent vit aux dépens des hôtes (prédation) ; l'immunité qu'ils acquièrent le freine
+? | mecanisme | epidemies : malades → malades (+) | propre à la contagion : au-dessus d'un seuil de contacts, la croissance devient exponentielle
+? | mecanisme | epidemies : milieu → malades (±) | les saisons rythment les vagues (hiver pour les virus respiratoires, chaleur et pluies pour les maladies à moustiques)
+? | causalite | epidemies : comportements → malades (-) | les gestes barrières freinent la contagion ; la lassitude, une fois installée, ne recule pas vite
+? | definition | epidemies : malades → convention (+) | la maladie n'existe socialement qu'une fois nommée, définie et comptée ; une déclaration ne vient qu'au-delà d'un seuil
+? | lien | epidemies : convention → autorites (+) | une déclaration d'urgence déclenche les pouvoirs exceptionnels
+? | definition | epidemies : convention → malades (±) | changer la définition de cas change le nombre compté sans changer la maladie
+? | causalite | epidemies : autorites → comportements (+) | les consignes changent les comportements, d'autant plus que la confiance est haute
+? | causalite | epidemies : autorites → economie (-) | fermetures et restrictions pèsent sur l'activité
+? | mecanisme | epidemies : technique → malades (-) | vaccins et traitements réduisent la sévérité
+? | causalite | epidemies : recits → comportements (±) | rumeurs et polarisation font accepter ou refuser les mesures
+? | lien | epidemies : economie → technique (±) | les chaînes d'approvisionnement conditionnent la production de tests et de vaccins
+? | causalite | famille-genre : mariage → roles_soin (+) | un mariage précoce enferme dans le travail domestique
+? | causalite | famille-genre : roles_soin → femmes_pouvoir (-) | le poids du soin éloigne les femmes des carrières et des mandats
+? | causalite | famille-genre : heritage → parente_clans (+) | l'héritage entretient la lignée et ses obligations
+? | causalite | famille-genre : structures_familiales → roles_soin (0) | la forme de la famille change qui prend soin de qui — sens à établir selon les cas
+? | causalite | famille-genre : violences_genre → femmes_pouvoir (-) | les violences réduisent la participation des femmes à la vie publique
+? | mecanisme | foret-et-sols-vivants : emissions → pluies_acides (+) | les fumées chargent les pluies en acides
+? | mecanisme | foret-et-sols-vivants : pluies_acides → sol_mineral (+) | les pluies acidifient le sol quand son pouvoir tampon est épuisé
+? | mecanisme | foret-et-sols-vivants : sol_mineral → champignons_symbiotiques (-) | un sol trop acide fait disparaître les champignons utiles
+? | mecanisme | foret-et-sols-vivants : champignons_symbiotiques → champignons_parasites (-) | compétition au sein du sol vivant : quand le champignon utile disparaît, le parasite prend la place
+? | mecanisme | foret-et-sols-vivants : champignons_symbiotiques → pins (+) | symbiose : l'arbre nourrit le champignon, qui nourrit et protège l'arbre
+? | mecanisme | foret-et-sols-vivants : champignons_parasites → pins (-) | le parasite tue les arbres affaiblis (prédation)
+? | mecanisme | foret-et-sols-vivants : insectes_nematodes → pins (-) | les scarabées portent les nématodes qui attaquent les pins et nourrissent le parasite
+? | mecanisme | foret-et-sols-vivants : oiseaux → insectes_nematodes (-) | les oiseaux mangent les insectes (prédation au sein du niveau animal)
+? | mecanisme | foret-et-sols-vivants : interventions → oiseaux (-) | coupes et plantations d'une seule espèce privent les oiseaux de nourriture : ils partent, les insectes prospèrent
 + | mecanisme | foret-et-sols-vivants : pins → succession (-) | compétition au sein du végétal : quand les pins meurent, les bambous et les jeunes pousses prennent la lumière
 + | mecanisme | foret-et-sols-vivants : succession → rongeurs (+) | les baies des jeunes bambous font pulluler les souris
+? | mecanisme | foret-et-sols-vivants : rongeurs → succession (-) | les souris attaquent les jeunes cèdres plantés
+? | mecanisme | foret-et-sols-vivants : predateurs → rongeurs (-) | belettes et serpents régulent les souris (prédation, cycle de populations)
+? | mecanisme | foret-et-sols-vivants : interventions → rongeurs (-) | le poison tue les souris…
+? | mecanisme | foret-et-sols-vivants : rongeurs → predateurs (+) | …et les prédateurs, privés de proies, déclinent ; pour les sauver, on finit par élever des souris : l'intervention se retourne contre elle-même
+? | mecanisme | foret-et-sols-vivants : climat → insectes_nematodes (+) | des hivers plus doux laissent survivre plus d'insectes
+? | mecanisme | foret-et-sols-vivants : climat → pins (-) | les sécheresses répétées affaiblissent les arbres
+? | causalite | frontieres : blocs → etats (+) | l'appartenance à un bloc oriente les choix d'un État (le compartiment cible lit ici l'alignement)
+? | evenement | frontieres : afrique_disputee → blocs (+) | la compétition pour l'Afrique redessine les blocs (BRICS élargis à l'Égypte et à l'Éthiopie)
+? | causalite | frontieres : frontieres_contestees → etats (-) | une frontière contestée fragilise les États qui la partagent
+? | lien | frontieres : etats → passages (+) | chaque État décide qui passe et comment
+? | causalite | frontieres : local → administratives (+) | les identités locales pèsent sur le découpage (régions autonomes, statuts particuliers)
+? | causalite | frontieres : administratives → local (-) | la centralisation uniformise les particularismes (le compartiment cible lit ici leur vitalité)
+? | comparaison | frontieres : continents → blocs (+) | beaucoup de blocs suivent la géographie (Union africaine, Union européenne)
+? | evenement | guerre-levant : israel → gaza (-) | conflit direct, chaque partie réduisant les options de l'autre
+? | evenement | guerre-levant : israel → liban (-) | échanges à la frontière ; au-delà d'un seuil, passage à la guerre ouverte
+? | evenement | guerre-levant : israel → iran (-) | rivalité directe, par frappes et ripostes ponctuelles plutôt que par guerre continue
+? | lien | guerre-levant : iran → liban (+) | soutien de l'Iran au Hezbollah, qui sert de levier régional à l'Iran
+? | lien | guerre-levant : iran → yemen (+) | soutien de l'Iran aux Houthis (degré à vérifier)
+? | lien | guerre-levant : iran → syrie_irak (+) | influence par des milices alliées et des liens politiques
+? | evenement | guerre-levant : yemen → puissances (-) | attaques contre la navigation et frappes en retour
+? | causalite | guerre-levant : gaza → yemen (+) | les Houthis lient leurs attaques maritimes à la guerre à Gaza (lien déclaré, à vérifier)
+? | lien | guerre-levant : puissances → israel (±) | soutien militaire et diplomatique des États-Unis, assorti de pressions
+? | evenement | guerre-levant : mediateurs → gaza (+) | les médiations produisent des trêves par paliers, rarement de façon graduelle
+? | causalite | guerre-levant : gaza → humanitaire (-) | les combats détériorent la situation humanitaire
+? | causalite | guerre-levant : humanitaire → recits (+) | la situation humanitaire nourrit les récits et la pression internationale
 + | causalite | guerre-levant : recits → puissances (±) | l'opinion pèse sur les gouvernements occidentaux et régionaux
+? | causalite | guerre-levant : liban → syrie_irak (±) | les recompositions libanaises et syriennes se répondent
+? | causalite | guerre-levant : relief → liban (±) | hauteurs et vallées structurent depuis longtemps les zones de confrontation et les lignes de séparation
+? | mecanisme | guerre-levant : relief → eau (+) | les hauteurs reçoivent les pluies qui nourrissent le Jourdain et les nappes : contrôler les hauteurs, c'est toucher à l'eau
+? | mecanisme | guerre-levant : eau → gaza (-) | une nappe épuisée et salée rend la vie intenable au-delà d'un seuil
+? | mecanisme | guerre-levant : eau → epidemies (-) | moins d'eau potable, plus d'épidémies ; le passage au niveau microbien se fait sous un seuil d'accès
+? | causalite | guerre-levant : humanitaire → epidemies (-) | vaccinations et assainissement freinent les épidémies, si l'aide entre
+? | causalite | guerre-levant : epidemies → humanitaire (-) | une épidémie déborde les secours ; assez forte, elle impose parfois des trêves sanitaires
+? | lien | guerre-levant : convention → mediateurs (±) | reconnaissances et résolutions donnent ou retirent un cadre aux trêves ; un fait conventionnel change par déclaration
+? | causalite | guerre-levant : puissances → mediateurs (+) | relation propre au niveau géopolitique : puissances et médiateurs s'appuient l'un sur l'autre (mutualisme)
+? | causalite | humain : besoins_fondamentaux → stress_chronique (+) | la privation durable des besoins de survie (faim, insécurité) est la première source de stress chronique (le compartiment source lit ici la privation)
+? | causalite | humain : besoins_fondamentaux → passage_acte (+) | quand la survie est menacée (prix du pain, pénurie d'eau), le passage à l'acte collectif devient plus probable (émeutes de la faim)
+? | causalite | humain : besoins_fondamentaux → aspiration (-) | on survit avant de vivre : tant que la survie n'est pas assurée, les aspirations (estime, réalisation) passent au second plan
+? | mecanisme | humain : indices → instant (+) | un indice du milieu déclenche l'alerte avant la conscience
+? | causalite | humain : instant → passage_acte (+) | l'alerte ne devient acte collectif qu'au-delà d'un seuil ; le seuil est ce que les autres compartiments abaissent
+? | mecanisme | humain : hormones → instant (0) | une hormone ne cause pas l'acte : elle abaisse le seuil auquel l'alerte le déclenche
+? | mecanisme | humain : indices → instant (0) | la chaleur prolongée abaisse aussi le seuil du passage à l'acte (modulation, en plus du déclenchement)
+? | mecanisme | humain : stress_chronique → hormones (+) | la précarité qui dure entretient l'état de stress ; au-delà, l'usure plutôt que la mobilisation
+? | causalite | humain : stress_chronique → nous_eux (+) | la rareté et l'insécurité durcissent la frontière de groupe et cherchent un coupable
+? | causalite | humain : stress_chronique → attente (-) | la précarité assombrit l'attente
+? | causalite | humain : attente → passage_acte (-) | une attente qui s'effondre mobilise (rue, vote sanction) plus qu'une misère attendue
+? | causalite | humain : attente → hierarchie (-) | une attente déçue retire du crédit à ceux qui tiennent le rang
+? | causalite | humain : jeunesse → passage_acte (+) | une population jeune prend plus de risques collectifs, surtout entre pairs
+? | causalite | humain : passage_acte → enfance (+) | la violence d'aujourd'hui est l'adversité précoce de la génération qui la subit
+? | causalite | humain : enfance → stress_chronique (+) | une génération marquée tôt réagit plus fort au stress une fois adulte : la boucle se ferme sur des décennies
+? | mecanisme | humain : genes_milieu → hormones (±) | les gènes règlent la sensibilité, dans un sens ou l'autre selon le milieu
+? | mecanisme | humain : enfance → genes_milieu (±) | l'adversité précoce change l'expression des gènes, parfois sur plusieurs générations
+? | causalite | humain : culture_ecologie → morale (+) | l'écologie d'origine façonne ce qui paraît moral
+? | causalite | humain : culture_ecologie → passage_acte (±) | dans une culture de l'honneur, un affront public déclenche plus facilement la riposte
+? | causalite | humain : reciprocite → treve (+) | des adversaires qui se font face longtemps et peuvent se rendre la pareille inventent la retenue
+? | causalite | humain : treve → nous_eux (-) | le contact prolongé et un but commun estompent la frontière
+? | causalite | humain : treve → passage_acte (-) | une trêve tenue fait baisser les hostilités
+? | causalite | humain : nous_eux → nous_eux (+) | propre au niveau psychologique : la frontière s'entretient elle-même (polarisation), jusqu'à saturation
+? | causalite | humain : symboles → nous_eux (+) | une métaphore de dégoût appliquée à un groupe ouvre la voie à la déshumanisation
+? | causalite | humain : nous_eux → empathie (-) | plus la frontière est dure, moins la douleur des autres compte
+? | causalite | humain : empathie → passage_acte (-) | l'empathie retient, mais faiblement : ressentir n'est pas agir
+? | causalite | humain : nous_eux → passage_acte (+) | une frontière durcie rend la violence collective acceptable
+? | causalite | humain : stress_chronique → nous_eux (0) | la précarité abaisse le seuil auquel la frontière de groupe devient violence
+? | causalite | humain : passage_acte → nous_eux (+) | la violence subie durcit la frontière, qui appelle la riposte : cycle de vengeance
 + | mecanisme | humain : hierarchie → hormones (±) | une hiérarchie qui vacille stresse ceux d'en haut ; stable, elle stresse ceux d'en bas
+? | causalite | humain : hierarchie → passage_acte (±) | l'autorité proche et légitime obtient l'obéissance, pour la violence comme pour la retenue ; un seul dissident visible la fragilise
+? | causalite | humain : morale → passage_acte (±) | la morale intuitive justifie après coup autant qu'elle retient
+? | causalite | humain : symboles → treve (±) | sur une valeur sacrée, une offre matérielle durcit le refus ; un geste symbolique peut ouvrir la trêve
+? | causalite | humain : passage_acte → passage_acte (+) | propre au niveau social : chacun agit quand assez d'autres agissent ; les seuils individuels sont distribués, d'où une masse critique et un point de bascule
+? | causalite | humain : nous_eux → tri (+) | une préférence modérée pour les siens suffit, par départs en chaîne, à séparer les groupes
+? | causalite | humain : tri → nous_eux (+) | des groupes séparés n'ont plus de contact : la frontière durcit, et la séparation s'entretient
+? | causalite | humain : tri → treve (-) | sans lieux communs, moins d'occasions de trêve
+? | causalite | humain : conventions → passage_acte (-) | une convention ou un tabou tenus retiennent l'acte parce que chacun s'attend à ce que les autres les respectent
+? | causalite | humain : passage_acte → conventions (-) | chaque violation use la norme ; une fois rompue, elle ne revient pas à son niveau d'avant
+? | causalite | humain : symboles → conventions (+) | un symbole partagé sert de point focal où les attentes se rejoignent
+? | causalite | humain : reciprocite → dilemme (+) | la répétition et la réputation font coopérer dans un dilemme à plusieurs
+? | causalite | humain : hierarchie → dilemme (±) | une autorité qui fait respecter la règle rend la coopération rationnelle ; contestée, elle ne la garantit plus
+? | causalite | humain : stress_chronique → dilemme (-) | la rareté pousse chacun à prendre avant les autres
+? | causalite | humain : dilemme → treve (+) | une coopération qui tient dans un domaine rend la trêve plus probable dans les autres
+? | causalite | humain : hierarchie → falsification (±) | une autorité qui punit la dissidence élargit l'écart ; une autorité contestée le réduit
+? | causalite | humain : conventions → falsification (+) | une norme sociale dominante fait dire ce qui est attendu (sanction sociale, pas seulement politique)
+? | causalite | humain : stress_chronique → opinion_privee (+) | la précarité nourrit un mécontentement privé qui peut rester muet longtemps
 + | causalite | humain : opinion_privee → opinion_publique (+) | la dissidence privée ne s'exprime qu'au-delà du seuil politique de chacun ; seuils distribués et cachés : cascade possible à tout moment
+? | causalite | humain : falsification → opinion_publique (-) | plus l'écart est grand, moins l'opinion publique dit l'opinion privée
+? | causalite | humain : opinion_publique → opinion_publique (+) | propre au niveau social : chaque voix exprimée abaisse le coût de la suivante (effet d'entraînement)
+? | causalite | humain : opinion_publique → falsification (-) | quand beaucoup parlent, dire vrai ne coûte plus : l'écart se referme d'un coup, d'où la surprise des révolutions
+? | causalite | humain : falsification → opinion_privee (-) | falsification de la connaissance : un discours public sans contradiction façonne, à la longue, les croyances privées des générations suivantes (conservatisme collectif)
+? | causalite | humain : opinion_publique → passage_acte (+) | une opinion publique qui bascule descend dans la rue
+? | causalite | humain : passage_acte → disponibilite (+) | un acte collectif spectaculaire devient l'exemple qui revient à l'esprit
+? | causalite | humain : disponibilite → disponibilite (+) | propre au niveau psychologique : cascade de disponibilité, jusqu'à saturation de l'attention
+? | causalite | humain : disponibilite → risque_percu (+) | ce qui vient facilement à l'esprit paraît probable ; un événement rare et vif est surpondéré
+? | causalite | humain : risque_percu → nous_eux (+) | la peur cherche un responsable dans l'autre groupe
+? | causalite | humain : risque_percu → attente (-) | un risque perçu plus grand assombrit l'attente
+? | causalite | humain : symboles → disponibilite (+) | une date, un mot, une image ramènent les exemples associés
+? | causalite | humain : attente → aspiration (+) | l'aspiration suit l'expérience, avec retard : elle monte après les succès, baisse après les échecs
+? | causalite | humain : aspiration → passage_acte (+) | à attente égale, une aspiration plus haute fait plus d'insatisfaits : passage_acte suit l'écart aspiration − attente
+? | causalite | humain : aspiration → opinion_privee (+) | le mécontentement privé est relatif à ce qu'on attendait
+? | causalite | humain : disponibilite → agenda (+) | un problème n'entre à l'agenda des décideurs qu'au-delà d'un seuil d'attention
+? | causalite | humain : passage_acte → agenda (+) | la rue force l'agenda
+? | causalite | humain : agenda → agenda (-) | propre au niveau statut : un problème qui occupe l'agenda en chasse d'autres ; l'attention retombe vers les routines
+? | causalite | humain : opinion_privee → attitude (+) | une opinion sur une cause ne devient attitude envers un acte précis que par les conséquences attendues de cet acte
+? | causalite | humain : opinion_publique → norme_percue (+) | ce qui se dit et se fait autour de soi fixe la norme perçue
+? | causalite | humain : conventions → norme_percue (+) | les conventions établies sont la norme par défaut
+? | causalite | humain : falsification → norme_percue (+) | quand chacun cache ce qu'il pense, chacun surestime l'adhésion des autres à la norme officielle (ignorance collective)
+? | causalite | humain : hierarchie → controle_percu (±) | une autorité qui réprime réduit le contrôle perçu ; une autorité qui autorise ou faiblit l'accroît
+? | causalite | humain : stress_chronique → controle_percu (-) | la précarité retire temps et moyens
+? | definition | humain : attitude → intention (+) | premier pilier de l'intention
+? | definition | humain : norme_percue → intention (±) | deuxième pilier : pousse vers l'acte ou en détourne selon ce que la norme approuve
+? | definition | humain : controle_percu → intention (+) | troisième pilier : on n'a l'intention que de ce qu'on se croit capable de faire
+? | causalite | humain : intention → passage_acte (+) | l'intention devient acte quand l'occasion se présente et que le contrôle réel le permet
 + | causalite | humain : controle_percu → intention (0) | le contrôle perçu abaisse le seuil du passage de l'intention à l'acte (il le modère, en plus de nourrir l'intention)
+? | causalite | humain : passage_acte → intention (+) | l'acte répété dans un contexte stable devient habitude et nourrit l'intention suivante
+? | causalite | humain : tri → polarisation (+) | le tri en enclaves de mode de vie supprime les voisins de l'autre camp et durcit l'écart
+? | causalite | humain : morale → polarisation (+) | chaque camp tourne autour de valeurs sacrées différentes et justifie après coup ; chacun voit l'autre aveugle
+? | causalite | humain : polarisation → nous_eux (+) | l'adversaire politique devient un ennemi permanent plutôt qu'un collègue
+? | causalite | humain : nous_eux → polarisation (+) | une frontière de groupe dure se fixe en camps idéologiques
+? | causalite | humain : treve → polarisation (-) | des liens personnels entre camps (amitiés, familles qui se fréquentent) changent les intuitions avant les idées : remède indirect
+? | causalite | humain : polarisation → agenda (-) | blocage : moins de solutions communes, l'agenda se remplit de combats
+? | causalite | humain : polarisation → hierarchie (+) | la contestation du rang devient permanente
+? | causalite | humain : croyances → nous_eux (+) | une croyance partagée soude le nous et trace la frontière avec ceux qui ne la partagent pas
+? | causalite | humain : croyances → morale (+) | la religion porte et transmet les fondements moraux d'un groupe
+? | causalite | humain : croyances → conventions (+) | les rites fixent des conventions et des points focaux
+? | causalite | humain : croyances → symboles (+) | lieux saints, dates sacrées, figures : les symboles les plus chargés sont religieux
+? | causalite | humain : reseaux_discrets → hierarchie (±) | cooptation et capital social : un réseau discret peut stabiliser ou contester le rang de ceux qui en sont ; mécanisme supposé, non testé
+? | causalite | humain : reseaux_discrets → agenda (±) | accès aux décideurs : un sujet porté par un réseau discret entre plus vite à l'agenda ; mécanisme documenté dans sa FORME (questions à l'étude des loges, consultations sur la bioét
+? | causalite | humain : reseaux_discrets → conventions (+) | défense de normes de long terme (laïcité en France) par des institutions qui s'en réclament publiquement ; mécanisme supposé, non testé
+? | causalite | humain : reseaux_discrets → croyance_complot (+) | le secret réel d'un réseau, même petit, donne prise à la croyance en un pouvoir caché immense
+? | causalite | humain : risque_percu → croyance_complot (+) | l'incertitude et la peur cherchent une intention derrière l'événement
+? | causalite | humain : falsification → croyance_complot (+) | quand on sait que la parole publique ment, on suppose une vérité cachée
+? | causalite | humain : croyance_complot → nous_eux (+) | un ennemi caché durcit la frontière
+? | causalite | humain : croyance_complot → hierarchie (+) | la croyance en un pouvoir occulte conteste les autorités visibles (élections dites truquées, institutions dites captées)
+? | causalite | humain : croyances → dilemme (+) | hypothèse A : des dieux qui surveillent et punissent remplacent la surveillance mutuelle et rendent la coopération possible dans les grands groupes (« de grands dieux pour de grand
+? | causalite | humain : croyances → hierarchie (-) | hypothèse B, concurrente : la religion des grands groupes sert d'abord à maintenir l'inégalité ; les élites exploitent des biais cognitifs, et la contestation du rang baisse
+? | causalite | humain : hierarchie → croyances (±) | une hiérarchie qui exploite par la religion provoque des défenses : schismes, apostasie, sectes millénaristes, incroyance
+? | causalite | humain : marche_cognitif → croyance_complot (+) | plus l'offre est abondante et concurrentielle, plus il est facile de ne trouver que ce qui confirme ; au-delà d'un seuil de concurrence, la fiabilité baisse (courbe FIC)
+? | causalite | humain : croyance_complot → marche_cognitif (+) | les croyants motivés occupent l'offre ; les sceptiques, nombreux mais peu motivés, laissent faire : la boucle s'entretient
+? | causalite | humain : passage_acte → croyance_complot (+) | après un événement spectaculaire, une version conspirationniste paraît en quelques jours
+? | causalite | humain : disponibilite → croyance_complot (+) | des coïncidences saillantes sont lues comme un dessein (« comme par hasard »)
+? | causalite | humain : symboles → croyance_complot (+) | un récit qui unifie des faits disparates rend crédible une conclusion improbable
+? | causalite | humain : marche_cognitif → disponibilite (+) | la concurrence entre médias fabrique des emballements : un fait isolé devient une vague
+? | causalite | humain : croyances → croyance_complot (+) | l'attente d'une fin des temps cherche un ennemi caché qui l'annonce ou la prépare ; complot et millénarisme se fondent
+? | causalite | humain : hierarchie → croyance_complot (+) | quand les autorités sont contestées, leur démenti devient une preuve : ce qui est rejeté par l'institution passe pour vrai
+? | causalite | humain : croyance_complot → passage_acte (+) | la croyance reste presque toujours rhétorique ; au-delà d'un seuil élevé, quelques individus isolés passent à la violence
+? | evenement | humain : croyance_complot → reseaux_discrets (-) | quand un pouvoir adopte la croyance au complot, il interdit : lois de Vichy des 13 et 14 août 1940, effectifs du Grand Orient de 28 000 (1939) à 5 500 (1944)
+? | causalite | humain : convergence_editoriale → opinion_privee (0) | les médias convaincent peu directement (1,6 % dans le modèle) mais abaissent partout le seuil : la cascade entre proches fait le reste
+? | causalite | humain : convergence_editoriale → disponibilite (+) | plusieurs titres d'un même propriétaire mettent le même sujet en avant
+? | causalite | humain : amplification_algorithmique → marche_cognitif (+) | le fil choisit ce qui engage et en multiplie la portée
+? | causalite | humain : amplification_algorithmique → disponibilite (+) | ce que le fil amplifie revient à l'esprit
+? | causalite | humain : amplification_algorithmique → polarisation (+) | effet sur la polarisation non établi : l'expérience de 2020 ne le trouve pas à trois mois
+? | causalite | humain : liens → opinion_publique (+) | ce qui se dit passe par les proches ; les liens lointains relient les foyers de la cascade
+? | causalite | humain : liens → passage_acte (+) | on agit quand ses proches agissent
+? | mecanisme | inde : mousson → agriculture (+) | une mousson déficitaire réduit les récoltes d'été ; l'irrigation n'amortit qu'une partie
 + | mecanisme | inde : chaleur → agriculture (-) | une vague de chaleur au mauvais moment abîme les récoltes (blé en mars-avril)
+? | causalite | inde : agriculture → politique_interieure (+) | la détresse rurale pèse sur les votes et les mobilisations ; les gouvernements y répondent par des aides et des restrictions d'exportation
+? | causalite | inde : economie_commerce → population_jeunesse (+) | la croissance ne crée pas assez d'emplois pour les jeunes diplômés des villes
+? | lien | inde : energie_petrole_russe → economie_commerce (-) | les achats de pétrole russe exposent l'Inde à des droits de douane américains punitifs
+? | causalite | inde : chine_frontiere → nucleaire_defense (+) | la frontière disputée avec la Chine entretient la dépense militaire et la dissuasion
+? | lien | inde : manipur → politique_interieure (+) | des violences prolongées dans un État conduisent l'Union à reprendre la main (régime présidentiel de février 2025 à février 2026)
+? | evenement | inde : politique_interieure → maoisme (-) | une échéance politique (31 mars 2026) et des opérations soutenues ont réduit l'insurrection ; le retour reste possible là où les causes (terres, mines, populations adivasi) demeure
+? | causalite | inflation-mondiale : energie → prix_conso (+) | l'énergie passe vite dans les prix, d'abord par les carburants
+? | causalite | inflation-mondiale : alimentation → prix_conso (+) | les prix alimentaires pèsent plus lourd dans les pays pauvres
+? | causalite | inflation-mondiale : prix_conso → salaires (+) | boucle prix-salaires : chacun nourrit l'autre quand le travail manque
+? | causalite | inflation-mondiale : prix_conso → anticipations (+) | une inflation qui dure désancre les anticipations ; elles ne redescendent pas par le même chemin
+? | causalite | inflation-mondiale : anticipations → prix_conso (+) | des anticipations hautes font fixer des prix et des salaires plus hauts
+? | causalite | inflation-mondiale : prix_conso → banques_centrales (+) | boucle de régulation : l'inflation fait monter les taux, les taux freinent l'inflation
+? | causalite | inflation-mondiale : banques_centrales → salaires (-) | la hausse des taux refroidit l'activité et le marché du travail, avec un long retard
+? | causalite | inflation-mondiale : banques_centrales → monnaies (+) | des taux américains plus hauts renforcent le dollar
+? | causalite | inflation-mondiale : monnaies → prix_conso (±) | un dollar fort importe de l'inflation chez les autres et en exporte peu aux États-Unis
+? | causalite | inflation-mondiale : approvisionnement → prix_conso (+) | des chaînes bloquées font monter les prix des biens
+? | causalite | inflation-mondiale : budget → prix_conso (±) | subventions et boucliers baissent les prix mesurés ; déficits et droits de douane les montent
+? | causalite | inflation-mondiale : budget → banques_centrales (-) | quand le budget relance et la banque centrale freine, chacun réduit l'effet de l'autre
+? | causalite | inflation-mondiale : statistiques → banques_centrales (±) | les décisions suivent le chiffre publié, convention qui peut être révisée ou contestée
+? | mecanisme | inflation-mondiale : epidemies → elevage_cultures (-) | une épizootie (grippe aviaire, peste porcine) décime des élevages : l'effet passe du microbe à l'animal
+? | causalite | inflation-mondiale : elevage_cultures → alimentation (±) | des pertes d'élevage ou de récolte font monter certains prix alimentaires (œufs, porc, céréales)
+? | causalite | inflation-mondiale : epidemies → approvisionnement (-) | une épidémie humaine ferme usines, ports et frontières
+? | definition | inflation-mondiale : epidemies → statistiques (±) | un virus existe, mais ce qui en est compté dépend de conventions : définition d'un cas, déclaration d'urgence, méthode des indices de prix
+? | mecanisme | inflation-mondiale : climat_regime → elevage_cultures (-) | un climat plus chaud et plus sec réduit rendements et pâturages
+? | definition | inflation-mondiale : monnaies → energie (±) | au sein du niveau économique : un dollar fort renchérit l'énergie, payée en dollars, pour les autres pays
+? | definition | inflation-mondiale : budget → statistiques (±) | au croisement du statut et de la convention : subventions et boucliers changent le chiffre mesuré sans changer la cause
+? | causalite | information-cyber : recits → attention (+) | un récit chargé d'émotion capte l'attention
+? | causalite | information-cyber : attention → foules (+) | propre au niveau psychologique : attention et contagion émotionnelle s'entretiennent jusqu'à l'emballement
+? | causalite | information-cyber : foules → foules (+) | au-delà d'un seuil, la panique ou l'indignation se propage d'elle-même
+? | causalite | information-cyber : foules → etats (±) | une indignation assez large passe du niveau psychologique au géopolitique
+? | causalite | information-cyber : etats → censure (+) | un État menacé durcit la censure
+? | causalite | information-cyber : etats → coupures (+) | les coupures d'internet suivent les manifestations et les scrutins contestés
+? | causalite | information-cyber : censure → recits (-) | la censure étouffe les contre-récits et renforce le récit officiel (prédation)
+? | causalite | information-cyber : censure → coupures (+) | propre aux mêmes acteurs : quand le filtrage ne suffit plus, on coupe
+? | mecanisme | information-cyber : cyber → infrastructure (-) | une attaque réussie paralyse un service ; l'effet ne passe au physique qu'au-delà d'un seuil
+? | mecanisme | information-cyber : infrastructure → coupures (-) | propre au niveau technique : un câble coupé provoque une coupure régionale
+? | causalite | information-cyber : plateformes → attention (+) | les algorithmes amplifient ce qui retient l'attention
+? | lien | information-cyber : plateformes → recits (±) | la modération et les règles des plateformes décident de quels récits circulent
+? | causalite | information-cyber : langues_biais → attention (±) | ce qui n'est pas écrit en anglais est moins vu : nos mesures d'attention en héritent
+? | causalite | information-cyber : recits → etats (±) | un récit ne change une politique qu'au-delà d'une audience très large ; les mots pèsent moins que les actes
 + | causalite | information-cyber : langage_performatif → recits (+) | un énoncé d'autorité répété devient le récit officiel
+? | lien | information-cyber : censure → effacement_mots (+) | une loi ou une consigne fait sortir des mots des textes et des médias
+? | definition | information-cyber : effacement_mots → langues_biais (+) | un mot effacé des textes officiels fausse les comptes par listes de mots ; on mesure alors le silence, pas l'absence de la chose
+? | causalite | information-cyber : inversion_reecriture → foules (+) | retourner l'accusation nourrit la polarisation
+? | causalite | information-cyber : resilience_informationnelle → recits (-) | une confiance stable et des autorités cohérentes réduisent la prise des récits hostiles ; déclaré par un cadre conceptuel, non mesuré (Russo et al. 2026)
 + | causalite | information-cyber : resilience_informationnelle → attention (-) | choisir de ne pas relayer une manipulation et d'expliquer son mécanisme lui retire l'écho que cherchent ses auteurs ; la vérification réduit d'environ 8 % la circulation des fausse
+? | causalite | information-cyber : resilience_informationnelle → foules (-) | reconnaître l'incertitude et parler avec empathie limite la panique et la polarisation (littérature de communication de crise, COVID-19, Ebola, Fukushima, citée par Russo et al. 20
+? | causalite | information-cyber : recits → resilience_informationnelle (-) | la saturation et la fragmentation prolongées usent la confiance et l'espace commun d'interprétation
+? | causalite | information-cyber : politiques_anti_desinformation → resilience_informationnelle (+) | en démocratie, détection, exposition publique et éducation aux médias visent à renforcer la résilience ; effet mesuré limité (vérification -8 %, Cagé et al. 2025)
+? | causalite | information-cyber : politiques_anti_desinformation → censure (+) | dans les régimes autoritaires, les lois sur la « fausse information » servent contre journalistes et opposants (225 journalistes emprisonnés pour ce motif entre 2016 et 2022, CIMA)
+? | causalite | information-cyber : recits → politiques_anti_desinformation (+) | les campagnes étrangères documentées (Doppelgänger, Storm-1516, Portal Kombat) justifient la création d'agences et de lois
+? | mecanisme | infrastructures-critiques : reseaux → cascades (+) | propre au niveau technique : une défaillance locale se propage quand les marges sont épuisées
+? | mecanisme | infrastructures-critiques : cascades → reseaux (-) | la cascade éteint les réseaux qui dépendent du premier (électricité vers eau et télécommunications)
+? | mecanisme | infrastructures-critiques : demande → reseaux (-) | une pointe de demande tend le réseau jusqu'au délestage
+? | mecanisme | infrastructures-critiques : chaleur_tempetes → demande (+) | la chaleur fait monter la climatisation, le froid le chauffage
+? | mecanisme | infrastructures-critiques : chaleur_tempetes → reseaux (-) | passage de la météo à la technique : seule une tempête forte abat les lignes
+? | mecanisme | infrastructures-critiques : eau_refroidissement → reseaux (-) | un fleuve trop chaud ou trop bas fait baisser la production des centrales
+? | mecanisme | infrastructures-critiques : physique_espace → reseaux (-) | rare : une tempête solaire très forte induit des courants qui endommagent les grands transformateurs
+? | evenement | infrastructures-critiques : attaques → reseaux (-) | une attaque publique coupe un réseau et donne un levier à l'attaquant (prédation)
+? | lien | infrastructures-critiques : operateurs_regulateurs → reseaux (+) | les règles et les investissements décident de la robustesse
+? | causalite | infrastructures-critiques : cascades → population (-) | passage de la technique au psychologique : au-delà de quelques jours, la gêne devient colère et défiance
+? | causalite | infrastructures-critiques : population → operateurs_regulateurs (±) | la colère publique pousse aux réformes ou aux boucs émissaires
+? | mecanisme | insularite : montee_eaux → dependances (+) | la mer qui monte salinise les sols et les nappes ; l'île dépend davantage de l'extérieur
+? | evenement | insularite : cyclones → dependances (+) | chaque cyclone détruit récoltes et infrastructures et accroît la dépendance à l'aide
+? | causalite | insularite : zee_cables → pacifique (+) | zones maritimes et câbles attirent les puissances
+? | lien | insularite : montee_eaux → pacifique (+) | la menace sur l'habitabilité structure la diplomatie des États du Pacifique (traité Falepili)
+? | causalite | iran-nucleaire : etats_unis → pouvoir_iranien (-) | rivalité de long terme ; chacun réduit les options de l'autre
+? | lien | iran-nucleaire : etats_unis → sanctions (+) | l'exécutif américain décide l'essentiel des sanctions primaires et secondaires
+? | causalite | iran-nucleaire : sanctions → societe_iranienne (-) | les sanctions pèsent sur la monnaie, les prix et l'emploi ; l'effet plafonne quand tout est déjà sanctionné
+? | causalite | iran-nucleaire : societe_iranienne → pouvoir_iranien (±) | la pression sociale pousse le pouvoir soit vers un accord qui allège les sanctions, soit vers le durcissement
+? | causalite | iran-nucleaire : pouvoir_iranien → negociations (±) | les rapports de force internes fixent la marge des négociateurs
 + | causalite | iran-nucleaire : etats_unis → negociations (±) | la ligne de l'exécutif américain ouvre ou ferme la voie d'un accord
+? | lien | iran-nucleaire : negociations → sanctions (-) | un accord ne se traduit en levée de sanctions qu'au-delà d'un seuil d'engagements vérifiés
+? | lien | iran-nucleaire : verification → negociations (±) | les rapports de l'agence donnent la base factuelle commune, ou la mettent en doute
+? | causalite | iran-nucleaire : pouvoir_iranien → verification (±) | l'accès des inspecteurs sert de levier dans les deux sens
+? | lien | iran-nucleaire : verification → conseil_securite (+) | une résolution du conseil de l'agence peut porter le dossier au Conseil de sécurité
+? | lien | iran-nucleaire : russie_chine → conseil_securite (-) | le veto possible de la Russie ou de la Chine borne ce que le Conseil peut décider
+? | lien | iran-nucleaire : russie_chine → societe_iranienne (+) | commerce et soutien diplomatique qui amortissent les sanctions
+? | causalite | iran-nucleaire : europe → negociations (+) | les Européens servent de médiateurs et de signataires, avec une marge propre limitée
+? | causalite | iran-nucleaire : voisins → etats_unis (±) | Israël et les monarchies du Golfe pèsent sur la ligne américaine, dans un sens ou dans l'autre
+? | causalite | iran-nucleaire : recits → negociations (±) | lignes rouges publiques et démentis compliquent ou préparent les concessions
+? | mecanisme | iran-nucleaire : sismicite → surete_atomique (-) | un pays sismique fait peser un risque de sûreté sur ses installations ; le passage du niveau minéral au niveau atomique demande un séisme fort
+? | evenement | iran-nucleaire : sismicite → societe_iranienne (-) | un grand séisme frappe la société d'un coup
+? | lien | iran-nucleaire : surete_atomique → verification (±) | un incident de sûreté attire missions et rapports de l'AIEA
+? | mecanisme | iran-nucleaire : surete_atomique → voisins (-) | une contamination ne s'arrête pas aux frontières : les voisins s'en inquiètent au-delà d'un seuil
+? | mecanisme | iran-nucleaire : relief_sites → verification (-) | ce qui est abrité sous le relief est plus difficile à vérifier de l'extérieur
+? | causalite | iran-nucleaire : europe → etats_unis (+) | relation propre au niveau géopolitique : coordination occidentale (mutualisme), plus ou moins serrée
+? | causalite | iran-nucleaire : russie_chine → etats_unis (-) | relation propre au niveau géopolitique : rivalité des puissances qui borne toute solution au Conseil
+? | lien | liban-institutions : gouvernement → justice (+) | propre au niveau statut : le renvoi d'une affaire au Conseil judiciaire passe par un décret du Conseil des ministres ; sans consensus, il n'est pas pris (mécanisme à vérifier sur l
+? | lien | liban-institutions : confessionnalisme → gouvernement (-) | le partage confessionnel donne à chaque bloc un pouvoir de blocage
+? | causalite | liban-institutions : blocs_politiques → gouvernement (±) | propre au niveau de l'entourage : loyautés et rivalités font et défont les majorités au Conseil
+? | lien | liban-institutions : blocs_politiques → justice (-) | recours, immunités et dessaisissements freinent les enquêtes qui touchent un bloc
 + | causalite | liban-institutions : opinion_colere → gouvernement (+) | passage du psychologique au statut : seule une mobilisation forte pousse le gouvernement à renvoyer une affaire
+? | causalite | liban-institutions : force_armee → blocs_politiques (±) | le rapport de force armé pèse sur le poids politique des blocs
+? | causalite | liban-institutions : exterieur → blocs_politiques (±) | les soutiens extérieurs renforcent les blocs qui leur sont proches
+? | lien | liban-institutions : exterieur → banque_centrale (±) | l'aide du FMI et des bailleurs ne vient qu'au-delà d'un seuil de réformes
+? | causalite | liban-institutions : banque_centrale → opinion_colere (+) | des dépôts bloqués nourrissent la colère et la défiance
+? | causalite | liban-institutions : justice → opinion_colere (-) | une avancée judiciaire visible apaise en partie l'exigence de justice
 + | causalite | liban-institutions : internet_information → opinion_colere (+) | les réseaux amplifient la colère autour d'une affaire
+? | causalite | medias-diffusion : plateformes_sociales → presse (-) | audience et publicité passent des journaux aux plateformes (les sites d'information perdent 12 points depuis 2020)
+? | causalite | medias-diffusion : plateformes_sociales → television (-) | la vidéo en ligne prend la place de la télévision comme source d'information
 + | lien | medias-diffusion : plateformes_sociales → createurs (+) | les plateformes donnent leur audience aux créateurs
+? | causalite | medias-diffusion : geants_mango → plateformes_sociales (+) | l'IA et l'infrastructure des géants transforment la diffusion (recommandation, résumés, agents conversationnels)
+? | lien | medias-diffusion : proprietaires → presse (+) | les propriétaires financent les titres et peuvent orienter leur ligne (le compartiment cible lit ici l'alignement éditorial sur le propriétaire)
+? | lien | medias-diffusion : proprietaires → television (+) | même effet sur les chaînes rachetées
 + | lien | medias-diffusion : proprietaires → edition (+) | rachats de maisons d'édition par les mêmes industriels
+? | causalite | medias-diffusion : proprietaires → independants (-) | la concentration réduit la place des indépendants (rachats, concurrence pour l'audience)
+? | causalite | medias-diffusion : jeux_video → createurs (+) | diffusion en direct et vidéos de jeux nourrissent l'économie des créateurs
+? | lien | medias-diffusion : diffuseurs_internationaux → presse (+) | les agences alimentent la plupart des rédactions
+? | causalite | migrations-demographie : natalite_vieillissement → economie (-) | une population qui vieillit manque de bras et pèse sur les retraites
+? | causalite | migrations-demographie : economie → migrations (+) | on part quand l'écart de revenu dépasse le coût du départ
+? | causalite | migrations-demographie : climat_milieu → migrations (+) | un milieu qui ne nourrit plus pousse au départ au-delà d'un seuil de pertes répétées (passage du climat à la société)
+? | causalite | migrations-demographie : migrations → diasporas (+) | les départs créent des diasporas, qui attirent et financent les départs suivants (réseaux)
+? | lien | migrations-demographie : diasporas → economie (+) | les envois de fonds soutiennent les économies de départ
+? | causalite | migrations-demographie : migrations → psychologie (±) | une arrivée rapide et très médiatisée fait basculer l'opinion de l'hospitalité à la peur
 + | causalite | migrations-demographie : psychologie → politiques_migratoires (-) | la peur collective ferme les frontières au-delà d'un seuil d'opinion (passage du psychologique au statut)
+? | causalite | migrations-demographie : politiques_migratoires → migrations (-) | fermer une route en ouvre une autre, plus dangereuse ; les flux et les contrôles se répondent
+? | definition | migrations-demographie : convention → migrations (±) | la même personne est réfugiée, migrante ou clandestine selon la définition : le statut change ce qui est compté et protégé
+? | lien | migrations-demographie : convention → politiques_migratoires (±) | au sein du droit, les conventions internationales bornent les politiques nationales (relation entre convention et statut)
+? | causalite | migrations-demographie : mortalite → natalite_vieillissement (±) | propre au niveau société : la baisse de la mortalité infantile précède la baisse de la natalité (transition démographique)
 + | causalite | migrations-demographie : urbanisation → natalite_vieillissement (-) | la ville fait baisser la fécondité
+? | causalite | migrations-demographie : migrations → urbanisation (+) | l'exode rural et les arrivées gonflent les villes et leurs quartiers précaires
+? | mecanisme | migrations-demographie : climat_milieu → mortalite (+) | les vagues de chaleur tuent au-delà d'un seuil, surtout les plus âgés
+? | lien | militaire : alliances → depenses (+) | les engagements d'alliance (5 % en 2035) tirent les budgets militaires
+? | lien | militaire : depenses → industrie_armement (+) | les budgets se traduisent en commandes et en chiffre d'affaires de l'industrie (Europe +13 % en 2024)
+? | causalite | militaire : industrie_armement → commerce_armes (+) | une industrie qui produit plus exporte plus
+? | lien | militaire : depenses → forces (+) | les budgets financent les effectifs, l'entraînement et l'équipement
+? | causalite | militaire : technologies → doctrines (+) | les drones et l'IA obligent à revoir les doctrines (le compartiment cible lit ici leur renouvellement)
+? | causalite | militaire : arsenaux_nucleaires → doctrines (+) | la croissance des arsenaux durcit les postures de dissuasion
+? | causalite | militaire : depenses → technologies (+) | la recherche militaire finance les technologies nouvelles
+? | lien | militaire : bases_projection → alliances (+) | les bases à l'étranger matérialisent les alliances et les garanties
+? | lien | minerais-critiques : controles_export → batteries (-) | les contrôles à l'exportation réduisent l'offre disponible hors du pays qui contrôle
+? | comparaison | minerais-critiques : concentration → controles_export (+) | plus l'offre est concentrée, plus un contrôle à l'exportation est efficace comme arme
+? | causalite | minerais-critiques : demande → cuivre (+) | l'électrification et les centres de données font monter la demande et les prix du cuivre
+? | causalite | minerais-critiques : cuivre → investissement (+) | des prix élevés attirent l'investissement minier (le cuivre en hausse de 8 % en 2025)
+? | causalite | minerais-critiques : investissement → concentration (-) | de nouvelles mines et raffineries hors des pays dominants réduiraient la concentration, avec des délais très longs
+? | lien | minerais-critiques : cuivre → metaux_compagnons (+) | sous-produit : la production de cuivre fixe l'offre de sélénium, de tellure, d'une partie du molybdène et du cobalt (Nassar et al., 2015 ; roue des métaux)
 + | lien | minerais-critiques : zinc_plomb → metaux_compagnons (+) | sous-produit : la production de zinc et de plomb fixe l'offre d'indium, de germanium, de cadmium, d'antimoine, de bismuth et d'une grande part de l'argent (Nassar et al., 2015 ; US
+? | lien | minerais-critiques : aluminium → metaux_compagnons (+) | sous-produit : le traitement de la bauxite fixe l'offre de gallium (USGS 2026)
+? | lien | minerais-critiques : batteries → metaux_compagnons (+) | sous-produit : la production de nickel porte une partie du cobalt (roue des métaux)
+? | lien | minerais-critiques : concentration → metaux_compagnons (-) | quand le raffinage du porteur est concentré dans un pays, la récupération du compagnon l'est aussi (gallium chinois à 99 %, USGS 2026), ce qui rend le contrôle à l'exportation très
+? | causalite | monnaie-pouvoir : banques_centrales_puissance → monnaies_numeriques (-) | le resserrement monétaire pèse sur les cryptoactifs, devenus corrélés aux actions depuis 2020
+? | causalite | monnaie-pouvoir : sanctions_financieres → dedollarisation (+) | le gel d'avoirs pousse des pays à diversifier hors du dollar et de l'euro
+? | causalite | monnaie-pouvoir : sanctions_financieres → or (+) | l'or ne peut pas être gelé à distance s'il est rapatrié — achats des banques centrales
+? | causalite | monnaie-pouvoir : dedollarisation → dollar_reserve (-) | la diversification grignote la part du dollar
+? | causalite | monnaie-pouvoir : monnaies_numeriques → dollar_reserve (+) | les stablecoins adossés au dollar étendent son usage (à confirmer)
+? | lien | monnaie-pouvoir : paiements → sanctions_financieres (+) | le contrôle des réseaux de paiement rend les sanctions efficaces
+? | lien | monnaie-pouvoir : banques_centrales_puissance → dollar_reserve (+) | la Réserve fédérale et ses lignes de swap entretiennent le rôle du dollar
+? | mecanisme | niveaux-de-base : composition_air → bilan_energie (+) | plus de gaz à effet de serre retiennent plus d'énergie (avec les aérosols et les nuages, qui jouent aussi)
 + | mecanisme | niveaux-de-base : bilan_energie → biomasse (-) | l'énergie accumulée réchauffe et modifie les milieux, ce qui pèse sur une partie du vivant
 + | lien | non-proliferation : aiea → regime (+) | des inspections crédibles entretiennent la confiance dans le régime
+? | causalite | non-proliferation : etats_du_seuil → aiea (-) | un État qui réduit l'accès entre en compétition avec l'institution ; au-delà d'un seuil, rapport au Conseil des gouverneurs
+? | lien | non-proliferation : aiea → conseil_securite (+) | propre au niveau statut : un constat grave peut être renvoyé au Conseil de sécurité
+? | lien | non-proliferation : conseil_securite → sanctions (+) | les sanctions multilatérales passent par le Conseil, et s'arrêtent au veto
+? | causalite | non-proliferation : sanctions → etats_du_seuil (-) | les sanctions pèsent de moins en moins à mesure qu'elles s'accumulent
+? | causalite | non-proliferation : peur_prestige → etats_du_seuil (+) | passage du psychologique au géopolitique : l'insécurité ressentie pousse vers le seuil
+? | causalite | non-proliferation : dissuasion → peur_prestige (±) | une garantie crédible rassure les alliés ; une menace nourrit l'insécurité des autres
+? | causalite | non-proliferation : dissuasion → regime (±) | la réduction des arsenaux des puissances dotées renforce la légitimité du traité, son blocage l'érode
+? | causalite | non-proliferation : etats_du_seuil → regime (-) | un retrait du traité ou un franchissement du seuil peut entraîner des voisins (effet domino, à vérifier)
+? | lien | non-proliferation : zones → regime (+) | propre au niveau convention : les zones régionales consolident la norme
+? | lien | non-proliferation : civil → aiea (+) | la coopération civile se fait sous garanties, ce qui étend le contrôle
+? | mecanisme | nucleaire-radiologique : atome → atome (-) | propre au niveau atomique : l'activité d'une source décroît d'elle-même selon sa demi-vie
+? | mecanisme | nucleaire-radiologique : atome → sources (+) | la radioactivité fait l'utilité de la source (soigner, contrôler des soudures) et son danger
+? | lien | nucleaire-radiologique : sources → signalement (+) | une perte ou un vol déclenche l'alerte ; plus la source est dangereuse, plus l'alerte est large et rapide
+? | causalite | nucleaire-radiologique : signalement → sources (-) | recherche puis récupération : la plupart des sources signalées sont retrouvées (part à vérifier)
+? | causalite | nucleaire-radiologique : signalement → recits (+) | l'alerte publique fait l'actualité
+? | mecanisme | nucleaire-radiologique : sources → sante (-) | une source sortie de son contrôle peut exposer des personnes qui l'ignorent
+? | mecanisme | nucleaire-radiologique : sources → environnement (-) | la contamination n'apparaît que si l'enveloppe est brisée
+? | lien | nucleaire-radiologique : surete → sources (-) | autorisations, inspections et registres réduisent les pertes
+? | lien | nucleaire-radiologique : surete → signalement (+) | les régulateurs pilotent la recherche et notifient l'AIEA
+? | lien | nucleaire-radiologique : convention → signalement (±) | la catégorie de la source et le classement de l'événement décident de l'ampleur de la réponse et de ce qui est rendu public
+? | mecanisme | nucleaire-radiologique : electricite → environnement (-) | en temps normal presque rien ; au-delà d'un seuil d'accident, une contamination durable
+? | causalite | nucleaire-radiologique : recits → electricite (-) | la peur après un accident fait fermer des réacteurs ; elle ne retombe pas par le même chemin
+? | lien | nucleaire-radiologique : traites → surete (+) | les traités donnent à l'AIEA ses garanties et ses inspections
+? | mecanisme | nucleaire-radiologique : environnement → sante (-) | propre au passage chimique-vivant : la contamination entre dans l'eau, les sols et les aliments
+? | causalite | observateur-mesure : questionneur_metaculus → questions_traitees (+) | le rédacteur choisit les changements discutés ; la plupart n'ont pas lieu dans le délai : le statu quo est le point de départ, le changement doit être justifié par un frein levé, u
+? | causalite | observateur-mesure : biais → questionneur_metaculus (+) | l'attention suit les médias, pas les faits ; les questions suivent l'attention (52 questions sur 272 en mars 2026, au moment de la guerre avec l'Iran)
+? | causalite | observateur-mesure : biais → monde (±) | nous voyons trop ce dont la presse anglophone parle, et trop peu le reste
+? | definition | observateur-mesure : definitions → monde (±) | un chiffre dépend de sa définition : changer la définition change ce que nous voyons sans changer le monde
+? | causalite | observateur-mesure : jeunesse_series → monde (-) | une habitude mesurée en pleine crise cache la crise (Ormuz)
 + | lien | observateur-mesure : lecteurs_ia → controles (-) | propre au niveau technique : les lecteurs instables obligent à multiplier les contrôles, qui révèlent leur instabilité
+? | definition | observateur-mesure : fuite → controles (-) | une fuite gonfle les résultats des bancs rétrospectifs si on ne la mesure pas
+? | causalite | observateur-mesure : biais → couverture (+) | les biais des sources fabriquent les angles morts
+? | definition | observateur-mesure : couverture → controles (-) | ce que nous ne voyons pas, aucun contrôle ne peut le vérifier
+? | causalite | observateur-mesure : lecteurs_ia → definitions (±) | un modèle qui résume peut changer un chiffre ou sa définition (taux mesuré faible au contrôle de fidélité)
+? | definition | observateur-mesure : monde → jeunesse_series (+) | le temps qui passe fait mûrir les séries : le monde finit par donner sa référence
+? | lien | observateur-mesure : controles → resultats (+) | le préenregistrement et le critère fixé d'avance décident du verdict (adopté, non adopté, clos)
+? | causalite | observateur-mesure : lectures → ontologie_projet (+) | les lectures intégrées ont nourri des cartes, des fiches et des règles
+? | lien | observateur-mesure : resultats → questions_traitees (+) | ce qui est adopté change la façon dont le bot traite les questions
+? | mecanisme | oceans-et-fleuves : climat → oceans (+) | l'océan absorbe l'essentiel de la chaleur ajoutée, puis la rend : il amortit et prolonge le réchauffement
+? | mecanisme | oceans-et-fleuves : oceans → cycle (+) | les oscillations océaniques déplacent les pluies sur des continents entiers
+? | mecanisme | oceans-et-fleuves : climat → glaces (-) | les glaces fondent ; elles ne se reconstituent pas au même rythme
+? | mecanisme | oceans-et-fleuves : glaces → niveau_mer (-) | moins de glace sur les terres, plus de mer (au sein du système eau-océan)
+? | mecanisme | oceans-et-fleuves : glaces → fleuves (+) | les glaciers nourrissent les fleuves l'été ; quand ils ont trop fondu, l'étiage s'effondre
+? | mecanisme | oceans-et-fleuves : cycle → fleuves (+) | des pluies au-delà d'un seuil font déborder les fleuves
+? | mecanisme | oceans-et-fleuves : cycle → nappes (+) | les pluies rechargent lentement les nappes
+? | mecanisme | oceans-et-fleuves : barrages → fleuves (-) | le barrage prend l'eau et les sédiments du fleuve (prédation) ; les deltas en aval s'enfoncent
+? | mecanisme | oceans-et-fleuves : barrages → nappes (-) | l'irrigation vide les nappes plus vite qu'elles ne se remplissent
+? | mecanisme | oceans-et-fleuves : fleuves → navigation_fluviale (+) | sous un niveau critique, les péniches ne passent plus ou passent à moitié pleines (passage de l'eau à l'économie)
+? | mecanisme | oceans-et-fleuves : fleuves → refroidissement (+) | un fleuve trop chaud ou trop bas fait réduire la production des centrales
+? | mecanisme | oceans-et-fleuves : oceans → vivant_aquatique (±) | chaleur et acidité blanchissent les récifs et déplacent les poissons ; les remontées d'eaux froides nourrissent le plancton
+? | mecanisme | oceans-et-fleuves : niveau_mer → fleuves (-) | la mer remonte dans les deltas et sale les eaux douces
+? | mecanisme | oceans-et-fleuves : oceans → recifs (-) | une eau trop chaude fait blanchir les coraux (NOAA)
+? | mecanisme | oceans-et-fleuves : oceans → desoxygenation (+) | le réchauffement explique environ la moitié de la perte d'oxygène dans les 1 000 premiers mètres (UICN)
+? | mecanisme | oceans-et-fleuves : peche → vivant_aquatique (-) | la surpêche réduit les populations de poissons
+? | lien | oceans-et-fleuves : haute_mer → peche (-) | la gouvernance des océans peut limiter la pêche illégale et la surpêche
+? | mecanisme | oceans-et-fleuves : desoxygenation → vivant_aquatique (-) | les zones privées d'oxygène font fuir ou mourir la vie marine
+? | lien | organisations-internationales : retraits → humanitaire (-) | les retraits et les coupes des donateurs réduisent le financement de l'aide humanitaire (Russo et al. 2026 ; série OCHA FTS)
 + | lien | organisations-internationales : onu → humanitaire (+) | la légitimité humanitaire est adossée aux institutions multilatérales ; quand elles sont contournées ou vidées, les normes perdent leur échafaudage (Russo et al. 2026)
+? | lien | organisations-internationales : retraits → onu (-) | les retraits et les arriérés privent l'ONU de moyens (budget 2026 en baisse de 15 %)
+? | lien | organisations-internationales : retraits → sante_mondiale (-) | le départ du premier contributeur affaiblit l'OMS
+? | lien | organisations-internationales : conseil_securite → justice_internationale (-) | le veto empêche des renvois devant la justice internationale
+? | causalite | organisations-internationales : retraits → justice_internationale (-) | les sanctions et la pression américaines poussent des États à quitter la CPI
+? | causalite | organisations-internationales : clubs_puissances → onu (-) | les décisions se déplacent vers des clubs restreints
+? | lien | organisations-internationales : droit_international → justice_internationale (+) | les traités fondent la compétence des cours
+? | mecanisme | ormuz : milieu → flux_energie (-) | le goulet concentre le flux sur un seul passage étroit
+? | causalite | ormuz : flux_energie → prix (±) | une baisse du flux fait monter les prix mondiaux
+? | evenement | ormuz : force → navigation (-) | saisies, menaces et mines pèsent sur la navigation (prédation : la force gagne un levier)
+? | causalite | ormuz : navigation → prix (±) | assurance et fret transmettent le risque aux prix avant tout arrêt physique
+? | causalite | ormuz : puissances → riverains (-) | rivalité États-Unis–Iran (style à mesurer au banc de la réciprocité, paire USA–IRN)
+? | lien | ormuz : puissances → interieur_iran (+) | Chine–Iran, pétrole contre devises et soutien diplomatique (relation propre à la Chine, pas à toutes les puissances)
+? | lien | ormuz : droit → flux_energie (-) | les sanctions réduisent et détournent les exportations iraniennes sans les arrêter
+? | definition | ormuz : prix → interieur_iran (±) | les recettes de l'Iran dépendent du prix autant que des volumes vendus
+? | causalite | ormuz : interieur_iran → force (±) | une pression intérieure peut pousser à l'escalade extérieure ou à la retenue
+? | causalite | ormuz : milieu → interieur_iran (-) | chaleur et rareté de l'eau pèsent sur la vie et la contestation
+? | causalite | ormuz : recits → prix (±) | une menace verbale bouge les prix avant tout fait
 + | causalite | ormuz : force → recits (+) | démonstrations de force et récits se nourrissent (signalisation)
+? | mecanisme | ormuz : climat_regime → mer_golfe (+) | le réchauffement du climat réchauffe une mer déjà chaude et peu profonde
+? | mecanisme | ormuz : mer_golfe → riverains (-) | une mer trop chaude ou polluée gêne le dessalement dont dépendent les villes riveraines
+? | evenement | ormuz : force → pollution_marine (+) | une attaque ou un accident sur un pétrolier peut provoquer une marée noire
+? | mecanisme | ormuz : pollution_marine → mer_golfe (-) | les hydrocarbures et la saumure dégradent une mer qui se renouvelle lentement
+? | lien | ormuz : navigation → flux_energie (+) | au sein du niveau économique : sans navires disponibles et assurés, le flux d'énergie ne passe pas
+? | mecanisme | ormuz : milieu → force (±) | le relief du détroit (îles, côtes proches, passage étroit) donne un avantage à qui tient les rives
+? | definition | partis-politiques : systemes_partisans → partis_uniques (+) | un régime fermé ne laisse qu'un parti
+? | causalite | partis-politiques : droite_radicale_populiste → groupes_internationales (-) | la montée des droites radicales menace la coalition centrale du Parlement européen (le compartiment cible lit ici la majorité de cette coalition)
 + | causalite | partis-politiques : droite_radicale_populiste → conservateurs (-) | la droite radicale prend des électeurs à la droite de gouvernement, qui s'allie à elle ou reprend ses thèmes
 + | causalite | partis-politiques : adhesion_militantisme → partis_personnels (-) | moins de militants, plus de partis bâtis autour d'un chef (le compartiment source lit ici le militantisme)
+? | causalite | partis-politiques : ecologistes → gauche_sociale_democrate (0) | concurrence et alliances au sein de la gauche — sens à établir
+? | causalite | partis-politiques : partis_dominants → systemes_partisans (-) | un parti dominant entrave l'opposition et ferme le système (le compartiment cible lit ici son ouverture)
+? | causalite | plancher-social : travail → pauvrete (-) | un emploi formel et correctement payé fait baisser la pauvreté ; le chômage et l'informalité la font monter
 + | lien | plancher-social : protection_sociale → pauvrete (-) | les prestations sociales font baisser la pauvreté
+? | causalite | plancher-social : inegalites → pauvrete (+) | à croissance égale, des inégalités plus fortes freinent la baisse de la pauvreté
+? | causalite | plancher-social : pauvrete → logement (-) | plus de pauvreté, moins de logements convenables (le compartiment cible lit ici la part de logements convenables)
+? | causalite | plancher-social : pauvrete → acces_energie (-) | la pauvreté freine l'accès à l'électricité et à une cuisson propre
+? | causalite | plancher-social : acces_energie → pauvrete (-) | l'accès à l'énergie ouvre des activités et fait reculer la pauvreté (boucle avec la relation précédente)
+? | lien | politique-americaine : congres → nominations_interim (±) | le Sénat confirme ou bloque ; son calendrier fixe le délai
+? | lien | politique-americaine : tribunaux → nominations_interim (-) | les tribunaux peuvent juger illégal un intérim prolongé (procureurs fédéraux)
+? | lien | politique-americaine : tribunaux → poursuites_personnalites (±) | chaque étape d'une poursuite passe par le tribunal et son calendrier
+? | lien | politique-americaine : executif → poursuites_personnalites (+) | l'exécutif peut annoncer des poursuites ; l'annonce n'est pas l'inculpation
 + | lien | politique-americaine : executif → congres (±) | quand les majorités divergent, chacun bloque l'autre ; alignées, elles s'appuient
+? | lien | politique-americaine : tribunaux → executif (-) | injonctions et arrêts suspendent ou annulent des décrets ; l'exécutif fait appel ou réécrit
+? | lien | politique-americaine : etats_federes → tribunaux (+) | les États portent une part des recours contre les décisions fédérales
+? | lien | politique-americaine : elections → congres (±) | les élections recomposent les majorités à dates fixes
+? | causalite | politique-americaine : elections → executif (±) | à l'approche d'une élection, les décisions visibles (prix à la pompe, droits de douane) suivent l'opinion
+? | lien | politique-americaine : congres → budget (±) | sans accord à l'échéance, fermeture des services fédéraux ou risque sur la dette
+? | causalite | politique-americaine : budget → reserve_federale (-) | des déficits élevés et une banque centrale qui freine se neutralisent en partie
+? | causalite | politique-americaine : executif → reserve_federale (±) | les nominations et la pression publique pèsent sur une institution conçue pour y résister
+? | lien | politique-americaine : executif → commerce (±) | les droits de douane se décident vite par décret, sous réserve de contestation en justice. Une annonce sur deux est appliquée telle quelle ; le recul ordinaire n'est pas l'abandon 
+? | lien | politique-americaine : tribunaux → commerce (-) | des recours peuvent suspendre des droits de douane
+? | lien | politique-americaine : executif → sanctions (+) | les désignations relèvent de l'exécutif et se décident sans vote
+? | lien | politique-americaine : executif → energie (±) | ventes de la réserve stratégique et permis d'exportation suivent les prix et le calendrier électoral
+? | lien | politique-americaine : congres → executif (±) | confirmations des nominations et contrôle parlementaire
+? | causalite | politique-americaine : entourage → executif (±) | l'entourage filtre l'information et pèse sur les décisions ; une vague de départs ou de disgrâces le recompose et change la ligne
+? | causalite | politique-americaine : elections → entourage (±) | alliés et financeurs suivent la dynamique électorale : une défaite les éloigne, une victoire les rapproche
 + | lien | politique-americaine : regles_electorales → elections (±) | règles et découpages bornent ce qu'un même vote produit en sièges
+? | lien | politique-americaine : tribunaux → regles_electorales (±) | les recours redessinent les cartes et les règles de vote
+? | lien | politique-americaine : executif → etats_federes (±) | au sein du niveau statut : le fédéralisme, où l'État fédéral ordonne et les États résistent, appliquent ou contournent
+? | lien | politique-americaine : climat_risques → etats_federes (-) | une catastrophe majeure franchit le seuil de la déclaration fédérale et appelle l'aide de l'État fédéral
+? | causalite | politique-americaine : eau_fleuves → etats_federes (-) | quand le Colorado baisse, les États d'amont et d'aval se disputent les mêmes volumes
+? | causalite | politique-interieure : contestation → gouvernement (-) | une contestation massive peut faire tomber un gouvernement (le compartiment cible lit ici sa stabilité)
 + | lien | politique-interieure : elections → gouvernement (+) | une élection désigne ou renouvelle le gouvernement, avec le délai des coalitions
+? | causalite | politique-interieure : procedures → partis (-) | une affaire ou une procédure fait baisser le soutien d'un parti
+? | definition | politique-interieure : regime → elections (+) | la qualité du régime fait la liberté des élections ; l'autocratisation les vide (le compartiment cible lit ici leur liberté)
+? | evenement | politique-interieure : coups_transitions → regime (-) | un coup d'État fait chuter les libertés et suspend les élections
+? | causalite | psyche : emotions → cognition (+) | l'émotion colore le jugement et la mémoire (le compartiment cible lit ici la part d'intuition)
+? | causalite | psyche : attachement → identite_estime (+) | un attachement sûr nourrit l'estime de soi
+? | causalite | psyche : developpement → personnalite (+) | les expériences de chaque âge façonnent les traits
+? | causalite | psyche : solitude_lien → sante_mentale (+) | la solitude augmente l'anxiété et la dépression (le compartiment cible lit ici la fréquence des troubles)
+? | causalite | psyche : habitudes → soi (+) | on devient ce que l'on répète
+? | causalite | psyche : valeurs_sens → cognition (+) | les valeurs filtrent ce qu'on remarque et ce qu'on croit
+? | causalite | psyche : inconscient_defenses → emotions (-) | les défenses tiennent à distance les émotions pénibles
+? | causalite | psyche : identite_estime → valeurs_sens (+) | l'identité porte des valeurs
+? | causalite | psyche : sante_mentale → soi (-) | un trouble mental atteint toute la vie du soi (le compartiment source lit ici la fréquence des troubles)
+? | causalite | psyche : emotions → soi (+) | les émotions sont la façon dont le soi vit ce qui lui arrive
+? | causalite | psyche : cognition → soi (+) | la pensée construit le récit de soi
+? | mecanisme | relief-et-montagnes : chaines → obstacles (+) | une chaîne ne se franchit que par quelques cols et vallées, qui concentrent tous les passages
+? | mecanisme | relief-et-montagnes : chaines → pluies_orographiques (±) | la chaîne arrête les nuages : un versant arrosé, l'autre sec (passage du relief à la météo)
+? | mecanisme | relief-et-montagnes : pluies_orographiques → chateaux_d_eau (+) | les pluies et neiges des hauteurs remplissent les réserves de glace et de neige
+? | mecanisme | relief-et-montagnes : climat → chateaux_d_eau (-) | le réchauffement fond les glaciers des montagnes ; ils ne se reforment pas au même rythme
+? | mecanisme | relief-et-montagnes : obstacles → guerres (±) | le relief fige les fronts, protège qui tient les hauteurs, et ouvre les plaines aux offensives (passage du relief à la géopolitique)
+? | causalite | relief-et-montagnes : obstacles → routes_frontieres (+) | frontières et routes suivent crêtes, cols et vallées : la convention s'appuie sur le relief
+? | causalite | relief-et-montagnes : routes_frontieres → guerres (±) | une frontière de crête mal définie devient un point de friction
+? | mecanisme | relief-et-montagnes : seismes_volcans → sols_versants (+) | un séisme déclenche des glissements de terrain (au sein du niveau minéral : lente accumulation, rupture brutale)
+? | evenement | relief-et-montagnes : seismes_volcans → populations (-) | un grand séisme tue et déplace ; l'effet passe du minéral au social seulement au-delà d'un seuil de force
+? | mecanisme | relief-et-montagnes : seismes_volcans → climat (-) | une très grande éruption refroidit le climat une ou deux années (rare)
+? | mecanisme | relief-et-montagnes : sols_versants → obstacles (-) | un glissement coupe une route ou un col
+? | mecanisme | relief-et-montagnes : obstacles → populations (-) | le relief isole les vallées : abri pour les uns, enfermement pour les autres
+? | mecanisme | relief-et-montagnes : cotes_detroits → guerres (±) | un détroit étroit donne un levier à qui tient ses rives
+? | mecanisme | relief-et-montagnes : chateaux_d_eau → populations (+) | les montagnes donnent l'eau aux plaines peuplées en aval
+? | definition | reseaux-humains : liens_faibles → petit_monde (+) | quelques liens qui sautent d'un groupe à l'autre suffisent à rapprocher tout le monde
+? | definition | reseaux-humains : carrefours → petit_monde (+) | les très connectés raccourcissent les chemins
+? | causalite | reseaux-humains : ressemblance → liens_faibles (-) | se lier à ses semblables raréfie les liens qui sortent du groupe
+? | causalite | reseaux-humains : ressemblance → cascades (+) | dans un groupe fermé, une idée se renforce vite (chambre d'écho)
+? | causalite | reseaux-humains : passeurs → cascades (+) | le passage d'un groupe à l'autre passe par les passeurs
+? | causalite | reseaux-humains : reseaux_numeriques → petit_monde (+) | les plateformes réduisent la distance moyenne entre les personnes
+? | causalite | reseaux-humains : reseaux_numeriques → cascades (+) | les cascades vont beaucoup plus vite en ligne
+? | causalite | reseaux-humains : reseaux_elites → carrefours (+) | les mêmes lieux d'élite fabriquent les mêmes personnes très connectées
+? | definition | reseaux-humains : cercles → liens_faibles (+) | au-delà du cercle des proches, les autres relations restent des liens faibles
+? | causalite | reseaux-sociaux : corrosion → desinformation (+) | phase 2 de la corrosion : injection de contenus (registres factuel et sémantique) ; source : Dabila, Escudier, Marti, Sciences Po, 2026
+? | causalite | reseaux-sociaux : graphe_algorithme → corrosion (+) | phase 3 : la recommandation, qui met en avant les contenus les plus clivants, amplifie la corrosion à moindre coût (« l'accélérateur numérique ») ; source : idem
+? | causalite | reseaux-sociaux : corrosion → influence_ou_desinformation (+) | la corrosion est un cas tranché de la question ouverte : influence devenue manipulation quand l'origine et la finalité sont établies
+? | lien | reseaux-sociaux : plateformes → graphe_algorithme (+) | chaque plateforme règle son algorithme, qui fait le fil de chacun
+? | lien | reseaux-sociaux : graphe_algorithme → createurs (+) | l'algorithme distribue l'audience aux créateurs
+? | causalite | reseaux-sociaux : graphe_algorithme → soulevements (+) | les groupes rapprochent des inconnus qui partagent une colère et coordonnent l'action
+? | causalite | reseaux-sociaux : donnees_ciblage → personnalites (+) | le ciblage permet d'adresser à chaque public le message qui le touche
+? | lien | reseaux-sociaux : proprietaires_ligne → moderation_regulation (-) | un propriétaire peut alléger la modération (fin de la vérification des faits chez Meta, choix de X)
+? | causalite | reseaux-sociaux : moderation_regulation → desinformation (-) | retirer les réseaux de faux comptes freine les campagnes
+? | causalite | reseaux-sociaux : desinformation → complot (+) | les campagnes reprennent et nourrissent les récits complotistes
+? | causalite | reseaux-sociaux : moderation_regulation → soulevements (+) | bloquer les plateformes peut déclencher la révolte qu'il voulait éviter (Népal, 2025)
+? | causalite | reseaux-sociaux : createurs → influence_ou_desinformation (+) | les créateurs sont au cœur de la question - influence assumée, publicité cachée ou relais de fausses nouvelles
+? | causalite | reseaux-sociaux : complot → soulevements (+) | la défiance complotiste nourrit parfois les mobilisations
+? | lien | reseaux-transport : noeuds → maritime (+) | l'ouverture des détroits et des ports conditionne le trafic (le compartiment cible lit ici la fluidité)
+? | lien | reseaux-transport : noeuds → aerien (+) | les grands aéroports-pivots organisent le réseau aérien
+? | lien | reseaux-transport : maritime → interconnexion (+) | les retards en mer se répercutent sur le rail et la route
+? | lien | reseaux-transport : rail → interconnexion (+) | le rail relie les ports à l'intérieur des continents
+? | lien | reseaux-transport : route → interconnexion (+) | la route assure le premier et le dernier kilomètre
+? | lien | reseaux-transport : interconnexion → noeuds (+) | une chaîne saturée engorge à son tour les ports et les gares
+? | causalite | rivalite-sino-americaine : commerce → diplomatie (-) | chaque hausse de droits appelle une riposte ; le style de la relation est à mesurer (paire USA–CHN au banc de la réciprocité)
 + | causalite | rivalite-sino-americaine : technologie → economie_chine (-) | les contrôles freinent les filières de pointe, puis poussent à l'autonomie
+? | lien | rivalite-sino-americaine : technologie → commerce (-) | contrôles sur les puces contre restrictions sur les terres rares : chacun use de son levier
 + | evenement | rivalite-sino-americaine : taiwan → diplomatie (-) | un incident grave gèle la diplomatie
+? | evenement | rivalite-sino-americaine : diplomatie → taiwan (-) | un sommet réussi abaisse la température militaire
+? | causalite | rivalite-sino-americaine : energie → commerce (±) | les achats d'énergie américaine servent de monnaie d'échange dans les trêves
+? | causalite | rivalite-sino-americaine : alliances → taiwan (±) | les alliances régionales dissuadent et provoquent à la fois
+? | lien | rivalite-sino-americaine : commerce → economie_chine (-) | des droits très hauts coupent des marchés d'exportation
+? | causalite | rivalite-sino-americaine : economie_chine → diplomatie (±) | une économie sous pression peut pousser à la détente ou au durcissement
+? | causalite | rivalite-sino-americaine : finance → commerce (±) | le dollar et le yuan amortissent ou amplifient l'effet des droits de douane
 + | causalite | rivalite-sino-americaine : recits → diplomatie (±) | les nationalismes réduisent la marge de compromis
+? | causalite | rivalite-sino-americaine : taiwan → energie (-) | une crise dans le détroit menacerait des routes de l'énergie et du commerce asiatiques
+? | lien | rivalite-sino-americaine : terres_rares → technologie (+) | puces, aimants et batteries dépendent de minerais raffinés surtout en Chine ; une restriction franchit le seuil d'une pénurie
 + | lien | rivalite-sino-americaine : diplomatie → terres_rares (±) | les licences d'exportation suivent l'état des négociations
+? | mecanisme | rivalite-sino-americaine : detroit_relief → taiwan (-) | la mer et ses saisons bornent ce qui peut être tenté à travers le détroit
+? | causalite | rivalite-sino-americaine : atomique → taiwan (-) | la dissuasion borne l'escalade entre les deux puissances
+? | lien | rivalite-sino-americaine : taiwan → technologie (-) | la fabrication des puces les plus avancées est concentrée à Taïwan : une crise y touche toute la filière
+? | causalite | rivalite-sino-americaine : alliances → diplomatie (±) | au sein du niveau géopolitique : les alignements des voisins pèsent sur le dialogue au sommet, qui les rassure ou les inquiète
+? | causalite | rivalite-sino-americaine : recits → taiwan (±) | un récit nationaliste ne bouge le niveau géopolitique qu'au-delà d'un seuil de mobilisation
+? | causalite | russie-ukraine : capacites → front (+) | les capacités décident de ce que le front peut faire ; une pénurie fait basculer
+? | lien | russie-ukraine : soutiens → capacites (+) | l'aide extérieure alimente les capacités ukrainiennes (et, en face, les livraisons de munitions et de drones à la Russie)
+? | causalite | russie-ukraine : sanctions → economie_russe (-) | les sanctions érodent l'économie russe lentement ; chaque paquet ajoute moins
+? | lien | russie-ukraine : economie_russe → capacites (+) | les recettes financent la production militaire
 + | evenement | russie-ukraine : front → economie_ukraine (-) | les frappes sur l'énergie pèsent surtout en hiver
+? | causalite | russie-ukraine : front → negociations (±) | chaque camp négocie selon ce qu'il croit pouvoir encore gagner sur le terrain
+? | causalite | russie-ukraine : negociations → front (-) | une négociation sérieuse peut geler des secteurs ; style de la relation à mesurer (paire RUS–UKR au banc de la réciprocité)
+? | causalite | russie-ukraine : opinions → soutiens (±) | la lassitude des opinions use le soutien ; une fois installée, elle ne recule pas facilement
+? | lien | russie-ukraine : soutiens → sanctions (+) | les soutiens décident des sanctions
+? | lien | russie-ukraine : mer_noire → economie_ukraine (+) | le corridor maritime fait vivre les exportations agricoles
+? | evenement | russie-ukraine : front → mer_noire (-) | les frappes sur Odessa et les navires réduisent les passages
 + | causalite | russie-ukraine : soutiens → negociations (±) | les soutiens pèsent sur les conditions et le calendrier des négociations
+? | mecanisme | russie-ukraine : relief_fleuves → front (±) | les fleuves et les marais figent des lignes ; la plaine ouverte laisse les forces exposées
+? | mecanisme | russie-ukraine : hiver_saisons → front (-) | la boue du dégel arrête les offensives ; le gel les rouvre
+? | mecanisme | russie-ukraine : hiver_saisons → economie_ukraine (-) | le froid multiplie l'effet des frappes sur le réseau électrique
+? | mecanisme | russie-ukraine : front → sols_agriculture (-) | mines et pollution retirent des terres à la culture ; elles ne reviennent pas au rythme où elles sont perdues
+? | lien | russie-ukraine : sols_agriculture → mer_noire (+) | les récoltes remplissent le corridor d'exportation
+? | mecanisme | russie-ukraine : front → atomique (-) | des combats près d'une centrale menacent son alimentation et sa sûreté
+? | lien | russie-ukraine : atomique → negociations (±) | la sûreté nucléaire est un des rares sujets discutés par les deux camps, sous l'égide de l'AIEA
+? | causalite | russie-ukraine : front → soutiens (±) | au sein du niveau géopolitique : un revers sur le front mobilise ou décourage les soutiens, qui changent à leur tour le rapport de force
+? | causalite | sciences-techniques : recherche → developpement (+) | une découverte ne devient un produit qu'après des années de développement ; la recherche accumulée avant raccourcit tout (ARN messager et vaccins contre la covid)
+? | causalite | sciences-techniques : developpement → adoption (+) | un produit autorisé se diffuse ; la vitesse de diffusion s'est accélérée (ChatGPT, 100 millions d'utilisateurs en deux mois)
+? | causalite | sciences-techniques : capitaux → developpement (+) | l'argent et l'urgence raccourcissent le cycle (essais menés en parallèle, fabrication avant l'autorisation) ; sans intérêt économique, il s'allonge
+? | lien | sciences-techniques : regulation → developpement (-) | l'examen et l'autorisation allongent le cycle ; l'examen prioritaire en cas d'urgence le raccourcit (19 à 21 jours pour les vaccins contre la covid)
+? | mecanisme | sciences-techniques : calcul → sorties_modeles (+) | sans capacité de calcul pour servir un modèle, sa sortie publique attend
+? | lien | sciences-techniques : regulation → sorties_modeles (-) | la régulation retarde ou restreint géographiquement une sortie (disponibilité par pays)
+? | lien | sciences-techniques : sorties_modeles → bancs_ia (+) | un nouveau modèle fait bouger les classements, avec le délai d'inscription au classement public
+? | causalite | sciences-techniques : attentes → sorties_modeles (+) | l'engouement fait annoncer tôt ; l'annonce précède souvent de loin la sortie publique
+? | mecanisme | sciences-techniques : calcul → ia (+) | sans assez de calcul, pas de nouveau modèle : la puce borne le produit
+? | mecanisme | sciences-techniques : ia → calcul (+) | chaque génération de modèles réclame plus de calcul (boucle propre au niveau technique)
+? | mecanisme | sciences-techniques : calcul → energie_eau (+) | le calcul consomme électricité et eau ; une vague de chaleur peut brider un centre
+? | mecanisme | sciences-techniques : energie_eau → calcul (-) | le physique borne le technique : sans électricité ni eau, le calcul s'arrête
+? | lien | sciences-techniques : capitaux → calcul (+) | les levées de fonds financent les centres de calcul
+? | causalite | sciences-techniques : attentes → capitaux (+) | l'engouement attire les capitaux ; la déception les retire plus vite qu'il ne les a attirés
+? | causalite | sciences-techniques : ia → attentes (+) | un lancement réussi nourrit l'engouement
+? | causalite | sciences-techniques : ia → adoption (+) | la diffusion suit une courbe en S : lente, puis rapide au-delà d'un seuil d'adoption
+? | causalite | sciences-techniques : course_etats → regulation (±) | la course pousse à des contrôles d'exportation contre le rival et à des règles plus souples chez soi
+? | lien | sciences-techniques : regulation → calcul (-) | les contrôles d'exportation privent le rival de puces avancées
+? | lien | sciences-techniques : regulation → ia (±) | les règles retardent ou orientent certains lancements selon les pays
+? | causalite | sciences-techniques : talents → ia (±) | au niveau de l'entourage : une vague de départs peut changer le rythme d'un laboratoire
+? | causalite | sciences-techniques : recherche → ia (+) | la recherche ouverte nourrit les produits, avec retard
+? | lien | sciences-techniques : course_etats → capitaux (+) | les subventions publiques s'ajoutent aux capitaux privés
+? | evenement | securite-europeenne : menace → peur_confiance (+) | passage du géopolitique au psychologique : un incident marquant fait monter la peur
 + | causalite | securite-europeenne : peur_confiance → opinions (+) | la peur rallie l'opinion aux dépenses de défense
+? | causalite | securite-europeenne : opinions → defense (+) | une opinion favorable rend les budgets votables
+? | causalite | securite-europeenne : etats_unis → defense (±) | le doute sur l'allié pousse à se réarmer ; une garantie sûre laisse se reposer sur lui
+? | lien | securite-europeenne : defense → industrie (+) | les commandes ne se transforment en équipements qu'au rythme de l'industrie
+? | comparaison | securite-europeenne : budgets_dette → defense (-) | la défense dispute les budgets aux autres dépenses
+? | lien | securite-europeenne : otan_ue → defense (+) | propre au niveau statut : objectifs communs et achats groupés entraînent les retardataires
+? | causalite | securite-europeenne : defense → otan_ue (±) | propre au niveau statut : un État qui traîne affaiblit la cohésion, un État qui accélère la renforce
+? | mecanisme | securite-europeenne : geographie → menace (+) | la plaine ouverte et les corridors étroits concentrent la menace sur le flanc est
+? | causalite | securite-europeenne : etats_unis → peur_confiance (±) | les déclarations sur la garantie américaine font varier la confiance
+? | causalite | securite-europeenne : menace → otan_ue (+) | une menace grave resserre l'alliance et fait venir de nouveaux membres
+? | lien | securite-publique : trafics → alertes (+) | un vol de matière dangereuse déclenche une alerte publique au-delà d'un seuil de danger
+? | lien | securite-publique : alertes → polices (+) | l'alerte mobilise la recherche (relation propre au niveau statut)
+? | lien | securite-publique : polices → alertes (-) | une récupération annoncée clôt l'alerte
 + | causalite | securite-publique : alertes → peur (+) | une alerte mal expliquée fait passer l'inquiétude au niveau psychologique
+? | lien | securite-publique : polices → justice (+) | les enquêtes alimentent les procès, avec retard
 + | causalite | securite-publique : corruption → polices (-) | au niveau de l'entourage, la complicité neutralise l'institution au-delà d'un seuil
+? | causalite | securite-publique : trafics → corruption (+) | mutualisme : l'argent des trafics achète la protection, qui protège les trafics
+? | causalite | securite-publique : polices → trafics (-) | compétition : la pression policière déplace les trafics plus qu'elle ne les supprime (effet ballon)
+? | causalite | securite-publique : prisons → trafics (+) | des prisons surpeuplées deviennent des centres de commandement des gangs
+? | causalite | securite-publique : peur → politique (+) | la peur pousse aux discours et lois de fermeté, et ne redescend pas au rythme des faits
+? | causalite | securite-publique : politique → prisons (+) | les politiques de fermeté remplissent les prisons
+? | causalite | securite-publique : frontieres → trafics (-) | les contrôles aux ports et frontières renchérissent les trafics
+? | lien | securite-publique : sanctions → trafics (-) | les désignations frappent l'argent des réseaux, partiellement
+? | causalite | societe-droits : libertes_civiques → droits_humains (+) | sans liberté d'expression et d'association, les violations des droits ne sont ni documentées ni contestées
+? | causalite | societe-droits : education → genre_minorites (+) | la scolarisation des filles réduit l'écart entre femmes et hommes, avec un délai d'une génération
+? | causalite | societe-droits : libertes_civiques → genre_minorites (+) | les droits des minorités reculent quand l'espace civique se ferme
+? | mecanisme | soleil-espace : soleil → magnetosphere (+) | propre au niveau physique : une éjection dirigée vers la Terre déclenche une tempête géomagnétique en un à trois jours (à vérifier)
+? | mecanisme | soleil-espace : soleil → radio (-) | le rayonnement d'une forte éruption coupe la radio haute fréquence côté jour en quelques minutes
+? | mecanisme | soleil-espace : magnetosphere → gps (-) | une ionosphère perturbée dégrade la précision du positionnement
+? | mecanisme | soleil-espace : magnetosphere → reseaux (-) | une tempête extrême induit des courants qui peuvent endommager des transformateurs ; rien en dessous d'un seuil
+? | mecanisme | soleil-espace : magnetosphere → satellites (-) | la tempête chauffe la haute atmosphère, qui freine les satellites bas : certains retombent
+? | mecanisme | soleil-espace : satellites → debris (+) | plus de satellites, plus de débris
+? | mecanisme | soleil-espace : debris → debris (+) | propre au niveau physique : au-delà d'une densité, chaque collision crée des débris qui en provoquent d'autres
+? | mecanisme | soleil-espace : debris → satellites (-) | les débris menacent les satellites, qui en produisent (prédation)
+? | mecanisme | soleil-espace : gps → radio (0) | propre au niveau technique : deux systèmes touchés par la même cause, sans effet direct l'un sur l'autre (neutralisme)
+? | lien | soleil-espace : alertes → reseaux (+) | une alerte permet aux opérateurs de protéger leurs réseaux ; la convention de l'échelle déclenche l'action
+? | lien | soleil-espace : magnetosphere → alertes (+) | la tempête observée fait monter le niveau d'alerte
+? | causalite | soleil-espace : magnetosphere → recits (+) | des aurores visibles en basses latitudes font exploser l'attention
+? | causalite | soleil-espace : recits → alertes (±) | un risque rare est sous-estimé jusqu'à l'événement, puis surestimé
+? | causalite | soleil-espace : meteorites → recits (+) | un bolide visible ou un objet annoncé dangereux mobilise l'attention bien au-delà du risque réel
+? | causalite | soudan : armee → mediation (-) | chaque camp affirme gagner ; l'armée est accusée de faire traîner les pourparlers (Al Jazeera, 21 septembre 2026)
 + | evenement | soudan : fsr → mediation (-) | les FSR acceptent des trêves sur le papier (novembre 2025) sans qu'elles tiennent sur le terrain
+? | lien | soudan : soutiens → armee (+) | les soutiens extérieurs prolongent la capacité de combat
+? | lien | soudan : soutiens → fsr (+) | idem
+? | evenement | soudan : mediation → humanitaire (+) | une trêve ouvre brièvement l'accès humanitaire (Djeddah, mai 2023), puis s'effondre
+? | lien | surveillance-espionnage : renseignement_etats → industrie_intrusion (+) | les États sont les clients de l'industrie de l'intrusion ; la demande croît avec les tensions géopolitiques (Stimson Center, 2026)
+? | causalite | surveillance-espionnage : industrie_intrusion → cibles (+) | plus d'outils vendus, plus de cibles touchées (journalistes, élus, opposants) ; observer devient agir sur la personne observée
+? | evenement | surveillance-espionnage : espionnage_etats → contre_mesures (+) | une campagne révélée (Salt Typhoon) pousse au chiffrement et au durcissement des réseaux (CyberScoop, 2026)
+? | lien | surveillance-espionnage : contre_mesures → industrie_intrusion (-) | sanctions, alertes et codes freinent les vendeurs, qui contournent par des sociétés écrans et de nouveaux pays (Dark Reading, 2024)
+? | lien | surveillance-espionnage : courtiers_donnees → renseignement_etats (+) | les données achetées aux courtiers suppléent ce que la loi encadre, surtout quand une autorisation légale expire
+? | causalite | surveillance-espionnage : cibles → contre_mesures (+) | un scandale de surveillance d'élus ou de journalistes déclenche enquêtes, contentieux et contrôle parlementaire
+? | causalite | surveillance-espionnage : biometrie → cibles (+) | la reconnaissance faciale étend la surveillance de quelques cibles à tout un espace public, d'où l'interdiction européenne
+? | causalite | transport-maritime : securite → detroits (-) | au-delà de quelques attaques, les compagnies évitent le passage entier
+? | lien | transport-maritime : detroits → contournement (-) | ce que perd un détroit se reporte sur le contournement (le cap de Bonne-Espérance pour la mer Rouge)
+? | definition | transport-maritime : contournement → fret (+) | des traversées plus longues immobilisent des navires et font monter le fret
+? | causalite | transport-maritime : flottes → fret (-) | une flotte abondante amortit les chocs ; pleine, elle n'amortit plus
+? | lien | transport-maritime : securite → assurances (+) | les zones à risque déclarées font bondir les primes
+? | causalite | transport-maritime : assurances → flottes (-) | des primes trop chères dissuadent les armateurs de passer
+? | mecanisme | transport-maritime : climat → detroits (-) | une sécheresse limite les passages à Panama
+? | causalite | transport-maritime : ports → fret (+) | les ports engorgés font monter le fret et les délais
+? | lien | transport-maritime : droit → flottes (-) | les sanctions retirent des navires du marché officiel et en créent un parallèle
+? | causalite | transport-maritime : flottes → securite (±) | les compagnies et les forces armées s'ajustent l'une à l'autre (escortes demandées, routes choisies)
+? | causalite | transport-maritime : recits → assurances (+) | une menace annoncée suffit parfois à relever le risque perçu
+? | lien | transport-maritime : detroits → ports (±) | un passage rouvert après une crise envoie des vagues de navires dans les ports
+? | mecanisme | transport-maritime : climat → fleuves (-) | une sécheresse fait baisser lacs et fleuves
+? | mecanisme | transport-maritime : fleuves → detroits (-) | quand le lac qui alimente les écluses baisse, le canal de Panama limite les passages (l'eau agit sur un passage)
+? | mecanisme | transport-maritime : oceans → contournement (+) | la fonte de la glace arctique ouvre peu à peu une route du Nord
+? | evenement | transport-maritime : epidemies_ports → ports (-) | une épidémie ferme ou ralentit des ports : le microbe arrête le gros
+? | causalite | transport-maritime : fret → flottes (+) | au sein du niveau économique : un fret cher attire les commandes de navires, qui finissent par faire baisser le fret
+? | lien | transport-maritime : ports → contournement (±) | au sein du niveau technique : la capacité des ports de rechange décide si un contournement est praticable
+? | lien | transport-maritime : detroit_ormuz → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | lien | transport-maritime : detroit_bab_el_mandeb → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | lien | transport-maritime : canal_suez → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | lien | transport-maritime : detroit_malacca → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | lien | transport-maritime : canal_panama → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
 + | lien | transport-maritime : detroit_bosphore → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | lien | transport-maritime : detroit_taiwan → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | lien | transport-maritime : detroit_gibraltar → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | lien | transport-maritime : detroit_pas_de_calais → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | lien | transport-maritime : detroit_bering → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | causalite | transports-villes : forme_urbaine → route (+) | l'étalement allonge les trajets et fait monter le trafic routier
+? | causalite | transports-villes : transports_publics → route (-) | un accès commode aux transports publics fait baisser le trafic routier, à condition que le réseau soit dense
+? | mecanisme | transports-villes : route → securite_routiere (+) | plus de trafic, plus de morts et de blessés sur la route (le compartiment cible lit ici le nombre de victimes)
+? | mecanisme | transports-villes : electrification → route (-) | l'électrification fait baisser la consommation de pétrole de la route, avec le délai du renouvellement du parc (le compartiment cible lit ici le pétrole consommé)
+? | lien | transports-villes : gouvernance_urbaine → transports_publics (+) | les décisions municipales ouvrent ou ferment des lignes
 + | causalite | transports-villes : gouvernance_urbaine → forme_urbaine (-) | les règles d'urbanisme peuvent freiner l'étalement
+? | causalite | union-europeenne : influence → politiques_communes (+) | les réunions sur un dossier précèdent ses amendements ; la reprise mot pour mot de positions d'intérêts est documentée sur l'omnibus X (Corporate Europe Observatory, relayé par Cha
+? | lien | union-europeenne : institutions → sanctions_ue (+) | les sanctions passent par le Conseil à l'unanimité ; un seul État peut les retarder
+? | lien | union-europeenne : institutions → elargissement (+) | chaque étape de l'adhésion exige l'unanimité ; un veto suffit à geler un candidat (Ukraine, décembre 2025)
+? | lien | union-europeenne : etat_de_droit → budget (-) | la conditionnalité peut geler des fonds versés à un État qui ne respecte pas l'État de droit
+? | lien | union-europeenne : budget → defense_ue (+) | le prochain budget déplace des moyens vers la sécurité et la défense
+? | lien | union-europeenne : etat_de_droit → elargissement (-) | les exigences d'État de droit ralentissent l'adhésion (chapitres 23 et 24 ouverts en premier, fermés en dernier)
