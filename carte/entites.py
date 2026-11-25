@@ -197,7 +197,28 @@ def terrain_pays(bot: Path) -> dict:
             for x in csv.DictReader(l for l in h if not l.startswith("#")):
                 if (x["variable"], x["annee"]) in garder and x["iso2"] != "WLD":
                     out[x["iso2"]].setdefault("ucdb", {})[f"{x['variable']}_{x['annee']}"] = float(x["valeur"])
+    f = bot / "registre" / "elections-ifes" / "avenir.csv"
+    if f.exists():   # 2026-11-25 : élections à venir, liste publique d'IFES ElectionGuide (collecte_elections_ifes.py)
+        norme = lambda t: re.sub(r"[^a-z]", "", (t or "").lower())
+        noms = {norme(v): k for k, v in pays_noms(bot).items()}
+        with f.open(encoding="utf-8") as h:
+            for x in csv.DictReader(l for l in h if not l.startswith("#")):
+                iso = noms.get(norme(x["pays"]))
+                if iso:
+                    out[iso].setdefault("elections", []).append({k: x[k] for k in ("scrutin", "debut", "debut_precision", "statut", "anticipe")})
     return dict(out)
+
+
+def pays_noms(bot: Path) -> dict:
+    """Noms des pays (ISO2 → nom) tels que la liste des entités les porte."""
+    f = bot / "registre" / "entites" / "entites.csv"
+    out = {}
+    if f.exists():
+        with f.open(encoding="utf-8") as h:
+            for r in csv.DictReader(h):
+                if r.get("pays") and r.get("pays_nom"):
+                    out.setdefault(r["pays"], r["pays_nom"])
+    return out
 
 
 def index_roles(d: dict) -> dict:
