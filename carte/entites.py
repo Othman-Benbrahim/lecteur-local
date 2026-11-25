@@ -149,6 +149,7 @@ def construire(bot: Path) -> dict:
     var = [(i, [v for v in r["variantes"].split("/") if len(v) >= 4]) for i, r in enumerate(rows)]
     motifs = [(i, re.compile(r"(?<![\w-])(" + "|".join(re.escape(v) for v in vs) + r")(?![\w-])", re.I)) for i, vs in var if vs]
     paires = defaultdict(list)
+    par_pays_b = defaultdict(list)          # 2026-11-25 : briefs par pays (noms de pays et villes GeoNames, brief.py)
     jb = bot / "briefs" / "journal.jsonl"
     for l in (jb.read_text(encoding="utf-8").splitlines() if jb.exists() else []):
         try:
@@ -158,6 +159,8 @@ def construire(bot: Path) -> dict:
         if x.get("statut") != "ok":
             continue
         b = x.get("brief", {})
+        for p in x.get("pays", []):
+            par_pays_b[p].append({"jour": x.get("jour"), "titre": b.get("titre"), "url": x.get("url")})
         t = " ".join([b.get("titre", ""), b.get("ce_que_ca_change", "")] + [f.get("fait", "") for f in b.get("faits", [])])
         ici = sorted({i for i, m in motifs if m.search(t)})
         for a in range(len(ici)):
@@ -168,6 +171,7 @@ def construire(bot: Path) -> dict:
     par_pays = Counter(p for e in ent for p in e["pays"])
     return {"genere_le": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
             "pays": {k: {"nom": pays.get(k, k), "n": n} for k, n in par_pays.most_common()},
+            "briefs_pays": {k: sorted(v, key=lambda b: b["jour"] or "", reverse=True)[:20] for k, v in par_pays_b.items()},
             "entites": ent, "cocites": [{"a": a, "b": b, "briefs": v[:5]} for (a, b), v in paires.items()]}
 
 
