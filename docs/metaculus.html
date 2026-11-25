@@ -77,7 +77,7 @@ td a:hover{color:var(--accent);text-decoration:underline}
   <h2>Questions</h2>
   <div class="filtres">
     <input type="search" id="cherche" placeholder="chercher dans les titres…">
-    <select id="statut"><option value="">tous les statuts</option><option>ouverte</option><option>résolue</option><option>échéance passée, issue à relever</option></select>
+    <select id="statut"><option value="">tous les statuts</option><option>ouverte</option><option>résolue</option><option>échéance passée, issue à relever</option><option value="__briefs">touchée par un brief récent</option></select>
     <select id="type"><option value="">tous les types</option></select>
   </div>
   <div class="table-zone"><table>
@@ -121,7 +121,7 @@ function cle(q, c) {
 function rendre() {
   const f = document.getElementById("cherche").value.toLowerCase(), st = document.getElementById("statut").value,
         ty = document.getElementById("type").value;
-  let L = D.questions.filter(q => (!f || (q.titre || "").toLowerCase().includes(f)) && (!st || q.statut === st) && (!ty || q.type === ty));
+  let L = D.questions.filter(q => (!f || (q.titre || "").toLowerCase().includes(f)) && (!st || q.statut === st || (st === "__briefs" && (q.briefs || []).length)) && (!ty || q.type === ty));
   L.sort((a, b) => { const x = cle(a, tri.c), y = cle(b, tri.c); return (x > y ? 1 : x < y ? -1 : 0) * tri.sens; });
   document.getElementById("lignes").innerHTML = L.length ? L.map(q => {
     const prev = q.type === "binaire" ? `${pc(q.prevision)}<span class="barre-p"><i style="width:${100 * q.prevision}%"></i></span>` : esc(q.prevision_texte);
@@ -129,7 +129,7 @@ function rendre() {
     if (q.statut === "résolue") { cl = q.type !== "binaire" ? "ouverte" : (q.reussite ? "oui" : "non"); lib = "résolue : " + q.issue + (q.type === "binaire" ? (q.reussite ? " ✓" : " ✗") : ""); }
     else if (q.statut.startsWith("échéance")) cl = "attente";
     const br = q.brique ? `${esc(q.brique.brique)}<br><span style="color:var(--doux);font-size:11.5px">bot ${pc(q.brique.p_bot)} → posté ${pc(q.brique.p_poste)}</span>` : `<span style="color:var(--doux)">—</span>`;
-    return `<tr><td class="num">${esc(q.echeance || "—")}</td><td><a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(q.titre)}</a>${q.mises_a_jour > 1 ? `<br><span style="color:var(--doux);font-size:11.5px">${q.mises_a_jour} prévisions, dernière le ${esc(q.date_prevision)}</span>` : ""}</td>` +
+    return `<tr><td class="num">${esc(q.echeance || "—")}</td><td><a href="${esc(q.url)}" target="_blank" rel="noopener">${esc(q.titre)}</a>${(q.briefs||[]).length ? `<br><span class="pastille attente" title="${esc(q.briefs.map(b => b.jour + " : " + (b.titre || "")).join("\n"))}">fait nouveau possible : ${q.briefs.length} brief${q.briefs.length > 1 ? "s" : ""}</span> <a href="briefs.html" style="font-size:11.5px">voir</a>` : ""}${q.mises_a_jour > 1 ? `<br><span style="color:var(--doux);font-size:11.5px">${q.mises_a_jour} prévisions, dernière le ${esc(q.date_prevision)}</span>` : ""}</td>` +
       `<td>${esc(q.type)}</td><td class="num">${prev}</td><td>${br}</td><td><span class="pastille ${cl}">${esc(lib)}</span></td><td class="num">${q.score_reference == null ? "—" : q.score_reference.toFixed(1)}</td></tr>`;
   }).join("") : `<tr><td colspan="7" class="vide">Aucune question ne correspond.</td></tr>`;
 }

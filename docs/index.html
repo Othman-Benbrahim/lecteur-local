@@ -775,6 +775,15 @@ function bulle(e,n,activite){
 }
 
 // ---------------------------------------------------------------- détail
+// 2026-11-25 (décision de l'auteur, 13 h 01) : les briefs servent de sondes ; ceux qui touchent un compartiment s'affichent
+// dans son détail (docs/briefs.json, 90 jours ; archives sur la page des briefs)
+let BRIEFS=[];
+fetch("briefs.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{BRIEFS=d.briefs||[];}).catch(()=>{});
+function briefsCompartiment(id){
+  const L=BRIEFS.filter(b=>(b.compartiments||[]).includes(id)).slice(0,5);
+  if(!L.length) return "";
+  return `<h2>Briefs récents (${L.length})</h2><ul>${L.map(b=>`<li>${esc(b.jour)} · <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.titre||"brief")}</a> <span class="etiq">${esc(b.media||"")}</span>${(b.faits||[]).slice(0,1).map(f=>`<br><span style="color:var(--doux)">${esc(f.fait)}${f.chiffre?" — "+esc(f.chiffre):""} (${esc(f.statut)})</span>`).join("")}</li>`).join("")}</ul><p style="font-size:11.5px;color:var(--doux)">Sondes, pas mesures : nos flux, pas le monde. <a href="briefs.html">Tous les briefs →</a></p>`;
+}
 function detail(n,sits){
   const el=document.getElementById("detail");const ax=n.niveau||{};
   let h=`<h3>${esc(n.nom)}</h3><div class="sous">${esc(n.fiche_nom)} · ${n.sorte}${n.organisation?" · niveau "+esc(n.organisation):""}${n.facette?" · facette "+esc(n.facette):""}</div>`;
@@ -809,6 +818,7 @@ function detail(n,sits){
       `${(y.tampons||[]).length?`<br><span style="color:var(--doux)">tampons (ce qui absorbe sans être vu) : ${esc(y.tampons.map(t=>t.nom+(t.niveau&&t.niveau!=="inconnu"?" ("+t.niveau+")":"")).join(" ; "))}</span>`:""}${sl.habitus?`<br><span style="color:var(--doux)">seuil (habitus) : ${esc(sl.habitus)}</span>`:""}${sl.bascule?`<br><span style="color:var(--doux)">bascule : ${esc(sl.bascule)} · hystérésis : ${esc(sl.hysteresis||"inconnu")}</span>`:""}</li>`;}).join("")}</ul>`;
     // 0.10.480 (décision de l'auteur, 20 h 10) : les familles RSS des signaux ne sont plus montrées ici, seulement au niveau
     // de la fiche ; le compartiment a sa propre veille (flux RSS de son thème)
+    h+=briefsCompartiment(n.id);   // 2026-11-25 : briefs récents rattachés à ce compartiment
     h+=veilleCompartiment(n.id);
     const te=D.termesPar.get(n.id)||[];
     h+=`<h2>Termes validés (${te.length})</h2>`+(te.length?`<div class="puces">${te.slice(0,80).map(t=>`<span class="puce" title="${esc(t.note)}" onclick="choisirTerme('${esc(t.terme).replace(/'/g,"\\'")}')">${esc(t.terme)} <small>${t.langue}</small></span>`).join("")}</div>`:`<p class="vide">aucun</p>`);

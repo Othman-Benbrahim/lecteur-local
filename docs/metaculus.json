@@ -1,5 +1,5 @@
 {
- "genere_le": "2026-11-25T11:43+00:00",
+ "genere_le": "2026-11-25T12:03+00:00",
  "stats": {
   "questions": 51,
   "binaires": 19,
@@ -55,7 +55,17 @@
    "echeance": "2026-11-27",
    "prevision_texte": "Nvidia (NVDA) (50%)",
    "date_prevision": "2026-11-16",
-   "statut": "ouverte"
+   "statut": "ouverte",
+   "briefs": [
+    {
+     "jour": "2026-11-25",
+     "titre": "Retour de Jensen Huang chez Nvidia et tensions persistantes sur les exportations de puces",
+     "url": "https://www.atlanticcouncil.org/dispatches/huang-is-back-at-nvidia-but-the-fight-over-who-controls-chip-exports-is-just-beginning/"
+    }
+   ],
+   "briefs_compartiments": [
+    "economie-entreprises:entreprises"
+   ]
   },
   {
    "id": "46833",
@@ -183,7 +193,17 @@
    "echeance": "2026-11-27",
    "prevision_texte": "médiane ≈ 170",
    "date_prevision": "2026-11-17",
-   "statut": "ouverte"
+   "statut": "ouverte",
+   "briefs": [
+    {
+     "jour": "2026-11-25",
+     "titre": "Retour de Jensen Huang chez Nvidia et tensions persistantes sur les exportations de puces",
+     "url": "https://www.atlanticcouncil.org/dispatches/huang-is-back-at-nvidia-but-the-fight-over-who-controls-chip-exports-is-just-beginning/"
+    }
+   ],
+   "briefs_compartiments": [
+    "economie-entreprises:entreprises"
+   ]
   },
   {
    "id": "46867",
@@ -195,7 +215,22 @@
    "echeance": "2026-11-27",
    "prevision_texte": "médiane ≈ 92",
    "date_prevision": "2026-11-17",
-   "statut": "ouverte"
+   "statut": "ouverte",
+   "briefs": [
+    {
+     "jour": "2026-11-25",
+     "titre": "The Biometric Dragnet",
+     "url": "https://citizenlab.ca/the-biometric-dragnet/"
+    },
+    {
+     "jour": "2026-11-25",
+     "titre": "Signal bloque par défaut les agents IA dans ses chats privés",
+     "url": "https://www.eff.org/deeplinks/2026/11/signal-now-blocks-ai-agents"
+    }
+   ],
+   "briefs_compartiments": [
+    "sciences-techniques:ia"
+   ]
   },
   {
    "id": "46869",
@@ -441,7 +476,22 @@
    "echeance": "2027-01-01",
    "prevision_texte": "médiane ≈ -21.7",
    "date_prevision": "2026-11-04",
-   "statut": "ouverte"
+   "statut": "ouverte",
+   "briefs": [
+    {
+     "jour": "2026-11-25",
+     "titre": "L’incertitude météorologique pourrait faire grimper les prix du gaz en Europe cet hiver",
+     "url": "https://legrandcontinent.eu/fr/2026/11/25/lincertitude-meteorologique-pourrait-faire-grimper-les-prix-du-gaz-en-europe-cet-hiver/"
+    },
+    {
+     "jour": "2026-11-25",
+     "titre": "Moscou est la troisième Rome, il n’y en aura pas de quatrième",
+     "url": "https://legrandcontinent.eu/fr/2026/11/24/moscou-est-la-troisieme-rome-il-ny-en-aura-pas-de-quatrieme/"
+    }
+   ],
+   "briefs_compartiments": [
+    "dirigeants-elus:executifs"
+   ]
   },
   {
    "id": "43329",
@@ -499,7 +549,22 @@
    "echeance": "2027-01-01",
    "prevision": 0.1,
    "date_prevision": "2026-11-23",
-   "statut": "ouverte"
+   "statut": "ouverte",
+   "briefs": [
+    {
+     "jour": "2026-11-25",
+     "titre": "The Biometric Dragnet",
+     "url": "https://citizenlab.ca/the-biometric-dragnet/"
+    },
+    {
+     "jour": "2026-11-25",
+     "titre": "Signal bloque par défaut les agents IA dans ses chats privés",
+     "url": "https://www.eff.org/deeplinks/2026/11/signal-now-blocks-ai-agents"
+    }
+   ],
+   "briefs_compartiments": [
+    "sciences-techniques:ia"
+   ]
   },
   {
    "id": "46890",
@@ -545,7 +610,23 @@
    "echeance": "2027-01-01",
    "prevision": 0.09,
    "date_prevision": "2026-11-24",
-   "statut": "ouverte"
+   "statut": "ouverte",
+   "briefs": [
+    {
+     "jour": "2026-11-25",
+     "titre": "L’incertitude météorologique pourrait faire grimper les prix du gaz en Europe cet hiver",
+     "url": "https://legrandcontinent.eu/fr/2026/11/25/lincertitude-meteorologique-pourrait-faire-grimper-les-prix-du-gaz-en-europe-cet-hiver/"
+    },
+    {
+     "jour": "2026-11-25",
+     "titre": "Retour de Jensen Huang chez Nvidia et tensions persistantes sur les exportations de puces",
+     "url": "https://www.atlanticcouncil.org/dispatches/huang-is-back-at-nvidia-but-the-fight-over-who-controls-chip-exports-is-just-beginning/"
+    }
+   ],
+   "briefs_compartiments": [
+    "dirigeants-elus:mandats_succession",
+    "politique-americaine:congres"
+   ]
   },
   {
    "id": "46893",
@@ -682,7 +763,17 @@
    "echeance": "2027-05-28",
    "prevision_texte": "médiane ≈ 1 811 462 400",
    "date_prevision": "2026-11-04",
-   "statut": "ouverte"
+   "statut": "ouverte",
+   "briefs": [
+    {
+     "jour": "2026-11-25",
+     "titre": "Comment Moscou exploite les manifestations de la jeunesse en Europe pour nourrir sa guerre informationnelle",
+     "url": "https://legrandcontinent.eu/fr/2026/11/24/comment-moscou-exploite-les-manifestations-de-la-jeunesse-en-europe-pour-nourrir-sa-guerre-informationnelle/"
+    }
+   ],
+   "briefs_compartiments": [
+    "politique-interieure:contestation"
+   ]
   },
   {
    "id": "45708",
@@ -730,7 +821,23 @@
    "echeance": "2028-11-08",
    "prevision_texte": "Democratic Party (56%)",
    "date_prevision": "2026-11-04",
-   "statut": "ouverte"
+   "statut": "ouverte",
+   "briefs": [
+    {
+     "jour": "2026-11-25",
+     "titre": "L’incertitude météorologique pourrait faire grimper les prix du gaz en Europe cet hiver",
+     "url": "https://legrandcontinent.eu/fr/2026/11/25/lincertitude-meteorologique-pourrait-faire-grimper-les-prix-du-gaz-en-europe-cet-hiver/"
+    },
+    {
+     "jour": "2026-11-25",
+     "titre": "Retour de Jensen Huang chez Nvidia et tensions persistantes sur les exportations de puces",
+     "url": "https://www.atlanticcouncil.org/dispatches/huang-is-back-at-nvidia-but-the-fight-over-who-controls-chip-exports-is-just-beginning/"
+    }
+   ],
+   "briefs_compartiments": [
+    "dirigeants-elus:mandats_succession",
+    "politique-americaine:congres"
+   ]
   },
   {
    "id": "43330",

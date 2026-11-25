@@ -137,6 +137,17 @@ def construire(bot: Path) -> dict:
     stats["par_brique"] = {b: {"n": len(T), "taux_reussite": moy([1.0 if e["reussite"] else 0.0 for e in T]),
                                "score_reference_moyen": moy([e["score_reference"] for e in T])}
                            for b, T in par_brique.items()}
+    # 2026-11-25 (décision de l'auteur, 13 h 01) : questions ouvertes touchées par un brief récent (signal, sans effet
+    # sur les prévisions ; registre/briefs-questions.json, écrit par briefs_questions.py dans le bot)
+    try:
+        bq = {str(x["question_id"]): x for x in json.loads((bot / "registre" / "briefs-questions.json").read_text(encoding="utf-8"))["questions"]}
+    except (OSError, ValueError, KeyError):
+        bq = {}
+    for q in L:
+        x = bq.get(str(q.get("question_id") or q.get("id") or ""))
+        if x and q.get("statut") == "ouverte":
+            q["briefs"] = [{"jour": b.get("jour"), "titre": b.get("titre"), "url": b.get("url")} for b in x.get("briefs", [])]
+            q["briefs_compartiments"] = x.get("compartiments", [])
     return {"genere_le": datetime.now(timezone.utc).isoformat(timespec="minutes"), "stats": stats, "questions": L}
 
 
