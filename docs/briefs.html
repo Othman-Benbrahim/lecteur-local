@@ -81,7 +81,8 @@ td a:hover{color:var(--accent);text-decoration:underline}
   <p class="note">Briefs produits chaque nuit à partir de flux choisis : un terme validé de la carte doit figurer dans le titre ; un
   modèle de langage remplit une grille fixe, puis le code contrôle chaque chiffre dans la source. « Vérifié dans la source » :
   le chiffre figure bien dans le document ; « relayé » : le document l'attribue à un tiers, non vérifié chez ce tiers ;
-  « chiffre non retrouvé » : le modèle l'a donné mais il n'apparaît pas dans le document, à ne pas reprendre sans contrôle.
+  « affirmé par le média » : la page n'a pas pu être lue, le fait vient du résumé du flux ; « chiffre non retrouvé » : le modèle
+  l'a donné mais il n'apparaît pas dans le document, à ne pas reprendre sans contrôle.
   Aucune prédiction ; rien du texte des articles n'est conservé.</p>
 
   <h2>Briefs</h2>
@@ -96,7 +97,7 @@ td a:hover{color:var(--accent);text-decoration:underline}
 </main>
 <script>
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const cls = st => st.startsWith("vérifié") ? "verifie" : st.startsWith("relayé") ? "releve" : "absent";
+const cls = st => st.startsWith("vérifié") ? "verifie" : st.startsWith("relayé") ? "releve" : st.startsWith("affirmé") ? "" : "absent";
 let D = null;
 function dessiner() {
   const q = document.getElementById("cherche").value.toLowerCase(), fi = document.getElementById("fiche").value,
