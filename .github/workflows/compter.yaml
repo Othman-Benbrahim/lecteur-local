@@ -40,13 +40,13 @@ jobs:
         run: python carte/metaculus.py bot
       - name: Page des briefs (docs/briefs.json ; 2026-11-25)
         run: python carte/briefs.py bot
-      - name: Vue des entités (docs/entites.json ; 2026-11-25)
+      - name: Vue des entités (docs/entites.json docs/entites-roles.json ; 2026-11-25)
         run: python carte/entites.py bot
       - name: Enregistrer
         run: |
           git config user.name "lecteur-local"
           git config user.email "lecteur-local@users.noreply.github.com"
-          git add comptes/ docs/donnees.json docs/metaculus.json docs/briefs.json docs/briefs-archives docs/entites.json
+          git add comptes/ docs/donnees.json docs/metaculus.json docs/briefs.json docs/briefs-archives docs/entites.json docs/entites-roles.json
           if ! git diff --cached --quiet; then
             git commit -m "comptes du $(date -u +%Y-%m-%dT%H:%MZ)"
             git pull --rebase || true

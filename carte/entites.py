@@ -24,6 +24,52 @@ import yaml
 
 ICI = Path(__file__).resolve().parent.parent
 SORTIE = ICI / "docs" / "entites.json"
+SORTIE_ROLES = ICI / "docs" / "entites-roles.json"
+# 2026-11-25, 13 h 48 (remarque de l'auteur) : chaque dirigeant joue un rôle qui le met en interaction avec une partie
+# d'un écosystème, hors de son réseau d'origine (le gouvernement). Le rôle se lit dans l'intitulé du poste (CIA, en
+# anglais) ou dans la sorte d'entité ; règles explicites ci-dessous, un poste peut toucher plusieurs compartiments.
+ROLES = [
+    (r"defen[cs]e|armed forces|military|\bwar\b|veterans", ["militaire:forces", "militaire:depenses"]),
+    (r"foreign|external affairs|international cooperation|diplomac", ["dirigeants-elus:diplomatie_personnelle", "organisations-internationales:onu"]),
+    (r"financ|econom|treasury|budget|planning|fiscal", ["inflation-mondiale:budget", "dette-emergents:dette_publique", "economie-entreprises:conjoncture"]),
+    (r"interior|home affairs|internal security|public security|public order|police", ["politique-interieure:regime", "crime-organise:repression"]),
+    (r"justice|attorney|legal affairs", ["dirigeants-elus:justice_immunites"]),
+    (r"health|medical", ["epidemies:autorites", "corps-humain:soins"]),
+    (r"energy|petroleum|\boil\b|\bgas\b|hydrocarbon|electricity|\bpower\b", ["energie-mondiale:decisions"]),
+    (r"\bmines?\b|mining|mineral", ["economie-entreprises:extraction"]),
+    (r"agricultur|food|livestock|rural", ["alimentation-mondiale:cultures"]),
+    (r"fisher|maritime|ocean|blue economy", ["oceans-et-fleuves:peche"]),
+    (r"environment|climate|ecolog|forest", ["environnement-dechets:climat_politique"]),
+    (r"water|irrigation|sanitation", ["eau-douce-potable:gouvernance"]),
+    (r"trade|commerce|industr|investment", ["organisations-internationales:commerce_mondial", "economie-entreprises:echanges"]),
+    (r"educat|school|universit", ["cultures-emboitees:cultures_nationales"]),
+    (r"(?<!agri)(?<!horti)cultur|heritage|touris|\barts?\b", ["culture-memoire:patrimoine"]),
+    (r"digital|telecom|communication|information technology|science|technolog|innovation|research", ["sciences-techniques:regulation"]),
+    (r"\binformation\b|media|press", ["medias-diffusion:presse"]),
+    (r"labou?r|employment|social|welfare|pension", ["classes-sociales:classes_populaires"]),
+    (r"transport|infrastructure|public works|aviation|railway", ["infrastructures-critiques:reseaux"]),
+    (r"migration|immigration|refugee|diaspora", ["migrations-demographie:politiques_migratoires"]),
+    (r"women|gender|family", ["famille-genre:femmes_pouvoir"]),
+    (r"religio|endowment|awqaf|islamic affairs", ["croyances-religions:religion_politique"]),
+    (r"intelligence|state security", ["surveillance-espionnage:renseignement_etats"]),
+    (r"nuclear|atomic", ["nucleaire-radiologique:surete"]),
+    (r"central bank|national bank|reserve bank|bundesbank|\bbank of\b", ["inflation-mondiale:banques_centrales", "monnaie-pouvoir:banques_centrales_puissance"]),
+    (r"election", ["politique-interieure:elections"]),
+]
+PAR_SORTE = {"entreprise": ["economie-entreprises:dirigeants_entreprise"],
+             "banque centrale": ["inflation-mondiale:banques_centrales", "monnaie-pouvoir:banques_centrales_puissance"],
+             "organisation internationale": ["organisations-internationales:onu"]}
+
+
+def roles(e: dict, ids: set) -> list[str]:
+    out = []
+    if e["sorte"] == "dirigeant public":
+        out += ["dirigeants-elus:executifs", "politique-interieure:gouvernement"] if e["chef"] else ["dirigeants-elus:ministres"]
+        for motif, comps in ROLES:
+            if re.search(motif, e["poste"], re.I):
+                out += comps
+    out += PAR_SORTE.get(e["sorte"], [])
+    return [c for c in dict.fromkeys(out) if c in ids]
 
 
 def construire(bot: Path) -> dict:
@@ -52,12 +98,21 @@ def construire(bot: Path) -> dict:
     if fa.exists():
         for a in yaml.safe_load(fa.read_text(encoding="utf-8")).get("acteurs", []):
             nommes[a["nom"].split(" (")[0].lower()] = a["id"]
+    ids = set()
+    for fy in (bot / "ecosystemes").glob("*.yaml"):
+        try:
+            y = yaml.safe_load(fy.read_text(encoding="utf-8"))
+        except yaml.YAMLError:
+            continue
+        if isinstance(y, dict) and isinstance(y.get("compartiments"), list):
+            ids |= {f"{y.get('theme')}:{c['id']}" for c in y["compartiments"] if isinstance(c, dict) and "id" in c}
     ent = []
     for i, r in enumerate(rows):
         e = {"id": i, "nom": r["nom"], "sorte": r["sorte"], "pays": [p for p in (r.get("pays") or "").split(";") if p],
              "org": r.get("organisation") or "", "poste": r.get("poste") or "", "chef": r.get("chef") == "1", "source": r["source"]}
         if e["nom"].lower() in nommes:
             e["acteur"] = nommes[e["nom"].lower()]
+        e["comps"] = roles(e, ids)
         ent.append(e)
     # co-citations dans les briefs (90 derniers jours ou tout le journal : petit volume)
     var = [(i, [v for v in r["variantes"].split("/") if len(v) >= 4]) for i, r in enumerate(rows)]
@@ -85,9 +140,26 @@ def construire(bot: Path) -> dict:
             "entites": ent, "cocites": [{"a": a, "b": b, "briefs": v[:5]} for (a, b), v in paires.items()]}
 
 
+def index_roles(d: dict) -> dict:
+    """Par compartiment : nombre d'entités en rôle et un échantillon (chefs, acteurs nommés et entités citées d'abord)."""
+    par = defaultdict(list)
+    for e in d["entites"]:
+        for c in e.get("comps", []):
+            par[c].append(e)
+    out = {}
+    for c, es in par.items():
+        es.sort(key=lambda e: (not e.get("acteur"), not e.get("briefs"), not e["chef"], e["nom"]))
+        out[c] = {"n": len(es), "pays": len({p for e in es for p in e["pays"]}),
+                  "echantillon": [{"id": e["id"], "nom": e["nom"], "pays": e["pays"][:1], "poste": e["poste"][:60]} for e in es[:30]]}
+    return out
+
+
 if __name__ == "__main__":
     d = construire(Path(sys.argv[1]) if len(sys.argv) > 1 else ICI.parent / "metac-bot-template")
     SORTIE.write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    R = index_roles(d)
+    SORTIE_ROLES.write_text(json.dumps(R, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print("rôles :", len(R), "compartiments ;", sum(1 for e in d["entites"] if len(e.get("comps", [])) > 1), "entités avec un rôle thématique")
     print("entités :", len(d["entites"]), "; pays :", len(d["pays"]), "; co-citations :", len(d["cocites"]),
           "; avec briefs :", sum(1 for e in d["entites"] if e.get("briefs")), "; acteurs nommés reconnus :",
           sum(1 for e in d["entites"] if e.get("acteur")))

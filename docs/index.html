@@ -435,7 +435,9 @@ function dessinerEntites(){
   if(!ctrl){ctrl=document.createElement("div");ctrl.id="ctrlEntites";document.getElementById("carte").appendChild(ctrl);
     const ps=Object.entries(E.pays).sort((a,b)=>a[1].nom.localeCompare(b[1].nom,"fr"));
     ctrl.innerHTML=`<select id="selPaysEnt">${ps.map(([k,v])=>`<option value="${k}">${esc(v.nom)} (${v.n})</option>`).join("")}<option value="__sans">sans pays : organisations, liste validée</option></select>`+
+      `<label style="display:flex;gap:4px;align-items:center"><input type="checkbox" id="cbRolesEnt" checked> rôles dans la carte</label>`+
       `<input id="chercheEnt" list="listeEnt" placeholder="chercher une personne…"><datalist id="listeEnt">${E.entites.map(e=>`<option value="${esc(e.nom)}">`).join("")}</datalist>`;
+    document.getElementById("cbRolesEnt").onchange=e=>{etat.rolesEnt=e.target.checked;dessiner();};
     document.getElementById("selPaysEnt").onchange=e=>{etat.paysEnt=e.target.value;etat.choisiEnt=null;dessiner();};
     document.getElementById("chercheEnt").onchange=e=>{const x=E.entites.find(y=>y.nom.toLowerCase()===e.target.value.toLowerCase());
       if(x){etat.paysEnt=x.pays[0]||"__sans";etat.choisiEnt=x.id;document.getElementById("selPaysEnt").value=etat.paysEnt;dessiner();}};}
@@ -464,21 +466,30 @@ function dessinerEntites(){
     for(const x of [c.a,c.b]) if(!ids.has(x)&&!ext.has(x)){const o=E.entites[x];ext.set(x,{...o,id:"E:"+x,genre:"externe"});}
     aretes.push({source:"E:"+c.a,target:"E:"+c.b,genre:"cite",briefs:c.briefs});}
   noeuds.push(...ext.values());
+  // 2026-11-25, 13 h 48 : le rôle de chaque dirigeant le relie à un compartiment de la carte (défense, finances, santé…)
+  const GENERIQUES=new Set(["dirigeants-elus:ministres","dirigeants-elus:executifs","politique-interieure:gouvernement"]);
+  if(etat.rolesEnt!==false){const vus=new Map();
+    for(const e of ici) for(const c of (e.comps||[])){if(GENERIQUES.has(c)||!D.parId.get(c)) continue;
+      if(!vus.has(c)){const m=D.parId.get(c);vus.set(c,{id:"C:"+c,genre:"comp",nom:m.nom,fiche_nom:m.fiche_nom,comp:c});}
+      aretes.push({source:"E:"+e.id,target:"C:"+c,genre:"role"});}
+    noeuds.push(...vus.values());}
   svg=d3.select("#svg");svg.selectAll("*").remove();gZoom=svg.append("g");
   svg.call(d3.zoom().scaleExtent([.2,6]).on("zoom",ev=>gZoom.attr("transform",ev.transform)));
-  const COUL={dirige:"var(--texte)",gouvernement:"var(--doux)",siege:"var(--trait)",dirige_org:"var(--texte)",cite:"var(--acteur)"};
+  const COUL={dirige:"var(--texte)",gouvernement:"var(--doux)",siege:"var(--trait)",dirige_org:"var(--texte)",cite:"var(--acteur)",role:"var(--aval)"};
   const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("stroke",l=>COUL[l.genre])
-    .attr("stroke-width",l=>l.genre==="cite"?1.6:l.genre==="gouvernement"?.8:1.3).attr("stroke-dasharray",l=>l.genre==="cite"?"2 3":l.genre==="siege"?"4 3":null)
-    .attr("opacity",l=>l.genre==="gouvernement"?.5:.85);
+    .attr("stroke-width",l=>l.genre==="cite"?1.6:l.genre==="gouvernement"?.8:1.3).attr("stroke-dasharray",l=>l.genre==="cite"?"2 3":l.genre==="siege"?"4 3":l.genre==="role"?"3 2":null)
+    .attr("opacity",l=>l.genre==="gouvernement"?.5:l.genre==="role"?.7:.85);
   lien.filter(l=>l.genre==="cite").style("cursor","help").on("mousemove",(ev,l)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
       b.innerHTML=`co-cités dans ${l.briefs.length} brief(s)<br><span style="color:var(--doux)">${l.briefs.map(x=>esc(x.jour+" · "+x.titre)).join("<br>")}</span><br><span style="color:var(--doux)">sonde, pas preuve d'un lien</span>`;
       b.style.display="block";b.style.left=(ev.clientX-z.left+12)+"px";b.style.top=(ev.clientY-z.top+12)+"px";})
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none");
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
-    .on("click",(ev,n)=>{ev.stopPropagation();if(n.genre==="externe"){etat.paysEnt=n.pays[0]||"__sans";etat.choisiEnt=+n.id.slice(2);dessiner();return;}
+    .on("click",(ev,n)=>{ev.stopPropagation();if(n.genre==="comp"){basculer(n.comp);return;}if(n.genre==="externe"){etat.paysEnt=n.pays[0]||"__sans";etat.choisiEnt=+n.id.slice(2);dessiner();return;}
       if(n.genre==="entite"){etat.choisiEnt=+n.id.slice(2);marquer(n.id);detailEntite(E.entites[+n.id.slice(2)]);}})
     .call(d3.drag().on("start",(ev,n)=>{if(!ev.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
       .on("drag",(ev,n)=>{n.fx=ev.x;n.fy=ev.y;}).on("end",(ev,n)=>{if(!ev.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}));
+  noeud.filter(n=>n.genre==="comp").append("rect").attr("x",-8).attr("y",-8).attr("width",16).attr("height",16).attr("rx",3)
+    .attr("fill","var(--fond)").attr("stroke","var(--aval)").attr("stroke-width",1.8).style("cursor","pointer");
   noeud.filter(n=>n.genre==="pays").append("circle").attr("r",16).attr("fill","var(--fond)").attr("stroke","var(--texte)").attr("stroke-width",2);
   noeud.filter(n=>n.genre==="org").append("rect").attr("x",-7).attr("y",-7).attr("width",14).attr("height",14).attr("rx",3)
     .attr("fill","var(--fond)").attr("stroke",n=>SORTE_ENT[n.sorte]||"var(--doux)").attr("stroke-width",1.5);
@@ -486,13 +497,13 @@ function dessinerEntites(){
     .attr("fill",n=>SORTE_ENT[n.sorte]||"var(--doux)").attr("opacity",n=>n.genre==="externe"?.45:1)
     .attr("stroke",n=>n.acteur?"var(--texte)":"none").attr("stroke-width",2).style("cursor","pointer");
   noeud.append("text").attr("x",n=>n.genre==="pays"?20:12).attr("y",4).style("font-weight",n=>n.genre==="pays"||n.chef?"650":null)
-    .text(n=>n.genre==="externe"?n.nom+" ("+(n.pays[0]||"—")+")":n.genre==="org"?"▪ "+n.nom.slice(0,34):n.chef||n.genre==="pays"||n.sorte!=="dirigeant public"?n.nom:n.nom.split(" ").slice(-1)[0]);
+    .text(n=>n.genre==="comp"?"↗ "+n.fiche_nom.slice(0,18)+" : "+n.nom.slice(0,28):n.genre==="externe"?n.nom+" ("+(n.pays[0]||"—")+")":n.genre==="org"?"▪ "+n.nom.slice(0,34):n.chef||n.genre==="pays"||n.sorte!=="dirigeant public"?n.nom:n.nom.split(" ").slice(-1)[0]);
   function marquer(id){const v=new Set([id]);for(const l of aretes){const a=l.source.id||l.source,b=l.target.id||l.target;if(a===id)v.add(b);if(b===id)v.add(a);}
     noeud.classed("pale",n=>!!id&&!v.has(n.id)).classed("vif",n=>n.id===id);
     lien.classed("pale",l=>!!id&&(l.source.id||l.source)!==id&&(l.target.id||l.target)!==id);}
   svg.on("click",ev=>{if(ev.target===svg.node()){etat.choisiEnt=null;marquer(null);legendeEntites(P,ici);}});
   sim=d3.forceSimulation(noeuds)
-    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(l=>l.genre==="gouvernement"?120:l.genre==="cite"?160:110).strength(l=>l.genre==="cite"?.05:.4))
+    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(l=>l.genre==="gouvernement"?120:l.genre==="cite"?160:l.genre==="role"?90:110).strength(l=>l.genre==="cite"?.05:l.genre==="role"?.15:.4))
     .force("charge",d3.forceManyBody().strength(-280)).force("x",d3.forceX(largeur/2).strength(.05)).force("y",d3.forceY(hauteur/2).strength(.07))
     .force("collision",d3.forceCollide().radius(16))
     .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
@@ -505,6 +516,7 @@ function legendeEntites(P,ici){
   `<p style="font-size:13px">Les entités que les briefs surveillent : elles ne comptent que si un mot déclencheur les accompagne. Liste mise à jour chaque semaine (Wikidata) et chaque mois (CIA World Leaders, via OpenSanctions).</p>`+
   `<div class="legende"><span><i style="border-color:var(--texte)"></i>direct : le pays → son chef d'État ou de gouvernement ; un dirigeant → son organisation</span>`+
   `<span><i style="border-color:var(--doux)"></i>direct : chef → membres du gouvernement</span><span><i style="border-color:var(--trait);border-top-style:dashed"></i>organisation → pays du siège</span>`+
+  `<span><i style="border-color:var(--aval);border-top-style:dashed"></i>rôle : le poste relie la personne à un compartiment de la carte (carré bleu, cliquable) ; lu dans l'intitulé du poste, règles explicites</span>`+
   `<span><i style="border-color:var(--acteur);border-top-style:dotted"></i>indirect : co-cités dans un brief (sonde, pas preuve)</span>`+
   `<span>cercle brique : dirigeant public (gros : chef) · vert : entreprise · jaune : banque centrale · bleu : organisation internationale · contour noir : aussi acteur nommé de la carte · pâle : entité d'un autre pays</span></div>`;
 }
@@ -513,6 +525,8 @@ function detailEntite(e){
   let h=`<h3>${esc(e.nom)}</h3><div class="sous">${esc(e.sorte)}${e.chef?" · chef d'État ou de gouvernement":""}</div><table>`+
     `<tr><td>poste</td><td>${esc(e.poste||"—")}</td></tr>${e.org&&e.org!=="gouvernement"?`<tr><td>organisation</td><td>${esc(e.org)}</td></tr>`:""}`+
     `<tr><td>pays</td><td>${esc(e.pays.map(p=>(E.pays[p]||{}).nom||p).join(", ")||"—")}</td></tr><tr><td>source</td><td>${esc(e.source)}</td></tr></table>`;
+  const rc=(e.comps||[]).filter(c=>D.parId.get(c));
+  if(rc.length) h+=`<h2>Rôle dans la carte (${rc.length})</h2><ul>${rc.map(c=>{const m=D.parId.get(c);return `<li><a href="#" onclick="basculer('${esc(c)}');return false;">↗ ${esc(m.fiche_nom+" : "+m.nom)}</a></li>`;}).join("")}</ul>`;
   if(e.acteur) h+=`<p><a href="#" onclick="etat.fiche='__acteurs__';etat.choisi='${esc(e.acteur)}';document.getElementById('fiche').value='__acteurs__';dessiner();return false;">↗ voir dans le réseau des acteurs nommés (liens sourcés)</a></p>`;
   if((e.briefs||[]).length) h+=`<h2>Briefs qui le citent (${e.briefs.length})</h2><ul>${e.briefs.map(b=>`<li>${esc(b.jour)} · <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.titre)}</a></li>`).join("")}</ul>`;
   if(co.length) h+=`<h2>Co-cités (${co.length})</h2><ul>${co.map(c=>{const o=E.entites[c.a]===e?E.entites[c.b]:E.entites[c.a];return `<li>${esc(o.nom)} <span class="etiq">${esc(o.pays.join(", ")||o.sorte)}</span></li>`;}).join("")}</ul><p style="font-size:11.5px;color:var(--doux)">Être cités ensemble n'est pas un lien : c'est une piste.</p>`;
@@ -950,6 +964,13 @@ function bulle(e,n,activite){
 // dans son détail (docs/briefs.json, 90 jours ; archives sur la page des briefs)
 let BRIEFS=[];
 fetch("briefs.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{BRIEFS=d.briefs||[];if(D&&etat.fiche==="__acteurs__")dessiner();}).catch(()=>{});
+let ROLES={};
+fetch("entites-roles.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{ROLES=d;}).catch(()=>{});
+function voirEntite(id,pays){etat.fiche="__entites__";etat.paysEnt=pays||"__sans";etat.choisiEnt=id;document.getElementById("fiche").value="__entites__";dessiner();}
+function entitesCompartiment(id){
+  const r=ROLES[id];if(!r) return "";
+  return `<h2>Entités en rôle (${r.n}, ${r.pays} pays)</h2><ul>${r.echantillon.slice(0,12).map(e=>`<li><a href="#" onclick="voirEntite(${e.id},'${esc(e.pays[0]||"")}');return false;">${esc(e.nom)}</a> <span class="etiq">${esc(e.pays[0]||"—")}</span> <span style="color:var(--doux);font-size:12px">${esc(e.poste)}</span></li>`).join("")}</ul><p style="font-size:11.5px;color:var(--doux)">Rôle lu dans l'intitulé du poste ; la vue « Entités par pays » montre le reste.</p>`;
+}
 function briefsCompartiment(id){
   const L=BRIEFS.filter(b=>(b.compartiments||[]).includes(id)).slice(0,5);
   if(!L.length) return "";
@@ -990,6 +1011,7 @@ function detail(n,sits){
     // 0.10.480 (décision de l'auteur, 20 h 10) : les familles RSS des signaux ne sont plus montrées ici, seulement au niveau
     // de la fiche ; le compartiment a sa propre veille (flux RSS de son thème)
     h+=briefsCompartiment(n.id);   // 2026-11-25 : briefs récents rattachés à ce compartiment
+    h+=entitesCompartiment(n.id);  // 2026-11-25, 13 h 48 : dirigeants dont le rôle touche ce compartiment
     h+=veilleCompartiment(n.id);
     const te=D.termesPar.get(n.id)||[];
     h+=`<h2>Termes validés (${te.length})</h2>`+(te.length?`<div class="puces">${te.slice(0,80).map(t=>`<span class="puce" title="${esc(t.note)}" onclick="choisirTerme('${esc(t.terme).replace(/'/g,"\\'")}')">${esc(t.terme)} <small>${t.langue}</small></span>`).join("")}</div>`:`<p class="vide">aucun</p>`);
