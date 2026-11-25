@@ -469,9 +469,11 @@ function dessinerEntites(){
   // 2026-11-25, 13 h 48 : le rôle de chaque dirigeant le relie à un compartiment de la carte (défense, finances, santé…)
   const GENERIQUES=new Set(["dirigeants-elus:ministres","dirigeants-elus:executifs","politique-interieure:gouvernement"]);
   if(etat.rolesEnt!==false){const vus=new Map();
-    for(const e of ici) for(const c of (e.comps||[])){if(GENERIQUES.has(c)||!D.parId.get(c)) continue;
+    const GEN2=new Set([...GENERIQUES,"economie-entreprises:dirigeants_entreprise"]);const faits=new Set();
+    for(const e of ici) for(const c of (e.comps||[])){if(GEN2.has(c)||!D.parId.get(c)) continue;
       if(!vus.has(c)){const m=D.parId.get(c);vus.set(c,{id:"C:"+c,genre:"comp",nom:m.nom,fiche_nom:m.fiche_nom,comp:c});}
-      aretes.push({source:"E:"+e.id,target:"C:"+c,genre:"role"});}
+      const src=e.sorte==="entreprise"&&e.org?"O:"+e.org:"E:"+e.id;   // une entreprise : le rôle part de l'entreprise
+      if(!faits.has(src+c)){faits.add(src+c);aretes.push({source:src,target:"C:"+c,genre:"role"});}}
     noeuds.push(...vus.values());}
   svg=d3.select("#svg");svg.selectAll("*").remove();gZoom=svg.append("g");
   svg.call(d3.zoom().scaleExtent([.2,6]).on("zoom",ev=>gZoom.attr("transform",ev.transform)));
@@ -523,7 +525,7 @@ function legendeEntites(P,ici){
 function detailEntite(e){
   const co=E.cocites.filter(c=>E.entites[c.a]===e||E.entites[c.b]===e);
   let h=`<h3>${esc(e.nom)}</h3><div class="sous">${esc(e.sorte)}${e.chef?" · chef d'État ou de gouvernement":""}</div><table>`+
-    `<tr><td>poste</td><td>${esc(e.poste||"—")}</td></tr>${e.org&&e.org!=="gouvernement"?`<tr><td>organisation</td><td>${esc(e.org)}</td></tr>`:""}`+
+    `<tr><td>poste</td><td>${esc(e.poste||"—")}</td></tr>${e.org&&e.org!=="gouvernement"?`<tr><td>organisation</td><td>${esc(e.org)}</td></tr>`:""}${e.secteurs?`<tr><td>secteurs</td><td>${esc(e.secteurs)}</td></tr>`:""}`+
     `<tr><td>pays</td><td>${esc(e.pays.map(p=>(E.pays[p]||{}).nom||p).join(", ")||"—")}</td></tr><tr><td>source</td><td>${esc(e.source)}</td></tr></table>`;
   const rc=(e.comps||[]).filter(c=>D.parId.get(c));
   if(rc.length) h+=`<h2>Rôle dans la carte (${rc.length})</h2><ul>${rc.map(c=>{const m=D.parId.get(c);return `<li><a href="#" onclick="basculer('${esc(c)}');return false;">↗ ${esc(m.fiche_nom+" : "+m.nom)}</a></li>`;}).join("")}</ul>`;

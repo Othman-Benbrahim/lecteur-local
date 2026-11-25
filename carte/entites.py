@@ -56,6 +56,31 @@ ROLES = [
     (r"central bank|national bank|reserve bank|bundesbank|\bbank of\b", ["inflation-mondiale:banques_centrales", "monnaie-pouvoir:banques_centrales_puissance"]),
     (r"election", ["politique-interieure:elections"]),
 ]
+# 2026-11-25, 13 h 52 (demande de l'auteur) : même lecture pour les entreprises, par leurs secteurs Wikidata (P452) et leur nom
+SECTEURS = [
+    (r"petroleum|\boil\b|natural gas|\bgas\b|energy|electric|utilit|power generation|coal|renewable", ["energie-mondiale:production"]),
+    (r"nuclear", ["nucleaire-radiologique:electricite"]),
+    (r"mining|metal|steel|alumin|copper|gold|lithium", ["economie-entreprises:extraction"]),
+    (r"semiconductor|integrated circuit|\bchip", ["sciences-techniques:calcul"]),
+    (r"artificial intelligence|machine learning", ["sciences-techniques:ia"]),
+    (r"software|information technology|computer|cloud|internet|e-commerce|online", ["sciences-techniques:adoption"]),
+    (r"social media|social network|search engine", ["medias-diffusion:plateformes_sociales"]),
+    (r"\bbank|banking|financial services|insurance|asset management|investment|brokerage|stock exchange", ["crises-bancaires:bilans"]),
+    (r"crypto", ["crises-bancaires:cryptomonnaies"]),
+    (r"pharmac|biotech|drug|vaccin|health care|healthcare|medical", ["epidemies:technique", "corps-humain:soins"]),
+    (r"defen[cs]e|aerospace|arms|weapon|military", ["militaire:industrie_armement"]),
+    (r"automo|vehicle|car manufactur|motor", ["economie-entreprises:industrie_manufacturiere"]),
+    (r"telecom|wireless|mobile network|broadband|satellite", ["infrastructures-critiques:reseaux"]),
+    (r"television|broadcast", ["medias-diffusion:television"]),
+    (r"film|entertainment|streaming|music", ["medias-diffusion:cinema_series"]),
+    (r"video game", ["medias-diffusion:jeux_video"]),
+    (r"publishing|newspaper|\bmedia\b", ["medias-diffusion:presse"]),
+    (r"retail|consumer|apparel|luxury|real estate|construction", ["economie-entreprises:immobilier_consommation"]),
+    (r"\bfood|beverage|agricultur|agribusiness", ["alimentation-mondiale:commerce"]),
+    (r"fertili[sz]er", ["alimentation-mondiale:engrais"]),
+    (r"shipping|logistic|transport|airline|aviation|railway|freight", ["infrastructures-critiques:reseaux"]),
+    (r"chemical", ["environnement-dechets:pollution_chimique"]),
+]
 PAR_SORTE = {"entreprise": ["economie-entreprises:dirigeants_entreprise"],
              "banque centrale": ["inflation-mondiale:banques_centrales", "monnaie-pouvoir:banques_centrales_puissance"],
              "organisation internationale": ["organisations-internationales:onu"]}
@@ -69,6 +94,11 @@ def roles(e: dict, ids: set) -> list[str]:
             if re.search(motif, e["poste"], re.I):
                 out += comps
     out += PAR_SORTE.get(e["sorte"], [])
+    if e["sorte"] == "entreprise":
+        texte = e.get("secteurs", "") + " " + e.get("org", "")
+        for motif, comps in SECTEURS:
+            if re.search(motif, texte, re.I):
+                out += comps
     return [c for c in dict.fromkeys(out) if c in ids]
 
 
@@ -109,7 +139,8 @@ def construire(bot: Path) -> dict:
     ent = []
     for i, r in enumerate(rows):
         e = {"id": i, "nom": r["nom"], "sorte": r["sorte"], "pays": [p for p in (r.get("pays") or "").split(";") if p],
-             "org": r.get("organisation") or "", "poste": r.get("poste") or "", "chef": r.get("chef") == "1", "source": r["source"]}
+             "org": r.get("organisation") or "", "poste": r.get("poste") or "", "chef": r.get("chef") == "1", "source": r["source"],
+             "secteurs": r.get("secteurs") or ""}
         if e["nom"].lower() in nommes:
             e["acteur"] = nommes[e["nom"].lower()]
         e["comps"] = roles(e, ids)
