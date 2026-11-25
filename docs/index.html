@@ -80,6 +80,9 @@ details.sec>summary::-webkit-details-marker{display:none}
 #ctrlActeurs{position:absolute;top:8px;left:8px;z-index:5;display:flex;flex-direction:column;gap:2px;background:var(--panneau);
   border:1px solid var(--trait);border-radius:8px;padding:6px 9px;font-size:12px}
 #ctrlActeurs label{cursor:pointer;display:flex;gap:5px;align-items:center}
+#ctrlEntites{position:absolute;top:8px;left:8px;z-index:5;display:flex;gap:6px;flex-wrap:wrap;background:var(--panneau);
+  border:1px solid var(--trait);border-radius:8px;padding:6px 8px;font-size:12px}
+#ctrlEntites select,#ctrlEntites input{font:inherit;padding:3px 6px;border:1px solid var(--trait);border-radius:5px;background:var(--panneau);color:var(--texte)}
 .lien-ind.pale{opacity:.06!important}
 #axe{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:space-between;padding:0 30px;
   color:var(--doux);font-size:11.5px;pointer-events:none}
@@ -308,7 +311,8 @@ function construireControles(){
   const sel=document.getElementById("fiche");
   const fiches=[...new Map(D.noeuds.map(n=>[n.fiche,n.fiche_nom])).entries()].sort((a,b)=>a[1].localeCompare(b[1],"fr"));
   sel.innerHTML=`<option value="">vue d'ensemble (un cercle par écosystème)</option>`+
-    (D.nommes&&D.nommes.acteurs.length?`<option value="__acteurs__">★ Réseau des acteurs nommés (dirigeants, patrons)</option>`:"")+fiches.map(([k,v])=>`<option value="${k}">${esc(v)}</option>`).join("");
+    (D.nommes&&D.nommes.acteurs.length?`<option value="__acteurs__">★ Réseau des acteurs nommés (dirigeants, patrons)</option>`:"")+
+    `<option value="__entites__">★ Entités par pays : gouvernements, banques centrales, entreprises</option>`+fiches.map(([k,v])=>`<option value="${k}">${esc(v)}</option>`).join("");
   sel.onchange=()=>{etat.fiche=sel.value;etat.choisi=null;dessiner();};
   document.querySelectorAll("#variable button").forEach(b=>b.onclick=()=>{
     document.querySelectorAll("#variable button").forEach(x=>x.classList.toggle("on",x===b));
@@ -414,6 +418,105 @@ function niveauxNommes(id){ // distance dans le graphe des liens entre acteurs (
   const d=new Map([[id,0]]);let f=[id];
   for(let k=1;k<=3;k++){const s=[];for(const x of f) for(const y of v.get(x)||[]) if(!d.has(y)){d.set(y,k);s.push(y);} f=s;}
   d.delete(id);return d;
+}
+
+// 2026-11-25 (demande de l'auteur, 13 h 36) : vue des entités prioritaires des briefs (docs/entites.json, chargé à la
+// demande) ; un pays à la fois : son gouvernement (chef → membres), sa banque centrale, ses entreprises cotées, et les
+// entités co-citées avec elles dans les briefs (lien indirect, sonde)
+let E=null;
+const SORTE_ENT={"dirigeant public":"var(--dirigeant)",entreprise:"var(--patron)","banque centrale":"var(--surbrillance)",
+  "organisation internationale":"var(--accent)",personne:"var(--dirigeant)"};
+function dessinerEntites(){
+  if(!E){document.getElementById("detail").innerHTML=`<p class="vide">chargement des entités…</p>`;
+    fetch("entites.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{E=d;if(!etat.paysEnt)etat.paysEnt=d.pays.FR?"FR":Object.keys(d.pays)[0];dessiner();})
+      .catch(()=>{document.getElementById("detail").innerHTML=`<p class="vide">entites.json introuvable</p>`;});return;}
+  document.getElementById("axe").innerHTML="";
+  let ctrl=document.getElementById("ctrlEntites");
+  if(!ctrl){ctrl=document.createElement("div");ctrl.id="ctrlEntites";document.getElementById("carte").appendChild(ctrl);
+    const ps=Object.entries(E.pays).sort((a,b)=>a[1].nom.localeCompare(b[1].nom,"fr"));
+    ctrl.innerHTML=`<select id="selPaysEnt">${ps.map(([k,v])=>`<option value="${k}">${esc(v.nom)} (${v.n})</option>`).join("")}<option value="__sans">sans pays : organisations, liste validée</option></select>`+
+      `<input id="chercheEnt" list="listeEnt" placeholder="chercher une personne…"><datalist id="listeEnt">${E.entites.map(e=>`<option value="${esc(e.nom)}">`).join("")}</datalist>`;
+    document.getElementById("selPaysEnt").onchange=e=>{etat.paysEnt=e.target.value;etat.choisiEnt=null;dessiner();};
+    document.getElementById("chercheEnt").onchange=e=>{const x=E.entites.find(y=>y.nom.toLowerCase()===e.target.value.toLowerCase());
+      if(x){etat.paysEnt=x.pays[0]||"__sans";etat.choisiEnt=x.id;document.getElementById("selPaysEnt").value=etat.paysEnt;dessiner();}};}
+  document.getElementById("selPaysEnt").value=etat.paysEnt;
+  const P=etat.paysEnt,ici=E.entites.filter(e=>P==="__sans"?!e.pays.length:e.pays.includes(P));
+  const ids=new Set(ici.map(e=>e.id)),noeuds=[],aretes=[];
+  if(P!=="__sans") noeuds.push({id:"P:"+P,genre:"pays",nom:(E.pays[P]||{}).nom||P});
+  for(const e of ici) noeuds.push({...e,id:"E:"+e.id,genre:"entite"});
+  const tousChefs=ici.filter(e=>e.chef&&e.sorte==="dirigeant public");
+  // les membres du gouvernement se rattachent au chef du gouvernement quand il existe, sinon au chef de l'État
+  const chefGouv=tousChefs.filter(e=>/prime minister|premier|chancellor|head of government/i.test(e.poste));
+  const chefs=chefGouv.length?chefGouv:tousChefs;
+  const orgs=new Map();
+  for(const e of ici){
+    if(e.sorte==="dirigeant public"){
+      if((e.chef&&!chefGouv.includes(e)||!chefs.length||(e.chef&&!tousChefs.some(c=>!chefGouv.includes(c))))) aretes.push({source:"P:"+P,target:"E:"+e.id,genre:"dirige"});
+      if(e.chef&&chefGouv.length&&!chefGouv.includes(e)) for(const c of chefGouv) aretes.push({source:"E:"+e.id,target:"E:"+c.id,genre:"dirige"});
+      else for(const c of chefs) aretes.push({source:"E:"+c.id,target:"E:"+e.id,genre:"gouvernement"});
+    } else if(e.org){const k="O:"+e.org;
+      if(!orgs.has(k)){orgs.set(k,{id:k,genre:"org",nom:e.org,sorte:e.sorte});if(P!=="__sans") aretes.push({source:"P:"+P,target:k,genre:"siege"});}
+      aretes.push({source:"E:"+e.id,target:k,genre:"dirige_org"});}
+  }
+  noeuds.push(...orgs.values());
+  const ext=new Map();
+  for(const c of E.cocites){const a=ids.has(c.a),b=ids.has(c.b);if(!a&&!b) continue;
+    for(const x of [c.a,c.b]) if(!ids.has(x)&&!ext.has(x)){const o=E.entites[x];ext.set(x,{...o,id:"E:"+x,genre:"externe"});}
+    aretes.push({source:"E:"+c.a,target:"E:"+c.b,genre:"cite",briefs:c.briefs});}
+  noeuds.push(...ext.values());
+  svg=d3.select("#svg");svg.selectAll("*").remove();gZoom=svg.append("g");
+  svg.call(d3.zoom().scaleExtent([.2,6]).on("zoom",ev=>gZoom.attr("transform",ev.transform)));
+  const COUL={dirige:"var(--texte)",gouvernement:"var(--doux)",siege:"var(--trait)",dirige_org:"var(--texte)",cite:"var(--acteur)"};
+  const lien=gZoom.append("g").selectAll("line").data(aretes).join("line").attr("stroke",l=>COUL[l.genre])
+    .attr("stroke-width",l=>l.genre==="cite"?1.6:l.genre==="gouvernement"?.8:1.3).attr("stroke-dasharray",l=>l.genre==="cite"?"2 3":l.genre==="siege"?"4 3":null)
+    .attr("opacity",l=>l.genre==="gouvernement"?.5:.85);
+  lien.filter(l=>l.genre==="cite").style("cursor","help").on("mousemove",(ev,l)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
+      b.innerHTML=`co-cités dans ${l.briefs.length} brief(s)<br><span style="color:var(--doux)">${l.briefs.map(x=>esc(x.jour+" · "+x.titre)).join("<br>")}</span><br><span style="color:var(--doux)">sonde, pas preuve d'un lien</span>`;
+      b.style.display="block";b.style.left=(ev.clientX-z.left+12)+"px";b.style.top=(ev.clientY-z.top+12)+"px";})
+    .on("mouseleave",()=>document.getElementById("infobulle").style.display="none");
+  const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
+    .on("click",(ev,n)=>{ev.stopPropagation();if(n.genre==="externe"){etat.paysEnt=n.pays[0]||"__sans";etat.choisiEnt=+n.id.slice(2);dessiner();return;}
+      if(n.genre==="entite"){etat.choisiEnt=+n.id.slice(2);marquer(n.id);detailEntite(E.entites[+n.id.slice(2)]);}})
+    .call(d3.drag().on("start",(ev,n)=>{if(!ev.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
+      .on("drag",(ev,n)=>{n.fx=ev.x;n.fy=ev.y;}).on("end",(ev,n)=>{if(!ev.active)sim.alphaTarget(0);n.fx=null;n.fy=null;}));
+  noeud.filter(n=>n.genre==="pays").append("circle").attr("r",16).attr("fill","var(--fond)").attr("stroke","var(--texte)").attr("stroke-width",2);
+  noeud.filter(n=>n.genre==="org").append("rect").attr("x",-7).attr("y",-7).attr("width",14).attr("height",14).attr("rx",3)
+    .attr("fill","var(--fond)").attr("stroke",n=>SORTE_ENT[n.sorte]||"var(--doux)").attr("stroke-width",1.5);
+  noeud.filter(n=>n.genre==="entite"||n.genre==="externe").append("circle").attr("r",n=>n.chef?10:n.sorte==="dirigeant public"?5:7)
+    .attr("fill",n=>SORTE_ENT[n.sorte]||"var(--doux)").attr("opacity",n=>n.genre==="externe"?.45:1)
+    .attr("stroke",n=>n.acteur?"var(--texte)":"none").attr("stroke-width",2).style("cursor","pointer");
+  noeud.append("text").attr("x",n=>n.genre==="pays"?20:12).attr("y",4).style("font-weight",n=>n.genre==="pays"||n.chef?"650":null)
+    .text(n=>n.genre==="externe"?n.nom+" ("+(n.pays[0]||"—")+")":n.genre==="org"?"▪ "+n.nom.slice(0,34):n.chef||n.genre==="pays"||n.sorte!=="dirigeant public"?n.nom:n.nom.split(" ").slice(-1)[0]);
+  function marquer(id){const v=new Set([id]);for(const l of aretes){const a=l.source.id||l.source,b=l.target.id||l.target;if(a===id)v.add(b);if(b===id)v.add(a);}
+    noeud.classed("pale",n=>!!id&&!v.has(n.id)).classed("vif",n=>n.id===id);
+    lien.classed("pale",l=>!!id&&(l.source.id||l.source)!==id&&(l.target.id||l.target)!==id);}
+  svg.on("click",ev=>{if(ev.target===svg.node()){etat.choisiEnt=null;marquer(null);legendeEntites(P,ici);}});
+  sim=d3.forceSimulation(noeuds)
+    .force("lien",d3.forceLink(aretes).id(n=>n.id).distance(l=>l.genre==="gouvernement"?120:l.genre==="cite"?160:110).strength(l=>l.genre==="cite"?.05:.4))
+    .force("charge",d3.forceManyBody().strength(-280)).force("x",d3.forceX(largeur/2).strength(.05)).force("y",d3.forceY(hauteur/2).strength(.07))
+    .force("collision",d3.forceCollide().radius(16))
+    .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
+      noeud.attr("transform",n=>`translate(${n.x},${n.y})`);});
+  if(etat.choisiEnt!=null&&ids.has(etat.choisiEnt)){marquer("E:"+etat.choisiEnt);detailEntite(E.entites[etat.choisiEnt]);} else legendeEntites(P,ici);
+}
+function legendeEntites(P,ici){
+  const n=k=>ici.filter(e=>e.sorte===k).length;
+  document.getElementById("detail").innerHTML=`<h3>${esc(P==="__sans"?"Entités sans pays":(E.pays[P]||{}).nom||P)}</h3><div class="sous">${ici.length} entités · ${n("dirigeant public")} membres du gouvernement · ${n("entreprise")} dirigeants d'entreprise · ${n("banque centrale")} banque centrale</div>`+
+  `<p style="font-size:13px">Les entités que les briefs surveillent : elles ne comptent que si un mot déclencheur les accompagne. Liste mise à jour chaque semaine (Wikidata) et chaque mois (CIA World Leaders, via OpenSanctions).</p>`+
+  `<div class="legende"><span><i style="border-color:var(--texte)"></i>direct : le pays → son chef d'État ou de gouvernement ; un dirigeant → son organisation</span>`+
+  `<span><i style="border-color:var(--doux)"></i>direct : chef → membres du gouvernement</span><span><i style="border-color:var(--trait);border-top-style:dashed"></i>organisation → pays du siège</span>`+
+  `<span><i style="border-color:var(--acteur);border-top-style:dotted"></i>indirect : co-cités dans un brief (sonde, pas preuve)</span>`+
+  `<span>cercle brique : dirigeant public (gros : chef) · vert : entreprise · jaune : banque centrale · bleu : organisation internationale · contour noir : aussi acteur nommé de la carte · pâle : entité d'un autre pays</span></div>`;
+}
+function detailEntite(e){
+  const co=E.cocites.filter(c=>E.entites[c.a]===e||E.entites[c.b]===e);
+  let h=`<h3>${esc(e.nom)}</h3><div class="sous">${esc(e.sorte)}${e.chef?" · chef d'État ou de gouvernement":""}</div><table>`+
+    `<tr><td>poste</td><td>${esc(e.poste||"—")}</td></tr>${e.org&&e.org!=="gouvernement"?`<tr><td>organisation</td><td>${esc(e.org)}</td></tr>`:""}`+
+    `<tr><td>pays</td><td>${esc(e.pays.map(p=>(E.pays[p]||{}).nom||p).join(", ")||"—")}</td></tr><tr><td>source</td><td>${esc(e.source)}</td></tr></table>`;
+  if(e.acteur) h+=`<p><a href="#" onclick="etat.fiche='__acteurs__';etat.choisi='${esc(e.acteur)}';document.getElementById('fiche').value='__acteurs__';dessiner();return false;">↗ voir dans le réseau des acteurs nommés (liens sourcés)</a></p>`;
+  if((e.briefs||[]).length) h+=`<h2>Briefs qui le citent (${e.briefs.length})</h2><ul>${e.briefs.map(b=>`<li>${esc(b.jour)} · <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.titre)}</a></li>`).join("")}</ul>`;
+  if(co.length) h+=`<h2>Co-cités (${co.length})</h2><ul>${co.map(c=>{const o=E.entites[c.a]===e?E.entites[c.b]:E.entites[c.a];return `<li>${esc(o.nom)} <span class="etiq">${esc(o.pays.join(", ")||o.sorte)}</span></li>`;}).join("")}</ul><p style="font-size:11.5px;color:var(--doux)">Être cités ensemble n'est pas un lien : c'est une piste.</p>`;
+  document.getElementById("detail").innerHTML=h;
 }
 // 2026-11-25 (demande de l'auteur, 13 h 36) : liens indirects entre acteurs nommés
 // - chaîne : par d'autres acteurs (niveaux 2 et 3), avec le chemin ;
@@ -614,6 +717,8 @@ function dessiner(){
   if(!etat.fiche) return dessinerEnsemble(sits);
   if(etat.fiche==="__acteurs__") return dessinerActeurs();
   {const c=document.getElementById("ctrlActeurs");if(c)c.remove();}
+  if(etat.fiche==="__entites__") return dessinerEntites();
+  {const c=document.getElementById("ctrlEntites");if(c)c.remove();}
   const activite=new Map();for(const s of sits) for(const c of s.compartiments) activite.set(c,(activite.get(c)||0)+1);
   const noeuds=D.noeuds.filter(garde).map(n=>Object.assign({},n));
   const ids=new Set(noeuds.map(n=>n.id));

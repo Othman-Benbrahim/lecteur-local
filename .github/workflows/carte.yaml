@@ -34,11 +34,12 @@ jobs:
       - run: python carte/generer.py bot
       - run: python carte/metaculus.py bot   # 2026-11-24 : tableau Metaculus
       - run: python carte/briefs.py bot      # 2026-11-25 : page des briefs
+      - run: python carte/entites.py bot     # 2026-11-25 : vue des entités
       - name: Enregistrer
         run: |
           git config user.name "lecteur-local"
           git config user.email "lecteur-local@users.noreply.github.com"
-          git add docs/donnees.json docs/metaculus.json docs/briefs.json docs/briefs-archives
+          git add docs/donnees.json docs/metaculus.json docs/briefs.json docs/briefs-archives docs/entites.json
           if ! git diff --cached --quiet; then
             git commit -m "carte du $(date -u +%Y-%m-%dT%H:%MZ)"
             git pull --rebase || true
