@@ -1,0 +1,121 @@
+# Entités prioritaires des briefs (2026-11-25, décision de l'auteur à 13 h 16) : les entités sont les premières visées
+# par les questions Metaculus, mais un nom seul ne déclenche rien ; il ne compte qu'ASSOCIÉ à un mot déclencheur validé
+# (declencheurs-proposes.txt) dans le même titre. Les pays n'y figurent pas un par un : tous les pays du registre de la
+# carte (codes-pays) comptent comme entités, avec la même règle d'association.
+# Format : statut | noms (variantes séparées par /) | sorte | origine
+# Statut : « ? » proposé par Claude ; « + » validé par l'auteur (seuls les « + » sont actifs) ; « - » refusé.
+# --- personnes (acteurs nommés de la carte, ecosystemes/acteurs-nommes.yaml) ---
+? | Donald Trump/Trump | personne | acteurs nommés de la carte
+? | JD Vance/Vance | personne | acteurs nommés de la carte
+? | Marco Rubio/Rubio | personne | acteurs nommés de la carte
+? | Pete Hegseth/Hegseth | personne | acteurs nommés de la carte
+? | Stephen Miller/Miller | personne | acteurs nommés de la carte
+? | Kevin Warsh/Warsh | personne | acteurs nommés de la carte
+? | Xi Jinping/Jinping | personne | acteurs nommés de la carte
+? | Vladimir Poutine/Poutine/Putin/Vladimir Putin | personne | acteurs nommés de la carte
+? | Sergueï Lavrov/Lavrov | personne | acteurs nommés de la carte
+? | Volodymyr Zelensky/Zelensky | personne | acteurs nommés de la carte
+? | Serhii Koretskyi/Koretskyi | personne | acteurs nommés de la carte
+? | Benyamin Netanyahou/Netanyahou | personne | acteurs nommés de la carte
+? | Gadi Eisenkot/Eisenkot | personne | acteurs nommés de la carte
+? | Mojtaba Khamenei/Khamenei | personne | acteurs nommés de la carte
+? | Massoud Pezeshkian/Pezeshkian | personne | acteurs nommés de la carte
+? | Emmanuel Macron/Macron | personne | acteurs nommés de la carte
+? | Sébastien Lecornu/Lecornu | personne | acteurs nommés de la carte
+? | Friedrich Merz/Merz | personne | acteurs nommés de la carte
+? | Andy Burnham/Burnham | personne | acteurs nommés de la carte
+? | Sanae Takaichi/Takaichi | personne | acteurs nommés de la carte
+? | Luiz Inácio Lula da Silva/Silva | personne | acteurs nommés de la carte
+? | Elon Musk/Musk | personne | acteurs nommés de la carte
+? | Mark Zuckerberg/Zuckerberg | personne | acteurs nommés de la carte
+? | Jensen Huang/Huang | personne | acteurs nommés de la carte
+? | Sam Altman/Altman | personne | acteurs nommés de la carte
+? | Larry Ellison/Ellison | personne | acteurs nommés de la carte
+? | David Ellison/Ellison | personne | acteurs nommés de la carte
+? | Peter Thiel/Thiel | personne | acteurs nommés de la carte
+? | Alex Karp/Karp | personne | acteurs nommés de la carte
+? | Vincent Bolloré/Bolloré | personne | acteurs nommés de la carte
+? | Recep Tayyip Erdoğan/Erdoğan | personne | acteurs nommés de la carte
+? | Narendra Modi/Modi | personne | acteurs nommés de la carte
+? | Mohammed ben Salmane/Salmane | personne | acteurs nommés de la carte
+? | Kim Jong-un/Jong-un | personne | acteurs nommés de la carte
+? | Ursula von der Leyen/Leyen | personne | acteurs nommés de la carte
+? | António Costa/Costa | personne | acteurs nommés de la carte
+? | Mark Rutte/Rutte | personne | acteurs nommés de la carte
+? | Rupert Murdoch/Murdoch | personne | acteurs nommés de la carte
+? | Lachlan Murdoch/Murdoch | personne | acteurs nommés de la carte
+? | Bernard Arnault/Arnault | personne | acteurs nommés de la carte
+? | Jeff Bezos/Bezos | personne | acteurs nommés de la carte
+? | Gautam Adani/Adani | personne | acteurs nommés de la carte
+? | Dario Amodei/Amodei | personne | acteurs nommés de la carte
+? | Sundar Pichai/Pichai | personne | acteurs nommés de la carte
+? | Koray Kavukcuoglu/Kavukcuoglu | personne | acteurs nommés de la carte
+? | Neal Mohan/Mohan | personne | acteurs nommés de la carte
+? | Shou Zi Chew/Chew | personne | acteurs nommés de la carte
+? | Adam Presser/Presser | personne | acteurs nommés de la carte
+? | Liang Wenfeng/Wenfeng | personne | acteurs nommés de la carte
+? | Eddie Wu (Wu Yongming)/Wu/Wu Yongming | personne | acteurs nommés de la carte
+? | Ma Huateng (Pony Ma)/Huateng/Pony Ma | personne | acteurs nommés de la carte
+? | Arthur Mensch/Mensch | personne | acteurs nommés de la carte
+? | Josh D'Amaro/D'Amaro | personne | acteurs nommés de la carte
+? | Ted Sarandos/Sarandos | personne | acteurs nommés de la carte
+? | Daniel Kretinsky/Kretinsky | personne | acteurs nommés de la carte
+? | Xavier Niel/Niel | personne | acteurs nommés de la carte
+? | Rodolphe Saadé/Saadé | personne | acteurs nommés de la carte
+? | Ren Zhengfei/Zhengfei | personne | acteurs nommés de la carte
+? | Robin Li (Li Yanhong)/Li/Li Yanhong | personne | acteurs nommés de la carte
+? | Yang Zhilin/Zhilin | personne | acteurs nommés de la carte
+? | Satya Nadella/Nadella | personne | acteurs nommés de la carte
+? | Christophe Fouquet/Fouquet | personne | acteurs nommés de la carte
+? | Pavel Durov/Durov | personne | acteurs nommés de la carte
+? | Léon XIV/Leo XIV/Pope Leo/Robert Francis Prevost | personne | acteurs nommés de la carte
+? | Dalai Lama/dalaï-lama/Tenzin Gyatso | personne | acteurs nommés de la carte
+? | Kirill | personne | acteurs nommés de la carte
+? | Bartholomée Ier/Ier | personne | acteurs nommés de la carte
+# --- dirigeants (table du bot, ecosystemes/dirigeants-maintien.csv) ---
+? | Orban/Orbán | personne | dirigeants du bot (HUN)
+? | Lukashenko | personne | dirigeants du bot (BLR)
+? | Maduro/Nicolás Maduro/Nicolas Maduro | personne | dirigeants du bot (VEN)
+? | al-Sisi/Sisi | personne | dirigeants du bot (EGY)
+? | Kagame | personne | dirigeants du bot (RWA)
+? | Museveni | personne | dirigeants du bot (UGA)
+? | Biya | personne | dirigeants du bot (CMR)
+? | Aliyev | personne | dirigeants du bot (AZE)
+? | Netanyahu | personne | dirigeants du bot (ISR)
+? | Starmer/Keir Starmer | personne | dirigeants du bot (GBR)
+? | Pedro Sánchez/Pedro Sanchez | personne | dirigeants du bot (ESP)
+? | Meloni | personne | dirigeants du bot (ITA)
+? | Lula | personne | dirigeants du bot (BRA)
+? | Milei | personne | dirigeants du bot (ARG)
+? | Abbas/Mahmoud Abbas | personne | dirigeants du bot (PSE)
+? | Díaz-Canel/Diaz-Canel | personne | dirigeants du bot (CUB)
+? | Noboa/Daniel Noboa | personne | dirigeants du bot (ECU)
+? | Petro/Gustavo Petro | personne | dirigeants du bot (COL)
+? | Edi Rama | personne | dirigeants du bot (ALB)
+# --- organisations et entreprises fréquentes dans les questions (proposées par Claude) ---
+? | Federal Reserve/Fed/Réserve fédérale | institution | fréquent dans les questions Metaculus
+? | ECB/European Central Bank/BCE | institution | fréquent dans les questions Metaculus
+? | NATO/OTAN | alliance | fréquent dans les questions Metaculus
+? | UN Security Council/Conseil de sécurité | institution | fréquent dans les questions Metaculus
+? | IMF/FMI | institution | fréquent dans les questions Metaculus
+? | OPEC/OPEC+/OPEP | cartel | fréquent dans les questions Metaculus
+? | WHO/OMS | institution | fréquent dans les questions Metaculus
+? | European Union/EU/Union européenne/UE | union | fréquent dans les questions Metaculus
+? | Hamas | groupe armé | fréquent dans les questions Metaculus
+? | Hezbollah | groupe armé | fréquent dans les questions Metaculus
+? | Houthis/Houthi | groupe armé | fréquent dans les questions Metaculus
+? | Wagner/Africa Corps | groupe armé | fréquent dans les questions Metaculus
+? | OpenAI | entreprise | fréquent dans les questions Metaculus
+? | Anthropic | entreprise | fréquent dans les questions Metaculus
+? | Nvidia | entreprise | fréquent dans les questions Metaculus
+? | Apple | entreprise | fréquent dans les questions Metaculus
+? | Microsoft | entreprise | fréquent dans les questions Metaculus
+? | Alphabet/Google | entreprise | fréquent dans les questions Metaculus
+? | Meta | entreprise | fréquent dans les questions Metaculus
+? | Tesla | entreprise | fréquent dans les questions Metaculus
+? | SpaceX | entreprise | fréquent dans les questions Metaculus
+? | TSMC | entreprise | fréquent dans les questions Metaculus
+? | DeepSeek | entreprise | fréquent dans les questions Metaculus
+? | Huawei | entreprise | fréquent dans les questions Metaculus
+? | xAI | entreprise | fréquent dans les questions Metaculus
+? | Mistral AI | entreprise | fréquent dans les questions Metaculus
