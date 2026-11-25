@@ -1,9 +1,9 @@
 {
- "genere_le": "2026-11-25T09:07+00:00",
+ "genere_le": "2026-11-25T09:23+00:00",
  "stats": {
-  "questions": 50,
+  "questions": 51,
   "binaires": 19,
-  "ouvertes": 50,
+  "ouvertes": 51,
   "a_relever": 0,
   "resolues": 0,
   "resolues_binaires": 0,
@@ -632,6 +632,18 @@
    "url": "https://www.metaculus.com/questions/46638",
    "echeance": "2027-01-05",
    "prevision_texte": "47 (41%)",
+   "date_prevision": "2026-11-25",
+   "statut": "ouverte"
+  },
+  {
+   "id": "46899",
+   "type": "choix multiple",
+   "mises_a_jour": 1,
+   "historique": [],
+   "titre": "Which epidemiological week will be the onset week for the flu in HHS Region 5 in 2026-27?",
+   "url": "https://www.metaculus.com/questions/46639",
+   "echeance": "2027-01-05",
+   "prevision_texte": "48 (37%)",
    "date_prevision": "2026-11-25",
    "statut": "ouverte"
   },
