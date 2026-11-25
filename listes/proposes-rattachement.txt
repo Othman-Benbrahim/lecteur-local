@@ -166,3 +166,10 @@
 + | Qatar | pays:QAT
 + | United Arab Emirates | pays:ARE
 + | UAE | pays:ARE
+
+# 2026-11-25 : fiche « surveillance et espionnage » créée sur demande de l'auteur (7 h 04 : « met le et fais les bonnes liaisons »)
++ | FISA/Section 702/surveillance/wiretap/wiretapping/intelligence agency/NSA/GCHQ/FISC | surveillance-espionnage:renseignement_etats
++ | espionage/spying/Salt Typhoon/Volt Typhoon/cyber espionage | surveillance-espionnage:espionnage_etats
++ | spyware/Pegasus/NSO Group/Paragon/Predator/Intellexa/Candiru/Pall Mall Process | surveillance-espionnage:industrie_intrusion;surveillance-espionnage:cibles
++ | data broker/data brokers/location data | surveillance-espionnage:courtiers_donnees
++ | facial recognition/biometric/biometrics | surveillance-espionnage:biometrie
