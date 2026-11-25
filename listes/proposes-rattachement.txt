@@ -183,3 +183,4 @@
 + | psychological defence/psychological defense/trust in government/institutional trust/societal resilience/crisis communication/cognitive warfare | information-cyber:resilience_informationnelle
 + | Portal Kombat/Pravda network/Matryoshka/Spamouflage/typosquatting/astroturfing/foreign information manipulation/FIMI/Viginum/news avoidance | information-cyber:recits
 + | trust in news/fact-check/fact-checking/Digital News Report | information-cyber:resilience_informationnelle
++ | disinformation law/fake news law/Digital Services Act/DSA/European Democracy Shield/Global Engagement Center/counter-disinformation | information-cyber:politiques_anti_desinformation
