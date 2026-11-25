@@ -778,7 +778,8 @@ function detail(n,sits){
   const el=document.getElementById("detail");const ax=n.niveau||{};
   let h=`<h3>${esc(n.nom)}</h3><div class="sous">${esc(n.fiche_nom)} · ${n.sorte}${n.organisation?" · niveau "+esc(n.organisation):""}${n.facette?" · facette "+esc(n.facette):""}</div>`;
   h+=`<table><tr><td>espace</td><td>${esc(ax.espace||"—")}</td></tr><tr><td>temps</td><td>${esc(ax.temps||"—")}</td></tr>`+
-     `<tr><td>vitesse</td><td>${esc(ax.vitesse||"—")}</td></tr><tr><td>taille</td><td>${esc(ax.taille||"—")}</td></tr></table>`;
+     `<tr><td>vitesse</td><td>${esc(ax.vitesse||"—")}</td></tr><tr><td>taille</td><td>${esc(ax.taille||"—")}</td></tr>`+
+     (ax.objet?`<tr><td>objet</td><td>${esc(ax.objet)}</td></tr>`:"")+`</table>`;
   if(n.sorte==="compartiment"){
     if(n.elements.length) h+=`<h2>Éléments</h2><ul>${n.elements.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
     if((n.pays||[]).length) h+=geoUcdp(n);

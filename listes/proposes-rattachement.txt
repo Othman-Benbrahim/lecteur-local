@@ -173,3 +173,10 @@
 + | spyware/Pegasus/NSO Group/Paragon/Predator/Intellexa/Candiru/Pall Mall Process | surveillance-espionnage:industrie_intrusion;surveillance-espionnage:cibles
 + | data broker/data brokers/location data | surveillance-espionnage:courtiers_donnees
 + | facial recognition/biometric/biometrics | surveillance-espionnage:biometrie
+
+# 2026-11-25 : fiche « cultures emboîtées » et compartiment « développement » (réflexion de l'auteur, 9 h 24)
++ | K-pop/Hallyu/Korean wave/cultural exports/soft power/anime | cultures-emboitees:diffusion_mondiale
++ | filter bubble/echo chamber/recommendation algorithm/algorithmic feed/For You page | cultures-emboitees:culture_algorithmique
++ | endangered language/endangered languages/indigenous language/minority language/regional language | cultures-emboitees:cultures_locales
++ | cultural exception/cultural diversity/screen quota/broadcasting quota | cultures-emboitees:protections_culturelles
++ | emergency use authorization/FDA approval/clinical trial/Phase 3 | sciences-techniques:developpement
