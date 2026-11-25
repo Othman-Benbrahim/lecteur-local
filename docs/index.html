@@ -77,6 +77,10 @@ details.sec>summary::-webkit-details-marker{display:none}
 .n1 circle,.n1 rect{stroke:var(--surbrillance);stroke-width:4px}.n2 circle,.n2 rect{stroke:var(--surbrillance);stroke-width:2px}.n3 circle,.n3 rect{stroke:var(--surbrillance);stroke-width:1px;stroke-dasharray:2 2}
 .niv{font-size:11px;color:var(--doux);margin:6px 0 2px}
 .vif circle{stroke:var(--surbrillance)!important;stroke-width:3px!important}
+#ctrlActeurs{position:absolute;top:8px;left:8px;z-index:5;display:flex;flex-direction:column;gap:2px;background:var(--panneau);
+  border:1px solid var(--trait);border-radius:8px;padding:6px 9px;font-size:12px}
+#ctrlActeurs label{cursor:pointer;display:flex;gap:5px;align-items:center}
+.lien-ind.pale{opacity:.06!important}
 #axe{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:space-between;padding:0 30px;
   color:var(--doux);font-size:11.5px;pointer-events:none}
 #releve{position:fixed;z-index:50;display:none;max-width:380px;max-height:70vh;overflow:auto;background:var(--panneau);
@@ -264,7 +268,7 @@ function binT(n){ // temps écrit en mots dans les fiches : rangé en conjonctur
   return 0;}
 
 let D,etat={sorte:"tous",canal:"",fiche:"",variable:"taille",echelles:new Set(),cats:new Set(),terme:"",emetteur:"",lecture:"structurel",jour:null,
-  nommes:true,acteurs:false,relations:true,ponts:true,liens:true,choisi:null};
+  nommes:true,acteurs:false,relations:true,ponts:true,liens:true,choisi:null,indirects:false,cocites:true};
 let sim,svg,gZoom,largeur,hauteur;
 
 fetch("donnees.json").then(r=>r.json()).then(d=>{D=d;rendreMecanique();rendreUcdp();preparer();construireControles();dessiner();
@@ -411,6 +415,35 @@ function niveauxNommes(id){ // distance dans le graphe des liens entre acteurs (
   for(let k=1;k<=3;k++){const s=[];for(const x of f) for(const y of v.get(x)||[]) if(!d.has(y)){d.set(y,k);s.push(y);} f=s;}
   d.delete(id);return d;
 }
+// 2026-11-25 (demande de l'auteur, 13 h 36) : liens indirects entre acteurs nommés
+// - chaîne : par d'autres acteurs (niveaux 2 et 3), avec le chemin ;
+// - même compartiment : deux acteurs rattachés au même compartiment de la carte, sans lien direct sourcé ;
+// - co-cités : nommés ensemble dans un brief (sonde, pas preuve d'un lien).
+function cheminsNommes(id){
+  const v=new Map();for(const l of D.nommes.liens) if(REL_NOMME[l.relation]&&REL_NOMME[l.relation][1]!=="population"){
+    if(!v.has(l.de))v.set(l.de,[]);if(!v.has(l.vers))v.set(l.vers,[]);v.get(l.de).push(l.vers);v.get(l.vers).push(l.de);}
+  const parent=new Map([[id,null]]);let f=[id];
+  for(let k=1;k<=3;k++){const s=[];for(const x of f) for(const y of v.get(x)||[]) if(!parent.has(y)){parent.set(y,x);s.push(y);} f=s;}
+  return y=>{const c=[];let x=parent.get(y);while(x&&x!==id){c.unshift(x);x=parent.get(x);}return c;};
+}
+function liensIndirects(){
+  const A=D.nommes.acteurs,direct=new Set(D.nommes.liens.flatMap(l=>[l.de+"|"+l.vers,l.vers+"|"+l.de]));
+  const comp=[],cite=[];
+  for(let i=0;i<A.length;i++) for(let j=i+1;j<A.length;j++){const a=A[i],b=A[j];
+    if(direct.has(a.id+"|"+b.id)) continue;
+    const c=(a.compartiments||[]).filter(x=>(b.compartiments||[]).includes(x));
+    if(c.length) comp.push({de:a.id,vers:b.id,genre:"compartiment",comps:c});}
+  const motif=a=>{const n=a.nom.split(" (")[0],f=n.split(" ").pop();
+    return new RegExp("(^|[^\\p{L}])("+[n,f.length>=4?f:null].filter(Boolean).map(x=>x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|")+")($|[^\\p{L}])","iu");};
+  const M=A.map(a=>[a.id,motif(a)]);const paires=new Map();
+  for(const b of (typeof BRIEFS!=="undefined"?BRIEFS:[])){
+    const t=[b.titre,b.ce_que_ca_change,...(b.faits||[]).map(f=>f.fait)].join(" ");
+    const ici=M.filter(([,m])=>m.test(t)).map(([id])=>id);
+    for(let i=0;i<ici.length;i++) for(let j=i+1;j<ici.length;j++){const k=[ici[i],ici[j]].sort().join("|");
+      if(!paires.has(k)) paires.set(k,[]);paires.get(k).push(b);}}
+  for(const[k,bs]of paires){const[a,b]=k.split("|");cite.push({de:a,vers:b,genre:"brief",briefs:bs});}
+  return {comp,cite};
+}
 function dessinerActeurs(){
   const A=D.nommes.acteurs,L=D.nommes.liens;const par=new Map(A.map(a=>[a.id,a]));
   const noeuds=A.map(a=>({...a,genre:"nomme"}));
@@ -432,6 +465,24 @@ function dessinerActeurs(){
       b.innerHTML=`<b>${esc(n(l.de))}</b> ${esc(REL_NOMME[l.relation][0])} <b>${esc(n(l.vers))}</b><br>${esc(l.domaine)}${l.via?" · par "+esc(l.via):""}<br><span style="color:var(--doux)">${esc(l.texte)}</span>`;
       b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none");
+  // liens indirects (hors de la simulation : ils ne déforment pas le dessin) ; dessinés sous les liens directs
+  const IND=liensIndirects();
+  const ind=[...(etat.indirects?IND.comp:[]),...(etat.cocites?IND.cite:[])];
+  const lienInd=gZoom.insert("g",":first-child").selectAll("line").data(ind).join("line").attr("class","lien-ind")
+    .attr("stroke",l=>l.genre==="brief"?"var(--acteur)":"var(--doux)").attr("stroke-width",l=>l.genre==="brief"?1.4:.7)
+    .attr("stroke-dasharray",l=>l.genre==="brief"?"2 3":"1 4").attr("opacity",l=>l.genre==="brief"?.8:.45).style("cursor","help")
+    .on("mousemove",(e,l)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
+      const n=x=>(par.get(x)||{}).nom||x;
+      b.innerHTML=l.genre==="brief"?`<b>${esc(n(l.de))}</b> et <b>${esc(n(l.vers))}</b> co-cités dans ${l.briefs.length} brief${l.briefs.length>1?"s":""}<br><span style="color:var(--doux)">${l.briefs.slice(0,3).map(x=>esc(x.jour+" · "+x.titre)).join("<br>")}</span><br><span style="color:var(--doux)">sonde : être cités ensemble n'est pas un lien</span>`
+        :`<b>${esc(n(l.de))}</b> et <b>${esc(n(l.vers))}</b> : lien indirect, même compartiment<br><span style="color:var(--doux)">${l.comps.map(c=>esc((D.parId.get(c)||{}).nom||c)).join(", ")}</span>`;
+      b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
+    .on("mouseleave",()=>document.getElementById("infobulle").style.display="none");
+  let ctrl=document.getElementById("ctrlActeurs");
+  if(!ctrl){ctrl=document.createElement("div");ctrl.id="ctrlActeurs";document.getElementById("carte").appendChild(ctrl);}
+  ctrl.innerHTML=`<label><input type="checkbox" id="cbInd" ${etat.indirects?"checked":""}> liens indirects : même compartiment (${IND.comp.length})</label>`+
+    `<label><input type="checkbox" id="cbCite" ${etat.cocites?"checked":""}> co-cités dans un brief (${IND.cite.length})</label>`;
+  document.getElementById("cbInd").onchange=e=>{etat.indirects=e.target.checked;dessiner();};
+  document.getElementById("cbCite").onchange=e=>{etat.cocites=e.target.checked;dessiner();};
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
     .on("click",(e,n)=>{e.stopPropagation();if(n.genre==="population"){basculer(n.id);return;}etat.choisi=n.id;marquer(n.id);detailNomme(n);})
     .call(d3.drag().on("start",(e,n)=>{if(!e.active)sim.alphaTarget(.2).restart();n.fx=n.x;n.fy=n.y;})
@@ -446,6 +497,7 @@ function dessinerActeurs(){
     noeud.classed("vif",n=>n.id===id).classed("n1",n=>nv.get(n.id)===1).classed("n2",n=>nv.get(n.id)===2).classed("n3",n=>nv.get(n.id)===3)
       .classed("pale",n=>n.id!==id&&!nv.has(n.id)&&!pop.has(n.id));
     lien.classed("pale",l=>!((l.de===id||nv.has(l.de))&&(l.vers===id||nv.has(l.vers)||pop.has(l.vers))));
+    lienInd.classed("pale",l=>l.de!==id&&l.vers!==id);
   }
   svg.on("click",e=>{if(e.target===svg.node()){etat.choisi=null;marquer(null);legendeNommes();}});
   sim=d3.forceSimulation(noeuds)
@@ -454,6 +506,8 @@ function dessinerActeurs(){
     .force("x",d3.forceX(largeur/2).strength(.04)).force("y",d3.forceY(hauteur/2).strength(.06))
     .force("collision",d3.forceCollide().radius(28))
     .on("tick",()=>{lien.attr("x1",a=>a.source.x).attr("y1",a=>a.source.y).attr("x2",a=>a.target.x).attr("y2",a=>a.target.y);
+      const pos=new Map(noeuds.map(n=>[n.id,n]));
+      lienInd.attr("x1",a=>pos.get(a.de).x).attr("y1",a=>pos.get(a.de).y).attr("x2",a=>pos.get(a.vers).x).attr("y2",a=>pos.get(a.vers).y);
       noeud.attr("transform",n=>`translate(${n.x},${n.y})`);});
   if(etat.choisi&&par.has(etat.choisi)){marquer(etat.choisi);detailNomme(par.get(etat.choisi));} else legendeNommes();
 }
@@ -463,7 +517,10 @@ function legendeNommes(){
   `<div class="legende"><span><i style="border-color:var(--texte)"></i>hiérarchie (nomme, commande)</span><span><i style="border-color:var(--plus)"></i>accord (allié, négocie, associé, proche)</span>`+
   `<span><i style="border-color:var(--surbrillance)"></i>argent (finance, fournit)</span><span><i style="border-color:var(--moins)"></i>conflit (rival, désaccord public)</span>`+
   `<span><i style="border-color:var(--aval);border-top-style:dashed"></i>vers la population (gouverne, élu par, informe)</span>`+
-  `<span>cercle rouge brique : dirigeant · vert : patron · violet : personnalité religieuse · carré : compartiment (population, institution)</span><span>trait plein : structurel · tirets : conjoncturel</span></div>`;
+  `<span>cercle rouge brique : dirigeant · vert : patron · violet : personnalité religieuse · carré : compartiment (population, institution)</span><span>trait plein : structurel · tirets : conjoncturel</span>`+
+  `<span><i style="border-color:var(--doux);border-top-style:dotted"></i>lien indirect : même compartiment de la carte, sans lien direct sourcé (case à cocher)</span>`+
+  `<span><i style="border-color:var(--acteur);border-top-style:dotted"></i>co-cités dans un brief : une sonde, pas la preuve d'un lien</span>`+
+  `<span>niveaux de lien (au clic) : 1 direct · 2 et 3 indirects par chaîne d'acteurs, chemin indiqué</span></div>`;
 }
 function detailNomme(a){
   const par=new Map(D.nommes.acteurs.map(x=>[x.id,x]));const nv=niveauxNommes(a.id);
@@ -471,13 +528,21 @@ function detailNomme(a){
   const srcs=ss=>ss.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.titre||s.url)}</a>${s.lecture==="titre"?' <span class="etiq">titre seulement, à recouper</span>':""}`).join("<br>");
   let h=`<h3>${esc(a.nom)}</h3><div class="sous">${esc(a.sorte)} · ${esc(a.role)}</div><table><tr><td>depuis</td><td>${esc(a.depuis)}</td></tr><tr><td>cycle</td><td>${esc(a.cycle)}</td></tr></table>`;
   h+=`<h2>Rattaché à</h2><ul>${a.compartiments.map(c=>{const m=D.parId.get(c);return `<li><a href="#" onclick="basculer('${esc(c)}');return false;">↗ ${esc(m?m.fiche_nom+" : "+m.nom:c)}</a></li>`;}).join("")}</ul>`;
-  const directs=D.nommes.liens.filter(l=>l.de===a.id||l.vers===a.id);
+  const directs=D.nommes.liens.filter(l=>l.de===a.id||l.vers===a.id);const chemin=cheminsNommes(a.id);
   for(const k of [1,2,3]){const xs=[...nv.entries()].filter(([,v])=>v===k).map(([x])=>x);if(!xs.length) continue;
     h+=`<h2>Niveau ${k} — ${NIV_NOM[k]} (${xs.length})</h2><ul>`+xs.map(x=>{
       const l=k===1?directs.find(l=>l.de===x||l.vers===x):null;
-      return `<li>${lienA(x)}${l?` <span class="etiq">${esc(l.de===a.id?REL_NOMME[l.relation][0]:"← "+REL_NOMME[l.relation][0])} · ${esc(l.domaine)}</span><br><span style="color:var(--doux)">${esc(l.texte)}</span>`:""}</li>`;}).join("")+`</ul>`;}
+      const via=k>1?chemin(x):[];
+      return `<li>${lienA(x)}${via.length?` <span style="color:var(--doux);font-size:12px">par ${via.map(v=>esc((par.get(v)||{}).nom||v)).join(" → ")}</span>`:""}${l?` <span class="etiq">${esc(l.de===a.id?REL_NOMME[l.relation][0]:"← "+REL_NOMME[l.relation][0])} · ${esc(l.domaine)}</span><br><span style="color:var(--doux)">${esc(l.texte)}</span>`:""}</li>`;}).join("")+`</ul>`;}
   const pop=directs.filter(l=>l.de===a.id&&REL_NOMME[l.relation][1]==="population");
   if(pop.length) h+=`<h2>Vers la population</h2><ul>${pop.map(l=>{const m=D.parId.get(l.vers);return `<li>${esc(REL_NOMME[l.relation][0])}${l.via?" (par "+esc(l.via)+")":""} → <a href="#" onclick="basculer('${esc(l.vers)}');return false;">${esc(m?m.nom:l.vers)}</a><br><span style="color:var(--doux)">${esc(l.texte)}</span></li>`;}).join("")}</ul>`;
+  const IND=liensIndirects();
+  const mc=IND.comp.filter(l=>l.de===a.id||l.vers===a.id);
+  if(mc.length) h+=`<h2>Liens indirects : même compartiment (${mc.length})</h2><ul>${mc.slice(0,15).map(l=>{const o=l.de===a.id?l.vers:l.de;
+    return `<li>${lienA(o)} <span style="color:var(--doux);font-size:12px">${l.comps.map(c=>esc((D.parId.get(c)||{}).nom||c)).join(", ")}</span></li>`;}).join("")}</ul>`;
+  const cc=IND.cite.filter(l=>l.de===a.id||l.vers===a.id);
+  if(cc.length) h+=`<h2>Co-cités dans les briefs (${cc.length})</h2><ul>${cc.map(l=>{const o=l.de===a.id?l.vers:l.de;
+    return `<li>${lienA(o)} <span style="color:var(--doux);font-size:12px">${l.briefs.slice(0,2).map(b=>`<a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.titre)}</a>`).join(" · ")}</span></li>`;}).join("")}</ul><p style="font-size:11.5px;color:var(--doux)">Être cités ensemble n'est pas un lien : c'est une piste à vérifier.</p>`;
   h+=`<h2>Sources</h2><p style="font-size:12px">${srcs(a.sources)}</p>`;
   const ls=directs.flatMap(l=>l.sources);if(ls.length) h+=`<h2>Sources des liens</h2><p style="font-size:12px">${srcs(ls)}</p>`;
   document.getElementById("detail").innerHTML=h;
@@ -548,6 +613,7 @@ function dessiner(){
   const sits=situationsFiltrees();
   if(!etat.fiche) return dessinerEnsemble(sits);
   if(etat.fiche==="__acteurs__") return dessinerActeurs();
+  {const c=document.getElementById("ctrlActeurs");if(c)c.remove();}
   const activite=new Map();for(const s of sits) for(const c of s.compartiments) activite.set(c,(activite.get(c)||0)+1);
   const noeuds=D.noeuds.filter(garde).map(n=>Object.assign({},n));
   const ids=new Set(noeuds.map(n=>n.id));
@@ -778,7 +844,7 @@ function bulle(e,n,activite){
 // 2026-11-25 (décision de l'auteur, 13 h 01) : les briefs servent de sondes ; ceux qui touchent un compartiment s'affichent
 // dans son détail (docs/briefs.json, 90 jours ; archives sur la page des briefs)
 let BRIEFS=[];
-fetch("briefs.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{BRIEFS=d.briefs||[];}).catch(()=>{});
+fetch("briefs.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{BRIEFS=d.briefs||[];if(D&&etat.fiche==="__acteurs__")dessiner();}).catch(()=>{});
 function briefsCompartiment(id){
   const L=BRIEFS.filter(b=>(b.compartiments||[]).includes(id)).slice(0,5);
   if(!L.length) return "";
