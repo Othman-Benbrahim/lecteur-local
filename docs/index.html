@@ -515,7 +515,7 @@ function dessinerEntites(){
 function legendeEntites(P,ici){
   const n=k=>ici.filter(e=>e.sorte===k).length;
   document.getElementById("detail").innerHTML=`<h3>${esc(P==="__sans"?"Entités sans pays":(E.pays[P]||{}).nom||P)}</h3><div class="sous">${ici.length} entités · ${n("dirigeant public")} membres du gouvernement · ${n("entreprise")} dirigeants d'entreprise · ${n("banque centrale")} banque centrale</div>`+
-  ((E.briefs_pays||{})[P]||[]).length?`<h2>Briefs sur ce pays (${E.briefs_pays[P].length})</h2><ul>${E.briefs_pays[P].map(b=>`<li>${esc(b.jour)} · <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.titre)}</a></li>`).join("")}</ul><p style="font-size:11.5px;color:var(--doux)">Pays reconnu par son nom ou par une de ses villes (GeoNames).</p>`:"")+
+  (((E.briefs_pays||{})[P]||[]).length?`<h2>Briefs sur ce pays (${E.briefs_pays[P].length})</h2><ul>${E.briefs_pays[P].map(b=>`<li>${esc(b.jour)} · <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.titre)}</a></li>`).join("")}</ul><p style="font-size:11.5px;color:var(--doux)">Pays reconnu par son nom ou par une de ses villes (GeoNames).</p>`:"")+
   `<p style="font-size:13px">Les entités que les briefs surveillent : elles ne comptent que si un mot déclencheur les accompagne. Liste mise à jour chaque semaine (Wikidata) et chaque mois (CIA World Leaders, via OpenSanctions).</p>`+
   `<div class="legende"><span><i style="border-color:var(--texte)"></i>direct : le pays → son chef d'État ou de gouvernement ; un dirigeant → son organisation</span>`+
   `<span><i style="border-color:var(--doux)"></i>direct : chef → membres du gouvernement</span><span><i style="border-color:var(--trait);border-top-style:dashed"></i>organisation → pays du siège</span>`+
