@@ -1,0 +1,73 @@
+# Fondement des relations de la carte (2026-11-25, décision de l'auteur à 19 h 00 ; Guizzardi et Guarino 2024).
+# Échantillon de 60 relations tirées au hasard, classées par Claude. Le fondement dit ce qui rend la relation vraie,
+# donc ce qu'il faut vérifier :
+#   lien             une chose concrète relie les deux et se constate (règle, traité, institution, contrat, réseau, sous-produit)
+#   mecanisme        loi physique, biologique ou technique
+#   causalite        comportement d'acteurs ou de marchés, mécanisme supposé, qui ne s'établit que par les séries
+#   evenement        un événement daté relie les deux (incident, frappe, trêve)
+#   comparaison      tient aux grandeurs des deux côtés (prix relatifs, écarts)
+#   definition       vrai par construction (un indicateur défini comme un rapport)
+# Pour valider : laisser « ? » devient « + » (d'accord) ; pour corriger : remplacer le mot de la 2e colonne et mettre « + ».
+# « - » : la relation elle-même est douteuse (à revoir). Seules les lignes « + » seront reportées dans les fiches.
+# Format : statut | fondement | fiche : de → vers (effet) | texte de la relation
+#
+? | causalite | afrique-subsaharienne : integration_commerciale → croissance (+) | le commerce entre pays africains, encore faible, peut entraîner l'industrie
+? | mecanisme | alimentation-mondiale : eau_agricole → cultures (+) | sous un seuil d'eau, les rendements chutent d'un coup
+? | causalite | alimentation-mondiale : engrais → cultures (+) | des engrais trop chers font moins épandre, et la récolte suivante baisse
+? | mecanisme | alimentation-mondiale : pathogenes → cultures (-) | une nouvelle souche de rouille ou de mildiou peut contourner les résistances d'une région entière
+? | mecanisme | antarctique : glace_mer → krill_peche (-) | moins de glace de mer, moins d'habitat pour le krill
+? | causalite | asie-du-nord-est : chine_japon → japon (+) | les tensions avec la Chine accélèrent le réarmement japonais (le compartiment cible lit ici l'effort de défense)
+? | mecanisme | biodiversite-sols : aires_protegees → habitats (+) | les aires protégées freinent la perte d'habitats, à condition d'être bien gérées et reliées (effet conditionnel ; moins de 5 % des terres couvertes par des aires dont la gestion a 
+? | mecanisme | climat-extremes : rayonnement → rayonnement (+) | au sein du niveau physique : moins de glace, moins de lumière renvoyée, plus de chaleur, encore moins de glace (rétroaction d'albédo)
+? | causalite | crises-bancaires : depots → marches (-) | contagion : quand plusieurs banques vacillent, la crise passe au système
+? | causalite | croyances-religions : religion_politique → extremes_hindouisme (+) | un pouvoir qui s'appuie sur l'identité religieuse peut couvrir ses franges violentes
+? | mecanisme | eau-douce-potable : assainissement → maladies (-) | un meilleur assainissement fait reculer les maladies hydriques
+? | causalite | eau-douce-potable : stress → tensions (+) | le manque d'eau peut être source de tensions, et l'eau sert de déclencheur de violence (catégorie « déclencheur » du Pacific Institute) ; remarque de l'auteur du 2026-11-22
+? | mecanisme | eau-moyen-orient : maladies_hydriques → villes (-) | une épidémie d'eau passe du niveau microbien au niveau social quand elle devient assez forte
+? | causalite | economie-chinoise : activite → emploi (+) | le chômage des jeunes monte chaque été et quand l'activité ralentit
+? | causalite | economie-chinoise : sols_chimie → pouvoir (±) | la qualité des sols ne remonte au niveau du pouvoir qu'à travers une alerte sur la sécurité alimentaire
+? | causalite | economie-entreprises : conjoncture → defaillances (-) | une croissance faible fait monter les défaillances
+? | causalite | elections-amerique-latine : executif → economie (±) | les choix de l'exécutif sur la monnaie et le budget
+? | causalite | energie-mondiale : transport → prix (±) | un goulet fermé ou menacé fait monter les prix
+? | mecanisme | energie-mondiale : climat_regime → climat (+) | le régime climatique rend plus fréquents les hivers anormaux, les vagues de chaleur et les ouragans de la saison
+? | mecanisme | energie-mondiale : nucleaire_civil → demande (-) | des réacteurs disponibles réduisent le besoin de gaz pour l'électricité ; des arrêts imprévus le font bondir
+? | mecanisme | foret-et-sols-vivants : pins → succession (-) | compétition au sein du végétal : quand les pins meurent, les bambous et les jeunes pousses prennent la lumière
+? | mecanisme | foret-et-sols-vivants : succession → rongeurs (+) | les baies des jeunes bambous font pulluler les souris
+? | causalite | guerre-levant : recits → puissances (±) | l'opinion pèse sur les gouvernements occidentaux et régionaux
+? | mecanisme | humain : hierarchie → hormones (±) | une hiérarchie qui vacille stresse ceux d'en haut ; stable, elle stresse ceux d'en bas
+? | causalite | humain : opinion_privee → opinion_publique (+) | la dissidence privée ne s'exprime qu'au-delà du seuil politique de chacun ; seuils distribués et cachés : cascade possible à tout moment
+? | causalite | humain : controle_percu → intention (0) | le contrôle perçu abaisse le seuil du passage de l'intention à l'acte (il le modère, en plus de nourrir l'intention)
+? | mecanisme | inde : chaleur → agriculture (-) | une vague de chaleur au mauvais moment abîme les récoltes (blé en mars-avril)
+? | causalite | information-cyber : langage_performatif → recits (+) | un énoncé d'autorité répété devient le récit officiel
+? | causalite | information-cyber : resilience_informationnelle → attention (-) | choisir de ne pas relayer une manipulation et d'expliquer son mécanisme lui retire l'écho que cherchent ses auteurs ; la vérification réduit d'environ 8 % la circulation des fausse
+? | causalite | iran-nucleaire : etats_unis → negociations (±) | la ligne de l'exécutif américain ouvre ou ferme la voie d'un accord
+? | causalite | liban-institutions : opinion_colere → gouvernement (+) | passage du psychologique au statut : seule une mobilisation forte pousse le gouvernement à renvoyer une affaire
+? | causalite | liban-institutions : internet_information → opinion_colere (+) | les réseaux amplifient la colère autour d'une affaire
+? | lien | medias-diffusion : plateformes_sociales → createurs (+) | les plateformes donnent leur audience aux créateurs
+? | lien | medias-diffusion : proprietaires → edition (+) | rachats de maisons d'édition par les mêmes industriels
+? | causalite | migrations-demographie : psychologie → politiques_migratoires (-) | la peur collective ferme les frontières au-delà d'un seuil d'opinion (passage du psychologique au statut)
+? | causalite | migrations-demographie : urbanisation → natalite_vieillissement (-) | la ville fait baisser la fécondité
+? | lien | minerais-critiques : zinc_plomb → metaux_compagnons (+) | sous-produit : la production de zinc et de plomb fixe l'offre d'indium, de germanium, de cadmium, d'antimoine, de bismuth et d'une grande part de l'argent (Nassar et al., 2015 ; US
+? | mecanisme | niveaux-de-base : bilan_energie → biomasse (-) | l'énergie accumulée réchauffe et modifie les milieux, ce qui pèse sur une partie du vivant
+? | lien | non-proliferation : aiea → regime (+) | des inspections crédibles entretiennent la confiance dans le régime
+? | lien | observateur-mesure : lecteurs_ia → controles (-) | propre au niveau technique : les lecteurs instables obligent à multiplier les contrôles, qui révèlent leur instabilité
+? | lien | organisations-internationales : onu → humanitaire (+) | la légitimité humanitaire est adossée aux institutions multilatérales ; quand elles sont contournées ou vidées, les normes perdent leur échafaudage (Russo et al. 2026)
+? | causalite | ormuz : force → recits (+) | démonstrations de force et récits se nourrissent (signalisation)
+? | causalite | partis-politiques : droite_radicale_populiste → conservateurs (-) | la droite radicale prend des électeurs à la droite de gouvernement, qui s'allie à elle ou reprend ses thèmes
+? | causalite | partis-politiques : adhesion_militantisme → partis_personnels (-) | moins de militants, plus de partis bâtis autour d'un chef (le compartiment source lit ici le militantisme)
+? | lien | plancher-social : protection_sociale → pauvrete (-) | les prestations sociales font baisser la pauvreté
+? | lien | politique-americaine : executif → congres (±) | quand les majorités divergent, chacun bloque l'autre ; alignées, elles s'appuient
+? | lien | politique-americaine : regles_electorales → elections (±) | règles et découpages bornent ce qu'un même vote produit en sièges
+? | lien | politique-interieure : elections → gouvernement (+) | une élection désigne ou renouvelle le gouvernement, avec le délai des coalitions
+? | causalite | rivalite-sino-americaine : technologie → economie_chine (-) | les contrôles freinent les filières de pointe, puis poussent à l'autonomie
+? | evenement | rivalite-sino-americaine : taiwan → diplomatie (-) | un incident grave gèle la diplomatie
+? | causalite | rivalite-sino-americaine : recits → diplomatie (±) | les nationalismes réduisent la marge de compromis
+? | lien | rivalite-sino-americaine : diplomatie → terres_rares (±) | les licences d'exportation suivent l'état des négociations
+? | evenement | russie-ukraine : front → economie_ukraine (-) | les frappes sur l'énergie pèsent surtout en hiver
+? | causalite | russie-ukraine : soutiens → negociations (±) | les soutiens pèsent sur les conditions et le calendrier des négociations
+? | causalite | securite-europeenne : peur_confiance → opinions (+) | la peur rallie l'opinion aux dépenses de défense
+? | causalite | securite-publique : alertes → peur (+) | une alerte mal expliquée fait passer l'inquiétude au niveau psychologique
+? | causalite | securite-publique : corruption → polices (-) | au niveau de l'entourage, la complicité neutralise l'institution au-delà d'un seuil
+? | evenement | soudan : fsr → mediation (-) | les FSR acceptent des trêves sur le papier (novembre 2025) sans qu'elles tiennent sur le terrain
+? | lien | transport-maritime : detroit_bosphore → detroits (+) | la capacité de ce passage fait partie de celle du système ; sa fermeture se reporte sur les autres goulets et sur le contournement
+? | causalite | transports-villes : gouvernance_urbaine → forme_urbaine (-) | les règles d'urbanisme peuvent freiner l'étalement
