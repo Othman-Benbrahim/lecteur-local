@@ -410,6 +410,15 @@ const REL_NOMME={nomme:["nomme","hierarchie"],commande:["commande","hierarchie"]
   negocie_avec:["négocie avec","accord"],associe:["associé à","accord"],finance:["finance","argent"],fournit:["fournit","argent"],
   rival:["rival de","conflit"],proche:["proche de","accord"],desaccord_public:["désaccord public avec","conflit"],gouverne:["gouverne","population"],
   elu_par:["élu ou jugé par","population"],informe:["informe par ses médias","population"],influence_documentee:["influence documentée","population"],membre_de:["membre de","population"]};
+// 2026-11-25 (décision de l'auteur, 19 h 00 ; Guizzardi et Guarino 2024) : ce qui rend un lien vrai, donc ce qu'il faut vérifier.
+const FONDEMENT={lien:"lien concret (règle, traité, contrat, réseau)",mecanisme_physique:"mécanisme physique ou biologique",
+  causalite_sociale:"causalité sociale supposée",evenement:"événement daté",comparaison:"comparaison de grandeurs",definition:"vrai par définition",
+  presse:"fait de presse (pas une relation dans le monde)"};
+// liens entre acteurs nommés : fondement selon le type de lien (une nomination, une hiérarchie, une adhésion se constatent ;
+// une proximité « rapportée par la presse » non)
+const FOND_NOMME={nomme:"lien",commande:"lien",membre_de:"lien",gouverne:"lien",informe:"lien",associe:"lien",fournit:"lien",
+  finance:"lien",influence_documentee:"lien",elu_par:"evenement",allie:"evenement",negocie_avec:"evenement",desaccord_public:"evenement",
+  rival:"evenement",proche:"presse"};
 const COUL_REL={hierarchie:"var(--texte)",accord:"var(--plus)",argent:"var(--surbrillance)",conflit:"var(--moins)",population:"var(--aval)"};
 const NIV_NOM={1:"proche",2:"voisin",3:"éloigné"};
 function niveauxNommes(id){ // distance dans le graphe des liens entre acteurs (deux sens), jusqu'à 3
@@ -482,7 +491,7 @@ function dessinerEntites(){
     .attr("stroke-width",l=>l.genre==="cite"?1.6:l.genre==="gouvernement"?.8:1.3).attr("stroke-dasharray",l=>l.genre==="cite"?"2 3":l.genre==="siege"?"4 3":l.genre==="role"?"3 2":null)
     .attr("opacity",l=>l.genre==="gouvernement"?.5:l.genre==="role"?.7:.85);
   lien.filter(l=>l.genre==="cite").style("cursor","help").on("mousemove",(ev,l)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
-      b.innerHTML=`co-cités dans ${l.briefs.length} brief(s)<br><span style="color:var(--doux)">${l.briefs.map(x=>esc(x.jour+" · "+x.titre)).join("<br>")}</span><br><span style="color:var(--doux)">sonde, pas preuve d'un lien</span>`;
+      b.innerHTML=`co-cités dans ${l.briefs.length} brief(s)<br><span style="color:var(--doux)">${l.briefs.map(x=>esc(x.jour+" · "+x.titre)).join("<br>")}</span><br><span style="color:var(--doux)">fait de presse : une sonde, pas une relation dans le monde</span>`;
       b.style.display="block";b.style.left=(ev.clientX-z.left+12)+"px";b.style.top=(ev.clientY-z.top+12)+"px";})
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none");
   const noeud=gZoom.append("g").selectAll("g").data(noeuds).join("g").attr("class","noeud")
@@ -536,7 +545,7 @@ function legendeEntites(P,ici){
   `<div class="legende"><span><i style="border-color:var(--texte)"></i>direct : le pays → son chef d'État ou de gouvernement ; un dirigeant → son organisation</span>`+
   `<span><i style="border-color:var(--doux)"></i>direct : chef → membres du gouvernement</span><span><i style="border-color:var(--trait);border-top-style:dashed"></i>organisation → pays du siège</span>`+
   `<span><i style="border-color:var(--aval);border-top-style:dashed"></i>rôle : le poste relie la personne à un compartiment de la carte (carré bleu, cliquable) ; lu dans l'intitulé du poste, règles explicites</span>`+
-  `<span><i style="border-color:var(--acteur);border-top-style:dotted"></i>indirect : co-cités dans un brief (sonde, pas preuve)</span>`+
+  `<span><i style="border-color:var(--acteur);border-top-style:dotted"></i>indirect : co-cités dans un brief (fait de presse, pas une relation dans le monde)</span>`+
   `<span>cercle brique : dirigeant public (gros : chef) · vert : entreprise · jaune : banque centrale · bleu : organisation internationale · contour noir : aussi acteur nommé de la carte · pâle : entité d'un autre pays</span></div>`;
 }
 function detailEntite(e){
@@ -598,7 +607,7 @@ function dessinerActeurs(){
     .attr("marker-end",l=>`url(#fn-${cat(l)})`).style("cursor","help")
     .on("mousemove",(e,l)=>{const b=document.getElementById("infobulle");const z=document.getElementById("carte").getBoundingClientRect();
       const n=x=>(par.get(x)||{}).nom||(D.parId.get(x)||{}).nom||x;
-      b.innerHTML=`<b>${esc(n(l.de))}</b> ${esc(REL_NOMME[l.relation][0])} <b>${esc(n(l.vers))}</b><br>${esc(l.domaine)}${l.via?" · par "+esc(l.via):""}<br><span style="color:var(--doux)">${esc(l.texte)}</span>`;
+      b.innerHTML=`<b>${esc(n(l.de))}</b> ${esc(REL_NOMME[l.relation][0])} <b>${esc(n(l.vers))}</b><br>${esc(l.domaine)}${l.via?" · par "+esc(l.via):""}<br><span style="font-size:11.5px">fondement : ${esc(FONDEMENT[FOND_NOMME[l.relation]]||"?")}</span><br><span style="color:var(--doux)">${esc(l.texte)}</span>`;
       b.style.display="block";b.style.left=(e.clientX-z.left+12)+"px";b.style.top=(e.clientY-z.top+12)+"px";})
     .on("mouseleave",()=>document.getElementById("infobulle").style.display="none");
   // liens indirects (hors de la simulation : ils ne déforment pas le dessin) ; dessinés sous les liens directs
@@ -655,7 +664,8 @@ function legendeNommes(){
   `<span><i style="border-color:var(--aval);border-top-style:dashed"></i>vers la population (gouverne, élu par, informe)</span>`+
   `<span>cercle rouge brique : dirigeant · vert : patron · violet : personnalité religieuse · carré : compartiment (population, institution)</span><span>trait plein : structurel · tirets : conjoncturel</span>`+
   `<span><i style="border-color:var(--doux);border-top-style:dotted"></i>lien indirect : même compartiment de la carte, sans lien direct sourcé (case à cocher)</span>`+
-  `<span><i style="border-color:var(--acteur);border-top-style:dotted"></i>co-cités dans un brief : une sonde, pas la preuve d'un lien</span>`+
+  `<span><i style="border-color:var(--acteur);border-top-style:dotted"></i>co-cités dans un brief : fait de presse, pas une relation dans le monde</span>`+
+  `<span><b>Fondement</b> (ce qui rend le lien vrai, à vérifier) : <b>lien concret</b> pour nomme, commande, membre de, gouverne, informe, associé, fournit, finance, influence documentée (un acte, un contrat, une adhésion se constatent) ; <b>événement</b> pour allié, négocie, désaccord public, rival, élu par (déclarations, rencontres, scrutins datés) ; <b>fait de presse</b> pour « proche » (proximité rapportée, sans acte). Guizzardi et Guarino, 2024.</span>`+
   `<span>niveaux de lien (au clic) : 1 direct · 2 et 3 indirects par chaîne d'acteurs, chemin indiqué</span></div>`;
 }
 function detailNomme(a){
@@ -669,7 +679,7 @@ function detailNomme(a){
     h+=`<h2>Niveau ${k} — ${NIV_NOM[k]} (${xs.length})</h2><ul>`+xs.map(x=>{
       const l=k===1?directs.find(l=>l.de===x||l.vers===x):null;
       const via=k>1?chemin(x):[];
-      return `<li>${lienA(x)}${via.length?` <span style="color:var(--doux);font-size:12px">par ${via.map(v=>esc((par.get(v)||{}).nom||v)).join(" → ")}</span>`:""}${l?` <span class="etiq">${esc(l.de===a.id?REL_NOMME[l.relation][0]:"← "+REL_NOMME[l.relation][0])} · ${esc(l.domaine)}</span><br><span style="color:var(--doux)">${esc(l.texte)}</span>`:""}</li>`;}).join("")+`</ul>`;}
+      return `<li>${lienA(x)}${via.length?` <span style="color:var(--doux);font-size:12px">par ${via.map(v=>esc((par.get(v)||{}).nom||v)).join(" → ")}</span>`:""}${l?` <span class="etiq">${esc(l.de===a.id?REL_NOMME[l.relation][0]:"← "+REL_NOMME[l.relation][0])} · ${esc(l.domaine)} · ${esc(FOND_NOMME[l.relation]==="lien"?"lien concret":FOND_NOMME[l.relation]==="presse"?"fait de presse":"événement")}</span><br><span style="color:var(--doux)">${esc(l.texte)}</span>`:""}</li>`;}).join("")+`</ul>`;}
   const pop=directs.filter(l=>l.de===a.id&&REL_NOMME[l.relation][1]==="population");
   if(pop.length) h+=`<h2>Vers la population</h2><ul>${pop.map(l=>{const m=D.parId.get(l.vers);return `<li>${esc(REL_NOMME[l.relation][0])}${l.via?" (par "+esc(l.via)+")":""} → <a href="#" onclick="basculer('${esc(l.vers)}');return false;">${esc(m?m.nom:l.vers)}</a><br><span style="color:var(--doux)">${esc(l.texte)}</span></li>`;}).join("")}</ul>`;
   const IND=liensIndirects();
@@ -1011,7 +1021,7 @@ function detail(n,sits){
     if(etat.sorte==="causes") h+=blocCauses(n);
     const rel=D.aretes.filter(a=>(a.de===n.id||a.vers===n.id)&&a.sorte!=="appartient");
     if(rel.length) h+=`<h2>Relations et ponts</h2><ul>${rel.map(a=>{const autre=D.parId.get(a.de===n.id?a.vers:a.de);
-      const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}</span>`:`<span class="etiq">${a.sorte==="pont"?(esc(NOM_TYPE[a.type]||"pont")+(a.canal?" · "+esc(a.canal):"")):"lien"}</span>`;
+      const sens=a.de===n.id?"→":"←";const eff=a.sorte==="relation"?`<span class="etiq">${a.effet||"?"} ${esc(a.force)}${a.delai?" · "+esc(a.delai):""}${a.fondement?" · "+esc(FONDEMENT[a.fondement]||a.fondement):""}</span>`:`<span class="etiq">${a.sorte==="pont"?(esc(NOM_TYPE[a.type]||"pont")+(a.canal?" · "+esc(a.canal):"")):"lien"}</span>`;
       const nom=esc(autre?autre.nom:"?");
       const cible=autre&&autre.fiche!==n.fiche?`<a href="#" onclick="basculer('${esc(autre.id).replace(/'/g,"\\'")}');return false;">↗ ${esc(autre.fiche_nom)} : ${nom}</a>`:nom;
       return `<li>${sens} ${cible} ${eff}<br><span style="color:var(--doux)">${esc(a.texte||"")}</span></li>`;}).join("")}</ul>`;
@@ -1146,7 +1156,7 @@ function blocCauses(n){
   const nom=id=>{const m=D.parId.get(id);if(!m) return esc(id);
     const t=m.fiche!==n.fiche?"↗ "+esc(m.fiche_nom)+" : "+esc(m.nom):esc(m.nom);
     return `<a href="#" onclick="basculer('${esc(id).replace(/'/g,"\\'")}');return false;">${t}</a>`;};
-  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.statut==="a_verifier"?(a.verification?" · série à revoir":" · non encore mesuré"):a.statut==="verifie"?" · concordante avec les séries":""}</span>${a.verification?`<span title="${esc(a.verification)}" style="cursor:help;color:var(--doux)"> ⓘ</span>`:""}`:
+  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.fondement?" · fondement : "+esc(FONDEMENT[a.fondement]||a.fondement):""}${a.statut==="a_verifier"?(a.verification?" · série à revoir":" · non encore mesuré"):a.statut==="verifie"?" · concordante avec les séries":""}</span>${a.verification?`<span title="${esc(a.verification)}" style="cursor:help;color:var(--doux)"> ⓘ</span>`:""}`:
     `<span class="etiq">pont${a.canal?" · "+esc(a.canal):""}</span>`;
   const liste=(m,titre,vide)=>{let h=`<h2>${titre} (${m.size})</h2>`;if(!m.size) return h+`<p class="vide">${vide}</p>`;
     for(const k of [1,2,3]){const xs=[...m.entries()].filter(([,v])=>v.k===k);if(!xs.length) continue;

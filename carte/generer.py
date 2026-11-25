@@ -110,7 +110,7 @@ def principal() -> int:
             aretes.append({"de": f"{theme}:{r['de']}", "vers": f"{theme}:{r['vers']}", "sorte": "relation",
                            "effet": r.get("effet"), "retour": r.get("retour"), "force": r.get("force", "inconnue"),
                            "delai": r.get("delai", ""), "statut": r.get("statut", ""), "texte": r.get("texte", ""),
-                           "verification": r.get("verification", ""),
+                           "verification": r.get("verification", ""), "fondement": r.get("fondement", ""),
                            "testable": (_couv_rel.get((f"{theme}:{r['de']}", f"{theme}:{r['vers']}")) or {}).get("testable"),
                            "forme": eco.forme_deduite(r.get("effet"), r.get("retour"))})
         for p in f.get("ponts") or []:
