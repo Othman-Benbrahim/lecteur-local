@@ -86,6 +86,7 @@ td a:hover{color:var(--accent);text-decoration:underline}
 
   <h2>Briefs</h2>
   <div class="filtres">
+    <select id="periode"><option value="">90 derniers jours</option></select>
     <input type="search" id="cherche" placeholder="chercher dans les briefs…">
     <select id="fiche"><option value="">toutes les fiches</option></select>
     <select id="jour"><option value="">tous les jours</option></select>
@@ -113,20 +114,31 @@ function dessiner() {
     <div class="src" style="margin:6px 0 0">modèle : ${esc(b.modele)}</div></article>`).join("")
     : `<div class="vide">${D.briefs.length ? "aucun brief pour ces filtres" : "aucun brief publié pour l'instant : le premier passage a lieu chaque nuit"}</div>`;
 }
-fetch("briefs.json", {cache: "no-store"}).then(r => r.json()).then(d => {
+let pret = false;
+function charger(url) {
+fetch(url, {cache: "no-store"}).then(r => r.json()).then(d => {
   D = d;
+  document.getElementById("fiche").innerHTML = '<option value="">toutes les fiches</option>';
+  document.getElementById("jour").innerHTML = '<option value="">tous les jours</option>';
   const r = d.resume, f = r.faits || {};
   document.getElementById("meta").textContent = "mis à jour le " + d.genere_le.replace("T", " à ").replace("+00:00", " UTC");
-  const t = [[r.briefs, "briefs (90 jours)"], [r.jours, "jours couverts"], [r.dernier || "—", "dernier brief"],
+  const t = [[r.briefs, d.mois ? "briefs (" + d.mois + ")" : "briefs (90 jours)"], [r.jours, "jours couverts"], [r.dernier || "—", "dernier brief"],
              [f["vérifié dans la source"] || 0, "chiffres vérifiés"], [f["relayé"] || 0, "faits relayés"], [f["chiffre non retrouvé dans la source"] || 0, "chiffres non retrouvés"]];
   document.getElementById("tuiles").innerHTML = t.map(([v, l]) => `<div class="tuile"><div class="v${String(v).includes("-") ? " date" : ""}">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join("");
   const fiches = [...new Set(d.briefs.flatMap(b => (b.compartiments || []).map(c => c.split(":")[0])))].sort();
   document.getElementById("fiche").innerHTML += fiches.map(x => `<option>${esc(x)}</option>`).join("");
   const jours = [...new Set(d.briefs.map(b => b.jour))];
   document.getElementById("jour").innerHTML += jours.map(x => `<option>${esc(x)}</option>`).join("");
-  ["cherche", "fiche", "jour", "statut"].forEach(id => document.getElementById(id).addEventListener("input", dessiner));
+  if (!pret) { ["cherche", "fiche", "jour", "statut"].forEach(id => document.getElementById(id).addEventListener("input", dessiner)); pret = true; }
   dessiner();
-}).catch(() => { document.getElementById("meta").textContent = "briefs.json introuvable"; });
+}).catch(() => { document.getElementById("meta").textContent = url + " introuvable"; });
+}
+charger("briefs.json");
+fetch("briefs-archives/index.json", {cache: "no-store"}).then(r => r.json()).then(ix => {
+  const p = document.getElementById("periode");
+  p.innerHTML += ix.mois.map(m => `<option value="${esc(m.mois)}">archive ${esc(m.mois)} (${m.briefs})</option>`).join("");
+}).catch(() => {});
+document.getElementById("periode").addEventListener("input", e => charger(e.target.value ? `briefs-archives/${e.target.value}.json` : "briefs.json"));
 </script>
 </body>
 </html>
