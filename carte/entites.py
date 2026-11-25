@@ -169,10 +169,26 @@ def construire(bot: Path) -> dict:
         for i in ici:
             ent[i].setdefault("briefs", []).append({"jour": x.get("jour"), "titre": b.get("titre"), "url": x.get("url")})
     par_pays = Counter(p for e in ent for p in e["pays"])
+    terrain = terrain_pays(bot)
     return {"genere_le": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
             "pays": {k: {"nom": pays.get(k, k), "n": n} for k, n in par_pays.most_common()},
             "briefs_pays": {k: sorted(v, key=lambda b: b["jour"] or "", reverse=True)[:20] for k, v in par_pays_b.items()},
-            "entites": ent, "cocites": [{"a": a, "b": b, "briefs": v[:5]} for (a, b), v in paires.items()]}
+            "terrain": terrain, "entites": ent, "cocites": [{"a": a, "b": b, "briefs": v[:5]} for (a, b), v in paires.items()]}
+
+
+def terrain_pays(bot: Path) -> dict:
+    """2026-11-25 : données de terrain par pays (ISO2), affichées dans le panneau pays. Aridité : Global Aridity Index v3.1
+    (registre/aridite/aridite-pays.csv, collecte_aridite.py). L'Antarctique est écarté (indice nul : pas de donnée)."""
+    out: dict = defaultdict(dict)
+    f = bot / "registre" / "aridite" / "aridite-pays.csv"
+    if f.exists():
+        with f.open(encoding="utf-8") as h:
+            for x in csv.DictReader(l for l in h if not l.startswith("#")):
+                if x["iso2"] == "AQ" or float(x["indice_moyen"]) <= 0:
+                    continue
+                out[x["iso2"]]["aridite"] = {"indice": float(x["indice_moyen"]), "aride": float(x["part_aride_pct"]),
+                                             "seche": float(x["part_seche_pct"])}
+    return dict(out)
 
 
 def index_roles(d: dict) -> dict:
