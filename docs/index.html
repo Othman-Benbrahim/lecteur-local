@@ -922,7 +922,7 @@ function blocCauses(n){
   const nom=id=>{const m=D.parId.get(id);if(!m) return esc(id);
     const t=m.fiche!==n.fiche?"↗ "+esc(m.fiche_nom)+" : "+esc(m.nom):esc(m.nom);
     return `<a href="#" onclick="basculer('${esc(id).replace(/'/g,"\\'")}');return false;">${t}</a>`;};
-  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.statut==="a_verifier"?(a.verification?" · série à revoir":" · non encore mesuré"):a.statut==="verifie"?" · vérifiée par les séries":""}</span>${a.verification?`<span title="${esc(a.verification)}" style="cursor:help;color:var(--doux)"> ⓘ</span>`:""}`:
+  const sig=a=>a.sorte==="relation"?`<span class="etiq">${esc(a.effet||"?")} ${esc(a.force||"")}${a.delai?" · "+esc(a.delai):""}${a.statut==="a_verifier"?(a.verification?" · série à revoir":" · non encore mesuré"):a.statut==="verifie"?" · concordante avec les séries":""}</span>${a.verification?`<span title="${esc(a.verification)}" style="cursor:help;color:var(--doux)"> ⓘ</span>`:""}`:
     `<span class="etiq">pont${a.canal?" · "+esc(a.canal):""}</span>`;
   const liste=(m,titre,vide)=>{let h=`<h2>${titre} (${m.size})</h2>`;if(!m.size) return h+`<p class="vide">${vide}</p>`;
     for(const k of [1,2,3]){const xs=[...m.entries()].filter(([,v])=>v.k===k);if(!xs.length) continue;
@@ -1112,7 +1112,7 @@ addEventListener("resize",()=>{if(D) dessiner();});
       `<div class="grille"><div><b>${pc((st.fraiche||0)+(st.ancienne||0))}</b><span>compartiments avec une série</span></div>` +
       `<div><b>${a.relations_testables} / ${a.relations}</b><span>relations testables (série aux deux bouts)</span></div></div>` +
       ["fraiche","ancienne","vide","a_trouver","non_mesurable"].map(ligne).join("") +
-      `<div style="font-size:12px;margin-top:6px">Relations contrôlées par les séries : ${(a.relations_par_verdict||{}).verifie||0} vérifiées, ${(a.relations_par_verdict||{}).conteste||0} à revoir, ${(a.relations_par_verdict||{}).non_tranche||0} non tranchées.</div>` +
+      `<div style="font-size:12px;margin-top:6px">Relations contrôlées par les séries : ${(a.relations_par_verdict||{}).verifie||0} concordantes, ${(a.relations_par_verdict||{}).conteste||0} à revoir, ${(a.relations_par_verdict||{}).non_tranche||0} non tranchées.</div>` +
       `<div style="margin-top:8px;font-size:12.5px"><strong>Prochains manques à combler</strong> <span style="color:var(--doux);font-size:11.5px">(lectures manquées sur les questions résolues)</span></div>` +
       `<ol>${(c.priorites||[]).slice(0,12).map(x=>`<li><a href="#" onclick="etat.fiche='${x.compartiment.split(":")[0]}';etat.choisi='${x.compartiment}';document.getElementById('fiche').value=etat.fiche;dessiner();return false;">${esc(x.nom)}</a> <span style="color:var(--doux)">${esc(x.compartiment.split(":")[0])}</span> <span class="etiq">${x.lectures_manquees}</span></li>`).join("")}</ol>` +
       `<div style="font-size:11.5px;color:var(--doux);margin-top:6px">Sur la carte : couleur du compartiment = état de sa série ; relation en pointillés fins = pas testable. Calculé le ${esc(c.genere_le||"")}.</div>`;
