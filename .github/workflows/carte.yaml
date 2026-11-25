@@ -33,11 +33,12 @@ jobs:
       - run: pip install pyyaml httpx==0.28.1
       - run: python carte/generer.py bot
       - run: python carte/metaculus.py bot   # 2026-11-24 : tableau Metaculus
+      - run: python carte/briefs.py bot      # 2026-11-25 : page des briefs
       - name: Enregistrer
         run: |
           git config user.name "lecteur-local"
           git config user.email "lecteur-local@users.noreply.github.com"
-          git add docs/donnees.json docs/metaculus.json
+          git add docs/donnees.json docs/metaculus.json docs/briefs.json
           if ! git diff --cached --quiet; then
             git commit -m "carte du $(date -u +%Y-%m-%dT%H:%MZ)"
             git pull --rebase || true

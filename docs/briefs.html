@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Briefs de la carte</title>
+<style>
+:root{
+  --fond:#f6f5f1;--panneau:#ffffff;--trait:#d9d6cc;--texte:#1d1c19;--doux:#6b675d;--accent:#2f5d8a;
+  --oui:#2e7d4f;--non:#b23a3a;--attente:#b5651d;--barre:#e9e6dd;--ombre:rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;
+  --oui:#5fbf86;--non:#e07070;--attente:#e0a060;--barre:#2c2b27;--ombre:rgba(0,0,0,.3);}}
+:root[data-theme="dark"]{
+  --fond:#151513;--panneau:#1f1f1c;--trait:#3a3934;--texte:#ecebe6;--doux:#a19d92;--accent:#7fb0de;
+  --oui:#5fbf86;--non:#e07070;--attente:#e0a060;--barre:#2c2b27;--ombre:rgba(0,0,0,.3);}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fond);color:var(--texte);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{display:flex;align-items:baseline;gap:16px;padding:10px 16px;border-bottom:1px solid var(--trait);flex-wrap:wrap;background:var(--panneau)}
+header h1{font-size:17px;margin:0;font-weight:650}
+header .meta{color:var(--doux);font-size:12.5px}
+header a{color:var(--accent);text-decoration:none;font-size:13px;margin-left:auto}
+main{max-width:1200px;margin:0 auto;padding:16px}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--doux);margin:22px 0 8px;font-weight:600}
+.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tuile{background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:10px 12px;box-shadow:0 1px 2px var(--ombre)}
+.tuile .v{font-size:24px;font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tuile .v.date{font-size:18px;padding-top:5px}
+.tuile .l{font-size:12px;color:var(--doux)}
+.note{font-size:12.5px;color:var(--doux);margin:6px 0 0}
+.cartes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.bloc{background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:10px 12px}
+.ligne-cal{display:grid;grid-template-columns:70px 1fr 54px;gap:8px;align-items:center;font-size:12.5px;margin:4px 0}
+.piste{position:relative;height:12px;background:var(--barre);border-radius:6px}
+.piste .p{position:absolute;top:-2px;width:2px;height:16px;background:var(--doux)}
+.piste .o{position:absolute;top:2px;height:8px;border-radius:4px;background:var(--accent)}
+.filtres{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filtres input,.filtres select{padding:6px 8px;border:1px solid var(--trait);border-radius:6px;background:var(--panneau);color:var(--texte);font:inherit}
+.filtres input{flex:1;min-width:180px}
+.table-zone{overflow-x:auto;background:var(--panneau);border:1px solid var(--trait);border-radius:10px;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--trait);text-align:left;vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--doux);cursor:pointer;white-space:nowrap;user-select:none;position:sticky;top:0;background:var(--panneau)}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+td a{color:var(--texte);text-decoration:none}
+td a:hover{color:var(--accent);text-decoration:underline}
+.pastille{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;border:1px solid var(--trait);white-space:nowrap}
+.pastille.ouverte{color:var(--doux)}
+.pastille.oui{color:var(--oui);border-color:var(--oui)}
+.pastille.non{color:var(--non);border-color:var(--non)}
+.pastille.attente{color:var(--attente);border-color:var(--attente)}
+.barre-p{display:inline-block;width:60px;height:6px;background:var(--barre);border-radius:3px;vertical-align:middle;margin-left:6px;position:relative}
+.barre-p i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:3px}
+.vide{padding:20px;text-align:center;color:var(--doux)}
+@media (max-width:640px){th:nth-child(5),td:nth-child(5),th:nth-child(7),td:nth-child(7){display:none}}
+
+.liste{display:grid;gap:10px;margin-top:8px}
+.brief{background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:12px 14px;box-shadow:0 1px 2px var(--ombre)}
+.brief h3{font-size:15px;margin:0 0 4px;font-weight:650}
+.brief .src{font-size:12px;color:var(--doux);margin-bottom:6px;overflow-wrap:anywhere}
+.brief .src a{color:var(--accent);text-decoration:none}
+.brief ul{margin:4px 0 6px;padding-left:18px}
+.brief li{margin:3px 0}
+.brief .titre-bloc{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--doux);margin-top:8px}
+.brief .carte{font-size:12px;margin-top:6px}
+.etiq{display:inline-block;padding:0 7px;border-radius:999px;font-size:11px;border:1px solid var(--trait);white-space:nowrap;margin-left:4px}
+.etiq.verifie{color:var(--oui);border-color:var(--oui)}
+.etiq.releve{color:var(--attente);border-color:var(--attente)}
+.etiq.absent{color:var(--non);border-color:var(--non)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Briefs</h1>
+  <span class="meta" id="meta">chargement…</span>
+  <a href="index.html">← carte des écosystèmes</a>
+</header>
+<main>
+  <div class="tuiles" id="tuiles"></div>
+  <p class="note">Briefs produits chaque nuit à partir de flux choisis : un terme validé de la carte doit figurer dans le titre ; un
+  modèle de langage remplit une grille fixe, puis le code contrôle chaque chiffre dans la source. « Vérifié dans la source » :
+  le chiffre figure bien dans le document ; « relayé » : le document l'attribue à un tiers, non vérifié chez ce tiers ;
+  « chiffre non retrouvé » : le modèle l'a donné mais il n'apparaît pas dans le document, à ne pas reprendre sans contrôle.
+  Aucune prédiction ; rien du texte des articles n'est conservé.</p>
+
+  <h2>Briefs</h2>
+  <div class="filtres">
+    <input type="search" id="cherche" placeholder="chercher dans les briefs…">
+    <select id="fiche"><option value="">toutes les fiches</option></select>
+    <select id="jour"><option value="">tous les jours</option></select>
+    <select id="statut"><option value="">tous les faits</option><option value="vérifié">avec un chiffre vérifié</option><option value="relayé">avec un fait relayé</option><option value="non retrouvé">avec un chiffre non retrouvé</option></select>
+  </div>
+  <div class="liste" id="liste"></div>
+</main>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const cls = st => st.startsWith("vérifié") ? "verifie" : st.startsWith("relayé") ? "releve" : "absent";
+let D = null;
+function dessiner() {
+  const q = document.getElementById("cherche").value.toLowerCase(), fi = document.getElementById("fiche").value,
+        jo = document.getElementById("jour").value, st = document.getElementById("statut").value;
+  const L = D.briefs.filter(b => (!fi || (b.compartiments || []).some(c => c.startsWith(fi + ":")))
+    && (!jo || b.jour === jo) && (!st || (b.faits || []).some(f => f.statut.includes(st)))
+    && (!q || JSON.stringify(b).toLowerCase().includes(q)));
+  document.getElementById("liste").innerHTML = L.length ? L.map(b => `<article class="brief">
+    <h3>${esc(b.titre || "Sans titre")}</h3>
+    <div class="src">${esc(b.jour)} · ${esc(b.media)} (${esc(b.classe)}) · <a href="${esc(b.url)}" target="_blank" rel="noopener">source</a>${b.page_lue ? "" : " · page non lue, résumé du flux seulement"}</div>
+    <ul>${(b.faits || []).map(f => `<li>${esc(f.fait)}${f.chiffre ? " — <b>" + esc(f.chiffre) + "</b>" : ""}<span class="etiq ${cls(f.statut)}">${esc(f.statut)}</span></li>`).join("") || "<li>aucun fait retenu</li>"}</ul>
+    <div class="titre-bloc">Ce que ça change</div><div>${esc(b.ce_que_ca_change || "—")}</div>
+    ${(b.limites || []).length ? `<div class="titre-bloc">Limites</div><ul>${b.limites.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+    ${(b.compartiments || []).length ? `<div class="carte">Carte : ${b.compartiments.map(esc).join(", ")}</div>` : ""}
+    <div class="src" style="margin:6px 0 0">modèle : ${esc(b.modele)}</div></article>`).join("")
+    : `<div class="vide">${D.briefs.length ? "aucun brief pour ces filtres" : "aucun brief publié pour l'instant : le premier passage a lieu chaque nuit"}</div>`;
+}
+fetch("briefs.json", {cache: "no-store"}).then(r => r.json()).then(d => {
+  D = d;
+  const r = d.resume, f = r.faits || {};
+  document.getElementById("meta").textContent = "mis à jour le " + d.genere_le.replace("T", " à ").replace("+00:00", " UTC");
+  const t = [[r.briefs, "briefs (90 jours)"], [r.jours, "jours couverts"], [r.dernier || "—", "dernier brief"],
+             [f["vérifié dans la source"] || 0, "chiffres vérifiés"], [f["relayé"] || 0, "faits relayés"], [f["chiffre non retrouvé dans la source"] || 0, "chiffres non retrouvés"]];
+  document.getElementById("tuiles").innerHTML = t.map(([v, l]) => `<div class="tuile"><div class="v${String(v).includes("-") ? " date" : ""}">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join("");
+  const fiches = [...new Set(d.briefs.flatMap(b => (b.compartiments || []).map(c => c.split(":")[0])))].sort();
+  document.getElementById("fiche").innerHTML += fiches.map(x => `<option>${esc(x)}</option>`).join("");
+  const jours = [...new Set(d.briefs.map(b => b.jour))];
+  document.getElementById("jour").innerHTML += jours.map(x => `<option>${esc(x)}</option>`).join("");
+  ["cherche", "fiche", "jour", "statut"].forEach(id => document.getElementById(id).addEventListener("input", dessiner));
+  dessiner();
+}).catch(() => { document.getElementById("meta").textContent = "briefs.json introuvable"; });
+</script>
+</body>
+</html>
