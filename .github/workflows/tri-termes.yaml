@@ -1,0 +1,46 @@
+# Tri des mots du rattachement au fil de l'eau (décisions de l'auteur du 2026-11-26, 11 h 53 et 12 h 05) : chaque
+# semaine, le script du bot propose des parasites probables et des termes nouveaux dans listes/parasites-proposes.txt et
+# listes/termes-proposes.txt (lignes « ? ») ; l'auteur tranche (« + » garder, « - » retirer). Aucun modèle de langue.
+name: tri-termes
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"     # le lundi, 5 h 17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compter
+  cancel-in-progress: false
+
+jobs:
+  tri:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Script et questions du bot (dépôt public, lecture seule)
+        uses: actions/checkout@v4
+        with:
+          repository: Othman-Benbrahim/metac-bot-template
+          path: bot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pyyaml
+      - name: Tri des termes
+        run: python bot/mise_au_point/termes_parasites.py
+        env:
+          ALPHABET_LISTES: ${{ github.workspace }}/listes
+      - name: Enregistrer
+        run: |
+          git config user.name "lecteur-local"
+          git config user.email "lecteur-local@users.noreply.github.com"
+          git add listes/parasites-proposes.txt listes/termes-proposes.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "tri des termes du $(date -u +%Y-%m-%d)"
+            git pull --rebase || true
+            git push
+          fi
