@@ -1,0 +1,9 @@
+# Termes nouveaux proposés (titres non rattachés). « + » avec une fiche, puis recopier dans valides.txt ;
+# « - » écarte. état | terme | questions non rattachées | fiche suggérée
+? | trump | 24 | politique-americaine
+? | president | 14 | politique-interieure
+? | nuclear | 10 | non-proliferation
+? | united | 10 | politique-interieure
+? | senate | 8 | politique-americaine
+? | government | 8 | politique-americaine
+? | epl | 8 | ?
