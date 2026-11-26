@@ -1,9 +1,9 @@
 # Termes nouveaux proposés (titres non rattachés). « + » avec une fiche, puis recopier dans valides.txt ;
 # « - » écarte. état | terme | questions non rattachées | fiche suggérée
-? | trump | 24 | politique-americaine
-? | president | 14 | politique-interieure
-? | nuclear | 10 | non-proliferation
-? | united | 10 | politique-interieure
-? | senate | 8 | politique-americaine
-? | government | 8 | politique-americaine
-? | epl | 8 | ?
++ | trump | 24 | politique-americaine:executif | décision de l'auteur 2026-11-26 11 h 59
++ | president | 14 | dirigeants-elus:executifs | décision de l'auteur 2026-11-26 11 h 59
++ | nuclear | 10 | non-proliferation:dissuasion;non-proliferation:etats_du_seuil (contextuel) | décision de l'auteur 2026-11-26 11 h 59
+- | united | 10 | politique-interieure | décision de l'auteur 2026-11-26 11 h 59
++ | senate | 8 | politique-americaine:congres (contextuel) | décision de l'auteur 2026-11-26 11 h 59
++ | government | 8 | politique-interieure:gouvernement | décision de l'auteur 2026-11-26 11 h 59
++ | epl | 8 | competitions-culture:classements_force | décision de l'auteur 2026-11-26 11 h 59

@@ -1,0 +1,6 @@
+# Termes polysémiques : ils ne rattachent une question que si l'un des mots de contexte figure dans le même titre
+# (décision de l'auteur, 2026-11-26, 11 h 59 : « une association qui permette d'en valider l'utilisation, sinon ça sent
+# le hors domaine »). Format : terme | mot1/mot2/... | motif. Lu par mise_au_point/lecture_mecanique.py.
+party | political/politics/election/elections/electoral/vote/votes/voters/poll/polls/coalition/parliament/parliamentary/seats/primary/leader/leadership/founded/form/forms/register/registered/ban/banned/Labour/Conservative/Democratic/Democrats/Republican/Republicans/Tory/Communist/Socialist/Liberal/opposition/ruling/congress/manifesto | parti politique, pas une fête ni une partie à un accord
+nuclear | weapon/weapons/warhead/warheads/arsenal/test/tests/testing/bomb/enrichment/enriched/uranium/plutonium/IAEA/proliferation/nonproliferation/non-proliferation/NPT/START/deterrent/deterrence/missile/missiles/strike | nucléaire militaire, pas une centrale
+Senate | U.S./US/USA/United States/American/Republican/Republicans/Democrat/Democrats/Democratic/GOP/Congress/filibuster/Schumer/Thune/McConnell/confirm/confirmed/confirmation | Sénat des États-Unis, pas un autre sénat

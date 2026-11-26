@@ -2635,3 +2635,9 @@
 + | on trial | en | politique-interieure:procedures | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
 + | ans après | fr | culture-memoire:usages_memoire | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
 + | years after | en | culture-memoire:usages_memoire | mécanique de bascule (bot 0.10.465) : fait passé dans un calendrier attendu ; proposé par Claude, validé par l'auteur le 2026-11-22 à 21 h 20 | 
++ | Trump | en | politique-americaine:executif | terme proposé par le tri au fil de l'eau, validé par l'auteur le 2026-11-26 à 11 h 59 | termes-proposes
++ | president | en | dirigeants-elus:executifs | terme proposé par le tri au fil de l'eau, validé par l'auteur le 2026-11-26 à 11 h 59 | termes-proposes
++ | nuclear | en | non-proliferation:dissuasion;non-proliferation:etats_du_seuil | terme contextuel (termes-contextuels.txt), validé par l'auteur le 2026-11-26 à 11 h 59 | termes-proposes
++ | Senate | en | politique-americaine:congres | terme contextuel (termes-contextuels.txt), validé par l'auteur le 2026-11-26 à 11 h 59 | termes-proposes
++ | government | en | politique-interieure:gouvernement | terme proposé par le tri au fil de l'eau, validé par l'auteur le 2026-11-26 à 11 h 59 | termes-proposes
++ | EPL | en | competitions-culture:classements_force | terme proposé par le tri au fil de l'eau, validé par l'auteur le 2026-11-26 à 11 h 59 | termes-proposes
