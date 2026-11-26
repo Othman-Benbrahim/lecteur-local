@@ -1,0 +1,8 @@
+{
+  "title": "lecteur-local — listes de mots validées et collecteur de textes pour le bot de prévision",
+  "upload_type": "software",
+  "description": "Listes de termes validées par l'auteur (avec décisions datées), propositions de tri et collecteur de textes qui alimentent le rattachement des questions du bot metac-bot-template.",
+  "creators": [{"name": "Ben Brahim, Othman"}],
+  "contributors": [{"name": "Claude (Anthropic), assistant de code", "type": "Other"}],
+  "language": "fra"
+}
