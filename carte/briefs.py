@@ -81,5 +81,15 @@ if __name__ == "__main__":
         RECOUPEMENT.update(json.loads(f.read_text(encoding="utf-8")))
     tout = lire(bot)
     d = construire(bot, tout)
+    # 2026-11-27 (plan validé par l'auteur à 23 h 36) : couche non visible du bot (couches.py) — seules les alertes
+    # de signaux faibles et le nuage de mots des articles non traités sont publiés (liens, titres, sources ; aucun texte)
+    fc = bot / "registre" / "couche-invisible.json"
+    if fc.is_file():
+        try:
+            c = json.loads(fc.read_text(encoding="utf-8"))
+            d["couche_invisible"] = {k: c.get(k) for k in ("jour", "articles", "traites", "historique_jours",
+                                                         "en_ombre_jusqu_au", "seuils", "alertes", "nuage")}
+        except ValueError:
+            pass
     SORTIE.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
     print("briefs :", d["resume"], "; archives :", archiver(tout))

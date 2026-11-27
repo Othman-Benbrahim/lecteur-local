@@ -68,6 +68,16 @@ td a:hover{color:var(--accent);text-decoration:underline}
 .etiq.verifie{color:var(--oui);border-color:var(--oui)}
 .etiq.releve{color:var(--attente);border-color:var(--attente)}
 .etiq.absent{color:var(--non);border-color:var(--non)}
+.nuage{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:12px 14px;margin-top:8px}
+.nuage button{background:none;border:0;padding:0;color:var(--accent);cursor:pointer;font:inherit;line-height:1.2}
+.nuage button.actif{text-decoration:underline;font-weight:650}
+.nuage button.pays{color:var(--attente)}
+.nuage button.matiere{color:var(--oui)}
+.articles-nuage{margin-top:8px}
+.articles-nuage li{margin:3px 0;overflow-wrap:anywhere}
+.articles-nuage a{color:var(--texte)}
+.alerte{background:var(--panneau);border:1px solid var(--trait);border-left:3px solid var(--attente);border-radius:8px;padding:8px 12px;font-size:13px}
+.alerte a{color:var(--texte)}
 </style>
 </head>
 <body>
@@ -84,6 +94,15 @@ td a:hover{color:var(--accent);text-decoration:underline}
   « affirmé par le média » : la page n'a pas pu être lue, le fait vient du résumé du flux ; « chiffre non retrouvé » : le modèle
   l'a donné mais il n'apparaît pas dans le document, à ne pas reprendre sans contrôle.
   Aucune prédiction ; rien du texte des articles n'est conservé.</p>
+
+  <h2>Signaux faibles <span id="ombre-etat" style="text-transform:none;letter-spacing:0"></span></h2>
+  <div class="liste" id="alertes"></div>
+  <h2>Articles non traités : nuage de mots <span id="nuage-etat" style="text-transform:none;letter-spacing:0"></span></h2>
+  <p class="note">Les termes (noms, <span style="color:var(--attente)">pays</span>, <span style="color:var(--oui)">matières</span>) des
+  articles collectés mais non retenus dans les briefs ; la taille suit le nombre d'articles. Cliquer sur un terme montre ses
+  articles (titre, source, lien). Métadonnées seulement, aucun texte d'article.</p>
+  <div class="nuage" id="nuage"></div>
+  <ul class="articles-nuage" id="articles-nuage"></ul>
 
   <h2>Briefs</h2>
   <div class="filtres">
@@ -129,6 +148,25 @@ function recoup(b) {
   const ch = (r.chiffres || []).map(f => `<li>${esc(f.chiffre)} : ${f.verdict === "non recoupable" ? "non recoupable" : `<span class="etiq verifie">cohérent</span> avec ${esc(f.source || f.adaptateur)} (${nb(f.valeur)}, ${esc(f.date)})`}</li>`).join("");
   return `<div class="titre-bloc">Contexte chiffré (au jour du brief)</div><ul>${lignes}</ul>${ch ? `<div class="titre-bloc">Chiffres cités, recoupés</div><ul>${ch}</ul>` : ""}`;
 }
+// 2026-11-27 : couche non visible (bot : couches.py) — alertes de signaux faibles et nuage des articles non traités
+const NOM_DET = {montee: "montée anormale", isole: "signal isolé", inattendue: "source inattendue"};
+function couche(c) {
+  const za = document.getElementById("alertes"), zn = document.getElementById("nuage"), zl = document.getElementById("articles-nuage");
+  if (!c) { za.innerHTML = '<div class="vide">pas encore de couche non visible : elle se remplit chaque nuit</div>'; zn.innerHTML = ""; zl.innerHTML = ""; return; }
+  document.getElementById("ombre-etat").textContent = `— ${c.jour} · en observation jusqu'au ${c.en_ombre_jusqu_au} (rien n'est remonté dans les briefs)`;
+  document.getElementById("nuage-etat").textContent = `— ${c.jour} · ${c.articles - c.traites} articles non traités sur ${c.articles}`;
+  const A = c.alertes || [];
+  za.innerHTML = A.length ? A.map(a => `<div class="alerte"><b>${esc(NOM_DET[a.detecteur] || a.detecteur)}</b> · ${esc(a.terme)}${a.n_jour ? ` (${a.n_jour} titres, d'habitude ${a.moyenne_ref} par jour)` : ""} — <a href="${esc(a.lien)}" target="_blank" rel="noopener">${esc(a.titre)}</a> <span style="color:var(--doux)">(${esc(a.source)})</span></div>`).join("")
+    : `<div class="vide">aucune alerte ce jour${c.historique_jours < 7 ? ` (historique de ${c.historique_jours} jour(s) : la montée anormale attend 7 jours)` : ""}</div>`;
+  const N = c.nuage || [], max = Math.max(1, ...N.map(x => x.n));
+  zn.innerHTML = N.length ? N.map((x, i) => `<button class="${esc(x.type)}" data-i="${i}" style="font-size:${(12 + 14 * x.n / max).toFixed(1)}px" title="${x.n} articles">${esc(x.terme)}</button>`).join("") : '<span class="note">aucun terme</span>';
+  zl.innerHTML = "";
+  zn.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    zn.querySelectorAll("button").forEach(x => x.classList.remove("actif")); b.classList.add("actif");
+    const x = N[+b.dataset.i];
+    zl.innerHTML = x.articles.map(a => `<li><a href="${esc(a.lien)}" target="_blank" rel="noopener">${esc(a.titre)}</a> <span style="color:var(--doux)">(${esc(a.source)})</span></li>`).join("");
+  }));
+}
 let pret = false;
 function charger(url) {
 fetch(url, {cache: "no-store"}).then(r => r.json()).then(d => {
@@ -146,6 +184,7 @@ fetch(url, {cache: "no-store"}).then(r => r.json()).then(d => {
   document.getElementById("jour").innerHTML += jours.map(x => `<option>${esc(x)}</option>`).join("");
   if (!pret) { ["cherche", "fiche", "jour", "statut"].forEach(id => document.getElementById(id).addEventListener("input", dessiner)); pret = true; }
   dessiner();
+  if (!d.mois) couche(d.couche_invisible);
 }).catch(() => { document.getElementById("meta").textContent = url + " introuvable"; });
 }
 charger("briefs.json");
