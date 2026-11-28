@@ -149,7 +149,7 @@ function recoup(b) {
   return `<div class="titre-bloc">Contexte chiffré (au jour du brief)</div><ul>${lignes}</ul>${ch ? `<div class="titre-bloc">Chiffres cités, recoupés</div><ul>${ch}</ul>` : ""}`;
 }
 // 2026-11-27 : couche non visible (bot : couches.py) — alertes de signaux faibles et nuage des articles non traités
-const NOM_DET = {montee: "montée anormale", isole: "signal isolé", inattendue: "source inattendue"};
+const NOM_DET = {montee: "montée anormale", isole: "signal isolé", inattendue: "source inattendue", treve: "trêve possible, table des guerres à vérifier"};
 function couche(c) {
   const za = document.getElementById("alertes"), zn = document.getElementById("nuage"), zl = document.getElementById("articles-nuage");
   if (!c) { za.innerHTML = '<div class="vide">pas encore de couche non visible : elle se remplit chaque nuit</div>'; zn.innerHTML = ""; zl.innerHTML = ""; return; }
